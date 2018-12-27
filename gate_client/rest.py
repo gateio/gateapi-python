@@ -13,11 +13,14 @@
 
 from __future__ import absolute_import
 
+import hashlib
+import hmac
 import io
 import json
 import logging
 import re
 import ssl
+import time
 
 import certifi
 # python 2 and python 3 compatibility library
@@ -60,6 +63,7 @@ class RESTClientObject(object):
         # Custom SSL certificates and client certificates: http://urllib3.readthedocs.io/en/latest/advanced-usage.html  # noqa: E501
 
         # cert_reqs
+        self.configuration = configuration
         if configuration.verify_ssl:
             cert_reqs = ssl.CERT_REQUIRED
         else:
@@ -104,6 +108,25 @@ class RESTClientObject(object):
                 key_file=configuration.key_file,
                 **addition_pool_args
             )
+
+    def gen_sign(self, method, url, query_string=None, payload_string=None):
+        """generate authentication headers
+
+        :param method: http request method
+        :param url: http resource path
+        :param query_string: query string
+        :param payload_string: request payload in string format
+        :return: signature headers
+        """
+        t = time.time()
+        m = hashlib.sha512()
+        if payload_string is not None:
+            m.update(payload_string.encode('utf-8'))
+        hashed_payload = m.hexdigest()
+        s = '%s\n%s\n%s\n%s\n%s' % (method, url, query_string or "", hashed_payload, t)
+        sign = hmac.new(self.configuration.secret.encode('utf-8'), s.encode('utf-8'),
+                        hashlib.sha512).hexdigest()
+        return {'KEY': self.configuration.key, 'Timestamp': str(t), 'SIGN': sign}
 
     def request(self, method, url, query_params=None, headers=None,
                 body=None, post_params=None, _preload_content=True,
@@ -150,15 +173,22 @@ class RESTClientObject(object):
         if 'Content-Type' not in headers:
             headers['Content-Type'] = 'application/json'
 
+        resource_path = '/api/v4' + url[len(self.configuration.host):]
+        request_body = None
+        if body is not None:
+            request_body = json.dumps(body)
+        sign_headers = self.gen_sign(method, resource_path, urlencode(query_params), request_body)
+        headers.update(sign_headers)
+
         try:
             # For `POST`, `PUT`, `PATCH`, `OPTIONS`, `DELETE`
             if method in ['POST', 'PUT', 'PATCH', 'OPTIONS', 'DELETE']:
                 if query_params:
                     url += '?' + urlencode(query_params)
                 if re.search('json', headers['Content-Type'], re.IGNORECASE):
-                    request_body = None
-                    if body is not None:
-                        request_body = json.dumps(body)
+                    # request_body = None
+                    # if body is not None:
+                    #     request_body = json.dumps(body)
                     r = self.pool_manager.request(
                         method, url,
                         body=request_body,
