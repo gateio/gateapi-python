@@ -3,7 +3,7 @@
 """
     Gate API v4
 
-    APIv4 合约接口提供了与合约交易相关的操作，包括公共接口查询合约市场行情，以及需要认证的私有接口， 实现基于 API 的自动交易。 API 文档按照 OpenAPI v3 标准制定 API 文档， 方便 API 使用者能够轻松生成需要的客户端代码，快速接入新的功能   # noqa: E501
+    APIv4 futures provides all sorts of futures trading operations. There are public APIs to retrieve the real-time market statistics, and private APIs which needs authentication to trade on user's behalf.  # noqa: E501
 
     OpenAPI spec version: 1.0.0
     Contact: support@mail.gate.io
@@ -72,7 +72,7 @@ class FuturesTrade(object):
     def id(self):
         """Gets the id of this FuturesTrade.  # noqa: E501
 
-        成交记录 ID  # noqa: E501
+        trade ID  # noqa: E501
 
         :return: The id of this FuturesTrade.  # noqa: E501
         :rtype: int
@@ -83,7 +83,7 @@ class FuturesTrade(object):
     def id(self, id):
         """Sets the id of this FuturesTrade.
 
-        成交记录 ID  # noqa: E501
+        trade ID  # noqa: E501
 
         :param id: The id of this FuturesTrade.  # noqa: E501
         :type: int
@@ -95,7 +95,7 @@ class FuturesTrade(object):
     def create_time(self):
         """Gets the create_time of this FuturesTrade.  # noqa: E501
 
-        成交时间  # noqa: E501
+        trading time  # noqa: E501
 
         :return: The create_time of this FuturesTrade.  # noqa: E501
         :rtype: float
@@ -106,7 +106,7 @@ class FuturesTrade(object):
     def create_time(self, create_time):
         """Sets the create_time of this FuturesTrade.
 
-        成交时间  # noqa: E501
+        trading time  # noqa: E501
 
         :param create_time: The create_time of this FuturesTrade.  # noqa: E501
         :type: float
@@ -118,7 +118,7 @@ class FuturesTrade(object):
     def contract(self):
         """Gets the contract of this FuturesTrade.  # noqa: E501
 
-        期货合约标识  # noqa: E501
+        futures contrat  # noqa: E501
 
         :return: The contract of this FuturesTrade.  # noqa: E501
         :rtype: str
@@ -129,7 +129,7 @@ class FuturesTrade(object):
     def contract(self, contract):
         """Sets the contract of this FuturesTrade.
 
-        期货合约标识  # noqa: E501
+        futures contrat  # noqa: E501
 
         :param contract: The contract of this FuturesTrade.  # noqa: E501
         :type: str
@@ -141,7 +141,7 @@ class FuturesTrade(object):
     def size(self):
         """Gets the size of this FuturesTrade.  # noqa: E501
 
-        成交数量  # noqa: E501
+        trading size  # noqa: E501
 
         :return: The size of this FuturesTrade.  # noqa: E501
         :rtype: int
@@ -152,7 +152,7 @@ class FuturesTrade(object):
     def size(self, size):
         """Sets the size of this FuturesTrade.
 
-        成交数量  # noqa: E501
+        trading size  # noqa: E501
 
         :param size: The size of this FuturesTrade.  # noqa: E501
         :type: int
@@ -164,7 +164,7 @@ class FuturesTrade(object):
     def price(self):
         """Gets the price of this FuturesTrade.  # noqa: E501
 
-        成交价格  # noqa: E501
+        trading price  # noqa: E501
 
         :return: The price of this FuturesTrade.  # noqa: E501
         :rtype: str
@@ -175,7 +175,7 @@ class FuturesTrade(object):
     def price(self, price):
         """Sets the price of this FuturesTrade.
 
-        成交价格  # noqa: E501
+        trading price  # noqa: E501
 
         :param price: The price of this FuturesTrade.  # noqa: E501
         :type: str

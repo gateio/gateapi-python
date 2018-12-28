@@ -3,7 +3,7 @@
 """
     Gate API v4
 
-    APIv4 合约接口提供了与合约交易相关的操作，包括公共接口查询合约市场行情，以及需要认证的私有接口， 实现基于 API 的自动交易。 API 文档按照 OpenAPI v3 标准制定 API 文档， 方便 API 使用者能够轻松生成需要的客户端代码，快速接入新的功能   # noqa: E501
+    APIv4 futures provides all sorts of futures trading operations. There are public APIs to retrieve the real-time market statistics, and private APIs which needs authentication to trade on user's behalf.  # noqa: E501
 
     OpenAPI spec version: 1.0.0
     Contact: support@mail.gate.io
@@ -32,8 +32,8 @@ class FuturesOrderBook(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'asks': 'list[FuturesOrderBookAsks]',
-        'bids': 'list[FuturesOrderBookAsks]'
+        'asks': 'list[FuturesOrderBookItem]',
+        'bids': 'list[FuturesOrderBookItem]'
     }
 
     attribute_map = {
@@ -55,10 +55,10 @@ class FuturesOrderBook(object):
     def asks(self):
         """Gets the asks of this FuturesOrderBook.  # noqa: E501
 
-        卖方深度列表  # noqa: E501
+        asks order depth  # noqa: E501
 
         :return: The asks of this FuturesOrderBook.  # noqa: E501
-        :rtype: list[FuturesOrderBookAsks]
+        :rtype: list[FuturesOrderBookItem]
         """
         return self._asks
 
@@ -66,10 +66,10 @@ class FuturesOrderBook(object):
     def asks(self, asks):
         """Sets the asks of this FuturesOrderBook.
 
-        卖方深度列表  # noqa: E501
+        asks order depth  # noqa: E501
 
         :param asks: The asks of this FuturesOrderBook.  # noqa: E501
-        :type: list[FuturesOrderBookAsks]
+        :type: list[FuturesOrderBookItem]
         """
         if asks is None:
             raise ValueError("Invalid value for `asks`, must not be `None`")  # noqa: E501
@@ -80,10 +80,10 @@ class FuturesOrderBook(object):
     def bids(self):
         """Gets the bids of this FuturesOrderBook.  # noqa: E501
 
-        买方深度列表  # noqa: E501
+        bids order depth  # noqa: E501
 
         :return: The bids of this FuturesOrderBook.  # noqa: E501
-        :rtype: list[FuturesOrderBookAsks]
+        :rtype: list[FuturesOrderBookItem]
         """
         return self._bids
 
@@ -91,10 +91,10 @@ class FuturesOrderBook(object):
     def bids(self, bids):
         """Sets the bids of this FuturesOrderBook.
 
-        买方深度列表  # noqa: E501
+        bids order depth  # noqa: E501
 
         :param bids: The bids of this FuturesOrderBook.  # noqa: E501
-        :type: list[FuturesOrderBookAsks]
+        :type: list[FuturesOrderBookItem]
         """
         if bids is None:
             raise ValueError("Invalid value for `bids`, must not be `None`")  # noqa: E501

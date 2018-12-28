@@ -3,7 +3,7 @@
 """
     Gate API v4
 
-    APIv4 合约接口提供了与合约交易相关的操作，包括公共接口查询合约市场行情，以及需要认证的私有接口， 实现基于 API 的自动交易。 API 文档按照 OpenAPI v3 标准制定 API 文档， 方便 API 使用者能够轻松生成需要的客户端代码，快速接入新的功能   # noqa: E501
+    APIv4 futures provides all sorts of futures trading operations. There are public APIs to retrieve the real-time market statistics, and private APIs which needs authentication to trade on user's behalf.  # noqa: E501
 
     OpenAPI spec version: 1.0.0
     Contact: support@mail.gate.io
@@ -87,7 +87,7 @@ class FuturesTicker(object):
     def contract(self):
         """Gets the contract of this FuturesTicker.  # noqa: E501
 
-        合约标识  # noqa: E501
+        contract name  # noqa: E501
 
         :return: The contract of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -98,7 +98,7 @@ class FuturesTicker(object):
     def contract(self, contract):
         """Sets the contract of this FuturesTicker.
 
-        合约标识  # noqa: E501
+        contract name  # noqa: E501
 
         :param contract: The contract of this FuturesTicker.  # noqa: E501
         :type: str
@@ -110,7 +110,7 @@ class FuturesTicker(object):
     def last(self):
         """Gets the last of this FuturesTicker.  # noqa: E501
 
-        最新成交价  # noqa: E501
+        last trading price  # noqa: E501
 
         :return: The last of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -121,7 +121,7 @@ class FuturesTicker(object):
     def last(self, last):
         """Sets the last of this FuturesTicker.
 
-        最新成交价  # noqa: E501
+        last trading price  # noqa: E501
 
         :param last: The last of this FuturesTicker.  # noqa: E501
         :type: str
@@ -133,7 +133,7 @@ class FuturesTicker(object):
     def change_percentage(self):
         """Gets the change_percentage of this FuturesTicker.  # noqa: E501
 
-        涨跌百分比，跌用负数标识，如 -7.45  # noqa: E501
+        change percentage  # noqa: E501
 
         :return: The change_percentage of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -144,7 +144,7 @@ class FuturesTicker(object):
     def change_percentage(self, change_percentage):
         """Sets the change_percentage of this FuturesTicker.
 
-        涨跌百分比，跌用负数标识，如 -7.45  # noqa: E501
+        change percentage  # noqa: E501
 
         :param change_percentage: The change_percentage of this FuturesTicker.  # noqa: E501
         :type: str
@@ -156,7 +156,7 @@ class FuturesTicker(object):
     def total_size(self):
         """Gets the total_size of this FuturesTicker.  # noqa: E501
 
-        当前合约总持仓量  # noqa: E501
+        contract total size  # noqa: E501
 
         :return: The total_size of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -167,7 +167,7 @@ class FuturesTicker(object):
     def total_size(self, total_size):
         """Sets the total_size of this FuturesTicker.
 
-        当前合约总持仓量  # noqa: E501
+        contract total size  # noqa: E501
 
         :param total_size: The total_size of this FuturesTicker.  # noqa: E501
         :type: str
@@ -179,7 +179,7 @@ class FuturesTicker(object):
     def volume_24h(self):
         """Gets the volume_24h of this FuturesTicker.  # noqa: E501
 
-        最近24小时成交总量  # noqa: E501
+        trade size in recent 24h  # noqa: E501
 
         :return: The volume_24h of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -190,7 +190,7 @@ class FuturesTicker(object):
     def volume_24h(self, volume_24h):
         """Sets the volume_24h of this FuturesTicker.
 
-        最近24小时成交总量  # noqa: E501
+        trade size in recent 24h  # noqa: E501
 
         :param volume_24h: The volume_24h of this FuturesTicker.  # noqa: E501
         :type: str
@@ -202,7 +202,7 @@ class FuturesTicker(object):
     def mark_price(self):
         """Gets the mark_price of this FuturesTicker.  # noqa: E501
 
-        最近标记价格  # noqa: E501
+        recent mark price  # noqa: E501
 
         :return: The mark_price of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -213,7 +213,7 @@ class FuturesTicker(object):
     def mark_price(self, mark_price):
         """Sets the mark_price of this FuturesTicker.
 
-        最近标记价格  # noqa: E501
+        recent mark price  # noqa: E501
 
         :param mark_price: The mark_price of this FuturesTicker.  # noqa: E501
         :type: str
@@ -225,7 +225,7 @@ class FuturesTicker(object):
     def funding_rate(self):
         """Gets the funding_rate of this FuturesTicker.  # noqa: E501
 
-        资金费率  # noqa: E501
+        funding rate  # noqa: E501
 
         :return: The funding_rate of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -236,7 +236,7 @@ class FuturesTicker(object):
     def funding_rate(self, funding_rate):
         """Sets the funding_rate of this FuturesTicker.
 
-        资金费率  # noqa: E501
+        funding rate  # noqa: E501
 
         :param funding_rate: The funding_rate of this FuturesTicker.  # noqa: E501
         :type: str
@@ -248,7 +248,7 @@ class FuturesTicker(object):
     def index_price(self):
         """Gets the index_price of this FuturesTicker.  # noqa: E501
 
-        指数价格  # noqa: E501
+        index price  # noqa: E501
 
         :return: The index_price of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -259,7 +259,7 @@ class FuturesTicker(object):
     def index_price(self, index_price):
         """Sets the index_price of this FuturesTicker.
 
-        指数价格  # noqa: E501
+        index price  # noqa: E501
 
         :param index_price: The index_price of this FuturesTicker.  # noqa: E501
         :type: str

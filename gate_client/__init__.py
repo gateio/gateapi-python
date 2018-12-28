@@ -5,7 +5,7 @@
 """
     Gate API v4
 
-    APIv4 合约接口提供了与合约交易相关的操作，包括公共接口查询合约市场行情，以及需要认证的私有接口， 实现基于 API 的自动交易。 API 文档按照 OpenAPI v3 标准制定 API 文档， 方便 API 使用者能够轻松生成需要的客户端代码，快速接入新的功能   # noqa: E501
+    APIv4 futures provides all sorts of futures trading operations. There are public APIs to retrieve the real-time market statistics, and private APIs which needs authentication to trade on user's behalf.  # noqa: E501
 
     OpenAPI spec version: 1.0.0
     Contact: support@mail.gate.io
@@ -25,18 +25,15 @@ from gate_client.api_client import ApiClient
 from gate_client.configuration import Configuration
 # import models into sdk package
 from gate_client.models.contract import Contract
-from gate_client.models.funding_rate_history import FundingRateHistory
-from gate_client.models.funding_rate_history_inner import FundingRateHistoryInner
+from gate_client.models.funding_rate_record import FundingRateRecord
 from gate_client.models.futures_account import FuturesAccount
-from gate_client.models.futures_candlesticks import FuturesCandlesticks
-from gate_client.models.futures_candlesticks_inner import FuturesCandlesticksInner
+from gate_client.models.futures_candlestick import FuturesCandlestick
 from gate_client.models.futures_error_response import FuturesErrorResponse
 from gate_client.models.futures_order import FuturesOrder
 from gate_client.models.futures_order_book import FuturesOrderBook
-from gate_client.models.futures_order_book_asks import FuturesOrderBookAsks
+from gate_client.models.futures_order_book_item import FuturesOrderBookItem
 from gate_client.models.futures_ticker import FuturesTicker
 from gate_client.models.futures_trade import FuturesTrade
 from gate_client.models.insurance_record import InsuranceRecord
-from gate_client.models.insurance_record_inner import InsuranceRecordInner
 from gate_client.models.my_futures_trade import MyFuturesTrade
 from gate_client.models.position import Position

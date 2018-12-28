@@ -3,7 +3,7 @@
 """
     Gate API v4
 
-    APIv4 合约接口提供了与合约交易相关的操作，包括公共接口查询合约市场行情，以及需要认证的私有接口， 实现基于 API 的自动交易。 API 文档按照 OpenAPI v3 标准制定 API 文档， 方便 API 使用者能够轻松生成需要的客户端代码，快速接入新的功能   # noqa: E501
+    APIv4 futures provides all sorts of futures trading operations. There are public APIs to retrieve the real-time market statistics, and private APIs which needs authentication to trade on user's behalf.  # noqa: E501
 
     OpenAPI spec version: 1.0.0
     Contact: support@mail.gate.io
@@ -116,7 +116,7 @@ class FuturesOrder(object):
     def id(self):
         """Gets the id of this FuturesOrder.  # noqa: E501
 
-        期货订单 ID  # noqa: E501
+        futures order ID  # noqa: E501
 
         :return: The id of this FuturesOrder.  # noqa: E501
         :rtype: int
@@ -127,7 +127,7 @@ class FuturesOrder(object):
     def id(self, id):
         """Sets the id of this FuturesOrder.
 
-        期货订单 ID  # noqa: E501
+        futures order ID  # noqa: E501
 
         :param id: The id of this FuturesOrder.  # noqa: E501
         :type: int
@@ -139,7 +139,7 @@ class FuturesOrder(object):
     def create_time(self):
         """Gets the create_time of this FuturesOrder.  # noqa: E501
 
-        订单创建时间  # noqa: E501
+        order creation time  # noqa: E501
 
         :return: The create_time of this FuturesOrder.  # noqa: E501
         :rtype: float
@@ -150,7 +150,7 @@ class FuturesOrder(object):
     def create_time(self, create_time):
         """Sets the create_time of this FuturesOrder.
 
-        订单创建时间  # noqa: E501
+        order creation time  # noqa: E501
 
         :param create_time: The create_time of this FuturesOrder.  # noqa: E501
         :type: float
@@ -162,7 +162,7 @@ class FuturesOrder(object):
     def finish_time(self):
         """Gets the finish_time of this FuturesOrder.  # noqa: E501
 
-        订单结束时间，未结束订单无此字段返回  # noqa: E501
+        order finished time. Not returned if order is open  # noqa: E501
 
         :return: The finish_time of this FuturesOrder.  # noqa: E501
         :rtype: float
@@ -173,7 +173,7 @@ class FuturesOrder(object):
     def finish_time(self, finish_time):
         """Sets the finish_time of this FuturesOrder.
 
-        订单结束时间，未结束订单无此字段返回  # noqa: E501
+        order finished time. Not returned if order is open  # noqa: E501
 
         :param finish_time: The finish_time of this FuturesOrder.  # noqa: E501
         :type: float
@@ -185,7 +185,7 @@ class FuturesOrder(object):
     def finish_as(self):
         """Gets the finish_as of this FuturesOrder.  # noqa: E501
 
-        结束方式，包括：  - filled: 全部成交 - cancelled: 订单撤销 - liquidated: 因爆仓被撤销 - ioc: 策略指定了 ioc，因此立即结束 - auto_deleveraged: 自动减仓   # noqa: E501
+        how the order is finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL   # noqa: E501
 
         :return: The finish_as of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -196,7 +196,7 @@ class FuturesOrder(object):
     def finish_as(self, finish_as):
         """Sets the finish_as of this FuturesOrder.
 
-        结束方式，包括：  - filled: 全部成交 - cancelled: 订单撤销 - liquidated: 因爆仓被撤销 - ioc: 策略指定了 ioc，因此立即结束 - auto_deleveraged: 自动减仓   # noqa: E501
+        how the order is finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL   # noqa: E501
 
         :param finish_as: The finish_as of this FuturesOrder.  # noqa: E501
         :type: str
@@ -214,7 +214,7 @@ class FuturesOrder(object):
     def status(self):
         """Gets the status of this FuturesOrder.  # noqa: E501
 
-        订单状态。  - `open`: 等待处理 - `finished`: 已结束的订单   # noqa: E501
+        order status  - `open`: waiting to be traded - `finished`: finished   # noqa: E501
 
         :return: The status of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -225,7 +225,7 @@ class FuturesOrder(object):
     def status(self, status):
         """Sets the status of this FuturesOrder.
 
-        订单状态。  - `open`: 等待处理 - `finished`: 已结束的订单   # noqa: E501
+        order status  - `open`: waiting to be traded - `finished`: finished   # noqa: E501
 
         :param status: The status of this FuturesOrder.  # noqa: E501
         :type: str
@@ -243,7 +243,7 @@ class FuturesOrder(object):
     def contract(self):
         """Gets the contract of this FuturesOrder.  # noqa: E501
 
-        期货合约标识  # noqa: E501
+        contract name  # noqa: E501
 
         :return: The contract of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -254,7 +254,7 @@ class FuturesOrder(object):
     def contract(self, contract):
         """Sets the contract of this FuturesOrder.
 
-        期货合约标识  # noqa: E501
+        contract name  # noqa: E501
 
         :param contract: The contract of this FuturesOrder.  # noqa: E501
         :type: str
@@ -268,7 +268,7 @@ class FuturesOrder(object):
     def size(self):
         """Gets the size of this FuturesOrder.  # noqa: E501
 
-        交易数量，正数为买入，负数为卖出。  除平仓操作以外必选，平仓操作会忽略该字段的设置   # noqa: E501
+        contract size. Specify positive number to make a bid, negative number otherwise.  Set to 0 if trying to close the position   # noqa: E501
 
         :return: The size of this FuturesOrder.  # noqa: E501
         :rtype: int
@@ -279,7 +279,7 @@ class FuturesOrder(object):
     def size(self, size):
         """Sets the size of this FuturesOrder.
 
-        交易数量，正数为买入，负数为卖出。  除平仓操作以外必选，平仓操作会忽略该字段的设置   # noqa: E501
+        contract size. Specify positive number to make a bid, negative number otherwise.  Set to 0 if trying to close the position   # noqa: E501
 
         :param size: The size of this FuturesOrder.  # noqa: E501
         :type: int
@@ -291,7 +291,7 @@ class FuturesOrder(object):
     def price(self):
         """Gets the price of this FuturesOrder.  # noqa: E501
 
-        交易价，当价格为 0 时，表示通过市价方式来下单  # noqa: E501
+        order price. Set to 0 if using market price  # noqa: E501
 
         :return: The price of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -302,7 +302,7 @@ class FuturesOrder(object):
     def price(self, price):
         """Sets the price of this FuturesOrder.
 
-        交易价，当价格为 0 时，表示通过市价方式来下单  # noqa: E501
+        order price. Set to 0 if using market price  # noqa: E501
 
         :param price: The price of this FuturesOrder.  # noqa: E501
         :type: str
@@ -314,7 +314,7 @@ class FuturesOrder(object):
     def close(self):
         """Gets the close of this FuturesOrder.  # noqa: E501
 
-        设置为 true 的时候执行平仓操作  # noqa: E501
+        set to true if trying to close the position  # noqa: E501
 
         :return: The close of this FuturesOrder.  # noqa: E501
         :rtype: bool
@@ -325,7 +325,7 @@ class FuturesOrder(object):
     def close(self, close):
         """Sets the close of this FuturesOrder.
 
-        设置为 true 的时候执行平仓操作  # noqa: E501
+        set to true if trying to close the position  # noqa: E501
 
         :param close: The close of this FuturesOrder.  # noqa: E501
         :type: bool
@@ -337,7 +337,7 @@ class FuturesOrder(object):
     def is_close(self):
         """Gets the is_close of this FuturesOrder.  # noqa: E501
 
-        该订单是平仓订单。下单时如果设置 `close` 为 true ，则对应返回的订单状态中 `is_close` 会设置为 `true`  # noqa: E501
+        the order is a closing position order.  # noqa: E501
 
         :return: The is_close of this FuturesOrder.  # noqa: E501
         :rtype: bool
@@ -348,7 +348,7 @@ class FuturesOrder(object):
     def is_close(self, is_close):
         """Sets the is_close of this FuturesOrder.
 
-        该订单是平仓订单。下单时如果设置 `close` 为 true ，则对应返回的订单状态中 `is_close` 会设置为 `true`  # noqa: E501
+        the order is a closing position order.  # noqa: E501
 
         :param is_close: The is_close of this FuturesOrder.  # noqa: E501
         :type: bool
@@ -360,7 +360,7 @@ class FuturesOrder(object):
     def tif(self):
         """Gets the tif of this FuturesOrder.  # noqa: E501
 
-        Time in force 策略，市价单当前只支持 ioc 模式  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled   # noqa: E501
+        Time in force. If using market price, only `ioc` is supported.  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled   # noqa: E501
 
         :return: The tif of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -371,7 +371,7 @@ class FuturesOrder(object):
     def tif(self, tif):
         """Sets the tif of this FuturesOrder.
 
-        Time in force 策略，市价单当前只支持 ioc 模式  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled   # noqa: E501
+        Time in force. If using market price, only `ioc` is supported.  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled   # noqa: E501
 
         :param tif: The tif of this FuturesOrder.  # noqa: E501
         :type: str
@@ -389,7 +389,7 @@ class FuturesOrder(object):
     def left(self):
         """Gets the left of this FuturesOrder.  # noqa: E501
 
-        未成交数量  # noqa: E501
+        size left to be traded  # noqa: E501
 
         :return: The left of this FuturesOrder.  # noqa: E501
         :rtype: int
@@ -400,7 +400,7 @@ class FuturesOrder(object):
     def left(self, left):
         """Sets the left of this FuturesOrder.
 
-        未成交数量  # noqa: E501
+        size left to be traded  # noqa: E501
 
         :param left: The left of this FuturesOrder.  # noqa: E501
         :type: int
@@ -412,7 +412,7 @@ class FuturesOrder(object):
     def fill_price(self):
         """Gets the fill_price of this FuturesOrder.  # noqa: E501
 
-        成交价  # noqa: E501
+        fill price of the order  # noqa: E501
 
         :return: The fill_price of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -423,7 +423,7 @@ class FuturesOrder(object):
     def fill_price(self, fill_price):
         """Sets the fill_price of this FuturesOrder.
 
-        成交价  # noqa: E501
+        fill price of the order  # noqa: E501
 
         :param fill_price: The fill_price of this FuturesOrder.  # noqa: E501
         :type: str
@@ -435,7 +435,7 @@ class FuturesOrder(object):
     def text(self):
         """Gets the text of this FuturesOrder.  # noqa: E501
 
-        订单的来源，包括：  - web: 网页 - api: API 调用 - app: 移动端 - auto_deleveraging: 自动减仓 - liquidation: 强制平仓 - insurance: 保险   # noqa: E501
+        how order is created  - web: from web - api: from API - app: from mobile phones - auto_deleveraging: from ADL - liquidation: from liquidation - insurance: from insurance   # noqa: E501
 
         :return: The text of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -446,12 +446,12 @@ class FuturesOrder(object):
     def text(self, text):
         """Sets the text of this FuturesOrder.
 
-        订单的来源，包括：  - web: 网页 - api: API 调用 - app: 移动端 - auto_deleveraging: 自动减仓 - liquidation: 强制平仓 - insurance: 保险   # noqa: E501
+        how order is created  - web: from web - api: from API - app: from mobile phones - auto_deleveraging: from ADL - liquidation: from liquidation - insurance: from insurance   # noqa: E501
 
         :param text: The text of this FuturesOrder.  # noqa: E501
         :type: str
         """
-        allowed_values = ["web", "api", "app", "auto_deleveraging", "liquidation", "insurance", "-"]  # noqa: E501
+        allowed_values = ["web", "api", "app", "auto_deleveraging", "liquidation", "insurance"]  # noqa: E501
         if text not in allowed_values:
             raise ValueError(
                 "Invalid value for `text` ({0}), must be one of {1}"  # noqa: E501

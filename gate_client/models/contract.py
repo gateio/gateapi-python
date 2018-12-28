@@ -3,7 +3,7 @@
 """
     Gate API v4
 
-    APIv4 合约接口提供了与合约交易相关的操作，包括公共接口查询合约市场行情，以及需要认证的私有接口， 实现基于 API 的自动交易。 API 文档按照 OpenAPI v3 标准制定 API 文档， 方便 API 使用者能够轻松生成需要的客户端代码，快速接入新的功能   # noqa: E501
+    APIv4 futures provides all sorts of futures trading operations. There are public APIs to retrieve the real-time market statistics, and private APIs which needs authentication to trade on user's behalf.  # noqa: E501
 
     OpenAPI spec version: 1.0.0
     Contact: support@mail.gate.io
@@ -137,7 +137,7 @@ class Contract(object):
     def name(self):
         """Gets the name of this Contract.  # noqa: E501
 
-        期货标识  # noqa: E501
+        Futures name  # noqa: E501
 
         :return: The name of this Contract.  # noqa: E501
         :rtype: str
@@ -148,7 +148,7 @@ class Contract(object):
     def name(self, name):
         """Sets the name of this Contract.
 
-        期货标识  # noqa: E501
+        Futures name  # noqa: E501
 
         :param name: The name of this Contract.  # noqa: E501
         :type: str
@@ -160,7 +160,7 @@ class Contract(object):
     def type(self):
         """Gets the type of this Contract.  # noqa: E501
 
-        合约类型， inverse - 反向合约, quanto - 双币种合约, direct - 正向合约  # noqa: E501
+        Futures type  # noqa: E501
 
         :return: The type of this Contract.  # noqa: E501
         :rtype: str
@@ -171,7 +171,7 @@ class Contract(object):
     def type(self, type):
         """Sets the type of this Contract.
 
-        合约类型， inverse - 反向合约, quanto - 双币种合约, direct - 正向合约  # noqa: E501
+        Futures type  # noqa: E501
 
         :param type: The type of this Contract.  # noqa: E501
         :type: str
@@ -189,7 +189,7 @@ class Contract(object):
     def quanto_multiplier(self):
         """Gets the quanto_multiplier of this Contract.  # noqa: E501
 
-        双币种合约中，计价货币兑换为结算货币的乘数  # noqa: E501
+        Multiplier used in converting from invoicing to settlement currency in quanto futures  # noqa: E501
 
         :return: The quanto_multiplier of this Contract.  # noqa: E501
         :rtype: str
@@ -200,7 +200,7 @@ class Contract(object):
     def quanto_multiplier(self, quanto_multiplier):
         """Sets the quanto_multiplier of this Contract.
 
-        双币种合约中，计价货币兑换为结算货币的乘数  # noqa: E501
+        Multiplier used in converting from invoicing to settlement currency in quanto futures  # noqa: E501
 
         :param quanto_multiplier: The quanto_multiplier of this Contract.  # noqa: E501
         :type: str
@@ -212,7 +212,7 @@ class Contract(object):
     def leverage_min(self):
         """Gets the leverage_min of this Contract.  # noqa: E501
 
-        最小杠杆  # noqa: E501
+        minimum leverage  # noqa: E501
 
         :return: The leverage_min of this Contract.  # noqa: E501
         :rtype: str
@@ -223,7 +223,7 @@ class Contract(object):
     def leverage_min(self, leverage_min):
         """Sets the leverage_min of this Contract.
 
-        最小杠杆  # noqa: E501
+        minimum leverage  # noqa: E501
 
         :param leverage_min: The leverage_min of this Contract.  # noqa: E501
         :type: str
@@ -235,7 +235,7 @@ class Contract(object):
     def leverage_max(self):
         """Gets the leverage_max of this Contract.  # noqa: E501
 
-        最大杠杆  # noqa: E501
+        maximum leverage  # noqa: E501
 
         :return: The leverage_max of this Contract.  # noqa: E501
         :rtype: str
@@ -246,7 +246,7 @@ class Contract(object):
     def leverage_max(self, leverage_max):
         """Sets the leverage_max of this Contract.
 
-        最大杠杆  # noqa: E501
+        maximum leverage  # noqa: E501
 
         :param leverage_max: The leverage_max of this Contract.  # noqa: E501
         :type: str
@@ -258,7 +258,7 @@ class Contract(object):
     def mark_type(self):
         """Gets the mark_type of this Contract.  # noqa: E501
 
-        价格标记方式, internal - 内盘成交价格, index - 外部指数价格  # noqa: E501
+        mark price type, internal - based on internal trading, index - based on external index price  # noqa: E501
 
         :return: The mark_type of this Contract.  # noqa: E501
         :rtype: str
@@ -269,7 +269,7 @@ class Contract(object):
     def mark_type(self, mark_type):
         """Sets the mark_type of this Contract.
 
-        价格标记方式, internal - 内盘成交价格, index - 外部指数价格  # noqa: E501
+        mark price type, internal - based on internal trading, index - based on external index price  # noqa: E501
 
         :param mark_type: The mark_type of this Contract.  # noqa: E501
         :type: str
@@ -287,7 +287,7 @@ class Contract(object):
     def mark_price(self):
         """Gets the mark_price of this Contract.  # noqa: E501
 
-        最近标记的价格  # noqa: E501
+        latest mark price  # noqa: E501
 
         :return: The mark_price of this Contract.  # noqa: E501
         :rtype: str
@@ -298,7 +298,7 @@ class Contract(object):
     def mark_price(self, mark_price):
         """Sets the mark_price of this Contract.
 
-        最近标记的价格  # noqa: E501
+        latest mark price  # noqa: E501
 
         :param mark_price: The mark_price of this Contract.  # noqa: E501
         :type: str
@@ -310,7 +310,7 @@ class Contract(object):
     def index_price(self):
         """Gets the index_price of this Contract.  # noqa: E501
 
-        指数价格  # noqa: E501
+        latest index price  # noqa: E501
 
         :return: The index_price of this Contract.  # noqa: E501
         :rtype: str
@@ -321,7 +321,7 @@ class Contract(object):
     def index_price(self, index_price):
         """Sets the index_price of this Contract.
 
-        指数价格  # noqa: E501
+        latest index price  # noqa: E501
 
         :param index_price: The index_price of this Contract.  # noqa: E501
         :type: str
@@ -333,7 +333,7 @@ class Contract(object):
     def maintenance_rate(self):
         """Gets the maintenance_rate of this Contract.  # noqa: E501
 
-        维持保证金比例  # noqa: E501
+        maintenance rate of margin  # noqa: E501
 
         :return: The maintenance_rate of this Contract.  # noqa: E501
         :rtype: str
@@ -344,7 +344,7 @@ class Contract(object):
     def maintenance_rate(self, maintenance_rate):
         """Sets the maintenance_rate of this Contract.
 
-        维持保证金比例  # noqa: E501
+        maintenance rate of margin  # noqa: E501
 
         :param maintenance_rate: The maintenance_rate of this Contract.  # noqa: E501
         :type: str
@@ -356,7 +356,7 @@ class Contract(object):
     def funding_rate(self):
         """Gets the funding_rate of this Contract.  # noqa: E501
 
-        资金费率  # noqa: E501
+        funding rate  # noqa: E501
 
         :return: The funding_rate of this Contract.  # noqa: E501
         :rtype: str
@@ -367,7 +367,7 @@ class Contract(object):
     def funding_rate(self, funding_rate):
         """Sets the funding_rate of this Contract.
 
-        资金费率  # noqa: E501
+        funding rate  # noqa: E501
 
         :param funding_rate: The funding_rate of this Contract.  # noqa: E501
         :type: str
@@ -379,7 +379,7 @@ class Contract(object):
     def funding_interval(self):
         """Gets the funding_interval of this Contract.  # noqa: E501
 
-        资金费率应用间隔，以秒为单位  # noqa: E501
+        funding application interval, unit in seconds  # noqa: E501
 
         :return: The funding_interval of this Contract.  # noqa: E501
         :rtype: int
@@ -390,7 +390,7 @@ class Contract(object):
     def funding_interval(self, funding_interval):
         """Sets the funding_interval of this Contract.
 
-        资金费率应用间隔，以秒为单位  # noqa: E501
+        funding application interval, unit in seconds  # noqa: E501
 
         :param funding_interval: The funding_interval of this Contract.  # noqa: E501
         :type: int
@@ -402,7 +402,7 @@ class Contract(object):
     def funding_next_apply(self):
         """Gets the funding_next_apply of this Contract.  # noqa: E501
 
-        下次资金费率应用时间  # noqa: E501
+        next funding time  # noqa: E501
 
         :return: The funding_next_apply of this Contract.  # noqa: E501
         :rtype: float
@@ -413,7 +413,7 @@ class Contract(object):
     def funding_next_apply(self, funding_next_apply):
         """Sets the funding_next_apply of this Contract.
 
-        下次资金费率应用时间  # noqa: E501
+        next funding time  # noqa: E501
 
         :param funding_next_apply: The funding_next_apply of this Contract.  # noqa: E501
         :type: float
@@ -425,7 +425,7 @@ class Contract(object):
     def risk_limit_base(self):
         """Gets the risk_limit_base of this Contract.  # noqa: E501
 
-        基础风险限额  # noqa: E501
+        risk limit base  # noqa: E501
 
         :return: The risk_limit_base of this Contract.  # noqa: E501
         :rtype: str
@@ -436,7 +436,7 @@ class Contract(object):
     def risk_limit_base(self, risk_limit_base):
         """Sets the risk_limit_base of this Contract.
 
-        基础风险限额  # noqa: E501
+        risk limit base  # noqa: E501
 
         :param risk_limit_base: The risk_limit_base of this Contract.  # noqa: E501
         :type: str
@@ -448,7 +448,7 @@ class Contract(object):
     def risk_limit_step(self):
         """Gets the risk_limit_step of this Contract.  # noqa: E501
 
-        风险限额调整步长  # noqa: E501
+        step of adjusting risk limit  # noqa: E501
 
         :return: The risk_limit_step of this Contract.  # noqa: E501
         :rtype: str
@@ -459,7 +459,7 @@ class Contract(object):
     def risk_limit_step(self, risk_limit_step):
         """Sets the risk_limit_step of this Contract.
 
-        风险限额调整步长  # noqa: E501
+        step of adjusting risk limit  # noqa: E501
 
         :param risk_limit_step: The risk_limit_step of this Contract.  # noqa: E501
         :type: str
@@ -471,7 +471,7 @@ class Contract(object):
     def risk_limit_max(self):
         """Gets the risk_limit_max of this Contract.  # noqa: E501
 
-        期货允许的最大风险限额  # noqa: E501
+        maximum risk limit the contract allowed  # noqa: E501
 
         :return: The risk_limit_max of this Contract.  # noqa: E501
         :rtype: str
@@ -482,7 +482,7 @@ class Contract(object):
     def risk_limit_max(self, risk_limit_max):
         """Sets the risk_limit_max of this Contract.
 
-        期货允许的最大风险限额  # noqa: E501
+        maximum risk limit the contract allowed  # noqa: E501
 
         :param risk_limit_max: The risk_limit_max of this Contract.  # noqa: E501
         :type: str
@@ -494,7 +494,7 @@ class Contract(object):
     def order_size_min(self):
         """Gets the order_size_min of this Contract.  # noqa: E501
 
-        最小下单数量  # noqa: E501
+        minimum order size the contract allowed  # noqa: E501
 
         :return: The order_size_min of this Contract.  # noqa: E501
         :rtype: int
@@ -505,7 +505,7 @@ class Contract(object):
     def order_size_min(self, order_size_min):
         """Sets the order_size_min of this Contract.
 
-        最小下单数量  # noqa: E501
+        minimum order size the contract allowed  # noqa: E501
 
         :param order_size_min: The order_size_min of this Contract.  # noqa: E501
         :type: int
@@ -517,7 +517,7 @@ class Contract(object):
     def order_size_max(self):
         """Gets the order_size_max of this Contract.  # noqa: E501
 
-        最大下单数量  # noqa: E501
+        maximum order size the contract allowed  # noqa: E501
 
         :return: The order_size_max of this Contract.  # noqa: E501
         :rtype: int
@@ -528,7 +528,7 @@ class Contract(object):
     def order_size_max(self, order_size_max):
         """Sets the order_size_max of this Contract.
 
-        最大下单数量  # noqa: E501
+        maximum order size the contract allowed  # noqa: E501
 
         :param order_size_max: The order_size_max of this Contract.  # noqa: E501
         :type: int
@@ -540,7 +540,7 @@ class Contract(object):
     def order_price_deviate(self):
         """Gets the order_price_deviate of this Contract.  # noqa: E501
 
-        下单价与当前标记价格允许的正负偏移量， 即下单价 `order_price` 需满足如下条件:      abs(order_price - mark_price) <= mark_price * order_price_deviate   # noqa: E501
+        deviation between order price and current index price. If price of an order is denoted as `order_price`, it must meet the following condition:      abs(order_price - mark_price) <= mark_price * order_price_deviate   # noqa: E501
 
         :return: The order_price_deviate of this Contract.  # noqa: E501
         :rtype: str
@@ -551,7 +551,7 @@ class Contract(object):
     def order_price_deviate(self, order_price_deviate):
         """Sets the order_price_deviate of this Contract.
 
-        下单价与当前标记价格允许的正负偏移量， 即下单价 `order_price` 需满足如下条件:      abs(order_price - mark_price) <= mark_price * order_price_deviate   # noqa: E501
+        deviation between order price and current index price. If price of an order is denoted as `order_price`, it must meet the following condition:      abs(order_price - mark_price) <= mark_price * order_price_deviate   # noqa: E501
 
         :param order_price_deviate: The order_price_deviate of this Contract.  # noqa: E501
         :type: str

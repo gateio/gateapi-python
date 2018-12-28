@@ -3,7 +3,7 @@
 """
     Gate API v4
 
-    APIv4 合约接口提供了与合约交易相关的操作，包括公共接口查询合约市场行情，以及需要认证的私有接口， 实现基于 API 的自动交易。 API 文档按照 OpenAPI v3 标准制定 API 文档， 方便 API 使用者能够轻松生成需要的客户端代码，快速接入新的功能   # noqa: E501
+    APIv4 futures provides all sorts of futures trading operations. There are public APIs to retrieve the real-time market statistics, and private APIs which needs authentication to trade on user's behalf.  # noqa: E501
 
     OpenAPI spec version: 1.0.0
     Contact: support@mail.gate.io
@@ -72,7 +72,7 @@ class FuturesAccount(object):
     def total(self):
         """Gets the total of this FuturesAccount.  # noqa: E501
 
-        账户总资产, total = position_margin + order_margin + available  # noqa: E501
+        total assets, total = position_margin + order_margin + available  # noqa: E501
 
         :return: The total of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -83,7 +83,7 @@ class FuturesAccount(object):
     def total(self, total):
         """Sets the total of this FuturesAccount.
 
-        账户总资产, total = position_margin + order_margin + available  # noqa: E501
+        total assets, total = position_margin + order_margin + available  # noqa: E501
 
         :param total: The total of this FuturesAccount.  # noqa: E501
         :type: str
@@ -95,7 +95,7 @@ class FuturesAccount(object):
     def unrealised_pnl(self):
         """Gets the unrealised_pnl of this FuturesAccount.  # noqa: E501
 
-        未实现盈亏  # noqa: E501
+        unrealized pnl  # noqa: E501
 
         :return: The unrealised_pnl of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -106,7 +106,7 @@ class FuturesAccount(object):
     def unrealised_pnl(self, unrealised_pnl):
         """Sets the unrealised_pnl of this FuturesAccount.
 
-        未实现盈亏  # noqa: E501
+        unrealized pnl  # noqa: E501
 
         :param unrealised_pnl: The unrealised_pnl of this FuturesAccount.  # noqa: E501
         :type: str
@@ -118,7 +118,7 @@ class FuturesAccount(object):
     def position_margin(self):
         """Gets the position_margin of this FuturesAccount.  # noqa: E501
 
-        头寸保证金  # noqa: E501
+        position margin  # noqa: E501
 
         :return: The position_margin of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -129,7 +129,7 @@ class FuturesAccount(object):
     def position_margin(self, position_margin):
         """Sets the position_margin of this FuturesAccount.
 
-        头寸保证金  # noqa: E501
+        position margin  # noqa: E501
 
         :param position_margin: The position_margin of this FuturesAccount.  # noqa: E501
         :type: str
@@ -141,7 +141,7 @@ class FuturesAccount(object):
     def order_margin(self):
         """Gets the order_margin of this FuturesAccount.  # noqa: E501
 
-        未完成订单的保证金  # noqa: E501
+        order margin of unfinished orders  # noqa: E501
 
         :return: The order_margin of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -152,7 +152,7 @@ class FuturesAccount(object):
     def order_margin(self, order_margin):
         """Sets the order_margin of this FuturesAccount.
 
-        未完成订单的保证金  # noqa: E501
+        order margin of unfinished orders  # noqa: E501
 
         :param order_margin: The order_margin of this FuturesAccount.  # noqa: E501
         :type: str
@@ -164,7 +164,7 @@ class FuturesAccount(object):
     def available(self):
         """Gets the available of this FuturesAccount.  # noqa: E501
 
-        可用的转出或交易的额度  # noqa: E501
+        available balance to transfer out or trade  # noqa: E501
 
         :return: The available of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -175,7 +175,7 @@ class FuturesAccount(object):
     def available(self, available):
         """Sets the available of this FuturesAccount.
 
-        可用的转出或交易的额度  # noqa: E501
+        available balance to transfer out or trade  # noqa: E501
 
         :param available: The available of this FuturesAccount.  # noqa: E501
         :type: str

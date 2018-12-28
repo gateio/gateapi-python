@@ -3,7 +3,7 @@
 """
     Gate API v4
 
-    APIv4 合约接口提供了与合约交易相关的操作，包括公共接口查询合约市场行情，以及需要认证的私有接口， 实现基于 API 的自动交易。 API 文档按照 OpenAPI v3 标准制定 API 文档， 方便 API 使用者能够轻松生成需要的客户端代码，快速接入新的功能   # noqa: E501
+    APIv4 futures provides all sorts of futures trading operations. There are public APIs to retrieve the real-time market statistics, and private APIs which needs authentication to trade on user's behalf.  # noqa: E501
 
     OpenAPI spec version: 1.0.0
     Contact: support@mail.gate.io
@@ -82,7 +82,7 @@ class MyFuturesTrade(object):
     def id(self):
         """Gets the id of this MyFuturesTrade.  # noqa: E501
 
-        成交记录 ID  # noqa: E501
+        trade ID  # noqa: E501
 
         :return: The id of this MyFuturesTrade.  # noqa: E501
         :rtype: int
@@ -93,7 +93,7 @@ class MyFuturesTrade(object):
     def id(self, id):
         """Sets the id of this MyFuturesTrade.
 
-        成交记录 ID  # noqa: E501
+        trade ID  # noqa: E501
 
         :param id: The id of this MyFuturesTrade.  # noqa: E501
         :type: int
@@ -105,7 +105,7 @@ class MyFuturesTrade(object):
     def create_time(self):
         """Gets the create_time of this MyFuturesTrade.  # noqa: E501
 
-        成交时间  # noqa: E501
+        trade time  # noqa: E501
 
         :return: The create_time of this MyFuturesTrade.  # noqa: E501
         :rtype: float
@@ -116,7 +116,7 @@ class MyFuturesTrade(object):
     def create_time(self, create_time):
         """Sets the create_time of this MyFuturesTrade.
 
-        成交时间  # noqa: E501
+        trade time  # noqa: E501
 
         :param create_time: The create_time of this MyFuturesTrade.  # noqa: E501
         :type: float
@@ -128,7 +128,7 @@ class MyFuturesTrade(object):
     def contract(self):
         """Gets the contract of this MyFuturesTrade.  # noqa: E501
 
-        期货合约标识  # noqa: E501
+        contract name  # noqa: E501
 
         :return: The contract of this MyFuturesTrade.  # noqa: E501
         :rtype: str
@@ -139,7 +139,7 @@ class MyFuturesTrade(object):
     def contract(self, contract):
         """Sets the contract of this MyFuturesTrade.
 
-        期货合约标识  # noqa: E501
+        contract name  # noqa: E501
 
         :param contract: The contract of this MyFuturesTrade.  # noqa: E501
         :type: str
@@ -151,7 +151,7 @@ class MyFuturesTrade(object):
     def order_id(self):
         """Gets the order_id of this MyFuturesTrade.  # noqa: E501
 
-        成交记录关联订单 ID  # noqa: E501
+        related order ID  # noqa: E501
 
         :return: The order_id of this MyFuturesTrade.  # noqa: E501
         :rtype: str
@@ -162,7 +162,7 @@ class MyFuturesTrade(object):
     def order_id(self, order_id):
         """Sets the order_id of this MyFuturesTrade.
 
-        成交记录关联订单 ID  # noqa: E501
+        related order ID  # noqa: E501
 
         :param order_id: The order_id of this MyFuturesTrade.  # noqa: E501
         :type: str
@@ -174,7 +174,7 @@ class MyFuturesTrade(object):
     def size(self):
         """Gets the size of this MyFuturesTrade.  # noqa: E501
 
-        成交数量  # noqa: E501
+        trade size  # noqa: E501
 
         :return: The size of this MyFuturesTrade.  # noqa: E501
         :rtype: int
@@ -185,7 +185,7 @@ class MyFuturesTrade(object):
     def size(self, size):
         """Sets the size of this MyFuturesTrade.
 
-        成交数量  # noqa: E501
+        trade size  # noqa: E501
 
         :param size: The size of this MyFuturesTrade.  # noqa: E501
         :type: int
@@ -197,7 +197,7 @@ class MyFuturesTrade(object):
     def price(self):
         """Gets the price of this MyFuturesTrade.  # noqa: E501
 
-        成交价格  # noqa: E501
+        trade price  # noqa: E501
 
         :return: The price of this MyFuturesTrade.  # noqa: E501
         :rtype: str
@@ -208,7 +208,7 @@ class MyFuturesTrade(object):
     def price(self, price):
         """Sets the price of this MyFuturesTrade.
 
-        成交价格  # noqa: E501
+        trade price  # noqa: E501
 
         :param price: The price of this MyFuturesTrade.  # noqa: E501
         :type: str
@@ -220,7 +220,7 @@ class MyFuturesTrade(object):
     def role(self):
         """Gets the role of this MyFuturesTrade.  # noqa: E501
 
-        成交角色， taker - 吃单, maker - 做单  # noqa: E501
+        trade role  # noqa: E501
 
         :return: The role of this MyFuturesTrade.  # noqa: E501
         :rtype: str
@@ -231,7 +231,7 @@ class MyFuturesTrade(object):
     def role(self, role):
         """Sets the role of this MyFuturesTrade.
 
-        成交角色， taker - 吃单, maker - 做单  # noqa: E501
+        trade role  # noqa: E501
 
         :param role: The role of this MyFuturesTrade.  # noqa: E501
         :type: str

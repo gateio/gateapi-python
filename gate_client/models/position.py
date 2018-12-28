@@ -3,7 +3,7 @@
 """
     Gate API v4
 
-    APIv4 合约接口提供了与合约交易相关的操作，包括公共接口查询合约市场行情，以及需要认证的私有接口， 实现基于 API 的自动交易。 API 文档按照 OpenAPI v3 标准制定 API 文档， 方便 API 使用者能够轻松生成需要的客户端代码，快速接入新的功能   # noqa: E501
+    APIv4 futures provides all sorts of futures trading operations. There are public APIs to retrieve the real-time market statistics, and private APIs which needs authentication to trade on user's behalf.  # noqa: E501
 
     OpenAPI spec version: 1.0.0
     Contact: support@mail.gate.io
@@ -132,7 +132,7 @@ class Position(object):
     def contract(self):
         """Gets the contract of this Position.  # noqa: E501
 
-        期货合约标识  # noqa: E501
+        futures contract name  # noqa: E501
 
         :return: The contract of this Position.  # noqa: E501
         :rtype: str
@@ -143,7 +143,7 @@ class Position(object):
     def contract(self, contract):
         """Sets the contract of this Position.
 
-        期货合约标识  # noqa: E501
+        futures contract name  # noqa: E501
 
         :param contract: The contract of this Position.  # noqa: E501
         :type: str
@@ -155,7 +155,7 @@ class Position(object):
     def size(self):
         """Gets the size of this Position.  # noqa: E501
 
-        头寸大小  # noqa: E501
+        position size  # noqa: E501
 
         :return: The size of this Position.  # noqa: E501
         :rtype: int
@@ -166,7 +166,7 @@ class Position(object):
     def size(self, size):
         """Sets the size of this Position.
 
-        头寸大小  # noqa: E501
+        position size  # noqa: E501
 
         :param size: The size of this Position.  # noqa: E501
         :type: int
@@ -178,7 +178,7 @@ class Position(object):
     def leverage(self):
         """Gets the leverage of this Position.  # noqa: E501
 
-        杠杆倍数  # noqa: E501
+        position leverage  # noqa: E501
 
         :return: The leverage of this Position.  # noqa: E501
         :rtype: str
@@ -189,7 +189,7 @@ class Position(object):
     def leverage(self, leverage):
         """Sets the leverage of this Position.
 
-        杠杆倍数  # noqa: E501
+        position leverage  # noqa: E501
 
         :param leverage: The leverage of this Position.  # noqa: E501
         :type: str
@@ -201,7 +201,7 @@ class Position(object):
     def leverage_max(self):
         """Gets the leverage_max of this Position.  # noqa: E501
 
-        该头寸允许的最大杠杆倍数  # noqa: E501
+        maximum leverage of position  # noqa: E501
 
         :return: The leverage_max of this Position.  # noqa: E501
         :rtype: str
@@ -212,7 +212,7 @@ class Position(object):
     def leverage_max(self, leverage_max):
         """Sets the leverage_max of this Position.
 
-        该头寸允许的最大杠杆倍数  # noqa: E501
+        maximum leverage of position  # noqa: E501
 
         :param leverage_max: The leverage_max of this Position.  # noqa: E501
         :type: str
@@ -224,7 +224,7 @@ class Position(object):
     def value(self):
         """Gets the value of this Position.  # noqa: E501
 
-        按结算币种标记价格计算的合约价值  # noqa: E501
+        position value calculated in settlement currency  # noqa: E501
 
         :return: The value of this Position.  # noqa: E501
         :rtype: str
@@ -235,7 +235,7 @@ class Position(object):
     def value(self, value):
         """Sets the value of this Position.
 
-        按结算币种标记价格计算的合约价值  # noqa: E501
+        position value calculated in settlement currency  # noqa: E501
 
         :param value: The value of this Position.  # noqa: E501
         :type: str
@@ -247,7 +247,7 @@ class Position(object):
     def margin(self):
         """Gets the margin of this Position.  # noqa: E501
 
-        保证金  # noqa: E501
+        position margin  # noqa: E501
 
         :return: The margin of this Position.  # noqa: E501
         :rtype: str
@@ -258,7 +258,7 @@ class Position(object):
     def margin(self, margin):
         """Sets the margin of this Position.
 
-        保证金  # noqa: E501
+        position margin  # noqa: E501
 
         :param margin: The margin of this Position.  # noqa: E501
         :type: str
@@ -270,7 +270,7 @@ class Position(object):
     def entry_price(self):
         """Gets the entry_price of this Position.  # noqa: E501
 
-        开仓价格  # noqa: E501
+        entry price  # noqa: E501
 
         :return: The entry_price of this Position.  # noqa: E501
         :rtype: str
@@ -281,7 +281,7 @@ class Position(object):
     def entry_price(self, entry_price):
         """Sets the entry_price of this Position.
 
-        开仓价格  # noqa: E501
+        entry price  # noqa: E501
 
         :param entry_price: The entry_price of this Position.  # noqa: E501
         :type: str
@@ -293,7 +293,7 @@ class Position(object):
     def liq_price(self):
         """Gets the liq_price of this Position.  # noqa: E501
 
-        爆仓价格  # noqa: E501
+        liquidation price  # noqa: E501
 
         :return: The liq_price of this Position.  # noqa: E501
         :rtype: str
@@ -304,7 +304,7 @@ class Position(object):
     def liq_price(self, liq_price):
         """Sets the liq_price of this Position.
 
-        爆仓价格  # noqa: E501
+        liquidation price  # noqa: E501
 
         :param liq_price: The liq_price of this Position.  # noqa: E501
         :type: str
@@ -316,7 +316,7 @@ class Position(object):
     def unrealised_pnl(self):
         """Gets the unrealised_pnl of this Position.  # noqa: E501
 
-        未实现盈亏  # noqa: E501
+        unrealised pnl  # noqa: E501
 
         :return: The unrealised_pnl of this Position.  # noqa: E501
         :rtype: str
@@ -327,7 +327,7 @@ class Position(object):
     def unrealised_pnl(self, unrealised_pnl):
         """Sets the unrealised_pnl of this Position.
 
-        未实现盈亏  # noqa: E501
+        unrealised pnl  # noqa: E501
 
         :param unrealised_pnl: The unrealised_pnl of this Position.  # noqa: E501
         :type: str
@@ -339,7 +339,7 @@ class Position(object):
     def realised_pnl(self):
         """Gets the realised_pnl of this Position.  # noqa: E501
 
-        已实现盈亏  # noqa: E501
+        realised pnl  # noqa: E501
 
         :return: The realised_pnl of this Position.  # noqa: E501
         :rtype: str
@@ -350,7 +350,7 @@ class Position(object):
     def realised_pnl(self, realised_pnl):
         """Sets the realised_pnl of this Position.
 
-        已实现盈亏  # noqa: E501
+        realised pnl  # noqa: E501
 
         :param realised_pnl: The realised_pnl of this Position.  # noqa: E501
         :type: str
@@ -362,7 +362,7 @@ class Position(object):
     def history_pnl(self):
         """Gets the history_pnl of this Position.  # noqa: E501
 
-        已平仓的仓位总盈亏  # noqa: E501
+        history realised pnl  # noqa: E501
 
         :return: The history_pnl of this Position.  # noqa: E501
         :rtype: str
@@ -373,7 +373,7 @@ class Position(object):
     def history_pnl(self, history_pnl):
         """Sets the history_pnl of this Position.
 
-        已平仓的仓位总盈亏  # noqa: E501
+        history realised pnl  # noqa: E501
 
         :param history_pnl: The history_pnl of this Position.  # noqa: E501
         :type: str
@@ -385,7 +385,7 @@ class Position(object):
     def locked(self):
         """Gets the locked of this Position.  # noqa: E501
 
-        被锁定。如爆仓失败时会被锁定  # noqa: E501
+        is position locked. e.g. position will be locked if failed to liquidate  # noqa: E501
 
         :return: The locked of this Position.  # noqa: E501
         :rtype: bool
@@ -396,7 +396,7 @@ class Position(object):
     def locked(self, locked):
         """Sets the locked of this Position.
 
-        被锁定。如爆仓失败时会被锁定  # noqa: E501
+        is position locked. e.g. position will be locked if failed to liquidate  # noqa: E501
 
         :param locked: The locked of this Position.  # noqa: E501
         :type: bool
@@ -408,7 +408,7 @@ class Position(object):
     def risk_limit(self):
         """Gets the risk_limit of this Position.  # noqa: E501
 
-        风险限额  # noqa: E501
+        position risk limit  # noqa: E501
 
         :return: The risk_limit of this Position.  # noqa: E501
         :rtype: str
@@ -419,7 +419,7 @@ class Position(object):
     def risk_limit(self, risk_limit):
         """Sets the risk_limit of this Position.
 
-        风险限额  # noqa: E501
+        position risk limit  # noqa: E501
 
         :param risk_limit: The risk_limit of this Position.  # noqa: E501
         :type: str
@@ -431,7 +431,7 @@ class Position(object):
     def adl_ranking(self):
         """Gets the adl_ranking of this Position.  # noqa: E501
 
-        自动减仓排名，共1-5个等级，超过5的不参与排名  # noqa: E501
+        AutoDeleverage ranking, from 1 to 5. Ranking larger than 5 is not considered  # noqa: E501
 
         :return: The adl_ranking of this Position.  # noqa: E501
         :rtype: int
@@ -442,7 +442,7 @@ class Position(object):
     def adl_ranking(self, adl_ranking):
         """Sets the adl_ranking of this Position.
 
-        自动减仓排名，共1-5个等级，超过5的不参与排名  # noqa: E501
+        AutoDeleverage ranking, from 1 to 5. Ranking larger than 5 is not considered  # noqa: E501
 
         :param adl_ranking: The adl_ranking of this Position.  # noqa: E501
         :type: int
@@ -454,7 +454,7 @@ class Position(object):
     def close_price(self):
         """Gets the close_price of this Position.  # noqa: E501
 
-        仓位平仓的价格。只对平仓中的仓位才有意义，非平仓时为0  # noqa: E501
+        close price of position in closing. 0 if position is not in closing  # noqa: E501
 
         :return: The close_price of this Position.  # noqa: E501
         :rtype: str
@@ -465,7 +465,7 @@ class Position(object):
     def close_price(self, close_price):
         """Sets the close_price of this Position.
 
-        仓位平仓的价格。只对平仓中的仓位才有意义，非平仓时为0  # noqa: E501
+        close price of position in closing. 0 if position is not in closing  # noqa: E501
 
         :param close_price: The close_price of this Position.  # noqa: E501
         :type: str
@@ -477,7 +477,7 @@ class Position(object):
     def close_order_id(self):
         """Gets the close_order_id of this Position.  # noqa: E501
 
-        平仓的订单 ID ，非平仓时为 0  # noqa: E501
+        close order id if position in closing  # noqa: E501
 
         :return: The close_order_id of this Position.  # noqa: E501
         :rtype: str
@@ -488,7 +488,7 @@ class Position(object):
     def close_order_id(self, close_order_id):
         """Sets the close_order_id of this Position.
 
-        平仓的订单 ID ，非平仓时为 0  # noqa: E501
+        close order id if position in closing  # noqa: E501
 
         :param close_order_id: The close_order_id of this Position.  # noqa: E501
         :type: str
@@ -500,7 +500,7 @@ class Position(object):
     def last_close_pnl(self):
         """Gets the last_close_pnl of this Position.  # noqa: E501
 
-        最近一次完全平仓的盈亏  # noqa: E501
+        last closed pnl  # noqa: E501
 
         :return: The last_close_pnl of this Position.  # noqa: E501
         :rtype: str
@@ -511,7 +511,7 @@ class Position(object):
     def last_close_pnl(self, last_close_pnl):
         """Sets the last_close_pnl of this Position.
 
-        最近一次完全平仓的盈亏  # noqa: E501
+        last closed pnl  # noqa: E501
 
         :param last_close_pnl: The last_close_pnl of this Position.  # noqa: E501
         :type: str

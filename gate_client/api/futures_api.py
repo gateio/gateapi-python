@@ -3,7 +3,7 @@
 """
     Gate API v4
 
-    APIv4 合约接口提供了与合约交易相关的操作，包括公共接口查询合约市场行情，以及需要认证的私有接口， 实现基于 API 的自动交易。 API 文档按照 OpenAPI v3 标准制定 API 文档， 方便 API 使用者能够轻松生成需要的客户端代码，快速接入新的功能   # noqa: E501
+    APIv4 futures provides all sorts of futures trading operations. There are public APIs to retrieve the real-time market statistics, and private APIs which needs authentication to trade on user's behalf.  # noqa: E501
 
     OpenAPI spec version: 1.0.0
     Contact: support@mail.gate.io
@@ -34,7 +34,7 @@ class FuturesApi(object):
         self.api_client = api_client
 
     def cancel_order(self, order_id, **kwargs):  # noqa: E501
-        """撤销单个订单  # noqa: E501
+        """Cancel a single order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -42,7 +42,7 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str order_id: 成功创建订单时返回的 ID (required)
+        :param str order_id: order id (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -55,7 +55,7 @@ class FuturesApi(object):
             return data
 
     def cancel_order_with_http_info(self, order_id, **kwargs):  # noqa: E501
-        """撤销单个订单  # noqa: E501
+        """Cancel a single order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -63,7 +63,7 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str order_id: 成功创建订单时返回的 ID (required)
+        :param str order_id: order id (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -124,7 +124,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def cancel_orders(self, contract, **kwargs):  # noqa: E501
-        """批量取消状态为 open 的订单  # noqa: E501
+        """Cancel all &#x60;open&#x60; orders matched  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -132,8 +132,8 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param str side: 指定全部买单或全部卖单，不指定则两者都包括
+        :param str contract: futures contract (required)
+        :param str side: All bids or asks. Both included in not specfied
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -146,7 +146,7 @@ class FuturesApi(object):
             return data
 
     def cancel_orders_with_http_info(self, contract, **kwargs):  # noqa: E501
-        """批量取消状态为 open 的订单  # noqa: E501
+        """Cancel all &#x60;open&#x60; orders matched  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -154,8 +154,8 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param str side: 指定全部买单或全部卖单，不指定则两者都包括
+        :param str contract: futures contract (required)
+        :param str side: All bids or asks. Both included in not specfied
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -218,7 +218,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def create_order(self, **kwargs):  # noqa: E501
-        """期货交易下单  # noqa: E501
+        """Create a futures order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -239,7 +239,7 @@ class FuturesApi(object):
             return data
 
     def create_order_with_http_info(self, **kwargs):  # noqa: E501
-        """期货交易下单  # noqa: E501
+        """Create a futures order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -312,7 +312,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def get_my_trades(self, **kwargs):  # noqa: E501
-        """查询个人成交记录  # noqa: E501
+        """List personal trading history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -320,9 +320,9 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识，如果指定则只返回该合约相关数据
-        :param int limit: 列表返回的最大数量
-        :param str last_id: 以上个列表的最后一条记录的 ID 作为下个列表的起点
+        :param str contract: futures contract. If specified, return only data related to the contract
+        :param int limit: maximum number of data returned in one request
+        :param str last_id: specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query
         :return: list[MyFuturesTrade]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -335,7 +335,7 @@ class FuturesApi(object):
             return data
 
     def get_my_trades_with_http_info(self, **kwargs):  # noqa: E501
-        """查询个人成交记录  # noqa: E501
+        """List personal trading history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -343,9 +343,9 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识，如果指定则只返回该合约相关数据
-        :param int limit: 列表返回的最大数量
-        :param str last_id: 以上个列表的最后一条记录的 ID 作为下个列表的起点
+        :param str contract: futures contract. If specified, return only data related to the contract
+        :param int limit: maximum number of data returned in one request
+        :param str last_id: specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query
         :return: list[MyFuturesTrade]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -414,7 +414,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def get_order(self, order_id, **kwargs):  # noqa: E501
-        """查询单个订单详情  # noqa: E501
+        """Get a single order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -422,7 +422,7 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str order_id: 成功创建订单时返回的 ID (required)
+        :param str order_id: order id (required)
         :return: FuturesOrder
                  If the method is called asynchronously,
                  returns the request thread.
@@ -435,7 +435,7 @@ class FuturesApi(object):
             return data
 
     def get_order_with_http_info(self, order_id, **kwargs):  # noqa: E501
-        """查询单个订单详情  # noqa: E501
+        """Get a single order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -443,7 +443,7 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str order_id: 成功创建订单时返回的 ID (required)
+        :param str order_id: order id (required)
         :return: FuturesOrder
                  If the method is called asynchronously,
                  returns the request thread.
@@ -508,9 +508,8 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def list_futures_accounts(self, **kwargs):  # noqa: E501
-        """获取期货账号  # noqa: E501
+        """Query futures account  # noqa: E501
 
-        期货交易目前只按照 BTC 结算，所以账号只会有一个，但是为了保持 API 格式一致， 同样使用列表返回   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_futures_accounts(async_req=True)
@@ -529,9 +528,8 @@ class FuturesApi(object):
             return data
 
     def list_futures_accounts_with_http_info(self, **kwargs):  # noqa: E501
-        """获取期货账号  # noqa: E501
+        """Query futures account  # noqa: E501
 
-        期货交易目前只按照 BTC 结算，所以账号只会有一个，但是为了保持 API 格式一致， 同样使用列表返回   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_futures_accounts_with_http_info(async_req=True)
@@ -596,21 +594,21 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def list_futures_candlesticks(self, contract, **kwargs):  # noqa: E501
-        """期货市场 K 线图  # noqa: E501
+        """Get futures candlesticks  # noqa: E501
 
-        如果 `contract` 字段在合约标识前增加了 `mark_` 前缀则返回标记价格数据(如mark_BTC_USD)， 如果增加了 `index_` 则返回指数价格的数据(如index_BTC_USD)  K 线图数据单次请求最大返回 2000 个点，指定 from, to 和 interval 的时候注意点数不能过多。   # noqa: E501
+        Return specified contract candlesticks. If prefix `contract` with `mark_`, the contract's mark price candlesticks are returned; if prefix with `index_`, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying `from`, `to` and `interval`   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_futures_candlesticks(contract, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param float _from: 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳， 不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间 
-        :param float to: 指定 K 线图的结束时间，不指定则默认当前时间，注意时间格式为秒(s)精度的 Unix 时间戳 
-        :param int limit: 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝 
-        :param str interval: 数据点的时间间隔
-        :return: FuturesCandlesticks
+        :param str contract: futures contract (required)
+        :param float _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to `to - 100 * interval` if not specified 
+        :param float to: End time of candlesticsk, formatted in Unix timestamp in seconds. Default to current time 
+        :param int limit: Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. 
+        :param str interval: interval time between data points
+        :return: FuturesCandlestick
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -622,21 +620,21 @@ class FuturesApi(object):
             return data
 
     def list_futures_candlesticks_with_http_info(self, contract, **kwargs):  # noqa: E501
-        """期货市场 K 线图  # noqa: E501
+        """Get futures candlesticks  # noqa: E501
 
-        如果 `contract` 字段在合约标识前增加了 `mark_` 前缀则返回标记价格数据(如mark_BTC_USD)， 如果增加了 `index_` 则返回指数价格的数据(如index_BTC_USD)  K 线图数据单次请求最大返回 2000 个点，指定 from, to 和 interval 的时候注意点数不能过多。   # noqa: E501
+        Return specified contract candlesticks. If prefix `contract` with `mark_`, the contract's mark price candlesticks are returned; if prefix with `index_`, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying `from`, `to` and `interval`   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_futures_candlesticks_with_http_info(contract, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param float _from: 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳， 不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间 
-        :param float to: 指定 K 线图的结束时间，不指定则默认当前时间，注意时间格式为秒(s)精度的 Unix 时间戳 
-        :param int limit: 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝 
-        :param str interval: 数据点的时间间隔
-        :return: FuturesCandlesticks
+        :param str contract: futures contract (required)
+        :param float _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to `to - 100 * interval` if not specified 
+        :param float to: End time of candlesticsk, formatted in Unix timestamp in seconds. Default to current time 
+        :param int limit: Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. 
+        :param str interval: interval time between data points
+        :return: FuturesCandlestick
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -701,7 +699,7 @@ class FuturesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='FuturesCandlesticks',  # noqa: E501
+            response_type='FuturesCandlestick',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -710,7 +708,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def list_futures_contracts(self, **kwargs):  # noqa: E501
-        """查询所有的期货信息  # noqa: E501
+        """List all futures contracts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -730,7 +728,7 @@ class FuturesApi(object):
             return data
 
     def list_futures_contracts_with_http_info(self, **kwargs):  # noqa: E501
-        """查询所有的期货信息  # noqa: E501
+        """List all futures contracts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -796,7 +794,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def list_futures_funding_rate_history(self, contract, **kwargs):  # noqa: E501
-        """期货市场历史资金费率  # noqa: E501
+        """Funding rate history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -804,9 +802,9 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param int limit: 列表返回的最大数量
-        :return: FundingRateHistory
+        :param str contract: futures contract (required)
+        :param int limit: maximum number of data returned in one request
+        :return: FundingRateRecord
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -818,7 +816,7 @@ class FuturesApi(object):
             return data
 
     def list_futures_funding_rate_history_with_http_info(self, contract, **kwargs):  # noqa: E501
-        """期货市场历史资金费率  # noqa: E501
+        """Funding rate history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -826,9 +824,9 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param int limit: 列表返回的最大数量
-        :return: FundingRateHistory
+        :param str contract: futures contract (required)
+        :param int limit: maximum number of data returned in one request
+        :return: FundingRateRecord
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -889,7 +887,7 @@ class FuturesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='FundingRateHistory',  # noqa: E501
+            response_type='FundingRateRecord',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -898,7 +896,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def list_futures_insurance_ledger(self, **kwargs):  # noqa: E501
-        """期货市场保险基金历史  # noqa: E501
+        """Futures insurance balance history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -906,7 +904,7 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int limit: 列表返回的最大数量
+        :param int limit: maximum number of data returned in one request
         :return: InsuranceRecord
                  If the method is called asynchronously,
                  returns the request thread.
@@ -919,7 +917,7 @@ class FuturesApi(object):
             return data
 
     def list_futures_insurance_ledger_with_http_info(self, **kwargs):  # noqa: E501
-        """期货市场保险基金历史  # noqa: E501
+        """Futures insurance balance history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -927,7 +925,7 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int limit: 列表返回的最大数量
+        :param int limit: maximum number of data returned in one request
         :return: InsuranceRecord
                  If the method is called asynchronously,
                  returns the request thread.
@@ -992,18 +990,18 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def list_futures_order_book(self, contract, **kwargs):  # noqa: E501
-        """查询期货市场深度信息  # noqa: E501
+        """Futures order book  # noqa: E501
 
-        买单会按照价格从高到低排序，卖单反之  # noqa: E501
+        bids will be sorted by price from high to low, while asks sorted reversely  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_futures_order_book(contract, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param str interval: 合并深度指定的价格精度，0 为不合并，不指定则默认为 0
-        :param int limit: 深度档位数量
+        :param str contract: futures contract (required)
+        :param str interval: order depth. 0 means no aggregation is applied. default to 0
+        :param int limit: maximum number of order depth data in asks or bids
         :return: FuturesOrderBook
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1016,18 +1014,18 @@ class FuturesApi(object):
             return data
 
     def list_futures_order_book_with_http_info(self, contract, **kwargs):  # noqa: E501
-        """查询期货市场深度信息  # noqa: E501
+        """Futures order book  # noqa: E501
 
-        买单会按照价格从高到低排序，卖单反之  # noqa: E501
+        bids will be sorted by price from high to low, while asks sorted reversely  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_futures_order_book_with_http_info(contract, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param str interval: 合并深度指定的价格精度，0 为不合并，不指定则默认为 0
-        :param int limit: 深度档位数量
+        :param str contract: futures contract (required)
+        :param str interval: order depth. 0 means no aggregation is applied. default to 0
+        :param int limit: maximum number of order depth data in asks or bids
         :return: FuturesOrderBook
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1100,7 +1098,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def list_futures_tickers(self, **kwargs):  # noqa: E501
-        """获取所有期货交易行情统计  # noqa: E501
+        """List futures tickers  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1108,7 +1106,7 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识，如果指定则只返回该合约相关数据
+        :param str contract: futures contract. If specified, return only data related to the contract
         :return: list[FuturesTicker]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1121,7 +1119,7 @@ class FuturesApi(object):
             return data
 
     def list_futures_tickers_with_http_info(self, **kwargs):  # noqa: E501
-        """获取所有期货交易行情统计  # noqa: E501
+        """List futures tickers  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1129,7 +1127,7 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识，如果指定则只返回该合约相关数据
+        :param str contract: futures contract. If specified, return only data related to the contract
         :return: list[FuturesTicker]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1190,7 +1188,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def list_futures_trades(self, contract, **kwargs):  # noqa: E501
-        """期货市场成交记录  # noqa: E501
+        """Futures trading history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1198,9 +1196,9 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param int limit: 列表返回的最大数量
-        :param str last_id: 以上个列表的最后一条记录的 ID 作为下个列表的起点
+        :param str contract: futures contract (required)
+        :param int limit: maximum number of data returned in one request
+        :param str last_id: specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query
         :return: list[FuturesTrade]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1213,7 +1211,7 @@ class FuturesApi(object):
             return data
 
     def list_futures_trades_with_http_info(self, contract, **kwargs):  # noqa: E501
-        """期货市场成交记录  # noqa: E501
+        """Futures trading history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1221,9 +1219,9 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param int limit: 列表返回的最大数量
-        :param str last_id: 以上个列表的最后一条记录的 ID 作为下个列表的起点
+        :param str contract: futures contract (required)
+        :param int limit: maximum number of data returned in one request
+        :param str last_id: specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query
         :return: list[FuturesTrade]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1296,7 +1294,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def list_orders(self, contract, status, **kwargs):  # noqa: E501
-        """查询订单列表  # noqa: E501
+        """List futures orders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1304,10 +1302,10 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param str status: 基于状态查询订单列表 (required)
-        :param int limit: 列表返回的最大数量
-        :param str last_id: 以上个列表的最后一条记录的 ID 作为下个列表的起点
+        :param str contract: futures contract (required)
+        :param str status: order status (required)
+        :param int limit: maximum number of data returned in one request
+        :param str last_id: specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query
         :return: list[FuturesOrder]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1320,7 +1318,7 @@ class FuturesApi(object):
             return data
 
     def list_orders_with_http_info(self, contract, status, **kwargs):  # noqa: E501
-        """查询订单列表  # noqa: E501
+        """List futures orders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1328,10 +1326,10 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param str status: 基于状态查询订单列表 (required)
-        :param int limit: 列表返回的最大数量
-        :param str last_id: 以上个列表的最后一条记录的 ID 作为下个列表的起点
+        :param str contract: futures contract (required)
+        :param str status: order status (required)
+        :param int limit: maximum number of data returned in one request
+        :param str last_id: specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query
         :return: list[FuturesOrder]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1410,7 +1408,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def list_positions(self, **kwargs):  # noqa: E501
-        """获取用户头寸列表  # noqa: E501
+        """List all positions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1430,7 +1428,7 @@ class FuturesApi(object):
             return data
 
     def list_positions_with_http_info(self, **kwargs):  # noqa: E501
-        """获取用户头寸列表  # noqa: E501
+        """List all positions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1496,7 +1494,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def update_position_leverage(self, contract, leverage, **kwargs):  # noqa: E501
-        """更新头寸杠杆  # noqa: E501
+        """Update position leverage  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1504,8 +1502,8 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param str leverage: 新的杠杆倍数 (required)
+        :param str contract: futures contract (required)
+        :param str leverage: new leverage of position (required)
         :return: Position
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1518,7 +1516,7 @@ class FuturesApi(object):
             return data
 
     def update_position_leverage_with_http_info(self, contract, leverage, **kwargs):  # noqa: E501
-        """更新头寸杠杆  # noqa: E501
+        """Update position leverage  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1526,8 +1524,8 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param str leverage: 新的杠杆倍数 (required)
+        :param str contract: futures contract (required)
+        :param str leverage: new leverage of position (required)
         :return: Position
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1598,7 +1596,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def update_position_margin(self, contract, change, **kwargs):  # noqa: E501
-        """更新头寸保证金  # noqa: E501
+        """Update position margin  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1606,8 +1604,8 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param str change: 保证金变化数额，正数增加，负数减少 (required)
+        :param str contract: futures contract (required)
+        :param str change: margin change. Use positive number to increase margin, negative number otherwise. (required)
         :return: Position
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1620,7 +1618,7 @@ class FuturesApi(object):
             return data
 
     def update_position_margin_with_http_info(self, contract, change, **kwargs):  # noqa: E501
-        """更新头寸保证金  # noqa: E501
+        """Update position margin  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1628,8 +1626,8 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param str change: 保证金变化数额，正数增加，负数减少 (required)
+        :param str contract: futures contract (required)
+        :param str change: margin change. Use positive number to increase margin, negative number otherwise. (required)
         :return: Position
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1700,7 +1698,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def update_position_risk_limit(self, contract, risk_limit, **kwargs):  # noqa: E501
-        """更新头寸风险限额  # noqa: E501
+        """Update poisition risk limit  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1708,8 +1706,8 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param str risk_limit: 新的风险限额 (required)
+        :param str contract: futures contract (required)
+        :param str risk_limit: new risk limit of position (required)
         :return: Position
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1722,7 +1720,7 @@ class FuturesApi(object):
             return data
 
     def update_position_risk_limit_with_http_info(self, contract, risk_limit, **kwargs):  # noqa: E501
-        """更新头寸风险限额  # noqa: E501
+        """Update poisition risk limit  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1730,8 +1728,8 @@ class FuturesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str contract: 期货合约标识 (required)
-        :param str risk_limit: 新的风险限额 (required)
+        :param str contract: futures contract (required)
+        :param str risk_limit: new risk limit of position (required)
         :return: Position
                  If the method is called asynchronously,
                  returns the request thread.

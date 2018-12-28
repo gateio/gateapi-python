@@ -4,105 +4,49 @@ All URIs are relative to *https://fx-api.gateio.io/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_order**](FuturesApi.md#cancel_order) | **DELETE** /futures/orders/{order_id} | 撤销单个订单
-[**cancel_orders**](FuturesApi.md#cancel_orders) | **DELETE** /futures/orders | 批量取消状态为 open 的订单
-[**create_order**](FuturesApi.md#create_order) | **POST** /futures/orders | 期货交易下单
-[**get_my_trades**](FuturesApi.md#get_my_trades) | **GET** /futures/my_trades | 查询个人成交记录
-[**get_order**](FuturesApi.md#get_order) | **GET** /futures/orders/{order_id} | 查询单个订单详情
-[**list_futures_accounts**](FuturesApi.md#list_futures_accounts) | **GET** /futures/accounts | 获取期货账号
-[**list_futures_candlesticks**](FuturesApi.md#list_futures_candlesticks) | **GET** /futures/candlesticks | 期货市场 K 线图
-[**list_futures_contracts**](FuturesApi.md#list_futures_contracts) | **GET** /futures/contracts | 查询所有的期货信息
-[**list_futures_funding_rate_history**](FuturesApi.md#list_futures_funding_rate_history) | **GET** /futures/funding_rate | 期货市场历史资金费率
-[**list_futures_insurance_ledger**](FuturesApi.md#list_futures_insurance_ledger) | **GET** /futures/insurance | 期货市场保险基金历史
-[**list_futures_order_book**](FuturesApi.md#list_futures_order_book) | **GET** /futures/order_book | 查询期货市场深度信息
-[**list_futures_tickers**](FuturesApi.md#list_futures_tickers) | **GET** /futures/tickers | 获取所有期货交易行情统计
-[**list_futures_trades**](FuturesApi.md#list_futures_trades) | **GET** /futures/trades | 期货市场成交记录
-[**list_orders**](FuturesApi.md#list_orders) | **GET** /futures/orders | 查询订单列表
-[**list_positions**](FuturesApi.md#list_positions) | **GET** /futures/positions | 获取用户头寸列表
-[**update_position_leverage**](FuturesApi.md#update_position_leverage) | **POST** /futures/positions/{contract}/leverage | 更新头寸杠杆
-[**update_position_margin**](FuturesApi.md#update_position_margin) | **POST** /futures/positions/{contract}/margin | 更新头寸保证金
-[**update_position_risk_limit**](FuturesApi.md#update_position_risk_limit) | **POST** /futures/positions/{contract}/risk_limit | 更新头寸风险限额
+[**cancel_order**](FuturesApi.md#cancel_order) | **DELETE** /futures/orders/{order_id} | Cancel a single order
+[**cancel_orders**](FuturesApi.md#cancel_orders) | **DELETE** /futures/orders | Cancel all &#x60;open&#x60; orders matched
+[**create_order**](FuturesApi.md#create_order) | **POST** /futures/orders | Create a futures order
+[**get_my_trades**](FuturesApi.md#get_my_trades) | **GET** /futures/my_trades | List personal trading history
+[**get_order**](FuturesApi.md#get_order) | **GET** /futures/orders/{order_id} | Get a single order
+[**list_futures_accounts**](FuturesApi.md#list_futures_accounts) | **GET** /futures/accounts | Query futures account
+[**list_futures_candlesticks**](FuturesApi.md#list_futures_candlesticks) | **GET** /futures/candlesticks | Get futures candlesticks
+[**list_futures_contracts**](FuturesApi.md#list_futures_contracts) | **GET** /futures/contracts | List all futures contracts
+[**list_futures_funding_rate_history**](FuturesApi.md#list_futures_funding_rate_history) | **GET** /futures/funding_rate | Funding rate history
+[**list_futures_insurance_ledger**](FuturesApi.md#list_futures_insurance_ledger) | **GET** /futures/insurance | Futures insurance balance history
+[**list_futures_order_book**](FuturesApi.md#list_futures_order_book) | **GET** /futures/order_book | Futures order book
+[**list_futures_tickers**](FuturesApi.md#list_futures_tickers) | **GET** /futures/tickers | List futures tickers
+[**list_futures_trades**](FuturesApi.md#list_futures_trades) | **GET** /futures/trades | Futures trading history
+[**list_orders**](FuturesApi.md#list_orders) | **GET** /futures/orders | List futures orders
+[**list_positions**](FuturesApi.md#list_positions) | **GET** /futures/positions | List all positions
+[**update_position_leverage**](FuturesApi.md#update_position_leverage) | **POST** /futures/positions/{contract}/leverage | Update position leverage
+[**update_position_margin**](FuturesApi.md#update_position_margin) | **POST** /futures/positions/{contract}/margin | Update position margin
+[**update_position_risk_limit**](FuturesApi.md#update_position_risk_limit) | **POST** /futures/positions/{contract}/risk_limit | Update poisition risk limit
 
 
 # **cancel_order**
 > cancel_order(order_id)
 
-撤销单个订单
+Cancel a single order
 
 ### Example
 
-* Api Key Authentication (api_key): 
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # Configure API key authorization: api_key
 configuration = gate_client.Configuration()
-configuration.api_key['KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['KEY'] = 'Bearer'
+configuration.key = "YOUR_API_KEY"
+configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-order_id = 'order_id_example' # str | 成功创建订单时返回的 ID
+order_id = 'order_id_example' # str | order id
 
 try:
-    # 撤销单个订单
-    api_instance.cancel_order(order_id)
-except ApiException as e:
-    print("Exception when calling FuturesApi->cancel_order: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_sign): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_sign
-configuration = gate_client.Configuration()
-configuration.api_key['SIGN'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['SIGN'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-order_id = 'order_id_example' # str | 成功创建订单时返回的 ID
-
-try:
-    # 撤销单个订单
-    api_instance.cancel_order(order_id)
-except ApiException as e:
-    print("Exception when calling FuturesApi->cancel_order: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_timestamp): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_timestamp
-configuration = gate_client.Configuration()
-configuration.api_key['Timestamp'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Timestamp'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-order_id = 'order_id_example' # str | 成功创建订单时返回的 ID
-
-try:
-    # 撤销单个订单
+    # Cancel a single order
     api_instance.cancel_order(order_id)
 except ApiException as e:
     print("Exception when calling FuturesApi->cancel_order: %s\n" % e)
@@ -112,15 +56,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **str**| 成功创建订单时返回的 ID | 
+ **order_id** | **str**| order id | 
 
 ### Return type
 
 void (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key), [api_sign](../README.md#api_sign), [api_timestamp](../README.md#api_timestamp)
 
 ### HTTP request headers
 
@@ -132,85 +72,27 @@ void (empty response body)
 # **cancel_orders**
 > cancel_orders(contract, side=side)
 
-批量取消状态为 open 的订单
+Cancel all `open` orders matched
 
 ### Example
 
-* Api Key Authentication (api_key): 
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # Configure API key authorization: api_key
 configuration = gate_client.Configuration()
-configuration.api_key['KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['KEY'] = 'Bearer'
+configuration.key = "YOUR_API_KEY"
+configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-side = 'side_example' # str | 指定全部买单或全部卖单，不指定则两者都包括 (optional)
+contract = 'contract_example' # str | futures contract
+side = 'side_example' # str | All bids or asks. Both included in not specfied (optional)
 
 try:
-    # 批量取消状态为 open 的订单
-    api_instance.cancel_orders(contract, side=side)
-except ApiException as e:
-    print("Exception when calling FuturesApi->cancel_orders: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_sign): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_sign
-configuration = gate_client.Configuration()
-configuration.api_key['SIGN'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['SIGN'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-side = 'side_example' # str | 指定全部买单或全部卖单，不指定则两者都包括 (optional)
-
-try:
-    # 批量取消状态为 open 的订单
-    api_instance.cancel_orders(contract, side=side)
-except ApiException as e:
-    print("Exception when calling FuturesApi->cancel_orders: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_timestamp): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_timestamp
-configuration = gate_client.Configuration()
-configuration.api_key['Timestamp'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Timestamp'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-side = 'side_example' # str | 指定全部买单或全部卖单，不指定则两者都包括 (optional)
-
-try:
-    # 批量取消状态为 open 的订单
+    # Cancel all `open` orders matched
     api_instance.cancel_orders(contract, side=side)
 except ApiException as e:
     print("Exception when calling FuturesApi->cancel_orders: %s\n" % e)
@@ -220,16 +102,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| 期货合约标识 | 
- **side** | **str**| 指定全部买单或全部卖单，不指定则两者都包括 | [optional] 
+ **contract** | **str**| futures contract | 
+ **side** | **str**| All bids or asks. Both included in not specfied | [optional] 
 
 ### Return type
 
 void (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key), [api_sign](../README.md#api_sign), [api_timestamp](../README.md#api_timestamp)
 
 ### HTTP request headers
 
@@ -241,86 +119,28 @@ void (empty response body)
 # **create_order**
 > FuturesOrder create_order(futures_order=futures_order)
 
-期货交易下单
+Create a futures order
 
 ### Example
 
-* Api Key Authentication (api_key): 
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # Configure API key authorization: api_key
 configuration = gate_client.Configuration()
-configuration.api_key['KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['KEY'] = 'Bearer'
+configuration.key = "YOUR_API_KEY"
+configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
 futures_order = {"$ref":"examples/mercury/FuturesOrder.json"} # FuturesOrder |  (optional)
 
 try:
-    # 期货交易下单
+    # Create a futures order
     api_response = api_instance.create_order(futures_order=futures_order)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->create_order: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_sign): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_sign
-configuration = gate_client.Configuration()
-configuration.api_key['SIGN'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['SIGN'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-futures_order = {"$ref":"examples/mercury/FuturesOrder.json"} # FuturesOrder |  (optional)
-
-try:
-    # 期货交易下单
-    api_response = api_instance.create_order(futures_order=futures_order)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->create_order: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_timestamp): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_timestamp
-configuration = gate_client.Configuration()
-configuration.api_key['Timestamp'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Timestamp'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-futures_order = {"$ref":"examples/mercury/FuturesOrder.json"} # FuturesOrder |  (optional)
-
-try:
-    # 期货交易下单
-    api_response = api_instance.create_order(futures_order=futures_order)
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->create_order: %s\n" % e)
 ```
@@ -335,10 +155,6 @@ Name | Type | Description  | Notes
 
 [**FuturesOrder**](FuturesOrder.md)
 
-### Authorization
-
-[api_key](../README.md#api_key), [api_sign](../README.md#api_sign), [api_timestamp](../README.md#api_timestamp)
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
@@ -349,92 +165,30 @@ Name | Type | Description  | Notes
 # **get_my_trades**
 > list[MyFuturesTrade] get_my_trades(contract=contract, limit=limit, last_id=last_id)
 
-查询个人成交记录
+List personal trading history
 
 ### Example
 
-* Api Key Authentication (api_key): 
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # Configure API key authorization: api_key
 configuration = gate_client.Configuration()
-configuration.api_key['KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['KEY'] = 'Bearer'
+configuration.key = "YOUR_API_KEY"
+configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识，如果指定则只返回该合约相关数据 (optional)
-limit = 100 # int | 列表返回的最大数量 (optional) (default to 100)
-last_id = 'last_id_example' # str | 以上个列表的最后一条记录的 ID 作为下个列表的起点 (optional)
+contract = 'contract_example' # str | futures contract. If specified, return only data related to the contract (optional)
+limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
+last_id = 'last_id_example' # str | specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query (optional)
 
 try:
-    # 查询个人成交记录
+    # List personal trading history
     api_response = api_instance.get_my_trades(contract=contract, limit=limit, last_id=last_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->get_my_trades: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_sign): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_sign
-configuration = gate_client.Configuration()
-configuration.api_key['SIGN'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['SIGN'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识，如果指定则只返回该合约相关数据 (optional)
-limit = 100 # int | 列表返回的最大数量 (optional) (default to 100)
-last_id = 'last_id_example' # str | 以上个列表的最后一条记录的 ID 作为下个列表的起点 (optional)
-
-try:
-    # 查询个人成交记录
-    api_response = api_instance.get_my_trades(contract=contract, limit=limit, last_id=last_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->get_my_trades: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_timestamp): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_timestamp
-configuration = gate_client.Configuration()
-configuration.api_key['Timestamp'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Timestamp'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识，如果指定则只返回该合约相关数据 (optional)
-limit = 100 # int | 列表返回的最大数量 (optional) (default to 100)
-last_id = 'last_id_example' # str | 以上个列表的最后一条记录的 ID 作为下个列表的起点 (optional)
-
-try:
-    # 查询个人成交记录
-    api_response = api_instance.get_my_trades(contract=contract, limit=limit, last_id=last_id)
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->get_my_trades: %s\n" % e)
 ```
@@ -443,17 +197,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| 期货合约标识，如果指定则只返回该合约相关数据 | [optional] 
- **limit** | **int**| 列表返回的最大数量 | [optional] [default to 100]
- **last_id** | **str**| 以上个列表的最后一条记录的 ID 作为下个列表的起点 | [optional] 
+ **contract** | **str**| futures contract. If specified, return only data related to the contract | [optional] 
+ **limit** | **int**| maximum number of data returned in one request | [optional] [default to 100]
+ **last_id** | **str**| specify list staring record. Use the &#x60;id&#x60; in every last record of one list-query request to achieve consecutive list query | [optional] 
 
 ### Return type
 
 [**list[MyFuturesTrade]**](MyFuturesTrade.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [api_sign](../README.md#api_sign), [api_timestamp](../README.md#api_timestamp)
 
 ### HTTP request headers
 
@@ -465,86 +215,28 @@ Name | Type | Description  | Notes
 # **get_order**
 > FuturesOrder get_order(order_id)
 
-查询单个订单详情
+Get a single order
 
 ### Example
 
-* Api Key Authentication (api_key): 
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # Configure API key authorization: api_key
 configuration = gate_client.Configuration()
-configuration.api_key['KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['KEY'] = 'Bearer'
+configuration.key = "YOUR_API_KEY"
+configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-order_id = 'order_id_example' # str | 成功创建订单时返回的 ID
+order_id = 'order_id_example' # str | order id
 
 try:
-    # 查询单个订单详情
+    # Get a single order
     api_response = api_instance.get_order(order_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->get_order: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_sign): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_sign
-configuration = gate_client.Configuration()
-configuration.api_key['SIGN'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['SIGN'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-order_id = 'order_id_example' # str | 成功创建订单时返回的 ID
-
-try:
-    # 查询单个订单详情
-    api_response = api_instance.get_order(order_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->get_order: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_timestamp): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_timestamp
-configuration = gate_client.Configuration()
-configuration.api_key['Timestamp'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Timestamp'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-order_id = 'order_id_example' # str | 成功创建订单时返回的 ID
-
-try:
-    # 查询单个订单详情
-    api_response = api_instance.get_order(order_id)
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->get_order: %s\n" % e)
 ```
@@ -553,15 +245,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **str**| 成功创建订单时返回的 ID | 
+ **order_id** | **str**| order id | 
 
 ### Return type
 
 [**FuturesOrder**](FuturesOrder.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [api_sign](../README.md#api_sign), [api_timestamp](../README.md#api_timestamp)
 
 ### HTTP request headers
 
@@ -573,85 +261,27 @@ Name | Type | Description  | Notes
 # **list_futures_accounts**
 > FuturesAccount list_futures_accounts()
 
-获取期货账号
-
-期货交易目前只按照 BTC 结算，所以账号只会有一个，但是为了保持 API 格式一致， 同样使用列表返回 
+Query futures account
 
 ### Example
 
-* Api Key Authentication (api_key): 
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # Configure API key authorization: api_key
 configuration = gate_client.Configuration()
-configuration.api_key['KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['KEY'] = 'Bearer'
+configuration.key = "YOUR_API_KEY"
+configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
 
 try:
-    # 获取期货账号
+    # Query futures account
     api_response = api_instance.list_futures_accounts()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->list_futures_accounts: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_sign): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_sign
-configuration = gate_client.Configuration()
-configuration.api_key['SIGN'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['SIGN'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-
-try:
-    # 获取期货账号
-    api_response = api_instance.list_futures_accounts()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->list_futures_accounts: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_timestamp): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_timestamp
-configuration = gate_client.Configuration()
-configuration.api_key['Timestamp'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Timestamp'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-
-try:
-    # 获取期货账号
-    api_response = api_instance.list_futures_accounts()
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->list_futures_accounts: %s\n" % e)
 ```
@@ -663,10 +293,6 @@ This endpoint does not need any parameter.
 
 [**FuturesAccount**](FuturesAccount.md)
 
-### Authorization
-
-[api_key](../README.md#api_key), [api_sign](../README.md#api_sign), [api_timestamp](../README.md#api_timestamp)
-
 ### HTTP request headers
 
  - **Content-Type**: Not defined
@@ -675,32 +301,30 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_candlesticks**
-> FuturesCandlesticks list_futures_candlesticks(contract, _from=_from, to=to, limit=limit, interval=interval)
+> FuturesCandlestick list_futures_candlesticks(contract, _from=_from, to=to, limit=limit, interval=interval)
 
-期货市场 K 线图
+Get futures candlesticks
 
-如果 `contract` 字段在合约标识前增加了 `mark_` 前缀则返回标记价格数据(如mark_BTC_USD)， 如果增加了 `index_` 则返回指数价格的数据(如index_BTC_USD)  K 线图数据单次请求最大返回 2000 个点，指定 from, to 和 interval 的时候注意点数不能过多。 
+Return specified contract candlesticks. If prefix `contract` with `mark_`, the contract's mark price candlesticks are returned; if prefix with `index_`, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying `from`, `to` and `interval` 
 
 ### Example
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi()
-contract = 'contract_example' # str | 期货合约标识
-_from = 3.4 # float | 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳， 不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间  (optional)
-to = 3.4 # float | 指定 K 线图的结束时间，不指定则默认当前时间，注意时间格式为秒(s)精度的 Unix 时间戳  (optional)
-limit = 100 # int | 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝  (optional) (default to 100)
-interval = '5m' # str | 数据点的时间间隔 (optional) (default to '5m')
+contract = 'contract_example' # str | futures contract
+_from = 1545696000 # float | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to `to - 100 * interval` if not specified  (optional)
+to = 1545955200 # float | End time of candlesticsk, formatted in Unix timestamp in seconds. Default to current time  (optional)
+limit = 100 # int | Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.  (optional) (default to 100)
+interval = '5m' # str | interval time between data points (optional) (default to '5m')
 
 try:
-    # 期货市场 K 线图
+    # Get futures candlesticks
     api_response = api_instance.list_futures_candlesticks(contract, _from=_from, to=to, limit=limit, interval=interval)
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->list_futures_candlesticks: %s\n" % e)
 ```
@@ -709,19 +333,15 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| 期货合约标识 | 
- **_from** | **float**| 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳， 不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间  | [optional] 
- **to** | **float**| 指定 K 线图的结束时间，不指定则默认当前时间，注意时间格式为秒(s)精度的 Unix 时间戳  | [optional] 
- **limit** | **int**| 指定数据点的数量，适用于取最近 &#x60;limit&#x60; 数量的数据，该字段与 &#x60;from&#x60;, &#x60;to&#x60; 互斥，如果指定了 &#x60;from&#x60;, &#x60;to&#x60; 中的任意字段，该字段会被拒绝  | [optional] [default to 100]
- **interval** | **str**| 数据点的时间间隔 | [optional] [default to &#39;5m&#39;]
+ **contract** | **str**| futures contract | 
+ **_from** | **float**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to &#x60;to - 100 * interval&#x60; if not specified  | [optional] 
+ **to** | **float**| End time of candlesticsk, formatted in Unix timestamp in seconds. Default to current time  | [optional] 
+ **limit** | **int**| Maximum recent data points returned. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected.  | [optional] [default to 100]
+ **interval** | **str**| interval time between data points | [optional] [default to &#39;5m&#39;]
 
 ### Return type
 
-[**FuturesCandlesticks**](FuturesCandlesticks.md)
-
-### Authorization
-
-No authorization required
+[**FuturesCandlestick**](FuturesCandlestick.md)
 
 ### HTTP request headers
 
@@ -733,23 +353,21 @@ No authorization required
 # **list_futures_contracts**
 > list[Contract] list_futures_contracts()
 
-查询所有的期货信息
+List all futures contracts
 
 ### Example
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi()
 
 try:
-    # 查询所有的期货信息
+    # List all futures contracts
     api_response = api_instance.list_futures_contracts()
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->list_futures_contracts: %s\n" % e)
 ```
@@ -761,10 +379,6 @@ This endpoint does not need any parameter.
 
 [**list[Contract]**](Contract.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: Not defined
@@ -773,27 +387,25 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_funding_rate_history**
-> FundingRateHistory list_futures_funding_rate_history(contract, limit=limit)
+> FundingRateRecord list_futures_funding_rate_history(contract, limit=limit)
 
-期货市场历史资金费率
+Funding rate history
 
 ### Example
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi()
-contract = 'contract_example' # str | 期货合约标识
-limit = 100 # int | 列表返回的最大数量 (optional) (default to 100)
+contract = 'contract_example' # str | futures contract
+limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
 
 try:
-    # 期货市场历史资金费率
+    # Funding rate history
     api_response = api_instance.list_futures_funding_rate_history(contract, limit=limit)
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->list_futures_funding_rate_history: %s\n" % e)
 ```
@@ -802,16 +414,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| 期货合约标识 | 
- **limit** | **int**| 列表返回的最大数量 | [optional] [default to 100]
+ **contract** | **str**| futures contract | 
+ **limit** | **int**| maximum number of data returned in one request | [optional] [default to 100]
 
 ### Return type
 
-[**FundingRateHistory**](FundingRateHistory.md)
-
-### Authorization
-
-No authorization required
+[**FundingRateRecord**](FundingRateRecord.md)
 
 ### HTTP request headers
 
@@ -823,24 +431,22 @@ No authorization required
 # **list_futures_insurance_ledger**
 > InsuranceRecord list_futures_insurance_ledger(limit=limit)
 
-期货市场保险基金历史
+Futures insurance balance history
 
 ### Example
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi()
-limit = 100 # int | 列表返回的最大数量 (optional) (default to 100)
+limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
 
 try:
-    # 期货市场保险基金历史
+    # Futures insurance balance history
     api_response = api_instance.list_futures_insurance_ledger(limit=limit)
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->list_futures_insurance_ledger: %s\n" % e)
 ```
@@ -849,15 +455,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| 列表返回的最大数量 | [optional] [default to 100]
+ **limit** | **int**| maximum number of data returned in one request | [optional] [default to 100]
 
 ### Return type
 
 [**InsuranceRecord**](InsuranceRecord.md)
-
-### Authorization
-
-No authorization required
 
 ### HTTP request headers
 
@@ -869,28 +471,26 @@ No authorization required
 # **list_futures_order_book**
 > FuturesOrderBook list_futures_order_book(contract, interval=interval, limit=limit)
 
-查询期货市场深度信息
+Futures order book
 
-买单会按照价格从高到低排序，卖单反之
+bids will be sorted by price from high to low, while asks sorted reversely
 
 ### Example
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi()
-contract = 'contract_example' # str | 期货合约标识
-interval = '0' # str | 合并深度指定的价格精度，0 为不合并，不指定则默认为 0 (optional) (default to '0')
-limit = 10 # int | 深度档位数量 (optional) (default to 10)
+contract = 'contract_example' # str | futures contract
+interval = '0' # str | order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
+limit = 10 # int | maximum number of order depth data in asks or bids (optional) (default to 10)
 
 try:
-    # 查询期货市场深度信息
+    # Futures order book
     api_response = api_instance.list_futures_order_book(contract, interval=interval, limit=limit)
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->list_futures_order_book: %s\n" % e)
 ```
@@ -899,17 +499,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| 期货合约标识 | 
- **interval** | **str**| 合并深度指定的价格精度，0 为不合并，不指定则默认为 0 | [optional] [default to &#39;0&#39;]
- **limit** | **int**| 深度档位数量 | [optional] [default to 10]
+ **contract** | **str**| futures contract | 
+ **interval** | **str**| order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
+ **limit** | **int**| maximum number of order depth data in asks or bids | [optional] [default to 10]
 
 ### Return type
 
 [**FuturesOrderBook**](FuturesOrderBook.md)
-
-### Authorization
-
-No authorization required
 
 ### HTTP request headers
 
@@ -921,24 +517,22 @@ No authorization required
 # **list_futures_tickers**
 > list[FuturesTicker] list_futures_tickers(contract=contract)
 
-获取所有期货交易行情统计
+List futures tickers
 
 ### Example
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi()
-contract = 'contract_example' # str | 期货合约标识，如果指定则只返回该合约相关数据 (optional)
+contract = 'contract_example' # str | futures contract. If specified, return only data related to the contract (optional)
 
 try:
-    # 获取所有期货交易行情统计
+    # List futures tickers
     api_response = api_instance.list_futures_tickers(contract=contract)
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->list_futures_tickers: %s\n" % e)
 ```
@@ -947,15 +541,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| 期货合约标识，如果指定则只返回该合约相关数据 | [optional] 
+ **contract** | **str**| futures contract. If specified, return only data related to the contract | [optional] 
 
 ### Return type
 
 [**list[FuturesTicker]**](FuturesTicker.md)
-
-### Authorization
-
-No authorization required
 
 ### HTTP request headers
 
@@ -967,26 +557,24 @@ No authorization required
 # **list_futures_trades**
 > list[FuturesTrade] list_futures_trades(contract, limit=limit, last_id=last_id)
 
-期货市场成交记录
+Futures trading history
 
 ### Example
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi()
-contract = 'contract_example' # str | 期货合约标识
-limit = 100 # int | 列表返回的最大数量 (optional) (default to 100)
-last_id = 'last_id_example' # str | 以上个列表的最后一条记录的 ID 作为下个列表的起点 (optional)
+contract = 'contract_example' # str | futures contract
+limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
+last_id = 'last_id_example' # str | specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query (optional)
 
 try:
-    # 期货市场成交记录
+    # Futures trading history
     api_response = api_instance.list_futures_trades(contract, limit=limit, last_id=last_id)
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->list_futures_trades: %s\n" % e)
 ```
@@ -995,17 +583,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| 期货合约标识 | 
- **limit** | **int**| 列表返回的最大数量 | [optional] [default to 100]
- **last_id** | **str**| 以上个列表的最后一条记录的 ID 作为下个列表的起点 | [optional] 
+ **contract** | **str**| futures contract | 
+ **limit** | **int**| maximum number of data returned in one request | [optional] [default to 100]
+ **last_id** | **str**| specify list staring record. Use the &#x60;id&#x60; in every last record of one list-query request to achieve consecutive list query | [optional] 
 
 ### Return type
 
 [**list[FuturesTrade]**](FuturesTrade.md)
-
-### Authorization
-
-No authorization required
 
 ### HTTP request headers
 
@@ -1017,95 +601,31 @@ No authorization required
 # **list_orders**
 > list[FuturesOrder] list_orders(contract, status, limit=limit, last_id=last_id)
 
-查询订单列表
+List futures orders
 
 ### Example
 
-* Api Key Authentication (api_key): 
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # Configure API key authorization: api_key
 configuration = gate_client.Configuration()
-configuration.api_key['KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['KEY'] = 'Bearer'
+configuration.key = "YOUR_API_KEY"
+configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-status = 'status_example' # str | 基于状态查询订单列表
-limit = 100 # int | 列表返回的最大数量 (optional) (default to 100)
-last_id = 'last_id_example' # str | 以上个列表的最后一条记录的 ID 作为下个列表的起点 (optional)
+contract = 'contract_example' # str | futures contract
+status = 'status_example' # str | order status
+limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
+last_id = 'last_id_example' # str | specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query (optional)
 
 try:
-    # 查询订单列表
+    # List futures orders
     api_response = api_instance.list_orders(contract, status, limit=limit, last_id=last_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->list_orders: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_sign): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_sign
-configuration = gate_client.Configuration()
-configuration.api_key['SIGN'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['SIGN'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-status = 'status_example' # str | 基于状态查询订单列表
-limit = 100 # int | 列表返回的最大数量 (optional) (default to 100)
-last_id = 'last_id_example' # str | 以上个列表的最后一条记录的 ID 作为下个列表的起点 (optional)
-
-try:
-    # 查询订单列表
-    api_response = api_instance.list_orders(contract, status, limit=limit, last_id=last_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->list_orders: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_timestamp): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_timestamp
-configuration = gate_client.Configuration()
-configuration.api_key['Timestamp'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Timestamp'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-status = 'status_example' # str | 基于状态查询订单列表
-limit = 100 # int | 列表返回的最大数量 (optional) (default to 100)
-last_id = 'last_id_example' # str | 以上个列表的最后一条记录的 ID 作为下个列表的起点 (optional)
-
-try:
-    # 查询订单列表
-    api_response = api_instance.list_orders(contract, status, limit=limit, last_id=last_id)
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->list_orders: %s\n" % e)
 ```
@@ -1114,18 +634,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| 期货合约标识 | 
- **status** | **str**| 基于状态查询订单列表 | 
- **limit** | **int**| 列表返回的最大数量 | [optional] [default to 100]
- **last_id** | **str**| 以上个列表的最后一条记录的 ID 作为下个列表的起点 | [optional] 
+ **contract** | **str**| futures contract | 
+ **status** | **str**| order status | 
+ **limit** | **int**| maximum number of data returned in one request | [optional] [default to 100]
+ **last_id** | **str**| specify list staring record. Use the &#x60;id&#x60; in every last record of one list-query request to achieve consecutive list query | [optional] 
 
 ### Return type
 
 [**list[FuturesOrder]**](FuturesOrder.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [api_sign](../README.md#api_sign), [api_timestamp](../README.md#api_timestamp)
 
 ### HTTP request headers
 
@@ -1137,83 +653,27 @@ Name | Type | Description  | Notes
 # **list_positions**
 > list[Position] list_positions()
 
-获取用户头寸列表
+List all positions
 
 ### Example
 
-* Api Key Authentication (api_key): 
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # Configure API key authorization: api_key
 configuration = gate_client.Configuration()
-configuration.api_key['KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['KEY'] = 'Bearer'
+configuration.key = "YOUR_API_KEY"
+configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
 
 try:
-    # 获取用户头寸列表
+    # List all positions
     api_response = api_instance.list_positions()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->list_positions: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_sign): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_sign
-configuration = gate_client.Configuration()
-configuration.api_key['SIGN'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['SIGN'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-
-try:
-    # 获取用户头寸列表
-    api_response = api_instance.list_positions()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->list_positions: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_timestamp): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_timestamp
-configuration = gate_client.Configuration()
-configuration.api_key['Timestamp'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Timestamp'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-
-try:
-    # 获取用户头寸列表
-    api_response = api_instance.list_positions()
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->list_positions: %s\n" % e)
 ```
@@ -1225,10 +685,6 @@ This endpoint does not need any parameter.
 
 [**list[Position]**](Position.md)
 
-### Authorization
-
-[api_key](../README.md#api_key), [api_sign](../README.md#api_sign), [api_timestamp](../README.md#api_timestamp)
-
 ### HTTP request headers
 
  - **Content-Type**: Not defined
@@ -1239,89 +695,29 @@ This endpoint does not need any parameter.
 # **update_position_leverage**
 > Position update_position_leverage(contract, leverage)
 
-更新头寸杠杆
+Update position leverage
 
 ### Example
 
-* Api Key Authentication (api_key): 
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # Configure API key authorization: api_key
 configuration = gate_client.Configuration()
-configuration.api_key['KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['KEY'] = 'Bearer'
+configuration.key = "YOUR_API_KEY"
+configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-leverage = 'leverage_example' # str | 新的杠杆倍数
+contract = 'contract_example' # str | futures contract
+leverage = 'leverage_example' # str | new leverage of position
 
 try:
-    # 更新头寸杠杆
+    # Update position leverage
     api_response = api_instance.update_position_leverage(contract, leverage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->update_position_leverage: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_sign): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_sign
-configuration = gate_client.Configuration()
-configuration.api_key['SIGN'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['SIGN'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-leverage = 'leverage_example' # str | 新的杠杆倍数
-
-try:
-    # 更新头寸杠杆
-    api_response = api_instance.update_position_leverage(contract, leverage)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->update_position_leverage: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_timestamp): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_timestamp
-configuration = gate_client.Configuration()
-configuration.api_key['Timestamp'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Timestamp'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-leverage = 'leverage_example' # str | 新的杠杆倍数
-
-try:
-    # 更新头寸杠杆
-    api_response = api_instance.update_position_leverage(contract, leverage)
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->update_position_leverage: %s\n" % e)
 ```
@@ -1330,16 +726,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| 期货合约标识 | 
- **leverage** | **str**| 新的杠杆倍数 | 
+ **contract** | **str**| futures contract | 
+ **leverage** | **str**| new leverage of position | 
 
 ### Return type
 
 [**Position**](Position.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [api_sign](../README.md#api_sign), [api_timestamp](../README.md#api_timestamp)
 
 ### HTTP request headers
 
@@ -1351,89 +743,29 @@ Name | Type | Description  | Notes
 # **update_position_margin**
 > Position update_position_margin(contract, change)
 
-更新头寸保证金
+Update position margin
 
 ### Example
 
-* Api Key Authentication (api_key): 
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # Configure API key authorization: api_key
 configuration = gate_client.Configuration()
-configuration.api_key['KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['KEY'] = 'Bearer'
+configuration.key = "YOUR_API_KEY"
+configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-change = 'change_example' # str | 保证金变化数额，正数增加，负数减少
+contract = 'contract_example' # str | futures contract
+change = 'change_example' # str | margin change. Use positive number to increase margin, negative number otherwise.
 
 try:
-    # 更新头寸保证金
+    # Update position margin
     api_response = api_instance.update_position_margin(contract, change)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->update_position_margin: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_sign): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_sign
-configuration = gate_client.Configuration()
-configuration.api_key['SIGN'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['SIGN'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-change = 'change_example' # str | 保证金变化数额，正数增加，负数减少
-
-try:
-    # 更新头寸保证金
-    api_response = api_instance.update_position_margin(contract, change)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->update_position_margin: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_timestamp): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_timestamp
-configuration = gate_client.Configuration()
-configuration.api_key['Timestamp'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Timestamp'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-change = 'change_example' # str | 保证金变化数额，正数增加，负数减少
-
-try:
-    # 更新头寸保证金
-    api_response = api_instance.update_position_margin(contract, change)
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->update_position_margin: %s\n" % e)
 ```
@@ -1442,16 +774,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| 期货合约标识 | 
- **change** | **str**| 保证金变化数额，正数增加，负数减少 | 
+ **contract** | **str**| futures contract | 
+ **change** | **str**| margin change. Use positive number to increase margin, negative number otherwise. | 
 
 ### Return type
 
 [**Position**](Position.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [api_sign](../README.md#api_sign), [api_timestamp](../README.md#api_timestamp)
 
 ### HTTP request headers
 
@@ -1463,89 +791,29 @@ Name | Type | Description  | Notes
 # **update_position_risk_limit**
 > Position update_position_risk_limit(contract, risk_limit)
 
-更新头寸风险限额
+Update poisition risk limit
 
 ### Example
 
-* Api Key Authentication (api_key): 
 ```python
 from __future__ import print_function
-import time
 import gate_client
 from gate_client.rest import ApiException
-from pprint import pprint
 
 # Configure API key authorization: api_key
 configuration = gate_client.Configuration()
-configuration.api_key['KEY'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['KEY'] = 'Bearer'
+configuration.key = "YOUR_API_KEY"
+configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
 api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-risk_limit = 'risk_limit_example' # str | 新的风险限额
+contract = 'contract_example' # str | futures contract
+risk_limit = 'risk_limit_example' # str | new risk limit of position
 
 try:
-    # 更新头寸风险限额
+    # Update poisition risk limit
     api_response = api_instance.update_position_risk_limit(contract, risk_limit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->update_position_risk_limit: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_sign): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_sign
-configuration = gate_client.Configuration()
-configuration.api_key['SIGN'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['SIGN'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-risk_limit = 'risk_limit_example' # str | 新的风险限额
-
-try:
-    # 更新头寸风险限额
-    api_response = api_instance.update_position_risk_limit(contract, risk_limit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->update_position_risk_limit: %s\n" % e)
-```
-
-
-* Api Key Authentication (api_timestamp): 
-```python
-from __future__ import print_function
-import time
-import gate_client
-from gate_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api_timestamp
-configuration = gate_client.Configuration()
-configuration.api_key['Timestamp'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Timestamp'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
-contract = 'contract_example' # str | 期货合约标识
-risk_limit = 'risk_limit_example' # str | 新的风险限额
-
-try:
-    # 更新头寸风险限额
-    api_response = api_instance.update_position_risk_limit(contract, risk_limit)
-    pprint(api_response)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->update_position_risk_limit: %s\n" % e)
 ```
@@ -1554,16 +822,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| 期货合约标识 | 
- **risk_limit** | **str**| 新的风险限额 | 
+ **contract** | **str**| futures contract | 
+ **risk_limit** | **str**| new risk limit of position | 
 
 ### Return type
 
 [**Position**](Position.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [api_sign](../README.md#api_sign), [api_timestamp](../README.md#api_timestamp)
 
 ### HTTP request headers
 
