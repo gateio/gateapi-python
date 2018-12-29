@@ -1,4 +1,4 @@
-# gate_client.FuturesApi
+# gate_api.FuturesApi
 
 All URIs are relative to *https://fx-api.gateio.io/api/v4*
 
@@ -33,16 +33,16 @@ Cancel a single order
 
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # Configure API key authorization: api_key
-configuration = gate_client.Configuration()
+configuration = gate_api.Configuration()
 configuration.key = "YOUR_API_KEY"
 configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 order_id = 'order_id_example' # str | order id
 
 try:
@@ -78,16 +78,16 @@ Cancel all `open` orders matched
 
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # Configure API key authorization: api_key
-configuration = gate_client.Configuration()
+configuration = gate_api.Configuration()
 configuration.key = "YOUR_API_KEY"
 configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 contract = 'contract_example' # str | futures contract
 side = 'side_example' # str | All bids or asks. Both included in not specfied (optional)
 
@@ -125,16 +125,16 @@ Create a futures order
 
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # Configure API key authorization: api_key
-configuration = gate_client.Configuration()
+configuration = gate_api.Configuration()
 configuration.key = "YOUR_API_KEY"
 configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 futures_order = {"$ref":"examples/mercury/FuturesOrder.json"} # FuturesOrder |  (optional)
 
 try:
@@ -171,16 +171,16 @@ List personal trading history
 
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # Configure API key authorization: api_key
-configuration = gate_client.Configuration()
+configuration = gate_api.Configuration()
 configuration.key = "YOUR_API_KEY"
 configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 contract = 'contract_example' # str | futures contract. If specified, return only data related to the contract (optional)
 limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
 last_id = 'last_id_example' # str | specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query (optional)
@@ -221,16 +221,16 @@ Get a single order
 
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # Configure API key authorization: api_key
-configuration = gate_client.Configuration()
+configuration = gate_api.Configuration()
 configuration.key = "YOUR_API_KEY"
 configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 order_id = 'order_id_example' # str | order id
 
 try:
@@ -267,16 +267,16 @@ Query futures account
 
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # Configure API key authorization: api_key
-configuration = gate_client.Configuration()
+configuration = gate_api.Configuration()
 configuration.key = "YOUR_API_KEY"
 configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 
 try:
     # Query futures account
@@ -310,11 +310,11 @@ Return specified contract candlesticks. If prefix `contract` with `mark_`, the c
 ### Example
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi()
+api_instance = gate_api.FuturesApi()
 contract = 'contract_example' # str | futures contract
 _from = 1545696000 # float | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to `to - 100 * interval` if not specified  (optional)
 to = 1545955200 # float | End time of candlesticsk, formatted in Unix timestamp in seconds. Default to current time  (optional)
@@ -358,11 +358,11 @@ List all futures contracts
 ### Example
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi()
+api_instance = gate_api.FuturesApi()
 
 try:
     # List all futures contracts
@@ -394,11 +394,11 @@ Funding rate history
 ### Example
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi()
+api_instance = gate_api.FuturesApi()
 contract = 'contract_example' # str | futures contract
 limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
 
@@ -436,11 +436,11 @@ Futures insurance balance history
 ### Example
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi()
+api_instance = gate_api.FuturesApi()
 limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
 
 try:
@@ -478,11 +478,11 @@ bids will be sorted by price from high to low, while asks sorted reversely
 ### Example
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi()
+api_instance = gate_api.FuturesApi()
 contract = 'contract_example' # str | futures contract
 interval = '0' # str | order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
 limit = 10 # int | maximum number of order depth data in asks or bids (optional) (default to 10)
@@ -522,11 +522,11 @@ List futures tickers
 ### Example
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi()
+api_instance = gate_api.FuturesApi()
 contract = 'contract_example' # str | futures contract. If specified, return only data related to the contract (optional)
 
 try:
@@ -562,11 +562,11 @@ Futures trading history
 ### Example
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi()
+api_instance = gate_api.FuturesApi()
 contract = 'contract_example' # str | futures contract
 limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
 last_id = 'last_id_example' # str | specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query (optional)
@@ -607,16 +607,16 @@ List futures orders
 
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # Configure API key authorization: api_key
-configuration = gate_client.Configuration()
+configuration = gate_api.Configuration()
 configuration.key = "YOUR_API_KEY"
 configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 contract = 'contract_example' # str | futures contract
 status = 'status_example' # str | order status
 limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
@@ -659,16 +659,16 @@ List all positions
 
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # Configure API key authorization: api_key
-configuration = gate_client.Configuration()
+configuration = gate_api.Configuration()
 configuration.key = "YOUR_API_KEY"
 configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 
 try:
     # List all positions
@@ -701,16 +701,16 @@ Update position leverage
 
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # Configure API key authorization: api_key
-configuration = gate_client.Configuration()
+configuration = gate_api.Configuration()
 configuration.key = "YOUR_API_KEY"
 configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 contract = 'contract_example' # str | futures contract
 leverage = 'leverage_example' # str | new leverage of position
 
@@ -749,16 +749,16 @@ Update position margin
 
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # Configure API key authorization: api_key
-configuration = gate_client.Configuration()
+configuration = gate_api.Configuration()
 configuration.key = "YOUR_API_KEY"
 configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 contract = 'contract_example' # str | futures contract
 change = 'change_example' # str | margin change. Use positive number to increase margin, negative number otherwise.
 
@@ -797,16 +797,16 @@ Update poisition risk limit
 
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # Configure API key authorization: api_key
-configuration = gate_client.Configuration()
+configuration = gate_api.Configuration()
 configuration.key = "YOUR_API_KEY"
 configuration.secret = "YOUR_API_SECRET"
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 contract = 'contract_example' # str | futures contract
 risk_limit = 'risk_limit_example' # str | new risk limit of position
 

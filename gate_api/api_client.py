@@ -14,18 +14,18 @@ from __future__ import absolute_import
 import datetime
 import json
 import mimetypes
-from multiprocessing.pool import ThreadPool
 import os
 import re
 import tempfile
+from multiprocessing.pool import ThreadPool
 
 # python 2 and python 3 compatibility library
 import six
 from six.moves.urllib.parse import quote
 
-from gate_client.configuration import Configuration
-import gate_client.models
-from gate_client import rest
+import gate_api.models
+from gate_api import rest
+from gate_api.configuration import Configuration
 
 
 class ApiClient(object):
@@ -258,7 +258,7 @@ class ApiClient(object):
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(gate_client.models, klass)
+                klass = getattr(gate_api.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

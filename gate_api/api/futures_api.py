@@ -13,12 +13,10 @@
 
 from __future__ import absolute_import
 
-import re  # noqa: F401
-
 # python 2 and python 3 compatibility library
 import six
 
-from gate_client.api_client import ApiClient
+from gate_api.api_client import ApiClient
 
 
 class FuturesApi(object):
@@ -604,9 +602,12 @@ class FuturesApi(object):
 
         :param async_req bool
         :param str contract: futures contract (required)
-        :param float _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to `to - 100 * interval` if not specified 
-        :param float to: End time of candlesticsk, formatted in Unix timestamp in seconds. Default to current time 
-        :param int limit: Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. 
+        :param float _from: Start time of candlesticks, formatted in Unix timestamp in seconds.
+        Default to `to - 100 * interval` if not specified
+        :param float to: End time of candlesticsk, formatted in Unix timestamp in seconds.
+        Default to current time
+        :param int limit: Maximum recent data points returned. `limit` is conflicted with `from`
+        and `to`. If either `from` or `to` is specified, request will be rejected.
         :param str interval: interval time between data points
         :return: FuturesCandlestick
                  If the method is called asynchronously,
@@ -630,9 +631,12 @@ class FuturesApi(object):
 
         :param async_req bool
         :param str contract: futures contract (required)
-        :param float _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to `to - 100 * interval` if not specified 
-        :param float to: End time of candlesticsk, formatted in Unix timestamp in seconds. Default to current time 
-        :param int limit: Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. 
+        :param float _from: Start time of candlesticks, formatted in Unix timestamp in seconds.
+        Default to `to - 100 * interval` if not specified
+        :param float to: End time of candlesticsk, formatted in Unix timestamp in seconds.
+        Default to current time
+        :param int limit: Maximum recent data points returned. `limit` is conflicted with `from`
+        and `to`. If either `from` or `to` is specified, request will be rejected.
         :param str interval: interval time between data points
         :return: FuturesCandlestick
                  If the method is called asynchronously,

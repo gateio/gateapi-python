@@ -25,7 +25,7 @@ pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
 
 Then import the package:
 ```python
-import gate_client 
+import gate_api 
 ```
 
 ### Setuptools
@@ -39,7 +39,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import gate_client
+import gate_api
 ```
 
 ## Getting Started
@@ -48,21 +48,21 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 ```python
 from __future__ import print_function
-import gate_client
-from gate_client.rest import ApiException
+import gate_api
+from gate_api.rest import ApiException
 
 # Configure API key authorization: api_key
-configuration = gate_client.Configuration()
+configuration = gate_api.Configuration()
 configuration.key = "YOUR_API_KEY"
 configuration.secret = "YOUR_API_SECRET"
 # uncomment the next line if you are testing the API with TestNet
 # configuration.host = "https://fx-api-testnet.gateio.io/api/v4"
 
 # create an instance of the API class
-api_instance = gate_client.FuturesApi(gate_client.ApiClient(configuration))
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 
 try:
-    order = gate_client.FuturesOrder(contract='BTC_USD', size=100, price="4000")
+    order = gate_api.FuturesOrder(contract='BTC_USD', size=100, price="4000")
     order = api_instance.create_order(futures_order=order)
     print(order.id)
 except ApiException as e:
