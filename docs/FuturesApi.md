@@ -18,14 +18,15 @@ Method | HTTP request | Description
 [**list_futures_tickers**](FuturesApi.md#list_futures_tickers) | **GET** /futures/tickers | List futures tickers
 [**list_futures_trades**](FuturesApi.md#list_futures_trades) | **GET** /futures/trades | Futures trading history
 [**list_orders**](FuturesApi.md#list_orders) | **GET** /futures/orders | List futures orders
-[**list_positions**](FuturesApi.md#list_positions) | **GET** /futures/positions | List all positions
+[**list_position_close**](FuturesApi.md#list_position_close) | **GET** /futures/position_close | List position close history
+[**list_positions**](FuturesApi.md#list_positions) | **GET** /futures/positions | List all positions of a user
 [**update_position_leverage**](FuturesApi.md#update_position_leverage) | **POST** /futures/positions/{contract}/leverage | Update position leverage
 [**update_position_margin**](FuturesApi.md#update_position_margin) | **POST** /futures/positions/{contract}/margin | Update position margin
-[**update_position_risk_limit**](FuturesApi.md#update_position_risk_limit) | **POST** /futures/positions/{contract}/risk_limit | Update poisition risk limit
+[**update_position_risk_limit**](FuturesApi.md#update_position_risk_limit) | **POST** /futures/positions/{contract}/risk_limit | Update position risk limit
 
 
 # **cancel_order**
-> cancel_order(order_id)
+> FuturesOrder cancel_order(order_id)
 
 Cancel a single order
 
@@ -36,18 +37,18 @@ from __future__ import print_function
 import gate_api
 from gate_api.rest import ApiException
 
-# Configure API key authorization: api_key
 configuration = gate_api.Configuration()
-configuration.key = "YOUR_API_KEY"
-configuration.secret = "YOUR_API_SECRET"
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
-order_id = 'order_id_example' # str | order id
+order_id = '12345' # str | ID returned on order successfully being created
 
 try:
     # Cancel a single order
-    api_instance.cancel_order(order_id)
+    api_response = api_instance.cancel_order(order_id)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->cancel_order: %s\n" % e)
 ```
@@ -56,21 +57,25 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **str**| order id | 
+ **order_id** | **str**| ID returned on order successfully being created | 
 
 ### Return type
 
-void (empty response body)
+[**FuturesOrder**](FuturesOrder.md)
+
+### Authorization
+
+Authentication with API key and secret is required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_orders**
-> cancel_orders(contract, side=side)
+> list[FuturesOrder] cancel_orders(contract, side=side)
 
 Cancel all `open` orders matched
 
@@ -81,19 +86,19 @@ from __future__ import print_function
 import gate_api
 from gate_api.rest import ApiException
 
-# Configure API key authorization: api_key
 configuration = gate_api.Configuration()
-configuration.key = "YOUR_API_KEY"
-configuration.secret = "YOUR_API_SECRET"
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
-contract = 'contract_example' # str | futures contract
-side = 'side_example' # str | All bids or asks. Both included in not specfied (optional)
+contract = 'BTC_USD' # str | Futures contract
+side = 'ask' # str | All bids or asks. Both included in not specified (optional)
 
 try:
     # Cancel all `open` orders matched
-    api_instance.cancel_orders(contract, side=side)
+    api_response = api_instance.cancel_orders(contract, side=side)
+    print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->cancel_orders: %s\n" % e)
 ```
@@ -102,22 +107,26 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| futures contract | 
- **side** | **str**| All bids or asks. Both included in not specfied | [optional] 
+ **contract** | **str**| Futures contract | 
+ **side** | **str**| All bids or asks. Both included in not specified | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**list[FuturesOrder]**](FuturesOrder.md)
+
+### Authorization
+
+Authentication with API key and secret is required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_order**
-> FuturesOrder create_order(futures_order=futures_order)
+> FuturesOrder create_order(futures_order)
 
 Create a futures order
 
@@ -128,18 +137,17 @@ from __future__ import print_function
 import gate_api
 from gate_api.rest import ApiException
 
-# Configure API key authorization: api_key
 configuration = gate_api.Configuration()
-configuration.key = "YOUR_API_KEY"
-configuration.secret = "YOUR_API_SECRET"
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
-futures_order = {"$ref":"examples/mercury/FuturesOrder.json"} # FuturesOrder |  (optional)
+futures_order = {"id":15675394,"user":100000,"contract":"BTC_USD","create_time":1546569968,"size":6024,"iceberg":0,"left":6024,"price":"3765","fill_price":"0","mkfr":"-0.00025","tkfr":"0.00075","tif":"gtc","refu":0,"is_reduce_only":false,"is_close":false,"is_liq":false,"text":"api","status":"finished","finish_time":1514764900,"finish_as":"cancelled"} # FuturesOrder | 
 
 try:
     # Create a futures order
-    api_response = api_instance.create_order(futures_order=futures_order)
+    api_response = api_instance.create_order(futures_order)
     print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->create_order: %s\n" % e)
@@ -149,11 +157,15 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **futures_order** | [**FuturesOrder**](FuturesOrder.md)|  | [optional] 
+ **futures_order** | [**FuturesOrder**](FuturesOrder.md)|  | 
 
 ### Return type
 
 [**FuturesOrder**](FuturesOrder.md)
+
+### Authorization
+
+Authentication with API key and secret is required
 
 ### HTTP request headers
 
@@ -163,7 +175,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_my_trades**
-> list[MyFuturesTrade] get_my_trades(contract=contract, limit=limit, last_id=last_id)
+> list[MyFuturesTrade] get_my_trades(contract=contract, order=order, limit=limit, last_id=last_id)
 
 List personal trading history
 
@@ -174,20 +186,20 @@ from __future__ import print_function
 import gate_api
 from gate_api.rest import ApiException
 
-# Configure API key authorization: api_key
 configuration = gate_api.Configuration()
-configuration.key = "YOUR_API_KEY"
-configuration.secret = "YOUR_API_SECRET"
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
-contract = 'contract_example' # str | futures contract. If specified, return only data related to the contract (optional)
-limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
-last_id = 'last_id_example' # str | specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query (optional)
+contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+order = 12345 # int | Futures order ID, return related data only if specified (optional)
+limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+last_id = '12345' # str | Specify list staring point using the last record of `id` in previous list-query results (optional)
 
 try:
     # List personal trading history
-    api_response = api_instance.get_my_trades(contract=contract, limit=limit, last_id=last_id)
+    api_response = api_instance.get_my_trades(contract=contract, order=order, limit=limit, last_id=last_id)
     print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->get_my_trades: %s\n" % e)
@@ -197,13 +209,18 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| futures contract. If specified, return only data related to the contract | [optional] 
- **limit** | **int**| maximum number of data returned in one request | [optional] [default to 100]
- **last_id** | **str**| specify list staring record. Use the &#x60;id&#x60; in every last record of one list-query request to achieve consecutive list query | [optional] 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **order** | **int**| Futures order ID, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+ **last_id** | **str**| Specify list staring point using the last record of &#x60;id&#x60; in previous list-query results | [optional] 
 
 ### Return type
 
 [**list[MyFuturesTrade]**](MyFuturesTrade.md)
+
+### Authorization
+
+Authentication with API key and secret is required
 
 ### HTTP request headers
 
@@ -224,14 +241,13 @@ from __future__ import print_function
 import gate_api
 from gate_api.rest import ApiException
 
-# Configure API key authorization: api_key
 configuration = gate_api.Configuration()
-configuration.key = "YOUR_API_KEY"
-configuration.secret = "YOUR_API_SECRET"
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
-order_id = 'order_id_example' # str | order id
+order_id = '12345' # str | ID returned on order successfully being created
 
 try:
     # Get a single order
@@ -245,11 +261,15 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **str**| order id | 
+ **order_id** | **str**| ID returned on order successfully being created | 
 
 ### Return type
 
 [**FuturesOrder**](FuturesOrder.md)
+
+### Authorization
+
+Authentication with API key and secret is required
 
 ### HTTP request headers
 
@@ -270,10 +290,9 @@ from __future__ import print_function
 import gate_api
 from gate_api.rest import ApiException
 
-# Configure API key authorization: api_key
 configuration = gate_api.Configuration()
-configuration.key = "YOUR_API_KEY"
-configuration.secret = "YOUR_API_SECRET"
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
@@ -293,6 +312,10 @@ This endpoint does not need any parameter.
 
 [**FuturesAccount**](FuturesAccount.md)
 
+### Authorization
+
+Authentication with API key and secret is required
+
 ### HTTP request headers
 
  - **Content-Type**: Not defined
@@ -301,13 +324,14 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_candlesticks**
-> FuturesCandlestick list_futures_candlesticks(contract, _from=_from, to=to, limit=limit, interval=interval)
+> list[FuturesCandlestick] list_futures_candlesticks(contract, _from=_from, to=to, limit=limit, interval=interval)
 
 Get futures candlesticks
 
-Return specified contract candlesticks. If prefix `contract` with `mark_`, the contract's mark price candlesticks are returned; if prefix with `index_`, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying `from`, `to` and `interval` 
+Return specified contract candlesticks. If prefix `contract` with `mark_`, the contract's mark price candlesticks are returned; if prefix with `index_`, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying `from`, `to` and `interval`
 
 ### Example
+
 ```python
 from __future__ import print_function
 import gate_api
@@ -315,11 +339,11 @@ from gate_api.rest import ApiException
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi()
-contract = 'contract_example' # str | futures contract
-_from = 1545696000 # float | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to `to - 100 * interval` if not specified  (optional)
-to = 1545955200 # float | End time of candlesticsk, formatted in Unix timestamp in seconds. Default to current time  (optional)
-limit = 100 # int | Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.  (optional) (default to 100)
-interval = '5m' # str | interval time between data points (optional) (default to '5m')
+contract = 'BTC_USD' # str | Futures contract
+_from = 1546905600 # float | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
+to = 1546935600 # float | End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time (optional)
+limit = 100 # int | Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
+interval = '5m' # str | Interval time between data points (optional) (default to '5m')
 
 try:
     # Get futures candlesticks
@@ -333,15 +357,19 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| futures contract | 
- **_from** | **float**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to &#x60;to - 100 * interval&#x60; if not specified  | [optional] 
- **to** | **float**| End time of candlesticsk, formatted in Unix timestamp in seconds. Default to current time  | [optional] 
- **limit** | **int**| Maximum recent data points returned. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected.  | [optional] [default to 100]
- **interval** | **str**| interval time between data points | [optional] [default to &#39;5m&#39;]
+ **contract** | **str**| Futures contract | 
+ **_from** | **float**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
+ **to** | **float**| End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time | [optional] 
+ **limit** | **int**| Maximum recent data points returned. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
+ **interval** | **str**| Interval time between data points | [optional] [default to &#39;5m&#39;]
 
 ### Return type
 
-[**FuturesCandlestick**](FuturesCandlestick.md)
+[**list[FuturesCandlestick]**](FuturesCandlestick.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -356,6 +384,7 @@ Name | Type | Description  | Notes
 List all futures contracts
 
 ### Example
+
 ```python
 from __future__ import print_function
 import gate_api
@@ -379,6 +408,10 @@ This endpoint does not need any parameter.
 
 [**list[Contract]**](Contract.md)
 
+### Authorization
+
+No authorization required
+
 ### HTTP request headers
 
  - **Content-Type**: Not defined
@@ -387,11 +420,12 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_funding_rate_history**
-> FundingRateRecord list_futures_funding_rate_history(contract, limit=limit)
+> list[FundingRateRecord] list_futures_funding_rate_history(contract, limit=limit)
 
 Funding rate history
 
 ### Example
+
 ```python
 from __future__ import print_function
 import gate_api
@@ -399,8 +433,8 @@ from gate_api.rest import ApiException
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi()
-contract = 'contract_example' # str | futures contract
-limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
+contract = 'BTC_USD' # str | Futures contract
+limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
 
 try:
     # Funding rate history
@@ -414,12 +448,16 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| futures contract | 
- **limit** | **int**| maximum number of data returned in one request | [optional] [default to 100]
+ **contract** | **str**| Futures contract | 
+ **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
 
 ### Return type
 
-[**FundingRateRecord**](FundingRateRecord.md)
+[**list[FundingRateRecord]**](FundingRateRecord.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -429,11 +467,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_insurance_ledger**
-> InsuranceRecord list_futures_insurance_ledger(limit=limit)
+> list[InsuranceRecord] list_futures_insurance_ledger(limit=limit)
 
 Futures insurance balance history
 
 ### Example
+
 ```python
 from __future__ import print_function
 import gate_api
@@ -441,7 +480,7 @@ from gate_api.rest import ApiException
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi()
-limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
+limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
 
 try:
     # Futures insurance balance history
@@ -455,11 +494,15 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| maximum number of data returned in one request | [optional] [default to 100]
+ **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
 
 ### Return type
 
-[**InsuranceRecord**](InsuranceRecord.md)
+[**list[InsuranceRecord]**](InsuranceRecord.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -473,9 +516,10 @@ Name | Type | Description  | Notes
 
 Futures order book
 
-bids will be sorted by price from high to low, while asks sorted reversely
+Bids will be sorted by price from high to low, while asks sorted reversely
 
 ### Example
+
 ```python
 from __future__ import print_function
 import gate_api
@@ -483,9 +527,9 @@ from gate_api.rest import ApiException
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi()
-contract = 'contract_example' # str | futures contract
-interval = '0' # str | order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
-limit = 10 # int | maximum number of order depth data in asks or bids (optional) (default to 10)
+contract = 'BTC_USD' # str | Futures contract
+interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
+limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
 
 try:
     # Futures order book
@@ -499,13 +543,17 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| futures contract | 
- **interval** | **str**| order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
- **limit** | **int**| maximum number of order depth data in asks or bids | [optional] [default to 10]
+ **contract** | **str**| Futures contract | 
+ **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
+ **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
 
 ### Return type
 
 [**FuturesOrderBook**](FuturesOrderBook.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -520,6 +568,7 @@ Name | Type | Description  | Notes
 List futures tickers
 
 ### Example
+
 ```python
 from __future__ import print_function
 import gate_api
@@ -527,7 +576,7 @@ from gate_api.rest import ApiException
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi()
-contract = 'contract_example' # str | futures contract. If specified, return only data related to the contract (optional)
+contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
 
 try:
     # List futures tickers
@@ -541,11 +590,15 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| futures contract. If specified, return only data related to the contract | [optional] 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
 
 ### Return type
 
 [**list[FuturesTicker]**](FuturesTicker.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -560,6 +613,7 @@ Name | Type | Description  | Notes
 Futures trading history
 
 ### Example
+
 ```python
 from __future__ import print_function
 import gate_api
@@ -567,9 +621,9 @@ from gate_api.rest import ApiException
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi()
-contract = 'contract_example' # str | futures contract
-limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
-last_id = 'last_id_example' # str | specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query (optional)
+contract = 'BTC_USD' # str | Futures contract
+limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+last_id = '12345' # str | Specify list staring point using the last record of `id` in previous list-query results (optional)
 
 try:
     # Futures trading history
@@ -583,13 +637,17 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| futures contract | 
- **limit** | **int**| maximum number of data returned in one request | [optional] [default to 100]
- **last_id** | **str**| specify list staring record. Use the &#x60;id&#x60; in every last record of one list-query request to achieve consecutive list query | [optional] 
+ **contract** | **str**| Futures contract | 
+ **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+ **last_id** | **str**| Specify list staring point using the last record of &#x60;id&#x60; in previous list-query results | [optional] 
 
 ### Return type
 
 [**list[FuturesTrade]**](FuturesTrade.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -610,17 +668,16 @@ from __future__ import print_function
 import gate_api
 from gate_api.rest import ApiException
 
-# Configure API key authorization: api_key
 configuration = gate_api.Configuration()
-configuration.key = "YOUR_API_KEY"
-configuration.secret = "YOUR_API_SECRET"
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
-contract = 'contract_example' # str | futures contract
-status = 'status_example' # str | order status
-limit = 100 # int | maximum number of data returned in one request (optional) (default to 100)
-last_id = 'last_id_example' # str | specify list staring record. Use the `id` in every last record of one list-query request to achieve consecutive list query (optional)
+contract = 'BTC_USD' # str | Futures contract
+status = 'open' # str | List orders based on status
+limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+last_id = '12345' # str | Specify list staring point using the last record of `id` in previous list-query results (optional)
 
 try:
     # List futures orders
@@ -634,14 +691,69 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| futures contract | 
- **status** | **str**| order status | 
- **limit** | **int**| maximum number of data returned in one request | [optional] [default to 100]
- **last_id** | **str**| specify list staring record. Use the &#x60;id&#x60; in every last record of one list-query request to achieve consecutive list query | [optional] 
+ **contract** | **str**| Futures contract | 
+ **status** | **str**| List orders based on status | 
+ **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+ **last_id** | **str**| Specify list staring point using the last record of &#x60;id&#x60; in previous list-query results | [optional] 
 
 ### Return type
 
 [**list[FuturesOrder]**](FuturesOrder.md)
+
+### Authorization
+
+Authentication with API key and secret is required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_position_close**
+> list[PositionClose] list_position_close(contract=contract, limit=limit)
+
+List position close history
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.rest import ApiException
+
+configuration = gate_api.Configuration()
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
+
+# create an instance of the API class
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
+contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+
+try:
+    # List position close history
+    api_response = api_instance.list_position_close(contract=contract, limit=limit)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->list_position_close: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+
+### Return type
+
+[**list[PositionClose]**](PositionClose.md)
+
+### Authorization
+
+Authentication with API key and secret is required
 
 ### HTTP request headers
 
@@ -653,7 +765,7 @@ Name | Type | Description  | Notes
 # **list_positions**
 > list[Position] list_positions()
 
-List all positions
+List all positions of a user
 
 ### Example
 
@@ -662,16 +774,15 @@ from __future__ import print_function
 import gate_api
 from gate_api.rest import ApiException
 
-# Configure API key authorization: api_key
 configuration = gate_api.Configuration()
-configuration.key = "YOUR_API_KEY"
-configuration.secret = "YOUR_API_SECRET"
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 
 try:
-    # List all positions
+    # List all positions of a user
     api_response = api_instance.list_positions()
     print(api_response)
 except ApiException as e:
@@ -684,6 +795,10 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**list[Position]**](Position.md)
+
+### Authorization
+
+Authentication with API key and secret is required
 
 ### HTTP request headers
 
@@ -704,15 +819,14 @@ from __future__ import print_function
 import gate_api
 from gate_api.rest import ApiException
 
-# Configure API key authorization: api_key
 configuration = gate_api.Configuration()
-configuration.key = "YOUR_API_KEY"
-configuration.secret = "YOUR_API_SECRET"
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
-contract = 'contract_example' # str | futures contract
-leverage = 'leverage_example' # str | new leverage of position
+contract = 'BTC_USD' # str | Futures contract
+leverage = '10' # str | New position leverage
 
 try:
     # Update position leverage
@@ -726,12 +840,16 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| futures contract | 
- **leverage** | **str**| new leverage of position | 
+ **contract** | **str**| Futures contract | 
+ **leverage** | **str**| New position leverage | 
 
 ### Return type
 
 [**Position**](Position.md)
+
+### Authorization
+
+Authentication with API key and secret is required
 
 ### HTTP request headers
 
@@ -752,15 +870,14 @@ from __future__ import print_function
 import gate_api
 from gate_api.rest import ApiException
 
-# Configure API key authorization: api_key
 configuration = gate_api.Configuration()
-configuration.key = "YOUR_API_KEY"
-configuration.secret = "YOUR_API_SECRET"
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
-contract = 'contract_example' # str | futures contract
-change = 'change_example' # str | margin change. Use positive number to increase margin, negative number otherwise.
+contract = 'BTC_USD' # str | Futures contract
+change = '0.01' # str | Margin change. Use positive number to increase margin, negative number otherwise.
 
 try:
     # Update position margin
@@ -774,12 +891,16 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| futures contract | 
- **change** | **str**| margin change. Use positive number to increase margin, negative number otherwise. | 
+ **contract** | **str**| Futures contract | 
+ **change** | **str**| Margin change. Use positive number to increase margin, negative number otherwise. | 
 
 ### Return type
 
 [**Position**](Position.md)
+
+### Authorization
+
+Authentication with API key and secret is required
 
 ### HTTP request headers
 
@@ -791,7 +912,7 @@ Name | Type | Description  | Notes
 # **update_position_risk_limit**
 > Position update_position_risk_limit(contract, risk_limit)
 
-Update poisition risk limit
+Update position risk limit
 
 ### Example
 
@@ -800,18 +921,17 @@ from __future__ import print_function
 import gate_api
 from gate_api.rest import ApiException
 
-# Configure API key authorization: api_key
 configuration = gate_api.Configuration()
-configuration.key = "YOUR_API_KEY"
-configuration.secret = "YOUR_API_SECRET"
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
-contract = 'contract_example' # str | futures contract
-risk_limit = 'risk_limit_example' # str | new risk limit of position
+contract = 'BTC_USD' # str | Futures contract
+risk_limit = '10' # str | New position risk limit
 
 try:
-    # Update poisition risk limit
+    # Update position risk limit
     api_response = api_instance.update_position_risk_limit(contract, risk_limit)
     print(api_response)
 except ApiException as e:
@@ -822,12 +942,16 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| futures contract | 
- **risk_limit** | **str**| new risk limit of position | 
+ **contract** | **str**| Futures contract | 
+ **risk_limit** | **str**| New position risk limit | 
 
 ### Return type
 
 [**Position**](Position.md)
+
+### Authorization
+
+Authentication with API key and secret is required
 
 ### HTTP request headers
 

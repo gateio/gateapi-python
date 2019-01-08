@@ -1,10 +1,11 @@
-# FundingRateRecord
+# PositionCloseOrder
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**t** | **int** | Unix timestamp in seconds | [optional] 
-**r** | **str** | Funding rate | [optional] 
+**id** | **int** | Close order ID | [optional] 
+**price** | **str** | Close order price | [optional] 
+**is_liq** | **bool** | Is the close order from liquidation | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
