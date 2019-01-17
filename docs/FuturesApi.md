@@ -7,8 +7,11 @@ Method | HTTP request | Description
 [**cancel_order**](FuturesApi.md#cancel_order) | **DELETE** /futures/orders/{order_id} | Cancel a single order
 [**cancel_orders**](FuturesApi.md#cancel_orders) | **DELETE** /futures/orders | Cancel all &#x60;open&#x60; orders matched
 [**create_order**](FuturesApi.md#create_order) | **POST** /futures/orders | Create a futures order
+[**get_futures_contract**](FuturesApi.md#get_futures_contract) | **GET** /futures/contracts/{contract} | Get a single contract
 [**get_my_trades**](FuturesApi.md#get_my_trades) | **GET** /futures/my_trades | List personal trading history
 [**get_order**](FuturesApi.md#get_order) | **GET** /futures/orders/{order_id} | Get a single order
+[**get_position**](FuturesApi.md#get_position) | **GET** /futures/positions/{contract} | Get single position
+[**list_futures_account_book**](FuturesApi.md#list_futures_account_book) | **GET** /futures/account_book | Query account book
 [**list_futures_accounts**](FuturesApi.md#list_futures_accounts) | **GET** /futures/accounts | Query futures account
 [**list_futures_candlesticks**](FuturesApi.md#list_futures_candlesticks) | **GET** /futures/candlesticks | Get futures candlesticks
 [**list_futures_contracts**](FuturesApi.md#list_futures_contracts) | **GET** /futures/contracts | List all futures contracts
@@ -143,7 +146,7 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
-futures_order = {"id":15675394,"user":100000,"contract":"BTC_USD","create_time":1546569968,"size":6024,"iceberg":0,"left":6024,"price":"3765","fill_price":"0","mkfr":"-0.00025","tkfr":"0.00075","tif":"gtc","refu":0,"is_reduce_only":false,"is_close":false,"is_liq":false,"text":"api","status":"finished","finish_time":1514764900,"finish_as":"cancelled"} # FuturesOrder | 
+futures_order = gate_api.FuturesOrder() # FuturesOrder | 
 
 try:
     # Create a futures order
@@ -170,6 +173,51 @@ Authentication with API key and secret is required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_futures_contract**
+> Contract get_futures_contract(contract)
+
+Get a single contract
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.rest import ApiException
+
+# create an instance of the API class
+api_instance = gate_api.FuturesApi()
+contract = 'BTC_USD' # str | Futures contract
+
+try:
+    # Get a single contract
+    api_response = api_instance.get_futures_contract(contract)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->get_futures_contract: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contract** | **str**| Futures contract | 
+
+### Return type
+
+[**Contract**](Contract.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -266,6 +314,110 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FuturesOrder**](FuturesOrder.md)
+
+### Authorization
+
+Authentication with API key and secret is required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_position**
+> Position get_position(contract)
+
+Get single position
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.rest import ApiException
+
+configuration = gate_api.Configuration()
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
+
+# create an instance of the API class
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
+contract = 'BTC_USD' # str | Futures contract
+
+try:
+    # Get single position
+    api_response = api_instance.get_position(contract)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->get_position: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contract** | **str**| Futures contract | 
+
+### Return type
+
+[**Position**](Position.md)
+
+### Authorization
+
+Authentication with API key and secret is required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_futures_account_book**
+> list[FuturesAccountBook] list_futures_account_book(limit=limit, _from=_from, to=to, type=type)
+
+Query account book
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.rest import ApiException
+
+configuration = gate_api.Configuration()
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
+
+# create an instance of the API class
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
+limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+_from = 1547706332 # int | Start timestamp (optional)
+to = 1547706332 # int | End timestamp (optional)
+type = 'type_example' # str | Changing Type  - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding (optional)
+
+try:
+    # Query account book
+    api_response = api_instance.list_futures_account_book(limit=limit, _from=_from, to=to, type=type)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->list_futures_account_book: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+ **_from** | **int**| Start timestamp | [optional] 
+ **to** | **int**| End timestamp | [optional] 
+ **type** | **str**| Changing Type  - dnw: Deposit &amp; Withdraw - pnl: Profit &amp; Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding | [optional] 
+
+### Return type
+
+[**list[FuturesAccountBook]**](FuturesAccountBook.md)
 
 ### Authorization
 

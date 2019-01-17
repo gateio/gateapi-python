@@ -4,9 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Futures order ID | [optional] 
+**user** | **int** | User ID | [optional] 
 **create_time** | **float** | Order creation time | [optional] 
 **finish_time** | **float** | Order finished time. Not returned if order is open | [optional] 
-**finish_as** | **str** | how the order is finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is &#x60;IOC&#x60;, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while &#x60;reduce-only&#x60; set | [optional] 
+**finish_as** | **str** | How the order is finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is &#x60;IOC&#x60;, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while &#x60;reduce-only&#x60; set | [optional] 
 **status** | **str** | Order status  - &#x60;open&#x60;: waiting to be traded - &#x60;finished&#x60;: finished | [optional] 
 **contract** | **str** | Futures contract | 
 **size** | **int** | Order size. Specify positive number to make a bid, and negative number to ask | [optional] 
@@ -21,6 +22,9 @@ Name | Type | Description | Notes
 **left** | **int** | Size left to be traded | [optional] 
 **fill_price** | **str** | Fill price of the order | [optional] 
 **text** | **str** | How order is created  - web: from web - api: from API - app: from mobile phones - auto_deleveraging: from ADL - liquidation: from liquidation - insurance: from insurance  | [optional] 
+**tkfr** | **str** | Taker fee | [optional] 
+**mkfr** | **str** | Maker fee | [optional] 
+**refu** | **str** | Reference user ID | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
