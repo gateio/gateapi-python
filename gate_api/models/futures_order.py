@@ -53,7 +53,7 @@ class FuturesOrder(object):
         'text': 'str',
         'tkfr': 'str',
         'mkfr': 'str',
-        'refu': 'str'
+        'refu': 'int'
     }
 
     attribute_map = {
@@ -662,7 +662,7 @@ class FuturesOrder(object):
         Reference user ID  # noqa: E501
 
         :return: The refu of this FuturesOrder.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._refu
 
@@ -673,7 +673,7 @@ class FuturesOrder(object):
         Reference user ID  # noqa: E501
 
         :param refu: The refu of this FuturesOrder.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._refu = refu

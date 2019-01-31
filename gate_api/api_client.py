@@ -150,7 +150,8 @@ class ApiClient(object):
                                                     collection_formats)
 
         # auth setting
-        self.update_params_for_auth(header_params, query_params, auth_settings)
+        # self.update_params_for_auth(header_params, query_params, auth_settings)
+        _auth_required = (auth_settings != [])
 
         # body
         if body:
@@ -164,7 +165,8 @@ class ApiClient(object):
             method, url, query_params=query_params, headers=header_params,
             post_params=post_params, body=body,
             _preload_content=_preload_content,
-            _request_timeout=_request_timeout)
+            _request_timeout=_request_timeout,
+            _auth_required=_auth_required)
 
         self.last_response = response_data
 
@@ -302,13 +304,13 @@ class ApiClient(object):
         :param header_params: Header parameters to be
             placed in the request header.
         :param body: Request body.
-        :param post_params dict: Request post form parameters,
+        :param dict post_params: Request post form parameters,
             for `application/x-www-form-urlencoded`, `multipart/form-data`.
-        :param auth_settings list: Auth Settings names for the request.
-        :param response: Response data type.
-        :param files dict: key -> filename, value -> filepath,
+        :param list auth_settings: Auth Settings names for the request.
+        :param response_type: Response data type.
+        :param dict files: key -> filename, value -> filepath,
             for `multipart/form-data`.
-        :param async_req bool: execute request asynchronously
+        :param bool async_req: execute request asynchronously
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param collection_formats: dict of collection formats for path, query,
@@ -347,24 +349,27 @@ class ApiClient(object):
 
     def request(self, method, url, query_params=None, headers=None,
                 post_params=None, body=None, _preload_content=True,
-                _request_timeout=None):
+                _request_timeout=None, _auth_required=True):
         """Makes the HTTP request using RESTClient."""
         if method == "GET":
             return self.rest_client.GET(url,
                                         query_params=query_params,
                                         _preload_content=_preload_content,
                                         _request_timeout=_request_timeout,
-                                        headers=headers)
+                                        headers=headers,
+                                        _auth_required=_auth_required)
         elif method == "HEAD":
             return self.rest_client.HEAD(url,
                                          query_params=query_params,
                                          _preload_content=_preload_content,
                                          _request_timeout=_request_timeout,
-                                         headers=headers)
+                                         headers=headers,
+                                         _auth_required=_auth_required)
         elif method == "OPTIONS":
             return self.rest_client.OPTIONS(url,
                                             query_params=query_params,
                                             headers=headers,
+                                            _auth_required=_auth_required,
                                             post_params=post_params,
                                             _preload_content=_preload_content,
                                             _request_timeout=_request_timeout,
@@ -373,6 +378,7 @@ class ApiClient(object):
             return self.rest_client.POST(url,
                                          query_params=query_params,
                                          headers=headers,
+                                         _auth_required=_auth_required,
                                          post_params=post_params,
                                          _preload_content=_preload_content,
                                          _request_timeout=_request_timeout,
@@ -381,6 +387,7 @@ class ApiClient(object):
             return self.rest_client.PUT(url,
                                         query_params=query_params,
                                         headers=headers,
+                                        _auth_required=_auth_required,
                                         post_params=post_params,
                                         _preload_content=_preload_content,
                                         _request_timeout=_request_timeout,
@@ -389,6 +396,7 @@ class ApiClient(object):
             return self.rest_client.PATCH(url,
                                           query_params=query_params,
                                           headers=headers,
+                                          _auth_required=_auth_required,
                                           post_params=post_params,
                                           _preload_content=_preload_content,
                                           _request_timeout=_request_timeout,
@@ -397,6 +405,7 @@ class ApiClient(object):
             return self.rest_client.DELETE(url,
                                            query_params=query_params,
                                            headers=headers,
+                                           _auth_required=_auth_required,
                                            _preload_content=_preload_content,
                                            _request_timeout=_request_timeout,
                                            body=body)

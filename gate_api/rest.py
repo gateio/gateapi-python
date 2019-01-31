@@ -130,7 +130,7 @@ class RESTClientObject(object):
 
     def request(self, method, url, query_params=None, headers=None,
                 body=None, post_params=None, _preload_content=True,
-                _request_timeout=None):
+                _request_timeout=None, _auth_required=True):
         """Perform requests.
 
         :param method: http request method
@@ -148,6 +148,7 @@ class RESTClientObject(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
+        :param _auth_required: whether authentication is required
         """
         method = method.upper()
         assert method in ['GET', 'HEAD', 'DELETE', 'POST', 'PUT',
@@ -173,12 +174,14 @@ class RESTClientObject(object):
         if 'Content-Type' not in headers:
             headers['Content-Type'] = 'application/json'
 
-        resource_path = '/api/v4' + url[len(self.configuration.host):]
         request_body = None
         if body is not None:
             request_body = json.dumps(body)
-        sign_headers = self.gen_sign(method, resource_path, urlencode(query_params), request_body)
-        headers.update(sign_headers)
+        if _auth_required:
+            resource_path = '/api/v4' + url[len(self.configuration.host):]
+            sign_headers = self.gen_sign(method, resource_path, urlencode(query_params),
+                                         request_body)
+            headers.update(sign_headers)
 
         try:
             # For `POST`, `PUT`, `PATCH`, `OPTIONS`, `DELETE`
@@ -257,65 +260,77 @@ class RESTClientObject(object):
         return r
 
     def GET(self, url, headers=None, query_params=None, _preload_content=True,
-            _request_timeout=None):
+            _request_timeout=None, _auth_required=True):
         return self.request("GET", url,
                             headers=headers,
                             _preload_content=_preload_content,
                             _request_timeout=_request_timeout,
-                            query_params=query_params)
+                            query_params=query_params,
+                            _auth_required=_auth_required)
 
     def HEAD(self, url, headers=None, query_params=None, _preload_content=True,
-             _request_timeout=None):
+             _request_timeout=None, _auth_required=True):
         return self.request("HEAD", url,
                             headers=headers,
                             _preload_content=_preload_content,
                             _request_timeout=_request_timeout,
-                            query_params=query_params)
+                            query_params=query_params,
+                            _auth_required=_auth_required)
 
     def OPTIONS(self, url, headers=None, query_params=None, post_params=None,
-                body=None, _preload_content=True, _request_timeout=None):
+                body=None, _preload_content=True, _request_timeout=None,
+                _auth_required=True):
         return self.request("OPTIONS", url,
                             headers=headers,
                             query_params=query_params,
+                            _auth_required=_auth_required,
                             post_params=post_params,
                             _preload_content=_preload_content,
                             _request_timeout=_request_timeout,
                             body=body)
 
     def DELETE(self, url, headers=None, query_params=None, body=None,
-               _preload_content=True, _request_timeout=None):
+               _preload_content=True, _request_timeout=None,
+               _auth_required=True):
         return self.request("DELETE", url,
                             headers=headers,
                             query_params=query_params,
+                            _auth_required=_auth_required,
                             _preload_content=_preload_content,
                             _request_timeout=_request_timeout,
                             body=body)
 
     def POST(self, url, headers=None, query_params=None, post_params=None,
-             body=None, _preload_content=True, _request_timeout=None):
+             body=None, _preload_content=True, _request_timeout=None,
+             _auth_required=True):
         return self.request("POST", url,
                             headers=headers,
                             query_params=query_params,
+                            _auth_required=_auth_required,
                             post_params=post_params,
                             _preload_content=_preload_content,
                             _request_timeout=_request_timeout,
                             body=body)
 
     def PUT(self, url, headers=None, query_params=None, post_params=None,
-            body=None, _preload_content=True, _request_timeout=None):
+            body=None, _preload_content=True, _request_timeout=None,
+            _auth_required=True):
         return self.request("PUT", url,
                             headers=headers,
                             query_params=query_params,
+                            _auth_required=_auth_required,
                             post_params=post_params,
                             _preload_content=_preload_content,
                             _request_timeout=_request_timeout,
                             body=body)
 
     def PATCH(self, url, headers=None, query_params=None, post_params=None,
-              body=None, _preload_content=True, _request_timeout=None):
+              body=None, _preload_content=True, _request_timeout=None,
+              _auth_required=True):
         return self.request("PATCH", url,
                             headers=headers,
                             query_params=query_params,
+                            _auth_required=_auth_required,
                             post_params=post_params,
                             _preload_content=_preload_content,
                             _request_timeout=_request_timeout,

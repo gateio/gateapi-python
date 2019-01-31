@@ -396,7 +396,7 @@ api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
 _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
-type = 'type_example' # str | Changing Type  - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding (optional)
+type = 'dnw' # str | Changing Type  - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding (optional)
 
 try:
     # Query account book
