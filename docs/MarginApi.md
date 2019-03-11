@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **cancel_loan**
-> Loan cancel_loan(currency)
+> Loan cancel_loan(loan_id, currency)
 
 Cancel lending loan
 
@@ -41,11 +41,12 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+loan_id = 'loan_id_example' # str | Loan ID
 currency = 'BTC' # str | Retrieved specified currency related data
 
 try:
     # Cancel lending loan
-    api_response = api_instance.cancel_loan(currency)
+    api_response = api_instance.cancel_loan(loan_id, currency)
     print(api_response)
 except ApiException as e:
     print("Exception when calling MarginApi->cancel_loan: %s\n" % e)
@@ -55,6 +56,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **loan_id** | **str**| Loan ID | 
  **currency** | **str**| Retrieved specified currency related data | 
 
 ### Return type
@@ -122,7 +124,7 @@ Authentication with API key and secret is required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_loan**
-> Loan get_loan(side)
+> Loan get_loan(loan_id, side)
 
 Retrieve one single loan detail
 
@@ -139,11 +141,12 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+loan_id = 'loan_id_example' # str | Loan ID
 side = 'lend' # str | Lend or borrow
 
 try:
     # Retrieve one single loan detail
-    api_response = api_instance.get_loan(side)
+    api_response = api_instance.get_loan(loan_id, side)
     print(api_response)
 except ApiException as e:
     print("Exception when calling MarginApi->get_loan: %s\n" % e)
@@ -153,6 +156,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **loan_id** | **str**| Loan ID | 
  **side** | **str**| Lend or borrow | 
 
 ### Return type
@@ -171,7 +175,7 @@ Authentication with API key and secret is required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_loan_record**
-> LoanRecord get_loan_record(loan_id)
+> LoanRecord get_loan_record(loan_record_id, loan_id)
 
 Get one single loan record
 
@@ -188,11 +192,12 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+loan_record_id = 'loan_record_id_example' # str | Loan record ID
 loan_id = 'loan_id_example' # str | Loan ID
 
 try:
     # Get one single loan record
-    api_response = api_instance.get_loan_record(loan_id)
+    api_response = api_instance.get_loan_record(loan_record_id, loan_id)
     print(api_response)
 except ApiException as e:
     print("Exception when calling MarginApi->get_loan_record: %s\n" % e)
@@ -202,6 +207,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **loan_record_id** | **str**| Loan record ID | 
  **loan_id** | **str**| Loan ID | 
 
 ### Return type
@@ -369,7 +375,7 @@ Authentication with API key and secret is required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_loan_repayments**
-> list[Repayment] list_loan_repayments()
+> list[Repayment] list_loan_repayments(loan_id)
 
 List loan repayment records
 
@@ -386,17 +392,21 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+loan_id = 'loan_id_example' # str | Loan ID
 
 try:
     # List loan repayment records
-    api_response = api_instance.list_loan_repayments()
+    api_response = api_instance.list_loan_repayments(loan_id)
     print(api_response)
 except ApiException as e:
     print("Exception when calling MarginApi->list_loan_repayments: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **loan_id** | **str**| Loan ID | 
 
 ### Return type
 
@@ -612,7 +622,7 @@ Authentication with API key and secret is required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **repay_loan**
-> Loan repay_loan(repay_request)
+> Loan repay_loan(loan_id, repay_request)
 
 Repay a loan
 
@@ -629,11 +639,12 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+loan_id = 'loan_id_example' # str | Loan ID
 repay_request = gate_api.RepayRequest() # RepayRequest | 
 
 try:
     # Repay a loan
-    api_response = api_instance.repay_loan(repay_request)
+    api_response = api_instance.repay_loan(loan_id, repay_request)
     print(api_response)
 except ApiException as e:
     print("Exception when calling MarginApi->repay_loan: %s\n" % e)
@@ -643,6 +654,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **loan_id** | **str**| Loan ID | 
  **repay_request** | [**RepayRequest**](RepayRequest.md)|  | 
 
 ### Return type
@@ -661,7 +673,7 @@ Authentication with API key and secret is required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_loan**
-> Loan update_loan(loan_patch)
+> Loan update_loan(loan_id, loan_patch)
 
 Modify a loan
 
@@ -680,11 +692,12 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+loan_id = 'loan_id_example' # str | Loan ID
 loan_patch = gate_api.LoanPatch() # LoanPatch | 
 
 try:
     # Modify a loan
-    api_response = api_instance.update_loan(loan_patch)
+    api_response = api_instance.update_loan(loan_id, loan_patch)
     print(api_response)
 except ApiException as e:
     print("Exception when calling MarginApi->update_loan: %s\n" % e)
@@ -694,6 +707,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **loan_id** | **str**| Loan ID | 
  **loan_patch** | [**LoanPatch**](LoanPatch.md)|  | 
 
 ### Return type
@@ -712,7 +726,7 @@ Authentication with API key and secret is required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_loan_record**
-> LoanRecord update_loan_record(loan_patch)
+> LoanRecord update_loan_record(loan_record_id, loan_patch)
 
 Modify a loan record
 
@@ -731,11 +745,12 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+loan_record_id = 'loan_record_id_example' # str | Loan record ID
 loan_patch = gate_api.LoanPatch() # LoanPatch | 
 
 try:
     # Modify a loan record
-    api_response = api_instance.update_loan_record(loan_patch)
+    api_response = api_instance.update_loan_record(loan_record_id, loan_patch)
     print(api_response)
 except ApiException as e:
     print("Exception when calling MarginApi->update_loan_record: %s\n" % e)
@@ -745,6 +760,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **loan_record_id** | **str**| Loan record ID | 
  **loan_patch** | [**LoanPatch**](LoanPatch.md)|  | 
 
 ### Return type
