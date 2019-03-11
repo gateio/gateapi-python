@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **cancel_order**
-> Order cancel_order()
+> Order cancel_order(order_id, currency_pair)
 
 Cancel a single order
 
@@ -37,17 +37,23 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.SpotApi(gate_api.ApiClient(configuration))
+order_id = '12345' # str | ID returned on order successfully being created
+currency_pair = 'BTC_USDT' # str | Currency pair
 
 try:
     # Cancel a single order
-    api_response = api_instance.cancel_order()
+    api_response = api_instance.cancel_order(order_id, currency_pair)
     print(api_response)
 except ApiException as e:
     print("Exception when calling SpotApi->cancel_order: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order_id** | **str**| ID returned on order successfully being created | 
+ **currency_pair** | **str**| Currency pair | 
 
 ### Return type
 
@@ -212,7 +218,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_order**
-> Order get_order()
+> Order get_order(order_id, currency_pair)
 
 Get a single order
 
@@ -229,17 +235,23 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.SpotApi(gate_api.ApiClient(configuration))
+order_id = '12345' # str | ID returned on order successfully being created
+currency_pair = 'BTC_USDT' # str | Currency pair
 
 try:
     # Get a single order
-    api_response = api_instance.get_order()
+    api_response = api_instance.get_order(order_id, currency_pair)
     print(api_response)
 except ApiException as e:
     print("Exception when calling SpotApi->get_order: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order_id** | **str**| ID returned on order successfully being created | 
+ **currency_pair** | **str**| Currency pair | 
 
 ### Return type
 
