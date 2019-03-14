@@ -41,7 +41,7 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
-loan_id = 'loan_id_example' # str | Loan ID
+loan_id = '12345' # str | Loan ID
 currency = 'BTC' # str | Retrieved specified currency related data
 
 try:
@@ -141,7 +141,7 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
-loan_id = 'loan_id_example' # str | Loan ID
+loan_id = '12345' # str | Loan ID
 side = 'lend' # str | Lend or borrow
 
 try:
@@ -192,8 +192,8 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
-loan_record_id = 'loan_record_id_example' # str | Loan record ID
-loan_id = 'loan_id_example' # str | Loan ID
+loan_record_id = '12345' # str | Loan record ID
+loan_id = '12345' # str | Loan ID
 
 try:
     # Get one single loan record
@@ -337,8 +337,8 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
-loan_id = 'loan_id_example' # str | Loan ID
-status = 'status_example' # str | Loan record status (optional)
+loan_id = '12345' # str | Loan ID
+status = 'loaned' # str | Loan record status (optional)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
 
@@ -392,7 +392,7 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
-loan_id = 'loan_id_example' # str | Loan ID
+loan_id = '12345' # str | Loan ID
 
 try:
     # List loan repayment records
@@ -639,7 +639,7 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
-loan_id = 'loan_id_example' # str | Loan ID
+loan_id = '12345' # str | Loan ID
 repay_request = gate_api.RepayRequest() # RepayRequest | 
 
 try:
@@ -692,7 +692,7 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
-loan_id = 'loan_id_example' # str | Loan ID
+loan_id = '12345' # str | Loan ID
 loan_patch = gate_api.LoanPatch() # LoanPatch | 
 
 try:
@@ -745,7 +745,7 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
-loan_record_id = 'loan_record_id_example' # str | Loan record ID
+loan_record_id = '12345' # str | Loan record ID
 loan_patch = gate_api.LoanPatch() # LoanPatch | 
 
 try:

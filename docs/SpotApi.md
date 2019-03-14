@@ -416,7 +416,7 @@ Authentication with API key and secret is required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_order_book**
-> OrderBook list_order_book(currency_pair=currency_pair, interval=interval, limit=limit)
+> OrderBook list_order_book(currency_pair, interval=interval, limit=limit)
 
 Retrieve order book
 
@@ -431,13 +431,13 @@ from gate_api.rest import ApiException
 
 # create an instance of the API class
 api_instance = gate_api.SpotApi()
-currency_pair = 'BTC_USDT' # str | Currency pair (optional)
+currency_pair = 'BTC_USDT' # str | Currency pair
 interval = '0' # str | Price precision of order book. 0 means no aggregation is applied (optional) (default to '0')
 limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
 
 try:
     # Retrieve order book
-    api_response = api_instance.list_order_book(currency_pair=currency_pair, interval=interval, limit=limit)
+    api_response = api_instance.list_order_book(currency_pair, interval=interval, limit=limit)
     print(api_response)
 except ApiException as e:
     print("Exception when calling SpotApi->list_order_book: %s\n" % e)
@@ -447,7 +447,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency_pair** | **str**| Currency pair | [optional] 
+ **currency_pair** | **str**| Currency pair | 
  **interval** | **str**| Price precision of order book. 0 means no aggregation is applied | [optional] [default to &#39;0&#39;]
  **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
 
