@@ -4,15 +4,15 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_order**](FuturesApi.md#cancel_order) | **DELETE** /futures/orders/{order_id} | Cancel a single order
-[**cancel_orders**](FuturesApi.md#cancel_orders) | **DELETE** /futures/orders | Cancel all &#x60;open&#x60; orders matched
+[**cancel_futures_order**](FuturesApi.md#cancel_futures_order) | **DELETE** /futures/orders/{order_id} | Cancel a single order
+[**cancel_futures_orders**](FuturesApi.md#cancel_futures_orders) | **DELETE** /futures/orders | Cancel all &#x60;open&#x60; orders matched
 [**cancel_price_triggered_order**](FuturesApi.md#cancel_price_triggered_order) | **DELETE** /futures/price_orders/{order_id} | Cancel a single order
 [**cancel_price_triggered_order_list**](FuturesApi.md#cancel_price_triggered_order_list) | **DELETE** /futures/price_orders | Cancel all open orders
-[**create_order**](FuturesApi.md#create_order) | **POST** /futures/orders | Create a futures order
+[**create_futures_order**](FuturesApi.md#create_futures_order) | **POST** /futures/orders | Create a futures order
 [**create_price_triggered_order**](FuturesApi.md#create_price_triggered_order) | **POST** /futures/price_orders | Create a price-triggered order
 [**get_futures_contract**](FuturesApi.md#get_futures_contract) | **GET** /futures/contracts/{contract} | Get a single contract
+[**get_futures_order**](FuturesApi.md#get_futures_order) | **GET** /futures/orders/{order_id} | Get a single order
 [**get_my_trades**](FuturesApi.md#get_my_trades) | **GET** /futures/my_trades | List personal trading history
-[**get_order**](FuturesApi.md#get_order) | **GET** /futures/orders/{order_id} | Get a single order
 [**get_position**](FuturesApi.md#get_position) | **GET** /futures/positions/{contract} | Get single position
 [**get_price_triggered_order**](FuturesApi.md#get_price_triggered_order) | **GET** /futures/price_orders/{order_id} | Get a single order
 [**list_futures_account_book**](FuturesApi.md#list_futures_account_book) | **GET** /futures/account_book | Query account book
@@ -22,9 +22,9 @@ Method | HTTP request | Description
 [**list_futures_funding_rate_history**](FuturesApi.md#list_futures_funding_rate_history) | **GET** /futures/funding_rate | Funding rate history
 [**list_futures_insurance_ledger**](FuturesApi.md#list_futures_insurance_ledger) | **GET** /futures/insurance | Futures insurance balance history
 [**list_futures_order_book**](FuturesApi.md#list_futures_order_book) | **GET** /futures/order_book | Futures order book
+[**list_futures_orders**](FuturesApi.md#list_futures_orders) | **GET** /futures/orders | List futures orders
 [**list_futures_tickers**](FuturesApi.md#list_futures_tickers) | **GET** /futures/tickers | List futures tickers
 [**list_futures_trades**](FuturesApi.md#list_futures_trades) | **GET** /futures/trades | Futures trading history
-[**list_orders**](FuturesApi.md#list_orders) | **GET** /futures/orders | List futures orders
 [**list_position_close**](FuturesApi.md#list_position_close) | **GET** /futures/position_close | List position close history
 [**list_positions**](FuturesApi.md#list_positions) | **GET** /futures/positions | List all positions of a user
 [**list_price_triggered_orders**](FuturesApi.md#list_price_triggered_orders) | **GET** /futures/price_orders | List all auto orders
@@ -33,8 +33,8 @@ Method | HTTP request | Description
 [**update_position_risk_limit**](FuturesApi.md#update_position_risk_limit) | **POST** /futures/positions/{contract}/risk_limit | Update position risk limit
 
 
-# **cancel_order**
-> FuturesOrder cancel_order(order_id)
+# **cancel_futures_order**
+> FuturesOrder cancel_futures_order(order_id)
 
 Cancel a single order
 
@@ -55,10 +55,10 @@ order_id = '12345' # str | ID returned on order successfully being created
 
 try:
     # Cancel a single order
-    api_response = api_instance.cancel_order(order_id)
+    api_response = api_instance.cancel_futures_order(order_id)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling FuturesApi->cancel_order: %s\n" % e)
+    print("Exception when calling FuturesApi->cancel_futures_order: %s\n" % e)
 ```
 
 ### Parameters
@@ -82,8 +82,8 @@ Authentication with API key and secret is required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **cancel_orders**
-> list[FuturesOrder] cancel_orders(contract, side=side)
+# **cancel_futures_orders**
+> list[FuturesOrder] cancel_futures_orders(contract, side=side)
 
 Cancel all `open` orders matched
 
@@ -105,10 +105,10 @@ side = 'ask' # str | All bids or asks. Both included in not specified (optional)
 
 try:
     # Cancel all `open` orders matched
-    api_response = api_instance.cancel_orders(contract, side=side)
+    api_response = api_instance.cancel_futures_orders(contract, side=side)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling FuturesApi->cancel_orders: %s\n" % e)
+    print("Exception when calling FuturesApi->cancel_futures_orders: %s\n" % e)
 ```
 
 ### Parameters
@@ -231,8 +231,8 @@ Authentication with API key and secret is required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_order**
-> FuturesOrder create_order(futures_order)
+# **create_futures_order**
+> FuturesOrder create_futures_order(futures_order)
 
 Create a futures order
 
@@ -253,10 +253,10 @@ futures_order = gate_api.FuturesOrder() # FuturesOrder |
 
 try:
     # Create a futures order
-    api_response = api_instance.create_order(futures_order)
+    api_response = api_instance.create_futures_order(futures_order)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling FuturesApi->create_order: %s\n" % e)
+    print("Exception when calling FuturesApi->create_futures_order: %s\n" % e)
 ```
 
 ### Parameters
@@ -374,6 +374,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_futures_order**
+> FuturesOrder get_futures_order(order_id)
+
+Get a single order
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.rest import ApiException
+
+configuration = gate_api.Configuration()
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
+
+# create an instance of the API class
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
+order_id = '12345' # str | ID returned on order successfully being created
+
+try:
+    # Get a single order
+    api_response = api_instance.get_futures_order(order_id)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->get_futures_order: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order_id** | **str**| ID returned on order successfully being created | 
+
+### Return type
+
+[**FuturesOrder**](FuturesOrder.md)
+
+### Authorization
+
+Authentication with API key and secret is required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_my_trades**
 > list[MyFuturesTrade] get_my_trades(contract=contract, order=order, limit=limit, last_id=last_id)
 
@@ -417,55 +466,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[MyFuturesTrade]**](MyFuturesTrade.md)
-
-### Authorization
-
-Authentication with API key and secret is required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_order**
-> FuturesOrder get_order(order_id)
-
-Get a single order
-
-### Example
-
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.rest import ApiException
-
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
-
-# create an instance of the API class
-api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
-order_id = '12345' # str | ID returned on order successfully being created
-
-try:
-    # Get a single order
-    api_response = api_instance.get_order(order_id)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->get_order: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **order_id** | **str**| ID returned on order successfully being created | 
-
-### Return type
-
-[**FuturesOrder**](FuturesOrder.md)
 
 ### Authorization
 
@@ -915,6 +915,61 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_futures_orders**
+> list[FuturesOrder] list_futures_orders(contract, status, limit=limit, last_id=last_id)
+
+List futures orders
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.rest import ApiException
+
+configuration = gate_api.Configuration()
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
+
+# create an instance of the API class
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
+contract = 'BTC_USD' # str | Futures contract
+status = 'open' # str | List orders based on status
+limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+last_id = '12345' # str | Specify list staring point using the last record of `id` in previous list-query results (optional)
+
+try:
+    # List futures orders
+    api_response = api_instance.list_futures_orders(contract, status, limit=limit, last_id=last_id)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->list_futures_orders: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contract** | **str**| Futures contract | 
+ **status** | **str**| List orders based on status | 
+ **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+ **last_id** | **str**| Specify list staring point using the last record of &#x60;id&#x60; in previous list-query results | [optional] 
+
+### Return type
+
+[**list[FuturesOrder]**](FuturesOrder.md)
+
+### Authorization
+
+Authentication with API key and secret is required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_futures_tickers**
 > list[FuturesTicker] list_futures_tickers(contract=contract)
 
@@ -1001,61 +1056,6 @@ Name | Type | Description  | Notes
 ### Authorization
 
 No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_orders**
-> list[FuturesOrder] list_orders(contract, status, limit=limit, last_id=last_id)
-
-List futures orders
-
-### Example
-
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.rest import ApiException
-
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
-
-# create an instance of the API class
-api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
-contract = 'BTC_USD' # str | Futures contract
-status = 'open' # str | List orders based on status
-limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
-last_id = '12345' # str | Specify list staring point using the last record of `id` in previous list-query results (optional)
-
-try:
-    # List futures orders
-    api_response = api_instance.list_orders(contract, status, limit=limit, last_id=last_id)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->list_orders: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contract** | **str**| Futures contract | 
- **status** | **str**| List orders based on status | 
- **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
- **last_id** | **str**| Specify list staring point using the last record of &#x60;id&#x60; in previous list-query results | [optional] 
-
-### Return type
-
-[**list[FuturesOrder]**](FuturesOrder.md)
-
-### Authorization
-
-Authentication with API key and secret is required
 
 ### HTTP request headers
 
