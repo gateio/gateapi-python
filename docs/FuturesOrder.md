@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **close** | **bool** | Set as &#x60;true&#x60; to close the position, with &#x60;size&#x60; set to 0 | [optional] [default to False]
 **is_close** | **bool** | Is the order to close position | [optional] 
 **reduce_only** | **bool** | Set as &#x60;true&#x60; to be post-only order | [optional] [default to False]
-**is_reduce_only** | **bool** | Is the order post-only | [optional] 
+**is_reduce_only** | **bool** | Is the order reduce-only | [optional] 
 **is_liq** | **bool** | Is the order for liquidation | [optional] 
 **tif** | **str** | Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, post-only | [optional] [default to 'gtc']
 **left** | **int** | Size left to be traded | [optional] 

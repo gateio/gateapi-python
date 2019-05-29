@@ -424,7 +424,7 @@ Authentication with API key and secret is required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_loans**
-> list[Loan] list_loans(status, side, currency=currency, page=page, limit=limit)
+> list[Loan] list_loans(status, side, currency=currency, currency_pair=currency_pair, sort_by=sort_by, reverse_sort=reverse_sort, page=page, limit=limit)
 
 List all loans
 
@@ -444,12 +444,15 @@ api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
 status = 'open' # str | Loan status
 side = 'lend' # str | Lend or borrow
 currency = 'BTC' # str | Retrieved specified currency related data (optional)
+currency_pair = 'BTC_USDT' # str | Currency pair (optional)
+sort_by = 'rate' # str | Specify which field is used to sort. `create_time` or `rate` is supported. Default to `create_time` (optional)
+reverse_sort = True # bool | Whether to sort in descending order. Default to `true` (optional)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
 
 try:
     # List all loans
-    api_response = api_instance.list_loans(status, side, currency=currency, page=page, limit=limit)
+    api_response = api_instance.list_loans(status, side, currency=currency, currency_pair=currency_pair, sort_by=sort_by, reverse_sort=reverse_sort, page=page, limit=limit)
     print(api_response)
 except ApiException as e:
     print("Exception when calling MarginApi->list_loans: %s\n" % e)
@@ -462,6 +465,9 @@ Name | Type | Description  | Notes
  **status** | **str**| Loan status | 
  **side** | **str**| Lend or borrow | 
  **currency** | **str**| Retrieved specified currency related data | [optional] 
+ **currency_pair** | **str**| Currency pair | [optional] 
+ **sort_by** | **str**| Specify which field is used to sort. &#x60;create_time&#x60; or &#x60;rate&#x60; is supported. Default to &#x60;create_time&#x60; | [optional] 
+ **reverse_sort** | **bool**| Whether to sort in descending order. Default to &#x60;true&#x60; | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
 
