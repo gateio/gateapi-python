@@ -6,3 +6,4 @@ from __future__ import absolute_import
 from gate_api.api.futures_api import FuturesApi
 from gate_api.api.margin_api import MarginApi
 from gate_api.api.spot_api import SpotApi
+from gate_api.api.wallet_api import WalletApi

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**list_currency_pairs**](SpotApi.md#list_currency_pairs) | **GET** /spot/currency_pairs | List all currency pairs supported
 [**list_my_trades**](SpotApi.md#list_my_trades) | **GET** /spot/my_trades | List personal trading history
 [**list_order_book**](SpotApi.md#list_order_book) | **GET** /spot/order_book | Retrieve order book
-[**list_orders**](SpotApi.md#list_orders) | **GET** /spot/orders | List futures orders
+[**list_orders**](SpotApi.md#list_orders) | **GET** /spot/orders | List orders
 [**list_spot_accounts**](SpotApi.md#list_spot_accounts) | **GET** /spot/accounts | List spot accounts
 [**list_tickers**](SpotApi.md#list_tickers) | **GET** /spot/tickers | Retrieve ticker information
 [**list_trades**](SpotApi.md#list_trades) | **GET** /spot/trades | Retrieve market trades
@@ -469,7 +469,7 @@ No authorization required
 # **list_orders**
 > list[Order] list_orders(currency_pair, status, page=page, limit=limit)
 
-List futures orders
+List orders
 
 ### Example
 
@@ -490,7 +490,7 @@ page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
 
 try:
-    # List futures orders
+    # List orders
     api_response = api_instance.list_orders(currency_pair, status, page=page, limit=limit)
     print(api_response)
 except ApiException as e:

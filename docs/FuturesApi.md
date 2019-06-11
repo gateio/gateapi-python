@@ -25,6 +25,7 @@ Method | HTTP request | Description
 [**list_futures_orders**](FuturesApi.md#list_futures_orders) | **GET** /futures/orders | List futures orders
 [**list_futures_tickers**](FuturesApi.md#list_futures_tickers) | **GET** /futures/tickers | List futures tickers
 [**list_futures_trades**](FuturesApi.md#list_futures_trades) | **GET** /futures/trades | Futures trading history
+[**list_liquidates**](FuturesApi.md#list_liquidates) | **GET** /futures/liquidates | List liquidation history
 [**list_position_close**](FuturesApi.md#list_position_close) | **GET** /futures/position_close | List position close history
 [**list_positions**](FuturesApi.md#list_positions) | **GET** /futures/positions | List all positions of a user
 [**list_price_triggered_orders**](FuturesApi.md#list_price_triggered_orders) | **GET** /futures/price_orders | List all auto orders
@@ -597,7 +598,7 @@ api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
 limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
 _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
-type = 'dnw' # str | Changing Type  - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding (optional)
+type = 'dnw' # str | Changing Type: - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate (optional)
 
 try:
     # Query account book
@@ -614,7 +615,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
  **_from** | **int**| Start timestamp | [optional] 
  **to** | **int**| End timestamp | [optional] 
- **type** | **str**| Changing Type  - dnw: Deposit &amp; Withdraw - pnl: Profit &amp; Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding | [optional] 
+ **type** | **str**| Changing Type: - dnw: Deposit &amp; Withdraw - pnl: Profit &amp; Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit &amp; Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate | [optional] 
 
 ### Return type
 
@@ -1056,6 +1057,59 @@ Name | Type | Description  | Notes
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_liquidates**
+> list[FuturesLiquidate] list_liquidates(contract=contract, limit=limit, at=at)
+
+List liquidation history
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.rest import ApiException
+
+configuration = gate_api.Configuration()
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
+
+# create an instance of the API class
+api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
+contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+at = 0 # int | Specify a liquidation timestamp (optional) (default to 0)
+
+try:
+    # List liquidation history
+    api_response = api_instance.list_liquidates(contract=contract, limit=limit, at=at)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->list_liquidates: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+ **at** | **int**| Specify a liquidation timestamp | [optional] [default to 0]
+
+### Return type
+
+[**list[FuturesLiquidate]**](FuturesLiquidate.md)
+
+### Authorization
+
+Authentication with API key and secret is required
 
 ### HTTP request headers
 
