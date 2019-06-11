@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **position_margin** | **str** | Position margin | [optional] 
 **order_margin** | **str** | Order margin of unfinished orders | [optional] 
 **available** | **str** | Available balance to transfer out or trade | [optional] 
+**point** | **str** | POINT amount | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

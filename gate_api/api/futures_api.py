@@ -1103,7 +1103,7 @@ class FuturesApi(object):
         :param int limit: Maximum number of record returned in one list
         :param int _from: Start timestamp
         :param int to: End timestamp
-        :param str type: Changing Type  - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding
+        :param str type: Changing Type: - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate
         :return: list[FuturesAccountBook]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1127,7 +1127,7 @@ class FuturesApi(object):
         :param int limit: Maximum number of record returned in one list
         :param int _from: Start timestamp
         :param int to: End timestamp
-        :param str type: Changing Type  - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding
+        :param str type: Changing Type: - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate
         :return: list[FuturesAccountBook]
                  If the method is called asynchronously,
                  returns the request thread.

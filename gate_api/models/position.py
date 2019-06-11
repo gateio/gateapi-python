@@ -48,6 +48,8 @@ class Position(object):
         'realised_pnl': 'str',
         'history_pnl': 'str',
         'last_close_pnl': 'str',
+        'realised_point': 'str',
+        'history_point': 'str',
         'adl_ranking': 'int',
         'pending_orders': 'int',
         'close_order': 'PositionCloseOrder'
@@ -70,12 +72,14 @@ class Position(object):
         'realised_pnl': 'realised_pnl',
         'history_pnl': 'history_pnl',
         'last_close_pnl': 'last_close_pnl',
+        'realised_point': 'realised_point',
+        'history_point': 'history_point',
         'adl_ranking': 'adl_ranking',
         'pending_orders': 'pending_orders',
         'close_order': 'close_order'
     }
 
-    def __init__(self, user=None, contract=None, size=None, leverage=None, risk_limit=None, leverage_max=None, maintenance_rate=None, value=None, margin=None, entry_price=None, liq_price=None, mark_price=None, unrealised_pnl=None, realised_pnl=None, history_pnl=None, last_close_pnl=None, adl_ranking=None, pending_orders=None, close_order=None):  # noqa: E501
+    def __init__(self, user=None, contract=None, size=None, leverage=None, risk_limit=None, leverage_max=None, maintenance_rate=None, value=None, margin=None, entry_price=None, liq_price=None, mark_price=None, unrealised_pnl=None, realised_pnl=None, history_pnl=None, last_close_pnl=None, realised_point=None, history_point=None, adl_ranking=None, pending_orders=None, close_order=None):  # noqa: E501
         """Position - a model defined in OpenAPI"""  # noqa: E501
 
         self._user = None
@@ -94,6 +98,8 @@ class Position(object):
         self._realised_pnl = None
         self._history_pnl = None
         self._last_close_pnl = None
+        self._realised_point = None
+        self._history_point = None
         self._adl_ranking = None
         self._pending_orders = None
         self._close_order = None
@@ -131,6 +137,10 @@ class Position(object):
             self.history_pnl = history_pnl
         if last_close_pnl is not None:
             self.last_close_pnl = last_close_pnl
+        if realised_point is not None:
+            self.realised_point = realised_point
+        if history_point is not None:
+            self.history_point = history_point
         if adl_ranking is not None:
             self.adl_ranking = adl_ranking
         if pending_orders is not None:
@@ -505,6 +515,52 @@ class Position(object):
         """
 
         self._last_close_pnl = last_close_pnl
+
+    @property
+    def realised_point(self):
+        """Gets the realised_point of this Position.  # noqa: E501
+
+        Realized POINT PNL  # noqa: E501
+
+        :return: The realised_point of this Position.  # noqa: E501
+        :rtype: str
+        """
+        return self._realised_point
+
+    @realised_point.setter
+    def realised_point(self, realised_point):
+        """Sets the realised_point of this Position.
+
+        Realized POINT PNL  # noqa: E501
+
+        :param realised_point: The realised_point of this Position.  # noqa: E501
+        :type: str
+        """
+
+        self._realised_point = realised_point
+
+    @property
+    def history_point(self):
+        """Gets the history_point of this Position.  # noqa: E501
+
+        History realized POINT PNL  # noqa: E501
+
+        :return: The history_point of this Position.  # noqa: E501
+        :rtype: str
+        """
+        return self._history_point
+
+    @history_point.setter
+    def history_point(self, history_point):
+        """Sets the history_point of this Position.
+
+        History realized POINT PNL  # noqa: E501
+
+        :param history_point: The history_point of this Position.  # noqa: E501
+        :type: str
+        """
+
+        self._history_point = history_point
 
     @property
     def adl_ranking(self):
