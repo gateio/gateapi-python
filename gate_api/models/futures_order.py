@@ -34,7 +34,6 @@ class FuturesOrder(object):
     openapi_types = {
         'id': 'int',
         'user': 'int',
-        'client_id': 'str',
         'create_time': 'float',
         'finish_time': 'float',
         'finish_as': 'str',
@@ -60,7 +59,6 @@ class FuturesOrder(object):
     attribute_map = {
         'id': 'id',
         'user': 'user',
-        'client_id': 'client_id',
         'create_time': 'create_time',
         'finish_time': 'finish_time',
         'finish_as': 'finish_as',
@@ -83,12 +81,11 @@ class FuturesOrder(object):
         'refu': 'refu'
     }
 
-    def __init__(self, id=None, user=None, client_id=None, create_time=None, finish_time=None, finish_as=None, status=None, contract=None, size=None, iceberg=None, price=None, close=False, is_close=None, reduce_only=False, is_reduce_only=None, is_liq=None, tif='gtc', left=None, fill_price=None, text=None, tkfr=None, mkfr=None, refu=None):  # noqa: E501
+    def __init__(self, id=None, user=None, create_time=None, finish_time=None, finish_as=None, status=None, contract=None, size=None, iceberg=None, price=None, close=False, is_close=None, reduce_only=False, is_reduce_only=None, is_liq=None, tif='gtc', left=None, fill_price=None, text=None, tkfr=None, mkfr=None, refu=None):  # noqa: E501
         """FuturesOrder - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
         self._user = None
-        self._client_id = None
         self._create_time = None
         self._finish_time = None
         self._finish_as = None
@@ -115,8 +112,6 @@ class FuturesOrder(object):
             self.id = id
         if user is not None:
             self.user = user
-        if client_id is not None:
-            self.client_id = client_id
         if create_time is not None:
             self.create_time = create_time
         if finish_time is not None:
@@ -202,29 +197,6 @@ class FuturesOrder(object):
         """
 
         self._user = user
-
-    @property
-    def client_id(self):
-        """Gets the client_id of this FuturesOrder.  # noqa: E501
-
-        User defined ID  # noqa: E501
-
-        :return: The client_id of this FuturesOrder.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_id
-
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this FuturesOrder.
-
-        User defined ID  # noqa: E501
-
-        :param client_id: The client_id of this FuturesOrder.  # noqa: E501
-        :type: str
-        """
-
-        self._client_id = client_id
 
     @property
     def create_time(self):
@@ -618,7 +590,7 @@ class FuturesOrder(object):
     def text(self):
         """Gets the text of this FuturesOrder.  # noqa: E501
 
-        How order is created  - web: from web - api: from API - app: from mobile phones - auto_deleveraging: from ADL - liquidation: from liquidation - insurance: from insurance   # noqa: E501
+        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 16 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_) or dot(.) Besides user defined information, reserved contents are listed below, denoting how the order is created:  - web: from web - api: from API - app: from mobile phones - auto_deleveraging: from ADL - liquidation: from liquidation - insurance: from insurance   # noqa: E501
 
         :return: The text of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -629,7 +601,7 @@ class FuturesOrder(object):
     def text(self, text):
         """Sets the text of this FuturesOrder.
 
-        How order is created  - web: from web - api: from API - app: from mobile phones - auto_deleveraging: from ADL - liquidation: from liquidation - insurance: from insurance   # noqa: E501
+        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 16 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_) or dot(.) Besides user defined information, reserved contents are listed below, denoting how the order is created:  - web: from web - api: from API - app: from mobile phones - auto_deleveraging: from ADL - liquidation: from liquidation - insurance: from insurance   # noqa: E501
 
         :param text: The text of this FuturesOrder.  # noqa: E501
         :type: str

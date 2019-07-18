@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | Order ID | [optional] 
-**client_id** | **str** | User defined ID | [optional] 
+**text** | **str** | User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 16 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_) or dot(.)  | [optional] 
 **create_time** | **str** | Order creation time | [optional] 
-**status** | **str** | Order status  - &#x60;open&#x60;: to be filled- &#x60;closed&#x60;: filled- &#x60;cancelled&#x60;: cancelled | [optional] 
+**status** | **str** | Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: filled - &#x60;cancelled&#x60;: cancelled | [optional] 
 **currency_pair** | **str** | Currency pair | 
 **type** | **str** | Order type. limit - limit order | [optional] [default to 'limit']
 **account** | **str** | Account type. spot - use spot account; margin - use margin account | [optional] [default to 'spot']

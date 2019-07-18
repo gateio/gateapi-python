@@ -33,7 +33,7 @@ class Order(object):
     """
     openapi_types = {
         'id': 'str',
-        'client_id': 'str',
+        'text': 'str',
         'create_time': 'str',
         'status': 'str',
         'currency_pair': 'str',
@@ -49,7 +49,7 @@ class Order(object):
 
     attribute_map = {
         'id': 'id',
-        'client_id': 'client_id',
+        'text': 'text',
         'create_time': 'create_time',
         'status': 'status',
         'currency_pair': 'currency_pair',
@@ -63,11 +63,11 @@ class Order(object):
         'fill_price': 'fill_price'
     }
 
-    def __init__(self, id=None, client_id=None, create_time=None, status=None, currency_pair=None, type='limit', account='spot', side=None, amount=None, price=None, time_in_force='gtc', left=None, fill_price=None):  # noqa: E501
+    def __init__(self, id=None, text=None, create_time=None, status=None, currency_pair=None, type='limit', account='spot', side=None, amount=None, price=None, time_in_force='gtc', left=None, fill_price=None):  # noqa: E501
         """Order - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
-        self._client_id = None
+        self._text = None
         self._create_time = None
         self._status = None
         self._currency_pair = None
@@ -83,8 +83,8 @@ class Order(object):
 
         if id is not None:
             self.id = id
-        if client_id is not None:
-            self.client_id = client_id
+        if text is not None:
+            self.text = text
         if create_time is not None:
             self.create_time = create_time
         if status is not None:
@@ -128,27 +128,27 @@ class Order(object):
         self._id = id
 
     @property
-    def client_id(self):
-        """Gets the client_id of this Order.  # noqa: E501
+    def text(self):
+        """Gets the text of this Order.  # noqa: E501
 
-        User defined ID  # noqa: E501
+        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 16 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_) or dot(.)   # noqa: E501
 
-        :return: The client_id of this Order.  # noqa: E501
+        :return: The text of this Order.  # noqa: E501
         :rtype: str
         """
-        return self._client_id
+        return self._text
 
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this Order.
+    @text.setter
+    def text(self, text):
+        """Sets the text of this Order.
 
-        User defined ID  # noqa: E501
+        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 16 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_) or dot(.)   # noqa: E501
 
-        :param client_id: The client_id of this Order.  # noqa: E501
+        :param text: The text of this Order.  # noqa: E501
         :type: str
         """
 
-        self._client_id = client_id
+        self._text = text
 
     @property
     def create_time(self):
@@ -177,7 +177,7 @@ class Order(object):
     def status(self):
         """Gets the status of this Order.  # noqa: E501
 
-        Order status  - `open`: to be filled- `closed`: filled- `cancelled`: cancelled  # noqa: E501
+        Order status  - `open`: to be filled - `closed`: filled - `cancelled`: cancelled  # noqa: E501
 
         :return: The status of this Order.  # noqa: E501
         :rtype: str
@@ -188,7 +188,7 @@ class Order(object):
     def status(self, status):
         """Sets the status of this Order.
 
-        Order status  - `open`: to be filled- `closed`: filled- `cancelled`: cancelled  # noqa: E501
+        Order status  - `open`: to be filled - `closed`: filled - `cancelled`: cancelled  # noqa: E501
 
         :param status: The status of this Order.  # noqa: E501
         :type: str

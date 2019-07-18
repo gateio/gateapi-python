@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Futures order ID | [optional] 
 **user** | **int** | User ID | [optional] 
-**client_id** | **str** | User defined ID | [optional] 
 **create_time** | **float** | Order creation time | [optional] 
 **finish_time** | **float** | Order finished time. Not returned if order is open | [optional] 
 **finish_as** | **str** | How the order is finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is &#x60;IOC&#x60;, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while &#x60;reduce-only&#x60; set | [optional] 
@@ -22,7 +21,7 @@ Name | Type | Description | Notes
 **tif** | **str** | Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, post-only | [optional] [default to 'gtc']
 **left** | **int** | Size left to be traded | [optional] 
 **fill_price** | **str** | Fill price of the order | [optional] 
-**text** | **str** | How order is created  - web: from web - api: from API - app: from mobile phones - auto_deleveraging: from ADL - liquidation: from liquidation - insurance: from insurance  | [optional] 
+**text** | **str** | User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 16 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_) or dot(.) Besides user defined information, reserved contents are listed below, denoting how the order is created:  - web: from web - api: from API - app: from mobile phones - auto_deleveraging: from ADL - liquidation: from liquidation - insurance: from insurance  | [optional] 
 **tkfr** | **str** | Taker fee | [optional] 
 **mkfr** | **str** | Maker fee | [optional] 
 **refu** | **int** | Reference user ID | [optional] 
