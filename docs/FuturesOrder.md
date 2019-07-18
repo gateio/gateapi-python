@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Futures order ID | [optional] 
 **user** | **int** | User ID | [optional] 
+**client_id** | **str** | User defined ID | [optional] 
 **create_time** | **float** | Order creation time | [optional] 
 **finish_time** | **float** | Order finished time. Not returned if order is open | [optional] 
 **finish_as** | **str** | How the order is finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is &#x60;IOC&#x60;, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while &#x60;reduce-only&#x60; set | [optional] 

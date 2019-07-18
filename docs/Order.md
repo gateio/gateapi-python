@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | Order ID | [optional] 
+**client_id** | **str** | User defined ID | [optional] 
 **create_time** | **str** | Order creation time | [optional] 
 **status** | **str** | Order status  - &#x60;open&#x60;: to be filled- &#x60;closed&#x60;: filled- &#x60;cancelled&#x60;: cancelled | [optional] 
 **currency_pair** | **str** | Currency pair | 
