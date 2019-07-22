@@ -131,7 +131,7 @@ class Order(object):
     def text(self):
         """Gets the text of this Order.  # noqa: E501
 
-        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 16 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_) or dot(.)   # noqa: E501
+        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 16 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)   # noqa: E501
 
         :return: The text of this Order.  # noqa: E501
         :rtype: str
@@ -142,7 +142,7 @@ class Order(object):
     def text(self, text):
         """Sets the text of this Order.
 
-        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 16 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_) or dot(.)   # noqa: E501
+        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 16 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)   # noqa: E501
 
         :param text: The text of this Order.  # noqa: E501
         :type: str
