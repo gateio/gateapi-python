@@ -432,7 +432,7 @@ from gate_api.rest import ApiException
 # create an instance of the API class
 api_instance = gate_api.SpotApi()
 currency_pair = 'BTC_USDT' # str | Currency pair
-interval = '0' # str | Price precision of order book. 0 means no aggregation is applied (optional) (default to '0')
+interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
 limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
 
 try:
@@ -448,7 +448,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency_pair** | **str**| Currency pair | 
- **interval** | **str**| Price precision of order book. 0 means no aggregation is applied | [optional] [default to &#39;0&#39;]
+ **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
  **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
 
 ### Return type
