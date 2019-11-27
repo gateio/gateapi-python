@@ -1228,7 +1228,7 @@ Authentication with API key and secret is required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_positions**
-> list[Position] list_positions()
+> list[Position] list_positions(settle)
 
 List all positions of a user
 
@@ -1245,17 +1245,21 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.FuturesApi(gate_api.ApiClient(configuration))
+settle = 'btc' # str | Settle currency (default to 'btc')
 
 try:
     # List all positions of a user
-    api_response = api_instance.list_positions()
+    api_response = api_instance.list_positions(settle)
     print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->list_positions: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
 
 ### Return type
 

@@ -2488,35 +2488,37 @@ class FuturesApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_positions(self, **kwargs):  # noqa: E501
+    def list_positions(self, settle, **kwargs):  # noqa: E501
         """List all positions of a user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_positions(async_req=True)
+        >>> thread = api.list_positions(settle, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str settle: Settle currency (required)
         :return: list[Position]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_positions_with_http_info(**kwargs)  # noqa: E501
+            return self.list_positions_with_http_info(settle, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_positions_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.list_positions_with_http_info(settle, **kwargs)  # noqa: E501
             return data
 
-    def list_positions_with_http_info(self, **kwargs):  # noqa: E501
+    def list_positions_with_http_info(self, settle, **kwargs):  # noqa: E501
         """List all positions of a user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_positions_with_http_info(async_req=True)
+        >>> thread = api.list_positions_with_http_info(settle, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str settle: Settle currency (required)
         :return: list[Position]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2524,7 +2526,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = []  # noqa: E501
+        all_params = ['settle']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2538,10 +2540,16 @@ class FuturesApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
+        # verify the required parameter 'settle' is set
+        if ('settle' not in local_var_params or
+                local_var_params['settle'] is None):
+            raise ValueError("Missing the required parameter `settle` when calling `list_positions`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
+        if 'settle' in local_var_params:
+            path_params['settle'] = local_var_params['settle']  # noqa: E501
 
         query_params = []
 
