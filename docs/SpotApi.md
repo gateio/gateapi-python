@@ -144,7 +144,7 @@ configuration.secret = 'YOUR_API_SECRET'
 
 # create an instance of the API class
 api_instance = gate_api.SpotApi(gate_api.ApiClient(configuration))
-order = [] # list[Order] | 
+order = [gate_api.Order()] # list[Order] | 
 
 try:
     # Create a batch of orders
@@ -158,7 +158,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | [**list[Order]**](list.md)|  | 
+ **order** | [**list[Order]**](Order.md)|  | 
 
 ### Return type
 

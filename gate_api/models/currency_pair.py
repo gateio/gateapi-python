@@ -37,6 +37,7 @@ class CurrencyPair(object):
         'fee': 'str',
         'min_base_amount': 'str',
         'min_quote_amount': 'str',
+        'amount_precision': 'int',
         'precision': 'int'
     }
 
@@ -47,10 +48,11 @@ class CurrencyPair(object):
         'fee': 'fee',
         'min_base_amount': 'min_base_amount',
         'min_quote_amount': 'min_quote_amount',
+        'amount_precision': 'amount_precision',
         'precision': 'precision'
     }
 
-    def __init__(self, id=None, base=None, quote=None, fee=None, min_base_amount=None, min_quote_amount=None, precision=None):  # noqa: E501
+    def __init__(self, id=None, base=None, quote=None, fee=None, min_base_amount=None, min_quote_amount=None, amount_precision=None, precision=None):  # noqa: E501
         """CurrencyPair - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -59,6 +61,7 @@ class CurrencyPair(object):
         self._fee = None
         self._min_base_amount = None
         self._min_quote_amount = None
+        self._amount_precision = None
         self._precision = None
         self.discriminator = None
 
@@ -74,6 +77,8 @@ class CurrencyPair(object):
             self.min_base_amount = min_base_amount
         if min_quote_amount is not None:
             self.min_quote_amount = min_quote_amount
+        if amount_precision is not None:
+            self.amount_precision = amount_precision
         if precision is not None:
             self.precision = precision
 
@@ -214,6 +219,29 @@ class CurrencyPair(object):
         """
 
         self._min_quote_amount = min_quote_amount
+
+    @property
+    def amount_precision(self):
+        """Gets the amount_precision of this CurrencyPair.  # noqa: E501
+
+        Amount scale  # noqa: E501
+
+        :return: The amount_precision of this CurrencyPair.  # noqa: E501
+        :rtype: int
+        """
+        return self._amount_precision
+
+    @amount_precision.setter
+    def amount_precision(self, amount_precision):
+        """Sets the amount_precision of this CurrencyPair.
+
+        Amount scale  # noqa: E501
+
+        :param amount_precision: The amount_precision of this CurrencyPair.  # noqa: E501
+        :type: int
+        """
+
+        self._amount_precision = amount_precision
 
     @property
     def precision(self):
