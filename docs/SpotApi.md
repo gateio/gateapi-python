@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancel_order**](SpotApi.md#cancel_order) | **DELETE** /spot/orders/{order_id} | Cancel a single order
 [**cancel_orders**](SpotApi.md#cancel_orders) | **DELETE** /spot/orders | Cancel all &#x60;open&#x60; orders in specified currency pair
+[**create_batch_orders**](SpotApi.md#create_batch_orders) | **POST** /spot/batch_orders | Create a batch of orders
 [**create_order**](SpotApi.md#create_order) | **POST** /spot/orders | Create an order
 [**get_currency_pair**](SpotApi.md#get_currency_pair) | **GET** /spot/currency_pairs/{currency_pair} | Get detail of one single order
 [**get_order**](SpotApi.md#get_order) | **GET** /spot/orders/{order_id} | Get a single order
@@ -119,6 +120,57 @@ Authentication with API key and secret is required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_batch_orders**
+> list[BatchOrder] create_batch_orders(order)
+
+Create a batch of orders
+
+Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 5 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, e.g. `account` must be identical for all orders 
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.rest import ApiException
+
+configuration = gate_api.Configuration()
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
+
+# create an instance of the API class
+api_instance = gate_api.SpotApi(gate_api.ApiClient(configuration))
+order = [gate_api.Order()] # list[Order] | 
+
+try:
+    # Create a batch of orders
+    api_response = api_instance.create_batch_orders(order)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling SpotApi->create_batch_orders: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order** | [**list[Order]**](Order.md)|  | 
+
+### Return type
+
+[**list[BatchOrder]**](BatchOrder.md)
+
+### Authorization
+
+Authentication with API key and secret is required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

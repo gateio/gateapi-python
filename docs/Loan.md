@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **repaid** | **str** | Repaid amount | [optional] 
 **paid_interest** | **str** | Repaid interest | [optional] 
 **unpaid_interest** | **str** | Interest not repaid | [optional] 
+**fee_rate** | **str** | Loan fee rate | [optional] 
+**orig_id** | **str** | Original loan ID if the loan is auto-renewed. Equal to &#x60;id&#x60; if not | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

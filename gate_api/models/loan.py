@@ -45,7 +45,9 @@ class Loan(object):
         'left': 'str',
         'repaid': 'str',
         'paid_interest': 'str',
-        'unpaid_interest': 'str'
+        'unpaid_interest': 'str',
+        'fee_rate': 'str',
+        'orig_id': 'str'
     }
 
     attribute_map = {
@@ -63,10 +65,12 @@ class Loan(object):
         'left': 'left',
         'repaid': 'repaid',
         'paid_interest': 'paid_interest',
-        'unpaid_interest': 'unpaid_interest'
+        'unpaid_interest': 'unpaid_interest',
+        'fee_rate': 'fee_rate',
+        'orig_id': 'orig_id'
     }
 
-    def __init__(self, id=None, create_time=None, expire_time=None, status=None, side=None, currency=None, rate=None, amount=None, days=None, auto_renew=False, currency_pair=None, left=None, repaid=None, paid_interest=None, unpaid_interest=None):  # noqa: E501
+    def __init__(self, id=None, create_time=None, expire_time=None, status=None, side=None, currency=None, rate=None, amount=None, days=None, auto_renew=False, currency_pair=None, left=None, repaid=None, paid_interest=None, unpaid_interest=None, fee_rate=None, orig_id=None):  # noqa: E501
         """Loan - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -84,6 +88,8 @@ class Loan(object):
         self._repaid = None
         self._paid_interest = None
         self._unpaid_interest = None
+        self._fee_rate = None
+        self._orig_id = None
         self.discriminator = None
 
         if id is not None:
@@ -112,6 +118,10 @@ class Loan(object):
             self.paid_interest = paid_interest
         if unpaid_interest is not None:
             self.unpaid_interest = unpaid_interest
+        if fee_rate is not None:
+            self.fee_rate = fee_rate
+        if orig_id is not None:
+            self.orig_id = orig_id
 
     @property
     def id(self):
@@ -477,6 +487,52 @@ class Loan(object):
         """
 
         self._unpaid_interest = unpaid_interest
+
+    @property
+    def fee_rate(self):
+        """Gets the fee_rate of this Loan.  # noqa: E501
+
+        Loan fee rate  # noqa: E501
+
+        :return: The fee_rate of this Loan.  # noqa: E501
+        :rtype: str
+        """
+        return self._fee_rate
+
+    @fee_rate.setter
+    def fee_rate(self, fee_rate):
+        """Sets the fee_rate of this Loan.
+
+        Loan fee rate  # noqa: E501
+
+        :param fee_rate: The fee_rate of this Loan.  # noqa: E501
+        :type: str
+        """
+
+        self._fee_rate = fee_rate
+
+    @property
+    def orig_id(self):
+        """Gets the orig_id of this Loan.  # noqa: E501
+
+        Original loan ID if the loan is auto-renewed. Equal to `id` if not  # noqa: E501
+
+        :return: The orig_id of this Loan.  # noqa: E501
+        :rtype: str
+        """
+        return self._orig_id
+
+    @orig_id.setter
+    def orig_id(self, orig_id):
+        """Sets the orig_id of this Loan.
+
+        Original loan ID if the loan is auto-renewed. Equal to `id` if not  # noqa: E501
+
+        :param orig_id: The orig_id of this Loan.  # noqa: E501
+        :type: str
+        """
+
+        self._orig_id = orig_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

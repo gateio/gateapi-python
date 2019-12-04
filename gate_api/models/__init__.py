@@ -14,6 +14,7 @@
 from __future__ import absolute_import
 
 # import models into model package
+from gate_api.models.batch_order import BatchOrder
 from gate_api.models.contract import Contract
 from gate_api.models.currency_pair import CurrencyPair
 from gate_api.models.funding_account import FundingAccount
