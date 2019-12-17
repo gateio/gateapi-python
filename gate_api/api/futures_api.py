@@ -879,7 +879,7 @@ class FuturesApi(object):
         :param str contract: Futures contract, return related data only if specified
         :param int order: Futures order ID, return related data only if specified
         :param int limit: Maximum number of record returned in one list
-        :param str last_id: Specify list staring point using the last record of `id` in previous list-query results
+        :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :return: list[MyFuturesTrade]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -904,7 +904,7 @@ class FuturesApi(object):
         :param str contract: Futures contract, return related data only if specified
         :param int order: Futures order ID, return related data only if specified
         :param int limit: Maximum number of record returned in one list
-        :param str last_id: Specify list staring point using the last record of `id` in previous list-query results
+        :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :return: list[MyFuturesTrade]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1950,7 +1950,7 @@ class FuturesApi(object):
         :param str contract: Futures contract (required)
         :param str status: List orders based on status (required)
         :param int limit: Maximum number of record returned in one list
-        :param str last_id: Specify list staring point using the last record of `id` in previous list-query results
+        :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :return: list[FuturesOrder]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1976,7 +1976,7 @@ class FuturesApi(object):
         :param str contract: Futures contract (required)
         :param str status: List orders based on status (required)
         :param int limit: Maximum number of record returned in one list
-        :param str last_id: Specify list staring point using the last record of `id` in previous list-query results
+        :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :return: list[FuturesOrder]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2170,7 +2170,9 @@ class FuturesApi(object):
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
         :param int limit: Maximum number of record returned in one list
-        :param str last_id: Specify list staring point using the last record of `id` in previous list-query results
+        :param str last_id: Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use `from` and `to` instead to limit time range
+        :param float _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned. 
+        :param float to: Specify end time in Unix seconds, default to current time
         :return: list[FuturesTrade]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2194,7 +2196,9 @@ class FuturesApi(object):
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
         :param int limit: Maximum number of record returned in one list
-        :param str last_id: Specify list staring point using the last record of `id` in previous list-query results
+        :param str last_id: Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use `from` and `to` instead to limit time range
+        :param float _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned. 
+        :param float to: Specify end time in Unix seconds, default to current time
         :return: list[FuturesTrade]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2202,7 +2206,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'limit', 'last_id']  # noqa: E501
+        all_params = ['settle', 'contract', 'limit', 'last_id', '_from', 'to']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2242,6 +2246,10 @@ class FuturesApi(object):
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
         if 'last_id' in local_var_params:
             query_params.append(('last_id', local_var_params['last_id']))  # noqa: E501
+        if '_from' in local_var_params:
+            query_params.append(('from', local_var_params['_from']))  # noqa: E501
+        if 'to' in local_var_params:
+            query_params.append(('to', local_var_params['to']))  # noqa: E501
 
         header_params = {}
 
