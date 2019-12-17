@@ -685,7 +685,7 @@ from gate_api.rest import ApiException
 api_instance = gate_api.SpotApi()
 currency_pair = 'BTC_USDT' # str | Currency pair
 limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
-last_id = '12345' # str | Specify list staring point using the last record of `id` in previous list-query results (optional)
+last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
 
 try:
     # Retrieve market trades
@@ -701,7 +701,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency_pair** | **str**| Currency pair | 
  **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
- **last_id** | **str**| Specify list staring point using the last record of &#x60;id&#x60; in previous list-query results | [optional] 
+ **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
 
 ### Return type
 

@@ -1353,7 +1353,7 @@ class SpotApi(object):
         :param async_req bool
         :param str currency_pair: Currency pair (required)
         :param int limit: Maximum number of record returned in one list
-        :param str last_id: Specify list staring point using the last record of `id` in previous list-query results
+        :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :return: list[Trade]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1376,7 +1376,7 @@ class SpotApi(object):
         :param async_req bool
         :param str currency_pair: Currency pair (required)
         :param int limit: Maximum number of record returned in one list
-        :param str last_id: Specify list staring point using the last record of `id` in previous list-query results
+        :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :return: list[Trade]
                  If the method is called asynchronously,
                  returns the request thread.

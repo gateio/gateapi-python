@@ -468,7 +468,7 @@ settle = 'btc' # str | Settle currency (default to 'btc')
 contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
 order = 12345 # int | Futures order ID, return related data only if specified (optional)
 limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
-last_id = '12345' # str | Specify list staring point using the last record of `id` in previous list-query results (optional)
+last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
 
 try:
     # List personal trading history
@@ -486,7 +486,7 @@ Name | Type | Description  | Notes
  **contract** | **str**| Futures contract, return related data only if specified | [optional] 
  **order** | **int**| Futures order ID, return related data only if specified | [optional] 
  **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
- **last_id** | **str**| Specify list staring point using the last record of &#x60;id&#x60; in previous list-query results | [optional] 
+ **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
 
 ### Return type
 
@@ -986,7 +986,7 @@ settle = 'btc' # str | Settle currency (default to 'btc')
 contract = 'BTC_USD' # str | Futures contract
 status = 'open' # str | List orders based on status
 limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
-last_id = '12345' # str | Specify list staring point using the last record of `id` in previous list-query results (optional)
+last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
 
 try:
     # List futures orders
@@ -1004,7 +1004,7 @@ Name | Type | Description  | Notes
  **contract** | **str**| Futures contract | 
  **status** | **str**| List orders based on status | 
  **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
- **last_id** | **str**| Specify list staring point using the last record of &#x60;id&#x60; in previous list-query results | [optional] 
+ **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
 
 ### Return type
 
@@ -1069,7 +1069,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_trades**
-> list[FuturesTrade] list_futures_trades(settle, contract, limit=limit, last_id=last_id)
+> list[FuturesTrade] list_futures_trades(settle, contract, limit=limit, last_id=last_id, _from=_from, to=to)
 
 Futures trading history
 
@@ -1085,11 +1085,13 @@ api_instance = gate_api.FuturesApi()
 settle = 'btc' # str | Settle currency (default to 'btc')
 contract = 'BTC_USD' # str | Futures contract
 limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
-last_id = '12345' # str | Specify list staring point using the last record of `id` in previous list-query results (optional)
+last_id = '12345' # str | Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use `from` and `to` instead to limit time range (optional)
+_from = 1546905600 # float | Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned.  (optional)
+to = 1546935600 # float | Specify end time in Unix seconds, default to current time (optional)
 
 try:
     # Futures trading history
-    api_response = api_instance.list_futures_trades(settle, contract, limit=limit, last_id=last_id)
+    api_response = api_instance.list_futures_trades(settle, contract, limit=limit, last_id=last_id, _from=_from, to=to)
     print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->list_futures_trades: %s\n" % e)
@@ -1102,7 +1104,9 @@ Name | Type | Description  | Notes
  **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
  **contract** | **str**| Futures contract | 
  **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
- **last_id** | **str**| Specify list staring point using the last record of &#x60;id&#x60; in previous list-query results | [optional] 
+ **last_id** | **str**| Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use &#x60;from&#x60; and &#x60;to&#x60; instead to limit time range | [optional] 
+ **_from** | **float**| Specify starting time in Unix seconds. If not specified, &#x60;to&#x60; and &#x60;limit&#x60; will be used to limit response items. If items between &#x60;from&#x60; and &#x60;to&#x60; are more than &#x60;limit&#x60;, only &#x60;limit&#x60; number will be returned.  | [optional] 
+ **to** | **float**| Specify end time in Unix seconds, default to current time | [optional] 
 
 ### Return type
 
