@@ -34,6 +34,7 @@ class Order(object):
         'id': 'str',
         'text': 'str',
         'create_time': 'str',
+        'update_time': 'str',
         'status': 'str',
         'currency_pair': 'str',
         'type': 'str',
@@ -43,13 +44,18 @@ class Order(object):
         'price': 'str',
         'time_in_force': 'str',
         'left': 'str',
-        'fill_price': 'str'
+        'fill_price': 'str',
+        'fee': 'str',
+        'fee_currency': 'str',
+        'point_fee': 'str',
+        'gt_fee': 'str'
     }
 
     attribute_map = {
         'id': 'id',
         'text': 'text',
         'create_time': 'create_time',
+        'update_time': 'update_time',
         'status': 'status',
         'currency_pair': 'currency_pair',
         'type': 'type',
@@ -59,15 +65,20 @@ class Order(object):
         'price': 'price',
         'time_in_force': 'time_in_force',
         'left': 'left',
-        'fill_price': 'fill_price'
+        'fill_price': 'fill_price',
+        'fee': 'fee',
+        'fee_currency': 'fee_currency',
+        'point_fee': 'point_fee',
+        'gt_fee': 'gt_fee'
     }
 
-    def __init__(self, id=None, text=None, create_time=None, status=None, currency_pair=None, type='limit', account='spot', side=None, amount=None, price=None, time_in_force='gtc', left=None, fill_price=None):  # noqa: E501
+    def __init__(self, id=None, text=None, create_time=None, update_time=None, status=None, currency_pair=None, type='limit', account='spot', side=None, amount=None, price=None, time_in_force='gtc', left=None, fill_price=None, fee=None, fee_currency=None, point_fee=None, gt_fee=None):  # noqa: E501
         """Order - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
         self._text = None
         self._create_time = None
+        self._update_time = None
         self._status = None
         self._currency_pair = None
         self._type = None
@@ -78,6 +89,10 @@ class Order(object):
         self._time_in_force = None
         self._left = None
         self._fill_price = None
+        self._fee = None
+        self._fee_currency = None
+        self._point_fee = None
+        self._gt_fee = None
         self.discriminator = None
 
         if id is not None:
@@ -86,6 +101,8 @@ class Order(object):
             self.text = text
         if create_time is not None:
             self.create_time = create_time
+        if update_time is not None:
+            self.update_time = update_time
         if status is not None:
             self.status = status
         self.currency_pair = currency_pair
@@ -102,6 +119,14 @@ class Order(object):
             self.left = left
         if fill_price is not None:
             self.fill_price = fill_price
+        if fee is not None:
+            self.fee = fee
+        if fee_currency is not None:
+            self.fee_currency = fee_currency
+        if point_fee is not None:
+            self.point_fee = point_fee
+        if gt_fee is not None:
+            self.gt_fee = gt_fee
 
     @property
     def id(self):
@@ -171,6 +196,29 @@ class Order(object):
         """
 
         self._create_time = create_time
+
+    @property
+    def update_time(self):
+        """Gets the update_time of this Order.  # noqa: E501
+
+        Order last modification time  # noqa: E501
+
+        :return: The update_time of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._update_time
+
+    @update_time.setter
+    def update_time(self, update_time):
+        """Sets the update_time of this Order.
+
+        Order last modification time  # noqa: E501
+
+        :param update_time: The update_time of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._update_time = update_time
 
     @property
     def status(self):
@@ -421,7 +469,7 @@ class Order(object):
     def fill_price(self):
         """Gets the fill_price of this Order.  # noqa: E501
 
-        Fill price of the order  # noqa: E501
+        Total filled in quote currency  # noqa: E501
 
         :return: The fill_price of this Order.  # noqa: E501
         :rtype: str
@@ -432,13 +480,105 @@ class Order(object):
     def fill_price(self, fill_price):
         """Sets the fill_price of this Order.
 
-        Fill price of the order  # noqa: E501
+        Total filled in quote currency  # noqa: E501
 
         :param fill_price: The fill_price of this Order.  # noqa: E501
         :type: str
         """
 
         self._fill_price = fill_price
+
+    @property
+    def fee(self):
+        """Gets the fee of this Order.  # noqa: E501
+
+        Fee deducted  # noqa: E501
+
+        :return: The fee of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._fee
+
+    @fee.setter
+    def fee(self, fee):
+        """Sets the fee of this Order.
+
+        Fee deducted  # noqa: E501
+
+        :param fee: The fee of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._fee = fee
+
+    @property
+    def fee_currency(self):
+        """Gets the fee_currency of this Order.  # noqa: E501
+
+        Fee currency unit  # noqa: E501
+
+        :return: The fee_currency of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._fee_currency
+
+    @fee_currency.setter
+    def fee_currency(self, fee_currency):
+        """Sets the fee_currency of this Order.
+
+        Fee currency unit  # noqa: E501
+
+        :param fee_currency: The fee_currency of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._fee_currency = fee_currency
+
+    @property
+    def point_fee(self):
+        """Gets the point_fee of this Order.  # noqa: E501
+
+        Point used to deduct fee  # noqa: E501
+
+        :return: The point_fee of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._point_fee
+
+    @point_fee.setter
+    def point_fee(self, point_fee):
+        """Sets the point_fee of this Order.
+
+        Point used to deduct fee  # noqa: E501
+
+        :param point_fee: The point_fee of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._point_fee = point_fee
+
+    @property
+    def gt_fee(self):
+        """Gets the gt_fee of this Order.  # noqa: E501
+
+        GT used to deduct fee  # noqa: E501
+
+        :return: The gt_fee of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._gt_fee
+
+    @gt_fee.setter
+    def gt_fee(self, gt_fee):
+        """Sets the gt_fee of this Order.
+
+        GT used to deduct fee  # noqa: E501
+
+        :param gt_fee: The gt_fee of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._gt_fee = gt_fee
 
     def to_dict(self):
         """Returns the model properties as a dict"""

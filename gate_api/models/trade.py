@@ -36,7 +36,11 @@ class Trade(object):
         'side': 'str',
         'amount': 'str',
         'price': 'str',
-        'order_id': 'str'
+        'order_id': 'str',
+        'fee': 'str',
+        'fee_currency': 'str',
+        'point_fee': 'str',
+        'gt_fee': 'str'
     }
 
     attribute_map = {
@@ -45,10 +49,14 @@ class Trade(object):
         'side': 'side',
         'amount': 'amount',
         'price': 'price',
-        'order_id': 'order_id'
+        'order_id': 'order_id',
+        'fee': 'fee',
+        'fee_currency': 'fee_currency',
+        'point_fee': 'point_fee',
+        'gt_fee': 'gt_fee'
     }
 
-    def __init__(self, id=None, create_time=None, side=None, amount=None, price=None, order_id=None):  # noqa: E501
+    def __init__(self, id=None, create_time=None, side=None, amount=None, price=None, order_id=None, fee=None, fee_currency=None, point_fee=None, gt_fee=None):  # noqa: E501
         """Trade - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -57,6 +65,10 @@ class Trade(object):
         self._amount = None
         self._price = None
         self._order_id = None
+        self._fee = None
+        self._fee_currency = None
+        self._point_fee = None
+        self._gt_fee = None
         self.discriminator = None
 
         if id is not None:
@@ -71,6 +83,14 @@ class Trade(object):
             self.price = price
         if order_id is not None:
             self.order_id = order_id
+        if fee is not None:
+            self.fee = fee
+        if fee_currency is not None:
+            self.fee_currency = fee_currency
+        if point_fee is not None:
+            self.point_fee = point_fee
+        if gt_fee is not None:
+            self.gt_fee = gt_fee
 
     @property
     def id(self):
@@ -215,6 +235,98 @@ class Trade(object):
         """
 
         self._order_id = order_id
+
+    @property
+    def fee(self):
+        """Gets the fee of this Trade.  # noqa: E501
+
+        Fee deducted. No value in public endpoints  # noqa: E501
+
+        :return: The fee of this Trade.  # noqa: E501
+        :rtype: str
+        """
+        return self._fee
+
+    @fee.setter
+    def fee(self, fee):
+        """Sets the fee of this Trade.
+
+        Fee deducted. No value in public endpoints  # noqa: E501
+
+        :param fee: The fee of this Trade.  # noqa: E501
+        :type: str
+        """
+
+        self._fee = fee
+
+    @property
+    def fee_currency(self):
+        """Gets the fee_currency of this Trade.  # noqa: E501
+
+        Fee currency unit. No value in public endpoints  # noqa: E501
+
+        :return: The fee_currency of this Trade.  # noqa: E501
+        :rtype: str
+        """
+        return self._fee_currency
+
+    @fee_currency.setter
+    def fee_currency(self, fee_currency):
+        """Sets the fee_currency of this Trade.
+
+        Fee currency unit. No value in public endpoints  # noqa: E501
+
+        :param fee_currency: The fee_currency of this Trade.  # noqa: E501
+        :type: str
+        """
+
+        self._fee_currency = fee_currency
+
+    @property
+    def point_fee(self):
+        """Gets the point_fee of this Trade.  # noqa: E501
+
+        Point used to deduct fee  # noqa: E501
+
+        :return: The point_fee of this Trade.  # noqa: E501
+        :rtype: str
+        """
+        return self._point_fee
+
+    @point_fee.setter
+    def point_fee(self, point_fee):
+        """Sets the point_fee of this Trade.
+
+        Point used to deduct fee  # noqa: E501
+
+        :param point_fee: The point_fee of this Trade.  # noqa: E501
+        :type: str
+        """
+
+        self._point_fee = point_fee
+
+    @property
+    def gt_fee(self):
+        """Gets the gt_fee of this Trade.  # noqa: E501
+
+        GT used to deduct fee  # noqa: E501
+
+        :return: The gt_fee of this Trade.  # noqa: E501
+        :rtype: str
+        """
+        return self._gt_fee
+
+    @gt_fee.setter
+    def gt_fee(self, gt_fee):
+        """Sets the gt_fee of this Trade.
+
+        GT used to deduct fee  # noqa: E501
+
+        :param gt_fee: The gt_fee of this Trade.  # noqa: E501
+        :type: str
+        """
+
+        self._gt_fee = gt_fee
 
     def to_dict(self):
         """Returns the model properties as a dict"""
