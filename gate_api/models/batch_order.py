@@ -46,6 +46,7 @@ class BatchOrder(object):
         'amount': 'str',
         'price': 'str',
         'time_in_force': 'str',
+        'auto_borrow': 'bool',
         'left': 'str',
         'fill_price': 'str',
         'fee': 'str',
@@ -70,6 +71,7 @@ class BatchOrder(object):
         'amount': 'amount',
         'price': 'price',
         'time_in_force': 'time_in_force',
+        'auto_borrow': 'auto_borrow',
         'left': 'left',
         'fill_price': 'fill_price',
         'fee': 'fee',
@@ -78,7 +80,7 @@ class BatchOrder(object):
         'gt_fee': 'gt_fee'
     }
 
-    def __init__(self, text=None, succeeded=None, label=None, message=None, id=None, create_time=None, update_time=None, status=None, currency_pair=None, type='limit', account='spot', side=None, amount=None, price=None, time_in_force='gtc', left=None, fill_price=None, fee=None, fee_currency=None, point_fee=None, gt_fee=None):  # noqa: E501
+    def __init__(self, text=None, succeeded=None, label=None, message=None, id=None, create_time=None, update_time=None, status=None, currency_pair=None, type='limit', account='spot', side=None, amount=None, price=None, time_in_force='gtc', auto_borrow=None, left=None, fill_price=None, fee=None, fee_currency=None, point_fee=None, gt_fee=None):  # noqa: E501
         """BatchOrder - a model defined in OpenAPI"""  # noqa: E501
 
         self._text = None
@@ -96,6 +98,7 @@ class BatchOrder(object):
         self._amount = None
         self._price = None
         self._time_in_force = None
+        self._auto_borrow = None
         self._left = None
         self._fill_price = None
         self._fee = None
@@ -134,6 +137,8 @@ class BatchOrder(object):
             self.price = price
         if time_in_force is not None:
             self.time_in_force = time_in_force
+        if auto_borrow is not None:
+            self.auto_borrow = auto_borrow
         if left is not None:
             self.left = left
         if fill_price is not None:
@@ -521,6 +526,29 @@ class BatchOrder(object):
             )
 
         self._time_in_force = time_in_force
+
+    @property
+    def auto_borrow(self):
+        """Gets the auto_borrow of this BatchOrder.  # noqa: E501
+
+        Used in margin trading(e.g. `account` is `margin`) to allow automatic loan of lacked part if balance is not enough.  # noqa: E501
+
+        :return: The auto_borrow of this BatchOrder.  # noqa: E501
+        :rtype: bool
+        """
+        return self._auto_borrow
+
+    @auto_borrow.setter
+    def auto_borrow(self, auto_borrow):
+        """Sets the auto_borrow of this BatchOrder.
+
+        Used in margin trading(e.g. `account` is `margin`) to allow automatic loan of lacked part if balance is not enough.  # noqa: E501
+
+        :param auto_borrow: The auto_borrow of this BatchOrder.  # noqa: E501
+        :type: bool
+        """
+
+        self._auto_borrow = auto_borrow
 
     @property
     def left(self):

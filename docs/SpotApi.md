@@ -4,6 +4,7 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**cancel_batch_orders**](SpotApi.md#cancel_batch_orders) | **POST** /spot/cancel_batch_orders | Cancel a batch of orders with an ID list
 [**cancel_order**](SpotApi.md#cancel_order) | **DELETE** /spot/orders/{order_id} | Cancel a single order
 [**cancel_orders**](SpotApi.md#cancel_orders) | **DELETE** /spot/orders | Cancel all &#x60;open&#x60; orders in specified currency pair
 [**create_batch_orders**](SpotApi.md#create_batch_orders) | **POST** /spot/batch_orders | Create a batch of orders
@@ -19,6 +20,57 @@ Method | HTTP request | Description
 [**list_tickers**](SpotApi.md#list_tickers) | **GET** /spot/tickers | Retrieve ticker information
 [**list_trades**](SpotApi.md#list_trades) | **GET** /spot/trades | Retrieve market trades
 
+
+# **cancel_batch_orders**
+> list[CancelOrderResult] cancel_batch_orders(cancel_order)
+
+Cancel a batch of orders with an ID list
+
+Multiple currency pairs can be specified, but maximum 20 orders are allowed per request
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.rest import ApiException
+
+configuration = gate_api.Configuration()
+configuration.key = 'YOUR_API_KEY'
+configuration.secret = 'YOUR_API_SECRET'
+
+# create an instance of the API class
+api_instance = gate_api.SpotApi(gate_api.ApiClient(configuration))
+cancel_order = [gate_api.CancelOrder()] # list[CancelOrder] | 
+
+try:
+    # Cancel a batch of orders with an ID list
+    api_response = api_instance.cancel_batch_orders(cancel_order)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling SpotApi->cancel_batch_orders: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cancel_order** | [**list[CancelOrder]**](CancelOrder.md)|  | 
+
+### Return type
+
+[**list[CancelOrderResult]**](CancelOrderResult.md)
+
+### Authorization
+
+Authentication with API key and secret is required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_order**
 > Order cancel_order(order_id, currency_pair)

@@ -32,6 +32,106 @@ class SpotApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def cancel_batch_orders(self, cancel_order, **kwargs):  # noqa: E501
+        """Cancel a batch of orders with an ID list  # noqa: E501
+
+        Multiple currency pairs can be specified, but maximum 20 orders are allowed per request  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.cancel_batch_orders(cancel_order, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[CancelOrder] cancel_order: (required)
+        :return: list[CancelOrderResult]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.cancel_batch_orders_with_http_info(cancel_order, **kwargs)  # noqa: E501
+        else:
+            (data) = self.cancel_batch_orders_with_http_info(cancel_order, **kwargs)  # noqa: E501
+            return data
+
+    def cancel_batch_orders_with_http_info(self, cancel_order, **kwargs):  # noqa: E501
+        """Cancel a batch of orders with an ID list  # noqa: E501
+
+        Multiple currency pairs can be specified, but maximum 20 orders are allowed per request  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.cancel_batch_orders_with_http_info(cancel_order, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[CancelOrder] cancel_order: (required)
+        :return: list[CancelOrderResult]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['cancel_order']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_batch_orders" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'cancel_order' is set
+        if ('cancel_order' not in local_var_params or
+                local_var_params['cancel_order'] is None):
+            raise ValueError("Missing the required parameter `cancel_order` when calling `cancel_batch_orders`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'cancel_order' in local_var_params:
+            body_params = local_var_params['cancel_order']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/spot/cancel_batch_orders', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[CancelOrderResult]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def cancel_order(self, order_id, currency_pair, **kwargs):  # noqa: E501
         """Cancel a single order  # noqa: E501
 
