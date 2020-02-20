@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **amount** | **str** | Trade amount | 
 **price** | **str** | Order price | 
 **time_in_force** | **str** | Time in force | [optional] [default to 'gtc']
+**auto_borrow** | **bool** | Used in margin trading(e.g. &#x60;account&#x60; is &#x60;margin&#x60;) to allow automatic loan of lacked part if balance is not enough. | [optional] 
 **left** | **str** | Amount left to fill | [optional] 
 **fill_price** | **str** | Total filled in quote currency | [optional] 
 **fee** | **str** | Fee deducted | [optional] 
