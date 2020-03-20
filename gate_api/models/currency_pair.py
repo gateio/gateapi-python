@@ -38,7 +38,8 @@ class CurrencyPair(object):
         'min_base_amount': 'str',
         'min_quote_amount': 'str',
         'amount_precision': 'int',
-        'precision': 'int'
+        'precision': 'int',
+        'trade_status': 'str'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class CurrencyPair(object):
         'min_base_amount': 'min_base_amount',
         'min_quote_amount': 'min_quote_amount',
         'amount_precision': 'amount_precision',
-        'precision': 'precision'
+        'precision': 'precision',
+        'trade_status': 'trade_status'
     }
 
-    def __init__(self, id=None, base=None, quote=None, fee=None, min_base_amount=None, min_quote_amount=None, amount_precision=None, precision=None):  # noqa: E501
+    def __init__(self, id=None, base=None, quote=None, fee=None, min_base_amount=None, min_quote_amount=None, amount_precision=None, precision=None, trade_status=None):  # noqa: E501
         """CurrencyPair - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -63,6 +65,7 @@ class CurrencyPair(object):
         self._min_quote_amount = None
         self._amount_precision = None
         self._precision = None
+        self._trade_status = None
         self.discriminator = None
 
         if id is not None:
@@ -81,6 +84,8 @@ class CurrencyPair(object):
             self.amount_precision = amount_precision
         if precision is not None:
             self.precision = precision
+        if trade_status is not None:
+            self.trade_status = trade_status
 
     @property
     def id(self):
@@ -265,6 +270,35 @@ class CurrencyPair(object):
         """
 
         self._precision = precision
+
+    @property
+    def trade_status(self):
+        """Gets the trade_status of this CurrencyPair.  # noqa: E501
+
+        How currency pair can be traded  - untradable: cannot be bought or sold - buyable: can be bought - sellable: can be sold - tradable: can be bought or sold  # noqa: E501
+
+        :return: The trade_status of this CurrencyPair.  # noqa: E501
+        :rtype: str
+        """
+        return self._trade_status
+
+    @trade_status.setter
+    def trade_status(self, trade_status):
+        """Sets the trade_status of this CurrencyPair.
+
+        How currency pair can be traded  - untradable: cannot be bought or sold - buyable: can be bought - sellable: can be sold - tradable: can be bought or sold  # noqa: E501
+
+        :param trade_status: The trade_status of this CurrencyPair.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["untradable", "buyable", "sellable", "tradable"]  # noqa: E501
+        if trade_status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `trade_status` ({0}), must be one of {1}"  # noqa: E501
+                .format(trade_status, allowed_values)
+            )
+
+        self._trade_status = trade_status
 
     def to_dict(self):
         """Returns the model properties as a dict"""
