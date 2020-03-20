@@ -49,7 +49,10 @@ class Order(object):
         'fee': 'str',
         'fee_currency': 'str',
         'point_fee': 'str',
-        'gt_fee': 'str'
+        'gt_fee': 'str',
+        'gt_discount': 'bool',
+        'rebated_fee': 'str',
+        'rebated_fee_currency': 'str'
     }
 
     attribute_map = {
@@ -71,10 +74,13 @@ class Order(object):
         'fee': 'fee',
         'fee_currency': 'fee_currency',
         'point_fee': 'point_fee',
-        'gt_fee': 'gt_fee'
+        'gt_fee': 'gt_fee',
+        'gt_discount': 'gt_discount',
+        'rebated_fee': 'rebated_fee',
+        'rebated_fee_currency': 'rebated_fee_currency'
     }
 
-    def __init__(self, id=None, text=None, create_time=None, update_time=None, status=None, currency_pair=None, type='limit', account='spot', side=None, amount=None, price=None, time_in_force='gtc', auto_borrow=None, left=None, fill_price=None, fee=None, fee_currency=None, point_fee=None, gt_fee=None):  # noqa: E501
+    def __init__(self, id=None, text=None, create_time=None, update_time=None, status=None, currency_pair=None, type='limit', account='spot', side=None, amount=None, price=None, time_in_force='gtc', auto_borrow=None, left=None, fill_price=None, fee=None, fee_currency=None, point_fee=None, gt_fee=None, gt_discount=None, rebated_fee=None, rebated_fee_currency=None):  # noqa: E501
         """Order - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -96,6 +102,9 @@ class Order(object):
         self._fee_currency = None
         self._point_fee = None
         self._gt_fee = None
+        self._gt_discount = None
+        self._rebated_fee = None
+        self._rebated_fee_currency = None
         self.discriminator = None
 
         if id is not None:
@@ -132,6 +141,12 @@ class Order(object):
             self.point_fee = point_fee
         if gt_fee is not None:
             self.gt_fee = gt_fee
+        if gt_discount is not None:
+            self.gt_discount = gt_discount
+        if rebated_fee is not None:
+            self.rebated_fee = rebated_fee
+        if rebated_fee_currency is not None:
+            self.rebated_fee_currency = rebated_fee_currency
 
     @property
     def id(self):
@@ -422,7 +437,7 @@ class Order(object):
     def time_in_force(self):
         """Gets the time_in_force of this Order.  # noqa: E501
 
-        Time in force  # noqa: E501
+        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, reduce only  # noqa: E501
 
         :return: The time_in_force of this Order.  # noqa: E501
         :rtype: str
@@ -433,12 +448,12 @@ class Order(object):
     def time_in_force(self, time_in_force):
         """Sets the time_in_force of this Order.
 
-        Time in force  # noqa: E501
+        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, reduce only  # noqa: E501
 
         :param time_in_force: The time_in_force of this Order.  # noqa: E501
         :type: str
         """
-        allowed_values = ["gtc", "ioc"]  # noqa: E501
+        allowed_values = ["gtc", "ioc", "poc"]  # noqa: E501
         if time_in_force not in allowed_values:
             raise ValueError(
                 "Invalid value for `time_in_force` ({0}), must be one of {1}"  # noqa: E501
@@ -451,7 +466,7 @@ class Order(object):
     def auto_borrow(self):
         """Gets the auto_borrow of this Order.  # noqa: E501
 
-        Used in margin trading(e.g. `account` is `margin`) to allow automatic loan of lacked part if balance is not enough.  # noqa: E501
+        Used in margin trading(e.g. `account` is `margin`) to allow automatic loan of insufficient part if balance is not enough.  # noqa: E501
 
         :return: The auto_borrow of this Order.  # noqa: E501
         :rtype: bool
@@ -462,7 +477,7 @@ class Order(object):
     def auto_borrow(self, auto_borrow):
         """Sets the auto_borrow of this Order.
 
-        Used in margin trading(e.g. `account` is `margin`) to allow automatic loan of lacked part if balance is not enough.  # noqa: E501
+        Used in margin trading(e.g. `account` is `margin`) to allow automatic loan of insufficient part if balance is not enough.  # noqa: E501
 
         :param auto_borrow: The auto_borrow of this Order.  # noqa: E501
         :type: bool
@@ -607,6 +622,75 @@ class Order(object):
         """
 
         self._gt_fee = gt_fee
+
+    @property
+    def gt_discount(self):
+        """Gets the gt_discount of this Order.  # noqa: E501
+
+        Whether GT fee discount is used  # noqa: E501
+
+        :return: The gt_discount of this Order.  # noqa: E501
+        :rtype: bool
+        """
+        return self._gt_discount
+
+    @gt_discount.setter
+    def gt_discount(self, gt_discount):
+        """Sets the gt_discount of this Order.
+
+        Whether GT fee discount is used  # noqa: E501
+
+        :param gt_discount: The gt_discount of this Order.  # noqa: E501
+        :type: bool
+        """
+
+        self._gt_discount = gt_discount
+
+    @property
+    def rebated_fee(self):
+        """Gets the rebated_fee of this Order.  # noqa: E501
+
+        Rebated fee  # noqa: E501
+
+        :return: The rebated_fee of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._rebated_fee
+
+    @rebated_fee.setter
+    def rebated_fee(self, rebated_fee):
+        """Sets the rebated_fee of this Order.
+
+        Rebated fee  # noqa: E501
+
+        :param rebated_fee: The rebated_fee of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._rebated_fee = rebated_fee
+
+    @property
+    def rebated_fee_currency(self):
+        """Gets the rebated_fee_currency of this Order.  # noqa: E501
+
+        Rebated fee currency unit  # noqa: E501
+
+        :return: The rebated_fee_currency of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._rebated_fee_currency
+
+    @rebated_fee_currency.setter
+    def rebated_fee_currency(self, rebated_fee_currency):
+        """Sets the rebated_fee_currency of this Order.
+
+        Rebated fee currency unit  # noqa: E501
+
+        :param rebated_fee_currency: The rebated_fee_currency of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._rebated_fee_currency = rebated_fee_currency
 
     def to_dict(self):
         """Returns the model properties as a dict"""
