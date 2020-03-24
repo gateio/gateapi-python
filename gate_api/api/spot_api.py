@@ -339,7 +339,7 @@ class SpotApi(object):
     def create_batch_orders(self, order, **kwargs):  # noqa: E501
         """Create a batch of orders  # noqa: E501
 
-        Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 5 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, e.g. `account` must be identical for all orders   # noqa: E501
+        Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 5 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, i.e. `account` must be identical for all orders   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_batch_orders(order, async_req=True)
@@ -361,7 +361,7 @@ class SpotApi(object):
     def create_batch_orders_with_http_info(self, order, **kwargs):  # noqa: E501
         """Create a batch of orders  # noqa: E501
 
-        Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 5 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, e.g. `account` must be identical for all orders   # noqa: E501
+        Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 5 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, i.e. `account` must be identical for all orders   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_batch_orders_with_http_info(order, async_req=True)

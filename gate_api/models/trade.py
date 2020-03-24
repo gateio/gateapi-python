@@ -34,6 +34,7 @@ class Trade(object):
         'id': 'str',
         'create_time': 'str',
         'side': 'str',
+        'role': 'str',
         'amount': 'str',
         'price': 'str',
         'order_id': 'str',
@@ -47,6 +48,7 @@ class Trade(object):
         'id': 'id',
         'create_time': 'create_time',
         'side': 'side',
+        'role': 'role',
         'amount': 'amount',
         'price': 'price',
         'order_id': 'order_id',
@@ -56,12 +58,13 @@ class Trade(object):
         'gt_fee': 'gt_fee'
     }
 
-    def __init__(self, id=None, create_time=None, side=None, amount=None, price=None, order_id=None, fee=None, fee_currency=None, point_fee=None, gt_fee=None):  # noqa: E501
+    def __init__(self, id=None, create_time=None, side=None, role=None, amount=None, price=None, order_id=None, fee=None, fee_currency=None, point_fee=None, gt_fee=None):  # noqa: E501
         """Trade - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
         self._create_time = None
         self._side = None
+        self._role = None
         self._amount = None
         self._price = None
         self._order_id = None
@@ -77,6 +80,8 @@ class Trade(object):
             self.create_time = create_time
         if side is not None:
             self.side = side
+        if role is not None:
+            self.role = role
         if amount is not None:
             self.amount = amount
         if price is not None:
@@ -166,6 +171,35 @@ class Trade(object):
             )
 
         self._side = side
+
+    @property
+    def role(self):
+        """Gets the role of this Trade.  # noqa: E501
+
+        Trade role  # noqa: E501
+
+        :return: The role of this Trade.  # noqa: E501
+        :rtype: str
+        """
+        return self._role
+
+    @role.setter
+    def role(self, role):
+        """Sets the role of this Trade.
+
+        Trade role  # noqa: E501
+
+        :param role: The role of this Trade.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["taker", "maker"]  # noqa: E501
+        if role not in allowed_values:
+            raise ValueError(
+                "Invalid value for `role` ({0}), must be one of {1}"  # noqa: E501
+                .format(role, allowed_values)
+            )
+
+        self._role = role
 
     @property
     def amount(self):
