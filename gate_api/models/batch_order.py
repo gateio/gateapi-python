@@ -546,7 +546,7 @@ class BatchOrder(object):
     def auto_borrow(self):
         """Gets the auto_borrow of this BatchOrder.  # noqa: E501
 
-        Used in margin trading(e.g. `account` is `margin`) to allow automatic loan of insufficient part if balance is not enough.  # noqa: E501
+        Used in margin trading(i.e. `account` is `margin`) to allow automatic loan of insufficient part if balance is not enough.  # noqa: E501
 
         :return: The auto_borrow of this BatchOrder.  # noqa: E501
         :rtype: bool
@@ -557,7 +557,7 @@ class BatchOrder(object):
     def auto_borrow(self, auto_borrow):
         """Sets the auto_borrow of this BatchOrder.
 
-        Used in margin trading(e.g. `account` is `margin`) to allow automatic loan of insufficient part if balance is not enough.  # noqa: E501
+        Used in margin trading(i.e. `account` is `margin`) to allow automatic loan of insufficient part if balance is not enough.  # noqa: E501
 
         :param auto_borrow: The auto_borrow of this BatchOrder.  # noqa: E501
         :type: bool

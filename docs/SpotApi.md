@@ -181,7 +181,7 @@ Authentication with API key and secret is required
 
 Create a batch of orders
 
-Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 5 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, e.g. `account` must be identical for all orders 
+Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 5 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, i.e. `account` must be identical for all orders 
 
 ### Example
 
