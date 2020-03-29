@@ -46,6 +46,7 @@ class Order(object):
         'auto_borrow': 'bool',
         'left': 'str',
         'fill_price': 'str',
+        'filled_total': 'str',
         'fee': 'str',
         'fee_currency': 'str',
         'point_fee': 'str',
@@ -71,6 +72,7 @@ class Order(object):
         'auto_borrow': 'auto_borrow',
         'left': 'left',
         'fill_price': 'fill_price',
+        'filled_total': 'filled_total',
         'fee': 'fee',
         'fee_currency': 'fee_currency',
         'point_fee': 'point_fee',
@@ -80,7 +82,7 @@ class Order(object):
         'rebated_fee_currency': 'rebated_fee_currency'
     }
 
-    def __init__(self, id=None, text=None, create_time=None, update_time=None, status=None, currency_pair=None, type='limit', account='spot', side=None, amount=None, price=None, time_in_force='gtc', auto_borrow=None, left=None, fill_price=None, fee=None, fee_currency=None, point_fee=None, gt_fee=None, gt_discount=None, rebated_fee=None, rebated_fee_currency=None):  # noqa: E501
+    def __init__(self, id=None, text=None, create_time=None, update_time=None, status=None, currency_pair=None, type='limit', account='spot', side=None, amount=None, price=None, time_in_force='gtc', auto_borrow=None, left=None, fill_price=None, filled_total=None, fee=None, fee_currency=None, point_fee=None, gt_fee=None, gt_discount=None, rebated_fee=None, rebated_fee_currency=None):  # noqa: E501
         """Order - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -98,6 +100,7 @@ class Order(object):
         self._auto_borrow = None
         self._left = None
         self._fill_price = None
+        self._filled_total = None
         self._fee = None
         self._fee_currency = None
         self._point_fee = None
@@ -133,6 +136,8 @@ class Order(object):
             self.left = left
         if fill_price is not None:
             self.fill_price = fill_price
+        if filled_total is not None:
+            self.filled_total = filled_total
         if fee is not None:
             self.fee = fee
         if fee_currency is not None:
@@ -512,7 +517,7 @@ class Order(object):
     def fill_price(self):
         """Gets the fill_price of this Order.  # noqa: E501
 
-        Total filled in quote currency  # noqa: E501
+        Total filled in quote currency. Deprecated in favor of `filled_total`  # noqa: E501
 
         :return: The fill_price of this Order.  # noqa: E501
         :rtype: str
@@ -523,13 +528,36 @@ class Order(object):
     def fill_price(self, fill_price):
         """Sets the fill_price of this Order.
 
-        Total filled in quote currency  # noqa: E501
+        Total filled in quote currency. Deprecated in favor of `filled_total`  # noqa: E501
 
         :param fill_price: The fill_price of this Order.  # noqa: E501
         :type: str
         """
 
         self._fill_price = fill_price
+
+    @property
+    def filled_total(self):
+        """Gets the filled_total of this Order.  # noqa: E501
+
+        Total filled in quote currency  # noqa: E501
+
+        :return: The filled_total of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._filled_total
+
+    @filled_total.setter
+    def filled_total(self, filled_total):
+        """Sets the filled_total of this Order.
+
+        Total filled in quote currency  # noqa: E501
+
+        :param filled_total: The filled_total of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._filled_total = filled_total
 
     @property
     def fee(self):
