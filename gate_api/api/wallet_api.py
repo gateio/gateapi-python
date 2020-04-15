@@ -127,3 +127,97 @@ class WalletApi(object):
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+    def transfer_with_sub_account(self, sub_account_transfer, **kwargs):  # noqa: E501
+        """Transfer between main and sub accounts  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.transfer_with_sub_account(sub_account_transfer, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param SubAccountTransfer sub_account_transfer: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.transfer_with_sub_account_with_http_info(sub_account_transfer, **kwargs)  # noqa: E501
+        else:
+            (data) = self.transfer_with_sub_account_with_http_info(sub_account_transfer, **kwargs)  # noqa: E501
+            return data
+
+    def transfer_with_sub_account_with_http_info(self, sub_account_transfer, **kwargs):  # noqa: E501
+        """Transfer between main and sub accounts  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.transfer_with_sub_account_with_http_info(sub_account_transfer, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param SubAccountTransfer sub_account_transfer: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['sub_account_transfer']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method transfer_with_sub_account" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'sub_account_transfer' is set
+        if ('sub_account_transfer' not in local_var_params or
+                local_var_params['sub_account_transfer'] is None):
+            raise ValueError("Missing the required parameter `sub_account_transfer` when calling `transfer_with_sub_account`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'sub_account_transfer' in local_var_params:
+            body_params = local_var_params['sub_account_transfer']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/wallet/sub_account_transfers', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
