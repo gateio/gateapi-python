@@ -733,7 +733,7 @@ class SpotApi(object):
     def list_candlesticks(self, currency_pair, **kwargs):  # noqa: E501
         """Market candlesticks  # noqa: E501
 
-        Candlestick data will start from (current time - limit * interval), end at current time  # noqa: E501
+        Maximum of 1000 points are returned in one query. Be sure not to exceed the limit when specifying `from`, `to` and `interval`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_candlesticks(currency_pair, async_req=True)
@@ -741,7 +741,9 @@ class SpotApi(object):
 
         :param async_req bool
         :param str currency_pair: Currency pair (required)
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
+        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
+        :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
         :param str interval: Interval time between data points
         :return: list[list[str]]
                  If the method is called asynchronously,
@@ -757,7 +759,7 @@ class SpotApi(object):
     def list_candlesticks_with_http_info(self, currency_pair, **kwargs):  # noqa: E501
         """Market candlesticks  # noqa: E501
 
-        Candlestick data will start from (current time - limit * interval), end at current time  # noqa: E501
+        Maximum of 1000 points are returned in one query. Be sure not to exceed the limit when specifying `from`, `to` and `interval`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_candlesticks_with_http_info(currency_pair, async_req=True)
@@ -765,7 +767,9 @@ class SpotApi(object):
 
         :param async_req bool
         :param str currency_pair: Currency pair (required)
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
+        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
+        :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
         :param str interval: Interval time between data points
         :return: list[list[str]]
                  If the method is called asynchronously,
@@ -774,7 +778,7 @@ class SpotApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair', 'limit', 'interval']  # noqa: E501
+        all_params = ['currency_pair', 'limit', '_from', 'to', 'interval']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -795,8 +799,6 @@ class SpotApi(object):
 
         if 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `list_candlesticks`, must be a value less than or equal to `1000`")  # noqa: E501
-        if 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `list_candlesticks`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -806,6 +808,10 @@ class SpotApi(object):
             query_params.append(('currency_pair', local_var_params['currency_pair']))  # noqa: E501
         if 'limit' in local_var_params:
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if '_from' in local_var_params:
+            query_params.append(('from', local_var_params['_from']))  # noqa: E501
+        if 'to' in local_var_params:
+            query_params.append(('to', local_var_params['to']))  # noqa: E501
         if 'interval' in local_var_params:
             query_params.append(('interval', local_var_params['interval']))  # noqa: E501
 
