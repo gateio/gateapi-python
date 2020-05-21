@@ -35,7 +35,8 @@ class Transfer(object):
         '_from': 'str',
         'to': 'str',
         'amount': 'str',
-        'currency_pair': 'str'
+        'currency_pair': 'str',
+        'settle': 'str'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class Transfer(object):
         '_from': 'from',
         'to': 'to',
         'amount': 'amount',
-        'currency_pair': 'currency_pair'
+        'currency_pair': 'currency_pair',
+        'settle': 'settle'
     }
 
-    def __init__(self, currency=None, _from=None, to=None, amount=None, currency_pair=None):  # noqa: E501
+    def __init__(self, currency=None, _from=None, to=None, amount=None, currency_pair=None, settle=None):  # noqa: E501
         """Transfer - a model defined in OpenAPI"""  # noqa: E501
 
         self._currency = None
@@ -54,19 +56,23 @@ class Transfer(object):
         self._to = None
         self._amount = None
         self._currency_pair = None
+        self._settle = None
         self.discriminator = None
 
         self.currency = currency
         self._from = _from
         self.to = to
         self.amount = amount
-        self.currency_pair = currency_pair
+        if currency_pair is not None:
+            self.currency_pair = currency_pair
+        if settle is not None:
+            self.settle = settle
 
     @property
     def currency(self):
         """Gets the currency of this Transfer.  # noqa: E501
 
-        Transfer currency name  # noqa: E501
+        Transfer currency. For futures account, `currency` can be set to `POINT` or settle currency  # noqa: E501
 
         :return: The currency of this Transfer.  # noqa: E501
         :rtype: str
@@ -77,7 +83,7 @@ class Transfer(object):
     def currency(self, currency):
         """Sets the currency of this Transfer.
 
-        Transfer currency name  # noqa: E501
+        Transfer currency. For futures account, `currency` can be set to `POINT` or settle currency  # noqa: E501
 
         :param currency: The currency of this Transfer.  # noqa: E501
         :type: str
@@ -91,7 +97,7 @@ class Transfer(object):
     def _from(self):
         """Gets the _from of this Transfer.  # noqa: E501
 
-        Account transferred from. `spot` - spot account. `margin` - margin account  # noqa: E501
+        Account transferred from. `spot` - spot account. `margin` - margin account, `futures` - futures account  # noqa: E501
 
         :return: The _from of this Transfer.  # noqa: E501
         :rtype: str
@@ -102,14 +108,14 @@ class Transfer(object):
     def _from(self, _from):
         """Sets the _from of this Transfer.
 
-        Account transferred from. `spot` - spot account. `margin` - margin account  # noqa: E501
+        Account transferred from. `spot` - spot account. `margin` - margin account, `futures` - futures account  # noqa: E501
 
         :param _from: The _from of this Transfer.  # noqa: E501
         :type: str
         """
         if _from is None:
             raise ValueError("Invalid value for `_from`, must not be `None`")  # noqa: E501
-        allowed_values = ["spot", "margin"]  # noqa: E501
+        allowed_values = ["spot", "margin", "futures"]  # noqa: E501
         if _from not in allowed_values:
             raise ValueError(
                 "Invalid value for `_from` ({0}), must be one of {1}"  # noqa: E501
@@ -122,7 +128,7 @@ class Transfer(object):
     def to(self):
         """Gets the to of this Transfer.  # noqa: E501
 
-        Account transferred to. `spot` - spot account. `margin` - margin account  # noqa: E501
+        Account transferred to. `spot` - spot account. `margin` - margin account, `futures` - futures account  # noqa: E501
 
         :return: The to of this Transfer.  # noqa: E501
         :rtype: str
@@ -133,14 +139,14 @@ class Transfer(object):
     def to(self, to):
         """Sets the to of this Transfer.
 
-        Account transferred to. `spot` - spot account. `margin` - margin account  # noqa: E501
+        Account transferred to. `spot` - spot account. `margin` - margin account, `futures` - futures account  # noqa: E501
 
         :param to: The to of this Transfer.  # noqa: E501
         :type: str
         """
         if to is None:
             raise ValueError("Invalid value for `to`, must not be `None`")  # noqa: E501
-        allowed_values = ["spot", "margin"]  # noqa: E501
+        allowed_values = ["spot", "margin", "futures"]  # noqa: E501
         if to not in allowed_values:
             raise ValueError(
                 "Invalid value for `to` ({0}), must be one of {1}"  # noqa: E501
@@ -178,7 +184,7 @@ class Transfer(object):
     def currency_pair(self):
         """Gets the currency_pair of this Transfer.  # noqa: E501
 
-        Required if transfer from or to margin account  # noqa: E501
+        Margin currency pair. Required if transfer from or to margin account  # noqa: E501
 
         :return: The currency_pair of this Transfer.  # noqa: E501
         :rtype: str
@@ -189,15 +195,36 @@ class Transfer(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this Transfer.
 
-        Required if transfer from or to margin account  # noqa: E501
+        Margin currency pair. Required if transfer from or to margin account  # noqa: E501
 
         :param currency_pair: The currency_pair of this Transfer.  # noqa: E501
         :type: str
         """
-        if currency_pair is None:
-            raise ValueError("Invalid value for `currency_pair`, must not be `None`")  # noqa: E501
 
         self._currency_pair = currency_pair
+
+    @property
+    def settle(self):
+        """Gets the settle of this Transfer.  # noqa: E501
+
+        Futures settle currency. Required if `currency` is `POINT`  # noqa: E501
+
+        :return: The settle of this Transfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._settle
+
+    @settle.setter
+    def settle(self, settle):
+        """Sets the settle of this Transfer.
+
+        Futures settle currency. Required if `currency` is `POINT`  # noqa: E501
+
+        :param settle: The settle of this Transfer.  # noqa: E501
+        :type: str
+        """
+
+        self._settle = settle
 
     def to_dict(self):
         """Returns the model properties as a dict"""

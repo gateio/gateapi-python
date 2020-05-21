@@ -14,13 +14,14 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.12.0"
+__version__ = "4.13.0"
 
 # import apis into sdk package
 from gate_api.api.futures_api import FuturesApi
 from gate_api.api.margin_api import MarginApi
 from gate_api.api.spot_api import SpotApi
 from gate_api.api.wallet_api import WalletApi
+from gate_api.api.withdrawal_api import WithdrawalApi
 
 # import ApiClient
 from gate_api.api_client import ApiClient
@@ -31,6 +32,7 @@ from gate_api.models.cancel_order import CancelOrder
 from gate_api.models.cancel_order_result import CancelOrderResult
 from gate_api.models.contract import Contract
 from gate_api.models.currency_pair import CurrencyPair
+from gate_api.models.deposit_address import DepositAddress
 from gate_api.models.funding_account import FundingAccount
 from gate_api.models.funding_book_item import FundingBookItem
 from gate_api.models.funding_rate_record import FundingRateRecord
@@ -47,6 +49,7 @@ from gate_api.models.futures_price_triggered_order import FuturesPriceTriggeredO
 from gate_api.models.futures_ticker import FuturesTicker
 from gate_api.models.futures_trade import FuturesTrade
 from gate_api.models.insurance_record import InsuranceRecord
+from gate_api.models.ledger_record import LedgerRecord
 from gate_api.models.loan import Loan
 from gate_api.models.loan_patch import LoanPatch
 from gate_api.models.loan_record import LoanRecord
