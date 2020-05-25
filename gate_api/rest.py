@@ -24,7 +24,7 @@ import time
 import certifi
 # python 2 and python 3 compatibility library
 import six
-from six.moves.urllib.parse import unquote, urlencode
+from six.moves.urllib.parse import unquote_plus, urlencode
 
 try:
     import urllib3
@@ -178,7 +178,7 @@ class RESTClientObject(object):
             request_body = json.dumps(body)
         if _auth_required:
             resource_path = '/api/v4' + url[len(self.configuration.host):]
-            sign_headers = self.gen_sign(method, resource_path, unquote(urlencode(query_params)),
+            sign_headers = self.gen_sign(method, resource_path, unquote_plus(urlencode(query_params)),
                                          request_body)
             headers.update(sign_headers)
 
