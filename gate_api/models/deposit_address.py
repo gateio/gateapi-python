@@ -79,7 +79,7 @@ class DepositAddress(object):
     def address(self):
         """Gets the address of this DepositAddress.  # noqa: E501
 
-        充值地址  # noqa: E501
+        Deposit address  # noqa: E501
 
         :return: The address of this DepositAddress.  # noqa: E501
         :rtype: str
@@ -90,7 +90,7 @@ class DepositAddress(object):
     def address(self, address):
         """Sets the address of this DepositAddress.
 
-        充值地址  # noqa: E501
+        Deposit address  # noqa: E501
 
         :param address: The address of this DepositAddress.  # noqa: E501
         :type: str

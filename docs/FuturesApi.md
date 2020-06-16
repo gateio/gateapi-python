@@ -447,7 +447,7 @@ Authentication with API key and secret is required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_my_trades**
-> list[MyFuturesTrade] get_my_trades(settle, contract=contract, order=order, limit=limit, last_id=last_id)
+> list[MyFuturesTrade] get_my_trades(settle, contract=contract, order=order, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
 
 List personal trading history
 
@@ -468,11 +468,13 @@ settle = 'btc' # str | Settle currency (default to 'btc')
 contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
 order = 12345 # int | Futures order ID, return related data only if specified (optional)
 limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
+count_total = 0 # int | Whether to return total number matched. Default to 0(no return) (optional) (default to 0)
 
 try:
     # List personal trading history
-    api_response = api_instance.get_my_trades(settle, contract=contract, order=order, limit=limit, last_id=last_id)
+    api_response = api_instance.get_my_trades(settle, contract=contract, order=order, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
     print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->get_my_trades: %s\n" % e)
@@ -486,7 +488,9 @@ Name | Type | Description  | Notes
  **contract** | **str**| Futures contract, return related data only if specified | [optional] 
  **order** | **int**| Futures order ID, return related data only if specified | [optional] 
  **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
+ **count_total** | **int**| Whether to return total number matched. Default to 0(no return) | [optional] [default to 0]
 
 ### Return type
 
@@ -963,7 +967,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_orders**
-> list[FuturesOrder] list_futures_orders(settle, contract, status, limit=limit, last_id=last_id)
+> list[FuturesOrder] list_futures_orders(settle, contract, status, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
 
 List futures orders
 
@@ -986,11 +990,13 @@ settle = 'btc' # str | Settle currency (default to 'btc')
 contract = 'BTC_USD' # str | Futures contract
 status = 'open' # str | List orders based on status
 limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
+count_total = 0 # int | Whether to return total number matched. Default to 0(no return) (optional) (default to 0)
 
 try:
     # List futures orders
-    api_response = api_instance.list_futures_orders(settle, contract, status, limit=limit, last_id=last_id)
+    api_response = api_instance.list_futures_orders(settle, contract, status, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
     print(api_response)
 except ApiException as e:
     print("Exception when calling FuturesApi->list_futures_orders: %s\n" % e)
@@ -1004,7 +1010,9 @@ Name | Type | Description  | Notes
  **contract** | **str**| Futures contract | 
  **status** | **str**| List orders based on status | 
  **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
+ **count_total** | **int**| Whether to return total number matched. Default to 0(no return) | [optional] [default to 0]
 
 ### Return type
 
