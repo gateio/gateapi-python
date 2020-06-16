@@ -879,7 +879,9 @@ class FuturesApi(object):
         :param str contract: Futures contract, return related data only if specified
         :param int order: Futures order ID, return related data only if specified
         :param int limit: Maximum number of record returned in one list
+        :param int offset: List offset, starting from 0
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
+        :param int count_total: Whether to return total number matched. Default to 0(no return)
         :return: list[MyFuturesTrade]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -904,7 +906,9 @@ class FuturesApi(object):
         :param str contract: Futures contract, return related data only if specified
         :param int order: Futures order ID, return related data only if specified
         :param int limit: Maximum number of record returned in one list
+        :param int offset: List offset, starting from 0
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
+        :param int count_total: Whether to return total number matched. Default to 0(no return)
         :return: list[MyFuturesTrade]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -912,7 +916,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'order', 'limit', 'last_id']  # noqa: E501
+        all_params = ['settle', 'contract', 'order', 'limit', 'offset', 'last_id', 'count_total']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -935,6 +939,8 @@ class FuturesApi(object):
             raise ValueError("Invalid value for parameter `limit` when calling `get_my_trades`, must be a value less than or equal to `1000`")  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `get_my_trades`, must be a value greater than or equal to `1`")  # noqa: E501
+        if 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `offset` when calling `get_my_trades`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -948,8 +954,12 @@ class FuturesApi(object):
             query_params.append(('order', local_var_params['order']))  # noqa: E501
         if 'limit' in local_var_params:
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'offset' in local_var_params:
+            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
         if 'last_id' in local_var_params:
             query_params.append(('last_id', local_var_params['last_id']))  # noqa: E501
+        if 'count_total' in local_var_params:
+            query_params.append(('count_total', local_var_params['count_total']))  # noqa: E501
 
         header_params = {}
 
@@ -1950,7 +1960,9 @@ class FuturesApi(object):
         :param str contract: Futures contract (required)
         :param str status: List orders based on status (required)
         :param int limit: Maximum number of record returned in one list
+        :param int offset: List offset, starting from 0
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
+        :param int count_total: Whether to return total number matched. Default to 0(no return)
         :return: list[FuturesOrder]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1976,7 +1988,9 @@ class FuturesApi(object):
         :param str contract: Futures contract (required)
         :param str status: List orders based on status (required)
         :param int limit: Maximum number of record returned in one list
+        :param int offset: List offset, starting from 0
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
+        :param int count_total: Whether to return total number matched. Default to 0(no return)
         :return: list[FuturesOrder]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1984,7 +1998,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'status', 'limit', 'last_id']  # noqa: E501
+        all_params = ['settle', 'contract', 'status', 'limit', 'offset', 'last_id', 'count_total']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2015,6 +2029,8 @@ class FuturesApi(object):
             raise ValueError("Invalid value for parameter `limit` when calling `list_futures_orders`, must be a value less than or equal to `1000`")  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `list_futures_orders`, must be a value greater than or equal to `1`")  # noqa: E501
+        if 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `offset` when calling `list_futures_orders`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2028,8 +2044,12 @@ class FuturesApi(object):
             query_params.append(('status', local_var_params['status']))  # noqa: E501
         if 'limit' in local_var_params:
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'offset' in local_var_params:
+            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
         if 'last_id' in local_var_params:
             query_params.append(('last_id', local_var_params['last_id']))  # noqa: E501
+        if 'count_total' in local_var_params:
+            query_params.append(('count_total', local_var_params['count_total']))  # noqa: E501
 
         header_params = {}
 

@@ -442,7 +442,7 @@ class Order(object):
     def time_in_force(self):
         """Gets the time_in_force of this Order.  # noqa: E501
 
-        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, reduce only  # noqa: E501
+        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee  # noqa: E501
 
         :return: The time_in_force of this Order.  # noqa: E501
         :rtype: str
@@ -453,7 +453,7 @@ class Order(object):
     def time_in_force(self, time_in_force):
         """Sets the time_in_force of this Order.
 
-        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, reduce only  # noqa: E501
+        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee  # noqa: E501
 
         :param time_in_force: The time_in_force of this Order.  # noqa: E501
         :type: str

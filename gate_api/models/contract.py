@@ -58,7 +58,8 @@ class Contract(object):
         'trade_id': 'int',
         'trade_size': 'int',
         'position_size': 'int',
-        'config_change_time': 'float'
+        'config_change_time': 'float',
+        'in_delisting': 'bool'
     }
 
     attribute_map = {
@@ -89,10 +90,11 @@ class Contract(object):
         'trade_id': 'trade_id',
         'trade_size': 'trade_size',
         'position_size': 'position_size',
-        'config_change_time': 'config_change_time'
+        'config_change_time': 'config_change_time',
+        'in_delisting': 'in_delisting'
     }
 
-    def __init__(self, name=None, type=None, quanto_multiplier=None, leverage_min=None, leverage_max=None, maintenance_rate=None, mark_type=None, mark_price=None, index_price=None, last_price=None, maker_fee_rate=None, taker_fee_rate=None, order_price_round=None, mark_price_round=None, funding_rate=None, funding_interval=None, funding_next_apply=None, risk_limit_base=None, risk_limit_step=None, risk_limit_max=None, order_size_min=None, order_size_max=None, order_price_deviate=None, orderbook_id=None, trade_id=None, trade_size=None, position_size=None, config_change_time=None):  # noqa: E501
+    def __init__(self, name=None, type=None, quanto_multiplier=None, leverage_min=None, leverage_max=None, maintenance_rate=None, mark_type=None, mark_price=None, index_price=None, last_price=None, maker_fee_rate=None, taker_fee_rate=None, order_price_round=None, mark_price_round=None, funding_rate=None, funding_interval=None, funding_next_apply=None, risk_limit_base=None, risk_limit_step=None, risk_limit_max=None, order_size_min=None, order_size_max=None, order_price_deviate=None, orderbook_id=None, trade_id=None, trade_size=None, position_size=None, config_change_time=None, in_delisting=None):  # noqa: E501
         """Contract - a model defined in OpenAPI"""  # noqa: E501
 
         self._name = None
@@ -123,6 +125,7 @@ class Contract(object):
         self._trade_size = None
         self._position_size = None
         self._config_change_time = None
+        self._in_delisting = None
         self.discriminator = None
 
         if name is not None:
@@ -181,6 +184,8 @@ class Contract(object):
             self.position_size = position_size
         if config_change_time is not None:
             self.config_change_time = config_change_time
+        if in_delisting is not None:
+            self.in_delisting = in_delisting
 
     @property
     def name(self):
@@ -837,6 +842,29 @@ class Contract(object):
         """
 
         self._config_change_time = config_change_time
+
+    @property
+    def in_delisting(self):
+        """Gets the in_delisting of this Contract.  # noqa: E501
+
+        Contract is delisting  # noqa: E501
+
+        :return: The in_delisting of this Contract.  # noqa: E501
+        :rtype: bool
+        """
+        return self._in_delisting
+
+    @in_delisting.setter
+    def in_delisting(self, in_delisting):
+        """Sets the in_delisting of this Contract.
+
+        Contract is delisting  # noqa: E501
+
+        :param in_delisting: The in_delisting of this Contract.  # noqa: E501
+        :type: bool
+        """
+
+        self._in_delisting = in_delisting
 
     def to_dict(self):
         """Returns the model properties as a dict"""
