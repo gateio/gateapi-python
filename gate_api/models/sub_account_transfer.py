@@ -34,29 +34,44 @@ class SubAccountTransfer(object):
         'currency': 'str',
         'sub_account': 'str',
         'direction': 'str',
-        'amount': 'str'
+        'amount': 'str',
+        'uid': 'str',
+        'timest': 'str',
+        'source': 'str'
     }
 
     attribute_map = {
         'currency': 'currency',
         'sub_account': 'sub_account',
         'direction': 'direction',
-        'amount': 'amount'
+        'amount': 'amount',
+        'uid': 'uid',
+        'timest': 'timest',
+        'source': 'source'
     }
 
-    def __init__(self, currency=None, sub_account=None, direction=None, amount=None):  # noqa: E501
+    def __init__(self, currency=None, sub_account=None, direction=None, amount=None, uid=None, timest=None, source=None):  # noqa: E501
         """SubAccountTransfer - a model defined in OpenAPI"""  # noqa: E501
 
         self._currency = None
         self._sub_account = None
         self._direction = None
         self._amount = None
+        self._uid = None
+        self._timest = None
+        self._source = None
         self.discriminator = None
 
         self.currency = currency
         self.sub_account = sub_account
         self.direction = direction
         self.amount = amount
+        if uid is not None:
+            self.uid = uid
+        if timest is not None:
+            self.timest = timest
+        if source is not None:
+            self.source = source
 
     @property
     def currency(self):
@@ -163,6 +178,75 @@ class SubAccountTransfer(object):
             raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501
 
         self._amount = amount
+
+    @property
+    def uid(self):
+        """Gets the uid of this SubAccountTransfer.  # noqa: E501
+
+        Main account user ID  # noqa: E501
+
+        :return: The uid of this SubAccountTransfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._uid
+
+    @uid.setter
+    def uid(self, uid):
+        """Sets the uid of this SubAccountTransfer.
+
+        Main account user ID  # noqa: E501
+
+        :param uid: The uid of this SubAccountTransfer.  # noqa: E501
+        :type: str
+        """
+
+        self._uid = uid
+
+    @property
+    def timest(self):
+        """Gets the timest of this SubAccountTransfer.  # noqa: E501
+
+        Transfer timestamp  # noqa: E501
+
+        :return: The timest of this SubAccountTransfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._timest
+
+    @timest.setter
+    def timest(self, timest):
+        """Sets the timest of this SubAccountTransfer.
+
+        Transfer timestamp  # noqa: E501
+
+        :param timest: The timest of this SubAccountTransfer.  # noqa: E501
+        :type: str
+        """
+
+        self._timest = timest
+
+    @property
+    def source(self):
+        """Gets the source of this SubAccountTransfer.  # noqa: E501
+
+        Where the operation is initiated from  # noqa: E501
+
+        :return: The source of this SubAccountTransfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._source
+
+    @source.setter
+    def source(self, source):
+        """Sets the source of this SubAccountTransfer.
+
+        Where the operation is initiated from  # noqa: E501
+
+        :param source: The source of this SubAccountTransfer.  # noqa: E501
+        :type: str
+        """
+
+        self._source = source
 
     def to_dict(self):
         """Returns the model properties as a dict"""
