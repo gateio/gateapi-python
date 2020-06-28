@@ -243,7 +243,7 @@ class WalletApi(object):
     def list_sub_account_transfers(self, **kwargs):  # noqa: E501
         """Transfer records between main and sub accounts  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days  > Note: only records after 2020-04-10 can be retrieved  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_sub_account_transfers(async_req=True)
@@ -255,7 +255,7 @@ class WalletApi(object):
         :param int to: Time range ending, default to current time
         :param int limit: Maximum number of record returned in one list
         :param int offset: List offset, starting from 0
-        :return: SubAccountTransfer
+        :return: list[SubAccountTransfer]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -269,7 +269,7 @@ class WalletApi(object):
     def list_sub_account_transfers_with_http_info(self, **kwargs):  # noqa: E501
         """Transfer records between main and sub accounts  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days  > Note: only records after 2020-04-10 can be retrieved  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_sub_account_transfers_with_http_info(async_req=True)
@@ -281,7 +281,7 @@ class WalletApi(object):
         :param int to: Time range ending, default to current time
         :param int limit: Maximum number of record returned in one list
         :param int offset: List offset, starting from 0
-        :return: SubAccountTransfer
+        :return: list[SubAccountTransfer]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -346,7 +346,7 @@ class WalletApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SubAccountTransfer',  # noqa: E501
+            response_type='list[SubAccountTransfer]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

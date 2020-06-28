@@ -121,11 +121,11 @@ Authentication with API key and secret is required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_sub_account_transfers**
-> SubAccountTransfer list_sub_account_transfers(sub_uid=sub_uid, _from=_from, to=to, limit=limit, offset=offset)
+> list[SubAccountTransfer] list_sub_account_transfers(sub_uid=sub_uid, _from=_from, to=to, limit=limit, offset=offset)
 
 Transfer records between main and sub accounts
 
-Record time range cannot exceed 30 days
+Record time range cannot exceed 30 days  > Note: only records after 2020-04-10 can be retrieved
 
 ### Example
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SubAccountTransfer**](SubAccountTransfer.md)
+[**list[SubAccountTransfer]**](SubAccountTransfer.md)
 
 ### Authorization
 
