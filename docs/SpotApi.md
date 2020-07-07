@@ -487,7 +487,7 @@ configuration.secret = 'YOUR_API_SECRET'
 # create an instance of the API class
 api_instance = gate_api.SpotApi(gate_api.ApiClient(configuration))
 currency_pair = 'BTC_USDT' # str | Currency pair
-limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 page = 1 # int | Page number (optional) (default to 1)
 order_id = '12345' # str | List all trades of specified order (optional)
 
@@ -504,7 +504,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency_pair** | **str**| Currency pair | 
- **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
  **page** | **int**| Page number | [optional] [default to 1]
  **order_id** | **str**| List all trades of specified order | [optional] 
 
@@ -595,7 +595,7 @@ api_instance = gate_api.SpotApi(gate_api.ApiClient(configuration))
 currency_pair = 'BTC_USDT' # str | Currency pair
 status = 'open' # str | List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled 
 page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 
 try:
     # List orders
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
  **currency_pair** | **str**| Currency pair | 
  **status** | **str**| List orders based on status  &#x60;open&#x60; - order is waiting to be filled &#x60;finished&#x60; - order has been filled or cancelled  | 
  **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
 
 ### Return type
 
@@ -740,7 +740,7 @@ from gate_api.rest import ApiException
 # create an instance of the API class
 api_instance = gate_api.SpotApi()
 currency_pair = 'BTC_USDT' # str | Currency pair
-limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
 
 try:
@@ -756,7 +756,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency_pair** | **str**| Currency pair | 
- **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
  **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
 
 ### Return type

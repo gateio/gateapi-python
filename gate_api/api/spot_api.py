@@ -114,7 +114,7 @@ class SpotApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/spot/cancel_batch_orders', 'POST',
@@ -216,7 +216,7 @@ class SpotApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/spot/orders/{order_id}', 'DELETE',
@@ -318,7 +318,7 @@ class SpotApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/spot/orders', 'DELETE',
@@ -418,7 +418,7 @@ class SpotApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/spot/batch_orders', 'POST',
@@ -516,7 +516,7 @@ class SpotApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/spot/orders', 'POST',
@@ -712,7 +712,7 @@ class SpotApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/spot/orders/{order_id}', 'GET',
@@ -940,7 +940,7 @@ class SpotApi(object):
 
         :param async_req bool
         :param str currency_pair: Currency pair (required)
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :param int page: Page number
         :param str order_id: List all trades of specified order
         :return: list[Trade]
@@ -964,7 +964,7 @@ class SpotApi(object):
 
         :param async_req bool
         :param str currency_pair: Currency pair (required)
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :param int page: Page number
         :param str order_id: List all trades of specified order
         :return: list[Trade]
@@ -1024,7 +1024,7 @@ class SpotApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/spot/my_trades', 'GET',
@@ -1162,7 +1162,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param str status: List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled  (required)
         :param int page: Page number
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :return: list[Order]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1186,7 +1186,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param str status: List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled  (required)
         :param int page: Page number
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :return: list[Order]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1248,7 +1248,7 @@ class SpotApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/spot/orders', 'GET',
@@ -1338,7 +1338,7 @@ class SpotApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/spot/accounts', 'GET',
@@ -1458,7 +1458,7 @@ class SpotApi(object):
 
         :param async_req bool
         :param str currency_pair: Currency pair (required)
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :return: list[Trade]
                  If the method is called asynchronously,
@@ -1481,7 +1481,7 @@ class SpotApi(object):
 
         :param async_req bool
         :param str currency_pair: Currency pair (required)
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :return: list[Trade]
                  If the method is called asynchronously,

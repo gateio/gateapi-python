@@ -230,12 +230,6 @@ class FuturesInitialOrder(object):
         :param text: The text of this FuturesInitialOrder.  # noqa: E501
         :type: str
         """
-        allowed_values = ["web", "api", "app"]  # noqa: E501
-        if text not in allowed_values:
-            raise ValueError(
-                "Invalid value for `text` ({0}), must be one of {1}"  # noqa: E501
-                .format(text, allowed_values)
-            )
 
         self._text = text
 

@@ -97,7 +97,7 @@ class Transfer(object):
     def _from(self):
         """Gets the _from of this Transfer.  # noqa: E501
 
-        Account transferred from. `spot` - spot account. `margin` - margin account, `futures` - futures account  # noqa: E501
+        Account transferred from  # noqa: E501
 
         :return: The _from of this Transfer.  # noqa: E501
         :rtype: str
@@ -108,14 +108,14 @@ class Transfer(object):
     def _from(self, _from):
         """Sets the _from of this Transfer.
 
-        Account transferred from. `spot` - spot account. `margin` - margin account, `futures` - futures account  # noqa: E501
+        Account transferred from  # noqa: E501
 
         :param _from: The _from of this Transfer.  # noqa: E501
         :type: str
         """
         if _from is None:
             raise ValueError("Invalid value for `_from`, must not be `None`")  # noqa: E501
-        allowed_values = ["spot", "margin", "futures"]  # noqa: E501
+        allowed_values = ["spot", "margin", "futures", "delivery"]  # noqa: E501
         if _from not in allowed_values:
             raise ValueError(
                 "Invalid value for `_from` ({0}), must be one of {1}"  # noqa: E501
@@ -128,7 +128,7 @@ class Transfer(object):
     def to(self):
         """Gets the to of this Transfer.  # noqa: E501
 
-        Account transferred to. `spot` - spot account. `margin` - margin account, `futures` - futures account  # noqa: E501
+        Account transferred to  # noqa: E501
 
         :return: The to of this Transfer.  # noqa: E501
         :rtype: str
@@ -139,14 +139,14 @@ class Transfer(object):
     def to(self, to):
         """Sets the to of this Transfer.
 
-        Account transferred to. `spot` - spot account. `margin` - margin account, `futures` - futures account  # noqa: E501
+        Account transferred to  # noqa: E501
 
         :param to: The to of this Transfer.  # noqa: E501
         :type: str
         """
         if to is None:
             raise ValueError("Invalid value for `to`, must not be `None`")  # noqa: E501
-        allowed_values = ["spot", "margin", "futures"]  # noqa: E501
+        allowed_values = ["spot", "margin", "futures", "delivery"]  # noqa: E501
         if to not in allowed_values:
             raise ValueError(
                 "Invalid value for `to` ({0}), must be one of {1}"  # noqa: E501
