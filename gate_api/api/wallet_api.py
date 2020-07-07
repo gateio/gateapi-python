@@ -108,7 +108,7 @@ class WalletApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/wallet/deposit_address', 'GET',
@@ -139,7 +139,7 @@ class WalletApi(object):
         :param str currency: Filter by currency. Return all currency records if not specified
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :param int offset: List offset, starting from 0
         :return: list[LedgerRecord]
                  If the method is called asynchronously,
@@ -165,7 +165,7 @@ class WalletApi(object):
         :param str currency: Filter by currency. Return all currency records if not specified
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :param int offset: List offset, starting from 0
         :return: list[LedgerRecord]
                  If the method is called asynchronously,
@@ -222,7 +222,7 @@ class WalletApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/wallet/deposits', 'GET',
@@ -253,7 +253,7 @@ class WalletApi(object):
         :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :param int offset: List offset, starting from 0
         :return: list[SubAccountTransfer]
                  If the method is called asynchronously,
@@ -279,7 +279,7 @@ class WalletApi(object):
         :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :param int offset: List offset, starting from 0
         :return: list[SubAccountTransfer]
                  If the method is called asynchronously,
@@ -336,7 +336,7 @@ class WalletApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/wallet/sub_account_transfers', 'GET',
@@ -367,7 +367,7 @@ class WalletApi(object):
         :param str currency: Filter by currency. Return all currency records if not specified
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :param int offset: List offset, starting from 0
         :return: list[LedgerRecord]
                  If the method is called asynchronously,
@@ -393,7 +393,7 @@ class WalletApi(object):
         :param str currency: Filter by currency. Return all currency records if not specified
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :param int offset: List offset, starting from 0
         :return: list[LedgerRecord]
                  If the method is called asynchronously,
@@ -450,7 +450,7 @@ class WalletApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/wallet/withdrawals', 'GET',
@@ -471,7 +471,7 @@ class WalletApi(object):
     def transfer(self, transfer, **kwargs):  # noqa: E501
         """Transfer between accounts  # noqa: E501
 
-        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures  # noqa: E501
+        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 2. spot - delivery  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.transfer(transfer, async_req=True)
@@ -493,7 +493,7 @@ class WalletApi(object):
     def transfer_with_http_info(self, transfer, **kwargs):  # noqa: E501
         """Transfer between accounts  # noqa: E501
 
-        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures  # noqa: E501
+        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 2. spot - delivery  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.transfer_with_http_info(transfer, async_req=True)
@@ -546,7 +546,7 @@ class WalletApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/wallet/transfers', 'POST',
@@ -640,7 +640,7 @@ class WalletApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/wallet/sub_account_transfers', 'POST',

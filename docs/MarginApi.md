@@ -340,7 +340,7 @@ api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
 loan_id = '12345' # str | Loan ID
 status = 'loaned' # str | Loan record status (optional)
 page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 
 try:
     # List repayment records of specified loan
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
  **loan_id** | **str**| Loan ID | 
  **status** | **str**| Loan record status | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
 
 ### Return type
 
@@ -448,7 +448,7 @@ currency_pair = 'BTC_USDT' # str | Currency pair (optional)
 sort_by = 'rate' # str | Specify which field is used to sort. `create_time` or `rate` is supported. Default to `create_time` (optional)
 reverse_sort = True # bool | Whether to sort in descending order. Default to `true` (optional)
 page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum number of record returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 
 try:
     # List all loans
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
  **sort_by** | **str**| Specify which field is used to sort. &#x60;create_time&#x60; or &#x60;rate&#x60; is supported. Default to &#x60;create_time&#x60; | [optional] 
  **reverse_sort** | **bool**| Whether to sort in descending order. Default to &#x60;true&#x60; | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum number of record returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
 
 ### Return type
 

@@ -216,26 +216,12 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         :return: The Auth Settings information dict.
         """
         return {
-            'api_key':
-                {
-                    'type': 'api_key',
-                    'in': 'header',
-                    'key': 'KEY',
-                    'value': self.get_api_key_with_prefix('KEY')
-                },
-            'api_sign':
+            'apiv4':
                 {
                     'type': 'api_key',
                     'in': 'header',
                     'key': 'SIGN',
                     'value': self.get_api_key_with_prefix('SIGN')
-                },
-            'api_timestamp':
-                {
-                    'type': 'api_key',
-                    'in': 'header',
-                    'key': 'Timestamp',
-                    'value': self.get_api_key_with_prefix('Timestamp')
                 },
 
         }
@@ -248,6 +234,6 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
-               "Version of the API: 4.13.1\n"\
-               "SDK Package Version: 4.13.1".\
+               "Version of the API: 4.14.0\n"\
+               "SDK Package Version: 4.14.0".\
                format(env=sys.platform, pyversion=sys.version)

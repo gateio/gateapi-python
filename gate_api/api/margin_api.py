@@ -118,7 +118,7 @@ class MarginApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/margin/loans/{loan_id}', 'DELETE',
@@ -216,7 +216,7 @@ class MarginApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/margin/loans', 'POST',
@@ -318,7 +318,7 @@ class MarginApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/margin/loans/{loan_id}', 'GET',
@@ -420,7 +420,7 @@ class MarginApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/margin/loan_records/{loan_record_id}', 'GET',
@@ -510,7 +510,7 @@ class MarginApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/margin/funding_accounts', 'GET',
@@ -634,7 +634,7 @@ class MarginApi(object):
         :param str loan_id: Loan ID (required)
         :param str status: Loan record status
         :param int page: Page number
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :return: list[LoanRecord]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -658,7 +658,7 @@ class MarginApi(object):
         :param str loan_id: Loan ID (required)
         :param str status: Loan record status
         :param int page: Page number
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :return: list[LoanRecord]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -716,7 +716,7 @@ class MarginApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/margin/loan_records', 'GET',
@@ -810,7 +810,7 @@ class MarginApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/margin/loans/{loan_id}/repayment', 'GET',
@@ -844,7 +844,7 @@ class MarginApi(object):
         :param str sort_by: Specify which field is used to sort. `create_time` or `rate` is supported. Default to `create_time`
         :param bool reverse_sort: Whether to sort in descending order. Default to `true`
         :param int page: Page number
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :return: list[Loan]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -872,7 +872,7 @@ class MarginApi(object):
         :param str sort_by: Specify which field is used to sort. `create_time` or `rate` is supported. Default to `create_time`
         :param bool reverse_sort: Whether to sort in descending order. Default to `true`
         :param int page: Page number
-        :param int limit: Maximum number of record returned in one list
+        :param int limit: Maximum number of records returned in one list
         :return: list[Loan]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -942,7 +942,7 @@ class MarginApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/margin/loans', 'GET',
@@ -1032,7 +1032,7 @@ class MarginApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/margin/accounts', 'GET',
@@ -1220,7 +1220,7 @@ class MarginApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/margin/merged_loans', 'POST',
@@ -1326,7 +1326,7 @@ class MarginApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/margin/loans/{loan_id}/repayment', 'POST',
@@ -1434,7 +1434,7 @@ class MarginApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/margin/loans/{loan_id}', 'PATCH',
@@ -1542,7 +1542,7 @@ class MarginApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/margin/loan_records/{loan_record_id}', 'PATCH',

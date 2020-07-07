@@ -112,7 +112,7 @@ class WithdrawalApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api_key', 'api_sign', 'api_timestamp']  # noqa: E501
+        auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
             '/withdrawals', 'POST',
