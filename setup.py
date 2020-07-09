@@ -13,7 +13,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "gate-api"
-VERSION = "4.14.0"
+VERSION = "4.15.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -27,12 +27,14 @@ setup(
     name=NAME,
     version=VERSION,
     description="Gate API v4",
+    author="Gate API support",
     author_email="support@mail.gate.io",
     url="",
     keywords=["OpenAPI", "OpenAPI-Generator", "Gate API v4"],
     install_requires=REQUIRES,
-    packages=find_packages(),
+    packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
+    license="Apache License 2.0",
     long_description="""\
     APIv4 provides spot, margin and futures trading operations. There are public APIs to retrieve the real-time market statistics, and private APIs which needs authentication to trade on user&#39;s behalf.  # noqa: E501
     """

@@ -18,6 +18,10 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
+from gate_api.exceptions import (  # noqa: F401
+    ApiTypeError,
+    ApiValueError
+)
 
 
 class MarginApi(object):
@@ -41,19 +45,22 @@ class MarginApi(object):
         >>> thread = api.cancel_loan(loan_id, currency, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
         :param str currency: Retrieved specified currency related data (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: Loan
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.cancel_loan_with_http_info(loan_id, currency, **kwargs)  # noqa: E501
-        else:
-            (data) = self.cancel_loan_with_http_info(loan_id, currency, **kwargs)  # noqa: E501
-            return data
+        return self.cancel_loan_with_http_info(loan_id, currency, **kwargs)  # noqa: E501
 
     def cancel_loan_with_http_info(self, loan_id, currency, **kwargs):  # noqa: E501
         """Cancel lending loan  # noqa: E501
@@ -64,38 +71,54 @@ class MarginApi(object):
         >>> thread = api.cancel_loan_with_http_info(loan_id, currency, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
         :param str currency: Retrieved specified currency related data (required)
-        :return: Loan
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(Loan, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['loan_id', 'currency']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'loan_id',
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method cancel_loan" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
-        if ('loan_id' not in local_var_params or
-                local_var_params['loan_id'] is None):
-            raise ValueError("Missing the required parameter `loan_id` when calling `cancel_loan`")  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_id` when calling `cancel_loan`")  # noqa: E501
         # verify the required parameter 'currency' is set
-        if ('currency' not in local_var_params or
-                local_var_params['currency'] is None):
-            raise ValueError("Missing the required parameter `currency` when calling `cancel_loan`")  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `cancel_loan`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,7 +127,7 @@ class MarginApi(object):
             path_params['loan_id'] = local_var_params['loan_id']  # noqa: E501
 
         query_params = []
-        if 'currency' in local_var_params:
+        if 'currency' in local_var_params and local_var_params['currency'] is not None:  # noqa: E501
             query_params.append(('currency', local_var_params['currency']))  # noqa: E501
 
         header_params = {}
@@ -144,18 +167,21 @@ class MarginApi(object):
         >>> thread = api.create_loan(loan, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param Loan loan: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: Loan
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_loan_with_http_info(loan, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_loan_with_http_info(loan, **kwargs)  # noqa: E501
-            return data
+        return self.create_loan_with_http_info(loan, **kwargs)  # noqa: E501
 
     def create_loan_with_http_info(self, loan, **kwargs):  # noqa: E501
         """Lend or borrow  # noqa: E501
@@ -165,33 +191,48 @@ class MarginApi(object):
         >>> thread = api.create_loan_with_http_info(loan, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param Loan loan: (required)
-        :return: Loan
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(Loan, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['loan']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'loan'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method create_loan" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'loan' is set
-        if ('loan' not in local_var_params or
-                local_var_params['loan'] is None):
-            raise ValueError("Missing the required parameter `loan` when calling `create_loan`")  # noqa: E501
+        if self.api_client.client_side_validation and ('loan' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan` when calling `create_loan`")  # noqa: E501
 
         collection_formats = {}
 
@@ -242,19 +283,22 @@ class MarginApi(object):
         >>> thread = api.get_loan(loan_id, side, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
         :param str side: Lend or borrow (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: Loan
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_loan_with_http_info(loan_id, side, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_loan_with_http_info(loan_id, side, **kwargs)  # noqa: E501
-            return data
+        return self.get_loan_with_http_info(loan_id, side, **kwargs)  # noqa: E501
 
     def get_loan_with_http_info(self, loan_id, side, **kwargs):  # noqa: E501
         """Retrieve one single loan detail  # noqa: E501
@@ -264,38 +308,54 @@ class MarginApi(object):
         >>> thread = api.get_loan_with_http_info(loan_id, side, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
         :param str side: Lend or borrow (required)
-        :return: Loan
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(Loan, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['loan_id', 'side']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'loan_id',
+            'side'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_loan" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
-        if ('loan_id' not in local_var_params or
-                local_var_params['loan_id'] is None):
-            raise ValueError("Missing the required parameter `loan_id` when calling `get_loan`")  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_id` when calling `get_loan`")  # noqa: E501
         # verify the required parameter 'side' is set
-        if ('side' not in local_var_params or
-                local_var_params['side'] is None):
-            raise ValueError("Missing the required parameter `side` when calling `get_loan`")  # noqa: E501
+        if self.api_client.client_side_validation and ('side' not in local_var_params or  # noqa: E501
+                                                        local_var_params['side'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `side` when calling `get_loan`")  # noqa: E501
 
         collection_formats = {}
 
@@ -304,7 +364,7 @@ class MarginApi(object):
             path_params['loan_id'] = local_var_params['loan_id']  # noqa: E501
 
         query_params = []
-        if 'side' in local_var_params:
+        if 'side' in local_var_params and local_var_params['side'] is not None:  # noqa: E501
             query_params.append(('side', local_var_params['side']))  # noqa: E501
 
         header_params = {}
@@ -344,19 +404,22 @@ class MarginApi(object):
         >>> thread = api.get_loan_record(loan_record_id, loan_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_record_id: Loan record ID (required)
         :param str loan_id: Loan ID (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: LoanRecord
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_loan_record_with_http_info(loan_record_id, loan_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_loan_record_with_http_info(loan_record_id, loan_id, **kwargs)  # noqa: E501
-            return data
+        return self.get_loan_record_with_http_info(loan_record_id, loan_id, **kwargs)  # noqa: E501
 
     def get_loan_record_with_http_info(self, loan_record_id, loan_id, **kwargs):  # noqa: E501
         """Get one single loan record  # noqa: E501
@@ -366,38 +429,54 @@ class MarginApi(object):
         >>> thread = api.get_loan_record_with_http_info(loan_record_id, loan_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_record_id: Loan record ID (required)
         :param str loan_id: Loan ID (required)
-        :return: LoanRecord
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(LoanRecord, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['loan_record_id', 'loan_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'loan_record_id',
+            'loan_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_loan_record" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'loan_record_id' is set
-        if ('loan_record_id' not in local_var_params or
-                local_var_params['loan_record_id'] is None):
-            raise ValueError("Missing the required parameter `loan_record_id` when calling `get_loan_record`")  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_record_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_record_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_record_id` when calling `get_loan_record`")  # noqa: E501
         # verify the required parameter 'loan_id' is set
-        if ('loan_id' not in local_var_params or
-                local_var_params['loan_id'] is None):
-            raise ValueError("Missing the required parameter `loan_id` when calling `get_loan_record`")  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_id` when calling `get_loan_record`")  # noqa: E501
 
         collection_formats = {}
 
@@ -406,7 +485,7 @@ class MarginApi(object):
             path_params['loan_record_id'] = local_var_params['loan_record_id']  # noqa: E501
 
         query_params = []
-        if 'loan_id' in local_var_params:
+        if 'loan_id' in local_var_params and local_var_params['loan_id'] is not None:  # noqa: E501
             query_params.append(('loan_id', local_var_params['loan_id']))  # noqa: E501
 
         header_params = {}
@@ -446,18 +525,21 @@ class MarginApi(object):
         >>> thread = api.list_funding_accounts(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str currency: Retrieved specified currency related data
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: list[FundingAccount]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.list_funding_accounts_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.list_funding_accounts_with_http_info(**kwargs)  # noqa: E501
-            return data
+        return self.list_funding_accounts_with_http_info(**kwargs)  # noqa: E501
 
     def list_funding_accounts_with_http_info(self, **kwargs):  # noqa: E501
         """Funding account list  # noqa: E501
@@ -467,24 +549,39 @@ class MarginApi(object):
         >>> thread = api.list_funding_accounts_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str currency: Retrieved specified currency related data
-        :return: list[FundingAccount]
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[FundingAccount], status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['currency']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method list_funding_accounts" % key
                 )
@@ -496,7 +593,7 @@ class MarginApi(object):
         path_params = {}
 
         query_params = []
-        if 'currency' in local_var_params:
+        if 'currency' in local_var_params and local_var_params['currency'] is not None:  # noqa: E501
             query_params.append(('currency', local_var_params['currency']))  # noqa: E501
 
         header_params = {}
@@ -536,18 +633,21 @@ class MarginApi(object):
         >>> thread = api.list_funding_book(currency, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str currency: Retrieved specified currency related data (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: list[FundingBookItem]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.list_funding_book_with_http_info(currency, **kwargs)  # noqa: E501
-        else:
-            (data) = self.list_funding_book_with_http_info(currency, **kwargs)  # noqa: E501
-            return data
+        return self.list_funding_book_with_http_info(currency, **kwargs)  # noqa: E501
 
     def list_funding_book_with_http_info(self, currency, **kwargs):  # noqa: E501
         """Order book of lending loans  # noqa: E501
@@ -557,40 +657,55 @@ class MarginApi(object):
         >>> thread = api.list_funding_book_with_http_info(currency, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str currency: Retrieved specified currency related data (required)
-        :return: list[FundingBookItem]
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[FundingBookItem], status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['currency']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method list_funding_book" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if ('currency' not in local_var_params or
-                local_var_params['currency'] is None):
-            raise ValueError("Missing the required parameter `currency` when calling `list_funding_book`")  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `list_funding_book`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'currency' in local_var_params:
+        if 'currency' in local_var_params and local_var_params['currency'] is not None:  # noqa: E501
             query_params.append(('currency', local_var_params['currency']))  # noqa: E501
 
         header_params = {}
@@ -630,21 +745,24 @@ class MarginApi(object):
         >>> thread = api.list_loan_records(loan_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
         :param str status: Loan record status
         :param int page: Page number
         :param int limit: Maximum number of records returned in one list
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: list[LoanRecord]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.list_loan_records_with_http_info(loan_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.list_loan_records_with_http_info(loan_id, **kwargs)  # noqa: E501
-            return data
+        return self.list_loan_records_with_http_info(loan_id, **kwargs)  # noqa: E501
 
     def list_loan_records_with_http_info(self, loan_id, **kwargs):  # noqa: E501
         """List repayment records of specified loan  # noqa: E501
@@ -654,55 +772,73 @@ class MarginApi(object):
         >>> thread = api.list_loan_records_with_http_info(loan_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
         :param str status: Loan record status
         :param int page: Page number
         :param int limit: Maximum number of records returned in one list
-        :return: list[LoanRecord]
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[LoanRecord], status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['loan_id', 'status', 'page', 'limit']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'loan_id',
+            'status',
+            'page',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method list_loan_records" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
-        if ('loan_id' not in local_var_params or
-                local_var_params['loan_id'] is None):
-            raise ValueError("Missing the required parameter `loan_id` when calling `list_loan_records`")  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_id` when calling `list_loan_records`")  # noqa: E501
 
-        if 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `list_loan_records`, must be a value greater than or equal to `1`")  # noqa: E501
-        if 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `list_loan_records`, must be a value less than or equal to `1000`")  # noqa: E501
-        if 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `list_loan_records`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_loan_records`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_loan_records`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_loan_records`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'loan_id' in local_var_params:
+        if 'loan_id' in local_var_params and local_var_params['loan_id'] is not None:  # noqa: E501
             query_params.append(('loan_id', local_var_params['loan_id']))  # noqa: E501
-        if 'status' in local_var_params:
+        if 'status' in local_var_params and local_var_params['status'] is not None:  # noqa: E501
             query_params.append(('status', local_var_params['status']))  # noqa: E501
-        if 'page' in local_var_params:
+        if 'page' in local_var_params and local_var_params['page'] is not None:  # noqa: E501
             query_params.append(('page', local_var_params['page']))  # noqa: E501
-        if 'limit' in local_var_params:
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
 
         header_params = {}
@@ -742,18 +878,21 @@ class MarginApi(object):
         >>> thread = api.list_loan_repayments(loan_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: list[Repayment]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.list_loan_repayments_with_http_info(loan_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.list_loan_repayments_with_http_info(loan_id, **kwargs)  # noqa: E501
-            return data
+        return self.list_loan_repayments_with_http_info(loan_id, **kwargs)  # noqa: E501
 
     def list_loan_repayments_with_http_info(self, loan_id, **kwargs):  # noqa: E501
         """List loan repayment records  # noqa: E501
@@ -763,33 +902,48 @@ class MarginApi(object):
         >>> thread = api.list_loan_repayments_with_http_info(loan_id, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
-        :return: list[Repayment]
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[Repayment], status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['loan_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'loan_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method list_loan_repayments" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
-        if ('loan_id' not in local_var_params or
-                local_var_params['loan_id'] is None):
-            raise ValueError("Missing the required parameter `loan_id` when calling `list_loan_repayments`")  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_id` when calling `list_loan_repayments`")  # noqa: E501
 
         collection_formats = {}
 
@@ -836,7 +990,7 @@ class MarginApi(object):
         >>> thread = api.list_loans(status, side, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str status: Loan status (required)
         :param str side: Lend or borrow (required)
         :param str currency: Retrieved specified currency related data
@@ -845,16 +999,19 @@ class MarginApi(object):
         :param bool reverse_sort: Whether to sort in descending order. Default to `true`
         :param int page: Page number
         :param int limit: Maximum number of records returned in one list
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: list[Loan]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.list_loans_with_http_info(status, side, **kwargs)  # noqa: E501
-        else:
-            (data) = self.list_loans_with_http_info(status, side, **kwargs)  # noqa: E501
-            return data
+        return self.list_loans_with_http_info(status, side, **kwargs)  # noqa: E501
 
     def list_loans_with_http_info(self, status, side, **kwargs):  # noqa: E501
         """List all loans  # noqa: E501
@@ -864,7 +1021,7 @@ class MarginApi(object):
         >>> thread = api.list_loans_with_http_info(status, side, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str status: Loan status (required)
         :param str side: Lend or borrow (required)
         :param str currency: Retrieved specified currency related data
@@ -873,62 +1030,84 @@ class MarginApi(object):
         :param bool reverse_sort: Whether to sort in descending order. Default to `true`
         :param int page: Page number
         :param int limit: Maximum number of records returned in one list
-        :return: list[Loan]
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[Loan], status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['status', 'side', 'currency', 'currency_pair', 'sort_by', 'reverse_sort', 'page', 'limit']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'status',
+            'side',
+            'currency',
+            'currency_pair',
+            'sort_by',
+            'reverse_sort',
+            'page',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method list_loans" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'status' is set
-        if ('status' not in local_var_params or
-                local_var_params['status'] is None):
-            raise ValueError("Missing the required parameter `status` when calling `list_loans`")  # noqa: E501
+        if self.api_client.client_side_validation and ('status' not in local_var_params or  # noqa: E501
+                                                        local_var_params['status'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `status` when calling `list_loans`")  # noqa: E501
         # verify the required parameter 'side' is set
-        if ('side' not in local_var_params or
-                local_var_params['side'] is None):
-            raise ValueError("Missing the required parameter `side` when calling `list_loans`")  # noqa: E501
+        if self.api_client.client_side_validation and ('side' not in local_var_params or  # noqa: E501
+                                                        local_var_params['side'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `side` when calling `list_loans`")  # noqa: E501
 
-        if 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `list_loans`, must be a value greater than or equal to `1`")  # noqa: E501
-        if 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `list_loans`, must be a value less than or equal to `1000`")  # noqa: E501
-        if 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `list_loans`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_loans`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_loans`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_loans`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'status' in local_var_params:
+        if 'status' in local_var_params and local_var_params['status'] is not None:  # noqa: E501
             query_params.append(('status', local_var_params['status']))  # noqa: E501
-        if 'side' in local_var_params:
+        if 'side' in local_var_params and local_var_params['side'] is not None:  # noqa: E501
             query_params.append(('side', local_var_params['side']))  # noqa: E501
-        if 'currency' in local_var_params:
+        if 'currency' in local_var_params and local_var_params['currency'] is not None:  # noqa: E501
             query_params.append(('currency', local_var_params['currency']))  # noqa: E501
-        if 'currency_pair' in local_var_params:
+        if 'currency_pair' in local_var_params and local_var_params['currency_pair'] is not None:  # noqa: E501
             query_params.append(('currency_pair', local_var_params['currency_pair']))  # noqa: E501
-        if 'sort_by' in local_var_params:
+        if 'sort_by' in local_var_params and local_var_params['sort_by'] is not None:  # noqa: E501
             query_params.append(('sort_by', local_var_params['sort_by']))  # noqa: E501
-        if 'reverse_sort' in local_var_params:
+        if 'reverse_sort' in local_var_params and local_var_params['reverse_sort'] is not None:  # noqa: E501
             query_params.append(('reverse_sort', local_var_params['reverse_sort']))  # noqa: E501
-        if 'page' in local_var_params:
+        if 'page' in local_var_params and local_var_params['page'] is not None:  # noqa: E501
             query_params.append(('page', local_var_params['page']))  # noqa: E501
-        if 'limit' in local_var_params:
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
 
         header_params = {}
@@ -968,18 +1147,21 @@ class MarginApi(object):
         >>> thread = api.list_margin_accounts(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str currency_pair: Currency pair
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: list[MarginAccount]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.list_margin_accounts_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.list_margin_accounts_with_http_info(**kwargs)  # noqa: E501
-            return data
+        return self.list_margin_accounts_with_http_info(**kwargs)  # noqa: E501
 
     def list_margin_accounts_with_http_info(self, **kwargs):  # noqa: E501
         """Margin account list  # noqa: E501
@@ -989,24 +1171,39 @@ class MarginApi(object):
         >>> thread = api.list_margin_accounts_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str currency_pair: Currency pair
-        :return: list[MarginAccount]
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[MarginAccount], status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['currency_pair']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'currency_pair'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method list_margin_accounts" % key
                 )
@@ -1018,7 +1215,7 @@ class MarginApi(object):
         path_params = {}
 
         query_params = []
-        if 'currency_pair' in local_var_params:
+        if 'currency_pair' in local_var_params and local_var_params['currency_pair'] is not None:  # noqa: E501
             query_params.append(('currency_pair', local_var_params['currency_pair']))  # noqa: E501
 
         header_params = {}
@@ -1058,17 +1255,20 @@ class MarginApi(object):
         >>> thread = api.list_margin_currency_pairs(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: list[MarginCurrencyPair]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.list_margin_currency_pairs_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.list_margin_currency_pairs_with_http_info(**kwargs)  # noqa: E501
-            return data
+        return self.list_margin_currency_pairs_with_http_info(**kwargs)  # noqa: E501
 
     def list_margin_currency_pairs_with_http_info(self, **kwargs):  # noqa: E501
         """List all supported currency pairs supported in margin trading  # noqa: E501
@@ -1078,23 +1278,37 @@ class MarginApi(object):
         >>> thread = api.list_margin_currency_pairs_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
-        :return: list[MarginCurrencyPair]
+        :param bool async_req: execute request asynchronously
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(list[MarginCurrencyPair], status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method list_margin_currency_pairs" % key
                 )
@@ -1144,19 +1358,22 @@ class MarginApi(object):
         >>> thread = api.merge_loans(currency, ids, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str currency: Retrieved specified currency related data (required)
         :param str ids: Lending loan ID list separated by `,`. Maximum of 20 IDs are allowed in one request (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: Loan
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.merge_loans_with_http_info(currency, ids, **kwargs)  # noqa: E501
-        else:
-            (data) = self.merge_loans_with_http_info(currency, ids, **kwargs)  # noqa: E501
-            return data
+        return self.merge_loans_with_http_info(currency, ids, **kwargs)  # noqa: E501
 
     def merge_loans_with_http_info(self, currency, ids, **kwargs):  # noqa: E501
         """Merge multiple lending loans  # noqa: E501
@@ -1166,47 +1383,63 @@ class MarginApi(object):
         >>> thread = api.merge_loans_with_http_info(currency, ids, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str currency: Retrieved specified currency related data (required)
         :param str ids: Lending loan ID list separated by `,`. Maximum of 20 IDs are allowed in one request (required)
-        :return: Loan
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(Loan, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['currency', 'ids']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'currency',
+            'ids'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method merge_loans" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if ('currency' not in local_var_params or
-                local_var_params['currency'] is None):
-            raise ValueError("Missing the required parameter `currency` when calling `merge_loans`")  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `merge_loans`")  # noqa: E501
         # verify the required parameter 'ids' is set
-        if ('ids' not in local_var_params or
-                local_var_params['ids'] is None):
-            raise ValueError("Missing the required parameter `ids` when calling `merge_loans`")  # noqa: E501
+        if self.api_client.client_side_validation and ('ids' not in local_var_params or  # noqa: E501
+                                                        local_var_params['ids'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `ids` when calling `merge_loans`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'currency' in local_var_params:
+        if 'currency' in local_var_params and local_var_params['currency'] is not None:  # noqa: E501
             query_params.append(('currency', local_var_params['currency']))  # noqa: E501
-        if 'ids' in local_var_params:
+        if 'ids' in local_var_params and local_var_params['ids'] is not None:  # noqa: E501
             query_params.append(('ids', local_var_params['ids']))  # noqa: E501
 
         header_params = {}
@@ -1246,19 +1479,22 @@ class MarginApi(object):
         >>> thread = api.repay_loan(loan_id, repay_request, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
         :param RepayRequest repay_request: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: Loan
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.repay_loan_with_http_info(loan_id, repay_request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.repay_loan_with_http_info(loan_id, repay_request, **kwargs)  # noqa: E501
-            return data
+        return self.repay_loan_with_http_info(loan_id, repay_request, **kwargs)  # noqa: E501
 
     def repay_loan_with_http_info(self, loan_id, repay_request, **kwargs):  # noqa: E501
         """Repay a loan  # noqa: E501
@@ -1268,38 +1504,54 @@ class MarginApi(object):
         >>> thread = api.repay_loan_with_http_info(loan_id, repay_request, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
         :param RepayRequest repay_request: (required)
-        :return: Loan
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(Loan, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['loan_id', 'repay_request']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'loan_id',
+            'repay_request'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method repay_loan" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
-        if ('loan_id' not in local_var_params or
-                local_var_params['loan_id'] is None):
-            raise ValueError("Missing the required parameter `loan_id` when calling `repay_loan`")  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_id` when calling `repay_loan`")  # noqa: E501
         # verify the required parameter 'repay_request' is set
-        if ('repay_request' not in local_var_params or
-                local_var_params['repay_request'] is None):
-            raise ValueError("Missing the required parameter `repay_request` when calling `repay_loan`")  # noqa: E501
+        if self.api_client.client_side_validation and ('repay_request' not in local_var_params or  # noqa: E501
+                                                        local_var_params['repay_request'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `repay_request` when calling `repay_loan`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1353,19 +1605,22 @@ class MarginApi(object):
         >>> thread = api.update_loan(loan_id, loan_patch, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
         :param LoanPatch loan_patch: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: Loan
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_loan_with_http_info(loan_id, loan_patch, **kwargs)  # noqa: E501
-        else:
-            (data) = self.update_loan_with_http_info(loan_id, loan_patch, **kwargs)  # noqa: E501
-            return data
+        return self.update_loan_with_http_info(loan_id, loan_patch, **kwargs)  # noqa: E501
 
     def update_loan_with_http_info(self, loan_id, loan_patch, **kwargs):  # noqa: E501
         """Modify a loan  # noqa: E501
@@ -1376,38 +1631,54 @@ class MarginApi(object):
         >>> thread = api.update_loan_with_http_info(loan_id, loan_patch, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
         :param LoanPatch loan_patch: (required)
-        :return: Loan
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(Loan, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['loan_id', 'loan_patch']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'loan_id',
+            'loan_patch'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_loan" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
-        if ('loan_id' not in local_var_params or
-                local_var_params['loan_id'] is None):
-            raise ValueError("Missing the required parameter `loan_id` when calling `update_loan`")  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_id` when calling `update_loan`")  # noqa: E501
         # verify the required parameter 'loan_patch' is set
-        if ('loan_patch' not in local_var_params or
-                local_var_params['loan_patch'] is None):
-            raise ValueError("Missing the required parameter `loan_patch` when calling `update_loan`")  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_patch' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_patch'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_patch` when calling `update_loan`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1461,19 +1732,22 @@ class MarginApi(object):
         >>> thread = api.update_loan_record(loan_record_id, loan_patch, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_record_id: Loan record ID (required)
         :param LoanPatch loan_patch: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
         :return: LoanRecord
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_loan_record_with_http_info(loan_record_id, loan_patch, **kwargs)  # noqa: E501
-        else:
-            (data) = self.update_loan_record_with_http_info(loan_record_id, loan_patch, **kwargs)  # noqa: E501
-            return data
+        return self.update_loan_record_with_http_info(loan_record_id, loan_patch, **kwargs)  # noqa: E501
 
     def update_loan_record_with_http_info(self, loan_record_id, loan_patch, **kwargs):  # noqa: E501
         """Modify a loan record  # noqa: E501
@@ -1484,38 +1758,54 @@ class MarginApi(object):
         >>> thread = api.update_loan_record_with_http_info(loan_record_id, loan_patch, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str loan_record_id: Loan record ID (required)
         :param LoanPatch loan_patch: (required)
-        :return: LoanRecord
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(LoanRecord, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['loan_record_id', 'loan_patch']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'loan_record_id',
+            'loan_patch'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
+                raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_loan_record" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'loan_record_id' is set
-        if ('loan_record_id' not in local_var_params or
-                local_var_params['loan_record_id'] is None):
-            raise ValueError("Missing the required parameter `loan_record_id` when calling `update_loan_record`")  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_record_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_record_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_record_id` when calling `update_loan_record`")  # noqa: E501
         # verify the required parameter 'loan_patch' is set
-        if ('loan_patch' not in local_var_params or
-                local_var_params['loan_patch'] is None):
-            raise ValueError("Missing the required parameter `loan_patch` when calling `update_loan_record`")  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_patch' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_patch'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_patch` when calling `update_loan_record`")  # noqa: E501
 
         collection_formats = {}
 

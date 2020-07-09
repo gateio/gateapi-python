@@ -14,18 +14,29 @@ Withdraw
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.WithdrawalApi(gate_api.ApiClient(configuration))
-ledger_record = gate_api.LedgerRecord() # LedgerRecord | 
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WithdrawalApi(api_client)
+ledger_record = {"id":"210496","timestamp":"1542000000","currency":"ETH","address":"1HkxtBAMrA3tP5ENnYY2CZortjZvFDH5Cs","txid":"128988928203223323290","amount":"222.61","memo":"","status":"DONE"} # LedgerRecord | 
 
 try:
     # Withdraw
@@ -47,12 +58,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Withdraw request is accepted. Refer to withdrawal records for status |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

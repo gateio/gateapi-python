@@ -1,5 +1,6 @@
 # PositionCloseOrder
 
+Current close order if any, or `null`
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

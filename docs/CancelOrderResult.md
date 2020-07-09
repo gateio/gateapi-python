@@ -1,5 +1,6 @@
 # CancelOrderResult
 
+Order cancellation result
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

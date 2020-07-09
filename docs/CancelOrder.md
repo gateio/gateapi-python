@@ -1,5 +1,6 @@
 # CancelOrder
 
+Info of order to be cancelled
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

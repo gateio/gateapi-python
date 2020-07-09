@@ -30,17 +30,28 @@ Only lending loans can be cancelled
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 loan_id = '12345' # str | Loan ID
 currency = 'BTC' # str | Retrieved specified currency related data
 
@@ -65,12 +76,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Order cancelled |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -81,18 +97,29 @@ Lend or borrow
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
-loan = gate_api.Loan() # Loan | 
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+loan = {"id":"123435","create_time":"1548000000","expire_time":"1548100000","side":"borrow","status":"loaned","currency":"BTC","rate":"0.002","amount":"1.5","days":10,"auto_renew":true,"currency_pair":"ETH_BTC","left":"0","repaid":"0","paid_interest":"0","unpaid_interest":"0","fee_rate":"0.18","orig_id":"123424"} # Loan | 
 
 try:
     # Lend or borrow
@@ -114,12 +141,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Loan created |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -130,17 +162,28 @@ Retrieve one single loan detail
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 loan_id = '12345' # str | Loan ID
 side = 'lend' # str | Lend or borrow
 
@@ -165,12 +208,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -181,17 +229,28 @@ Get one single loan record
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 loan_record_id = '12345' # str | Loan record ID
 loan_id = '12345' # str | Loan ID
 
@@ -216,12 +275,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Detail retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -232,17 +296,28 @@ Funding account list
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 currency = 'BTC' # str | Retrieved specified currency related data (optional)
 
 try:
@@ -265,12 +340,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -284,10 +364,16 @@ Order book of lending loans
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi()
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 currency = 'BTC' # str | Retrieved specified currency related data
 
 try:
@@ -317,6 +403,11 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Order book retrieved |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_loan_records**
@@ -326,17 +417,28 @@ List repayment records of specified loan
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 loan_id = '12345' # str | Loan ID
 status = 'loaned' # str | Loan record status (optional)
 page = 1 # int | Page number (optional) (default to 1)
@@ -365,12 +467,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -381,17 +488,28 @@ List loan repayment records
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 loan_id = '12345' # str | Loan ID
 
 try:
@@ -414,12 +532,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -430,23 +553,34 @@ List all loans
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 status = 'open' # str | Loan status
 side = 'lend' # str | Lend or borrow
 currency = 'BTC' # str | Retrieved specified currency related data (optional)
 currency_pair = 'BTC_USDT' # str | Currency pair (optional)
 sort_by = 'rate' # str | Specify which field is used to sort. `create_time` or `rate` is supported. Default to `create_time` (optional)
-reverse_sort = True # bool | Whether to sort in descending order. Default to `true` (optional)
+reverse_sort = false # bool | Whether to sort in descending order. Default to `true` (optional)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 
@@ -477,12 +611,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -493,17 +632,28 @@ Margin account list
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 currency_pair = 'BTC_USDT' # str | Currency pair (optional)
 
 try:
@@ -526,12 +676,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -545,10 +700,16 @@ List all supported currency pairs supported in margin trading
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi()
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 
 try:
     # List all supported currency pairs supported in margin trading
@@ -574,6 +735,11 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **merge_loans**
@@ -583,17 +749,28 @@ Merge multiple lending loans
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 currency = 'BTC' # str | Retrieved specified currency related data
 ids = '123,234,345' # str | Lending loan ID list separated by `,`. Maximum of 20 IDs are allowed in one request
 
@@ -618,12 +795,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Loans merged |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -634,19 +816,30 @@ Repay a loan
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 loan_id = '12345' # str | Loan ID
-repay_request = gate_api.RepayRequest() # RepayRequest | 
+repay_request = {"currency_pair":"ETH_BTC","currency":"ETH","mode":"partial","amount":"100"} # RepayRequest | 
 
 try:
     # Repay a loan
@@ -669,12 +862,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Loan repaid |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -687,19 +885,30 @@ Only `auto_renew` modification is supported currently
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 loan_id = '12345' # str | Loan ID
-loan_patch = gate_api.LoanPatch() # LoanPatch | 
+loan_patch = {"currency":"BTC","side":"borrow","currency_pair":"BTC_USDT","auto_renew":false} # LoanPatch | 
 
 try:
     # Modify a loan
@@ -722,12 +931,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -740,19 +954,30 @@ Only `auto_renew` modification is supported currently
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.MarginApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
 loan_record_id = '12345' # str | Loan record ID
-loan_patch = gate_api.LoanPatch() # LoanPatch | 
+loan_patch = {"currency":"BTC","side":"borrow","currency_pair":"BTC_USDT","auto_renew":false} # LoanPatch | 
 
 try:
     # Modify a loan record
@@ -775,12 +1000,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Loan record updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

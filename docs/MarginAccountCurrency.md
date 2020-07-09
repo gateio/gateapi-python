@@ -1,5 +1,6 @@
 # MarginAccountCurrency
 
+Account currency detail
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

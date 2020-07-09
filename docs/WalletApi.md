@@ -19,17 +19,28 @@ Generate currency deposit address
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.WalletApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
 currency = 'currency_example' # str | Currency name
 
 try:
@@ -52,12 +63,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Address successfully generated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -70,17 +86,28 @@ Record time range cannot exceed 30 days
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.WalletApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
 currency = 'BTC' # str | Filter by currency. Return all currency records if not specified (optional)
 _from = 56 # int | Time range beginning, default to 7 days before current time (optional)
 to = 56 # int | Time range ending, default to current time (optional)
@@ -111,12 +138,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -129,17 +161,28 @@ Record time range cannot exceed 30 days  > Note: only records after 2020-04-10 c
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.WalletApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
 sub_uid = '10003' # str | Sub account user ID. Return records related to all sub accounts if not specified (optional)
 _from = 56 # int | Time range beginning, default to 7 days before current time (optional)
 to = 56 # int | Time range ending, default to current time (optional)
@@ -170,12 +213,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -188,17 +236,28 @@ Record time range cannot exceed 30 days
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.WalletApi(gate_api.ApiClient(configuration))
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
 currency = 'BTC' # str | Filter by currency. Return all currency records if not specified (optional)
 _from = 56 # int | Time range beginning, default to 7 days before current time (optional)
 to = 56 # int | Time range ending, default to current time (optional)
@@ -229,12 +288,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -247,18 +311,29 @@ Transfer between different accounts. Currently support transfers between the fol
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.WalletApi(gate_api.ApiClient(configuration))
-transfer = gate_api.Transfer() # Transfer | 
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
+transfer = {"currency":"BTC","from":"spot","to":"margin","amount":"1","currency_pair":"BTC_USDT"} # Transfer | 
 
 try:
     # Transfer between accounts
@@ -279,12 +354,17 @@ void (empty response body)
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Balance transferred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -295,18 +375,29 @@ Transfer between main and sub accounts
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.rest import ApiException
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-configuration = gate_api.Configuration()
-configuration.key = 'YOUR_API_KEY'
-configuration.secret = 'YOUR_API_SECRET'
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
 
-# create an instance of the API class
-api_instance = gate_api.WalletApi(gate_api.ApiClient(configuration))
-sub_account_transfer = gate_api.SubAccountTransfer() # SubAccountTransfer | 
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
+sub_account_transfer = {"uid":"10001","timest":"1592809000","source":"web","currency":"BTC","sub_account":"10002","direction":"to","amount":"1"} # SubAccountTransfer | 
 
 try:
     # Transfer between main and sub accounts
@@ -327,12 +418,17 @@ void (empty response body)
 
 ### Authorization
 
-Authentication with API key and secret is required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Balance transferred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

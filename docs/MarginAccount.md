@@ -1,5 +1,6 @@
 # MarginAccount
 
+Margin account detail. `base` refers to base currency, while `quotes to quote currency
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

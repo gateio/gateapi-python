@@ -1,5 +1,6 @@
 # Transfer
 
+Accounts available to transfer:  - `spot`: spot account - `margin`: margin account - `futures`: perpetual futures account - `delivery`: delivery futures account
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
