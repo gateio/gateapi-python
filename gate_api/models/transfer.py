@@ -33,6 +33,8 @@ class Transfer(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'id': 'str',
+        'created_at': 'str',
         'currency': 'str',
         '_from': 'str',
         'to': 'str',
@@ -42,6 +44,8 @@ class Transfer(object):
     }
 
     attribute_map = {
+        'id': 'id',
+        'created_at': 'created_at',
         'currency': 'currency',
         '_from': 'from',
         'to': 'to',
@@ -50,12 +54,14 @@ class Transfer(object):
         'settle': 'settle'
     }
 
-    def __init__(self, currency=None, _from=None, to=None, amount=None, currency_pair=None, settle=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, created_at=None, currency=None, _from=None, to=None, amount=None, currency_pair=None, settle=None, local_vars_configuration=None):  # noqa: E501
         """Transfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._id = None
+        self._created_at = None
         self._currency = None
         self.__from = None
         self._to = None
@@ -64,6 +70,10 @@ class Transfer(object):
         self._settle = None
         self.discriminator = None
 
+        if id is not None:
+            self.id = id
+        if created_at is not None:
+            self.created_at = created_at
         self.currency = currency
         self._from = _from
         self.to = to
@@ -72,6 +82,52 @@ class Transfer(object):
             self.currency_pair = currency_pair
         if settle is not None:
             self.settle = settle
+
+    @property
+    def id(self):
+        """Gets the id of this Transfer.  # noqa: E501
+
+        Transfer ID  # noqa: E501
+
+        :return: The id of this Transfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Transfer.
+
+        Transfer ID  # noqa: E501
+
+        :param id: The id of this Transfer.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def created_at(self):
+        """Gets the created_at of this Transfer.  # noqa: E501
+
+        Timestamp when the transfer occurred  # noqa: E501
+
+        :return: The created_at of this Transfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """Sets the created_at of this Transfer.
+
+        Timestamp when the transfer occurred  # noqa: E501
+
+        :param created_at: The created_at of this Transfer.  # noqa: E501
+        :type: str
+        """
+
+        self._created_at = created_at
 
     @property
     def currency(self):

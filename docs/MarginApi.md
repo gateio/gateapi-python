@@ -4,343 +4,63 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_loan**](MarginApi.md#cancel_loan) | **DELETE** /margin/loans/{loan_id} | Cancel lending loan
-[**create_loan**](MarginApi.md#create_loan) | **POST** /margin/loans | Lend or borrow
-[**get_loan**](MarginApi.md#get_loan) | **GET** /margin/loans/{loan_id} | Retrieve one single loan detail
-[**get_loan_record**](MarginApi.md#get_loan_record) | **GET** /margin/loan_records/{loan_record_id} | Get one single loan record
-[**list_funding_accounts**](MarginApi.md#list_funding_accounts) | **GET** /margin/funding_accounts | Funding account list
-[**list_funding_book**](MarginApi.md#list_funding_book) | **GET** /margin/funding_book | Order book of lending loans
-[**list_loan_records**](MarginApi.md#list_loan_records) | **GET** /margin/loan_records | List repayment records of specified loan
-[**list_loan_repayments**](MarginApi.md#list_loan_repayments) | **GET** /margin/loans/{loan_id}/repayment | List loan repayment records
-[**list_loans**](MarginApi.md#list_loans) | **GET** /margin/loans | List all loans
-[**list_margin_accounts**](MarginApi.md#list_margin_accounts) | **GET** /margin/accounts | Margin account list
 [**list_margin_currency_pairs**](MarginApi.md#list_margin_currency_pairs) | **GET** /margin/currency_pairs | List all supported currency pairs supported in margin trading
+[**list_funding_book**](MarginApi.md#list_funding_book) | **GET** /margin/funding_book | Order book of lending loans
+[**list_margin_accounts**](MarginApi.md#list_margin_accounts) | **GET** /margin/accounts | Margin account list
+[**list_margin_account_book**](MarginApi.md#list_margin_account_book) | **GET** /margin/account_book | List margin account balance change history
+[**list_funding_accounts**](MarginApi.md#list_funding_accounts) | **GET** /margin/funding_accounts | Funding account list
+[**list_loans**](MarginApi.md#list_loans) | **GET** /margin/loans | List all loans
+[**create_loan**](MarginApi.md#create_loan) | **POST** /margin/loans | Lend or borrow
 [**merge_loans**](MarginApi.md#merge_loans) | **POST** /margin/merged_loans | Merge multiple lending loans
-[**repay_loan**](MarginApi.md#repay_loan) | **POST** /margin/loans/{loan_id}/repayment | Repay a loan
+[**get_loan**](MarginApi.md#get_loan) | **GET** /margin/loans/{loan_id} | Retrieve one single loan detail
+[**cancel_loan**](MarginApi.md#cancel_loan) | **DELETE** /margin/loans/{loan_id} | Cancel lending loan
 [**update_loan**](MarginApi.md#update_loan) | **PATCH** /margin/loans/{loan_id} | Modify a loan
+[**list_loan_repayments**](MarginApi.md#list_loan_repayments) | **GET** /margin/loans/{loan_id}/repayment | List loan repayment records
+[**repay_loan**](MarginApi.md#repay_loan) | **POST** /margin/loans/{loan_id}/repayment | Repay a loan
+[**list_loan_records**](MarginApi.md#list_loan_records) | **GET** /margin/loan_records | List repayment records of specified loan
+[**get_loan_record**](MarginApi.md#get_loan_record) | **GET** /margin/loan_records/{loan_record_id} | Get one single loan record
 [**update_loan_record**](MarginApi.md#update_loan_record) | **PATCH** /margin/loan_records/{loan_record_id} | Modify a loan record
 
 
-# **cancel_loan**
-> Loan cancel_loan(loan_id, currency)
+# **list_margin_currency_pairs**
+> list[MarginCurrencyPair] list_margin_currency_pairs()
 
-Cancel lending loan
-
-Only lending loans can be cancelled
+List all supported currency pairs supported in margin trading
 
 ### Example
 
-* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
 from gate_api.exceptions import ApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
 configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
+    host = "https://api.gateio.ws/api/v4"
 )
 
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginApi(api_client)
-loan_id = '12345' # str | Loan ID
-currency = 'BTC' # str | Retrieved specified currency related data
 
 try:
-    # Cancel lending loan
-    api_response = api_instance.cancel_loan(loan_id, currency)
+    # List all supported currency pairs supported in margin trading
+    api_response = api_instance.list_margin_currency_pairs()
     print(api_response)
 except ApiException as e:
-    print("Exception when calling MarginApi->cancel_loan: %s\n" % e)
+    print("Exception when calling MarginApi->list_margin_currency_pairs: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loan_id** | **str**| Loan ID | 
- **currency** | **str**| Retrieved specified currency related data | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**Loan**](Loan.md)
+[**list[MarginCurrencyPair]**](MarginCurrencyPair.md)
 
 ### Authorization
 
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Order cancelled |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_loan**
-> Loan create_loan(loan)
-
-Lend or borrow
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.MarginApi(api_client)
-loan = {"id":"123435","create_time":"1548000000","expire_time":"1548100000","side":"borrow","status":"loaned","currency":"BTC","rate":"0.002","amount":"1.5","days":10,"auto_renew":true,"currency_pair":"ETH_BTC","left":"0","repaid":"0","paid_interest":"0","unpaid_interest":"0","fee_rate":"0.18","orig_id":"123424"} # Loan | 
-
-try:
-    # Lend or borrow
-    api_response = api_instance.create_loan(loan)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling MarginApi->create_loan: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loan** | [**Loan**](Loan.md)|  | 
-
-### Return type
-
-[**Loan**](Loan.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Loan created |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_loan**
-> Loan get_loan(loan_id, side)
-
-Retrieve one single loan detail
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.MarginApi(api_client)
-loan_id = '12345' # str | Loan ID
-side = 'lend' # str | Lend or borrow
-
-try:
-    # Retrieve one single loan detail
-    api_response = api_instance.get_loan(loan_id, side)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling MarginApi->get_loan: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loan_id** | **str**| Loan ID | 
- **side** | **str**| Lend or borrow | 
-
-### Return type
-
-[**Loan**](Loan.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | List retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_loan_record**
-> LoanRecord get_loan_record(loan_record_id, loan_id)
-
-Get one single loan record
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.MarginApi(api_client)
-loan_record_id = '12345' # str | Loan record ID
-loan_id = '12345' # str | Loan ID
-
-try:
-    # Get one single loan record
-    api_response = api_instance.get_loan_record(loan_record_id, loan_id)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling MarginApi->get_loan_record: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **loan_record_id** | **str**| Loan record ID | 
- **loan_id** | **str**| Loan ID | 
-
-### Return type
-
-[**LoanRecord**](LoanRecord.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Detail retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_funding_accounts**
-> list[FundingAccount] list_funding_accounts(currency=currency)
-
-Funding account list
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.MarginApi(api_client)
-currency = 'BTC' # str | Retrieved specified currency related data (optional)
-
-try:
-    # Funding account list
-    api_response = api_instance.list_funding_accounts(currency=currency)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling MarginApi->list_funding_accounts: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **currency** | **str**| Retrieved specified currency related data | [optional] 
-
-### Return type
-
-[**list[FundingAccount]**](FundingAccount.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
+No authorization required
 
 ### HTTP request headers
 
@@ -410,10 +130,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_loan_records**
-> list[LoanRecord] list_loan_records(loan_id, status=status, page=page, limit=limit)
+# **list_margin_accounts**
+> list[MarginAccount] list_margin_accounts(currency_pair=currency_pair)
 
-List repayment records of specified loan
+Margin account list
 
 ### Example
 
@@ -439,31 +159,25 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginApi(api_client)
-loan_id = '12345' # str | Loan ID
-status = 'loaned' # str | Loan record status (optional)
-page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+currency_pair = 'BTC_USDT' # str | Currency pair (optional)
 
 try:
-    # List repayment records of specified loan
-    api_response = api_instance.list_loan_records(loan_id, status=status, page=page, limit=limit)
+    # Margin account list
+    api_response = api_instance.list_margin_accounts(currency_pair=currency_pair)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling MarginApi->list_loan_records: %s\n" % e)
+    print("Exception when calling MarginApi->list_margin_accounts: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loan_id** | **str**| Loan ID | 
- **status** | **str**| Loan record status | [optional] 
- **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **currency_pair** | **str**| Currency pair | [optional] 
 
 ### Return type
 
-[**list[LoanRecord]**](LoanRecord.md)
+[**list[MarginAccount]**](MarginAccount.md)
 
 ### Authorization
 
@@ -481,10 +195,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_loan_repayments**
-> list[Repayment] list_loan_repayments(loan_id)
+# **list_margin_account_book**
+> list[MarginAccountBook] list_margin_account_book(currency=currency, currency_pair=currency_pair, _from=_from, to=to, page=page, limit=limit)
 
-List loan repayment records
+List margin account balance change history
+
+Only transferring from or to margin account are provided for now. Time range allows 30 days at most
 
 ### Example
 
@@ -510,25 +226,100 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginApi(api_client)
-loan_id = '12345' # str | Loan ID
+currency = 'currency_example' # str | List records related to specified currency only. If specified, `currency_pair` is also required. (optional)
+currency_pair = 'currency_pair_example' # str | List records related to specified currency pair. Used in combination with `currency`. Ignored if `currency` is not provided (optional)
+_from = 56 # int | Time range beginning, default to 7 days before current time (optional)
+to = 56 # int | Time range ending, default to current time (optional)
+page = 1 # int | Page number (optional) (default to 1)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 
 try:
-    # List loan repayment records
-    api_response = api_instance.list_loan_repayments(loan_id)
+    # List margin account balance change history
+    api_response = api_instance.list_margin_account_book(currency=currency, currency_pair=currency_pair, _from=_from, to=to, page=page, limit=limit)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling MarginApi->list_loan_repayments: %s\n" % e)
+    print("Exception when calling MarginApi->list_margin_account_book: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loan_id** | **str**| Loan ID | 
+ **currency** | **str**| List records related to specified currency only. If specified, &#x60;currency_pair&#x60; is also required. | [optional] 
+ **currency_pair** | **str**| List records related to specified currency pair. Used in combination with &#x60;currency&#x60;. Ignored if &#x60;currency&#x60; is not provided | [optional] 
+ **_from** | **int**| Time range beginning, default to 7 days before current time | [optional] 
+ **to** | **int**| Time range ending, default to current time | [optional] 
+ **page** | **int**| Page number | [optional] [default to 1]
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
 
 ### Return type
 
-[**list[Repayment]**](Repayment.md)
+[**list[MarginAccountBook]**](MarginAccountBook.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_funding_accounts**
+> list[FundingAccount] list_funding_accounts(currency=currency)
+
+Funding account list
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+currency = 'BTC' # str | Retrieved specified currency related data (optional)
+
+try:
+    # Funding account list
+    api_response = api_instance.list_funding_accounts(currency=currency)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling MarginApi->list_funding_accounts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency** | **str**| Retrieved specified currency related data | [optional] 
+
+### Return type
+
+[**list[FundingAccount]**](FundingAccount.md)
 
 ### Authorization
 
@@ -625,10 +416,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_margin_accounts**
-> list[MarginAccount] list_margin_accounts(currency_pair=currency_pair)
+# **create_loan**
+> Loan create_loan(loan)
 
-Margin account list
+Lend or borrow
 
 ### Example
 
@@ -654,25 +445,25 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginApi(api_client)
-currency_pair = 'BTC_USDT' # str | Currency pair (optional)
+loan = {"id":"123435","create_time":"1548000000","expire_time":"1548100000","side":"borrow","status":"loaned","currency":"BTC","rate":"0.002","amount":"1.5","days":10,"auto_renew":true,"currency_pair":"ETH_BTC","left":"0","repaid":"0","paid_interest":"0","unpaid_interest":"0","fee_rate":"0.18","orig_id":"123424"} # Loan | 
 
 try:
-    # Margin account list
-    api_response = api_instance.list_margin_accounts(currency_pair=currency_pair)
+    # Lend or borrow
+    api_response = api_instance.create_loan(loan)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling MarginApi->list_margin_accounts: %s\n" % e)
+    print("Exception when calling MarginApi->create_loan: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency_pair** | **str**| Currency pair | [optional] 
+ **loan** | [**Loan**](Loan.md)|  | 
 
 ### Return type
 
-[**list[MarginAccount]**](MarginAccount.md)
+[**Loan**](Loan.md)
 
 ### Authorization
 
@@ -680,65 +471,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_margin_currency_pairs**
-> list[MarginCurrencyPair] list_margin_currency_pairs()
-
-List all supported currency pairs supported in margin trading
-
-### Example
-
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.MarginApi(api_client)
-
-try:
-    # List all supported currency pairs supported in margin trading
-    api_response = api_instance.list_margin_currency_pairs()
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling MarginApi->list_margin_currency_pairs: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**list[MarginCurrencyPair]**](MarginCurrencyPair.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | List retrieved |  -  |
+**201** | Loan created |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -809,10 +548,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **repay_loan**
-> Loan repay_loan(loan_id, repay_request)
+# **get_loan**
+> Loan get_loan(loan_id, side)
 
-Repay a loan
+Retrieve one single loan detail
 
 ### Example
 
@@ -839,14 +578,14 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginApi(api_client)
 loan_id = '12345' # str | Loan ID
-repay_request = {"currency_pair":"ETH_BTC","currency":"ETH","mode":"partial","amount":"100"} # RepayRequest | 
+side = 'lend' # str | Lend or borrow
 
 try:
-    # Repay a loan
-    api_response = api_instance.repay_loan(loan_id, repay_request)
+    # Retrieve one single loan detail
+    api_response = api_instance.get_loan(loan_id, side)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling MarginApi->repay_loan: %s\n" % e)
+    print("Exception when calling MarginApi->get_loan: %s\n" % e)
 ```
 
 ### Parameters
@@ -854,7 +593,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **loan_id** | **str**| Loan ID | 
- **repay_request** | [**RepayRequest**](RepayRequest.md)|  | 
+ **side** | **str**| Lend or borrow | 
 
 ### Return type
 
@@ -866,13 +605,82 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Loan repaid |  -  |
+**200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cancel_loan**
+> Loan cancel_loan(loan_id, currency)
+
+Cancel lending loan
+
+Only lending loans can be cancelled
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+loan_id = '12345' # str | Loan ID
+currency = 'BTC' # str | Retrieved specified currency related data
+
+try:
+    # Cancel lending loan
+    api_response = api_instance.cancel_loan(loan_id, currency)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling MarginApi->cancel_loan: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **loan_id** | **str**| Loan ID | 
+ **currency** | **str**| Retrieved specified currency related data | 
+
+### Return type
+
+[**Loan**](Loan.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Order cancelled |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -942,6 +750,276 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Updated |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_loan_repayments**
+> list[Repayment] list_loan_repayments(loan_id)
+
+List loan repayment records
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+loan_id = '12345' # str | Loan ID
+
+try:
+    # List loan repayment records
+    api_response = api_instance.list_loan_repayments(loan_id)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling MarginApi->list_loan_repayments: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **loan_id** | **str**| Loan ID | 
+
+### Return type
+
+[**list[Repayment]**](Repayment.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **repay_loan**
+> Loan repay_loan(loan_id, repay_request)
+
+Repay a loan
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+loan_id = '12345' # str | Loan ID
+repay_request = {"currency_pair":"ETH_BTC","currency":"ETH","mode":"partial","amount":"100"} # RepayRequest | 
+
+try:
+    # Repay a loan
+    api_response = api_instance.repay_loan(loan_id, repay_request)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling MarginApi->repay_loan: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **loan_id** | **str**| Loan ID | 
+ **repay_request** | [**RepayRequest**](RepayRequest.md)|  | 
+
+### Return type
+
+[**Loan**](Loan.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Loan repaid |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_loan_records**
+> list[LoanRecord] list_loan_records(loan_id, status=status, page=page, limit=limit)
+
+List repayment records of specified loan
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+loan_id = '12345' # str | Loan ID
+status = 'loaned' # str | Loan record status (optional)
+page = 1 # int | Page number (optional) (default to 1)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+
+try:
+    # List repayment records of specified loan
+    api_response = api_instance.list_loan_records(loan_id, status=status, page=page, limit=limit)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling MarginApi->list_loan_records: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **loan_id** | **str**| Loan ID | 
+ **status** | **str**| Loan record status | [optional] 
+ **page** | **int**| Page number | [optional] [default to 1]
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+
+### Return type
+
+[**list[LoanRecord]**](LoanRecord.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_loan_record**
+> LoanRecord get_loan_record(loan_record_id, loan_id)
+
+Get one single loan record
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+loan_record_id = '12345' # str | Loan record ID
+loan_id = '12345' # str | Loan ID
+
+try:
+    # Get one single loan record
+    api_response = api_instance.get_loan_record(loan_record_id, loan_id)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling MarginApi->get_loan_record: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **loan_record_id** | **str**| Loan record ID | 
+ **loan_id** | **str**| Loan ID | 
+
+### Return type
+
+[**LoanRecord**](LoanRecord.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Detail retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

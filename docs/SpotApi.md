@@ -4,94 +4,382 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_batch_orders**](SpotApi.md#cancel_batch_orders) | **POST** /spot/cancel_batch_orders | Cancel a batch of orders with an ID list
-[**cancel_order**](SpotApi.md#cancel_order) | **DELETE** /spot/orders/{order_id} | Cancel a single order
-[**cancel_orders**](SpotApi.md#cancel_orders) | **DELETE** /spot/orders | Cancel all &#x60;open&#x60; orders in specified currency pair
-[**create_batch_orders**](SpotApi.md#create_batch_orders) | **POST** /spot/batch_orders | Create a batch of orders
-[**create_order**](SpotApi.md#create_order) | **POST** /spot/orders | Create an order
-[**get_currency_pair**](SpotApi.md#get_currency_pair) | **GET** /spot/currency_pairs/{currency_pair} | Get detail of one single order
-[**get_order**](SpotApi.md#get_order) | **GET** /spot/orders/{order_id} | Get a single order
-[**list_candlesticks**](SpotApi.md#list_candlesticks) | **GET** /spot/candlesticks | Market candlesticks
 [**list_currency_pairs**](SpotApi.md#list_currency_pairs) | **GET** /spot/currency_pairs | List all currency pairs supported
-[**list_my_trades**](SpotApi.md#list_my_trades) | **GET** /spot/my_trades | List personal trading history
-[**list_order_book**](SpotApi.md#list_order_book) | **GET** /spot/order_book | Retrieve order book
-[**list_orders**](SpotApi.md#list_orders) | **GET** /spot/orders | List orders
-[**list_spot_accounts**](SpotApi.md#list_spot_accounts) | **GET** /spot/accounts | List spot accounts
+[**get_currency_pair**](SpotApi.md#get_currency_pair) | **GET** /spot/currency_pairs/{currency_pair} | Get detail of one single order
 [**list_tickers**](SpotApi.md#list_tickers) | **GET** /spot/tickers | Retrieve ticker information
+[**list_order_book**](SpotApi.md#list_order_book) | **GET** /spot/order_book | Retrieve order book
 [**list_trades**](SpotApi.md#list_trades) | **GET** /spot/trades | Retrieve market trades
+[**list_candlesticks**](SpotApi.md#list_candlesticks) | **GET** /spot/candlesticks | Market candlesticks
+[**list_spot_accounts**](SpotApi.md#list_spot_accounts) | **GET** /spot/accounts | List spot accounts
+[**create_batch_orders**](SpotApi.md#create_batch_orders) | **POST** /spot/batch_orders | Create a batch of orders
+[**list_all_open_orders**](SpotApi.md#list_all_open_orders) | **GET** /spot/open_orders | List all open orders
+[**list_orders**](SpotApi.md#list_orders) | **GET** /spot/orders | List orders
+[**create_order**](SpotApi.md#create_order) | **POST** /spot/orders | Create an order
+[**cancel_orders**](SpotApi.md#cancel_orders) | **DELETE** /spot/orders | Cancel all &#x60;open&#x60; orders in specified currency pair
+[**cancel_batch_orders**](SpotApi.md#cancel_batch_orders) | **POST** /spot/cancel_batch_orders | Cancel a batch of orders with an ID list
+[**get_order**](SpotApi.md#get_order) | **GET** /spot/orders/{order_id} | Get a single order
+[**cancel_order**](SpotApi.md#cancel_order) | **DELETE** /spot/orders/{order_id} | Cancel a single order
+[**list_my_trades**](SpotApi.md#list_my_trades) | **GET** /spot/my_trades | List personal trading history
 
 
-# **cancel_batch_orders**
-> list[CancelOrderResult] cancel_batch_orders(cancel_order)
+# **list_currency_pairs**
+> list[CurrencyPair] list_currency_pairs()
 
-Cancel a batch of orders with an ID list
-
-Multiple currency pairs can be specified, but maximum 20 orders are allowed per request
+List all currency pairs supported
 
 ### Example
 
-* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
 from gate_api.exceptions import ApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
 configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
+    host = "https://api.gateio.ws/api/v4"
 )
 
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-cancel_order = [{"currency_pair":"BTC_USDT","id":"123456"}] # list[CancelOrder] | 
 
 try:
-    # Cancel a batch of orders with an ID list
-    api_response = api_instance.cancel_batch_orders(cancel_order)
+    # List all currency pairs supported
+    api_response = api_instance.list_currency_pairs()
     print(api_response)
 except ApiException as e:
-    print("Exception when calling SpotApi->cancel_batch_orders: %s\n" % e)
+    print("Exception when calling SpotApi->list_currency_pairs: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cancel_order** | [**list[CancelOrder]**](CancelOrder.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[CancelOrderResult]**](CancelOrderResult.md)
+[**list[CurrencyPair]**](CurrencyPair.md)
 
 ### Authorization
 
-[apiv4](../README.md#apiv4)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Batch cancellation completed |  -  |
+**200** | All currency pairs retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **cancel_order**
-> Order cancel_order(order_id, currency_pair)
+# **get_currency_pair**
+> CurrencyPair get_currency_pair(currency_pair)
 
-Cancel a single order
+Get detail of one single order
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.SpotApi(api_client)
+currency_pair = 'ETH_BTC' # str | Currency pair
+
+try:
+    # Get detail of one single order
+    api_response = api_instance.get_currency_pair(currency_pair)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling SpotApi->get_currency_pair: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency_pair** | **str**| Currency pair | 
+
+### Return type
+
+[**CurrencyPair**](CurrencyPair.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_tickers**
+> list[Ticker] list_tickers(currency_pair=currency_pair)
+
+Retrieve ticker information
+
+Return only related data if `currency_pair` is specified; otherwise return all of them
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.SpotApi(api_client)
+currency_pair = 'BTC_USDT' # str | Currency pair (optional)
+
+try:
+    # Retrieve ticker information
+    api_response = api_instance.list_tickers(currency_pair=currency_pair)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling SpotApi->list_tickers: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency_pair** | **str**| Currency pair | [optional] 
+
+### Return type
+
+[**list[Ticker]**](Ticker.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_order_book**
+> OrderBook list_order_book(currency_pair, interval=interval, limit=limit)
+
+Retrieve order book
+
+Order book will be sorted by price from high to low on bids; reversed on asks
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.SpotApi(api_client)
+currency_pair = 'BTC_USDT' # str | Currency pair
+interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
+limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
+
+try:
+    # Retrieve order book
+    api_response = api_instance.list_order_book(currency_pair, interval=interval, limit=limit)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling SpotApi->list_order_book: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency_pair** | **str**| Currency pair | 
+ **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
+ **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
+
+### Return type
+
+[**OrderBook**](OrderBook.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_trades**
+> list[Trade] list_trades(currency_pair, limit=limit, last_id=last_id)
+
+Retrieve market trades
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.SpotApi(api_client)
+currency_pair = 'BTC_USDT' # str | Currency pair
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
+
+try:
+    # Retrieve market trades
+    api_response = api_instance.list_trades(currency_pair, limit=limit, last_id=last_id)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling SpotApi->list_trades: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency_pair** | **str**| Currency pair | 
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
+
+### Return type
+
+[**list[Trade]**](Trade.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_candlesticks**
+> list[list[str]] list_candlesticks(currency_pair, limit=limit, _from=_from, to=to, interval=interval)
+
+Market candlesticks
+
+Maximum of 1000 points are returned in one query. Be sure not to exceed the limit when specifying `from`, `to` and `interval`
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.SpotApi(api_client)
+currency_pair = 'BTC_USDT' # str | Currency pair
+limit = 100 # int | Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
+_from = 1546905600 # int | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
+to = 1546935600 # int | End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time (optional)
+interval = '30m' # str | Interval time between data points (optional) (default to '30m')
+
+try:
+    # Market candlesticks
+    api_response = api_instance.list_candlesticks(currency_pair, limit=limit, _from=_from, to=to, interval=interval)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling SpotApi->list_candlesticks: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency_pair** | **str**| Currency pair | 
+ **limit** | **int**| Maximum recent data points returned. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
+ **_from** | **int**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
+ **to** | **int**| End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time | [optional] 
+ **interval** | **str**| Interval time between data points | [optional] [default to &#39;30m&#39;]
+
+### Return type
+
+**list[list[str]]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_spot_accounts**
+> list[SpotAccount] list_spot_accounts(currency=currency)
+
+List spot accounts
 
 ### Example
 
@@ -117,27 +405,25 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-order_id = '12345' # str | ID returned on order successfully being created
-currency_pair = 'BTC_USDT' # str | Currency pair
+currency = 'BTC' # str | Retrieved specified currency related data (optional)
 
 try:
-    # Cancel a single order
-    api_response = api_instance.cancel_order(order_id, currency_pair)
+    # List spot accounts
+    api_response = api_instance.list_spot_accounts(currency=currency)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling SpotApi->cancel_order: %s\n" % e)
+    print("Exception when calling SpotApi->list_spot_accounts: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **str**| ID returned on order successfully being created | 
- **currency_pair** | **str**| Currency pair | 
+ **currency** | **str**| Retrieved specified currency related data | [optional] 
 
 ### Return type
 
-[**Order**](Order.md)
+[**list[SpotAccount]**](SpotAccount.md)
 
 ### Authorization
 
@@ -151,76 +437,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Order cancelled |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **cancel_orders**
-> list[Order] cancel_orders(currency_pair, side=side, account=account)
-
-Cancel all `open` orders in specified currency pair
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.SpotApi(api_client)
-currency_pair = 'BTC_USDT' # str | Currency pair
-side = 'sell' # str | All bids or asks. Both included in not specified (optional)
-account = 'spot' # str | Specify account type. Default to all account types being included (optional)
-
-try:
-    # Cancel all `open` orders in specified currency pair
-    api_response = api_instance.cancel_orders(currency_pair, side=side, account=account)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling SpotApi->cancel_orders: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **currency_pair** | **str**| Currency pair | 
- **side** | **str**| All bids or asks. Both included in not specified | [optional] 
- **account** | **str**| Specify account type. Default to all account types being included | [optional] 
-
-### Return type
-
-[**list[Order]**](Order.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Batch cancellation request accepted. Query order status by listing orders |  -  |
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -291,131 +508,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_order**
-> Order create_order(order)
+# **list_all_open_orders**
+> list[OpenOrders] list_all_open_orders(page=page, limit=limit)
 
-Create an order
+List all open orders
 
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.SpotApi(api_client)
-order = {"id":"12332324","text":"t-123456","create_time":"1548000000","update_time":"1548000100","currency_pair":"ETH_BTC","status":"cancelled","type":"limit","account":"spot","side":"buy","amount":"1","price":"5.00032","time_in_force":"gtc","auto_borrow":false,"left":"0.5","filled_total":"2.50016","fee":"0.005","fee_currency":"ETH","point_fee":"0","gt_fee":"0","gt_discount":false,"rebated_fee":"0","rebated_fee_currency":"BTC"} # Order | 
-
-try:
-    # Create an order
-    api_response = api_instance.create_order(order)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling SpotApi->create_order: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **order** | [**Order**](Order.md)|  | 
-
-### Return type
-
-[**Order**](Order.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Order created. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_currency_pair**
-> CurrencyPair get_currency_pair(currency_pair)
-
-Get detail of one single order
-
-### Example
-
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.SpotApi(api_client)
-currency_pair = 'ETH_BTC' # str | Currency pair
-
-try:
-    # Get detail of one single order
-    api_response = api_instance.get_currency_pair(currency_pair)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling SpotApi->get_currency_pair: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **currency_pair** | **str**| Currency pair | 
-
-### Return type
-
-[**CurrencyPair**](CurrencyPair.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_order**
-> Order get_order(order_id, currency_pair)
-
-Get a single order
+List all open orders in all currency pairs. Each currency pair has its own pagination
 
 ### Example
 
@@ -441,216 +539,27 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-order_id = '12345' # str | ID returned on order successfully being created
-currency_pair = 'BTC_USDT' # str | Currency pair
-
-try:
-    # Get a single order
-    api_response = api_instance.get_order(order_id, currency_pair)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling SpotApi->get_order: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **order_id** | **str**| ID returned on order successfully being created | 
- **currency_pair** | **str**| Currency pair | 
-
-### Return type
-
-[**Order**](Order.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Detail retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_candlesticks**
-> list[list[str]] list_candlesticks(currency_pair, limit=limit, _from=_from, to=to, interval=interval)
-
-Market candlesticks
-
-Maximum of 1000 points are returned in one query. Be sure not to exceed the limit when specifying `from`, `to` and `interval`
-
-### Example
-
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.SpotApi(api_client)
-currency_pair = 'BTC_USDT' # str | Currency pair
-limit = 100 # int | Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
-_from = 1546905600 # int | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
-to = 1546935600 # int | End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time (optional)
-interval = '30m' # str | Interval time between data points (optional) (default to '30m')
-
-try:
-    # Market candlesticks
-    api_response = api_instance.list_candlesticks(currency_pair, limit=limit, _from=_from, to=to, interval=interval)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling SpotApi->list_candlesticks: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **currency_pair** | **str**| Currency pair | 
- **limit** | **int**| Maximum recent data points returned. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
- **_from** | **int**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
- **to** | **int**| End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time | [optional] 
- **interval** | **str**| Interval time between data points | [optional] [default to &#39;30m&#39;]
-
-### Return type
-
-**list[list[str]]**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_currency_pairs**
-> list[CurrencyPair] list_currency_pairs()
-
-List all currency pairs supported
-
-### Example
-
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.SpotApi(api_client)
-
-try:
-    # List all currency pairs supported
-    api_response = api_instance.list_currency_pairs()
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling SpotApi->list_currency_pairs: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**list[CurrencyPair]**](CurrencyPair.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | All currency pairs retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_my_trades**
-> list[Trade] list_my_trades(currency_pair, limit=limit, page=page, order_id=order_id)
-
-List personal trading history
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.SpotApi(api_client)
-currency_pair = 'BTC_USDT' # str | Currency pair
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 page = 1 # int | Page number (optional) (default to 1)
-order_id = '12345' # str | List all trades of specified order (optional)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 
 try:
-    # List personal trading history
-    api_response = api_instance.list_my_trades(currency_pair, limit=limit, page=page, order_id=order_id)
+    # List all open orders
+    api_response = api_instance.list_all_open_orders(page=page, limit=limit)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling SpotApi->list_my_trades: %s\n" % e)
+    print("Exception when calling SpotApi->list_all_open_orders: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency_pair** | **str**| Currency pair | 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
  **page** | **int**| Page number | [optional] [default to 1]
- **order_id** | **str**| List all trades of specified order | [optional] 
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
 
 ### Return type
 
-[**list[Trade]**](Trade.md)
+[**list[OpenOrders]**](OpenOrders.md)
 
 ### Authorization
 
@@ -665,68 +574,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_order_book**
-> OrderBook list_order_book(currency_pair, interval=interval, limit=limit)
-
-Retrieve order book
-
-Order book will be sorted by price from high to low on bids; reversed on asks
-
-### Example
-
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.SpotApi(api_client)
-currency_pair = 'BTC_USDT' # str | Currency pair
-interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
-limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
-
-try:
-    # Retrieve order book
-    api_response = api_instance.list_order_book(currency_pair, interval=interval, limit=limit)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling SpotApi->list_order_book: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **currency_pair** | **str**| Currency pair | 
- **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
- **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
-
-### Return type
-
-[**OrderBook**](OrderBook.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -801,10 +648,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_spot_accounts**
-> list[SpotAccount] list_spot_accounts(currency=currency)
+# **create_order**
+> Order create_order(order)
 
-List spot accounts
+Create an order
 
 ### Example
 
@@ -830,25 +677,94 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-currency = 'BTC' # str | Retrieved specified currency related data (optional)
+order = {"id":"12332324","text":"t-123456","create_time":"1548000000","update_time":"1548000100","currency_pair":"ETH_BTC","status":"cancelled","type":"limit","account":"spot","side":"buy","amount":"1","price":"5.00032","time_in_force":"gtc","auto_borrow":false,"left":"0.5","filled_total":"2.50016","fee":"0.005","fee_currency":"ETH","point_fee":"0","gt_fee":"0","gt_discount":false,"rebated_fee":"0","rebated_fee_currency":"BTC"} # Order | 
 
 try:
-    # List spot accounts
-    api_response = api_instance.list_spot_accounts(currency=currency)
+    # Create an order
+    api_response = api_instance.create_order(order)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling SpotApi->list_spot_accounts: %s\n" % e)
+    print("Exception when calling SpotApi->create_order: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **str**| Retrieved specified currency related data | [optional] 
+ **order** | [**Order**](Order.md)|  | 
 
 ### Return type
 
-[**list[SpotAccount]**](SpotAccount.md)
+[**Order**](Order.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Order created. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cancel_orders**
+> list[Order] cancel_orders(currency_pair, side=side, account=account)
+
+Cancel all `open` orders in specified currency pair
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.SpotApi(api_client)
+currency_pair = 'BTC_USDT' # str | Currency pair
+side = 'sell' # str | All bids or asks. Both included in not specified (optional)
+account = 'spot' # str | Specify account type. Default to all account types being included (optional)
+
+try:
+    # Cancel all `open` orders in specified currency pair
+    api_response = api_instance.cancel_orders(currency_pair, side=side, account=account)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling SpotApi->cancel_orders: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency_pair** | **str**| Currency pair | 
+ **side** | **str**| All bids or asks. Both included in not specified | [optional] 
+ **account** | **str**| Specify account type. Default to all account types being included | [optional] 
+
+### Return type
+
+[**list[Order]**](Order.md)
 
 ### Authorization
 
@@ -862,55 +778,131 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved |  -  |
+**200** | Batch cancellation request accepted. Query order status by listing orders |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_tickers**
-> list[Ticker] list_tickers(currency_pair=currency_pair)
+# **cancel_batch_orders**
+> list[CancelOrderResult] cancel_batch_orders(cancel_order)
 
-Retrieve ticker information
+Cancel a batch of orders with an ID list
 
-Return only related data if `currency_pair` is specified; otherwise return all of them
+Multiple currency pairs can be specified, but maximum 20 orders are allowed per request
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
 from gate_api.exceptions import ApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
 configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4"
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
 )
 
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-currency_pair = 'BTC_USDT' # str | Currency pair (optional)
+cancel_order = [{"currency_pair":"BTC_USDT","id":"123456"}] # list[CancelOrder] | 
 
 try:
-    # Retrieve ticker information
-    api_response = api_instance.list_tickers(currency_pair=currency_pair)
+    # Cancel a batch of orders with an ID list
+    api_response = api_instance.cancel_batch_orders(cancel_order)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling SpotApi->list_tickers: %s\n" % e)
+    print("Exception when calling SpotApi->cancel_batch_orders: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency_pair** | **str**| Currency pair | [optional] 
+ **cancel_order** | [**list[CancelOrder]**](CancelOrder.md)|  | 
 
 ### Return type
 
-[**list[Ticker]**](Ticker.md)
+[**list[CancelOrderResult]**](CancelOrderResult.md)
 
 ### Authorization
 
-No authorization required
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Batch cancellation completed |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_order**
+> Order get_order(order_id, currency_pair)
+
+Get a single order
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.SpotApi(api_client)
+order_id = '12345' # str | ID returned on order successfully being created
+currency_pair = 'BTC_USDT' # str | Currency pair
+
+try:
+    # Get a single order
+    api_response = api_instance.get_order(order_id, currency_pair)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling SpotApi->get_order: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order_id** | **str**| ID returned on order successfully being created | 
+ **currency_pair** | **str**| Currency pair | 
+
+### Return type
+
+[**Order**](Order.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 
@@ -920,25 +912,101 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Detail retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_trades**
-> list[Trade] list_trades(currency_pair, limit=limit, last_id=last_id)
+# **cancel_order**
+> Order cancel_order(order_id, currency_pair)
 
-Retrieve market trades
+Cancel a single order
 
 ### Example
 
+* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
 from gate_api.exceptions import ApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
 configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4"
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.SpotApi(api_client)
+order_id = '12345' # str | ID returned on order successfully being created
+currency_pair = 'BTC_USDT' # str | Currency pair
+
+try:
+    # Cancel a single order
+    api_response = api_instance.cancel_order(order_id, currency_pair)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling SpotApi->cancel_order: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order_id** | **str**| ID returned on order successfully being created | 
+ **currency_pair** | **str**| Currency pair | 
+
+### Return type
+
+[**Order**](Order.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Order cancelled |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_my_trades**
+> list[Trade] list_my_trades(currency_pair, limit=limit, page=page, order_id=order_id)
+
+List personal trading history
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
 )
 
 api_client = gate_api.ApiClient(configuration)
@@ -946,14 +1014,15 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'BTC_USDT' # str | Currency pair
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
-last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
+page = 1 # int | Page number (optional) (default to 1)
+order_id = '12345' # str | List all trades of specified order (optional)
 
 try:
-    # Retrieve market trades
-    api_response = api_instance.list_trades(currency_pair, limit=limit, last_id=last_id)
+    # List personal trading history
+    api_response = api_instance.list_my_trades(currency_pair, limit=limit, page=page, order_id=order_id)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling SpotApi->list_trades: %s\n" % e)
+    print("Exception when calling SpotApi->list_my_trades: %s\n" % e)
 ```
 
 ### Parameters
@@ -962,7 +1031,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency_pair** | **str**| Currency pair | 
  **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
- **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
+ **page** | **int**| Page number | [optional] [default to 1]
+ **order_id** | **str**| List all trades of specified order | [optional] 
 
 ### Return type
 
@@ -970,7 +1040,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 

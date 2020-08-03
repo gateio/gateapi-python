@@ -4,74 +4,64 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_futures_order**](FuturesApi.md#cancel_futures_order) | **DELETE** /futures/{settle}/orders/{order_id} | Cancel a single order
-[**cancel_futures_orders**](FuturesApi.md#cancel_futures_orders) | **DELETE** /futures/{settle}/orders | Cancel all &#x60;open&#x60; orders matched
-[**cancel_price_triggered_order**](FuturesApi.md#cancel_price_triggered_order) | **DELETE** /futures/{settle}/price_orders/{order_id} | Cancel a single order
-[**cancel_price_triggered_order_list**](FuturesApi.md#cancel_price_triggered_order_list) | **DELETE** /futures/{settle}/price_orders | Cancel all open orders
-[**create_futures_order**](FuturesApi.md#create_futures_order) | **POST** /futures/{settle}/orders | Create a futures order
-[**create_price_triggered_order**](FuturesApi.md#create_price_triggered_order) | **POST** /futures/{settle}/price_orders | Create a price-triggered order
-[**get_futures_contract**](FuturesApi.md#get_futures_contract) | **GET** /futures/{settle}/contracts/{contract} | Get a single contract
-[**get_futures_order**](FuturesApi.md#get_futures_order) | **GET** /futures/{settle}/orders/{order_id} | Get a single order
-[**get_my_trades**](FuturesApi.md#get_my_trades) | **GET** /futures/{settle}/my_trades | List personal trading history
-[**get_position**](FuturesApi.md#get_position) | **GET** /futures/{settle}/positions/{contract} | Get single position
-[**get_price_triggered_order**](FuturesApi.md#get_price_triggered_order) | **GET** /futures/{settle}/price_orders/{order_id} | Get a single order
-[**list_futures_account_book**](FuturesApi.md#list_futures_account_book) | **GET** /futures/{settle}/account_book | Query account book
-[**list_futures_accounts**](FuturesApi.md#list_futures_accounts) | **GET** /futures/{settle}/accounts | Query futures account
-[**list_futures_candlesticks**](FuturesApi.md#list_futures_candlesticks) | **GET** /futures/{settle}/candlesticks | Get futures candlesticks
 [**list_futures_contracts**](FuturesApi.md#list_futures_contracts) | **GET** /futures/{settle}/contracts | List all futures contracts
+[**get_futures_contract**](FuturesApi.md#get_futures_contract) | **GET** /futures/{settle}/contracts/{contract} | Get a single contract
+[**list_futures_order_book**](FuturesApi.md#list_futures_order_book) | **GET** /futures/{settle}/order_book | Futures order book
+[**list_futures_trades**](FuturesApi.md#list_futures_trades) | **GET** /futures/{settle}/trades | Futures trading history
+[**list_futures_candlesticks**](FuturesApi.md#list_futures_candlesticks) | **GET** /futures/{settle}/candlesticks | Get futures candlesticks
+[**list_futures_tickers**](FuturesApi.md#list_futures_tickers) | **GET** /futures/{settle}/tickers | List futures tickers
 [**list_futures_funding_rate_history**](FuturesApi.md#list_futures_funding_rate_history) | **GET** /futures/{settle}/funding_rate | Funding rate history
 [**list_futures_insurance_ledger**](FuturesApi.md#list_futures_insurance_ledger) | **GET** /futures/{settle}/insurance | Futures insurance balance history
-[**list_futures_order_book**](FuturesApi.md#list_futures_order_book) | **GET** /futures/{settle}/order_book | Futures order book
-[**list_futures_orders**](FuturesApi.md#list_futures_orders) | **GET** /futures/{settle}/orders | List futures orders
-[**list_futures_tickers**](FuturesApi.md#list_futures_tickers) | **GET** /futures/{settle}/tickers | List futures tickers
-[**list_futures_trades**](FuturesApi.md#list_futures_trades) | **GET** /futures/{settle}/trades | Futures trading history
-[**list_liquidates**](FuturesApi.md#list_liquidates) | **GET** /futures/{settle}/liquidates | List liquidation history
-[**list_position_close**](FuturesApi.md#list_position_close) | **GET** /futures/{settle}/position_close | List position close history
+[**list_futures_accounts**](FuturesApi.md#list_futures_accounts) | **GET** /futures/{settle}/accounts | Query futures account
+[**list_futures_account_book**](FuturesApi.md#list_futures_account_book) | **GET** /futures/{settle}/account_book | Query account book
 [**list_positions**](FuturesApi.md#list_positions) | **GET** /futures/{settle}/positions | List all positions of a user
-[**list_price_triggered_orders**](FuturesApi.md#list_price_triggered_orders) | **GET** /futures/{settle}/price_orders | List all auto orders
-[**update_position_leverage**](FuturesApi.md#update_position_leverage) | **POST** /futures/{settle}/positions/{contract}/leverage | Update position leverage
+[**get_position**](FuturesApi.md#get_position) | **GET** /futures/{settle}/positions/{contract} | Get single position
 [**update_position_margin**](FuturesApi.md#update_position_margin) | **POST** /futures/{settle}/positions/{contract}/margin | Update position margin
+[**update_position_leverage**](FuturesApi.md#update_position_leverage) | **POST** /futures/{settle}/positions/{contract}/leverage | Update position leverage
 [**update_position_risk_limit**](FuturesApi.md#update_position_risk_limit) | **POST** /futures/{settle}/positions/{contract}/risk_limit | Update position risk limit
+[**list_futures_orders**](FuturesApi.md#list_futures_orders) | **GET** /futures/{settle}/orders | List futures orders
+[**create_futures_order**](FuturesApi.md#create_futures_order) | **POST** /futures/{settle}/orders | Create a futures order
+[**cancel_futures_orders**](FuturesApi.md#cancel_futures_orders) | **DELETE** /futures/{settle}/orders | Cancel all &#x60;open&#x60; orders matched
+[**get_futures_order**](FuturesApi.md#get_futures_order) | **GET** /futures/{settle}/orders/{order_id} | Get a single order
+[**cancel_futures_order**](FuturesApi.md#cancel_futures_order) | **DELETE** /futures/{settle}/orders/{order_id} | Cancel a single order
+[**get_my_trades**](FuturesApi.md#get_my_trades) | **GET** /futures/{settle}/my_trades | List personal trading history
+[**list_position_close**](FuturesApi.md#list_position_close) | **GET** /futures/{settle}/position_close | List position close history
+[**list_liquidates**](FuturesApi.md#list_liquidates) | **GET** /futures/{settle}/liquidates | List liquidation history
+[**list_price_triggered_orders**](FuturesApi.md#list_price_triggered_orders) | **GET** /futures/{settle}/price_orders | List all auto orders
+[**create_price_triggered_order**](FuturesApi.md#create_price_triggered_order) | **POST** /futures/{settle}/price_orders | Create a price-triggered order
+[**cancel_price_triggered_order_list**](FuturesApi.md#cancel_price_triggered_order_list) | **DELETE** /futures/{settle}/price_orders | Cancel all open orders
+[**get_price_triggered_order**](FuturesApi.md#get_price_triggered_order) | **GET** /futures/{settle}/price_orders/{order_id} | Get a single order
+[**cancel_price_triggered_order**](FuturesApi.md#cancel_price_triggered_order) | **DELETE** /futures/{settle}/price_orders/{order_id} | Cancel a single order
 
 
-# **cancel_futures_order**
-> FuturesOrder cancel_futures_order(settle, order_id)
+# **list_futures_contracts**
+> list[Contract] list_futures_contracts(settle)
 
-Cancel a single order
+List all futures contracts
 
 ### Example
 
-* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
 from gate_api.exceptions import ApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
 configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
+    host = "https://api.gateio.ws/api/v4"
 )
 
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-order_id = '12345' # str | ID returned on order successfully being created
 
 try:
-    # Cancel a single order
-    api_response = api_instance.cancel_futures_order(settle, order_id)
+    # List all futures contracts
+    api_response = api_instance.list_futures_contracts(settle)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling FuturesApi->cancel_futures_order: %s\n" % e)
+    print("Exception when calling FuturesApi->list_futures_contracts: %s\n" % e)
 ```
 
 ### Parameters
@@ -79,15 +69,14 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **order_id** | **str**| ID returned on order successfully being created | 
 
 ### Return type
 
-[**FuturesOrder**](FuturesOrder.md)
+[**list[Contract]**](Contract.md)
 
 ### Authorization
 
-[apiv4](../README.md#apiv4)
+No authorization required
 
 ### HTTP request headers
 
@@ -97,348 +86,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Order details |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **cancel_futures_orders**
-> list[FuturesOrder] cancel_futures_orders(settle, contract, side=side)
-
-Cancel all `open` orders matched
-
-Zero-fill order cannot be retrieved 60 seconds after cancellation
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract
-side = 'ask' # str | All bids or asks. Both included in not specified (optional)
-
-try:
-    # Cancel all `open` orders matched
-    api_response = api_instance.cancel_futures_orders(settle, contract, side=side)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->cancel_futures_orders: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **contract** | **str**| Futures contract | 
- **side** | **str**| All bids or asks. Both included in not specified | [optional] 
-
-### Return type
-
-[**list[FuturesOrder]**](FuturesOrder.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | All orders matched cancelled |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **cancel_price_triggered_order**
-> FuturesPriceTriggeredOrder cancel_price_triggered_order(settle, order_id)
-
-Cancel a single order
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
-order_id = 'order_id_example' # str | ID returned on order successfully being created
-
-try:
-    # Cancel a single order
-    api_response = api_instance.cancel_price_triggered_order(settle, order_id)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->cancel_price_triggered_order: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **order_id** | **str**| ID returned on order successfully being created | 
-
-### Return type
-
-[**FuturesPriceTriggeredOrder**](FuturesPriceTriggeredOrder.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Auto order detail |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **cancel_price_triggered_order_list**
-> list[FuturesPriceTriggeredOrder] cancel_price_triggered_order_list(settle, contract)
-
-Cancel all open orders
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract
-
-try:
-    # Cancel all open orders
-    api_response = api_instance.cancel_price_triggered_order_list(settle, contract)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->cancel_price_triggered_order_list: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **contract** | **str**| Futures contract | 
-
-### Return type
-
-[**list[FuturesPriceTriggeredOrder]**](FuturesPriceTriggeredOrder.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Batch cancellation request accepted. Query order status by listing orders |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_futures_order**
-> FuturesOrder create_futures_order(settle, futures_order)
-
-Create a futures order
-
-Zero-fill order cannot be retrieved 60 seconds after cancellation
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
-futures_order = {"id":15675394,"user":100000,"contract":"BTC_USD","create_time":1546569968,"size":6024,"iceberg":0,"left":6024,"price":"3765","fill_price":"0","mkfr":"-0.00025","tkfr":"0.00075","tif":"gtc","refu":0,"is_reduce_only":false,"is_close":false,"is_liq":false,"text":"t-my-custom-id","status":"finished","finish_time":1514764900,"finish_as":"cancelled"} # FuturesOrder | 
-
-try:
-    # Create a futures order
-    api_response = api_instance.create_futures_order(settle, futures_order)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->create_futures_order: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **futures_order** | [**FuturesOrder**](FuturesOrder.md)|  | 
-
-### Return type
-
-[**FuturesOrder**](FuturesOrder.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Order details |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_price_triggered_order**
-> TriggerOrderResponse create_price_triggered_order(settle, futures_price_triggered_order)
-
-Create a price-triggered order
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
-futures_price_triggered_order = {"initial":{"contract":"BTC_USD","size":100,"price":"5.03","close":false,"tif":"gtc","text":"web"},"trigger":{"strategy_type":0,"price_type":0,"price":"3000","rule":1,"expiration":86400},"id":1283293,"user":1234,"create_time":1514764800,"finish_time":1514764900,"trade_id":13566,"status":"finished","finish_as":"cancelled","reason":""} # FuturesPriceTriggeredOrder | 
-
-try:
-    # Create a price-triggered order
-    api_response = api_instance.create_price_triggered_order(settle, futures_price_triggered_order)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->create_price_triggered_order: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **futures_price_triggered_order** | [**FuturesPriceTriggeredOrder**](FuturesPriceTriggeredOrder.md)|  | 
-
-### Return type
-
-[**TriggerOrderResponse**](TriggerOrderResponse.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Order created |  -  |
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -500,176 +148,23 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_futures_order**
-> FuturesOrder get_futures_order(settle, order_id)
+# **list_futures_order_book**
+> FuturesOrderBook list_futures_order_book(settle, contract, interval=interval, limit=limit)
 
-Get a single order
+Futures order book
 
-Zero-fill order cannot be retrieved 60 seconds after cancellation
+Bids will be sorted by price from high to low, while asks sorted reversely
 
 ### Example
 
-* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
 from gate_api.exceptions import ApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
 configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
-order_id = '12345' # str | ID returned on order successfully being created
-
-try:
-    # Get a single order
-    api_response = api_instance.get_futures_order(settle, order_id)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->get_futures_order: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **order_id** | **str**| ID returned on order successfully being created | 
-
-### Return type
-
-[**FuturesOrder**](FuturesOrder.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Order details |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_my_trades**
-> list[MyFuturesTrade] get_my_trades(settle, contract=contract, order=order, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
-
-List personal trading history
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
-order = 12345 # int | Futures order ID, return related data only if specified (optional)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
-last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
-count_total = 0 # int | Whether to return total number matched. Default to 0(no return) (optional) (default to 0)
-
-try:
-    # List personal trading history
-    api_response = api_instance.get_my_trades(settle, contract=contract, order=order, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->get_my_trades: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **contract** | **str**| Futures contract, return related data only if specified | [optional] 
- **order** | **int**| Futures order ID, return related data only if specified | [optional] 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
- **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
- **count_total** | **int**| Whether to return total number matched. Default to 0(no return) | [optional] [default to 0]
-
-### Return type
-
-[**list[MyFuturesTrade]**](MyFuturesTrade.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | List retrieved |  * X-Pagination-Limit - Request limit specified <br>  * X-Pagination-Offset - Request offset specified <br>  * X-Pagination-Total - Total number matched. Only returned on &#x60;count_total&#x60; set to 1 <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_position**
-> Position get_position(settle, contract)
-
-Get single position
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
+    host = "https://api.gateio.ws/api/v4"
 )
 
 api_client = gate_api.ApiClient(configuration)
@@ -677,13 +172,15 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
 contract = 'BTC_USD' # str | Futures contract
+interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
+limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
 
 try:
-    # Get single position
-    api_response = api_instance.get_position(settle, contract)
+    # Futures order book
+    api_response = api_instance.list_futures_order_book(settle, contract, interval=interval, limit=limit)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling FuturesApi->get_position: %s\n" % e)
+    print("Exception when calling FuturesApi->list_futures_order_book: %s\n" % e)
 ```
 
 ### Parameters
@@ -692,14 +189,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
  **contract** | **str**| Futures contract | 
+ **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
+ **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
 
 ### Return type
 
-[**Position**](Position.md)
+[**FuturesOrderBook**](FuturesOrderBook.md)
 
 ### Authorization
 
-[apiv4](../README.md#apiv4)
+No authorization required
 
 ### HTTP request headers
 
@@ -709,118 +208,43 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Position information |  -  |
+**200** | Order book retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_price_triggered_order**
-> FuturesPriceTriggeredOrder get_price_triggered_order(settle, order_id)
+# **list_futures_trades**
+> list[FuturesTrade] list_futures_trades(settle, contract, limit=limit, last_id=last_id, _from=_from, to=to)
 
-Get a single order
+Futures trading history
 
 ### Example
 
-* Api Key Authentication (apiv4):
 ```python
 from __future__ import print_function
 import gate_api
 from gate_api.exceptions import ApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
 configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
+    host = "https://api.gateio.ws/api/v4"
 )
 
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-order_id = 'order_id_example' # str | ID returned on order successfully being created
-
-try:
-    # Get a single order
-    api_response = api_instance.get_price_triggered_order(settle, order_id)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->get_price_triggered_order: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **order_id** | **str**| ID returned on order successfully being created | 
-
-### Return type
-
-[**FuturesPriceTriggeredOrder**](FuturesPriceTriggeredOrder.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Auto order detail |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_futures_account_book**
-> list[FuturesAccountBook] list_futures_account_book(settle, limit=limit, _from=_from, to=to, type=type)
-
-Query account book
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
+contract = 'BTC_USD' # str | Futures contract
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
-_from = 1547706332 # int | Start timestamp (optional)
-to = 1547706332 # int | End timestamp (optional)
-type = 'dnw' # str | Changing Type: - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate (optional)
+last_id = '12345' # str | Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use `from` and `to` instead to limit time range (optional)
+_from = 1546905600 # int | Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned.  (optional)
+to = 1546935600 # int | Specify end time in Unix seconds, default to current time (optional)
 
 try:
-    # Query account book
-    api_response = api_instance.list_futures_account_book(settle, limit=limit, _from=_from, to=to, type=type)
+    # Futures trading history
+    api_response = api_instance.list_futures_trades(settle, contract, limit=limit, last_id=last_id, _from=_from, to=to)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling FuturesApi->list_futures_account_book: %s\n" % e)
+    print("Exception when calling FuturesApi->list_futures_trades: %s\n" % e)
 ```
 
 ### Parameters
@@ -828,83 +252,19 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **contract** | **str**| Futures contract | 
  **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
- **_from** | **int**| Start timestamp | [optional] 
- **to** | **int**| End timestamp | [optional] 
- **type** | **str**| Changing Type: - dnw: Deposit &amp; Withdraw - pnl: Profit &amp; Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit &amp; Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate | [optional] 
+ **last_id** | **str**| Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use &#x60;from&#x60; and &#x60;to&#x60; instead to limit time range | [optional] 
+ **_from** | **int**| Specify starting time in Unix seconds. If not specified, &#x60;to&#x60; and &#x60;limit&#x60; will be used to limit response items. If items between &#x60;from&#x60; and &#x60;to&#x60; are more than &#x60;limit&#x60;, only &#x60;limit&#x60; number will be returned.  | [optional] 
+ **to** | **int**| Specify end time in Unix seconds, default to current time | [optional] 
 
 ### Return type
 
-[**list[FuturesAccountBook]**](FuturesAccountBook.md)
+[**list[FuturesTrade]**](FuturesTrade.md)
 
 ### Authorization
 
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | List retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_futures_accounts**
-> FuturesAccount list_futures_accounts(settle)
-
-Query futures account
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
-
-try:
-    # Query futures account
-    api_response = api_instance.list_futures_accounts(settle)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->list_futures_accounts: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
-
-### Return type
-
-[**FuturesAccount**](FuturesAccount.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
+No authorization required
 
 ### HTTP request headers
 
@@ -942,8 +302,8 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
 contract = 'BTC_USD' # str | Futures contract
-_from = 1546905600 # float | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
-to = 1546935600 # float | End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time (optional)
+_from = 1546905600 # int | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
+to = 1546935600 # int | End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time (optional)
 limit = 100 # int | Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
 interval = '5m' # str | Interval time between data points (optional) (default to '5m')
 
@@ -961,8 +321,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
  **contract** | **str**| Futures contract | 
- **_from** | **float**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
- **to** | **float**| End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time | [optional] 
+ **_from** | **int**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
+ **to** | **int**| End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time | [optional] 
  **limit** | **int**| Maximum recent data points returned. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
  **interval** | **str**| Interval time between data points | [optional] [default to &#39;5m&#39;]
 
@@ -986,10 +346,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_futures_contracts**
-> list[Contract] list_futures_contracts(settle)
+# **list_futures_tickers**
+> list[FuturesTicker] list_futures_tickers(settle, contract=contract)
 
-List all futures contracts
+List futures tickers
 
 ### Example
 
@@ -1007,13 +367,14 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
+contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
 
 try:
-    # List all futures contracts
-    api_response = api_instance.list_futures_contracts(settle)
+    # List futures tickers
+    api_response = api_instance.list_futures_tickers(settle, contract=contract)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling FuturesApi->list_futures_contracts: %s\n" % e)
+    print("Exception when calling FuturesApi->list_futures_tickers: %s\n" % e)
 ```
 
 ### Parameters
@@ -1021,10 +382,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
 
 ### Return type
 
-[**list[Contract]**](Contract.md)
+[**list[FuturesTicker]**](FuturesTicker.md)
 
 ### Authorization
 
@@ -1038,7 +400,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved |  -  |
+**200** | Successfully retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1160,76 +522,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_futures_order_book**
-> FuturesOrderBook list_futures_order_book(settle, contract, interval=interval, limit=limit)
+# **list_futures_accounts**
+> FuturesAccount list_futures_accounts(settle)
 
-Futures order book
-
-Bids will be sorted by price from high to low, while asks sorted reversely
-
-### Example
-
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract
-interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
-limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
-
-try:
-    # Futures order book
-    api_response = api_instance.list_futures_order_book(settle, contract, interval=interval, limit=limit)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->list_futures_order_book: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **contract** | **str**| Futures contract | 
- **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
- **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
-
-### Return type
-
-[**FuturesOrderBook**](FuturesOrderBook.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Order book retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_futures_orders**
-> list[FuturesOrder] list_futures_orders(settle, contract, status, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
-
-List futures orders
-
-Zero-fill order cannot be retrieved 60 seconds after cancellation
+Query futures account
 
 ### Example
 
@@ -1256,19 +552,13 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract
-status = 'open' # str | List orders based on status
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
-last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
-count_total = 0 # int | Whether to return total number matched. Default to 0(no return) (optional) (default to 0)
 
 try:
-    # List futures orders
-    api_response = api_instance.list_futures_orders(settle, contract, status, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
+    # Query futures account
+    api_response = api_instance.list_futures_accounts(settle)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling FuturesApi->list_futures_orders: %s\n" % e)
+    print("Exception when calling FuturesApi->list_futures_accounts: %s\n" % e)
 ```
 
 ### Parameters
@@ -1276,211 +566,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **contract** | **str**| Futures contract | 
- **status** | **str**| List orders based on status | 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
- **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
- **count_total** | **int**| Whether to return total number matched. Default to 0(no return) | [optional] [default to 0]
 
 ### Return type
 
-[**list[FuturesOrder]**](FuturesOrder.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | List retrieved |  * X-Pagination-Limit - Request limit specified <br>  * X-Pagination-Offset - Request offset specified <br>  * X-Pagination-Total - Total number matched. Only returned on &#x60;count_total&#x60; set to 1 <br>  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_futures_tickers**
-> list[FuturesTicker] list_futures_tickers(settle, contract=contract)
-
-List futures tickers
-
-### Example
-
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
-
-try:
-    # List futures tickers
-    api_response = api_instance.list_futures_tickers(settle, contract=contract)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->list_futures_tickers: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **contract** | **str**| Futures contract, return related data only if specified | [optional] 
-
-### Return type
-
-[**list[FuturesTicker]**](FuturesTicker.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_futures_trades**
-> list[FuturesTrade] list_futures_trades(settle, contract, limit=limit, last_id=last_id, _from=_from, to=to)
-
-Futures trading history
-
-### Example
-
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
-last_id = '12345' # str | Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use `from` and `to` instead to limit time range (optional)
-_from = 1546905600 # float | Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned.  (optional)
-to = 1546935600 # float | Specify end time in Unix seconds, default to current time (optional)
-
-try:
-    # Futures trading history
-    api_response = api_instance.list_futures_trades(settle, contract, limit=limit, last_id=last_id, _from=_from, to=to)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->list_futures_trades: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **contract** | **str**| Futures contract | 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
- **last_id** | **str**| Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use &#x60;from&#x60; and &#x60;to&#x60; instead to limit time range | [optional] 
- **_from** | **float**| Specify starting time in Unix seconds. If not specified, &#x60;to&#x60; and &#x60;limit&#x60; will be used to limit response items. If items between &#x60;from&#x60; and &#x60;to&#x60; are more than &#x60;limit&#x60;, only &#x60;limit&#x60; number will be returned.  | [optional] 
- **to** | **float**| Specify end time in Unix seconds, default to current time | [optional] 
-
-### Return type
-
-[**list[FuturesTrade]**](FuturesTrade.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | List retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_liquidates**
-> list[FuturesLiquidate] list_liquidates(settle, contract=contract, limit=limit, at=at)
-
-List liquidation history
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
-at = 0 # int | Specify a liquidation timestamp (optional) (default to 0)
-
-try:
-    # List liquidation history
-    api_response = api_instance.list_liquidates(settle, contract=contract, limit=limit, at=at)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->list_liquidates: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **contract** | **str**| Futures contract, return related data only if specified | [optional] 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
- **at** | **int**| Specify a liquidation timestamp | [optional] [default to 0]
-
-### Return type
-
-[**list[FuturesLiquidate]**](FuturesLiquidate.md)
+[**FuturesAccount**](FuturesAccount.md)
 
 ### Authorization
 
@@ -1498,10 +587,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_position_close**
-> list[PositionClose] list_position_close(settle, contract=contract, limit=limit)
+# **list_futures_account_book**
+> list[FuturesAccountBook] list_futures_account_book(settle, limit=limit, _from=_from, to=to, type=type)
 
-List position close history
+Query account book
 
 ### Example
 
@@ -1528,15 +617,17 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+_from = 1547706332 # int | Start timestamp (optional)
+to = 1547706332 # int | End timestamp (optional)
+type = 'dnw' # str | Changing Type: - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate (optional)
 
 try:
-    # List position close history
-    api_response = api_instance.list_position_close(settle, contract=contract, limit=limit)
+    # Query account book
+    api_response = api_instance.list_futures_account_book(settle, limit=limit, _from=_from, to=to, type=type)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling FuturesApi->list_position_close: %s\n" % e)
+    print("Exception when calling FuturesApi->list_futures_account_book: %s\n" % e)
 ```
 
 ### Parameters
@@ -1544,12 +635,14 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **contract** | **str**| Futures contract, return related data only if specified | [optional] 
  **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **_from** | **int**| Start timestamp | [optional] 
+ **to** | **int**| End timestamp | [optional] 
+ **type** | **str**| Changing Type: - dnw: Deposit &amp; Withdraw - pnl: Profit &amp; Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit &amp; Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate | [optional] 
 
 ### Return type
 
-[**list[PositionClose]**](PositionClose.md)
+[**list[FuturesAccountBook]**](FuturesAccountBook.md)
 
 ### Authorization
 
@@ -1632,83 +725,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_price_triggered_orders**
-> list[FuturesPriceTriggeredOrder] list_price_triggered_orders(settle, status, contract=contract, limit=limit, offset=offset)
+# **get_position**
+> Position get_position(settle, contract)
 
-List all auto orders
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FuturesApi(api_client)
-settle = 'btc' # str | Settle currency (default to 'btc')
-status = 'status_example' # str | List orders based on status
-contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
-
-try:
-    # List all auto orders
-    api_response = api_instance.list_price_triggered_orders(settle, status, contract=contract, limit=limit, offset=offset)
-    print(api_response)
-except ApiException as e:
-    print("Exception when calling FuturesApi->list_price_triggered_orders: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
- **status** | **str**| List orders based on status | 
- **contract** | **str**| Futures contract, return related data only if specified | [optional] 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
-
-### Return type
-
-[**list[FuturesPriceTriggeredOrder]**](FuturesPriceTriggeredOrder.md)
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | List retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_position_leverage**
-> Position update_position_leverage(settle, contract, leverage)
-
-Update position leverage
+Get single position
 
 ### Example
 
@@ -1736,14 +756,13 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
 contract = 'BTC_USD' # str | Futures contract
-leverage = '10' # str | New position leverage
 
 try:
-    # Update position leverage
-    api_response = api_instance.update_position_leverage(settle, contract, leverage)
+    # Get single position
+    api_response = api_instance.get_position(settle, contract)
     print(api_response)
 except ApiException as e:
-    print("Exception when calling FuturesApi->update_position_leverage: %s\n" % e)
+    print("Exception when calling FuturesApi->get_position: %s\n" % e)
 ```
 
 ### Parameters
@@ -1752,7 +771,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
  **contract** | **str**| Futures contract | 
- **leverage** | **str**| New position leverage | 
 
 ### Return type
 
@@ -1843,6 +861,75 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_position_leverage**
+> Position update_position_leverage(settle, contract, leverage)
+
+Update position leverage
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+contract = 'BTC_USD' # str | Futures contract
+leverage = '10' # str | New position leverage
+
+try:
+    # Update position leverage
+    api_response = api_instance.update_position_leverage(settle, contract, leverage)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->update_position_leverage: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **contract** | **str**| Futures contract | 
+ **leverage** | **str**| New position leverage | 
+
+### Return type
+
+[**Position**](Position.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Position information |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_position_risk_limit**
 > Position update_position_risk_limit(settle, contract, risk_limit)
 
@@ -1909,6 +996,919 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Position information |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_futures_orders**
+> list[FuturesOrder] list_futures_orders(settle, contract, status, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
+
+List futures orders
+
+Zero-fill order cannot be retrieved 60 seconds after cancellation
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+contract = 'BTC_USD' # str | Futures contract
+status = 'open' # str | List orders based on status
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
+last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
+count_total = 0 # int | Whether to return total number matched. Default to 0(no return) (optional) (default to 0)
+
+try:
+    # List futures orders
+    api_response = api_instance.list_futures_orders(settle, contract, status, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->list_futures_orders: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **contract** | **str**| Futures contract | 
+ **status** | **str**| List orders based on status | 
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
+ **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
+ **count_total** | **int**| Whether to return total number matched. Default to 0(no return) | [optional] [default to 0]
+
+### Return type
+
+[**list[FuturesOrder]**](FuturesOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  * X-Pagination-Limit - Request limit specified <br>  * X-Pagination-Offset - Request offset specified <br>  * X-Pagination-Total - Total number matched. Only returned on &#x60;count_total&#x60; set to 1 <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_futures_order**
+> FuturesOrder create_futures_order(settle, futures_order)
+
+Create a futures order
+
+Zero-fill order cannot be retrieved 60 seconds after cancellation
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+futures_order = {"id":15675394,"user":100000,"contract":"BTC_USD","create_time":1546569968,"size":6024,"iceberg":0,"left":6024,"price":"3765","fill_price":"0","mkfr":"-0.00025","tkfr":"0.00075","tif":"gtc","refu":0,"is_reduce_only":false,"is_close":false,"is_liq":false,"text":"t-my-custom-id","status":"finished","finish_time":1514764900,"finish_as":"cancelled"} # FuturesOrder | 
+
+try:
+    # Create a futures order
+    api_response = api_instance.create_futures_order(settle, futures_order)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->create_futures_order: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **futures_order** | [**FuturesOrder**](FuturesOrder.md)|  | 
+
+### Return type
+
+[**FuturesOrder**](FuturesOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Order details |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cancel_futures_orders**
+> list[FuturesOrder] cancel_futures_orders(settle, contract, side=side)
+
+Cancel all `open` orders matched
+
+Zero-fill order cannot be retrieved 60 seconds after cancellation
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+contract = 'BTC_USD' # str | Futures contract
+side = 'ask' # str | All bids or asks. Both included in not specified (optional)
+
+try:
+    # Cancel all `open` orders matched
+    api_response = api_instance.cancel_futures_orders(settle, contract, side=side)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->cancel_futures_orders: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **contract** | **str**| Futures contract | 
+ **side** | **str**| All bids or asks. Both included in not specified | [optional] 
+
+### Return type
+
+[**list[FuturesOrder]**](FuturesOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | All orders matched cancelled |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_futures_order**
+> FuturesOrder get_futures_order(settle, order_id)
+
+Get a single order
+
+Zero-fill order cannot be retrieved 60 seconds after cancellation
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+order_id = '12345' # str | ID returned on order successfully being created
+
+try:
+    # Get a single order
+    api_response = api_instance.get_futures_order(settle, order_id)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->get_futures_order: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **order_id** | **str**| ID returned on order successfully being created | 
+
+### Return type
+
+[**FuturesOrder**](FuturesOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Order details |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cancel_futures_order**
+> FuturesOrder cancel_futures_order(settle, order_id)
+
+Cancel a single order
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+order_id = '12345' # str | ID returned on order successfully being created
+
+try:
+    # Cancel a single order
+    api_response = api_instance.cancel_futures_order(settle, order_id)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->cancel_futures_order: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **order_id** | **str**| ID returned on order successfully being created | 
+
+### Return type
+
+[**FuturesOrder**](FuturesOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Order details |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_my_trades**
+> list[MyFuturesTrade] get_my_trades(settle, contract=contract, order=order, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
+
+List personal trading history
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+order = 12345 # int | Futures order ID, return related data only if specified (optional)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
+last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
+count_total = 0 # int | Whether to return total number matched. Default to 0(no return) (optional) (default to 0)
+
+try:
+    # List personal trading history
+    api_response = api_instance.get_my_trades(settle, contract=contract, order=order, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->get_my_trades: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **order** | **int**| Futures order ID, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
+ **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
+ **count_total** | **int**| Whether to return total number matched. Default to 0(no return) | [optional] [default to 0]
+
+### Return type
+
+[**list[MyFuturesTrade]**](MyFuturesTrade.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  * X-Pagination-Limit - Request limit specified <br>  * X-Pagination-Offset - Request offset specified <br>  * X-Pagination-Total - Total number matched. Only returned on &#x60;count_total&#x60; set to 1 <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_position_close**
+> list[PositionClose] list_position_close(settle, contract=contract, limit=limit)
+
+List position close history
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+
+try:
+    # List position close history
+    api_response = api_instance.list_position_close(settle, contract=contract, limit=limit)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->list_position_close: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+
+### Return type
+
+[**list[PositionClose]**](PositionClose.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_liquidates**
+> list[FuturesLiquidate] list_liquidates(settle, contract=contract, limit=limit, at=at)
+
+List liquidation history
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+at = 0 # int | Specify a liquidation timestamp (optional) (default to 0)
+
+try:
+    # List liquidation history
+    api_response = api_instance.list_liquidates(settle, contract=contract, limit=limit, at=at)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->list_liquidates: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **at** | **int**| Specify a liquidation timestamp | [optional] [default to 0]
+
+### Return type
+
+[**list[FuturesLiquidate]**](FuturesLiquidate.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_price_triggered_orders**
+> list[FuturesPriceTriggeredOrder] list_price_triggered_orders(settle, status, contract=contract, limit=limit, offset=offset)
+
+List all auto orders
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+status = 'status_example' # str | List orders based on status
+contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
+
+try:
+    # List all auto orders
+    api_response = api_instance.list_price_triggered_orders(settle, status, contract=contract, limit=limit, offset=offset)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->list_price_triggered_orders: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **status** | **str**| List orders based on status | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
+
+### Return type
+
+[**list[FuturesPriceTriggeredOrder]**](FuturesPriceTriggeredOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_price_triggered_order**
+> TriggerOrderResponse create_price_triggered_order(settle, futures_price_triggered_order)
+
+Create a price-triggered order
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+futures_price_triggered_order = {"initial":{"contract":"BTC_USD","size":100,"price":"5.03","close":false,"tif":"gtc","text":"web"},"trigger":{"strategy_type":0,"price_type":0,"price":"3000","rule":1,"expiration":86400},"id":1283293,"user":1234,"create_time":1514764800,"finish_time":1514764900,"trade_id":13566,"status":"finished","finish_as":"cancelled","reason":""} # FuturesPriceTriggeredOrder | 
+
+try:
+    # Create a price-triggered order
+    api_response = api_instance.create_price_triggered_order(settle, futures_price_triggered_order)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->create_price_triggered_order: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **futures_price_triggered_order** | [**FuturesPriceTriggeredOrder**](FuturesPriceTriggeredOrder.md)|  | 
+
+### Return type
+
+[**TriggerOrderResponse**](TriggerOrderResponse.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Order created |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cancel_price_triggered_order_list**
+> list[FuturesPriceTriggeredOrder] cancel_price_triggered_order_list(settle, contract)
+
+Cancel all open orders
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+contract = 'BTC_USD' # str | Futures contract
+
+try:
+    # Cancel all open orders
+    api_response = api_instance.cancel_price_triggered_order_list(settle, contract)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->cancel_price_triggered_order_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **contract** | **str**| Futures contract | 
+
+### Return type
+
+[**list[FuturesPriceTriggeredOrder]**](FuturesPriceTriggeredOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Batch cancellation request accepted. Query order status by listing orders |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_price_triggered_order**
+> FuturesPriceTriggeredOrder get_price_triggered_order(settle, order_id)
+
+Get a single order
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+order_id = 'order_id_example' # str | ID returned on order successfully being created
+
+try:
+    # Get a single order
+    api_response = api_instance.get_price_triggered_order(settle, order_id)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->get_price_triggered_order: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **order_id** | **str**| ID returned on order successfully being created | 
+
+### Return type
+
+[**FuturesPriceTriggeredOrder**](FuturesPriceTriggeredOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Auto order detail |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cancel_price_triggered_order**
+> FuturesPriceTriggeredOrder cancel_price_triggered_order(settle, order_id)
+
+Cancel a single order
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'btc' # str | Settle currency (default to 'btc')
+order_id = 'order_id_example' # str | ID returned on order successfully being created
+
+try:
+    # Cancel a single order
+    api_response = api_instance.cancel_price_triggered_order(settle, order_id)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling FuturesApi->cancel_price_triggered_order: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
+ **order_id** | **str**| ID returned on order successfully being created | 
+
+### Return type
+
+[**FuturesPriceTriggeredOrder**](FuturesPriceTriggeredOrder.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Auto order detail |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
