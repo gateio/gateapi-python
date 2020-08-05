@@ -32,23 +32,14 @@ class FuturesAccountBook(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {
-        'time': 'float',
-        'change': 'str',
-        'balance': 'str',
-        'type': 'str',
-        'text': 'str'
-    }
+    openapi_types = {'time': 'float', 'change': 'str', 'balance': 'str', 'type': 'str', 'text': 'str'}
 
-    attribute_map = {
-        'time': 'time',
-        'change': 'change',
-        'balance': 'balance',
-        'type': 'type',
-        'text': 'text'
-    }
+    attribute_map = {'time': 'time', 'change': 'change', 'balance': 'balance', 'type': 'type', 'text': 'text'}
 
-    def __init__(self, time=None, change=None, balance=None, type=None, text=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self, time=None, change=None, balance=None, type=None, text=None, local_vars_configuration=None
+    ):  # noqa: E501
+        # type: (float, str, str, str, str, Configuration) -> None
         """FuturesAccountBook - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -164,8 +155,7 @@ class FuturesAccountBook(object):
         allowed_values = ["dnw", "pnl", "fee", "refr", "fund", "point_dnw", "point_fee", "point_refr"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
-                .format(type, allowed_values)
+                "Invalid value for `type` ({0}), must be one of {1}".format(type, allowed_values)  # noqa: E501
             )
 
         self._type = type
@@ -200,18 +190,16 @@ class FuturesAccountBook(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

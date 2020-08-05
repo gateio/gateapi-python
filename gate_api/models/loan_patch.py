@@ -32,23 +32,20 @@ class LoanPatch(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {
-        'currency': 'str',
-        'side': 'str',
-        'auto_renew': 'bool',
-        'currency_pair': 'str',
-        'loan_id': 'str'
-    }
+    openapi_types = {'currency': 'str', 'side': 'str', 'auto_renew': 'bool', 'currency_pair': 'str', 'loan_id': 'str'}
 
     attribute_map = {
         'currency': 'currency',
         'side': 'side',
         'auto_renew': 'auto_renew',
         'currency_pair': 'currency_pair',
-        'loan_id': 'loan_id'
+        'loan_id': 'loan_id',
     }
 
-    def __init__(self, currency=None, side=None, auto_renew=None, currency_pair=None, loan_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self, currency=None, side=None, auto_renew=None, currency_pair=None, loan_id=None, local_vars_configuration=None
+    ):  # noqa: E501
+        # type: (str, str, bool, str, str, Configuration) -> None
         """LoanPatch - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -119,8 +116,7 @@ class LoanPatch(object):
         allowed_values = ["lend", "borrow"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and side not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `side` ({0}), must be one of {1}"  # noqa: E501
-                .format(side, allowed_values)
+                "Invalid value for `side` ({0}), must be one of {1}".format(side, allowed_values)  # noqa: E501
             )
 
         self._side = side
@@ -203,18 +199,16 @@ class LoanPatch(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

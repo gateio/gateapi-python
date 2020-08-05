@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**list_order_book**](SpotApi.md#list_order_book) | **GET** /spot/order_book | Retrieve order book
 [**list_trades**](SpotApi.md#list_trades) | **GET** /spot/trades | Retrieve market trades
 [**list_candlesticks**](SpotApi.md#list_candlesticks) | **GET** /spot/candlesticks | Market candlesticks
+[**get_fee**](SpotApi.md#get_fee) | **GET** /spot/fee | Query user trading fee rates
 [**list_spot_accounts**](SpotApi.md#list_spot_accounts) | **GET** /spot/accounts | List spot accounts
 [**create_batch_orders**](SpotApi.md#create_batch_orders) | **POST** /spot/batch_orders | Create a batch of orders
 [**list_all_open_orders**](SpotApi.md#list_all_open_orders) | **GET** /spot/open_orders | List all open orders
@@ -376,6 +377,71 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_fee**
+> TradeFee get_fee(currency_pair=currency_pair)
+
+Query user trading fee rates
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.SpotApi(api_client)
+currency_pair = 'BTC_USDT' # str | Specify a currency pair to retrieve precise fee rate  This field is optional. In most cases, the fee rate is identical among all currency pairs (optional)
+
+try:
+    # Query user trading fee rates
+    api_response = api_instance.get_fee(currency_pair=currency_pair)
+    print(api_response)
+except ApiException as e:
+    print("Exception when calling SpotApi->get_fee: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency_pair** | **str**| Specify a currency pair to retrieve precise fee rate  This field is optional. In most cases, the fee rate is identical among all currency pairs | [optional] 
+
+### Return type
+
+[**TradeFee**](TradeFee.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_spot_accounts**
 > list[SpotAccount] list_spot_accounts(currency=currency)
 
@@ -472,7 +538,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-order = [{"id":"12332324","text":"t-123456","create_time":"1548000000","update_time":"1548000100","currency_pair":"ETH_BTC","status":"cancelled","type":"limit","account":"spot","side":"buy","amount":"1","price":"5.00032","time_in_force":"gtc","auto_borrow":false,"left":"0.5","filled_total":"2.50016","fee":"0.005","fee_currency":"ETH","point_fee":"0","gt_fee":"0","gt_discount":false,"rebated_fee":"0","rebated_fee_currency":"BTC"}] # list[Order] | 
+order = [gate_api.Order()] # list[Order] | 
 
 try:
     # Create a batch of orders
@@ -513,7 +579,7 @@ Name | Type | Description  | Notes
 
 List all open orders
 
-List all open orders in all currency pairs. Each currency pair has its own pagination
+List open orders in all currency pairs.  Note that pagination parameters affect record number in each currency pair's open order list. No pagination is applied to the number of currency pairs returned. All currency pairs with open orders will be returned
 
 ### Example
 
@@ -540,7 +606,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records returned in one page in each currency pair (optional) (default to 100)
 
 try:
     # List all open orders
@@ -555,7 +621,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records returned in one page in each currency pair | [optional] [default to 100]
 
 ### Return type
 
@@ -609,7 +675,7 @@ api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'BTC_USDT' # str | Currency pair
 status = 'open' # str | List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled 
 page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records returned. If `status` is `open`, maximum of `limit` is 100 (optional) (default to 100)
 
 try:
     # List orders
@@ -626,7 +692,7 @@ Name | Type | Description  | Notes
  **currency_pair** | **str**| Currency pair | 
  **status** | **str**| List orders based on status  &#x60;open&#x60; - order is waiting to be filled &#x60;finished&#x60; - order has been filled or cancelled  | 
  **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records returned. If &#x60;status&#x60; is &#x60;open&#x60;, maximum of &#x60;limit&#x60; is 100 | [optional] [default to 100]
 
 ### Return type
 
@@ -677,7 +743,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-order = {"id":"12332324","text":"t-123456","create_time":"1548000000","update_time":"1548000100","currency_pair":"ETH_BTC","status":"cancelled","type":"limit","account":"spot","side":"buy","amount":"1","price":"5.00032","time_in_force":"gtc","auto_borrow":false,"left":"0.5","filled_total":"2.50016","fee":"0.005","fee_currency":"ETH","point_fee":"0","gt_fee":"0","gt_discount":false,"rebated_fee":"0","rebated_fee_currency":"BTC"} # Order | 
+order = gate_api.Order() # Order | 
 
 try:
     # Create an order
@@ -813,7 +879,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-cancel_order = [{"currency_pair":"BTC_USDT","id":"123456"}] # list[CancelOrder] | 
+cancel_order = [gate_api.CancelOrder()] # list[CancelOrder] | 
 
 try:
     # Cancel a batch of orders with an ID list

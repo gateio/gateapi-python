@@ -41,7 +41,7 @@ class FuturesInitialOrder(object):
         'text': 'str',
         'reduce_only': 'bool',
         'is_reduce_only': 'bool',
-        'is_close': 'bool'
+        'is_close': 'bool',
     }
 
     attribute_map = {
@@ -53,10 +53,23 @@ class FuturesInitialOrder(object):
         'text': 'text',
         'reduce_only': 'reduce_only',
         'is_reduce_only': 'is_reduce_only',
-        'is_close': 'is_close'
+        'is_close': 'is_close',
     }
 
-    def __init__(self, contract=None, size=None, price=None, close=False, tif='gtc', text=None, reduce_only=False, is_reduce_only=None, is_close=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        contract=None,
+        size=None,
+        price=None,
+        close=False,
+        tif='gtc',
+        text=None,
+        reduce_only=False,
+        is_reduce_only=None,
+        is_close=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
+        # type: (str, int, str, bool, str, str, bool, bool, bool, Configuration) -> None
         """FuturesInitialOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -209,8 +222,7 @@ class FuturesInitialOrder(object):
         allowed_values = ["gtc", "ioc"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and tif not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `tif` ({0}), must be one of {1}"  # noqa: E501
-                .format(tif, allowed_values)
+                "Invalid value for `tif` ({0}), must be one of {1}".format(tif, allowed_values)  # noqa: E501
             )
 
         self._tif = tif
@@ -314,18 +326,16 @@ class FuturesInitialOrder(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

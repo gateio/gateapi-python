@@ -49,7 +49,7 @@ class FuturesTicker(object):
         'funding_rate': 'str',
         'funding_rate_indicative': 'str',
         'index_price': 'str',
-        'quanto_base_rate': 'str'
+        'quanto_base_rate': 'str',
     }
 
     attribute_map = {
@@ -69,10 +69,31 @@ class FuturesTicker(object):
         'funding_rate': 'funding_rate',
         'funding_rate_indicative': 'funding_rate_indicative',
         'index_price': 'index_price',
-        'quanto_base_rate': 'quanto_base_rate'
+        'quanto_base_rate': 'quanto_base_rate',
     }
 
-    def __init__(self, contract=None, last=None, change_percentage=None, total_size=None, low_24h=None, high_24h=None, volume_24h=None, volume_24h_btc=None, volume_24h_usd=None, volume_24h_base=None, volume_24h_quote=None, volume_24h_settle=None, mark_price=None, funding_rate=None, funding_rate_indicative=None, index_price=None, quanto_base_rate=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        contract=None,
+        last=None,
+        change_percentage=None,
+        total_size=None,
+        low_24h=None,
+        high_24h=None,
+        volume_24h=None,
+        volume_24h_btc=None,
+        volume_24h_usd=None,
+        volume_24h_base=None,
+        volume_24h_quote=None,
+        volume_24h_settle=None,
+        mark_price=None,
+        funding_rate=None,
+        funding_rate_indicative=None,
+        index_price=None,
+        quanto_base_rate=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """FuturesTicker - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -530,18 +551,16 @@ class FuturesTicker(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

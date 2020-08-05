@@ -40,7 +40,7 @@ class LedgerRecord(object):
         'currency': 'str',
         'address': 'str',
         'memo': 'str',
-        'status': 'str'
+        'status': 'str',
     }
 
     attribute_map = {
@@ -51,10 +51,22 @@ class LedgerRecord(object):
         'currency': 'currency',
         'address': 'address',
         'memo': 'memo',
-        'status': 'status'
+        'status': 'status',
     }
 
-    def __init__(self, id=None, txid=None, timestamp=None, amount=None, currency=None, address=None, memo=None, status=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        id=None,
+        txid=None,
+        timestamp=None,
+        amount=None,
+        currency=None,
+        address=None,
+        memo=None,
+        status=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
+        # type: (str, str, str, str, str, str, str, str, Configuration) -> None
         """LedgerRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -273,8 +285,7 @@ class LedgerRecord(object):
         allowed_values = ["DONE", "CANCEL", "REQUEST", "MANUAL", "BCODE"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
-                .format(status, allowed_values)
+                "Invalid value for `status` ({0}), must be one of {1}".format(status, allowed_values)  # noqa: E501
             )
 
         self._status = status
@@ -286,18 +297,16 @@ class LedgerRecord(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

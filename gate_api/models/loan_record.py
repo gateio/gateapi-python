@@ -46,7 +46,7 @@ class LoanRecord(object):
         'auto_renew': 'bool',
         'repaid': 'str',
         'paid_interest': 'str',
-        'unpaid_interest': 'str'
+        'unpaid_interest': 'str',
     }
 
     attribute_map = {
@@ -63,10 +63,28 @@ class LoanRecord(object):
         'auto_renew': 'auto_renew',
         'repaid': 'repaid',
         'paid_interest': 'paid_interest',
-        'unpaid_interest': 'unpaid_interest'
+        'unpaid_interest': 'unpaid_interest',
     }
 
-    def __init__(self, id=None, loan_id=None, create_time=None, expire_time=None, status=None, borrow_user_id=None, currency=None, rate=None, amount=None, days=None, auto_renew=False, repaid=None, paid_interest=None, unpaid_interest=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        id=None,
+        loan_id=None,
+        create_time=None,
+        expire_time=None,
+        status=None,
+        borrow_user_id=None,
+        currency=None,
+        rate=None,
+        amount=None,
+        days=None,
+        auto_renew=False,
+        repaid=None,
+        paid_interest=None,
+        unpaid_interest=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
+        # type: (str, str, str, str, str, str, str, str, str, int, bool, str, str, str, Configuration) -> None
         """LoanRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -232,8 +250,7 @@ class LoanRecord(object):
         allowed_values = ["loaned", "finished"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
-                .format(status, allowed_values)
+                "Invalid value for `status` ({0}), must be one of {1}".format(status, allowed_values)  # noqa: E501
             )
 
         self._status = status
@@ -452,18 +469,16 @@ class LoanRecord(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

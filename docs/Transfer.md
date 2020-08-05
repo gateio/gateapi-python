@@ -4,8 +4,6 @@ Accounts available to transfer:  - `spot`: spot account - `margin`: margin accou
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Transfer ID | [optional] [readonly] 
-**created_at** | **str** | Timestamp when the transfer occurred | [optional] [readonly] 
 **currency** | **str** | Transfer currency. For futures account, &#x60;currency&#x60; can be set to &#x60;POINT&#x60; or settle currency | 
 **_from** | **str** | Account transferred from | 
 **to** | **str** | Account transferred to | 

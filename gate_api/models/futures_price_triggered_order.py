@@ -42,7 +42,7 @@ class FuturesPriceTriggeredOrder(object):
         'trade_id': 'int',
         'status': 'str',
         'finish_as': 'str',
-        'reason': 'str'
+        'reason': 'str',
     }
 
     attribute_map = {
@@ -55,10 +55,24 @@ class FuturesPriceTriggeredOrder(object):
         'trade_id': 'trade_id',
         'status': 'status',
         'finish_as': 'finish_as',
-        'reason': 'reason'
+        'reason': 'reason',
     }
 
-    def __init__(self, initial=None, trigger=None, id=None, user=None, create_time=None, finish_time=None, trade_id=None, status=None, finish_as=None, reason=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        initial=None,
+        trigger=None,
+        id=None,
+        user=None,
+        create_time=None,
+        finish_time=None,
+        trade_id=None,
+        status=None,
+        finish_as=None,
+        reason=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
+        # type: (FuturesInitialOrder, FuturesPriceTrigger, int, int, float, float, int, str, str, str, Configuration) -> None
         """FuturesPriceTriggeredOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -279,8 +293,7 @@ class FuturesPriceTriggeredOrder(object):
         allowed_values = ["open", "finished"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
-                .format(status, allowed_values)
+                "Invalid value for `status` ({0}), must be one of {1}".format(status, allowed_values)  # noqa: E501
             )
 
         self._status = status
@@ -308,8 +321,9 @@ class FuturesPriceTriggeredOrder(object):
         allowed_values = ["cancelled", "succeeded", "failed", "expired"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and finish_as not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `finish_as` ({0}), must be one of {1}"  # noqa: E501
-                .format(finish_as, allowed_values)
+                "Invalid value for `finish_as` ({0}), must be one of {1}".format(  # noqa: E501
+                    finish_as, allowed_values
+                )
             )
 
         self._finish_as = finish_as
@@ -344,18 +358,16 @@ class FuturesPriceTriggeredOrder(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

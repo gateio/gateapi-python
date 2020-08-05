@@ -445,7 +445,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginApi(api_client)
-loan = {"id":"123435","create_time":"1548000000","expire_time":"1548100000","side":"borrow","status":"loaned","currency":"BTC","rate":"0.002","amount":"1.5","days":10,"auto_renew":true,"currency_pair":"ETH_BTC","left":"0","repaid":"0","paid_interest":"0","unpaid_interest":"0","fee_rate":"0.18","orig_id":"123424"} # Loan | 
+loan = gate_api.Loan() # Loan | 
 
 try:
     # Lend or borrow
@@ -716,7 +716,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginApi(api_client)
 loan_id = '12345' # str | Loan ID
-loan_patch = {"currency":"BTC","side":"borrow","currency_pair":"BTC_USDT","auto_renew":false} # LoanPatch | 
+loan_patch = gate_api.LoanPatch() # LoanPatch | 
 
 try:
     # Modify a loan
@@ -848,7 +848,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginApi(api_client)
 loan_id = '12345' # str | Loan ID
-repay_request = {"currency_pair":"ETH_BTC","currency":"ETH","mode":"partial","amount":"100"} # RepayRequest | 
+repay_request = gate_api.RepayRequest() # RepayRequest | 
 
 try:
     # Repay a loan
@@ -1055,7 +1055,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginApi(api_client)
 loan_record_id = '12345' # str | Loan record ID
-loan_patch = {"currency":"BTC","side":"borrow","currency_pair":"BTC_USDT","auto_renew":false} # LoanPatch | 
+loan_patch = gate_api.LoanPatch() # LoanPatch | 
 
 try:
     # Modify a loan record

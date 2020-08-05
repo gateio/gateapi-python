@@ -59,5 +59,6 @@ from gate_api.models.spot_account import SpotAccount
 from gate_api.models.sub_account_transfer import SubAccountTransfer
 from gate_api.models.ticker import Ticker
 from gate_api.models.trade import Trade
+from gate_api.models.trade_fee import TradeFee
 from gate_api.models.transfer import Transfer
 from gate_api.models.trigger_order_response import TriggerOrderResponse

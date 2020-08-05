@@ -36,7 +36,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WithdrawalApi(api_client)
-ledger_record = {"id":"210496","timestamp":"1542000000","currency":"ETH","address":"1HkxtBAMrA3tP5ENnYY2CZortjZvFDH5Cs","txid":"128988928203223323290","amount":"222.61","memo":"","status":"DONE"} # LedgerRecord | 
+ledger_record = gate_api.LedgerRecord() # LedgerRecord | 
 
 try:
     # Withdraw

@@ -18,10 +18,7 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
-from gate_api.exceptions import (  # noqa: F401
-    ApiTypeError,
-    ApiValueError
-)
+from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
 
 
 class SpotApi(object):
@@ -52,8 +49,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[CurrencyPair]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.CurrencyPair]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -77,30 +74,19 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[CurrencyPair], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.CurrencyPair], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = []
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_currency_pairs" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_currency_pairs" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
 
@@ -117,14 +103,14 @@ class SpotApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/currency_pairs', 'GET',
+            '/spot/currency_pairs',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -137,7 +123,8 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def get_currency_pair(self, currency_pair, **kwargs):  # noqa: E501
         """Get detail of one single order  # noqa: E501
@@ -156,8 +143,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: CurrencyPair
-                 If the method is called asynchronously,
+        :rtype: gate_api.CurrencyPair
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -182,37 +169,28 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(CurrencyPair, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.CurrencyPair, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'currency_pair'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['currency_pair']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_currency_pair" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_currency_pair" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and ('currency_pair' not in local_var_params or  # noqa: E501
-                                                        local_var_params['currency_pair'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `currency_pair` when calling `get_currency_pair`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `currency_pair` when calling `get_currency_pair`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -229,14 +207,14 @@ class SpotApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/currency_pairs/{currency_pair}', 'GET',
+            '/spot/currency_pairs/{currency_pair}',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -249,7 +227,8 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_tickers(self, **kwargs):  # noqa: E501
         """Retrieve ticker information  # noqa: E501
@@ -269,8 +248,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[Ticker]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.Ticker]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -296,31 +275,19 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[Ticker], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.Ticker], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'currency_pair'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['currency_pair']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_tickers" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_tickers" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
 
@@ -339,14 +306,14 @@ class SpotApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/tickers', 'GET',
+            '/spot/tickers',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -359,7 +326,8 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_order_book(self, currency_pair, **kwargs):  # noqa: E501
         """Retrieve order book  # noqa: E501
@@ -381,8 +349,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: OrderBook
-                 If the method is called asynchronously,
+        :rtype: gate_api.OrderBook
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -410,44 +378,41 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(OrderBook, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.OrderBook, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'currency_pair',
-            'interval',
-            'limit'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['currency_pair', 'interval', 'limit']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_order_book" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_order_book" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and ('currency_pair' not in local_var_params or  # noqa: E501
-                                                        local_var_params['currency_pair'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `currency_pair` when calling `list_order_book`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `currency_pair` when calling `list_order_book`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 30:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_order_book`, must be a value less than or equal to `30`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_order_book`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 30
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_order_book`, must be a value less than or equal to `30`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_order_book`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -467,14 +432,14 @@ class SpotApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/order_book', 'GET',
+            '/spot/order_book',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -487,7 +452,8 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_trades(self, currency_pair, **kwargs):  # noqa: E501
         """Retrieve market trades  # noqa: E501
@@ -508,8 +474,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[Trade]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.Trade]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -536,44 +502,41 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[Trade], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.Trade], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'currency_pair',
-            'limit',
-            'last_id'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['currency_pair', 'limit', 'last_id']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_trades" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_trades" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and ('currency_pair' not in local_var_params or  # noqa: E501
-                                                        local_var_params['currency_pair'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `currency_pair` when calling `list_trades`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `currency_pair` when calling `list_trades`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_trades`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_trades`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_trades`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_trades`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -593,14 +556,14 @@ class SpotApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/trades', 'GET',
+            '/spot/trades',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -613,7 +576,8 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_candlesticks(self, currency_pair, **kwargs):  # noqa: E501
         """Market candlesticks  # noqa: E501
@@ -637,8 +601,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[list[str]]
-                 If the method is called asynchronously,
+        :rtype: list[list[str]]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -668,44 +632,35 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[list[str]], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[list[str]], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'currency_pair',
-            'limit',
-            '_from',
-            'to',
-            'interval'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['currency_pair', 'limit', '_from', 'to', 'interval']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_candlesticks" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_candlesticks" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and ('currency_pair' not in local_var_params or  # noqa: E501
-                                                        local_var_params['currency_pair'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `currency_pair` when calling `list_candlesticks`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `currency_pair` when calling `list_candlesticks`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_candlesticks`, must be a value less than or equal to `1000`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_candlesticks`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -729,14 +684,14 @@ class SpotApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/candlesticks', 'GET',
+            '/spot/candlesticks',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -749,7 +704,105 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
+
+    def get_fee(self, **kwargs):  # noqa: E501
+        """Query user trading fee rates  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_fee(async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str currency_pair: Specify a currency pair to retrieve precise fee rate  This field is optional. In most cases, the fee rate is identical among all currency pairs
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: gate_api.TradeFee
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_fee_with_http_info(**kwargs)  # noqa: E501
+
+    def get_fee_with_http_info(self, **kwargs):  # noqa: E501
+        """Query user trading fee rates  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_fee_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str currency_pair: Specify a currency pair to retrieve precise fee rate  This field is optional. In most cases, the fee rate is identical among all currency pairs
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(gate_api.TradeFee, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['currency_pair']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_fee" % key)
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'currency_pair' in local_var_params and local_var_params['currency_pair'] is not None:  # noqa: E501
+            query_params.append(('currency_pair', local_var_params['currency_pair']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiv4']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/spot/fee',
+            'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TradeFee',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+        )
 
     def list_spot_accounts(self, **kwargs):  # noqa: E501
         """List spot accounts  # noqa: E501
@@ -768,8 +821,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[SpotAccount]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.SpotAccount]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -794,31 +847,19 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[SpotAccount], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.SpotAccount], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'currency'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['currency']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_spot_accounts" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_spot_accounts" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
 
@@ -837,14 +878,14 @@ class SpotApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/accounts', 'GET',
+            '/spot/accounts',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -857,7 +898,8 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def create_batch_orders(self, order, **kwargs):  # noqa: E501
         """Create a batch of orders  # noqa: E501
@@ -877,8 +919,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[BatchOrder]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.BatchOrder]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -904,37 +946,28 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[BatchOrder], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.BatchOrder], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'order'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['order']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_batch_orders" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_batch_orders" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'order' is set
-        if self.api_client.client_side_validation and ('order' not in local_var_params or  # noqa: E501
-                                                        local_var_params['order'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `order` when calling `create_batch_orders`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'order' not in local_var_params or local_var_params['order'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `order` when calling `create_batch_orders`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -951,18 +984,19 @@ class SpotApi(object):
         if 'order' in local_var_params:
             body_params = local_var_params['order']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+            ['application/json']
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/batch_orders', 'POST',
+            '/spot/batch_orders',
+            'POST',
             path_params,
             query_params,
             header_params,
@@ -975,12 +1009,13 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_all_open_orders(self, **kwargs):  # noqa: E501
         """List all open orders  # noqa: E501
 
-        List all open orders in all currency pairs. Each currency pair has its own pagination  # noqa: E501
+        List open orders in all currency pairs.  Note that pagination parameters affect record number in each currency pair's open order list. No pagination is applied to the number of currency pairs returned. All currency pairs with open orders will be returned  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_all_open_orders(async_req=True)
@@ -988,7 +1023,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param int page: Page number
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records returned in one page in each currency pair
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -996,8 +1031,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[OpenOrders]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.OpenOrders]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1006,7 +1041,7 @@ class SpotApi(object):
     def list_all_open_orders_with_http_info(self, **kwargs):  # noqa: E501
         """List all open orders  # noqa: E501
 
-        List all open orders in all currency pairs. Each currency pair has its own pagination  # noqa: E501
+        List open orders in all currency pairs.  Note that pagination parameters affect record number in each currency pair's open order list. No pagination is applied to the number of currency pairs returned. All currency pairs with open orders will be returned  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_all_open_orders_with_http_info(async_req=True)
@@ -1014,7 +1049,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param int page: Page number
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records returned in one page in each currency pair
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1024,41 +1059,40 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[OpenOrders], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.OpenOrders], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'page',
-            'limit'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['page', 'limit']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_all_open_orders" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_all_open_orders" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
 
-        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `page` when calling `list_all_open_orders`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_all_open_orders`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_all_open_orders`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `page` when calling `list_all_open_orders`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_all_open_orders`, must be a value less than or equal to `100`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_all_open_orders`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1076,14 +1110,14 @@ class SpotApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/open_orders', 'GET',
+            '/spot/open_orders',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -1096,7 +1130,8 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_orders(self, currency_pair, status, **kwargs):  # noqa: E501
         """List orders  # noqa: E501
@@ -1110,7 +1145,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param str status: List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled  (required)
         :param int page: Page number
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records returned. If `status` is `open`, maximum of `limit` is 100
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1118,8 +1153,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[Order]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.Order]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1137,7 +1172,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param str status: List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled  (required)
         :param int page: Page number
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records returned. If `status` is `open`, maximum of `limit` is 100
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1147,51 +1182,52 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[Order], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.Order], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'currency_pair',
-            'status',
-            'page',
-            'limit'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['currency_pair', 'status', 'page', 'limit']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_orders" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_orders" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and ('currency_pair' not in local_var_params or  # noqa: E501
-                                                        local_var_params['currency_pair'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `currency_pair` when calling `list_orders`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `currency_pair` when calling `list_orders`"
+            )  # noqa: E501
         # verify the required parameter 'status' is set
-        if self.api_client.client_side_validation and ('status' not in local_var_params or  # noqa: E501
-                                                        local_var_params['status'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'status' not in local_var_params or local_var_params['status'] is None  # noqa: E501
+        ):  # noqa: E501
             raise ApiValueError("Missing the required parameter `status` when calling `list_orders`")  # noqa: E501
 
-        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `page` when calling `list_orders`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_orders`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_orders`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `page` when calling `list_orders`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_orders`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_orders`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1213,14 +1249,14 @@ class SpotApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/orders', 'GET',
+            '/spot/orders',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -1233,7 +1269,8 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def create_order(self, order, **kwargs):  # noqa: E501
         """Create an order  # noqa: E501
@@ -1252,8 +1289,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: Order
-                 If the method is called asynchronously,
+        :rtype: gate_api.Order
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1278,36 +1315,25 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(Order, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.Order, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'order'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['order']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_order" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_order" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'order' is set
-        if self.api_client.client_side_validation and ('order' not in local_var_params or  # noqa: E501
-                                                        local_var_params['order'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'order' not in local_var_params or local_var_params['order'] is None  # noqa: E501
+        ):  # noqa: E501
             raise ApiValueError("Missing the required parameter `order` when calling `create_order`")  # noqa: E501
 
         collection_formats = {}
@@ -1325,18 +1351,19 @@ class SpotApi(object):
         if 'order' in local_var_params:
             body_params = local_var_params['order']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+            ['application/json']
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/orders', 'POST',
+            '/spot/orders',
+            'POST',
             path_params,
             query_params,
             header_params,
@@ -1349,7 +1376,8 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def cancel_orders(self, currency_pair, **kwargs):  # noqa: E501
         """Cancel all `open` orders in specified currency pair  # noqa: E501
@@ -1370,8 +1398,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[Order]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.Order]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1398,39 +1426,28 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[Order], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.Order], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'currency_pair',
-            'side',
-            'account'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['currency_pair', 'side', 'account']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method cancel_orders" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_orders" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and ('currency_pair' not in local_var_params or  # noqa: E501
-                                                        local_var_params['currency_pair'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `currency_pair` when calling `cancel_orders`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `currency_pair` when calling `cancel_orders`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1451,14 +1468,14 @@ class SpotApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/orders', 'DELETE',
+            '/spot/orders',
+            'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1471,7 +1488,8 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def cancel_batch_orders(self, cancel_order, **kwargs):  # noqa: E501
         """Cancel a batch of orders with an ID list  # noqa: E501
@@ -1491,8 +1509,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[CancelOrderResult]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.CancelOrderResult]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1518,37 +1536,28 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[CancelOrderResult], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.CancelOrderResult], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'cancel_order'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['cancel_order']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method cancel_batch_orders" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_batch_orders" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'cancel_order' is set
-        if self.api_client.client_side_validation and ('cancel_order' not in local_var_params or  # noqa: E501
-                                                        local_var_params['cancel_order'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `cancel_order` when calling `cancel_batch_orders`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'cancel_order' not in local_var_params or local_var_params['cancel_order'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `cancel_order` when calling `cancel_batch_orders`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1565,18 +1574,19 @@ class SpotApi(object):
         if 'cancel_order' in local_var_params:
             body_params = local_var_params['cancel_order']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+            ['application/json']
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/cancel_batch_orders', 'POST',
+            '/spot/cancel_batch_orders',
+            'POST',
             path_params,
             query_params,
             header_params,
@@ -1589,7 +1599,8 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def get_order(self, order_id, currency_pair, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
@@ -1609,8 +1620,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: Order
-                 If the method is called asynchronously,
+        :rtype: gate_api.Order
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1636,41 +1647,30 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(Order, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.Order, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'order_id',
-            'currency_pair'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['order_id', 'currency_pair']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_order" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_order" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['order_id'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
+        ):  # noqa: E501
             raise ApiValueError("Missing the required parameter `order_id` when calling `get_order`")  # noqa: E501
         # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and ('currency_pair' not in local_var_params or  # noqa: E501
-                                                        local_var_params['currency_pair'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
+        ):  # noqa: E501
             raise ApiValueError("Missing the required parameter `currency_pair` when calling `get_order`")  # noqa: E501
 
         collection_formats = {}
@@ -1690,14 +1690,14 @@ class SpotApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/orders/{order_id}', 'GET',
+            '/spot/orders/{order_id}',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -1710,7 +1710,8 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def cancel_order(self, order_id, currency_pair, **kwargs):  # noqa: E501
         """Cancel a single order  # noqa: E501
@@ -1730,8 +1731,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: Order
-                 If the method is called asynchronously,
+        :rtype: gate_api.Order
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1757,42 +1758,33 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(Order, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.Order, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'order_id',
-            'currency_pair'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['order_id', 'currency_pair']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method cancel_order" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_order" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['order_id'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
+        ):  # noqa: E501
             raise ApiValueError("Missing the required parameter `order_id` when calling `cancel_order`")  # noqa: E501
         # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and ('currency_pair' not in local_var_params or  # noqa: E501
-                                                        local_var_params['currency_pair'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `currency_pair` when calling `cancel_order`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `currency_pair` when calling `cancel_order`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1811,14 +1803,14 @@ class SpotApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/orders/{order_id}', 'DELETE',
+            '/spot/orders/{order_id}',
+            'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1831,7 +1823,8 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_my_trades(self, currency_pair, **kwargs):  # noqa: E501
         """List personal trading history  # noqa: E501
@@ -1853,8 +1846,8 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[Trade]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.Trade]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1882,47 +1875,47 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[Trade], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.Trade], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'currency_pair',
-            'limit',
-            'page',
-            'order_id'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['currency_pair', 'limit', 'page', 'order_id']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_my_trades" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_my_trades" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and ('currency_pair' not in local_var_params or  # noqa: E501
-                                                        local_var_params['currency_pair'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `currency_pair` when calling `list_my_trades`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `currency_pair` when calling `list_my_trades`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_my_trades`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_my_trades`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `page` when calling `list_my_trades`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_my_trades`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_my_trades`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `page` when calling `list_my_trades`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1944,14 +1937,14 @@ class SpotApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/spot/my_trades', 'GET',
+            '/spot/my_trades',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -1964,4 +1957,5 @@ class SpotApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )

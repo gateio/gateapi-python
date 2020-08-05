@@ -18,10 +18,7 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
-from gate_api.exceptions import (  # noqa: F401
-    ApiTypeError,
-    ApiValueError
-)
+from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
 
 
 class DeliveryApi(object):
@@ -53,8 +50,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[DeliveryContract]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.DeliveryContract]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -79,37 +76,28 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[DeliveryContract], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.DeliveryContract], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_delivery_contracts" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_delivery_contracts" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_delivery_contracts`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_delivery_contracts`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -126,14 +114,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/contracts', 'GET',
+            '/delivery/{settle}/contracts',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -146,7 +134,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def get_delivery_contract(self, settle, contract, **kwargs):  # noqa: E501
         """Get a single contract  # noqa: E501
@@ -166,8 +155,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: DeliveryContract
-                 If the method is called asynchronously,
+        :rtype: gate_api.DeliveryContract
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -193,42 +182,35 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(DeliveryContract, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.DeliveryContract, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_delivery_contract" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_delivery_contract" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `get_delivery_contract`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `get_delivery_contract`"
+            )  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
-                                                        local_var_params['contract'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `contract` when calling `get_delivery_contract`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `contract` when calling `get_delivery_contract`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -247,14 +229,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/contracts/{contract}', 'GET',
+            '/delivery/{settle}/contracts/{contract}',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -267,7 +249,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_delivery_order_book(self, settle, contract, **kwargs):  # noqa: E501
         """Futures order book  # noqa: E501
@@ -290,8 +273,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: FuturesOrderBook
-                 If the method is called asynchronously,
+        :rtype: gate_api.FuturesOrderBook
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -320,49 +303,50 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(FuturesOrderBook, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.FuturesOrderBook, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract',
-            'interval',
-            'limit'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract', 'interval', 'limit']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_delivery_order_book" % key
+                    "Got an unexpected keyword argument '%s'" " to method list_delivery_order_book" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_delivery_order_book`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_delivery_order_book`"
+            )  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
-                                                        local_var_params['contract'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `contract` when calling `list_delivery_order_book`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `contract` when calling `list_delivery_order_book`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 20:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_order_book`, must be a value less than or equal to `20`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_order_book`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 20
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_order_book`, must be a value less than or equal to `20`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_order_book`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -384,14 +368,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/order_book', 'GET',
+            '/delivery/{settle}/order_book',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -404,7 +388,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_delivery_trades(self, settle, contract, **kwargs):  # noqa: E501
         """Futures trading history  # noqa: E501
@@ -428,8 +413,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[FuturesTrade]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.FuturesTrade]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -459,51 +444,48 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[FuturesTrade], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.FuturesTrade], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract',
-            'limit',
-            'last_id',
-            '_from',
-            'to'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract', 'limit', 'last_id', '_from', 'to']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_delivery_trades" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_delivery_trades" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_delivery_trades`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_delivery_trades`"
+            )  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
-                                                        local_var_params['contract'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `contract` when calling `list_delivery_trades`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `contract` when calling `list_delivery_trades`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_trades`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_trades`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_trades`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_trades`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -529,14 +511,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/trades', 'GET',
+            '/delivery/{settle}/trades',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -549,7 +531,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_delivery_candlesticks(self, settle, contract, **kwargs):  # noqa: E501
         """Get futures candlesticks  # noqa: E501
@@ -574,8 +557,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[FuturesCandlestick]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.FuturesCandlestick]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -606,49 +589,44 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[FuturesCandlestick], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.FuturesCandlestick], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract',
-            '_from',
-            'to',
-            'limit',
-            'interval'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract', '_from', 'to', 'limit', 'interval']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_delivery_candlesticks" % key
+                    "Got an unexpected keyword argument '%s'" " to method list_delivery_candlesticks" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_delivery_candlesticks`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_delivery_candlesticks`"
+            )  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
-                                                        local_var_params['contract'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `contract` when calling `list_delivery_candlesticks`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `contract` when calling `list_delivery_candlesticks`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 2000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_candlesticks`, must be a value less than or equal to `2000`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 2000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_candlesticks`, must be a value less than or equal to `2000`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -674,14 +652,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/candlesticks', 'GET',
+            '/delivery/{settle}/candlesticks',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -694,7 +672,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_delivery_tickers(self, settle, **kwargs):  # noqa: E501
         """List futures tickers  # noqa: E501
@@ -714,8 +693,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[FuturesTicker]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.FuturesTicker]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -741,38 +720,28 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[FuturesTicker], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.FuturesTicker], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_delivery_tickers" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_delivery_tickers" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_delivery_tickers`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_delivery_tickers`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -791,14 +760,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/tickers', 'GET',
+            '/delivery/{settle}/tickers',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -811,7 +780,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_delivery_insurance_ledger(self, settle, **kwargs):  # noqa: E501
         """Futures insurance balance history  # noqa: E501
@@ -831,8 +801,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[InsuranceRecord]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.InsuranceRecord]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -858,43 +828,43 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[InsuranceRecord], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.InsuranceRecord], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'limit'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'limit']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_delivery_insurance_ledger" % key
+                    "Got an unexpected keyword argument '%s'" " to method list_delivery_insurance_ledger" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_delivery_insurance_ledger`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_delivery_insurance_ledger`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_insurance_ledger`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_insurance_ledger`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_insurance_ledger`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_insurance_ledger`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -912,14 +882,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/insurance', 'GET',
+            '/delivery/{settle}/insurance',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -932,7 +902,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_delivery_accounts(self, settle, **kwargs):  # noqa: E501
         """Query futures account  # noqa: E501
@@ -951,8 +922,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: FuturesAccount
-                 If the method is called asynchronously,
+        :rtype: gate_api.FuturesAccount
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -977,37 +948,28 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(FuturesAccount, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.FuturesAccount, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_delivery_accounts" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_delivery_accounts" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_delivery_accounts`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_delivery_accounts`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1024,14 +986,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/accounts', 'GET',
+            '/delivery/{settle}/accounts',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -1044,7 +1006,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_delivery_account_book(self, settle, **kwargs):  # noqa: E501
         """Query account book  # noqa: E501
@@ -1067,8 +1030,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[FuturesAccountBook]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.FuturesAccountBook]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1097,46 +1060,43 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[FuturesAccountBook], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.FuturesAccountBook], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'limit',
-            '_from',
-            'to',
-            'type'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'limit', '_from', 'to', 'type']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_delivery_account_book" % key
+                    "Got an unexpected keyword argument '%s'" " to method list_delivery_account_book" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_delivery_account_book`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_delivery_account_book`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_account_book`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_account_book`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_account_book`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_account_book`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1160,14 +1120,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/account_book', 'GET',
+            '/delivery/{settle}/account_book',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -1180,7 +1140,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_delivery_positions(self, settle, **kwargs):  # noqa: E501
         """List all positions of a user  # noqa: E501
@@ -1199,8 +1160,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[Position]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.Position]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1225,37 +1186,28 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[Position], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.Position], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_delivery_positions" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_delivery_positions" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_delivery_positions`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_delivery_positions`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1272,14 +1224,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/positions', 'GET',
+            '/delivery/{settle}/positions',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -1292,7 +1244,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def get_delivery_position(self, settle, contract, **kwargs):  # noqa: E501
         """Get single position  # noqa: E501
@@ -1312,8 +1265,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: Position
-                 If the method is called asynchronously,
+        :rtype: gate_api.Position
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1339,42 +1292,35 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(Position, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.Position, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_delivery_position" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_delivery_position" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `get_delivery_position`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `get_delivery_position`"
+            )  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
-                                                        local_var_params['contract'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `contract` when calling `get_delivery_position`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `contract` when calling `get_delivery_position`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1393,14 +1339,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/positions/{contract}', 'GET',
+            '/delivery/{settle}/positions/{contract}',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -1413,7 +1359,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def update_delivery_position_margin(self, settle, contract, change, **kwargs):  # noqa: E501
         """Update position margin  # noqa: E501
@@ -1434,8 +1381,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: Position
-                 If the method is called asynchronously,
+        :rtype: gate_api.Position
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1462,47 +1409,44 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(Position, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.Position, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract',
-            'change'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract', 'change']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_delivery_position_margin" % key
+                    "Got an unexpected keyword argument '%s'" " to method update_delivery_position_margin" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `update_delivery_position_margin`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `update_delivery_position_margin`"
+            )  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
-                                                        local_var_params['contract'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `contract` when calling `update_delivery_position_margin`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `contract` when calling `update_delivery_position_margin`"
+            )  # noqa: E501
         # verify the required parameter 'change' is set
-        if self.api_client.client_side_validation and ('change' not in local_var_params or  # noqa: E501
-                                                        local_var_params['change'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `change` when calling `update_delivery_position_margin`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'change' not in local_var_params or local_var_params['change'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `change` when calling `update_delivery_position_margin`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1523,14 +1467,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/positions/{contract}/margin', 'POST',
+            '/delivery/{settle}/positions/{contract}/margin',
+            'POST',
             path_params,
             query_params,
             header_params,
@@ -1543,7 +1487,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def update_delivery_position_leverage(self, settle, contract, leverage, **kwargs):  # noqa: E501
         """Update position leverage  # noqa: E501
@@ -1564,8 +1509,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: Position
-                 If the method is called asynchronously,
+        :rtype: gate_api.Position
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1592,47 +1537,44 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(Position, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.Position, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract',
-            'leverage'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract', 'leverage']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_delivery_position_leverage" % key
+                    "Got an unexpected keyword argument '%s'" " to method update_delivery_position_leverage" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `update_delivery_position_leverage`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `update_delivery_position_leverage`"
+            )  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
-                                                        local_var_params['contract'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `contract` when calling `update_delivery_position_leverage`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `contract` when calling `update_delivery_position_leverage`"
+            )  # noqa: E501
         # verify the required parameter 'leverage' is set
-        if self.api_client.client_side_validation and ('leverage' not in local_var_params or  # noqa: E501
-                                                        local_var_params['leverage'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `leverage` when calling `update_delivery_position_leverage`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'leverage' not in local_var_params or local_var_params['leverage'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `leverage` when calling `update_delivery_position_leverage`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1653,14 +1595,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/positions/{contract}/leverage', 'POST',
+            '/delivery/{settle}/positions/{contract}/leverage',
+            'POST',
             path_params,
             query_params,
             header_params,
@@ -1673,7 +1615,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def update_delivery_position_risk_limit(self, settle, contract, risk_limit, **kwargs):  # noqa: E501
         """Update position risk limit  # noqa: E501
@@ -1694,12 +1637,14 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: Position
-                 If the method is called asynchronously,
+        :rtype: gate_api.Position
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_delivery_position_risk_limit_with_http_info(settle, contract, risk_limit, **kwargs)  # noqa: E501
+        return self.update_delivery_position_risk_limit_with_http_info(
+            settle, contract, risk_limit, **kwargs
+        )  # noqa: E501
 
     def update_delivery_position_risk_limit_with_http_info(self, settle, contract, risk_limit, **kwargs):  # noqa: E501
         """Update position risk limit  # noqa: E501
@@ -1722,47 +1667,44 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(Position, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.Position, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract',
-            'risk_limit'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract', 'risk_limit']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_delivery_position_risk_limit" % key
+                    "Got an unexpected keyword argument '%s'" " to method update_delivery_position_risk_limit" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `update_delivery_position_risk_limit`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `update_delivery_position_risk_limit`"
+            )  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
-                                                        local_var_params['contract'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `contract` when calling `update_delivery_position_risk_limit`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `contract` when calling `update_delivery_position_risk_limit`"
+            )  # noqa: E501
         # verify the required parameter 'risk_limit' is set
-        if self.api_client.client_side_validation and ('risk_limit' not in local_var_params or  # noqa: E501
-                                                        local_var_params['risk_limit'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `risk_limit` when calling `update_delivery_position_risk_limit`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'risk_limit' not in local_var_params or local_var_params['risk_limit'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `risk_limit` when calling `update_delivery_position_risk_limit`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1783,14 +1725,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/positions/{contract}/risk_limit', 'POST',
+            '/delivery/{settle}/positions/{contract}/risk_limit',
+            'POST',
             path_params,
             query_params,
             header_params,
@@ -1803,7 +1745,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_delivery_orders(self, settle, status, **kwargs):  # noqa: E501
         """List futures orders  # noqa: E501
@@ -1829,8 +1772,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[FuturesOrder]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.FuturesOrder]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -1862,54 +1805,54 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[FuturesOrder], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.FuturesOrder], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'status',
-            'contract',
-            'limit',
-            'offset',
-            'last_id',
-            'count_total'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'status', 'contract', 'limit', 'offset', 'last_id', 'count_total']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_delivery_orders" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_delivery_orders" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_delivery_orders`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_delivery_orders`"
+            )  # noqa: E501
         # verify the required parameter 'status' is set
-        if self.api_client.client_side_validation and ('status' not in local_var_params or  # noqa: E501
-                                                        local_var_params['status'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `status` when calling `list_delivery_orders`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'status' not in local_var_params or local_var_params['status'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `status` when calling `list_delivery_orders`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_orders`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_orders`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `offset` when calling `list_delivery_orders`, must be a value greater than or equal to `0`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_orders`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_orders`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `offset` when calling `list_delivery_orders`, must be a value greater than or equal to `0`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1937,14 +1880,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/orders', 'GET',
+            '/delivery/{settle}/orders',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -1957,7 +1900,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def create_delivery_order(self, settle, futures_order, **kwargs):  # noqa: E501
         """Create a futures order  # noqa: E501
@@ -1978,8 +1922,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: FuturesOrder
-                 If the method is called asynchronously,
+        :rtype: gate_api.FuturesOrder
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -2006,42 +1950,35 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(FuturesOrder, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.FuturesOrder, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'futures_order'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'futures_order']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_delivery_order" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_delivery_order" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `create_delivery_order`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `create_delivery_order`"
+            )  # noqa: E501
         # verify the required parameter 'futures_order' is set
-        if self.api_client.client_side_validation and ('futures_order' not in local_var_params or  # noqa: E501
-                                                        local_var_params['futures_order'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `futures_order` when calling `create_delivery_order`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'futures_order' not in local_var_params or local_var_params['futures_order'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `futures_order` when calling `create_delivery_order`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -2060,18 +1997,19 @@ class DeliveryApi(object):
         if 'futures_order' in local_var_params:
             body_params = local_var_params['futures_order']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+            ['application/json']
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/orders', 'POST',
+            '/delivery/{settle}/orders',
+            'POST',
             path_params,
             query_params,
             header_params,
@@ -2084,7 +2022,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def cancel_delivery_orders(self, settle, contract, **kwargs):  # noqa: E501
         """Cancel all `open` orders matched  # noqa: E501
@@ -2106,8 +2045,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[FuturesOrder]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.FuturesOrder]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -2135,43 +2074,35 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[FuturesOrder], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.FuturesOrder], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract',
-            'side'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract', 'side']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method cancel_delivery_orders" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_delivery_orders" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `cancel_delivery_orders`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `cancel_delivery_orders`"
+            )  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
-                                                        local_var_params['contract'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `contract` when calling `cancel_delivery_orders`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `contract` when calling `cancel_delivery_orders`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -2192,14 +2123,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/orders', 'DELETE',
+            '/delivery/{settle}/orders',
+            'DELETE',
             path_params,
             query_params,
             header_params,
@@ -2212,7 +2143,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def get_delivery_order(self, settle, order_id, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
@@ -2233,8 +2165,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: FuturesOrder
-                 If the method is called asynchronously,
+        :rtype: gate_api.FuturesOrder
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -2261,42 +2193,35 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(FuturesOrder, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.FuturesOrder, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'order_id'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'order_id']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_delivery_order" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_delivery_order" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `get_delivery_order`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `get_delivery_order`"
+            )  # noqa: E501
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['order_id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `order_id` when calling `get_delivery_order`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `order_id` when calling `get_delivery_order`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -2315,14 +2240,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/orders/{order_id}', 'GET',
+            '/delivery/{settle}/orders/{order_id}',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -2335,7 +2260,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def cancel_delivery_order(self, settle, order_id, **kwargs):  # noqa: E501
         """Cancel a single order  # noqa: E501
@@ -2355,8 +2281,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: FuturesOrder
-                 If the method is called asynchronously,
+        :rtype: gate_api.FuturesOrder
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -2382,42 +2308,35 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(FuturesOrder, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.FuturesOrder, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'order_id'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'order_id']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method cancel_delivery_order" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_delivery_order" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `cancel_delivery_order`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `cancel_delivery_order`"
+            )  # noqa: E501
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['order_id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `order_id` when calling `cancel_delivery_order`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `order_id` when calling `cancel_delivery_order`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -2436,14 +2355,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/orders/{order_id}', 'DELETE',
+            '/delivery/{settle}/orders/{order_id}',
+            'DELETE',
             path_params,
             query_params,
             header_params,
@@ -2456,7 +2375,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def get_my_delivery_trades(self, settle, **kwargs):  # noqa: E501
         """List personal trading history  # noqa: E501
@@ -2481,8 +2401,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[MyFuturesTrade]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.MyFuturesTrade]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -2513,50 +2433,47 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[MyFuturesTrade], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.MyFuturesTrade], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract',
-            'order',
-            'limit',
-            'offset',
-            'last_id',
-            'count_total'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract', 'order', 'limit', 'offset', 'last_id', 'count_total']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_my_delivery_trades" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_my_delivery_trades" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `get_my_delivery_trades`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `get_my_delivery_trades`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `get_my_delivery_trades`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `get_my_delivery_trades`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `offset` when calling `get_my_delivery_trades`, must be a value greater than or equal to `0`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `get_my_delivery_trades`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `get_my_delivery_trades`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `offset` when calling `get_my_delivery_trades`, must be a value greater than or equal to `0`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2584,14 +2501,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/my_trades', 'GET',
+            '/delivery/{settle}/my_trades',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -2604,7 +2521,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_delivery_position_close(self, settle, **kwargs):  # noqa: E501
         """List position close history  # noqa: E501
@@ -2625,8 +2543,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[PositionClose]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.PositionClose]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -2653,44 +2571,43 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[PositionClose], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.PositionClose], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract',
-            'limit'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract', 'limit']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_delivery_position_close" % key
+                    "Got an unexpected keyword argument '%s'" " to method list_delivery_position_close" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_delivery_position_close`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_delivery_position_close`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_position_close`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_position_close`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_position_close`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_position_close`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2710,14 +2627,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/position_close', 'GET',
+            '/delivery/{settle}/position_close',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -2730,7 +2647,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_delivery_liquidates(self, settle, **kwargs):  # noqa: E501
         """List liquidation history  # noqa: E501
@@ -2752,8 +2670,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[FuturesLiquidate]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.FuturesLiquidate]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -2781,45 +2699,43 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[FuturesLiquidate], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.FuturesLiquidate], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract',
-            'limit',
-            'at'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract', 'limit', 'at']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_delivery_liquidates" % key
+                    "Got an unexpected keyword argument '%s'" " to method list_delivery_liquidates" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_delivery_liquidates`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_delivery_liquidates`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_liquidates`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_liquidates`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_liquidates`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_liquidates`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2841,14 +2757,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/liquidates', 'GET',
+            '/delivery/{settle}/liquidates',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -2861,7 +2777,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_delivery_settlements(self, settle, **kwargs):  # noqa: E501
         """List settlement history  # noqa: E501
@@ -2883,8 +2800,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[DeliverySettlement]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.DeliverySettlement]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -2912,45 +2829,43 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[DeliverySettlement], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.DeliverySettlement], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract',
-            'limit',
-            'at'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract', 'limit', 'at']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_delivery_settlements" % key
+                    "Got an unexpected keyword argument '%s'" " to method list_delivery_settlements" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_delivery_settlements`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_delivery_settlements`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_settlements`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_delivery_settlements`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_settlements`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_delivery_settlements`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2972,14 +2887,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/settlements', 'GET',
+            '/delivery/{settle}/settlements',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -2992,7 +2907,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_price_triggered_delivery_orders(self, settle, status, **kwargs):  # noqa: E501
         """List all auto orders  # noqa: E501
@@ -3015,8 +2931,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[FuturesPriceTriggeredOrder]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.FuturesPriceTriggeredOrder]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -3045,52 +2961,56 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[FuturesPriceTriggeredOrder], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.FuturesPriceTriggeredOrder], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'status',
-            'contract',
-            'limit',
-            'offset'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'status', 'contract', 'limit', 'offset']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_price_triggered_delivery_orders" % key
+                    "Got an unexpected keyword argument '%s'" " to method list_price_triggered_delivery_orders" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `list_price_triggered_delivery_orders`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_price_triggered_delivery_orders`"
+            )  # noqa: E501
         # verify the required parameter 'status' is set
-        if self.api_client.client_side_validation and ('status' not in local_var_params or  # noqa: E501
-                                                        local_var_params['status'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `status` when calling `list_price_triggered_delivery_orders`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'status' not in local_var_params or local_var_params['status'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `status` when calling `list_price_triggered_delivery_orders`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_price_triggered_delivery_orders`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_price_triggered_delivery_orders`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `offset` when calling `list_price_triggered_delivery_orders`, must be a value greater than or equal to `0`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_price_triggered_delivery_orders`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_price_triggered_delivery_orders`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `offset` when calling `list_price_triggered_delivery_orders`, must be a value greater than or equal to `0`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -3114,14 +3034,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/price_orders', 'GET',
+            '/delivery/{settle}/price_orders',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -3134,7 +3054,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def create_price_triggered_delivery_order(self, settle, futures_price_triggered_order, **kwargs):  # noqa: E501
         """Create a price-triggered order  # noqa: E501
@@ -3154,14 +3075,18 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: TriggerOrderResponse
-                 If the method is called asynchronously,
+        :rtype: gate_api.TriggerOrderResponse
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.create_price_triggered_delivery_order_with_http_info(settle, futures_price_triggered_order, **kwargs)  # noqa: E501
+        return self.create_price_triggered_delivery_order_with_http_info(
+            settle, futures_price_triggered_order, **kwargs
+        )  # noqa: E501
 
-    def create_price_triggered_delivery_order_with_http_info(self, settle, futures_price_triggered_order, **kwargs):  # noqa: E501
+    def create_price_triggered_delivery_order_with_http_info(
+        self, settle, futures_price_triggered_order, **kwargs
+    ):  # noqa: E501
         """Create a price-triggered order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3181,42 +3106,38 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(TriggerOrderResponse, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.TriggerOrderResponse, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'futures_price_triggered_order'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'futures_price_triggered_order']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_price_triggered_delivery_order" % key
+                    "Got an unexpected keyword argument '%s'" " to method create_price_triggered_delivery_order" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `create_price_triggered_delivery_order`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `create_price_triggered_delivery_order`"
+            )  # noqa: E501
         # verify the required parameter 'futures_price_triggered_order' is set
-        if self.api_client.client_side_validation and ('futures_price_triggered_order' not in local_var_params or  # noqa: E501
-                                                        local_var_params['futures_price_triggered_order'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `futures_price_triggered_order` when calling `create_price_triggered_delivery_order`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'futures_price_triggered_order' not in local_var_params
+            or local_var_params['futures_price_triggered_order'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `futures_price_triggered_order` when calling `create_price_triggered_delivery_order`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -3235,18 +3156,19 @@ class DeliveryApi(object):
         if 'futures_price_triggered_order' in local_var_params:
             body_params = local_var_params['futures_price_triggered_order']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+            ['application/json']
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/price_orders', 'POST',
+            '/delivery/{settle}/price_orders',
+            'POST',
             path_params,
             query_params,
             header_params,
@@ -3259,7 +3181,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def cancel_price_triggered_delivery_order_list(self, settle, contract, **kwargs):  # noqa: E501
         """Cancel all open orders  # noqa: E501
@@ -3279,8 +3202,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: list[FuturesPriceTriggeredOrder]
-                 If the method is called asynchronously,
+        :rtype: list[gate_api.FuturesPriceTriggeredOrder]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -3306,25 +3229,15 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(list[FuturesPriceTriggeredOrder], status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(list[gate_api.FuturesPriceTriggeredOrder], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'contract'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'contract']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -3335,13 +3248,19 @@ class DeliveryApi(object):
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `cancel_price_triggered_delivery_order_list`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `cancel_price_triggered_delivery_order_list`"
+            )  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
-                                                        local_var_params['contract'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `contract` when calling `cancel_price_triggered_delivery_order_list`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `contract` when calling `cancel_price_triggered_delivery_order_list`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -3360,14 +3279,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/price_orders', 'DELETE',
+            '/delivery/{settle}/price_orders',
+            'DELETE',
             path_params,
             query_params,
             header_params,
@@ -3380,7 +3299,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def get_price_triggered_delivery_order(self, settle, order_id, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
@@ -3400,8 +3320,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: FuturesPriceTriggeredOrder
-                 If the method is called asynchronously,
+        :rtype: gate_api.FuturesPriceTriggeredOrder
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -3427,42 +3347,37 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(FuturesPriceTriggeredOrder, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.FuturesPriceTriggeredOrder, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'order_id'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'order_id']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_price_triggered_delivery_order" % key
+                    "Got an unexpected keyword argument '%s'" " to method get_price_triggered_delivery_order" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `get_price_triggered_delivery_order`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `get_price_triggered_delivery_order`"
+            )  # noqa: E501
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['order_id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `order_id` when calling `get_price_triggered_delivery_order`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `order_id` when calling `get_price_triggered_delivery_order`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -3481,14 +3396,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/price_orders/{order_id}', 'GET',
+            '/delivery/{settle}/price_orders/{order_id}',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -3501,7 +3416,8 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def cancel_price_triggered_delivery_order(self, settle, order_id, **kwargs):  # noqa: E501
         """Cancel a single order  # noqa: E501
@@ -3521,8 +3437,8 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: FuturesPriceTriggeredOrder
-                 If the method is called asynchronously,
+        :rtype: gate_api.FuturesPriceTriggeredOrder
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -3548,42 +3464,37 @@ class DeliveryApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(FuturesPriceTriggeredOrder, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.FuturesPriceTriggeredOrder, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'settle',
-            'order_id'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['settle', 'order_id']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method cancel_price_triggered_delivery_order" % key
+                    "Got an unexpected keyword argument '%s'" " to method cancel_price_triggered_delivery_order" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
-                                                        local_var_params['settle'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `settle` when calling `cancel_price_triggered_delivery_order`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `cancel_price_triggered_delivery_order`"
+            )  # noqa: E501
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['order_id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `order_id` when calling `cancel_price_triggered_delivery_order`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `order_id` when calling `cancel_price_triggered_delivery_order`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -3602,14 +3513,14 @@ class DeliveryApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/delivery/{settle}/price_orders/{order_id}', 'DELETE',
+            '/delivery/{settle}/price_orders/{order_id}',
+            'DELETE',
             path_params,
             query_params,
             header_params,
@@ -3622,4 +3533,5 @@ class DeliveryApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )

@@ -258,7 +258,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
-transfer = {"id":"129012","created_at":"1596100000","currency":"BTC","from":"spot","to":"margin","amount":"1","currency_pair":"BTC_USDT"} # Transfer | 
+transfer = gate_api.Transfer() # Transfer | 
 
 try:
     # Transfer between trading accounts
@@ -397,7 +397,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
-sub_account_transfer = {"uid":"10001","timest":"1592809000","source":"web","currency":"BTC","sub_account":"10002","direction":"to","amount":"1"} # SubAccountTransfer | 
+sub_account_transfer = gate_api.SubAccountTransfer() # SubAccountTransfer | 
 
 try:
     # Transfer between main and sub accounts

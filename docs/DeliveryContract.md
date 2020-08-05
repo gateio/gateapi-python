@@ -5,7 +5,7 @@ Futures contract details
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Futures contract | [optional] 
-**underling** | **str** | Underlying | [optional] 
+**underlying** | **str** | Underlying | [optional] 
 **cycle** | **str** | Cycle type, e.g. WEEKLY, QUARTERLY | [optional] 
 **type** | **str** | Futures contract type | [optional] 
 **quanto_multiplier** | **str** | Multiplier used in converting from invoicing to settlement currency in quanto futures | [optional] 

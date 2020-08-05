@@ -13,7 +13,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "gate-api"
-VERSION = "4.15.1"
+VERSION = "4.15.2"
 # To install the library, run the following
 #
 # python setup.py install
@@ -37,5 +37,5 @@ setup(
     license="Apache License 2.0",
     long_description="""\
     APIv4 provides spot, margin and futures trading operations. There are public APIs to retrieve the real-time market statistics, and private APIs which needs authentication to trade on user&#39;s behalf.  # noqa: E501
-    """
+    """,
 )

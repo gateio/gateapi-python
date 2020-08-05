@@ -39,7 +39,7 @@ class SubAccountTransfer(object):
         'amount': 'str',
         'uid': 'str',
         'timest': 'str',
-        'source': 'str'
+        'source': 'str',
     }
 
     attribute_map = {
@@ -49,10 +49,21 @@ class SubAccountTransfer(object):
         'amount': 'amount',
         'uid': 'uid',
         'timest': 'timest',
-        'source': 'source'
+        'source': 'source',
     }
 
-    def __init__(self, currency=None, sub_account=None, direction=None, amount=None, uid=None, timest=None, source=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        currency=None,
+        sub_account=None,
+        direction=None,
+        amount=None,
+        uid=None,
+        timest=None,
+        source=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
+        # type: (str, str, str, str, str, str, str, Configuration) -> None
         """SubAccountTransfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -153,8 +164,9 @@ class SubAccountTransfer(object):
         allowed_values = ["to", "from"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and direction not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `direction` ({0}), must be one of {1}"  # noqa: E501
-                .format(direction, allowed_values)
+                "Invalid value for `direction` ({0}), must be one of {1}".format(  # noqa: E501
+                    direction, allowed_values
+                )
             )
 
         self._direction = direction
@@ -260,18 +272,16 @@ class SubAccountTransfer(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

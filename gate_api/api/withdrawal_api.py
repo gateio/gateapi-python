@@ -18,10 +18,7 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
-from gate_api.exceptions import (  # noqa: F401
-    ApiTypeError,
-    ApiValueError
-)
+from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
 
 
 class WithdrawalApi(object):
@@ -53,8 +50,8 @@ class WithdrawalApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: LedgerRecord
-                 If the method is called asynchronously,
+        :rtype: gate_api.LedgerRecord
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
@@ -79,36 +76,25 @@ class WithdrawalApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(LedgerRecord, status_code(int), headers(HTTPHeaderDict))
-                 If the method is called asynchronously,
+        :rtype: tuple(gate_api.LedgerRecord, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = [
-            'ledger_record'
-        ]
-        all_params.extend(
-            [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
-            ]
-        )
+        all_params = ['ledger_record']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method withdraw" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method withdraw" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'ledger_record' is set
-        if self.api_client.client_side_validation and ('ledger_record' not in local_var_params or  # noqa: E501
-                                                        local_var_params['ledger_record'] is None):  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'ledger_record' not in local_var_params or local_var_params['ledger_record'] is None  # noqa: E501
+        ):  # noqa: E501
             raise ApiValueError("Missing the required parameter `ledger_record` when calling `withdraw`")  # noqa: E501
 
         collection_formats = {}
@@ -126,18 +112,19 @@ class WithdrawalApi(object):
         if 'ledger_record' in local_var_params:
             body_params = local_var_params['ledger_record']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+            ['application/json']
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/withdrawals', 'POST',
+            '/withdrawals',
+            'POST',
             path_params,
             query_params,
             header_params,
@@ -150,4 +137,5 @@ class WithdrawalApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )

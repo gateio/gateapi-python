@@ -33,35 +33,39 @@ class Transfer(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'id': 'str',
-        'created_at': 'str',
         'currency': 'str',
         '_from': 'str',
         'to': 'str',
         'amount': 'str',
         'currency_pair': 'str',
-        'settle': 'str'
+        'settle': 'str',
     }
 
     attribute_map = {
-        'id': 'id',
-        'created_at': 'created_at',
         'currency': 'currency',
         '_from': 'from',
         'to': 'to',
         'amount': 'amount',
         'currency_pair': 'currency_pair',
-        'settle': 'settle'
+        'settle': 'settle',
     }
 
-    def __init__(self, id=None, created_at=None, currency=None, _from=None, to=None, amount=None, currency_pair=None, settle=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        currency=None,
+        _from=None,
+        to=None,
+        amount=None,
+        currency_pair=None,
+        settle=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
+        # type: (str, str, str, str, str, str, Configuration) -> None
         """Transfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._id = None
-        self._created_at = None
         self._currency = None
         self.__from = None
         self._to = None
@@ -70,10 +74,6 @@ class Transfer(object):
         self._settle = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
-        if created_at is not None:
-            self.created_at = created_at
         self.currency = currency
         self._from = _from
         self.to = to
@@ -82,52 +82,6 @@ class Transfer(object):
             self.currency_pair = currency_pair
         if settle is not None:
             self.settle = settle
-
-    @property
-    def id(self):
-        """Gets the id of this Transfer.  # noqa: E501
-
-        Transfer ID  # noqa: E501
-
-        :return: The id of this Transfer.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Transfer.
-
-        Transfer ID  # noqa: E501
-
-        :param id: The id of this Transfer.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def created_at(self):
-        """Gets the created_at of this Transfer.  # noqa: E501
-
-        Timestamp when the transfer occurred  # noqa: E501
-
-        :return: The created_at of this Transfer.  # noqa: E501
-        :rtype: str
-        """
-        return self._created_at
-
-    @created_at.setter
-    def created_at(self, created_at):
-        """Sets the created_at of this Transfer.
-
-        Timestamp when the transfer occurred  # noqa: E501
-
-        :param created_at: The created_at of this Transfer.  # noqa: E501
-        :type: str
-        """
-
-        self._created_at = created_at
 
     @property
     def currency(self):
@@ -179,8 +133,7 @@ class Transfer(object):
         allowed_values = ["spot", "margin", "futures", "delivery"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and _from not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `_from` ({0}), must be one of {1}"  # noqa: E501
-                .format(_from, allowed_values)
+                "Invalid value for `_from` ({0}), must be one of {1}".format(_from, allowed_values)  # noqa: E501
             )
 
         self.__from = _from
@@ -210,8 +163,7 @@ class Transfer(object):
         allowed_values = ["spot", "margin", "futures", "delivery"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and to not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `to` ({0}), must be one of {1}"  # noqa: E501
-                .format(to, allowed_values)
+                "Invalid value for `to` ({0}), must be one of {1}".format(to, allowed_values)  # noqa: E501
             )
 
         self._to = to
@@ -294,18 +246,16 @@ class Transfer(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

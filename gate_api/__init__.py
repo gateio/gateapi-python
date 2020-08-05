@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.15.1"
+__version__ = "4.15.2"
 
 # import apis into sdk package
 from gate_api.api.delivery_api import DeliveryApi
@@ -32,6 +32,7 @@ from gate_api.exceptions import ApiTypeError
 from gate_api.exceptions import ApiValueError
 from gate_api.exceptions import ApiKeyError
 from gate_api.exceptions import ApiException
+
 # import models into sdk package
 from gate_api.models.batch_order import BatchOrder
 from gate_api.models.cancel_order import CancelOrder
@@ -78,6 +79,6 @@ from gate_api.models.spot_account import SpotAccount
 from gate_api.models.sub_account_transfer import SubAccountTransfer
 from gate_api.models.ticker import Ticker
 from gate_api.models.trade import Trade
+from gate_api.models.trade_fee import TradeFee
 from gate_api.models.transfer import Transfer
 from gate_api.models.trigger_order_response import TriggerOrderResponse
-

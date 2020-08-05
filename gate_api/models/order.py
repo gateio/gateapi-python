@@ -55,7 +55,7 @@ class Order(object):
         'gt_fee': 'str',
         'gt_discount': 'bool',
         'rebated_fee': 'str',
-        'rebated_fee_currency': 'str'
+        'rebated_fee_currency': 'str',
     }
 
     attribute_map = {
@@ -81,10 +81,37 @@ class Order(object):
         'gt_fee': 'gt_fee',
         'gt_discount': 'gt_discount',
         'rebated_fee': 'rebated_fee',
-        'rebated_fee_currency': 'rebated_fee_currency'
+        'rebated_fee_currency': 'rebated_fee_currency',
     }
 
-    def __init__(self, id=None, text=None, create_time=None, update_time=None, status=None, currency_pair=None, type='limit', account='spot', side=None, amount=None, price=None, time_in_force='gtc', auto_borrow=None, left=None, fill_price=None, filled_total=None, fee=None, fee_currency=None, point_fee=None, gt_fee=None, gt_discount=None, rebated_fee=None, rebated_fee_currency=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        id=None,
+        text=None,
+        create_time=None,
+        update_time=None,
+        status=None,
+        currency_pair=None,
+        type='limit',
+        account='spot',
+        side=None,
+        amount=None,
+        price=None,
+        time_in_force='gtc',
+        auto_borrow=None,
+        left=None,
+        fill_price=None,
+        filled_total=None,
+        fee=None,
+        fee_currency=None,
+        point_fee=None,
+        gt_fee=None,
+        gt_discount=None,
+        rebated_fee=None,
+        rebated_fee_currency=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, bool, str, str, str, str, str, str, str, bool, str, str, Configuration) -> None
         """Order - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -273,8 +300,7 @@ class Order(object):
         allowed_values = ["open", "closed", "cancelled"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
-                .format(status, allowed_values)
+                "Invalid value for `status` ({0}), must be one of {1}".format(status, allowed_values)  # noqa: E501
             )
 
         self._status = status
@@ -327,8 +353,7 @@ class Order(object):
         allowed_values = ["limit"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
-                .format(type, allowed_values)
+                "Invalid value for `type` ({0}), must be one of {1}".format(type, allowed_values)  # noqa: E501
             )
 
         self._type = type
@@ -356,8 +381,7 @@ class Order(object):
         allowed_values = ["spot", "margin"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and account not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `account` ({0}), must be one of {1}"  # noqa: E501
-                .format(account, allowed_values)
+                "Invalid value for `account` ({0}), must be one of {1}".format(account, allowed_values)  # noqa: E501
             )
 
         self._account = account
@@ -387,8 +411,7 @@ class Order(object):
         allowed_values = ["buy", "sell"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and side not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `side` ({0}), must be one of {1}"  # noqa: E501
-                .format(side, allowed_values)
+                "Invalid value for `side` ({0}), must be one of {1}".format(side, allowed_values)  # noqa: E501
             )
 
         self._side = side
@@ -466,8 +489,9 @@ class Order(object):
         allowed_values = ["gtc", "ioc", "poc"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and time_in_force not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `time_in_force` ({0}), must be one of {1}"  # noqa: E501
-                .format(time_in_force, allowed_values)
+                "Invalid value for `time_in_force` ({0}), must be one of {1}".format(  # noqa: E501
+                    time_in_force, allowed_values
+                )
             )
 
         self._time_in_force = time_in_force
@@ -732,18 +756,16 @@ class Order(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 
