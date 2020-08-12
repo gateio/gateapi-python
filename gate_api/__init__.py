@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.14.0"
+__version__ = "4.15.2"
 
 # import apis into sdk package
 from gate_api.api.delivery_api import DeliveryApi
@@ -27,6 +27,12 @@ from gate_api.api.withdrawal_api import WithdrawalApi
 # import ApiClient
 from gate_api.api_client import ApiClient
 from gate_api.configuration import Configuration
+from gate_api.exceptions import OpenApiException
+from gate_api.exceptions import ApiTypeError
+from gate_api.exceptions import ApiValueError
+from gate_api.exceptions import ApiKeyError
+from gate_api.exceptions import ApiException
+
 # import models into sdk package
 from gate_api.models.batch_order import BatchOrder
 from gate_api.models.cancel_order import CancelOrder
@@ -51,16 +57,17 @@ from gate_api.models.futures_price_trigger import FuturesPriceTrigger
 from gate_api.models.futures_price_triggered_order import FuturesPriceTriggeredOrder
 from gate_api.models.futures_ticker import FuturesTicker
 from gate_api.models.futures_trade import FuturesTrade
-from gate_api.models.gate_error_response import GateErrorResponse
 from gate_api.models.insurance_record import InsuranceRecord
 from gate_api.models.ledger_record import LedgerRecord
 from gate_api.models.loan import Loan
 from gate_api.models.loan_patch import LoanPatch
 from gate_api.models.loan_record import LoanRecord
 from gate_api.models.margin_account import MarginAccount
+from gate_api.models.margin_account_book import MarginAccountBook
 from gate_api.models.margin_account_currency import MarginAccountCurrency
 from gate_api.models.margin_currency_pair import MarginCurrencyPair
 from gate_api.models.my_futures_trade import MyFuturesTrade
+from gate_api.models.open_orders import OpenOrders
 from gate_api.models.order import Order
 from gate_api.models.order_book import OrderBook
 from gate_api.models.position import Position
@@ -72,5 +79,6 @@ from gate_api.models.spot_account import SpotAccount
 from gate_api.models.sub_account_transfer import SubAccountTransfer
 from gate_api.models.ticker import Ticker
 from gate_api.models.trade import Trade
+from gate_api.models.trade_fee import TradeFee
 from gate_api.models.transfer import Transfer
 from gate_api.models.trigger_order_response import TriggerOrderResponse

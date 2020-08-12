@@ -18,6 +18,7 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
+from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
 
 
 class WalletApi(object):
@@ -40,18 +41,21 @@ class WalletApi(object):
         >>> thread = api.get_deposit_address(currency, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str currency: Currency name (required)
-        :return: DepositAddress
-                 If the method is called asynchronously,
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: gate_api.DepositAddress
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_deposit_address_with_http_info(currency, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_deposit_address_with_http_info(currency, **kwargs)  # noqa: E501
-            return data
+        return self.get_deposit_address_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_deposit_address_with_http_info(self, currency, **kwargs):  # noqa: E501
         """Generate currency deposit address  # noqa: E501
@@ -61,40 +65,46 @@ class WalletApi(object):
         >>> thread = api.get_deposit_address_with_http_info(currency, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str currency: Currency name (required)
-        :return: DepositAddress
-                 If the method is called asynchronously,
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(gate_api.DepositAddress, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['currency']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ['currency']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_deposit_address" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_deposit_address" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if ('currency' not in local_var_params or
-                local_var_params['currency'] is None):
-            raise ValueError("Missing the required parameter `currency` when calling `get_deposit_address`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `currency` when calling `get_deposit_address`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'currency' in local_var_params:
+        if 'currency' in local_var_params and local_var_params['currency'] is not None:  # noqa: E501
             query_params.append(('currency', local_var_params['currency']))  # noqa: E501
 
         header_params = {}
@@ -104,14 +114,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/deposit_address', 'GET',
+            '/wallet/deposit_address',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -124,235 +134,8 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def list_deposits(self, **kwargs):  # noqa: E501
-        """Retrieve deposit records  # noqa: E501
-
-        Record time range cannot exceed 30 days  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_deposits(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str currency: Filter by currency. Return all currency records if not specified
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records returned in one list
-        :param int offset: List offset, starting from 0
-        :return: list[LedgerRecord]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.list_deposits_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.list_deposits_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def list_deposits_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve deposit records  # noqa: E501
-
-        Record time range cannot exceed 30 days  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_deposits_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str currency: Filter by currency. Return all currency records if not specified
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records returned in one list
-        :param int offset: List offset, starting from 0
-        :return: list[LedgerRecord]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        local_var_params = locals()
-
-        all_params = ['currency', '_from', 'to', 'limit', 'offset']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_deposits" % key
-                )
-            local_var_params[key] = val
-        del local_var_params['kwargs']
-
-        if 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `list_deposits`, must be a value less than or equal to `1000`")  # noqa: E501
-        if 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `list_deposits`, must be a value greater than or equal to `1`")  # noqa: E501
-        if 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `offset` when calling `list_deposits`, must be a value greater than or equal to `0`")  # noqa: E501
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'currency' in local_var_params:
-            query_params.append(('currency', local_var_params['currency']))  # noqa: E501
-        if '_from' in local_var_params:
-            query_params.append(('from', local_var_params['_from']))  # noqa: E501
-        if 'to' in local_var_params:
-            query_params.append(('to', local_var_params['to']))  # noqa: E501
-        if 'limit' in local_var_params:
-            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
-        if 'offset' in local_var_params:
-            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['apiv4']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/wallet/deposits', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[LedgerRecord]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def list_sub_account_transfers(self, **kwargs):  # noqa: E501
-        """Transfer records between main and sub accounts  # noqa: E501
-
-        Record time range cannot exceed 30 days  > Note: only records after 2020-04-10 can be retrieved  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_sub_account_transfers(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records returned in one list
-        :param int offset: List offset, starting from 0
-        :return: list[SubAccountTransfer]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.list_sub_account_transfers_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.list_sub_account_transfers_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def list_sub_account_transfers_with_http_info(self, **kwargs):  # noqa: E501
-        """Transfer records between main and sub accounts  # noqa: E501
-
-        Record time range cannot exceed 30 days  > Note: only records after 2020-04-10 can be retrieved  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_sub_account_transfers_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records returned in one list
-        :param int offset: List offset, starting from 0
-        :return: list[SubAccountTransfer]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        local_var_params = locals()
-
-        all_params = ['sub_uid', '_from', 'to', 'limit', 'offset']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_sub_account_transfers" % key
-                )
-            local_var_params[key] = val
-        del local_var_params['kwargs']
-
-        if 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `list_sub_account_transfers`, must be a value less than or equal to `1000`")  # noqa: E501
-        if 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `list_sub_account_transfers`, must be a value greater than or equal to `1`")  # noqa: E501
-        if 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `offset` when calling `list_sub_account_transfers`, must be a value greater than or equal to `0`")  # noqa: E501
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'sub_uid' in local_var_params:
-            query_params.append(('sub_uid', local_var_params['sub_uid']))  # noqa: E501
-        if '_from' in local_var_params:
-            query_params.append(('from', local_var_params['_from']))  # noqa: E501
-        if 'to' in local_var_params:
-            query_params.append(('to', local_var_params['to']))  # noqa: E501
-        if 'limit' in local_var_params:
-            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
-        if 'offset' in local_var_params:
-            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['apiv4']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/wallet/sub_account_transfers', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[SubAccountTransfer]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
     def list_withdrawals(self, **kwargs):  # noqa: E501
         """Retrieve withdrawal records  # noqa: E501
@@ -363,22 +146,25 @@ class WalletApi(object):
         >>> thread = api.list_withdrawals(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str currency: Filter by currency. Return all currency records if not specified
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
         :param int limit: Maximum number of records returned in one list
         :param int offset: List offset, starting from 0
-        :return: list[LedgerRecord]
-                 If the method is called asynchronously,
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: list[gate_api.LedgerRecord]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.list_withdrawals_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.list_withdrawals_with_http_info(**kwargs)  # noqa: E501
-            return data
+        return self.list_withdrawals_with_http_info(**kwargs)  # noqa: E501
 
     def list_withdrawals_with_http_info(self, **kwargs):  # noqa: E501
         """Retrieve withdrawal records  # noqa: E501
@@ -389,54 +175,69 @@ class WalletApi(object):
         >>> thread = api.list_withdrawals_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param str currency: Filter by currency. Return all currency records if not specified
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
         :param int limit: Maximum number of records returned in one list
         :param int offset: List offset, starting from 0
-        :return: list[LedgerRecord]
-                 If the method is called asynchronously,
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(list[gate_api.LedgerRecord], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['currency', '_from', 'to', 'limit', 'offset']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ['currency', '_from', 'to', 'limit', 'offset']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method list_withdrawals" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_withdrawals" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
 
-        if 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `list_withdrawals`, must be a value less than or equal to `1000`")  # noqa: E501
-        if 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `list_withdrawals`, must be a value greater than or equal to `1`")  # noqa: E501
-        if 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `offset` when calling `list_withdrawals`, must be a value greater than or equal to `0`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_withdrawals`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_withdrawals`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `offset` when calling `list_withdrawals`, must be a value greater than or equal to `0`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'currency' in local_var_params:
+        if 'currency' in local_var_params and local_var_params['currency'] is not None:  # noqa: E501
             query_params.append(('currency', local_var_params['currency']))  # noqa: E501
-        if '_from' in local_var_params:
+        if '_from' in local_var_params and local_var_params['_from'] is not None:  # noqa: E501
             query_params.append(('from', local_var_params['_from']))  # noqa: E501
-        if 'to' in local_var_params:
+        if 'to' in local_var_params and local_var_params['to'] is not None:  # noqa: E501
             query_params.append(('to', local_var_params['to']))  # noqa: E501
-        if 'limit' in local_var_params:
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
-        if 'offset' in local_var_params:
+        if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
             query_params.append(('offset', local_var_params['offset']))  # noqa: E501
 
         header_params = {}
@@ -446,14 +247,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/withdrawals', 'GET',
+            '/wallet/withdrawals',
+            'GET',
             path_params,
             query_params,
             header_params,
@@ -466,66 +267,207 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
 
-    def transfer(self, transfer, **kwargs):  # noqa: E501
-        """Transfer between accounts  # noqa: E501
+    def list_deposits(self, **kwargs):  # noqa: E501
+        """Retrieve deposit records  # noqa: E501
 
-        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 2. spot - delivery  # noqa: E501
+        Record time range cannot exceed 30 days  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.transfer(transfer, async_req=True)
+        >>> thread = api.list_deposits(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
-        :param Transfer transfer: (required)
-        :return: None
-                 If the method is called asynchronously,
+        :param bool async_req: execute request asynchronously
+        :param str currency: Filter by currency. Return all currency records if not specified
+        :param int _from: Time range beginning, default to 7 days before current time
+        :param int to: Time range ending, default to current time
+        :param int limit: Maximum number of records returned in one list
+        :param int offset: List offset, starting from 0
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: list[gate_api.LedgerRecord]
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.transfer_with_http_info(transfer, **kwargs)  # noqa: E501
-        else:
-            (data) = self.transfer_with_http_info(transfer, **kwargs)  # noqa: E501
-            return data
+        return self.list_deposits_with_http_info(**kwargs)  # noqa: E501
 
-    def transfer_with_http_info(self, transfer, **kwargs):  # noqa: E501
-        """Transfer between accounts  # noqa: E501
+    def list_deposits_with_http_info(self, **kwargs):  # noqa: E501
+        """Retrieve deposit records  # noqa: E501
 
-        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 2. spot - delivery  # noqa: E501
+        Record time range cannot exceed 30 days  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.transfer_with_http_info(transfer, async_req=True)
+        >>> thread = api.list_deposits_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
-        :param Transfer transfer: (required)
-        :return: None
-                 If the method is called asynchronously,
+        :param bool async_req: execute request asynchronously
+        :param str currency: Filter by currency. Return all currency records if not specified
+        :param int _from: Time range beginning, default to 7 days before current time
+        :param int to: Time range ending, default to current time
+        :param int limit: Maximum number of records returned in one list
+        :param int offset: List offset, starting from 0
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(list[gate_api.LedgerRecord], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['transfer']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ['currency', '_from', 'to', 'limit', 'offset']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method transfer" % key
-                )
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_deposits" % key)
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_deposits`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_deposits`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `offset` when calling `list_deposits`, must be a value greater than or equal to `0`"
+            )  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'currency' in local_var_params and local_var_params['currency'] is not None:  # noqa: E501
+            query_params.append(('currency', local_var_params['currency']))  # noqa: E501
+        if '_from' in local_var_params and local_var_params['_from'] is not None:  # noqa: E501
+            query_params.append(('from', local_var_params['_from']))  # noqa: E501
+        if 'to' in local_var_params and local_var_params['to'] is not None:  # noqa: E501
+            query_params.append(('to', local_var_params['to']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
+            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiv4']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/wallet/deposits',
+            'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[LedgerRecord]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+        )
+
+    def transfer(self, transfer, **kwargs):  # noqa: E501
+        """Transfer between trading accounts  # noqa: E501
+
+        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 3. spot - delivery  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.transfer(transfer, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param Transfer transfer: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: None
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.transfer_with_http_info(transfer, **kwargs)  # noqa: E501
+
+    def transfer_with_http_info(self, transfer, **kwargs):  # noqa: E501
+        """Transfer between trading accounts  # noqa: E501
+
+        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 3. spot - delivery  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.transfer_with_http_info(transfer, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param Transfer transfer: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: None
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['transfer']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method transfer" % key)
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'transfer' is set
-        if ('transfer' not in local_var_params or
-                local_var_params['transfer'] is None):
-            raise ValueError("Missing the required parameter `transfer` when calling `transfer`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'transfer' not in local_var_params or local_var_params['transfer'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `transfer` when calling `transfer`")  # noqa: E501
 
         collection_formats = {}
 
@@ -543,13 +485,15 @@ class WalletApi(object):
             body_params = local_var_params['transfer']
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+            ['application/json']
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/transfers', 'POST',
+            '/wallet/transfers',
+            'POST',
             path_params,
             query_params,
             header_params,
@@ -562,7 +506,143 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )
+
+    def list_sub_account_transfers(self, **kwargs):  # noqa: E501
+        """Transfer records between main and sub accounts  # noqa: E501
+
+        Record time range cannot exceed 30 days  > Note: only records after 2020-04-10 can be retrieved  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_sub_account_transfers(async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
+        :param int _from: Time range beginning, default to 7 days before current time
+        :param int to: Time range ending, default to current time
+        :param int limit: Maximum number of records returned in one list
+        :param int offset: List offset, starting from 0
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: list[gate_api.SubAccountTransfer]
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.list_sub_account_transfers_with_http_info(**kwargs)  # noqa: E501
+
+    def list_sub_account_transfers_with_http_info(self, **kwargs):  # noqa: E501
+        """Transfer records between main and sub accounts  # noqa: E501
+
+        Record time range cannot exceed 30 days  > Note: only records after 2020-04-10 can be retrieved  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_sub_account_transfers_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
+        :param int _from: Time range beginning, default to 7 days before current time
+        :param int to: Time range ending, default to current time
+        :param int limit: Maximum number of records returned in one list
+        :param int offset: List offset, starting from 0
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(list[gate_api.SubAccountTransfer], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['sub_uid', '_from', 'to', 'limit', 'offset']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'" " to method list_sub_account_transfers" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_sub_account_transfers`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_sub_account_transfers`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `offset` when calling `list_sub_account_transfers`, must be a value greater than or equal to `0`"
+            )  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'sub_uid' in local_var_params and local_var_params['sub_uid'] is not None:  # noqa: E501
+            query_params.append(('sub_uid', local_var_params['sub_uid']))  # noqa: E501
+        if '_from' in local_var_params and local_var_params['_from'] is not None:  # noqa: E501
+            query_params.append(('from', local_var_params['_from']))  # noqa: E501
+        if 'to' in local_var_params and local_var_params['to'] is not None:  # noqa: E501
+            query_params.append(('to', local_var_params['to']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
+            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiv4']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/wallet/sub_account_transfers',
+            'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SubAccountTransfer]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+        )
 
     def transfer_with_sub_account(self, sub_account_transfer, **kwargs):  # noqa: E501
         """Transfer between main and sub accounts  # noqa: E501
@@ -572,18 +652,21 @@ class WalletApi(object):
         >>> thread = api.transfer_with_sub_account(sub_account_transfer, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param SubAccountTransfer sub_account_transfer: (required)
-        :return: None
-                 If the method is called asynchronously,
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: None
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.transfer_with_sub_account_with_http_info(sub_account_transfer, **kwargs)  # noqa: E501
-        else:
-            (data) = self.transfer_with_sub_account_with_http_info(sub_account_transfer, **kwargs)  # noqa: E501
-            return data
+        return self.transfer_with_sub_account_with_http_info(sub_account_transfer, **kwargs)  # noqa: E501
 
     def transfer_with_sub_account_with_http_info(self, sub_account_transfer, **kwargs):  # noqa: E501
         """Transfer between main and sub accounts  # noqa: E501
@@ -593,33 +676,42 @@ class WalletApi(object):
         >>> thread = api.transfer_with_sub_account_with_http_info(sub_account_transfer, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: execute request asynchronously
         :param SubAccountTransfer sub_account_transfer: (required)
-        :return: None
-                 If the method is called asynchronously,
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: None
+        :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = ['sub_account_transfer']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ['sub_account_transfer']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method transfer_with_sub_account" % key
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'" " to method transfer_with_sub_account" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'sub_account_transfer' is set
-        if ('sub_account_transfer' not in local_var_params or
-                local_var_params['sub_account_transfer'] is None):
-            raise ValueError("Missing the required parameter `sub_account_transfer` when calling `transfer_with_sub_account`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'sub_account_transfer' not in local_var_params
+            or local_var_params['sub_account_transfer'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `sub_account_transfer` when calling `transfer_with_sub_account`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -637,13 +729,15 @@ class WalletApi(object):
             body_params = local_var_params['sub_account_transfer']
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+            ['application/json']
+        )  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/sub_account_transfers', 'POST',
+            '/wallet/sub_account_transfers',
+            'POST',
             path_params,
             query_params,
             header_params,
@@ -656,4 +750,5 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+        )

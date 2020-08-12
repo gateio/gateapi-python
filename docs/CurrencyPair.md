@@ -1,5 +1,6 @@
 # CurrencyPair
 
+Spot currency pair
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

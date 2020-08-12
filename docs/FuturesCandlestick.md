@@ -1,5 +1,6 @@
 # FuturesCandlestick
 
+data point in every timestamp
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

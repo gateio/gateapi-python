@@ -1,5 +1,6 @@
 # Contract
 
+Futures contract details
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
