@@ -64,6 +64,7 @@ class Contract(object):
         'position_size': 'int',
         'config_change_time': 'float',
         'in_delisting': 'bool',
+        'orders_limit': 'int',
     }
 
     attribute_map = {
@@ -98,6 +99,7 @@ class Contract(object):
         'position_size': 'position_size',
         'config_change_time': 'config_change_time',
         'in_delisting': 'in_delisting',
+        'orders_limit': 'orders_limit',
     }
 
     def __init__(
@@ -133,9 +135,10 @@ class Contract(object):
         position_size=None,
         config_change_time=None,
         in_delisting=None,
+        orders_limit=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, float, str, str, str, int, int, str, str, str, int, int, int, int, float, bool, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, float, str, str, str, int, int, str, str, str, int, int, int, int, float, bool, int, Configuration) -> None
         """Contract - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -172,6 +175,7 @@ class Contract(object):
         self._position_size = None
         self._config_change_time = None
         self._in_delisting = None
+        self._orders_limit = None
         self.discriminator = None
 
         if name is not None:
@@ -236,6 +240,8 @@ class Contract(object):
             self.config_change_time = config_change_time
         if in_delisting is not None:
             self.in_delisting = in_delisting
+        if orders_limit is not None:
+            self.orders_limit = orders_limit
 
     @property
     def name(self):
@@ -961,6 +967,29 @@ class Contract(object):
         """
 
         self._in_delisting = in_delisting
+
+    @property
+    def orders_limit(self):
+        """Gets the orders_limit of this Contract.  # noqa: E501
+
+        Maximum number of open orders  # noqa: E501
+
+        :return: The orders_limit of this Contract.  # noqa: E501
+        :rtype: int
+        """
+        return self._orders_limit
+
+    @orders_limit.setter
+    def orders_limit(self, orders_limit):
+        """Sets the orders_limit of this Contract.
+
+        Maximum number of open orders  # noqa: E501
+
+        :param orders_limit: The orders_limit of this Contract.  # noqa: E501
+        :type: int
+        """
+
+        self._orders_limit = orders_limit
 
     def to_dict(self):
         """Returns the model properties as a dict"""

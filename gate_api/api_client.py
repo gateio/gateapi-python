@@ -204,6 +204,8 @@ class ApiClient(object):
             except ValueError:
                 raise e
             else:
+                if not err.get('label'):
+                    raise e
                 raise GateApiException(err.get('label'), err.get('message'), err.get('detail'), e)
 
         content_type = response_data.getheader('content-type')
