@@ -33,7 +33,7 @@ List all currency pairs supported
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -48,6 +48,8 @@ try:
     # List all currency pairs supported
     api_response = api_instance.list_currency_pairs()
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->list_currency_pairs: %s\n" % e)
 ```
@@ -85,7 +87,7 @@ Get detail of one single order
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -101,6 +103,8 @@ try:
     # Get detail of one single order
     api_response = api_instance.get_currency_pair(currency_pair)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->get_currency_pair: %s\n" % e)
 ```
@@ -143,7 +147,7 @@ Return only related data if `currency_pair` is specified; otherwise return all o
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -159,6 +163,8 @@ try:
     # Retrieve ticker information
     api_response = api_instance.list_tickers(currency_pair=currency_pair)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->list_tickers: %s\n" % e)
 ```
@@ -201,7 +207,7 @@ Order book will be sorted by price from high to low on bids; reversed on asks
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -219,6 +225,8 @@ try:
     # Retrieve order book
     api_response = api_instance.list_order_book(currency_pair, interval=interval, limit=limit)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->list_order_book: %s\n" % e)
 ```
@@ -261,7 +269,7 @@ Retrieve market trades
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -279,6 +287,8 @@ try:
     # Retrieve market trades
     api_response = api_instance.list_trades(currency_pair, limit=limit, last_id=last_id)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->list_trades: %s\n" % e)
 ```
@@ -323,7 +333,7 @@ Maximum of 1000 points are returned in one query. Be sure not to exceed the limi
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -343,6 +353,8 @@ try:
     # Market candlesticks
     api_response = api_instance.list_candlesticks(currency_pair, limit=limit, _from=_from, to=to, interval=interval)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->list_candlesticks: %s\n" % e)
 ```
@@ -388,7 +400,7 @@ Query user trading fee rates
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -412,6 +424,8 @@ try:
     # Query user trading fee rates
     api_response = api_instance.get_fee(currency_pair=currency_pair)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->get_fee: %s\n" % e)
 ```
@@ -453,7 +467,7 @@ List spot accounts
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -477,6 +491,8 @@ try:
     # List spot accounts
     api_response = api_instance.list_spot_accounts(currency=currency)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->list_spot_accounts: %s\n" % e)
 ```
@@ -520,7 +536,7 @@ Batch orders requirements:  1. custom order field `text` is required 2. At most 
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -544,6 +560,8 @@ try:
     # Create a batch of orders
     api_response = api_instance.create_batch_orders(order)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->create_batch_orders: %s\n" % e)
 ```
@@ -587,7 +605,7 @@ List open orders in all currency pairs.  Note that pagination parameters affect 
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -612,6 +630,8 @@ try:
     # List all open orders
     api_response = api_instance.list_all_open_orders(page=page, limit=limit)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->list_all_open_orders: %s\n" % e)
 ```
@@ -654,7 +674,7 @@ List orders
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -681,6 +701,8 @@ try:
     # List orders
     api_response = api_instance.list_orders(currency_pair, status, page=page, limit=limit)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->list_orders: %s\n" % e)
 ```
@@ -725,7 +747,7 @@ Create an order
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -749,6 +771,8 @@ try:
     # Create an order
     api_response = api_instance.create_order(order)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->create_order: %s\n" % e)
 ```
@@ -790,7 +814,7 @@ Cancel all `open` orders in specified currency pair
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -816,6 +840,8 @@ try:
     # Cancel all `open` orders in specified currency pair
     api_response = api_instance.cancel_orders(currency_pair, side=side, account=account)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->cancel_orders: %s\n" % e)
 ```
@@ -861,7 +887,7 @@ Multiple currency pairs can be specified, but maximum 20 orders are allowed per 
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -885,6 +911,8 @@ try:
     # Cancel a batch of orders with an ID list
     api_response = api_instance.cancel_batch_orders(cancel_order)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->cancel_batch_orders: %s\n" % e)
 ```
@@ -926,7 +954,7 @@ Get a single order
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -951,6 +979,8 @@ try:
     # Get a single order
     api_response = api_instance.get_order(order_id, currency_pair)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->get_order: %s\n" % e)
 ```
@@ -993,7 +1023,7 @@ Cancel a single order
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1018,6 +1048,8 @@ try:
     # Cancel a single order
     api_response = api_instance.cancel_order(order_id, currency_pair)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->cancel_order: %s\n" % e)
 ```
@@ -1060,7 +1092,7 @@ List personal trading history
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1087,6 +1119,8 @@ try:
     # List personal trading history
     api_response = api_instance.list_my_trades(currency_pair, limit=limit, page=page, order_id=order_id)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling SpotApi->list_my_trades: %s\n" % e)
 ```

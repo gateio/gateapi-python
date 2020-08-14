@@ -44,7 +44,7 @@ List all futures contracts
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -60,6 +60,8 @@ try:
     # List all futures contracts
     api_response = api_instance.list_delivery_contracts(settle)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_delivery_contracts: %s\n" % e)
 ```
@@ -100,7 +102,7 @@ Get a single contract
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -117,6 +119,8 @@ try:
     # Get a single contract
     api_response = api_instance.get_delivery_contract(settle, contract)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->get_delivery_contract: %s\n" % e)
 ```
@@ -160,7 +164,7 @@ Bids will be sorted by price from high to low, while asks sorted reversely
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -179,6 +183,8 @@ try:
     # Futures order book
     api_response = api_instance.list_delivery_order_book(settle, contract, interval=interval, limit=limit)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_delivery_order_book: %s\n" % e)
 ```
@@ -222,7 +228,7 @@ Futures trading history
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -243,6 +249,8 @@ try:
     # Futures trading history
     api_response = api_instance.list_delivery_trades(settle, contract, limit=limit, last_id=last_id, _from=_from, to=to)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_delivery_trades: %s\n" % e)
 ```
@@ -290,7 +298,7 @@ Return specified contract candlesticks. If prefix `contract` with `mark_`, the c
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -311,6 +319,8 @@ try:
     # Get futures candlesticks
     api_response = api_instance.list_delivery_candlesticks(settle, contract, _from=_from, to=to, limit=limit, interval=interval)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_delivery_candlesticks: %s\n" % e)
 ```
@@ -356,7 +366,7 @@ List futures tickers
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -373,6 +383,8 @@ try:
     # List futures tickers
     api_response = api_instance.list_delivery_tickers(settle, contract=contract)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_delivery_tickers: %s\n" % e)
 ```
@@ -414,7 +426,7 @@ Futures insurance balance history
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -431,6 +443,8 @@ try:
     # Futures insurance balance history
     api_response = api_instance.list_delivery_insurance_ledger(settle, limit=limit)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_delivery_insurance_ledger: %s\n" % e)
 ```
@@ -473,7 +487,7 @@ Query futures account
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -497,6 +511,8 @@ try:
     # Query futures account
     api_response = api_instance.list_delivery_accounts(settle)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_delivery_accounts: %s\n" % e)
 ```
@@ -538,7 +554,7 @@ Query account book
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -566,6 +582,8 @@ try:
     # Query account book
     api_response = api_instance.list_delivery_account_book(settle, limit=limit, _from=_from, to=to, type=type)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_delivery_account_book: %s\n" % e)
 ```
@@ -611,7 +629,7 @@ List all positions of a user
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -635,6 +653,8 @@ try:
     # List all positions of a user
     api_response = api_instance.list_delivery_positions(settle)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_delivery_positions: %s\n" % e)
 ```
@@ -676,7 +696,7 @@ Get single position
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -701,6 +721,8 @@ try:
     # Get single position
     api_response = api_instance.get_delivery_position(settle, contract)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->get_delivery_position: %s\n" % e)
 ```
@@ -743,7 +765,7 @@ Update position margin
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -769,6 +791,8 @@ try:
     # Update position margin
     api_response = api_instance.update_delivery_position_margin(settle, contract, change)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->update_delivery_position_margin: %s\n" % e)
 ```
@@ -812,7 +836,7 @@ Update position leverage
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -838,6 +862,8 @@ try:
     # Update position leverage
     api_response = api_instance.update_delivery_position_leverage(settle, contract, leverage)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->update_delivery_position_leverage: %s\n" % e)
 ```
@@ -881,7 +907,7 @@ Update position risk limit
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -907,6 +933,8 @@ try:
     # Update position risk limit
     api_response = api_instance.update_delivery_position_risk_limit(settle, contract, risk_limit)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->update_delivery_position_risk_limit: %s\n" % e)
 ```
@@ -952,7 +980,7 @@ Zero-fill order cannot be retrieved 60 seconds after cancellation
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -982,6 +1010,8 @@ try:
     # List futures orders
     api_response = api_instance.list_delivery_orders(settle, status, contract=contract, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_delivery_orders: %s\n" % e)
 ```
@@ -1031,7 +1061,7 @@ Zero-fill order cannot be retrieved 60 seconds after cancellation
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1056,6 +1086,8 @@ try:
     # Create a futures order
     api_response = api_instance.create_delivery_order(settle, futures_order)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->create_delivery_order: %s\n" % e)
 ```
@@ -1100,7 +1132,7 @@ Zero-fill order cannot be retrieved 60 seconds after cancellation
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1126,6 +1158,8 @@ try:
     # Cancel all `open` orders matched
     api_response = api_instance.cancel_delivery_orders(settle, contract, side=side)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->cancel_delivery_orders: %s\n" % e)
 ```
@@ -1171,7 +1205,7 @@ Zero-fill order cannot be retrieved 60 seconds after cancellation
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1196,6 +1230,8 @@ try:
     # Get a single order
     api_response = api_instance.get_delivery_order(settle, order_id)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->get_delivery_order: %s\n" % e)
 ```
@@ -1238,7 +1274,7 @@ Cancel a single order
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1263,6 +1299,8 @@ try:
     # Cancel a single order
     api_response = api_instance.cancel_delivery_order(settle, order_id)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->cancel_delivery_order: %s\n" % e)
 ```
@@ -1305,7 +1343,7 @@ List personal trading history
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1335,6 +1373,8 @@ try:
     # List personal trading history
     api_response = api_instance.get_my_delivery_trades(settle, contract=contract, order=order, limit=limit, offset=offset, last_id=last_id, count_total=count_total)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->get_my_delivery_trades: %s\n" % e)
 ```
@@ -1382,7 +1422,7 @@ List position close history
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1408,6 +1448,8 @@ try:
     # List position close history
     api_response = api_instance.list_delivery_position_close(settle, contract=contract, limit=limit)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_delivery_position_close: %s\n" % e)
 ```
@@ -1451,7 +1493,7 @@ List liquidation history
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1478,6 +1520,8 @@ try:
     # List liquidation history
     api_response = api_instance.list_delivery_liquidates(settle, contract=contract, limit=limit, at=at)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_delivery_liquidates: %s\n" % e)
 ```
@@ -1522,7 +1566,7 @@ List settlement history
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1549,6 +1593,8 @@ try:
     # List settlement history
     api_response = api_instance.list_delivery_settlements(settle, contract=contract, limit=limit, at=at)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_delivery_settlements: %s\n" % e)
 ```
@@ -1593,7 +1639,7 @@ List all auto orders
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1621,6 +1667,8 @@ try:
     # List all auto orders
     api_response = api_instance.list_price_triggered_delivery_orders(settle, status, contract=contract, limit=limit, offset=offset)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->list_price_triggered_delivery_orders: %s\n" % e)
 ```
@@ -1666,7 +1714,7 @@ Create a price-triggered order
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1691,6 +1739,8 @@ try:
     # Create a price-triggered order
     api_response = api_instance.create_price_triggered_delivery_order(settle, futures_price_triggered_order)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->create_price_triggered_delivery_order: %s\n" % e)
 ```
@@ -1733,7 +1783,7 @@ Cancel all open orders
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1758,6 +1808,8 @@ try:
     # Cancel all open orders
     api_response = api_instance.cancel_price_triggered_delivery_order_list(settle, contract)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->cancel_price_triggered_delivery_order_list: %s\n" % e)
 ```
@@ -1800,7 +1852,7 @@ Get a single order
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1825,6 +1877,8 @@ try:
     # Get a single order
     api_response = api_instance.get_price_triggered_delivery_order(settle, order_id)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->get_price_triggered_delivery_order: %s\n" % e)
 ```
@@ -1867,7 +1921,7 @@ Cancel a single order
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1892,6 +1946,8 @@ try:
     # Cancel a single order
     api_response = api_instance.cancel_price_triggered_delivery_order(settle, order_id)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling DeliveryApi->cancel_price_triggered_delivery_order: %s\n" % e)
 ```

@@ -23,7 +23,7 @@ Generate currency deposit address
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -47,6 +47,8 @@ try:
     # Generate currency deposit address
     api_response = api_instance.get_deposit_address(currency)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling WalletApi->get_deposit_address: %s\n" % e)
 ```
@@ -90,7 +92,7 @@ Record time range cannot exceed 30 days
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -118,6 +120,8 @@ try:
     # Retrieve withdrawal records
     api_response = api_instance.list_withdrawals(currency=currency, _from=_from, to=to, limit=limit, offset=offset)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling WalletApi->list_withdrawals: %s\n" % e)
 ```
@@ -165,7 +169,7 @@ Record time range cannot exceed 30 days
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -193,6 +197,8 @@ try:
     # Retrieve deposit records
     api_response = api_instance.list_deposits(currency=currency, _from=_from, to=to, limit=limit, offset=offset)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling WalletApi->list_deposits: %s\n" % e)
 ```
@@ -240,7 +246,7 @@ Transfer between different accounts. Currently support transfers between the fol
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -263,6 +269,8 @@ transfer = gate_api.Transfer() # Transfer |
 try:
     # Transfer between trading accounts
     api_instance.transfer(transfer)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling WalletApi->transfer: %s\n" % e)
 ```
@@ -306,7 +314,7 @@ Record time range cannot exceed 30 days  > Note: only records after 2020-04-10 c
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -334,6 +342,8 @@ try:
     # Transfer records between main and sub accounts
     api_response = api_instance.list_sub_account_transfers(sub_uid=sub_uid, _from=_from, to=to, limit=limit, offset=offset)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling WalletApi->list_sub_account_transfers: %s\n" % e)
 ```
@@ -379,7 +389,7 @@ Transfer between main and sub accounts
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -402,6 +412,8 @@ sub_account_transfer = gate_api.SubAccountTransfer() # SubAccountTransfer |
 try:
     # Transfer between main and sub accounts
     api_instance.transfer_with_sub_account(sub_account_transfer)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling WalletApi->transfer_with_sub_account: %s\n" % e)
 ```

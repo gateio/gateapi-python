@@ -105,6 +105,23 @@ class ApiException(OpenApiException):
         return error_message
 
 
+class GateApiException(ApiException):
+    def __init__(self, label=None, message=None, detail=None, exp=None):
+        """Init GateApiException from ApiException
+
+        :param str label: error label parsed
+        :param str message: error message parsed
+        :param str detail: possible error message parsed
+        :param ApiException exp: parent exception
+        """
+        self.label = label
+        self.message = detail if detail else message
+        self.status = exp.status
+        self.reason = exp.reason
+        self.body = exp.body
+        self.headers = exp.headers
+
+
 def render_path(path_to_item):
     """Returns a string representation of a path"""
     result = ""
