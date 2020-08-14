@@ -32,7 +32,7 @@ List all supported currency pairs supported in margin trading
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -47,6 +47,8 @@ try:
     # List all supported currency pairs supported in margin trading
     api_response = api_instance.list_margin_currency_pairs()
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->list_margin_currency_pairs: %s\n" % e)
 ```
@@ -84,7 +86,7 @@ Order book of lending loans
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 configuration = gate_api.Configuration(
@@ -100,6 +102,8 @@ try:
     # Order book of lending loans
     api_response = api_instance.list_funding_book(currency)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->list_funding_book: %s\n" % e)
 ```
@@ -141,7 +145,7 @@ Margin account list
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -165,6 +169,8 @@ try:
     # Margin account list
     api_response = api_instance.list_margin_accounts(currency_pair=currency_pair)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->list_margin_accounts: %s\n" % e)
 ```
@@ -208,7 +214,7 @@ Only transferring from or to margin account are provided for now. Time range all
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -237,6 +243,8 @@ try:
     # List margin account balance change history
     api_response = api_instance.list_margin_account_book(currency=currency, currency_pair=currency_pair, _from=_from, to=to, page=page, limit=limit)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->list_margin_account_book: %s\n" % e)
 ```
@@ -283,7 +291,7 @@ Funding account list
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -307,6 +315,8 @@ try:
     # Funding account list
     api_response = api_instance.list_funding_accounts(currency=currency)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->list_funding_accounts: %s\n" % e)
 ```
@@ -348,7 +358,7 @@ List all loans
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -379,6 +389,8 @@ try:
     # List all loans
     api_response = api_instance.list_loans(status, side, currency=currency, currency_pair=currency_pair, sort_by=sort_by, reverse_sort=reverse_sort, page=page, limit=limit)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->list_loans: %s\n" % e)
 ```
@@ -427,7 +439,7 @@ Lend or borrow
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -451,6 +463,8 @@ try:
     # Lend or borrow
     api_response = api_instance.create_loan(loan)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->create_loan: %s\n" % e)
 ```
@@ -492,7 +506,7 @@ Merge multiple lending loans
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -517,6 +531,8 @@ try:
     # Merge multiple lending loans
     api_response = api_instance.merge_loans(currency, ids)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->merge_loans: %s\n" % e)
 ```
@@ -559,7 +575,7 @@ Retrieve one single loan detail
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -584,6 +600,8 @@ try:
     # Retrieve one single loan detail
     api_response = api_instance.get_loan(loan_id, side)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->get_loan: %s\n" % e)
 ```
@@ -628,7 +646,7 @@ Only lending loans can be cancelled
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -653,6 +671,8 @@ try:
     # Cancel lending loan
     api_response = api_instance.cancel_loan(loan_id, currency)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->cancel_loan: %s\n" % e)
 ```
@@ -697,7 +717,7 @@ Only `auto_renew` modification is supported currently
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -722,6 +742,8 @@ try:
     # Modify a loan
     api_response = api_instance.update_loan(loan_id, loan_patch)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->update_loan: %s\n" % e)
 ```
@@ -764,7 +786,7 @@ List loan repayment records
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -788,6 +810,8 @@ try:
     # List loan repayment records
     api_response = api_instance.list_loan_repayments(loan_id)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->list_loan_repayments: %s\n" % e)
 ```
@@ -829,7 +853,7 @@ Repay a loan
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -854,6 +878,8 @@ try:
     # Repay a loan
     api_response = api_instance.repay_loan(loan_id, repay_request)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->repay_loan: %s\n" % e)
 ```
@@ -896,7 +922,7 @@ List repayment records of specified loan
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -923,6 +949,8 @@ try:
     # List repayment records of specified loan
     api_response = api_instance.list_loan_records(loan_id, status=status, page=page, limit=limit)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->list_loan_records: %s\n" % e)
 ```
@@ -967,7 +995,7 @@ Get one single loan record
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -992,6 +1020,8 @@ try:
     # Get one single loan record
     api_response = api_instance.get_loan_record(loan_record_id, loan_id)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->get_loan_record: %s\n" % e)
 ```
@@ -1036,7 +1066,7 @@ Only `auto_renew` modification is supported currently
 ```python
 from __future__ import print_function
 import gate_api
-from gate_api.exceptions import ApiException
+from gate_api.exceptions import ApiException, GateApiException
 # Defining the host is optional and defaults to https://api.gateio.ws/api/v4
 # See configuration.py for a list of all supported configuration parameters.
 # The client must configure the authentication and authorization parameters
@@ -1061,6 +1091,8 @@ try:
     # Modify a loan record
     api_response = api_instance.update_loan_record(loan_record_id, loan_patch)
     print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
     print("Exception when calling MarginApi->update_loan_record: %s\n" % e)
 ```

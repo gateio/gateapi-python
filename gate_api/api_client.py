@@ -32,7 +32,7 @@ from six.moves.urllib.parse import quote
 from gate_api.configuration import Configuration
 import gate_api.models
 from gate_api import rest
-from gate_api.exceptions import ApiValueError, ApiException
+from gate_api.exceptions import ApiValueError, ApiException, GateApiException
 
 
 class ApiClient(object):
@@ -82,7 +82,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/4.15.2/python'
+        self.user_agent = 'OpenAPI-Generator/4.15.3/python'
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
@@ -199,7 +199,14 @@ class ApiClient(object):
             )
         except ApiException as e:
             e.body = e.body.decode('utf-8') if six.PY3 else e.body
-            raise e
+            try:
+                err = json.loads(e.body)
+            except ValueError:
+                raise e
+            else:
+                if not err.get('label'):
+                    raise e
+                raise GateApiException(err.get('label'), err.get('message'), err.get('detail'), e)
 
         content_type = response_data.getheader('content-type')
 

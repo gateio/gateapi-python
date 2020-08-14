@@ -151,8 +151,7 @@ class FuturesOrder(object):
         if status is not None:
             self.status = status
         self.contract = contract
-        if size is not None:
-            self.size = size
+        self.size = size
         if iceberg is not None:
             self.iceberg = iceberg
         if price is not None:
@@ -377,6 +376,8 @@ class FuturesOrder(object):
         :param size: The size of this FuturesOrder.  # noqa: E501
         :type: int
         """
+        if self.local_vars_configuration.client_side_validation and size is None:  # noqa: E501
+            raise ValueError("Invalid value for `size`, must not be `None`")  # noqa: E501
 
         self._size = size
 
