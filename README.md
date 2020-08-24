@@ -98,6 +98,8 @@ except ApiException as e:
 
 ```
 
+For a more complete API usage example, refer to the demo application in [example](example) directory
+
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://api.gateio.ws/api/v4*
