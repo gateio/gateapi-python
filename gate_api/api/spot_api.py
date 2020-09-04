@@ -84,10 +84,10 @@ class SpotApi(object):
         all_params = []
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_currency_pairs" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_currency_pairs" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
 
         collection_formats = {}
@@ -179,10 +179,10 @@ class SpotApi(object):
         all_params = ['currency_pair']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_currency_pair" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_currency_pair" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
         if self.api_client.client_side_validation and (
@@ -285,10 +285,10 @@ class SpotApi(object):
         all_params = ['currency_pair']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_tickers" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_tickers" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
 
         collection_formats = {}
@@ -388,10 +388,10 @@ class SpotApi(object):
         all_params = ['currency_pair', 'interval', 'limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_order_book" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_order_book" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
         if self.api_client.client_side_validation and (
@@ -512,10 +512,10 @@ class SpotApi(object):
         all_params = ['currency_pair', 'limit', 'last_id']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_trades" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_trades" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
         if self.api_client.client_side_validation and (
@@ -642,10 +642,10 @@ class SpotApi(object):
         all_params = ['currency_pair', 'limit', '_from', 'to', 'interval']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_candlesticks" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_candlesticks" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
         if self.api_client.client_side_validation and (
@@ -760,10 +760,10 @@ class SpotApi(object):
         all_params = ['currency_pair']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_fee" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_fee" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
 
         collection_formats = {}
@@ -857,10 +857,10 @@ class SpotApi(object):
         all_params = ['currency']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_spot_accounts" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_spot_accounts" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
 
         collection_formats = {}
@@ -956,10 +956,10 @@ class SpotApi(object):
         all_params = ['order']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_batch_orders" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_batch_orders" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'order' is set
         if self.api_client.client_side_validation and (
@@ -1069,10 +1069,10 @@ class SpotApi(object):
         all_params = ['page', 'limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_all_open_orders" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_all_open_orders" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
 
         if (
@@ -1192,10 +1192,10 @@ class SpotApi(object):
         all_params = ['currency_pair', 'status', 'page', 'limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_orders" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_orders" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
         if self.api_client.client_side_validation and (
@@ -1325,10 +1325,10 @@ class SpotApi(object):
         all_params = ['order']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_order" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_order" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'order' is set
         if self.api_client.client_side_validation and (
@@ -1436,10 +1436,10 @@ class SpotApi(object):
         all_params = ['currency_pair', 'side', 'account']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_orders" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_orders" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
         if self.api_client.client_side_validation and (
@@ -1546,10 +1546,10 @@ class SpotApi(object):
         all_params = ['cancel_order']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_batch_orders" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_batch_orders" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'cancel_order' is set
         if self.api_client.client_side_validation and (
@@ -1657,10 +1657,10 @@ class SpotApi(object):
         all_params = ['order_id', 'currency_pair']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_order" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_order" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'order_id' is set
         if self.api_client.client_side_validation and (
@@ -1768,10 +1768,10 @@ class SpotApi(object):
         all_params = ['order_id', 'currency_pair']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_order" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_order" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'order_id' is set
         if self.api_client.client_side_validation and (
@@ -1885,10 +1885,10 @@ class SpotApi(object):
         all_params = ['currency_pair', 'limit', 'page', 'order_id']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_my_trades" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_my_trades" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
         if self.api_client.client_side_validation and (

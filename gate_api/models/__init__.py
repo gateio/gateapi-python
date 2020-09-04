@@ -62,3 +62,4 @@ from gate_api.models.trade import Trade
 from gate_api.models.trade_fee import TradeFee
 from gate_api.models.transfer import Transfer
 from gate_api.models.trigger_order_response import TriggerOrderResponse
+from gate_api.models.withdraw_status import WithdrawStatus
