@@ -84,12 +84,12 @@ class MarginApi(object):
         all_params = []
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_margin_currency_pairs" % key
+                    "Got an unexpected keyword argument '%s'" " to method list_margin_currency_pairs" % k
                 )
-            local_var_params[key] = val
+            local_var_params[k] = v
         del local_var_params['kwargs']
 
         collection_formats = {}
@@ -181,10 +181,10 @@ class MarginApi(object):
         all_params = ['currency']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_funding_book" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_funding_book" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
         if self.api_client.client_side_validation and (
@@ -285,10 +285,10 @@ class MarginApi(object):
         all_params = ['currency_pair']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_margin_accounts" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_margin_accounts" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
 
         collection_formats = {}
@@ -394,12 +394,10 @@ class MarginApi(object):
         all_params = ['currency', 'currency_pair', '_from', 'to', 'page', 'limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_margin_account_book" % key
-                )
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_margin_account_book" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
 
         if (
@@ -521,10 +519,10 @@ class MarginApi(object):
         all_params = ['currency']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_funding_accounts" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_funding_accounts" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
 
         collection_formats = {}
@@ -632,10 +630,10 @@ class MarginApi(object):
         all_params = ['status', 'side', 'currency', 'currency_pair', 'sort_by', 'reverse_sort', 'page', 'limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_loans" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_loans" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'status' is set
         if self.api_client.client_side_validation and (
@@ -771,10 +769,10 @@ class MarginApi(object):
         all_params = ['loan']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_loan" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_loan" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan' is set
         if self.api_client.client_side_validation and (
@@ -880,10 +878,10 @@ class MarginApi(object):
         all_params = ['currency', 'ids']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method merge_loans" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method merge_loans" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
         if self.api_client.client_side_validation and (
@@ -991,10 +989,10 @@ class MarginApi(object):
         all_params = ['loan_id', 'side']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_loan" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_loan" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
         if self.api_client.client_side_validation and (
@@ -1104,10 +1102,10 @@ class MarginApi(object):
         all_params = ['loan_id', 'currency']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_loan" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_loan" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
         if self.api_client.client_side_validation and (
@@ -1217,10 +1215,10 @@ class MarginApi(object):
         all_params = ['loan_id', 'loan_patch']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method update_loan" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method update_loan" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
         if self.api_client.client_side_validation and (
@@ -1331,10 +1329,10 @@ class MarginApi(object):
         all_params = ['loan_id']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_loan_repayments" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_loan_repayments" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
         if self.api_client.client_side_validation and (
@@ -1437,10 +1435,10 @@ class MarginApi(object):
         all_params = ['loan_id', 'repay_request']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method repay_loan" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method repay_loan" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
         if self.api_client.client_side_validation and (
@@ -1559,10 +1557,10 @@ class MarginApi(object):
         all_params = ['loan_id', 'status', 'page', 'limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_loan_records" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_loan_records" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
         if self.api_client.client_side_validation and (
@@ -1689,10 +1687,10 @@ class MarginApi(object):
         all_params = ['loan_record_id', 'loan_id']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_loan_record" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_loan_record" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_record_id' is set
         if self.api_client.client_side_validation and (
@@ -1804,10 +1802,10 @@ class MarginApi(object):
         all_params = ['loan_record_id', 'loan_patch']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method update_loan_record" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method update_loan_record" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_record_id' is set
         if self.api_client.client_side_validation and (

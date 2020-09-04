@@ -40,6 +40,7 @@ class TradeFee(object):
         'gt_taker_fee': 'str',
         'gt_maker_fee': 'str',
         'loan_fee': 'str',
+        'point_type': 'str',
     }
 
     attribute_map = {
@@ -50,6 +51,7 @@ class TradeFee(object):
         'gt_taker_fee': 'gt_taker_fee',
         'gt_maker_fee': 'gt_maker_fee',
         'loan_fee': 'loan_fee',
+        'point_type': 'point_type',
     }
 
     def __init__(
@@ -61,9 +63,10 @@ class TradeFee(object):
         gt_taker_fee=None,
         gt_maker_fee=None,
         loan_fee=None,
+        point_type=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, str, bool, str, str, str, Configuration) -> None
+        # type: (int, str, str, bool, str, str, str, str, Configuration) -> None
         """TradeFee - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +79,7 @@ class TradeFee(object):
         self._gt_taker_fee = None
         self._gt_maker_fee = None
         self._loan_fee = None
+        self._point_type = None
         self.discriminator = None
 
         if user_id is not None:
@@ -92,6 +96,8 @@ class TradeFee(object):
             self.gt_maker_fee = gt_maker_fee
         if loan_fee is not None:
             self.loan_fee = loan_fee
+        if point_type is not None:
+            self.point_type = point_type
 
     @property
     def user_id(self):
@@ -253,6 +259,29 @@ class TradeFee(object):
         """
 
         self._loan_fee = loan_fee
+
+    @property
+    def point_type(self):
+        """Gets the point_type of this TradeFee.  # noqa: E501
+
+        Point type. 0 - Initial version. 1 - new version since 202009  # noqa: E501
+
+        :return: The point_type of this TradeFee.  # noqa: E501
+        :rtype: str
+        """
+        return self._point_type
+
+    @point_type.setter
+    def point_type(self, point_type):
+        """Sets the point_type of this TradeFee.
+
+        Point type. 0 - Initial version. 1 - new version since 202009  # noqa: E501
+
+        :param point_type: The point_type of this TradeFee.  # noqa: E501
+        :type: str
+        """
+
+        self._point_type = point_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -86,10 +86,10 @@ class WithdrawalApi(object):
         all_params = ['ledger_record']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method withdraw" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method withdraw" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'ledger_record' is set
         if self.api_client.client_side_validation and (

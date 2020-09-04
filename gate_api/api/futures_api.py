@@ -86,10 +86,10 @@ class FuturesApi(object):
         all_params = ['settle']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_contracts" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_contracts" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -192,10 +192,10 @@ class FuturesApi(object):
         all_params = ['settle', 'contract']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_futures_contract" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_futures_contract" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -313,10 +313,10 @@ class FuturesApi(object):
         all_params = ['settle', 'contract', 'interval', 'limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_order_book" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_order_book" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -452,10 +452,10 @@ class FuturesApi(object):
         all_params = ['settle', 'contract', 'limit', 'last_id', '_from', 'to']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_trades" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_trades" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -597,12 +597,10 @@ class FuturesApi(object):
         all_params = ['settle', 'contract', '_from', 'to', 'limit', 'interval']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_futures_candlesticks" % key
-                )
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_candlesticks" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -728,10 +726,10 @@ class FuturesApi(object):
         all_params = ['settle', 'contract']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_tickers" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_tickers" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -838,12 +836,12 @@ class FuturesApi(object):
         all_params = ['settle', 'contract', 'limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_futures_funding_rate_history" % key
+                    "Got an unexpected keyword argument '%s'" " to method list_futures_funding_rate_history" % k
                 )
-            local_var_params[key] = val
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -969,12 +967,12 @@ class FuturesApi(object):
         all_params = ['settle', 'limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_futures_insurance_ledger" % key
+                    "Got an unexpected keyword argument '%s'" " to method list_futures_insurance_ledger" % k
                 )
-            local_var_params[key] = val
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -1089,10 +1087,10 @@ class FuturesApi(object):
         all_params = ['settle']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_accounts" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_accounts" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -1201,12 +1199,10 @@ class FuturesApi(object):
         all_params = ['settle', 'limit', '_from', 'to', 'type']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_futures_account_book" % key
-                )
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_account_book" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -1327,10 +1323,10 @@ class FuturesApi(object):
         all_params = ['settle']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_positions" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_positions" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -1431,10 +1427,10 @@ class FuturesApi(object):
         all_params = ['settle', 'contract']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_position" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_position" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -1544,10 +1540,10 @@ class FuturesApi(object):
         all_params = ['settle', 'contract', 'change']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method update_position_margin" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method update_position_margin" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -1670,12 +1666,10 @@ class FuturesApi(object):
         all_params = ['settle', 'contract', 'leverage']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method update_position_leverage" % key
-                )
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method update_position_leverage" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -1798,12 +1792,12 @@ class FuturesApi(object):
         all_params = ['settle', 'contract', 'risk_limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method update_position_risk_limit" % key
+                    "Got an unexpected keyword argument '%s'" " to method update_position_risk_limit" % k
                 )
-            local_var_params[key] = val
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -1936,10 +1930,10 @@ class FuturesApi(object):
         all_params = ['settle', 'contract', 'status', 'limit', 'offset', 'last_id', 'count_total']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_orders" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_orders" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -2088,10 +2082,10 @@ class FuturesApi(object):
         all_params = ['settle', 'futures_order']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_futures_order" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_futures_order" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -2212,10 +2206,10 @@ class FuturesApi(object):
         all_params = ['settle', 'contract', 'side']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_futures_orders" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_futures_orders" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -2331,10 +2325,10 @@ class FuturesApi(object):
         all_params = ['settle', 'order_id']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_futures_order" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_futures_order" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -2446,10 +2440,10 @@ class FuturesApi(object):
         all_params = ['settle', 'order_id']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_futures_order" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_futures_order" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -2571,10 +2565,10 @@ class FuturesApi(object):
         all_params = ['settle', 'contract', 'order', 'limit', 'offset', 'last_id', 'count_total']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_my_trades" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_my_trades" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -2707,10 +2701,10 @@ class FuturesApi(object):
         all_params = ['settle', 'contract', 'limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_position_close" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_position_close" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -2833,10 +2827,10 @@ class FuturesApi(object):
         all_params = ['settle', 'contract', 'limit', 'at']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_liquidates" % key)
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_liquidates" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -2961,12 +2955,12 @@ class FuturesApi(object):
         all_params = ['settle', 'status', 'contract', 'limit', 'offset']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_price_triggered_orders" % key
+                    "Got an unexpected keyword argument '%s'" " to method list_price_triggered_orders" % k
                 )
-            local_var_params[key] = val
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -3106,12 +3100,12 @@ class FuturesApi(object):
         all_params = ['settle', 'futures_price_triggered_order']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method create_price_triggered_order" % key
+                    "Got an unexpected keyword argument '%s'" " to method create_price_triggered_order" % k
                 )
-            local_var_params[key] = val
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -3229,12 +3223,12 @@ class FuturesApi(object):
         all_params = ['settle', 'contract']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method cancel_price_triggered_order_list" % key
+                    "Got an unexpected keyword argument '%s'" " to method cancel_price_triggered_order_list" % k
                 )
-            local_var_params[key] = val
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -3346,12 +3340,10 @@ class FuturesApi(object):
         all_params = ['settle', 'order_id']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method get_price_triggered_order" % key
-                )
-            local_var_params[key] = val
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_price_triggered_order" % k)
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
@@ -3463,12 +3455,12 @@ class FuturesApi(object):
         all_params = ['settle', 'order_id']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method cancel_price_triggered_order" % key
+                    "Got an unexpected keyword argument '%s'" " to method cancel_price_triggered_order" % k
                 )
-            local_var_params[key] = val
+            local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
         if self.api_client.client_side_validation and (
