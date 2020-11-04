@@ -112,8 +112,8 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
 currency = 'BTC' # str | Filter by currency. Return all currency records if not specified (optional)
-_from = 56 # int | Time range beginning, default to 7 days before current time (optional)
-to = 56 # int | Time range ending, default to current time (optional)
+_from = 1602120000 # int | Time range beginning, default to 7 days before current time (optional)
+to = 1602123600 # int | Time range ending, default to current time (optional)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
@@ -189,8 +189,8 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
 currency = 'BTC' # str | Filter by currency. Return all currency records if not specified (optional)
-_from = 56 # int | Time range beginning, default to 7 days before current time (optional)
-to = 56 # int | Time range ending, default to current time (optional)
+_from = 1602120000 # int | Time range beginning, default to 7 days before current time (optional)
+to = 1602123600 # int | Time range ending, default to current time (optional)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
@@ -334,8 +334,8 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
 sub_uid = '10003' # str | Sub account user ID. Return records related to all sub accounts if not specified (optional)
-_from = 56 # int | Time range beginning, default to 7 days before current time (optional)
-to = 56 # int | Time range ending, default to current time (optional)
+_from = 1602120000 # int | Time range beginning, default to 7 days before current time (optional)
+to = 1602123600 # int | Time range ending, default to current time (optional)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 

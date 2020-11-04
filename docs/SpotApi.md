@@ -196,7 +196,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_order_book**
-> OrderBook list_order_book(currency_pair, interval=interval, limit=limit)
+> OrderBook list_order_book(currency_pair, interval=interval, limit=limit, with_id=with_id)
 
 Retrieve order book
 
@@ -220,10 +220,11 @@ api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'BTC_USDT' # str | Currency pair
 interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
 limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
+with_id = False # bool | Return order book ID (optional) (default to False)
 
 try:
     # Retrieve order book
-    api_response = api_instance.list_order_book(currency_pair, interval=interval, limit=limit)
+    api_response = api_instance.list_order_book(currency_pair, interval=interval, limit=limit, with_id=with_id)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -238,6 +239,7 @@ Name | Type | Description  | Notes
  **currency_pair** | **str**| Currency pair | 
  **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
  **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
+ **with_id** | **bool**| Return order book ID | [optional] [default to False]
 
 ### Return type
 

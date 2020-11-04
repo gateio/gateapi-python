@@ -402,8 +402,8 @@ class DeliveryApi(object):
         :param str contract: Futures contract (required)
         :param int limit: Maximum number of records returned in one list
         :param str last_id: Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use `from` and `to` instead to limit time range
-        :param float _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned. 
-        :param float to: Specify end time in Unix seconds, default to current time
+        :param int _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned. 
+        :param int to: Specify end time in Unix seconds, default to current time
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -431,8 +431,8 @@ class DeliveryApi(object):
         :param str contract: Futures contract (required)
         :param int limit: Maximum number of records returned in one list
         :param str last_id: Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use `from` and `to` instead to limit time range
-        :param float _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned. 
-        :param float to: Specify end time in Unix seconds, default to current time
+        :param int _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned. 
+        :param int to: Specify end time in Unix seconds, default to current time
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -544,8 +544,8 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param float _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
-        :param float to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
+        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
+        :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
         :param int limit: Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
         :param str interval: Interval time between data points
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -574,8 +574,8 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param float _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
-        :param float to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
+        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
+        :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
         :param int limit: Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
         :param str interval: Interval time between data points
         :param _return_http_data_only: response data without head status code

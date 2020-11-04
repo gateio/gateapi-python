@@ -342,6 +342,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param str interval: Order depth. 0 means no aggregation is applied. default to 0
         :param int limit: Maximum number of order depth data in asks or bids
+        :param bool with_id: Return order book ID
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -369,6 +370,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param str interval: Order depth. 0 means no aggregation is applied. default to 0
         :param int limit: Maximum number of order depth data in asks or bids
+        :param bool with_id: Return order book ID
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -385,7 +387,7 @@ class SpotApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair', 'interval', 'limit']
+        all_params = ['currency_pair', 'interval', 'limit', 'with_id']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -424,6 +426,8 @@ class SpotApi(object):
             query_params.append(('interval', local_var_params['interval']))  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'with_id' in local_var_params and local_var_params['with_id'] is not None:  # noqa: E501
+            query_params.append(('with_id', local_var_params['with_id']))  # noqa: E501
 
         header_params = {}
 

@@ -32,23 +32,49 @@ class OrderBook(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'asks': 'list[list[str]]', 'bids': 'list[list[str]]'}
+    openapi_types = {'id': 'int', 'asks': 'list[list[str]]', 'bids': 'list[list[str]]'}
 
-    attribute_map = {'asks': 'asks', 'bids': 'bids'}
+    attribute_map = {'id': 'id', 'asks': 'asks', 'bids': 'bids'}
 
-    def __init__(self, asks=None, bids=None, local_vars_configuration=None):  # noqa: E501
-        # type: (list[list[str]], list[list[str]], Configuration) -> None
+    def __init__(self, id=None, asks=None, bids=None, local_vars_configuration=None):  # noqa: E501
+        # type: (int, list[list[str]], list[list[str]], Configuration) -> None
         """OrderBook - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._id = None
         self._asks = None
         self._bids = None
         self.discriminator = None
 
+        if id is not None:
+            self.id = id
         self.asks = asks
         self.bids = bids
+
+    @property
+    def id(self):
+        """Gets the id of this OrderBook.  # noqa: E501
+
+        Order book ID, which is updated whenever the order book is changed. Valid only when `with_id` is set to `true`  # noqa: E501
+
+        :return: The id of this OrderBook.  # noqa: E501
+        :rtype: int
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this OrderBook.
+
+        Order book ID, which is updated whenever the order book is changed. Valid only when `with_id` is set to `true`  # noqa: E501
+
+        :param id: The id of this OrderBook.  # noqa: E501
+        :type: int
+        """
+
+        self._id = id
 
     @property
     def asks(self):

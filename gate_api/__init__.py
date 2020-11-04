@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.15.4"
+__version__ = "4.15.5"
 
 # import apis into sdk package
 from gate_api.api.delivery_api import DeliveryApi
@@ -38,6 +38,7 @@ from gate_api.models.batch_order import BatchOrder
 from gate_api.models.cancel_order import CancelOrder
 from gate_api.models.cancel_order_result import CancelOrderResult
 from gate_api.models.contract import Contract
+from gate_api.models.contract_stat import ContractStat
 from gate_api.models.currency_pair import CurrencyPair
 from gate_api.models.delivery_contract import DeliveryContract
 from gate_api.models.delivery_settlement import DeliverySettlement
