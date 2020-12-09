@@ -54,6 +54,7 @@ class Position(object):
         'adl_ranking': 'int',
         'pending_orders': 'int',
         'close_order': 'PositionCloseOrder',
+        'dual_mode': 'str',
     }
 
     attribute_map = {
@@ -78,6 +79,7 @@ class Position(object):
         'adl_ranking': 'adl_ranking',
         'pending_orders': 'pending_orders',
         'close_order': 'close_order',
+        'dual_mode': 'dual_mode',
     }
 
     def __init__(
@@ -103,9 +105,10 @@ class Position(object):
         adl_ranking=None,
         pending_orders=None,
         close_order=None,
+        dual_mode=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, PositionCloseOrder, Configuration) -> None
+        # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, PositionCloseOrder, str, Configuration) -> None
         """Position - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -132,6 +135,7 @@ class Position(object):
         self._adl_ranking = None
         self._pending_orders = None
         self._close_order = None
+        self._dual_mode = None
         self.discriminator = None
 
         if user is not None:
@@ -176,6 +180,8 @@ class Position(object):
             self.pending_orders = pending_orders
         if close_order is not None:
             self.close_order = close_order
+        if dual_mode is not None:
+            self.dual_mode = dual_mode
 
     @property
     def user(self):
@@ -657,6 +663,36 @@ class Position(object):
         """
 
         self._close_order = close_order
+
+    @property
+    def dual_mode(self):
+        """Gets the dual_mode of this Position.  # noqa: E501
+
+        Position mode, including:  - `single`: dual mode is not enabled- `dual_long`: long position in dual mode- `dual_short`: short position in dual mode  # noqa: E501
+
+        :return: The dual_mode of this Position.  # noqa: E501
+        :rtype: str
+        """
+        return self._dual_mode
+
+    @dual_mode.setter
+    def dual_mode(self, dual_mode):
+        """Sets the dual_mode of this Position.
+
+        Position mode, including:  - `single`: dual mode is not enabled- `dual_long`: long position in dual mode- `dual_short`: short position in dual mode  # noqa: E501
+
+        :param dual_mode: The dual_mode of this Position.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["single", "dual_long", "dual_short"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and dual_mode not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `dual_mode` ({0}), must be one of {1}".format(  # noqa: E501
+                    dual_mode, allowed_values
+                )
+            )
+
+        self._dual_mode = dual_mode
 
     def to_dict(self):
         """Returns the model properties as a dict"""

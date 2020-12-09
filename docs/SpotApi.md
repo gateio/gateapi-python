@@ -262,7 +262,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_trades**
-> list[Trade] list_trades(currency_pair, limit=limit, last_id=last_id)
+> list[Trade] list_trades(currency_pair, limit=limit, last_id=last_id, reverse=reverse)
 
 Retrieve market trades
 
@@ -284,10 +284,11 @@ api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'BTC_USDT' # str | Currency pair
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
+reverse = False # bool | Whether to retrieve records whose IDs are smaller than `last_id`'s. Default to larger ones.  When `last_id` is specified. Set `reverse` to `true` to trace back trading history; `false` to retrieve latest tradings.  No effect if `last_id` is not specified. (optional) (default to False)
 
 try:
     # Retrieve market trades
-    api_response = api_instance.list_trades(currency_pair, limit=limit, last_id=last_id)
+    api_response = api_instance.list_trades(currency_pair, limit=limit, last_id=last_id, reverse=reverse)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -302,6 +303,7 @@ Name | Type | Description  | Notes
  **currency_pair** | **str**| Currency pair | 
  **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
  **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
+ **reverse** | **bool**| Whether to retrieve records whose IDs are smaller than &#x60;last_id&#x60;&#39;s. Default to larger ones.  When &#x60;last_id&#x60; is specified. Set &#x60;reverse&#x60; to &#x60;true&#x60; to trace back trading history; &#x60;false&#x60; to retrieve latest tradings.  No effect if &#x60;last_id&#x60; is not specified. | [optional] [default to False]
 
 ### Return type
 
@@ -530,7 +532,7 @@ Name | Type | Description  | Notes
 
 Create a batch of orders
 
-Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 5 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, i.e. `account` must be identical for all orders 
+Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 10 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, i.e. `account` must be identical for all orders 
 
 ### Example
 

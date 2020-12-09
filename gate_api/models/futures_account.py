@@ -40,6 +40,7 @@ class FuturesAccount(object):
         'available': 'str',
         'point': 'str',
         'currency': 'str',
+        'in_dual_mode': 'bool',
     }
 
     attribute_map = {
@@ -50,6 +51,7 @@ class FuturesAccount(object):
         'available': 'available',
         'point': 'point',
         'currency': 'currency',
+        'in_dual_mode': 'in_dual_mode',
     }
 
     def __init__(
@@ -61,9 +63,10 @@ class FuturesAccount(object):
         available=None,
         point=None,
         currency=None,
+        in_dual_mode=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, bool, Configuration) -> None
         """FuturesAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +79,7 @@ class FuturesAccount(object):
         self._available = None
         self._point = None
         self._currency = None
+        self._in_dual_mode = None
         self.discriminator = None
 
         if total is not None:
@@ -92,6 +96,8 @@ class FuturesAccount(object):
             self.point = point
         if currency is not None:
             self.currency = currency
+        if in_dual_mode is not None:
+            self.in_dual_mode = in_dual_mode
 
     @property
     def total(self):
@@ -253,6 +259,29 @@ class FuturesAccount(object):
         """
 
         self._currency = currency
+
+    @property
+    def in_dual_mode(self):
+        """Gets the in_dual_mode of this FuturesAccount.  # noqa: E501
+
+        Whether dual mode is enabled  # noqa: E501
+
+        :return: The in_dual_mode of this FuturesAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._in_dual_mode
+
+    @in_dual_mode.setter
+    def in_dual_mode(self, in_dual_mode):
+        """Sets the in_dual_mode of this FuturesAccount.
+
+        Whether dual mode is enabled  # noqa: E501
+
+        :param in_dual_mode: The in_dual_mode of this FuturesAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._in_dual_mode = in_dual_mode
 
     def to_dict(self):
         """Returns the model properties as a dict"""

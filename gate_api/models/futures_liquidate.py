@@ -173,7 +173,7 @@ class FuturesLiquidate(object):
     def leverage(self):
         """Gets the leverage of this FuturesLiquidate.  # noqa: E501
 
-        Position leverage  # noqa: E501
+        Position leverage. Not returned in public endpoints.  # noqa: E501
 
         :return: The leverage of this FuturesLiquidate.  # noqa: E501
         :rtype: str
@@ -184,7 +184,7 @@ class FuturesLiquidate(object):
     def leverage(self, leverage):
         """Sets the leverage of this FuturesLiquidate.
 
-        Position leverage  # noqa: E501
+        Position leverage. Not returned in public endpoints.  # noqa: E501
 
         :param leverage: The leverage of this FuturesLiquidate.  # noqa: E501
         :type: str
@@ -219,7 +219,7 @@ class FuturesLiquidate(object):
     def margin(self):
         """Gets the margin of this FuturesLiquidate.  # noqa: E501
 
-        Position margin  # noqa: E501
+        Position margin. Not returned in public endpoints.  # noqa: E501
 
         :return: The margin of this FuturesLiquidate.  # noqa: E501
         :rtype: str
@@ -230,7 +230,7 @@ class FuturesLiquidate(object):
     def margin(self, margin):
         """Sets the margin of this FuturesLiquidate.
 
-        Position margin  # noqa: E501
+        Position margin. Not returned in public endpoints.  # noqa: E501
 
         :param margin: The margin of this FuturesLiquidate.  # noqa: E501
         :type: str
@@ -242,7 +242,7 @@ class FuturesLiquidate(object):
     def entry_price(self):
         """Gets the entry_price of this FuturesLiquidate.  # noqa: E501
 
-        Average entry price  # noqa: E501
+        Average entry price. Not returned in public endpoints.  # noqa: E501
 
         :return: The entry_price of this FuturesLiquidate.  # noqa: E501
         :rtype: str
@@ -253,7 +253,7 @@ class FuturesLiquidate(object):
     def entry_price(self, entry_price):
         """Sets the entry_price of this FuturesLiquidate.
 
-        Average entry price  # noqa: E501
+        Average entry price. Not returned in public endpoints.  # noqa: E501
 
         :param entry_price: The entry_price of this FuturesLiquidate.  # noqa: E501
         :type: str
@@ -265,7 +265,7 @@ class FuturesLiquidate(object):
     def liq_price(self):
         """Gets the liq_price of this FuturesLiquidate.  # noqa: E501
 
-        Liquidation price  # noqa: E501
+        Liquidation price. Not returned in public endpoints.  # noqa: E501
 
         :return: The liq_price of this FuturesLiquidate.  # noqa: E501
         :rtype: str
@@ -276,7 +276,7 @@ class FuturesLiquidate(object):
     def liq_price(self, liq_price):
         """Sets the liq_price of this FuturesLiquidate.
 
-        Liquidation price  # noqa: E501
+        Liquidation price. Not returned in public endpoints.  # noqa: E501
 
         :param liq_price: The liq_price of this FuturesLiquidate.  # noqa: E501
         :type: str
@@ -288,7 +288,7 @@ class FuturesLiquidate(object):
     def mark_price(self):
         """Gets the mark_price of this FuturesLiquidate.  # noqa: E501
 
-        Mark price  # noqa: E501
+        Mark price. Not returned in public endpoints.  # noqa: E501
 
         :return: The mark_price of this FuturesLiquidate.  # noqa: E501
         :rtype: str
@@ -299,7 +299,7 @@ class FuturesLiquidate(object):
     def mark_price(self, mark_price):
         """Sets the mark_price of this FuturesLiquidate.
 
-        Mark price  # noqa: E501
+        Mark price. Not returned in public endpoints.  # noqa: E501
 
         :param mark_price: The mark_price of this FuturesLiquidate.  # noqa: E501
         :type: str
@@ -311,7 +311,7 @@ class FuturesLiquidate(object):
     def order_id(self):
         """Gets the order_id of this FuturesLiquidate.  # noqa: E501
 
-        Liquidation order ID  # noqa: E501
+        Liquidation order ID. Not returned in public endpoints.  # noqa: E501
 
         :return: The order_id of this FuturesLiquidate.  # noqa: E501
         :rtype: int
@@ -322,7 +322,7 @@ class FuturesLiquidate(object):
     def order_id(self, order_id):
         """Sets the order_id of this FuturesLiquidate.
 
-        Liquidation order ID  # noqa: E501
+        Liquidation order ID. Not returned in public endpoints.  # noqa: E501
 
         :param order_id: The order_id of this FuturesLiquidate.  # noqa: E501
         :type: int

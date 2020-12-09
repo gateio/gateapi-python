@@ -36,7 +36,8 @@ class ContractStat(object):
         'time': 'int',
         'lsr_taker': 'float',
         'lsr_account': 'float',
-        'liq_size': 'int',
+        'long_liq_size': 'int',
+        'short_liq_size': 'int',
         'open_interest': 'int',
     }
 
@@ -44,7 +45,8 @@ class ContractStat(object):
         'time': 'time',
         'lsr_taker': 'lsr_taker',
         'lsr_account': 'lsr_account',
-        'liq_size': 'liq_size',
+        'long_liq_size': 'long_liq_size',
+        'short_liq_size': 'short_liq_size',
         'open_interest': 'open_interest',
     }
 
@@ -53,11 +55,12 @@ class ContractStat(object):
         time=None,
         lsr_taker=None,
         lsr_account=None,
-        liq_size=None,
+        long_liq_size=None,
+        short_liq_size=None,
         open_interest=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, float, float, int, int, Configuration) -> None
+        # type: (int, float, float, int, int, int, Configuration) -> None
         """ContractStat - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,7 +69,8 @@ class ContractStat(object):
         self._time = None
         self._lsr_taker = None
         self._lsr_account = None
-        self._liq_size = None
+        self._long_liq_size = None
+        self._short_liq_size = None
         self._open_interest = None
         self.discriminator = None
 
@@ -76,8 +80,10 @@ class ContractStat(object):
             self.lsr_taker = lsr_taker
         if lsr_account is not None:
             self.lsr_account = lsr_account
-        if liq_size is not None:
-            self.liq_size = liq_size
+        if long_liq_size is not None:
+            self.long_liq_size = long_liq_size
+        if short_liq_size is not None:
+            self.short_liq_size = short_liq_size
         if open_interest is not None:
             self.open_interest = open_interest
 
@@ -151,27 +157,50 @@ class ContractStat(object):
         self._lsr_account = lsr_account
 
     @property
-    def liq_size(self):
-        """Gets the liq_size of this ContractStat.  # noqa: E501
+    def long_liq_size(self):
+        """Gets the long_liq_size of this ContractStat.  # noqa: E501
 
-        Liquidation size  # noqa: E501
+        Long liquidation size  # noqa: E501
 
-        :return: The liq_size of this ContractStat.  # noqa: E501
+        :return: The long_liq_size of this ContractStat.  # noqa: E501
         :rtype: int
         """
-        return self._liq_size
+        return self._long_liq_size
 
-    @liq_size.setter
-    def liq_size(self, liq_size):
-        """Sets the liq_size of this ContractStat.
+    @long_liq_size.setter
+    def long_liq_size(self, long_liq_size):
+        """Sets the long_liq_size of this ContractStat.
 
-        Liquidation size  # noqa: E501
+        Long liquidation size  # noqa: E501
 
-        :param liq_size: The liq_size of this ContractStat.  # noqa: E501
+        :param long_liq_size: The long_liq_size of this ContractStat.  # noqa: E501
         :type: int
         """
 
-        self._liq_size = liq_size
+        self._long_liq_size = long_liq_size
+
+    @property
+    def short_liq_size(self):
+        """Gets the short_liq_size of this ContractStat.  # noqa: E501
+
+        Short liquidation size  # noqa: E501
+
+        :return: The short_liq_size of this ContractStat.  # noqa: E501
+        :rtype: int
+        """
+        return self._short_liq_size
+
+    @short_liq_size.setter
+    def short_liq_size(self, short_liq_size):
+        """Sets the short_liq_size of this ContractStat.
+
+        Short liquidation size  # noqa: E501
+
+        :param short_liq_size: The short_liq_size of this ContractStat.  # noqa: E501
+        :type: int
+        """
+
+        self._short_liq_size = short_liq_size
 
     @property
     def open_interest(self):

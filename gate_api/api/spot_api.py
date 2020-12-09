@@ -471,6 +471,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param int limit: Maximum number of records returned in one list
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
+        :param bool reverse: Whether to retrieve records whose IDs are smaller than `last_id`'s. Default to larger ones.  When `last_id` is specified. Set `reverse` to `true` to trace back trading history; `false` to retrieve latest tradings.  No effect if `last_id` is not specified.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -497,6 +498,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param int limit: Maximum number of records returned in one list
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
+        :param bool reverse: Whether to retrieve records whose IDs are smaller than `last_id`'s. Default to larger ones.  When `last_id` is specified. Set `reverse` to `true` to trace back trading history; `false` to retrieve latest tradings.  No effect if `last_id` is not specified.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -513,7 +515,7 @@ class SpotApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair', 'limit', 'last_id']
+        all_params = ['currency_pair', 'limit', 'last_id', 'reverse']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -552,6 +554,8 @@ class SpotApi(object):
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
         if 'last_id' in local_var_params and local_var_params['last_id'] is not None:  # noqa: E501
             query_params.append(('last_id', local_var_params['last_id']))  # noqa: E501
+        if 'reverse' in local_var_params and local_var_params['reverse'] is not None:  # noqa: E501
+            query_params.append(('reverse', local_var_params['reverse']))  # noqa: E501
 
         header_params = {}
 
@@ -908,7 +912,7 @@ class SpotApi(object):
     def create_batch_orders(self, order, **kwargs):  # noqa: E501
         """Create a batch of orders  # noqa: E501
 
-        Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 5 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, i.e. `account` must be identical for all orders   # noqa: E501
+        Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 10 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, i.e. `account` must be identical for all orders   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_batch_orders(order, async_req=True)
@@ -933,7 +937,7 @@ class SpotApi(object):
     def create_batch_orders_with_http_info(self, order, **kwargs):  # noqa: E501
         """Create a batch of orders  # noqa: E501
 
-        Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 5 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, i.e. `account` must be identical for all orders   # noqa: E501
+        Batch orders requirements:  1. custom order field `text` is required 2. At most 4 currency pairs, maximum 10 orders each, are allowed in one request 3. No mixture of spot orders and margin orders, i.e. `account` must be identical for all orders   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_batch_orders_with_http_info(order, async_req=True)
