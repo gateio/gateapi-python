@@ -1659,7 +1659,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.DeliveryApi(api_client)
 settle = 'usdt' # str | Settle currency
 status = 'status_example' # str | List orders based on status
-contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
@@ -1802,7 +1802,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.DeliveryApi(api_client)
 settle = 'usdt' # str | Settle currency
-contract = 'BTC_USD' # str | Futures contract
+contract = 'BTC_USDT' # str | Futures contract
 
 try:
     # Cancel all open orders

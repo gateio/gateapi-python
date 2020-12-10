@@ -182,7 +182,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract
+contract = 'BTC_USDT' # str | Futures contract
 interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
 limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
 
@@ -246,7 +246,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract
+contract = 'BTC_USDT' # str | Futures contract
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 last_id = '12345' # str | Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use `from` and `to` instead to limit time range (optional)
 _from = 1546905600 # int | Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned.  (optional)
@@ -316,7 +316,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract
+contract = 'BTC_USDT' # str | Futures contract
 _from = 1546905600 # int | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
 to = 1546935600 # int | End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time (optional)
 limit = 100 # int | Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
@@ -384,7 +384,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 
 try:
     # List futures tickers
@@ -444,7 +444,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract
+contract = 'BTC_USDT' # str | Futures contract
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 
 try:
@@ -566,7 +566,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract
+contract = 'BTC_USDT' # str | Futures contract
 _from = 1604561000 # int | Start timestamp (optional)
 interval = '5m' # str |  (optional) (default to '5m')
 limit = 30 # int |  (optional) (default to 30)
@@ -634,7 +634,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
@@ -1555,7 +1555,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract
+contract = 'BTC_USDT' # str | Futures contract
 status = 'open' # str | List orders based on status
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
@@ -1707,7 +1707,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract
+contract = 'BTC_USDT' # str | Futures contract
 side = 'ask' # str | All bids or asks. Both included in not specified (optional)
 
 try:
@@ -1918,7 +1918,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 order = 12345 # int | Futures order ID, return related data only if specified (optional)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
@@ -1997,7 +1997,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 
 try:
@@ -2068,7 +2068,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 at = 0 # int | Specify a liquidation timestamp (optional) (default to 0)
 
@@ -2142,7 +2142,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
 status = 'status_example' # str | List orders based on status
-contract = 'BTC_USD' # str | Futures contract, return related data only if specified (optional)
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
@@ -2285,7 +2285,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
-contract = 'BTC_USD' # str | Futures contract
+contract = 'BTC_USDT' # str | Futures contract
 
 try:
     # Cancel all open orders
