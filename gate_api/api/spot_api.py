@@ -404,10 +404,10 @@ class SpotApi(object):
             )  # noqa: E501
 
         if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 30
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100
         ):  # noqa: E501
             raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_order_book`, must be a value less than or equal to `30`"
+                "Invalid value for parameter `limit` when calling `list_order_book`, must be a value less than or equal to `100`"
             )  # noqa: E501
         if (
             self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
