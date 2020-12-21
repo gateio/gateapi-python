@@ -19,6 +19,7 @@ from gate_api.models.cancel_order import CancelOrder
 from gate_api.models.cancel_order_result import CancelOrderResult
 from gate_api.models.contract import Contract
 from gate_api.models.contract_stat import ContractStat
+from gate_api.models.currency import Currency
 from gate_api.models.currency_pair import CurrencyPair
 from gate_api.models.delivery_contract import DeliveryContract
 from gate_api.models.delivery_settlement import DeliverySettlement
