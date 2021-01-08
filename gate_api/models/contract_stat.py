@@ -44,8 +44,8 @@ class ContractStat(object):
         'short_liq_usd': 'float',
         'open_interest': 'int',
         'open_interest_usd': 'float',
-        'top_lsr_account': 'str',
-        'top_lsr_size': 'str',
+        'top_lsr_account': 'float',
+        'top_lsr_size': 'float',
     }
 
     attribute_map = {
@@ -81,7 +81,7 @@ class ContractStat(object):
         top_lsr_size=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, float, float, int, float, float, int, float, float, int, float, str, str, Configuration) -> None
+        # type: (int, float, float, int, float, float, int, float, float, int, float, float, float, Configuration) -> None
         """ContractStat - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -389,7 +389,7 @@ class ContractStat(object):
         Top trader long/short account ratio  # noqa: E501
 
         :return: The top_lsr_account of this ContractStat.  # noqa: E501
-        :rtype: str
+        :rtype: float
         """
         return self._top_lsr_account
 
@@ -400,7 +400,7 @@ class ContractStat(object):
         Top trader long/short account ratio  # noqa: E501
 
         :param top_lsr_account: The top_lsr_account of this ContractStat.  # noqa: E501
-        :type: str
+        :type: float
         """
 
         self._top_lsr_account = top_lsr_account
@@ -412,7 +412,7 @@ class ContractStat(object):
         Top trader long/short position ratio  # noqa: E501
 
         :return: The top_lsr_size of this ContractStat.  # noqa: E501
-        :rtype: str
+        :rtype: float
         """
         return self._top_lsr_size
 
@@ -423,7 +423,7 @@ class ContractStat(object):
         Top trader long/short position ratio  # noqa: E501
 
         :param top_lsr_size: The top_lsr_size of this ContractStat.  # noqa: E501
-        :type: str
+        :type: float
         """
 
         self._top_lsr_size = top_lsr_size

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **amount** | **str** | Trade amount | 
 **price** | **str** | Order price | 
 **time_in_force** | **str** | Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee | [optional] [default to 'gtc']
+**iceberg** | **str** | Amount to display for the iceberg order. Null or 0 for normal orders | [optional] 
 **auto_borrow** | **bool** | Used in margin trading(i.e. &#x60;account&#x60; is &#x60;margin&#x60;) to allow automatic loan of insufficient part if balance is not enough. | [optional] 
 **left** | **str** | Amount left to fill | [optional] [readonly] 
 **fill_price** | **str** | Total filled in quote currency. Deprecated in favor of &#x60;filled_total&#x60; | [optional] [readonly] 

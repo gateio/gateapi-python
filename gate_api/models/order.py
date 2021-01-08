@@ -45,6 +45,7 @@ class Order(object):
         'amount': 'str',
         'price': 'str',
         'time_in_force': 'str',
+        'iceberg': 'str',
         'auto_borrow': 'bool',
         'left': 'str',
         'fill_price': 'str',
@@ -71,6 +72,7 @@ class Order(object):
         'amount': 'amount',
         'price': 'price',
         'time_in_force': 'time_in_force',
+        'iceberg': 'iceberg',
         'auto_borrow': 'auto_borrow',
         'left': 'left',
         'fill_price': 'fill_price',
@@ -98,6 +100,7 @@ class Order(object):
         amount=None,
         price=None,
         time_in_force='gtc',
+        iceberg=None,
         auto_borrow=None,
         left=None,
         fill_price=None,
@@ -111,7 +114,7 @@ class Order(object):
         rebated_fee_currency=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, str, bool, str, str, str, str, str, str, str, bool, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, bool, str, str, str, str, str, str, str, bool, str, str, Configuration) -> None
         """Order - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -129,6 +132,7 @@ class Order(object):
         self._amount = None
         self._price = None
         self._time_in_force = None
+        self._iceberg = None
         self._auto_borrow = None
         self._left = None
         self._fill_price = None
@@ -162,6 +166,8 @@ class Order(object):
         self.price = price
         if time_in_force is not None:
             self.time_in_force = time_in_force
+        if iceberg is not None:
+            self.iceberg = iceberg
         if auto_borrow is not None:
             self.auto_borrow = auto_borrow
         if left is not None:
@@ -495,6 +501,29 @@ class Order(object):
             )
 
         self._time_in_force = time_in_force
+
+    @property
+    def iceberg(self):
+        """Gets the iceberg of this Order.  # noqa: E501
+
+        Amount to display for the iceberg order. Null or 0 for normal orders  # noqa: E501
+
+        :return: The iceberg of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._iceberg
+
+    @iceberg.setter
+    def iceberg(self, iceberg):
+        """Sets the iceberg of this Order.
+
+        Amount to display for the iceberg order. Null or 0 for normal orders  # noqa: E501
+
+        :param iceberg: The iceberg of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._iceberg = iceberg
 
     @property
     def auto_borrow(self):
