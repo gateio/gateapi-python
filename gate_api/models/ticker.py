@@ -42,6 +42,10 @@ class Ticker(object):
         'quote_volume': 'str',
         'high_24h': 'str',
         'low_24h': 'str',
+        'etf_net_value': 'str',
+        'etf_pre_net_value': 'str',
+        'etf_pre_timestamp': 'int',
+        'etf_leverage': 'str',
     }
 
     attribute_map = {
@@ -54,6 +58,10 @@ class Ticker(object):
         'quote_volume': 'quote_volume',
         'high_24h': 'high_24h',
         'low_24h': 'low_24h',
+        'etf_net_value': 'etf_net_value',
+        'etf_pre_net_value': 'etf_pre_net_value',
+        'etf_pre_timestamp': 'etf_pre_timestamp',
+        'etf_leverage': 'etf_leverage',
     }
 
     def __init__(
@@ -67,9 +75,13 @@ class Ticker(object):
         quote_volume=None,
         high_24h=None,
         low_24h=None,
+        etf_net_value=None,
+        etf_pre_net_value=None,
+        etf_pre_timestamp=None,
+        etf_leverage=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, int, str, Configuration) -> None
         """Ticker - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +96,10 @@ class Ticker(object):
         self._quote_volume = None
         self._high_24h = None
         self._low_24h = None
+        self._etf_net_value = None
+        self._etf_pre_net_value = None
+        self._etf_pre_timestamp = None
+        self._etf_leverage = None
         self.discriminator = None
 
         if currency_pair is not None:
@@ -104,6 +120,14 @@ class Ticker(object):
             self.high_24h = high_24h
         if low_24h is not None:
             self.low_24h = low_24h
+        if etf_net_value is not None:
+            self.etf_net_value = etf_net_value
+        if etf_pre_net_value is not None:
+            self.etf_pre_net_value = etf_pre_net_value
+        if etf_pre_timestamp is not None:
+            self.etf_pre_timestamp = etf_pre_timestamp
+        if etf_leverage is not None:
+            self.etf_leverage = etf_leverage
 
     @property
     def currency_pair(self):
@@ -311,6 +335,98 @@ class Ticker(object):
         """
 
         self._low_24h = low_24h
+
+    @property
+    def etf_net_value(self):
+        """Gets the etf_net_value of this Ticker.  # noqa: E501
+
+        ETF net value  # noqa: E501
+
+        :return: The etf_net_value of this Ticker.  # noqa: E501
+        :rtype: str
+        """
+        return self._etf_net_value
+
+    @etf_net_value.setter
+    def etf_net_value(self, etf_net_value):
+        """Sets the etf_net_value of this Ticker.
+
+        ETF net value  # noqa: E501
+
+        :param etf_net_value: The etf_net_value of this Ticker.  # noqa: E501
+        :type: str
+        """
+
+        self._etf_net_value = etf_net_value
+
+    @property
+    def etf_pre_net_value(self):
+        """Gets the etf_pre_net_value of this Ticker.  # noqa: E501
+
+        ETF previous net value at re-balancing time  # noqa: E501
+
+        :return: The etf_pre_net_value of this Ticker.  # noqa: E501
+        :rtype: str
+        """
+        return self._etf_pre_net_value
+
+    @etf_pre_net_value.setter
+    def etf_pre_net_value(self, etf_pre_net_value):
+        """Sets the etf_pre_net_value of this Ticker.
+
+        ETF previous net value at re-balancing time  # noqa: E501
+
+        :param etf_pre_net_value: The etf_pre_net_value of this Ticker.  # noqa: E501
+        :type: str
+        """
+
+        self._etf_pre_net_value = etf_pre_net_value
+
+    @property
+    def etf_pre_timestamp(self):
+        """Gets the etf_pre_timestamp of this Ticker.  # noqa: E501
+
+        ETF previous re-balancing time  # noqa: E501
+
+        :return: The etf_pre_timestamp of this Ticker.  # noqa: E501
+        :rtype: int
+        """
+        return self._etf_pre_timestamp
+
+    @etf_pre_timestamp.setter
+    def etf_pre_timestamp(self, etf_pre_timestamp):
+        """Sets the etf_pre_timestamp of this Ticker.
+
+        ETF previous re-balancing time  # noqa: E501
+
+        :param etf_pre_timestamp: The etf_pre_timestamp of this Ticker.  # noqa: E501
+        :type: int
+        """
+
+        self._etf_pre_timestamp = etf_pre_timestamp
+
+    @property
+    def etf_leverage(self):
+        """Gets the etf_leverage of this Ticker.  # noqa: E501
+
+        ETF current leverage  # noqa: E501
+
+        :return: The etf_leverage of this Ticker.  # noqa: E501
+        :rtype: str
+        """
+        return self._etf_leverage
+
+    @etf_leverage.setter
+    def etf_leverage(self, etf_leverage):
+        """Sets the etf_leverage of this Ticker.
+
+        ETF current leverage  # noqa: E501
+
+        :param etf_leverage: The etf_leverage of this Ticker.  # noqa: E501
+        :type: str
+        """
+
+        self._etf_leverage = etf_leverage
 
     def to_dict(self):
         """Returns the model properties as a dict"""
