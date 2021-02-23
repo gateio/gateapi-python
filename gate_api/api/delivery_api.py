@@ -266,6 +266,7 @@ class DeliveryApi(object):
         :param str contract: Futures contract (required)
         :param str interval: Order depth. 0 means no aggregation is applied. default to 0
         :param int limit: Maximum number of order depth data in asks or bids
+        :param bool with_id: Whether order book update ID would be returned. This ID increments by 1 on every order book update
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -294,6 +295,7 @@ class DeliveryApi(object):
         :param str contract: Futures contract (required)
         :param str interval: Order depth. 0 means no aggregation is applied. default to 0
         :param int limit: Maximum number of order depth data in asks or bids
+        :param bool with_id: Whether order book update ID would be returned. This ID increments by 1 on every order book update
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -310,7 +312,7 @@ class DeliveryApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'interval', 'limit']
+        all_params = ['settle', 'contract', 'interval', 'limit', 'with_id']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -334,10 +336,10 @@ class DeliveryApi(object):
             )  # noqa: E501
 
         if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 20
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 50
         ):  # noqa: E501
             raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_delivery_order_book`, must be a value less than or equal to `20`"
+                "Invalid value for parameter `limit` when calling `list_delivery_order_book`, must be a value less than or equal to `50`"
             )  # noqa: E501
         if (
             self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
@@ -358,6 +360,8 @@ class DeliveryApi(object):
             query_params.append(('interval', local_var_params['interval']))  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'with_id' in local_var_params and local_var_params['with_id'] is not None:  # noqa: E501
+            query_params.append(('with_id', local_var_params['with_id']))  # noqa: E501
 
         header_params = {}
 

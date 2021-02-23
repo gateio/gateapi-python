@@ -32,14 +32,35 @@ class FuturesTrade(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'id': 'int', 'create_time': 'float', 'contract': 'str', 'size': 'int', 'price': 'str'}
+    openapi_types = {
+        'id': 'int',
+        'create_time': 'float',
+        'create_time_ms': 'float',
+        'contract': 'str',
+        'size': 'int',
+        'price': 'str',
+    }
 
-    attribute_map = {'id': 'id', 'create_time': 'create_time', 'contract': 'contract', 'size': 'size', 'price': 'price'}
+    attribute_map = {
+        'id': 'id',
+        'create_time': 'create_time',
+        'create_time_ms': 'create_time_ms',
+        'contract': 'contract',
+        'size': 'size',
+        'price': 'price',
+    }
 
     def __init__(
-        self, id=None, create_time=None, contract=None, size=None, price=None, local_vars_configuration=None
+        self,
+        id=None,
+        create_time=None,
+        create_time_ms=None,
+        contract=None,
+        size=None,
+        price=None,
+        local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, float, str, int, str, Configuration) -> None
+        # type: (int, float, float, str, int, str, Configuration) -> None
         """FuturesTrade - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -47,6 +68,7 @@ class FuturesTrade(object):
 
         self._id = None
         self._create_time = None
+        self._create_time_ms = None
         self._contract = None
         self._size = None
         self._price = None
@@ -56,6 +78,8 @@ class FuturesTrade(object):
             self.id = id
         if create_time is not None:
             self.create_time = create_time
+        if create_time_ms is not None:
+            self.create_time_ms = create_time_ms
         if contract is not None:
             self.contract = contract
         if size is not None:
@@ -108,6 +132,29 @@ class FuturesTrade(object):
         """
 
         self._create_time = create_time
+
+    @property
+    def create_time_ms(self):
+        """Gets the create_time_ms of this FuturesTrade.  # noqa: E501
+
+        Trading time, with milliseconds set to 3 decimal places.  # noqa: E501
+
+        :return: The create_time_ms of this FuturesTrade.  # noqa: E501
+        :rtype: float
+        """
+        return self._create_time_ms
+
+    @create_time_ms.setter
+    def create_time_ms(self, create_time_ms):
+        """Sets the create_time_ms of this FuturesTrade.
+
+        Trading time, with milliseconds set to 3 decimal places.  # noqa: E501
+
+        :param create_time_ms: The create_time_ms of this FuturesTrade.  # noqa: E501
+        :type: float
+        """
+
+        self._create_time_ms = create_time_ms
 
     @property
     def contract(self):

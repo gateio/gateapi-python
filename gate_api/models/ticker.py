@@ -122,12 +122,9 @@ class Ticker(object):
             self.low_24h = low_24h
         if etf_net_value is not None:
             self.etf_net_value = etf_net_value
-        if etf_pre_net_value is not None:
-            self.etf_pre_net_value = etf_pre_net_value
-        if etf_pre_timestamp is not None:
-            self.etf_pre_timestamp = etf_pre_timestamp
-        if etf_leverage is not None:
-            self.etf_leverage = etf_leverage
+        self.etf_pre_net_value = etf_pre_net_value
+        self.etf_pre_timestamp = etf_pre_timestamp
+        self.etf_leverage = etf_leverage
 
     @property
     def currency_pair(self):

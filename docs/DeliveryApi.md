@@ -153,7 +153,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_delivery_order_book**
-> FuturesOrderBook list_delivery_order_book(settle, contract, interval=interval, limit=limit)
+> FuturesOrderBook list_delivery_order_book(settle, contract, interval=interval, limit=limit, with_id=with_id)
 
 Futures order book
 
@@ -178,10 +178,11 @@ settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT_20200814' # str | Futures contract
 interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
 limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
+with_id = False # bool | Whether order book update ID would be returned. This ID increments by 1 on every order book update (optional) (default to False)
 
 try:
     # Futures order book
-    api_response = api_instance.list_delivery_order_book(settle, contract, interval=interval, limit=limit)
+    api_response = api_instance.list_delivery_order_book(settle, contract, interval=interval, limit=limit, with_id=with_id)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -197,6 +198,7 @@ Name | Type | Description  | Notes
  **contract** | **str**| Futures contract | 
  **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
  **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
+ **with_id** | **bool**| Whether order book update ID would be returned. This ID increments by 1 on every order book update | [optional] [default to False]
 
 ### Return type
 

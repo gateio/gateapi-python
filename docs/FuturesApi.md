@@ -160,7 +160,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_order_book**
-> FuturesOrderBook list_futures_order_book(settle, contract, interval=interval, limit=limit)
+> FuturesOrderBook list_futures_order_book(settle, contract, interval=interval, limit=limit, with_id=with_id)
 
 Futures order book
 
@@ -185,10 +185,11 @@ settle = 'btc' # str | Settle currency (default to 'btc')
 contract = 'BTC_USDT' # str | Futures contract
 interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
 limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
+with_id = False # bool | Whether order book update ID would be returned. This ID increments by 1 on every order book update (optional) (default to False)
 
 try:
     # Futures order book
-    api_response = api_instance.list_futures_order_book(settle, contract, interval=interval, limit=limit)
+    api_response = api_instance.list_futures_order_book(settle, contract, interval=interval, limit=limit, with_id=with_id)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -204,6 +205,7 @@ Name | Type | Description  | Notes
  **contract** | **str**| Futures contract | 
  **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
  **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
+ **with_id** | **bool**| Whether order book update ID would be returned. This ID increments by 1 on every order book update | [optional] [default to False]
 
 ### Return type
 
@@ -1968,7 +1970,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_position_close**
-> list[PositionClose] list_position_close(settle, contract=contract, limit=limit)
+> list[PositionClose] list_position_close(settle, contract=contract, limit=limit, offset=offset)
 
 List position close history
 
@@ -1999,10 +2001,11 @@ api_instance = gate_api.FuturesApi(api_client)
 settle = 'btc' # str | Settle currency (default to 'btc')
 contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
     # List position close history
-    api_response = api_instance.list_position_close(settle, contract=contract, limit=limit)
+    api_response = api_instance.list_position_close(settle, contract=contract, limit=limit, offset=offset)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -2017,6 +2020,7 @@ Name | Type | Description  | Notes
  **settle** | **str**| Settle currency | [default to &#39;btc&#39;]
  **contract** | **str**| Futures contract, return related data only if specified | [optional] 
  **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
 

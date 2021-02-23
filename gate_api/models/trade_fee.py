@@ -41,6 +41,8 @@ class TradeFee(object):
         'gt_maker_fee': 'str',
         'loan_fee': 'str',
         'point_type': 'str',
+        'futures_taker_fee': 'str',
+        'futures_maker_fee': 'str',
     }
 
     attribute_map = {
@@ -52,6 +54,8 @@ class TradeFee(object):
         'gt_maker_fee': 'gt_maker_fee',
         'loan_fee': 'loan_fee',
         'point_type': 'point_type',
+        'futures_taker_fee': 'futures_taker_fee',
+        'futures_maker_fee': 'futures_maker_fee',
     }
 
     def __init__(
@@ -64,9 +68,11 @@ class TradeFee(object):
         gt_maker_fee=None,
         loan_fee=None,
         point_type=None,
+        futures_taker_fee=None,
+        futures_maker_fee=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, str, bool, str, str, str, str, Configuration) -> None
+        # type: (int, str, str, bool, str, str, str, str, str, str, Configuration) -> None
         """TradeFee - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +86,8 @@ class TradeFee(object):
         self._gt_maker_fee = None
         self._loan_fee = None
         self._point_type = None
+        self._futures_taker_fee = None
+        self._futures_maker_fee = None
         self.discriminator = None
 
         if user_id is not None:
@@ -98,6 +106,10 @@ class TradeFee(object):
             self.loan_fee = loan_fee
         if point_type is not None:
             self.point_type = point_type
+        if futures_taker_fee is not None:
+            self.futures_taker_fee = futures_taker_fee
+        if futures_maker_fee is not None:
+            self.futures_maker_fee = futures_maker_fee
 
     @property
     def user_id(self):
@@ -282,6 +294,52 @@ class TradeFee(object):
         """
 
         self._point_type = point_type
+
+    @property
+    def futures_taker_fee(self):
+        """Gets the futures_taker_fee of this TradeFee.  # noqa: E501
+
+        Futures trading taker fee  # noqa: E501
+
+        :return: The futures_taker_fee of this TradeFee.  # noqa: E501
+        :rtype: str
+        """
+        return self._futures_taker_fee
+
+    @futures_taker_fee.setter
+    def futures_taker_fee(self, futures_taker_fee):
+        """Sets the futures_taker_fee of this TradeFee.
+
+        Futures trading taker fee  # noqa: E501
+
+        :param futures_taker_fee: The futures_taker_fee of this TradeFee.  # noqa: E501
+        :type: str
+        """
+
+        self._futures_taker_fee = futures_taker_fee
+
+    @property
+    def futures_maker_fee(self):
+        """Gets the futures_maker_fee of this TradeFee.  # noqa: E501
+
+        Future trading maker fee  # noqa: E501
+
+        :return: The futures_maker_fee of this TradeFee.  # noqa: E501
+        :rtype: str
+        """
+        return self._futures_maker_fee
+
+    @futures_maker_fee.setter
+    def futures_maker_fee(self, futures_maker_fee):
+        """Sets the futures_maker_fee of this TradeFee.
+
+        Future trading maker fee  # noqa: E501
+
+        :param futures_maker_fee: The futures_maker_fee of this TradeFee.  # noqa: E501
+        :type: str
+        """
+
+        self._futures_maker_fee = futures_maker_fee
 
     def to_dict(self):
         """Returns the model properties as a dict"""

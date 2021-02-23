@@ -589,7 +589,7 @@ class BatchOrder(object):
     def iceberg(self):
         """Gets the iceberg of this BatchOrder.  # noqa: E501
 
-        Amount to display for the iceberg order. Null or 0 for normal orders  # noqa: E501
+        Amount to display for the iceberg order. Null or 0 for normal orders. Set to -1 to hide the amount totally  # noqa: E501
 
         :return: The iceberg of this BatchOrder.  # noqa: E501
         :rtype: str
@@ -600,7 +600,7 @@ class BatchOrder(object):
     def iceberg(self, iceberg):
         """Sets the iceberg of this BatchOrder.
 
-        Amount to display for the iceberg order. Null or 0 for normal orders  # noqa: E501
+        Amount to display for the iceberg order. Null or 0 for normal orders. Set to -1 to hide the amount totally  # noqa: E501
 
         :param iceberg: The iceberg of this BatchOrder.  # noqa: E501
         :type: str
