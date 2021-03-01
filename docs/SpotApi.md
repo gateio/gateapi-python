@@ -512,6 +512,8 @@ No authorization required
 
 Query user trading fee rates
 
+This API is deprecated in favour of new fee retrieving API `/wallet/fee`.
+
 ### Example
 
 * Api Key Authentication (apiv4):

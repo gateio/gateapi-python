@@ -41,6 +41,7 @@ class LedgerRecord(object):
         'address': 'str',
         'memo': 'str',
         'status': 'str',
+        'chain': 'str',
     }
 
     attribute_map = {
@@ -52,6 +53,7 @@ class LedgerRecord(object):
         'address': 'address',
         'memo': 'memo',
         'status': 'status',
+        'chain': 'chain',
     }
 
     def __init__(
@@ -64,9 +66,10 @@ class LedgerRecord(object):
         address=None,
         memo=None,
         status=None,
+        chain=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, Configuration) -> None
         """LedgerRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +83,7 @@ class LedgerRecord(object):
         self._address = None
         self._memo = None
         self._status = None
+        self._chain = None
         self.discriminator = None
 
         if id is not None:
@@ -96,6 +100,8 @@ class LedgerRecord(object):
             self.memo = memo
         if status is not None:
             self.status = status
+        if chain is not None:
+            self.chain = chain
 
     @property
     def id(self):
@@ -147,7 +153,7 @@ class LedgerRecord(object):
     def timestamp(self):
         """Gets the timestamp of this LedgerRecord.  # noqa: E501
 
-        Record time  # noqa: E501
+        Operation time  # noqa: E501
 
         :return: The timestamp of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -158,7 +164,7 @@ class LedgerRecord(object):
     def timestamp(self, timestamp):
         """Sets the timestamp of this LedgerRecord.
 
-        Record time  # noqa: E501
+        Operation time  # noqa: E501
 
         :param timestamp: The timestamp of this LedgerRecord.  # noqa: E501
         :type: str
@@ -170,7 +176,7 @@ class LedgerRecord(object):
     def amount(self):
         """Gets the amount of this LedgerRecord.  # noqa: E501
 
-        Trade amount  # noqa: E501
+        Currency amount  # noqa: E501
 
         :return: The amount of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -181,7 +187,7 @@ class LedgerRecord(object):
     def amount(self, amount):
         """Sets the amount of this LedgerRecord.
 
-        Trade amount  # noqa: E501
+        Currency amount  # noqa: E501
 
         :param amount: The amount of this LedgerRecord.  # noqa: E501
         :type: str
@@ -195,7 +201,7 @@ class LedgerRecord(object):
     def currency(self):
         """Gets the currency of this LedgerRecord.  # noqa: E501
 
-        Record currency  # noqa: E501
+        Currency name  # noqa: E501
 
         :return: The currency of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -206,7 +212,7 @@ class LedgerRecord(object):
     def currency(self, currency):
         """Sets the currency of this LedgerRecord.
 
-        Record currency  # noqa: E501
+        Currency name  # noqa: E501
 
         :param currency: The currency of this LedgerRecord.  # noqa: E501
         :type: str
@@ -289,6 +295,29 @@ class LedgerRecord(object):
             )
 
         self._status = status
+
+    @property
+    def chain(self):
+        """Gets the chain of this LedgerRecord.  # noqa: E501
+
+        Name of the chain used in withdrawals  # noqa: E501
+
+        :return: The chain of this LedgerRecord.  # noqa: E501
+        :rtype: str
+        """
+        return self._chain
+
+    @chain.setter
+    def chain(self, chain):
+        """Sets the chain of this LedgerRecord.
+
+        Name of the chain used in withdrawals  # noqa: E501
+
+        :param chain: The chain of this LedgerRecord.  # noqa: E501
+        :type: str
+        """
+
+        self._chain = chain
 
     def to_dict(self):
         """Returns the model properties as a dict"""

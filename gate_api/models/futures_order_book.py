@@ -32,23 +32,49 @@ class FuturesOrderBook(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'asks': 'list[FuturesOrderBookItem]', 'bids': 'list[FuturesOrderBookItem]'}
+    openapi_types = {'id': 'int', 'asks': 'list[FuturesOrderBookItem]', 'bids': 'list[FuturesOrderBookItem]'}
 
-    attribute_map = {'asks': 'asks', 'bids': 'bids'}
+    attribute_map = {'id': 'id', 'asks': 'asks', 'bids': 'bids'}
 
-    def __init__(self, asks=None, bids=None, local_vars_configuration=None):  # noqa: E501
-        # type: (list[FuturesOrderBookItem], list[FuturesOrderBookItem], Configuration) -> None
+    def __init__(self, id=None, asks=None, bids=None, local_vars_configuration=None):  # noqa: E501
+        # type: (int, list[FuturesOrderBookItem], list[FuturesOrderBookItem], Configuration) -> None
         """FuturesOrderBook - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._id = None
         self._asks = None
         self._bids = None
         self.discriminator = None
 
+        if id is not None:
+            self.id = id
         self.asks = asks
         self.bids = bids
+
+    @property
+    def id(self):
+        """Gets the id of this FuturesOrderBook.  # noqa: E501
+
+        Order Book ID. Increase by 1 on every order book change. Set `with_id=true` to include this field in response  # noqa: E501
+
+        :return: The id of this FuturesOrderBook.  # noqa: E501
+        :rtype: int
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this FuturesOrderBook.
+
+        Order Book ID. Increase by 1 on every order book change. Set `with_id=true` to include this field in response  # noqa: E501
+
+        :param id: The id of this FuturesOrderBook.  # noqa: E501
+        :type: int
+        """
+
+        self._id = id
 
     @property
     def asks(self):

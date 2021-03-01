@@ -913,6 +913,7 @@ class SpotApi(object):
     def get_fee(self, **kwargs):  # noqa: E501
         """Query user trading fee rates  # noqa: E501
 
+        This API is deprecated in favour of new fee retrieving API `/wallet/fee`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fee(async_req=True)
@@ -937,6 +938,7 @@ class SpotApi(object):
     def get_fee_with_http_info(self, **kwargs):  # noqa: E501
         """Query user trading fee rates  # noqa: E501
 
+        This API is deprecated in favour of new fee retrieving API `/wallet/fee`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fee_with_http_info(async_req=True)

@@ -1,6 +1,6 @@
 # Contract
 
-Futures contract details
+Contract detail.  USD value per contract:  - USDT settled contracts： `quanto_multiplier x token price` - BTC settled contracts：`quanto_multiplier x BTC price x token price`
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
