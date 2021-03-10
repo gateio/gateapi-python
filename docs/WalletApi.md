@@ -44,7 +44,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
-currency = 'currency_example' # str | Currency name
+currency = 'USDT' # str | Currency name
 
 try:
     # Generate currency deposit address
@@ -385,6 +385,8 @@ Name | Type | Description  | Notes
 > transfer_with_sub_account(sub_account_transfer)
 
 Transfer between main and sub accounts
+
+Support transferring with sub user's spot or futures account. Note that only main user's spot account is used no matter which sub user's account is operated.
 
 ### Example
 

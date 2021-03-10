@@ -1,11 +1,9 @@
-# DepositAddress
+# AutoRepaySetting
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currency** | **str** | Currency detail | 
-**address** | **str** | Deposit address | 
-**multichain_address** | [**list[MultiChainAddressItem]**](MultiChainAddressItem.md) |  | [optional] 
+**status** | **str** | Auto repayment status. &#x60;on&#x60; - enabled, &#x60;off&#x60; - disabled | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
