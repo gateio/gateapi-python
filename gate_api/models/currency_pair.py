@@ -42,6 +42,8 @@ class CurrencyPair(object):
         'amount_precision': 'int',
         'precision': 'int',
         'trade_status': 'str',
+        'sell_start': 'int',
+        'buy_start': 'int',
     }
 
     attribute_map = {
@@ -54,6 +56,8 @@ class CurrencyPair(object):
         'amount_precision': 'amount_precision',
         'precision': 'precision',
         'trade_status': 'trade_status',
+        'sell_start': 'sell_start',
+        'buy_start': 'buy_start',
     }
 
     def __init__(
@@ -67,9 +71,11 @@ class CurrencyPair(object):
         amount_precision=None,
         precision=None,
         trade_status=None,
+        sell_start=None,
+        buy_start=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, int, int, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, int, int, str, int, int, Configuration) -> None
         """CurrencyPair - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +90,8 @@ class CurrencyPair(object):
         self._amount_precision = None
         self._precision = None
         self._trade_status = None
+        self._sell_start = None
+        self._buy_start = None
         self.discriminator = None
 
         if id is not None:
@@ -104,6 +112,10 @@ class CurrencyPair(object):
             self.precision = precision
         if trade_status is not None:
             self.trade_status = trade_status
+        if sell_start is not None:
+            self.sell_start = sell_start
+        if buy_start is not None:
+            self.buy_start = buy_start
 
     @property
     def id(self):
@@ -318,6 +330,52 @@ class CurrencyPair(object):
             )
 
         self._trade_status = trade_status
+
+    @property
+    def sell_start(self):
+        """Gets the sell_start of this CurrencyPair.  # noqa: E501
+
+        允许卖出时间，秒级 Unix 时间戳  # noqa: E501
+
+        :return: The sell_start of this CurrencyPair.  # noqa: E501
+        :rtype: int
+        """
+        return self._sell_start
+
+    @sell_start.setter
+    def sell_start(self, sell_start):
+        """Sets the sell_start of this CurrencyPair.
+
+        允许卖出时间，秒级 Unix 时间戳  # noqa: E501
+
+        :param sell_start: The sell_start of this CurrencyPair.  # noqa: E501
+        :type: int
+        """
+
+        self._sell_start = sell_start
+
+    @property
+    def buy_start(self):
+        """Gets the buy_start of this CurrencyPair.  # noqa: E501
+
+        允许买入时间，秒级 Unix 时间戳  # noqa: E501
+
+        :return: The buy_start of this CurrencyPair.  # noqa: E501
+        :rtype: int
+        """
+        return self._buy_start
+
+    @buy_start.setter
+    def buy_start(self, buy_start):
+        """Sets the buy_start of this CurrencyPair.
+
+        允许买入时间，秒级 Unix 时间戳  # noqa: E501
+
+        :param buy_start: The buy_start of this CurrencyPair.  # noqa: E501
+        :type: int
+        """
+
+        self._buy_start = buy_start
 
     def to_dict(self):
         """Returns the model properties as a dict"""

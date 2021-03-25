@@ -79,7 +79,7 @@ class CancelOrder(object):
     def id(self):
         """Gets the id of this CancelOrder.  # noqa: E501
 
-        Order ID  # noqa: E501
+        Order ID or user custom ID. Custom ID are accepted only within 30 minutes after order creation  # noqa: E501
 
         :return: The id of this CancelOrder.  # noqa: E501
         :rtype: str
@@ -90,7 +90,7 @@ class CancelOrder(object):
     def id(self, id):
         """Sets the id of this CancelOrder.
 
-        Order ID  # noqa: E501
+        Order ID or user custom ID. Custom ID are accepted only within 30 minutes after order creation  # noqa: E501
 
         :param id: The id of this CancelOrder.  # noqa: E501
         :type: str

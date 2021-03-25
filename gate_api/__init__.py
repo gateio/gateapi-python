@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.19.4"
+__version__ = "4.20.0"
 
 # import apis into sdk package
 from gate_api.api.delivery_api import DeliveryApi
@@ -80,6 +80,9 @@ from gate_api.models.position_close_order import PositionCloseOrder
 from gate_api.models.repay_request import RepayRequest
 from gate_api.models.repayment import Repayment
 from gate_api.models.spot_account import SpotAccount
+from gate_api.models.spot_price_put_order import SpotPricePutOrder
+from gate_api.models.spot_price_trigger import SpotPriceTrigger
+from gate_api.models.spot_price_triggered_order import SpotPriceTriggeredOrder
 from gate_api.models.sub_account_balance import SubAccountBalance
 from gate_api.models.sub_account_transfer import SubAccountTransfer
 from gate_api.models.ticker import Ticker
