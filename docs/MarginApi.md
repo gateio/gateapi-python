@@ -1277,7 +1277,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginApi(api_client)
-status = 'true' # str | New auto repayment status. `on` - enabled, `off` - disabled
+status = 'on' # str | New auto repayment status. `on` - enabled, `off` - disabled
 
 try:
     # Update user's auto repayment setting

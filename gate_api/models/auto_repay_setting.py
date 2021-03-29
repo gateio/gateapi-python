@@ -69,7 +69,7 @@ class AutoRepaySetting(object):
         :param status: The status of this AutoRepaySetting.  # noqa: E501
         :type: str
         """
-        allowed_values = ["true", "false"]  # noqa: E501
+        allowed_values = ["on", "off"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `status` ({0}), must be one of {1}".format(status, allowed_values)  # noqa: E501

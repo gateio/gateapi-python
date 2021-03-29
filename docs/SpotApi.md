@@ -1309,7 +1309,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 status = 'status_example' # str | List orders based on status
-market = 'BTC_USDT' # str | 交易市场 (optional)
+market = 'BTC_USDT' # str | Currency pair (optional)
 account = 'account_example' # str | Trading account (optional)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
@@ -1329,7 +1329,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **status** | **str**| List orders based on status | 
- **market** | **str**| 交易市场 | [optional] 
+ **market** | **str**| Currency pair | [optional] 
  **account** | **str**| Trading account | [optional] 
  **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
@@ -1450,7 +1450,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-market = 'BTC_USDT' # str | 交易市场 (optional)
+market = 'BTC_USDT' # str | Currency pair (optional)
 account = 'account_example' # str | Trading account (optional)
 
 try:
@@ -1467,7 +1467,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **market** | **str**| 交易市场 | [optional] 
+ **market** | **str**| Currency pair | [optional] 
  **account** | **str**| Trading account | [optional] 
 
 ### Return type

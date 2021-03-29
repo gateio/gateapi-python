@@ -335,7 +335,7 @@ class CurrencyPair(object):
     def sell_start(self):
         """Gets the sell_start of this CurrencyPair.  # noqa: E501
 
-        允许卖出时间，秒级 Unix 时间戳  # noqa: E501
+        Sell start unix timestamp in seconds  # noqa: E501
 
         :return: The sell_start of this CurrencyPair.  # noqa: E501
         :rtype: int
@@ -346,7 +346,7 @@ class CurrencyPair(object):
     def sell_start(self, sell_start):
         """Sets the sell_start of this CurrencyPair.
 
-        允许卖出时间，秒级 Unix 时间戳  # noqa: E501
+        Sell start unix timestamp in seconds  # noqa: E501
 
         :param sell_start: The sell_start of this CurrencyPair.  # noqa: E501
         :type: int
@@ -358,7 +358,7 @@ class CurrencyPair(object):
     def buy_start(self):
         """Gets the buy_start of this CurrencyPair.  # noqa: E501
 
-        允许买入时间，秒级 Unix 时间戳  # noqa: E501
+        Buy start unix timestamp in seconds  # noqa: E501
 
         :return: The buy_start of this CurrencyPair.  # noqa: E501
         :rtype: int
@@ -369,7 +369,7 @@ class CurrencyPair(object):
     def buy_start(self, buy_start):
         """Sets the buy_start of this CurrencyPair.
 
-        允许买入时间，秒级 Unix 时间戳  # noqa: E501
+        Buy start unix timestamp in seconds  # noqa: E501
 
         :param buy_start: The buy_start of this CurrencyPair.  # noqa: E501
         :type: int

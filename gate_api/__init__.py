@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.20.0"
+__version__ = "4.20.1"
 
 # import apis into sdk package
 from gate_api.api.delivery_api import DeliveryApi

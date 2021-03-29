@@ -2175,7 +2175,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str status: List orders based on status (required)
-        :param str market: 交易市场
+        :param str market: Currency pair
         :param str account: Trading account
         :param int limit: Maximum number of records returned in one list
         :param int offset: List offset, starting from 0
@@ -2203,7 +2203,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str status: List orders based on status (required)
-        :param str market: 交易市场
+        :param str market: Currency pair
         :param str account: Trading account
         :param int limit: Maximum number of records returned in one list
         :param int offset: List offset, starting from 0
@@ -2426,7 +2426,7 @@ class SpotApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str market: 交易市场
+        :param str market: Currency pair
         :param str account: Trading account
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -2451,7 +2451,7 @@ class SpotApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str market: 交易市场
+        :param str market: Currency pair
         :param str account: Trading account
         :param _return_http_data_only: response data without head status code
                                        and headers
