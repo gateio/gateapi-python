@@ -23,6 +23,14 @@ Method | HTTP request | Description
 [**update_loan_record**](MarginApi.md#update_loan_record) | **PATCH** /margin/loan_records/{loan_record_id} | Modify a loan record
 [**get_auto_repay_status**](MarginApi.md#get_auto_repay_status) | **GET** /margin/auto_repay | Retrieve user auto repayment setting
 [**set_auto_repay**](MarginApi.md#set_auto_repay) | **POST** /margin/auto_repay | Update user&#39;s auto repayment setting
+[**list_cross_margin_currencies**](MarginApi.md#list_cross_margin_currencies) | **GET** /margin/cross/currencies | Currencies supported by cross margin.
+[**get_cross_margin_currency**](MarginApi.md#get_cross_margin_currency) | **GET** /margin/cross/currencies/{currency} | Retrieve detail of one single currency supported by cross margin
+[**get_cross_margin_account**](MarginApi.md#get_cross_margin_account) | **GET** /margin/cross/accounts | Retrieve cross margin account
+[**list_cross_margin_loans**](MarginApi.md#list_cross_margin_loans) | **GET** /margin/cross/loans | List cross margin borrow history
+[**create_cross_margin_loan**](MarginApi.md#create_cross_margin_loan) | **POST** /margin/cross/loans | Create a cross margin borrow loan
+[**get_cross_margin_loan**](MarginApi.md#get_cross_margin_loan) | **GET** /margin/cross/loans/{loan_id} | Retrieve single borrow loan detail
+[**list_cross_margin_repayments**](MarginApi.md#list_cross_margin_repayments) | **GET** /margin/cross/repayments | Retrieve cross margin repayments
+[**repay_cross_margin_loan**](MarginApi.md#repay_cross_margin_loan) | **POST** /margin/cross/repayments | Repay cross margin loan
 
 
 # **list_margin_currency_pairs**
@@ -1312,6 +1320,538 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Current auto repayment setting |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_cross_margin_currencies**
+> list[CrossMarginCurrency] list_cross_margin_currencies()
+
+Currencies supported by cross margin.
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+
+try:
+    # Currencies supported by cross margin.
+    api_response = api_instance.list_cross_margin_currencies()
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling MarginApi->list_cross_margin_currencies: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**list[CrossMarginCurrency]**](CrossMarginCurrency.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_cross_margin_currency**
+> CrossMarginCurrency get_cross_margin_currency(currency)
+
+Retrieve detail of one single currency supported by cross margin
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+currency = 'BTC' # str | Currency name
+
+try:
+    # Retrieve detail of one single currency supported by cross margin
+    api_response = api_instance.get_cross_margin_currency(currency)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling MarginApi->get_cross_margin_currency: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency** | **str**| Currency name | 
+
+### Return type
+
+[**CrossMarginCurrency**](CrossMarginCurrency.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_cross_margin_account**
+> CrossMarginAccount get_cross_margin_account()
+
+Retrieve cross margin account
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+
+try:
+    # Retrieve cross margin account
+    api_response = api_instance.get_cross_margin_account()
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling MarginApi->get_cross_margin_account: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CrossMarginAccount**](CrossMarginAccount.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_cross_margin_loans**
+> list[CrossMarginLoan] list_cross_margin_loans(status, currency=currency, limit=limit, offset=offset, reverse=reverse)
+
+List cross margin borrow history
+
+Sort by creation time in descending order by default. Set `reverse=false` to return ascending results.
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+status = 56 # int | Filter by status. Supported values are 2 and 3.
+currency = 'currency_example' # str | Filter by currency (optional)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
+reverse = True # bool | Whether to sort in descending order, which is the default. Set `reverse=false` to return ascending results (optional) (default to True)
+
+try:
+    # List cross margin borrow history
+    api_response = api_instance.list_cross_margin_loans(status, currency=currency, limit=limit, offset=offset, reverse=reverse)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling MarginApi->list_cross_margin_loans: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **status** | **int**| Filter by status. Supported values are 2 and 3. | 
+ **currency** | **str**| Filter by currency | [optional] 
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
+ **reverse** | **bool**| Whether to sort in descending order, which is the default. Set &#x60;reverse&#x3D;false&#x60; to return ascending results | [optional] [default to True]
+
+### Return type
+
+[**list[CrossMarginLoan]**](CrossMarginLoan.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_cross_margin_loan**
+> CrossMarginLoan create_cross_margin_loan(cross_margin_loan)
+
+Create a cross margin borrow loan
+
+Borrow amount cannot be less than currency minimum borrow amount
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+cross_margin_loan = gate_api.CrossMarginLoan() # CrossMarginLoan | 
+
+try:
+    # Create a cross margin borrow loan
+    api_response = api_instance.create_cross_margin_loan(cross_margin_loan)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling MarginApi->create_cross_margin_loan: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cross_margin_loan** | [**CrossMarginLoan**](CrossMarginLoan.md)|  | 
+
+### Return type
+
+[**CrossMarginLoan**](CrossMarginLoan.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully borrowed |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_cross_margin_loan**
+> CrossMarginLoan get_cross_margin_loan(loan_id)
+
+Retrieve single borrow loan detail
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+loan_id = '12345' # str | Borrow loan ID
+
+try:
+    # Retrieve single borrow loan detail
+    api_response = api_instance.get_cross_margin_loan(loan_id)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling MarginApi->get_cross_margin_loan: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **loan_id** | **str**| Borrow loan ID | 
+
+### Return type
+
+[**CrossMarginLoan**](CrossMarginLoan.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_cross_margin_repayments**
+> list[CrossMarginRepayment] list_cross_margin_repayments(currency=currency, loan_id=loan_id, limit=limit, offset=offset, reverse=reverse)
+
+Retrieve cross margin repayments
+
+Sort by creation time in descending order by default. Set `reverse=false` to return ascending results.
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+currency = 'BTC' # str |  (optional)
+loan_id = '12345' # str |  (optional)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
+reverse = True # bool | Whether to sort in descending order, which is the default. Set `reverse=false` to return ascending results (optional) (default to True)
+
+try:
+    # Retrieve cross margin repayments
+    api_response = api_instance.list_cross_margin_repayments(currency=currency, loan_id=loan_id, limit=limit, offset=offset, reverse=reverse)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling MarginApi->list_cross_margin_repayments: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency** | **str**|  | [optional] 
+ **loan_id** | **str**|  | [optional] 
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
+ **reverse** | **bool**| Whether to sort in descending order, which is the default. Set &#x60;reverse&#x3D;false&#x60; to return ascending results | [optional] [default to True]
+
+### Return type
+
+[**list[CrossMarginRepayment]**](CrossMarginRepayment.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **repay_cross_margin_loan**
+> list[CrossMarginLoan] repay_cross_margin_loan(cross_margin_repay_request)
+
+Repay cross margin loan
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+cross_margin_repay_request = gate_api.CrossMarginRepayRequest() # CrossMarginRepayRequest | 
+
+try:
+    # Repay cross margin loan
+    api_response = api_instance.repay_cross_margin_loan(cross_margin_repay_request)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling MarginApi->repay_cross_margin_loan: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cross_margin_repay_request** | [**CrossMarginRepayRequest**](CrossMarginRepayRequest.md)|  | 
+
+### Return type
+
+[**list[CrossMarginLoan]**](CrossMarginLoan.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Loan repaid |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

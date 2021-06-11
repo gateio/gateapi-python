@@ -1,14 +1,14 @@
-# MarginAccountCurrency
+# CrossMarginRepayment
 
-Account currency detail
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** | Loan record ID | [optional] 
+**create_time** | **int** | Repayment time | [optional] 
+**loan_id** | **str** | Borrow loan ID | [optional] 
 **currency** | **str** | Currency name | [optional] 
-**available** | **str** | Amount suitable for margin trading. | [optional] 
-**locked** | **str** | Locked amount, used in margin trading | [optional] 
-**borrowed** | **str** | Borrowed amount | [optional] 
-**interest** | **str** | Interests unpaid | [optional] 
+**principal** | **str** | Repaid principal | [optional] 
+**interest** | **str** | Repaid interest | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

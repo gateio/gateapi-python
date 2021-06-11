@@ -1220,7 +1220,7 @@ class SpotApi(object):
     def list_all_open_orders(self, **kwargs):  # noqa: E501
         """List all open orders  # noqa: E501
 
-        List open orders in all currency pairs.  Note that pagination parameters affect record number in each currency pair's open order list. No pagination is applied to the number of currency pairs returned. All currency pairs with open orders will be returned  # noqa: E501
+        List open orders in all currency pairs.  Note that pagination parameters affect record number in each currency pair's open order list. No pagination is applied to the number of currency pairs returned. All currency pairs with open orders will be returned.  Spot and margin orders are returned by default. To list cross margin orders, `account` must be set to `cross_margin`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_all_open_orders(async_req=True)
@@ -1229,6 +1229,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param int page: Page number
         :param int limit: Maximum number of records returned in one page in each currency pair
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1246,7 +1247,7 @@ class SpotApi(object):
     def list_all_open_orders_with_http_info(self, **kwargs):  # noqa: E501
         """List all open orders  # noqa: E501
 
-        List open orders in all currency pairs.  Note that pagination parameters affect record number in each currency pair's open order list. No pagination is applied to the number of currency pairs returned. All currency pairs with open orders will be returned  # noqa: E501
+        List open orders in all currency pairs.  Note that pagination parameters affect record number in each currency pair's open order list. No pagination is applied to the number of currency pairs returned. All currency pairs with open orders will be returned.  Spot and margin orders are returned by default. To list cross margin orders, `account` must be set to `cross_margin`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_all_open_orders_with_http_info(async_req=True)
@@ -1255,6 +1256,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param int page: Page number
         :param int limit: Maximum number of records returned in one page in each currency pair
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1271,7 +1273,7 @@ class SpotApi(object):
 
         local_var_params = locals()
 
-        all_params = ['page', 'limit']
+        all_params = ['page', 'limit', 'account']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -1307,6 +1309,8 @@ class SpotApi(object):
             query_params.append(('page', local_var_params['page']))  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'account' in local_var_params and local_var_params['account'] is not None:  # noqa: E501
+            query_params.append(('account', local_var_params['account']))  # noqa: E501
 
         header_params = {}
 
@@ -1341,6 +1345,7 @@ class SpotApi(object):
     def list_orders(self, currency_pair, status, **kwargs):  # noqa: E501
         """List orders  # noqa: E501
 
+        Spot and margin orders are returned by default. If cross margin orders are needed, `account` must be set to `cross_margin`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_orders(currency_pair, status, async_req=True)
@@ -1351,6 +1356,7 @@ class SpotApi(object):
         :param str status: List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled  (required)
         :param int page: Page number
         :param int limit: Maximum number of records returned. If `status` is `open`, maximum of `limit` is 100
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1368,6 +1374,7 @@ class SpotApi(object):
     def list_orders_with_http_info(self, currency_pair, status, **kwargs):  # noqa: E501
         """List orders  # noqa: E501
 
+        Spot and margin orders are returned by default. If cross margin orders are needed, `account` must be set to `cross_margin`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_orders_with_http_info(currency_pair, status, async_req=True)
@@ -1378,6 +1385,7 @@ class SpotApi(object):
         :param str status: List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled  (required)
         :param int page: Page number
         :param int limit: Maximum number of records returned. If `status` is `open`, maximum of `limit` is 100
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1394,7 +1402,7 @@ class SpotApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair', 'status', 'page', 'limit']
+        all_params = ['currency_pair', 'status', 'page', 'limit', 'account']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -1446,6 +1454,8 @@ class SpotApi(object):
             query_params.append(('page', local_var_params['page']))  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'account' in local_var_params and local_var_params['account'] is not None:  # noqa: E501
+            query_params.append(('account', local_var_params['account']))  # noqa: E501
 
         header_params = {}
 
@@ -1480,6 +1490,7 @@ class SpotApi(object):
     def create_order(self, order, **kwargs):  # noqa: E501
         """Create an order  # noqa: E501
 
+        You can place orders with spot, margin or cross margin account through setting the `account `field. It defaults to `spot`, which means spot account is used to place orders.  When margin account is used, i.e., `account` is `margin`, `auto_borrow` field can be set to `true` to enable the server to borrow the amount lacked using `POST /margin/loans` when your account's balance is not enough. Whether margin orders' fill will be used to repay margin loans automatically is determined by the auto repayment setting in your **margin account**, which can be updated or queried using `/margin/auto_repay` API.  When cross margin account is used, i.e., `account` is `cross_margin`, `auto_borrow` can also be enabled to achieve borrowing the insufficient amount automatically if cross account's balance is not enough. But it differs from margin account that automatic repayment is determined by order's `auto_repay` field and only current order's fill will be used to repay cross margin loans.  Automatic repayment will be triggered when the order is finished, i.e., its status is either `cancelled` or `closed`.  **Order status**  An order waiting to be filled is `open`, and it stays `open` until it is filled totally. If fully filled, order is finished and its status turns to `closed`.If the order is cancelled before it is totally filled, whether or not partially filled, its status is `cancelled`. **Iceberg order**  `iceberg` field can be used to set the amount shown. Set to `-1` to hide totally. Note that the hidden part's fee will be charged using taker's fee rate.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_order(order, async_req=True)
@@ -1504,6 +1515,7 @@ class SpotApi(object):
     def create_order_with_http_info(self, order, **kwargs):  # noqa: E501
         """Create an order  # noqa: E501
 
+        You can place orders with spot, margin or cross margin account through setting the `account `field. It defaults to `spot`, which means spot account is used to place orders.  When margin account is used, i.e., `account` is `margin`, `auto_borrow` field can be set to `true` to enable the server to borrow the amount lacked using `POST /margin/loans` when your account's balance is not enough. Whether margin orders' fill will be used to repay margin loans automatically is determined by the auto repayment setting in your **margin account**, which can be updated or queried using `/margin/auto_repay` API.  When cross margin account is used, i.e., `account` is `cross_margin`, `auto_borrow` can also be enabled to achieve borrowing the insufficient amount automatically if cross account's balance is not enough. But it differs from margin account that automatic repayment is determined by order's `auto_repay` field and only current order's fill will be used to repay cross margin loans.  Automatic repayment will be triggered when the order is finished, i.e., its status is either `cancelled` or `closed`.  **Order status**  An order waiting to be filled is `open`, and it stays `open` until it is filled totally. If fully filled, order is finished and its status turns to `closed`.If the order is cancelled before it is totally filled, whether or not partially filled, its status is `cancelled`. **Iceberg order**  `iceberg` field can be used to set the amount shown. Set to `-1` to hide totally. Note that the hidden part's fee will be charged using taker's fee rate.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_order_with_http_info(order, async_req=True)
@@ -1587,6 +1599,7 @@ class SpotApi(object):
     def cancel_orders(self, currency_pair, **kwargs):  # noqa: E501
         """Cancel all `open` orders in specified currency pair  # noqa: E501
 
+        If `account` is not set, all open orders, including spot, margin and cross margin ones, will be cancelled.  You can set `account` to cancel only orders within the specified account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_orders(currency_pair, async_req=True)
@@ -1613,6 +1626,7 @@ class SpotApi(object):
     def cancel_orders_with_http_info(self, currency_pair, **kwargs):  # noqa: E501
         """Cancel all `open` orders in specified currency pair  # noqa: E501
 
+        If `account` is not set, all open orders, including spot, margin and cross margin ones, will be cancelled.  You can set `account` to cancel only orders within the specified account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_orders_with_http_info(currency_pair, async_req=True)
@@ -1810,6 +1824,7 @@ class SpotApi(object):
     def get_order(self, order_id, currency_pair, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
 
+        Spot and margin orders are queried by default. If cross margin orders are needed, `account` must be set to `cross_margin`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_order(order_id, currency_pair, async_req=True)
@@ -1818,6 +1833,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1835,6 +1851,7 @@ class SpotApi(object):
     def get_order_with_http_info(self, order_id, currency_pair, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
 
+        Spot and margin orders are queried by default. If cross margin orders are needed, `account` must be set to `cross_margin`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_order_with_http_info(order_id, currency_pair, async_req=True)
@@ -1843,6 +1860,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1859,7 +1877,7 @@ class SpotApi(object):
 
         local_var_params = locals()
 
-        all_params = ['order_id', 'currency_pair']
+        all_params = ['order_id', 'currency_pair', 'account']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -1887,6 +1905,8 @@ class SpotApi(object):
         query_params = []
         if 'currency_pair' in local_var_params and local_var_params['currency_pair'] is not None:  # noqa: E501
             query_params.append(('currency_pair', local_var_params['currency_pair']))  # noqa: E501
+        if 'account' in local_var_params and local_var_params['account'] is not None:  # noqa: E501
+            query_params.append(('account', local_var_params['account']))  # noqa: E501
 
         header_params = {}
 
@@ -1921,6 +1941,7 @@ class SpotApi(object):
     def cancel_order(self, order_id, currency_pair, **kwargs):  # noqa: E501
         """Cancel a single order  # noqa: E501
 
+        Spot and margin orders are cancelled by default. If trying to cancel cross margin orders, `account` must be set to `cross_margin`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_order(order_id, currency_pair, async_req=True)
@@ -1929,6 +1950,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1946,6 +1968,7 @@ class SpotApi(object):
     def cancel_order_with_http_info(self, order_id, currency_pair, **kwargs):  # noqa: E501
         """Cancel a single order  # noqa: E501
 
+        Spot and margin orders are cancelled by default. If trying to cancel cross margin orders, `account` must be set to `cross_margin`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_order_with_http_info(order_id, currency_pair, async_req=True)
@@ -1954,6 +1977,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1970,7 +1994,7 @@ class SpotApi(object):
 
         local_var_params = locals()
 
-        all_params = ['order_id', 'currency_pair']
+        all_params = ['order_id', 'currency_pair', 'account']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -2000,6 +2024,8 @@ class SpotApi(object):
         query_params = []
         if 'currency_pair' in local_var_params and local_var_params['currency_pair'] is not None:  # noqa: E501
             query_params.append(('currency_pair', local_var_params['currency_pair']))  # noqa: E501
+        if 'account' in local_var_params and local_var_params['account'] is not None:  # noqa: E501
+            query_params.append(('account', local_var_params['account']))  # noqa: E501
 
         header_params = {}
 
@@ -2034,6 +2060,7 @@ class SpotApi(object):
     def list_my_trades(self, currency_pair, **kwargs):  # noqa: E501
         """List personal trading history  # noqa: E501
 
+        Spot and margin trades are queried by default. If cross margin trades are needed, `account` must be set to `cross_margin`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_my_trades(currency_pair, async_req=True)
@@ -2044,6 +2071,7 @@ class SpotApi(object):
         :param int limit: Maximum number of records returned in one list
         :param int page: Page number
         :param str order_id: List all trades of specified order
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2061,6 +2089,7 @@ class SpotApi(object):
     def list_my_trades_with_http_info(self, currency_pair, **kwargs):  # noqa: E501
         """List personal trading history  # noqa: E501
 
+        Spot and margin trades are queried by default. If cross margin trades are needed, `account` must be set to `cross_margin`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_my_trades_with_http_info(currency_pair, async_req=True)
@@ -2071,6 +2100,7 @@ class SpotApi(object):
         :param int limit: Maximum number of records returned in one list
         :param int page: Page number
         :param str order_id: List all trades of specified order
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2087,7 +2117,7 @@ class SpotApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair', 'limit', 'page', 'order_id']
+        all_params = ['currency_pair', 'limit', 'page', 'order_id', 'account']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -2134,6 +2164,8 @@ class SpotApi(object):
             query_params.append(('page', local_var_params['page']))  # noqa: E501
         if 'order_id' in local_var_params and local_var_params['order_id'] is not None:  # noqa: E501
             query_params.append(('order_id', local_var_params['order_id']))  # noqa: E501
+        if 'account' in local_var_params and local_var_params['account'] is not None:  # noqa: E501
+            query_params.append(('account', local_var_params['account']))  # noqa: E501
 
         header_params = {}
 

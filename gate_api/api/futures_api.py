@@ -1898,6 +1898,7 @@ class FuturesApi(object):
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
         :param str leverage: New position leverage (required)
+        :param str cross_leverage_limit: Cross margin leverage(valid only when `leverage` is 0)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1924,6 +1925,7 @@ class FuturesApi(object):
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
         :param str leverage: New position leverage (required)
+        :param str cross_leverage_limit: Cross margin leverage(valid only when `leverage` is 0)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1940,7 +1942,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'leverage']
+        all_params = ['settle', 'contract', 'leverage', 'cross_leverage_limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -1981,6 +1983,10 @@ class FuturesApi(object):
         query_params = []
         if 'leverage' in local_var_params and local_var_params['leverage'] is not None:  # noqa: E501
             query_params.append(('leverage', local_var_params['leverage']))  # noqa: E501
+        if (
+            'cross_leverage_limit' in local_var_params and local_var_params['cross_leverage_limit'] is not None
+        ):  # noqa: E501
+            query_params.append(('cross_leverage_limit', local_var_params['cross_leverage_limit']))  # noqa: E501
 
         header_params = {}
 
@@ -2368,18 +2374,19 @@ class FuturesApi(object):
             collection_formats=collection_formats,
         )
 
-    def update_dual_mode_position_margin(self, settle, contract, change, **kwargs):  # noqa: E501
+    def update_dual_mode_position_margin(self, settle, contract, change, dual_side, **kwargs):  # noqa: E501
         """Update position margin in dual mode  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_dual_mode_position_margin(settle, contract, change, async_req=True)
+        >>> thread = api.update_dual_mode_position_margin(settle, contract, change, dual_side, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
         :param str change: Margin change. Use positive number to increase margin, negative number otherwise. (required)
+        :param str dual_side: Long or short position (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2392,20 +2399,25 @@ class FuturesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_dual_mode_position_margin_with_http_info(settle, contract, change, **kwargs)  # noqa: E501
+        return self.update_dual_mode_position_margin_with_http_info(
+            settle, contract, change, dual_side, **kwargs
+        )  # noqa: E501
 
-    def update_dual_mode_position_margin_with_http_info(self, settle, contract, change, **kwargs):  # noqa: E501
+    def update_dual_mode_position_margin_with_http_info(
+        self, settle, contract, change, dual_side, **kwargs
+    ):  # noqa: E501
         """Update position margin in dual mode  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_dual_mode_position_margin_with_http_info(settle, contract, change, async_req=True)
+        >>> thread = api.update_dual_mode_position_margin_with_http_info(settle, contract, change, dual_side, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
         :param str change: Margin change. Use positive number to increase margin, negative number otherwise. (required)
+        :param str dual_side: Long or short position (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2422,7 +2434,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'change']
+        all_params = ['settle', 'contract', 'change', 'dual_side']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -2453,6 +2465,13 @@ class FuturesApi(object):
             raise ApiValueError(
                 "Missing the required parameter `change` when calling `update_dual_mode_position_margin`"
             )  # noqa: E501
+        # verify the required parameter 'dual_side' is set
+        if self.api_client.client_side_validation and (
+            'dual_side' not in local_var_params or local_var_params['dual_side'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `dual_side` when calling `update_dual_mode_position_margin`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -2465,6 +2484,8 @@ class FuturesApi(object):
         query_params = []
         if 'change' in local_var_params and local_var_params['change'] is not None:  # noqa: E501
             query_params.append(('change', local_var_params['change']))  # noqa: E501
+        if 'dual_side' in local_var_params and local_var_params['dual_side'] is not None:  # noqa: E501
+            query_params.append(('dual_side', local_var_params['dual_side']))  # noqa: E501
 
         header_params = {}
 

@@ -20,6 +20,12 @@ from gate_api.models.cancel_order import CancelOrder
 from gate_api.models.cancel_order_result import CancelOrderResult
 from gate_api.models.contract import Contract
 from gate_api.models.contract_stat import ContractStat
+from gate_api.models.cross_margin_account import CrossMarginAccount
+from gate_api.models.cross_margin_balance import CrossMarginBalance
+from gate_api.models.cross_margin_currency import CrossMarginCurrency
+from gate_api.models.cross_margin_loan import CrossMarginLoan
+from gate_api.models.cross_margin_repay_request import CrossMarginRepayRequest
+from gate_api.models.cross_margin_repayment import CrossMarginRepayment
 from gate_api.models.currency import Currency
 from gate_api.models.currency_pair import CurrencyPair
 from gate_api.models.delivery_contract import DeliveryContract

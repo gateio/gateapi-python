@@ -277,7 +277,7 @@ class FuturesOrder(object):
     def finish_as(self):
         """Gets the finish_as of this FuturesOrder.  # noqa: E501
 
-        How the order is finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set  # noqa: E501
+        How the order is finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close   # noqa: E501
 
         :return: The finish_as of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -288,12 +288,21 @@ class FuturesOrder(object):
     def finish_as(self, finish_as):
         """Sets the finish_as of this FuturesOrder.
 
-        How the order is finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set  # noqa: E501
+        How the order is finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close   # noqa: E501
 
         :param finish_as: The finish_as of this FuturesOrder.  # noqa: E501
         :type: str
         """
-        allowed_values = ["filled", "cancelled", "liquidated", "ioc", "auto_deleveraged", "reduce_only"]  # noqa: E501
+        allowed_values = [
+            "filled",
+            "cancelled",
+            "liquidated",
+            "ioc",
+            "auto_deleveraged",
+            "reduce_only",
+            "position_closed",
+            "reduce_out",
+        ]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and finish_as not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `finish_as` ({0}), must be one of {1}".format(  # noqa: E501

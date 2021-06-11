@@ -130,7 +130,7 @@ class Transfer(object):
         """
         if self.local_vars_configuration.client_side_validation and _from is None:  # noqa: E501
             raise ValueError("Invalid value for `_from`, must not be `None`")  # noqa: E501
-        allowed_values = ["spot", "margin", "futures", "delivery"]  # noqa: E501
+        allowed_values = ["spot", "margin", "futures", "delivery", "cross_margin"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and _from not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `_from` ({0}), must be one of {1}".format(_from, allowed_values)  # noqa: E501
@@ -160,7 +160,7 @@ class Transfer(object):
         """
         if self.local_vars_configuration.client_side_validation and to is None:  # noqa: E501
             raise ValueError("Invalid value for `to`, must not be `None`")  # noqa: E501
-        allowed_values = ["spot", "margin", "futures", "delivery"]  # noqa: E501
+        allowed_values = ["spot", "margin", "futures", "delivery", "cross_margin"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and to not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `to` ({0}), must be one of {1}".format(to, allowed_values)  # noqa: E501

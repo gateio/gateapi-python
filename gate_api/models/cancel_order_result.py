@@ -32,7 +32,14 @@ class CancelOrderResult(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'currency_pair': 'str', 'id': 'str', 'succeeded': 'bool', 'label': 'str', 'message': 'str'}
+    openapi_types = {
+        'currency_pair': 'str',
+        'id': 'str',
+        'succeeded': 'bool',
+        'label': 'str',
+        'message': 'str',
+        'account': 'str',
+    }
 
     attribute_map = {
         'currency_pair': 'currency_pair',
@@ -40,12 +47,20 @@ class CancelOrderResult(object):
         'succeeded': 'succeeded',
         'label': 'label',
         'message': 'message',
+        'account': 'account',
     }
 
     def __init__(
-        self, currency_pair=None, id=None, succeeded=None, label=None, message=None, local_vars_configuration=None
+        self,
+        currency_pair=None,
+        id=None,
+        succeeded=None,
+        label=None,
+        message=None,
+        account=None,
+        local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, bool, str, str, Configuration) -> None
+        # type: (str, str, bool, str, str, str, Configuration) -> None
         """CancelOrderResult - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +71,7 @@ class CancelOrderResult(object):
         self._succeeded = None
         self._label = None
         self._message = None
+        self._account = None
         self.discriminator = None
 
         if currency_pair is not None:
@@ -68,6 +84,8 @@ class CancelOrderResult(object):
             self.label = label
         if message is not None:
             self.message = message
+        if account is not None:
+            self.account = account
 
     @property
     def currency_pair(self):
@@ -183,6 +201,29 @@ class CancelOrderResult(object):
         """
 
         self._message = message
+
+    @property
+    def account(self):
+        """Gets the account of this CancelOrderResult.  # noqa: E501
+
+        Empty by default. If cancelled order is cross margin order, this field is set to `cross_margin`  # noqa: E501
+
+        :return: The account of this CancelOrderResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._account
+
+    @account.setter
+    def account(self, account):
+        """Sets the account of this CancelOrderResult.
+
+        Empty by default. If cancelled order is cross margin order, this field is set to `cross_margin`  # noqa: E501
+
+        :param account: The account of this CancelOrderResult.  # noqa: E501
+        :type: str
+        """
+
+        self._account = account
 
     def to_dict(self):
         """Returns the model properties as a dict"""

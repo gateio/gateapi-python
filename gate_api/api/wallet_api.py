@@ -406,7 +406,7 @@ class WalletApi(object):
     def transfer(self, transfer, **kwargs):  # noqa: E501
         """Transfer between trading accounts  # noqa: E501
 
-        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 3. spot - delivery  # noqa: E501
+        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 3. spot - delivery 4. spot - cross margin  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.transfer(transfer, async_req=True)
@@ -431,7 +431,7 @@ class WalletApi(object):
     def transfer_with_http_info(self, transfer, **kwargs):  # noqa: E501
         """Transfer between trading accounts  # noqa: E501
 
-        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 3. spot - delivery  # noqa: E501
+        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 3. spot - delivery 4. spot - cross margin  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.transfer_with_http_info(transfer, async_req=True)

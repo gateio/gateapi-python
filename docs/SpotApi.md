@@ -718,11 +718,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_all_open_orders**
-> list[OpenOrders] list_all_open_orders(page=page, limit=limit)
+> list[OpenOrders] list_all_open_orders(page=page, limit=limit, account=account)
 
 List all open orders
 
-List open orders in all currency pairs.  Note that pagination parameters affect record number in each currency pair's open order list. No pagination is applied to the number of currency pairs returned. All currency pairs with open orders will be returned
+List open orders in all currency pairs.  Note that pagination parameters affect record number in each currency pair's open order list. No pagination is applied to the number of currency pairs returned. All currency pairs with open orders will be returned.  Spot and margin orders are returned by default. To list cross margin orders, `account` must be set to `cross_margin`
 
 ### Example
 
@@ -750,10 +750,11 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.SpotApi(api_client)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records returned in one page in each currency pair (optional) (default to 100)
+account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account (optional)
 
 try:
     # List all open orders
-    api_response = api_instance.list_all_open_orders(page=page, limit=limit)
+    api_response = api_instance.list_all_open_orders(page=page, limit=limit, account=account)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -767,6 +768,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of records returned in one page in each currency pair | [optional] [default to 100]
+ **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account | [optional] 
 
 ### Return type
 
@@ -789,9 +791,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_orders**
-> list[Order] list_orders(currency_pair, status, page=page, limit=limit)
+> list[Order] list_orders(currency_pair, status, page=page, limit=limit, account=account)
 
 List orders
+
+Spot and margin orders are returned by default. If cross margin orders are needed, `account` must be set to `cross_margin`
 
 ### Example
 
@@ -821,10 +825,11 @@ currency_pair = 'BTC_USDT' # str | Currency pair
 status = 'open' # str | List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled 
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records returned. If `status` is `open`, maximum of `limit` is 100 (optional) (default to 100)
+account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account (optional)
 
 try:
     # List orders
-    api_response = api_instance.list_orders(currency_pair, status, page=page, limit=limit)
+    api_response = api_instance.list_orders(currency_pair, status, page=page, limit=limit, account=account)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -840,6 +845,7 @@ Name | Type | Description  | Notes
  **status** | **str**| List orders based on status  &#x60;open&#x60; - order is waiting to be filled &#x60;finished&#x60; - order has been filled or cancelled  | 
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of records returned. If &#x60;status&#x60; is &#x60;open&#x60;, maximum of &#x60;limit&#x60; is 100 | [optional] [default to 100]
+ **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account | [optional] 
 
 ### Return type
 
@@ -865,6 +871,8 @@ Name | Type | Description  | Notes
 > Order create_order(order)
 
 Create an order
+
+You can place orders with spot, margin or cross margin account through setting the `account `field. It defaults to `spot`, which means spot account is used to place orders.  When margin account is used, i.e., `account` is `margin`, `auto_borrow` field can be set to `true` to enable the server to borrow the amount lacked using `POST /margin/loans` when your account's balance is not enough. Whether margin orders' fill will be used to repay margin loans automatically is determined by the auto repayment setting in your **margin account**, which can be updated or queried using `/margin/auto_repay` API.  When cross margin account is used, i.e., `account` is `cross_margin`, `auto_borrow` can also be enabled to achieve borrowing the insufficient amount automatically if cross account's balance is not enough. But it differs from margin account that automatic repayment is determined by order's `auto_repay` field and only current order's fill will be used to repay cross margin loans.  Automatic repayment will be triggered when the order is finished, i.e., its status is either `cancelled` or `closed`.  **Order status**  An order waiting to be filled is `open`, and it stays `open` until it is filled totally. If fully filled, order is finished and its status turns to `closed`.If the order is cancelled before it is totally filled, whether or not partially filled, its status is `cancelled`. **Iceberg order**  `iceberg` field can be used to set the amount shown. Set to `-1` to hide totally. Note that the hidden part's fee will be charged using taker's fee rate. 
 
 ### Example
 
@@ -932,6 +940,8 @@ Name | Type | Description  | Notes
 > list[Order] cancel_orders(currency_pair, side=side, account=account)
 
 Cancel all `open` orders in specified currency pair
+
+If `account` is not set, all open orders, including spot, margin and cross margin ones, will be cancelled.  You can set `account` to cancel only orders within the specified account
 
 ### Example
 
@@ -1069,9 +1079,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_order**
-> Order get_order(order_id, currency_pair)
+> Order get_order(order_id, currency_pair, account=account)
 
 Get a single order
+
+Spot and margin orders are queried by default. If cross margin orders are needed, `account` must be set to `cross_margin`
 
 ### Example
 
@@ -1099,10 +1111,11 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.SpotApi(api_client)
 order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted.
 currency_pair = 'BTC_USDT' # str | Currency pair
+account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account (optional)
 
 try:
     # Get a single order
-    api_response = api_instance.get_order(order_id, currency_pair)
+    api_response = api_instance.get_order(order_id, currency_pair, account=account)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1116,6 +1129,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order_id** | **str**| Order ID returned, or user custom ID(i.e., &#x60;text&#x60; field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. | 
  **currency_pair** | **str**| Currency pair | 
+ **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account | [optional] 
 
 ### Return type
 
@@ -1138,9 +1152,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_order**
-> Order cancel_order(order_id, currency_pair)
+> Order cancel_order(order_id, currency_pair, account=account)
 
 Cancel a single order
+
+Spot and margin orders are cancelled by default. If trying to cancel cross margin orders, `account` must be set to `cross_margin`
 
 ### Example
 
@@ -1168,10 +1184,11 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.SpotApi(api_client)
 order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted.
 currency_pair = 'BTC_USDT' # str | Currency pair
+account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account (optional)
 
 try:
     # Cancel a single order
-    api_response = api_instance.cancel_order(order_id, currency_pair)
+    api_response = api_instance.cancel_order(order_id, currency_pair, account=account)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1185,6 +1202,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order_id** | **str**| Order ID returned, or user custom ID(i.e., &#x60;text&#x60; field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. | 
  **currency_pair** | **str**| Currency pair | 
+ **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account | [optional] 
 
 ### Return type
 
@@ -1207,9 +1225,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_my_trades**
-> list[Trade] list_my_trades(currency_pair, limit=limit, page=page, order_id=order_id)
+> list[Trade] list_my_trades(currency_pair, limit=limit, page=page, order_id=order_id, account=account)
 
 List personal trading history
+
+Spot and margin trades are queried by default. If cross margin trades are needed, `account` must be set to `cross_margin`
 
 ### Example
 
@@ -1239,10 +1259,11 @@ currency_pair = 'BTC_USDT' # str | Currency pair
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 page = 1 # int | Page number (optional) (default to 1)
 order_id = '12345' # str | List all trades of specified order (optional)
+account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account (optional)
 
 try:
     # List personal trading history
-    api_response = api_instance.list_my_trades(currency_pair, limit=limit, page=page, order_id=order_id)
+    api_response = api_instance.list_my_trades(currency_pair, limit=limit, page=page, order_id=order_id, account=account)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1258,6 +1279,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
  **page** | **int**| Page number | [optional] [default to 1]
  **order_id** | **str**| List all trades of specified order | [optional] 
+ **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account | [optional] 
 
 ### Return type
 

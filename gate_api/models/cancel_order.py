@@ -32,12 +32,12 @@ class CancelOrder(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'currency_pair': 'str', 'id': 'str'}
+    openapi_types = {'currency_pair': 'str', 'id': 'str', 'account': 'str'}
 
-    attribute_map = {'currency_pair': 'currency_pair', 'id': 'id'}
+    attribute_map = {'currency_pair': 'currency_pair', 'id': 'id', 'account': 'account'}
 
-    def __init__(self, currency_pair=None, id=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, Configuration) -> None
+    def __init__(self, currency_pair=None, id=None, account=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, Configuration) -> None
         """CancelOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -45,10 +45,13 @@ class CancelOrder(object):
 
         self._currency_pair = None
         self._id = None
+        self._account = None
         self.discriminator = None
 
         self.currency_pair = currency_pair
         self.id = id
+        if account is not None:
+            self.account = account
 
     @property
     def currency_pair(self):
@@ -99,6 +102,29 @@ class CancelOrder(object):
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
+
+    @property
+    def account(self):
+        """Gets the account of this CancelOrder.  # noqa: E501
+
+        If cancelled order is cross margin order, this field must be set and can only be `cross_margin`  # noqa: E501
+
+        :return: The account of this CancelOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._account
+
+    @account.setter
+    def account(self, account):
+        """Sets the account of this CancelOrder.
+
+        If cancelled order is cross margin order, this field must be set and can only be `cross_margin`  # noqa: E501
+
+        :param account: The account of this CancelOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._account = account
 
     def to_dict(self):
         """Returns the model properties as a dict"""

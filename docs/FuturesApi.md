@@ -1031,7 +1031,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_position_leverage**
-> Position update_position_leverage(settle, contract, leverage)
+> Position update_position_leverage(settle, contract, leverage, cross_leverage_limit=cross_leverage_limit)
 
 Update position leverage
 
@@ -1062,10 +1062,11 @@ api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
 leverage = '10' # str | New position leverage
+cross_leverage_limit = '10' # str | Cross margin leverage(valid only when `leverage` is 0) (optional)
 
 try:
     # Update position leverage
-    api_response = api_instance.update_position_leverage(settle, contract, leverage)
+    api_response = api_instance.update_position_leverage(settle, contract, leverage, cross_leverage_limit=cross_leverage_limit)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1080,6 +1081,7 @@ Name | Type | Description  | Notes
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
  **leverage** | **str**| New position leverage | 
+ **cross_leverage_limit** | **str**| Cross margin leverage(valid only when &#x60;leverage&#x60; is 0) | [optional] 
 
 ### Return type
 
@@ -1313,7 +1315,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_dual_mode_position_margin**
-> list[Position] update_dual_mode_position_margin(settle, contract, change)
+> list[Position] update_dual_mode_position_margin(settle, contract, change, dual_side)
 
 Update position margin in dual mode
 
@@ -1344,10 +1346,11 @@ api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
 change = '0.01' # str | Margin change. Use positive number to increase margin, negative number otherwise.
+dual_side = 'dual_long' # str | Long or short position
 
 try:
     # Update position margin in dual mode
-    api_response = api_instance.update_dual_mode_position_margin(settle, contract, change)
+    api_response = api_instance.update_dual_mode_position_margin(settle, contract, change, dual_side)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1362,6 +1365,7 @@ Name | Type | Description  | Notes
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
  **change** | **str**| Margin change. Use positive number to increase margin, negative number otherwise. | 
+ **dual_side** | **str**| Long or short position | 
 
 ### Return type
 

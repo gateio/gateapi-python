@@ -40,6 +40,8 @@ class BatchOrder(object):
         'id': 'str',
         'create_time': 'str',
         'update_time': 'str',
+        'create_time_ms': 'int',
+        'update_time_ms': 'int',
         'status': 'str',
         'currency_pair': 'str',
         'type': 'str',
@@ -50,6 +52,7 @@ class BatchOrder(object):
         'time_in_force': 'str',
         'iceberg': 'str',
         'auto_borrow': 'bool',
+        'auto_repay': 'bool',
         'left': 'str',
         'fill_price': 'str',
         'filled_total': 'str',
@@ -70,6 +73,8 @@ class BatchOrder(object):
         'id': 'id',
         'create_time': 'create_time',
         'update_time': 'update_time',
+        'create_time_ms': 'create_time_ms',
+        'update_time_ms': 'update_time_ms',
         'status': 'status',
         'currency_pair': 'currency_pair',
         'type': 'type',
@@ -80,6 +85,7 @@ class BatchOrder(object):
         'time_in_force': 'time_in_force',
         'iceberg': 'iceberg',
         'auto_borrow': 'auto_borrow',
+        'auto_repay': 'auto_repay',
         'left': 'left',
         'fill_price': 'fill_price',
         'filled_total': 'filled_total',
@@ -101,6 +107,8 @@ class BatchOrder(object):
         id=None,
         create_time=None,
         update_time=None,
+        create_time_ms=None,
+        update_time_ms=None,
         status=None,
         currency_pair=None,
         type='limit',
@@ -111,6 +119,7 @@ class BatchOrder(object):
         time_in_force='gtc',
         iceberg=None,
         auto_borrow=None,
+        auto_repay=None,
         left=None,
         fill_price=None,
         filled_total=None,
@@ -123,7 +132,7 @@ class BatchOrder(object):
         rebated_fee_currency=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, bool, str, str, str, str, str, str, str, str, str, str, str, str, str, str, bool, str, str, str, str, str, str, str, bool, str, str, Configuration) -> None
+        # type: (str, bool, str, str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, bool, bool, str, str, str, str, str, str, str, bool, str, str, Configuration) -> None
         """BatchOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -136,6 +145,8 @@ class BatchOrder(object):
         self._id = None
         self._create_time = None
         self._update_time = None
+        self._create_time_ms = None
+        self._update_time_ms = None
         self._status = None
         self._currency_pair = None
         self._type = None
@@ -146,6 +157,7 @@ class BatchOrder(object):
         self._time_in_force = None
         self._iceberg = None
         self._auto_borrow = None
+        self._auto_repay = None
         self._left = None
         self._fill_price = None
         self._filled_total = None
@@ -172,6 +184,10 @@ class BatchOrder(object):
             self.create_time = create_time
         if update_time is not None:
             self.update_time = update_time
+        if create_time_ms is not None:
+            self.create_time_ms = create_time_ms
+        if update_time_ms is not None:
+            self.update_time_ms = update_time_ms
         if status is not None:
             self.status = status
         if currency_pair is not None:
@@ -192,6 +208,8 @@ class BatchOrder(object):
             self.iceberg = iceberg
         if auto_borrow is not None:
             self.auto_borrow = auto_borrow
+        if auto_repay is not None:
+            self.auto_repay = auto_repay
         if left is not None:
             self.left = left
         if fill_price is not None:
@@ -375,6 +393,52 @@ class BatchOrder(object):
         self._update_time = update_time
 
     @property
+    def create_time_ms(self):
+        """Gets the create_time_ms of this BatchOrder.  # noqa: E501
+
+        Order creation time in milliseconds  # noqa: E501
+
+        :return: The create_time_ms of this BatchOrder.  # noqa: E501
+        :rtype: int
+        """
+        return self._create_time_ms
+
+    @create_time_ms.setter
+    def create_time_ms(self, create_time_ms):
+        """Sets the create_time_ms of this BatchOrder.
+
+        Order creation time in milliseconds  # noqa: E501
+
+        :param create_time_ms: The create_time_ms of this BatchOrder.  # noqa: E501
+        :type: int
+        """
+
+        self._create_time_ms = create_time_ms
+
+    @property
+    def update_time_ms(self):
+        """Gets the update_time_ms of this BatchOrder.  # noqa: E501
+
+        Order last modification time in milliseconds  # noqa: E501
+
+        :return: The update_time_ms of this BatchOrder.  # noqa: E501
+        :rtype: int
+        """
+        return self._update_time_ms
+
+    @update_time_ms.setter
+    def update_time_ms(self, update_time_ms):
+        """Sets the update_time_ms of this BatchOrder.
+
+        Order last modification time in milliseconds  # noqa: E501
+
+        :param update_time_ms: The update_time_ms of this BatchOrder.  # noqa: E501
+        :type: int
+        """
+
+        self._update_time_ms = update_time_ms
+
+    @property
     def status(self):
         """Gets the status of this BatchOrder.  # noqa: E501
 
@@ -457,7 +521,7 @@ class BatchOrder(object):
     def account(self):
         """Gets the account of this BatchOrder.  # noqa: E501
 
-        Account type. spot - use spot account; margin - use margin account  # noqa: E501
+        Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account  # noqa: E501
 
         :return: The account of this BatchOrder.  # noqa: E501
         :rtype: str
@@ -468,12 +532,12 @@ class BatchOrder(object):
     def account(self, account):
         """Sets the account of this BatchOrder.
 
-        Account type. spot - use spot account; margin - use margin account  # noqa: E501
+        Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account  # noqa: E501
 
         :param account: The account of this BatchOrder.  # noqa: E501
         :type: str
         """
-        allowed_values = ["spot", "margin"]  # noqa: E501
+        allowed_values = ["spot", "margin", "cross_margin"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and account not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `account` ({0}), must be one of {1}".format(account, allowed_values)  # noqa: E501
@@ -612,7 +676,7 @@ class BatchOrder(object):
     def auto_borrow(self):
         """Gets the auto_borrow of this BatchOrder.  # noqa: E501
 
-        Used in margin trading(i.e. `account` is `margin`) to allow automatic loan of insufficient part if balance is not enough.  # noqa: E501
+        Used in margin or cross margin trading to allow automatic loan of insufficient amount if balance is not enough.  # noqa: E501
 
         :return: The auto_borrow of this BatchOrder.  # noqa: E501
         :rtype: bool
@@ -623,13 +687,36 @@ class BatchOrder(object):
     def auto_borrow(self, auto_borrow):
         """Sets the auto_borrow of this BatchOrder.
 
-        Used in margin trading(i.e. `account` is `margin`) to allow automatic loan of insufficient part if balance is not enough.  # noqa: E501
+        Used in margin or cross margin trading to allow automatic loan of insufficient amount if balance is not enough.  # noqa: E501
 
         :param auto_borrow: The auto_borrow of this BatchOrder.  # noqa: E501
         :type: bool
         """
 
         self._auto_borrow = auto_borrow
+
+    @property
+    def auto_repay(self):
+        """Gets the auto_repay of this BatchOrder.  # noqa: E501
+
+        Enable or disable automatic repayment for automatic borrow loan generated by cross margin order. Default is disabled. Note that:  1. This field is only effective for cross margin orders. Margin account does not support setting auto repayment for orders. 2. `auto_borrow` and `auto_repay` cannot be both set to true in one order.  # noqa: E501
+
+        :return: The auto_repay of this BatchOrder.  # noqa: E501
+        :rtype: bool
+        """
+        return self._auto_repay
+
+    @auto_repay.setter
+    def auto_repay(self, auto_repay):
+        """Sets the auto_repay of this BatchOrder.
+
+        Enable or disable automatic repayment for automatic borrow loan generated by cross margin order. Default is disabled. Note that:  1. This field is only effective for cross margin orders. Margin account does not support setting auto repayment for orders. 2. `auto_borrow` and `auto_repay` cannot be both set to true in one order.  # noqa: E501
+
+        :param auto_repay: The auto_repay of this BatchOrder.  # noqa: E501
+        :type: bool
+        """
+
+        self._auto_repay = auto_repay
 
     @property
     def left(self):

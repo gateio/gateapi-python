@@ -385,7 +385,7 @@ class DeliveryContract(object):
     def quanto_multiplier(self):
         """Gets the quanto_multiplier of this DeliveryContract.  # noqa: E501
 
-        Multiplier used in converting from invoicing to settlement currency in quanto futures  # noqa: E501
+        Multiplier used in converting from invoicing to settlement currency  # noqa: E501
 
         :return: The quanto_multiplier of this DeliveryContract.  # noqa: E501
         :rtype: str
@@ -396,7 +396,7 @@ class DeliveryContract(object):
     def quanto_multiplier(self, quanto_multiplier):
         """Sets the quanto_multiplier of this DeliveryContract.
 
-        Multiplier used in converting from invoicing to settlement currency in quanto futures  # noqa: E501
+        Multiplier used in converting from invoicing to settlement currency  # noqa: E501
 
         :param quanto_multiplier: The quanto_multiplier of this DeliveryContract.  # noqa: E501
         :type: str

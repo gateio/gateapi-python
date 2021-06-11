@@ -55,6 +55,7 @@ class Position(object):
         'pending_orders': 'int',
         'close_order': 'PositionCloseOrder',
         'mode': 'str',
+        'cross_leverage_limit': 'str',
     }
 
     attribute_map = {
@@ -80,6 +81,7 @@ class Position(object):
         'pending_orders': 'pending_orders',
         'close_order': 'close_order',
         'mode': 'mode',
+        'cross_leverage_limit': 'cross_leverage_limit',
     }
 
     def __init__(
@@ -106,9 +108,10 @@ class Position(object):
         pending_orders=None,
         close_order=None,
         mode=None,
+        cross_leverage_limit=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, PositionCloseOrder, str, Configuration) -> None
+        # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, PositionCloseOrder, str, str, Configuration) -> None
         """Position - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -136,6 +139,7 @@ class Position(object):
         self._pending_orders = None
         self._close_order = None
         self._mode = None
+        self._cross_leverage_limit = None
         self.discriminator = None
 
         if user is not None:
@@ -178,10 +182,11 @@ class Position(object):
             self.adl_ranking = adl_ranking
         if pending_orders is not None:
             self.pending_orders = pending_orders
-        if close_order is not None:
-            self.close_order = close_order
+        self.close_order = close_order
         if mode is not None:
             self.mode = mode
+        if cross_leverage_limit is not None:
+            self.cross_leverage_limit = cross_leverage_limit
 
     @property
     def user(self):
@@ -691,6 +696,29 @@ class Position(object):
             )
 
         self._mode = mode
+
+    @property
+    def cross_leverage_limit(self):
+        """Gets the cross_leverage_limit of this Position.  # noqa: E501
+
+        Cross margin leverage(valid only when `leverage` is 0)  # noqa: E501
+
+        :return: The cross_leverage_limit of this Position.  # noqa: E501
+        :rtype: str
+        """
+        return self._cross_leverage_limit
+
+    @cross_leverage_limit.setter
+    def cross_leverage_limit(self, cross_leverage_limit):
+        """Sets the cross_leverage_limit of this Position.
+
+        Cross margin leverage(valid only when `leverage` is 0)  # noqa: E501
+
+        :param cross_leverage_limit: The cross_leverage_limit of this Position.  # noqa: E501
+        :type: str
+        """
+
+        self._cross_leverage_limit = cross_leverage_limit
 
     def to_dict(self):
         """Returns the model properties as a dict"""
