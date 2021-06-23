@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**list_cross_margin_currencies**](MarginApi.md#list_cross_margin_currencies) | **GET** /margin/cross/currencies | Currencies supported by cross margin.
 [**get_cross_margin_currency**](MarginApi.md#get_cross_margin_currency) | **GET** /margin/cross/currencies/{currency} | Retrieve detail of one single currency supported by cross margin
 [**get_cross_margin_account**](MarginApi.md#get_cross_margin_account) | **GET** /margin/cross/accounts | Retrieve cross margin account
+[**list_cross_margin_account_book**](MarginApi.md#list_cross_margin_account_book) | **GET** /margin/cross/account_book | Retrieve cross margin account change history
 [**list_cross_margin_loans**](MarginApi.md#list_cross_margin_loans) | **GET** /margin/cross/loans | List cross margin borrow history
 [**create_cross_margin_loan**](MarginApi.md#create_cross_margin_loan) | **POST** /margin/cross/loans | Create a cross margin borrow loan
 [**get_cross_margin_loan**](MarginApi.md#get_cross_margin_loan) | **GET** /margin/cross/loans/{loan_id} | Retrieve single borrow loan detail
@@ -275,7 +276,7 @@ Name | Type | Description  | Notes
 
 List margin account balance change history
 
-Only transferring from or to margin account are provided for now. Time range allows 30 days at most
+Only transferals from and to margin account are provided for now. Time range allows 30 days at most
 
 ### Example
 
@@ -1495,6 +1496,85 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_cross_margin_account_book**
+> list[CrossMarginAccountBook] list_cross_margin_account_book(currency=currency, _from=_from, to=to, page=page, limit=limit, type=type)
+
+Retrieve cross margin account change history
+
+Record time range cannot exceed 30 days
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+currency = 'currency_example' # str | Filter by currency (optional)
+_from = 56 # int | Time range beginning, default to 7 days before current time (optional)
+to = 56 # int | Time range ending, default to current time (optional)
+page = 1 # int | Page number (optional) (default to 1)
+limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+type = 'borrow' # str | Filter by account change type. All types are returned if not specified. (optional)
+
+try:
+    # Retrieve cross margin account change history
+    api_response = api_instance.list_cross_margin_account_book(currency=currency, _from=_from, to=to, page=page, limit=limit, type=type)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling MarginApi->list_cross_margin_account_book: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency** | **str**| Filter by currency | [optional] 
+ **_from** | **int**| Time range beginning, default to 7 days before current time | [optional] 
+ **to** | **int**| Time range ending, default to current time | [optional] 
+ **page** | **int**| Page number | [optional] [default to 1]
+ **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **type** | **str**| Filter by account change type. All types are returned if not specified. | [optional] 
+
+### Return type
+
+[**list[CrossMarginAccountBook]**](CrossMarginAccountBook.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -316,8 +316,8 @@ conf = gate_api.Configuration(
             "Python SDK Debug Report:\n"
             "OS: {env}\n"
             "Python Version: {pyversion}\n"
-            "Version of the API: 4.21.2\n"
-            "SDK Package Version: 4.21.2".format(env=sys.platform, pyversion=sys.version)
+            "Version of the API: 4.21.4\n"
+            "SDK Package Version: 4.21.4".format(env=sys.platform, pyversion=sys.version)
         )
 
     def get_host_settings(self):

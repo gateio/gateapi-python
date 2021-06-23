@@ -32,24 +32,38 @@ class OrderBook(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'id': 'int', 'asks': 'list[list[str]]', 'bids': 'list[list[str]]'}
+    openapi_types = {
+        'id': 'int',
+        'current': 'int',
+        'update': 'int',
+        'asks': 'list[list[str]]',
+        'bids': 'list[list[str]]',
+    }
 
-    attribute_map = {'id': 'id', 'asks': 'asks', 'bids': 'bids'}
+    attribute_map = {'id': 'id', 'current': 'current', 'update': 'update', 'asks': 'asks', 'bids': 'bids'}
 
-    def __init__(self, id=None, asks=None, bids=None, local_vars_configuration=None):  # noqa: E501
-        # type: (int, list[list[str]], list[list[str]], Configuration) -> None
+    def __init__(
+        self, id=None, current=None, update=None, asks=None, bids=None, local_vars_configuration=None
+    ):  # noqa: E501
+        # type: (int, int, int, list[list[str]], list[list[str]], Configuration) -> None
         """OrderBook - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._id = None
+        self._current = None
+        self._update = None
         self._asks = None
         self._bids = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
+        if current is not None:
+            self.current = current
+        if update is not None:
+            self.update = update
         self.asks = asks
         self.bids = bids
 
@@ -75,6 +89,52 @@ class OrderBook(object):
         """
 
         self._id = id
+
+    @property
+    def current(self):
+        """Gets the current of this OrderBook.  # noqa: E501
+
+        Response data generation timestamp in milliseconds  # noqa: E501
+
+        :return: The current of this OrderBook.  # noqa: E501
+        :rtype: int
+        """
+        return self._current
+
+    @current.setter
+    def current(self, current):
+        """Sets the current of this OrderBook.
+
+        Response data generation timestamp in milliseconds  # noqa: E501
+
+        :param current: The current of this OrderBook.  # noqa: E501
+        :type: int
+        """
+
+        self._current = current
+
+    @property
+    def update(self):
+        """Gets the update of this OrderBook.  # noqa: E501
+
+        Order book changed timestamp in milliseconds  # noqa: E501
+
+        :return: The update of this OrderBook.  # noqa: E501
+        :rtype: int
+        """
+        return self._update
+
+    @update.setter
+    def update(self, update):
+        """Sets the update of this OrderBook.
+
+        Order book changed timestamp in milliseconds  # noqa: E501
+
+        :param update: The update of this OrderBook.  # noqa: E501
+        :type: int
+        """
+
+        self._update = update
 
     @property
     def asks(self):
