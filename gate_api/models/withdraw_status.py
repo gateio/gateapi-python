@@ -43,6 +43,7 @@ class WithdrawStatus(object):
         'withdraw_amount_mini': 'str',
         'withdraw_day_limit_remain': 'str',
         'withdraw_eachtime_limit': 'str',
+        'withdraw_fix_on_chains': 'dict(str, str)',
     }
 
     attribute_map = {
@@ -56,6 +57,7 @@ class WithdrawStatus(object):
         'withdraw_amount_mini': 'withdraw_amount_mini',
         'withdraw_day_limit_remain': 'withdraw_day_limit_remain',
         'withdraw_eachtime_limit': 'withdraw_eachtime_limit',
+        'withdraw_fix_on_chains': 'withdraw_fix_on_chains',
     }
 
     def __init__(
@@ -70,9 +72,10 @@ class WithdrawStatus(object):
         withdraw_amount_mini=None,
         withdraw_day_limit_remain=None,
         withdraw_eachtime_limit=None,
+        withdraw_fix_on_chains=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, dict(str, str), Configuration) -> None
         """WithdrawStatus - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -88,6 +91,7 @@ class WithdrawStatus(object):
         self._withdraw_amount_mini = None
         self._withdraw_day_limit_remain = None
         self._withdraw_eachtime_limit = None
+        self._withdraw_fix_on_chains = None
         self.discriminator = None
 
         if currency is not None:
@@ -110,6 +114,8 @@ class WithdrawStatus(object):
             self.withdraw_day_limit_remain = withdraw_day_limit_remain
         if withdraw_eachtime_limit is not None:
             self.withdraw_eachtime_limit = withdraw_eachtime_limit
+        if withdraw_fix_on_chains is not None:
+            self.withdraw_fix_on_chains = withdraw_fix_on_chains
 
     @property
     def currency(self):
@@ -340,6 +346,29 @@ class WithdrawStatus(object):
         """
 
         self._withdraw_eachtime_limit = withdraw_eachtime_limit
+
+    @property
+    def withdraw_fix_on_chains(self):
+        """Gets the withdraw_fix_on_chains of this WithdrawStatus.  # noqa: E501
+
+        Fixed withdrawal fee on multiple chains  # noqa: E501
+
+        :return: The withdraw_fix_on_chains of this WithdrawStatus.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._withdraw_fix_on_chains
+
+    @withdraw_fix_on_chains.setter
+    def withdraw_fix_on_chains(self, withdraw_fix_on_chains):
+        """Sets the withdraw_fix_on_chains of this WithdrawStatus.
+
+        Fixed withdrawal fee on multiple chains  # noqa: E501
+
+        :param withdraw_fix_on_chains: The withdraw_fix_on_chains of this WithdrawStatus.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._withdraw_fix_on_chains = withdraw_fix_on_chains
 
     def to_dict(self):
         """Returns the model properties as a dict"""

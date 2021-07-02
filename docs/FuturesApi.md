@@ -1974,7 +1974,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_position_close**
-> list[PositionClose] list_position_close(settle, contract=contract, limit=limit, offset=offset)
+> list[PositionClose] list_position_close(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to)
 
 List position close history
 
@@ -2006,10 +2006,12 @@ settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
+_from = 1547706332 # int | Start timestamp (optional)
+to = 1547706332 # int | End timestamp (optional)
 
 try:
     # List position close history
-    api_response = api_instance.list_position_close(settle, contract=contract, limit=limit, offset=offset)
+    api_response = api_instance.list_position_close(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -2025,6 +2027,8 @@ Name | Type | Description  | Notes
  **contract** | **str**| Futures contract, return related data only if specified | [optional] 
  **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
+ **_from** | **int**| Start timestamp | [optional] 
+ **to** | **int**| End timestamp | [optional] 
 
 ### Return type
 

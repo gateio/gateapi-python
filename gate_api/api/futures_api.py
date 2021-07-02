@@ -3571,6 +3571,8 @@ class FuturesApi(object):
         :param str contract: Futures contract, return related data only if specified
         :param int limit: Maximum number of records returned in one list
         :param int offset: List offset, starting from 0
+        :param int _from: Start timestamp
+        :param int to: End timestamp
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -3598,6 +3600,8 @@ class FuturesApi(object):
         :param str contract: Futures contract, return related data only if specified
         :param int limit: Maximum number of records returned in one list
         :param int offset: List offset, starting from 0
+        :param int _from: Start timestamp
+        :param int to: End timestamp
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -3614,7 +3618,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'limit', 'offset']
+        all_params = ['settle', 'contract', 'limit', 'offset', '_from', 'to']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -3661,6 +3665,10 @@ class FuturesApi(object):
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
         if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
             query_params.append(('offset', local_var_params['offset']))  # noqa: E501
+        if '_from' in local_var_params and local_var_params['_from'] is not None:  # noqa: E501
+            query_params.append(('from', local_var_params['_from']))  # noqa: E501
+        if 'to' in local_var_params and local_var_params['to'] is not None:  # noqa: E501
+            query_params.append(('to', local_var_params['to']))  # noqa: E501
 
         header_params = {}
 

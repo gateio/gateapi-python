@@ -1352,7 +1352,7 @@ class SpotApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Currency pair (required)
+        :param str currency_pair: Retrieve results with specified currency pair. It is required for open orders, but optional for finished ones. (required)
         :param str status: List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled  (required)
         :param int page: Page number
         :param int limit: Maximum number of records returned. If `status` is `open`, maximum of `limit` is 100
@@ -1381,7 +1381,7 @@ class SpotApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Currency pair (required)
+        :param str currency_pair: Retrieve results with specified currency pair. It is required for open orders, but optional for finished ones. (required)
         :param str status: List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled  (required)
         :param int page: Page number
         :param int limit: Maximum number of records returned. If `status` is `open`, maximum of `limit` is 100
@@ -2067,10 +2067,10 @@ class SpotApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Currency pair (required)
+        :param str currency_pair: Retrieve results with specified currency pair. It is required for open orders, but optional for finished ones. (required)
         :param int limit: Maximum number of records returned in one list
         :param int page: Page number
-        :param str order_id: List all trades of specified order
+        :param str order_id: Filter trades with specified order ID. `currency_pair` is also required if this field is present
         :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -2096,10 +2096,10 @@ class SpotApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Currency pair (required)
+        :param str currency_pair: Retrieve results with specified currency pair. It is required for open orders, but optional for finished ones. (required)
         :param int limit: Maximum number of records returned in one list
         :param int page: Page number
-        :param str order_id: List all trades of specified order
+        :param str order_id: Filter trades with specified order ID. `currency_pair` is also required if this field is present
         :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
         :param _return_http_data_only: response data without head status code
                                        and headers

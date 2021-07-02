@@ -36,6 +36,7 @@ class Trade(object):
         'id': 'str',
         'create_time': 'str',
         'create_time_ms': 'str',
+        'currency_pair': 'str',
         'side': 'str',
         'role': 'str',
         'amount': 'str',
@@ -51,6 +52,7 @@ class Trade(object):
         'id': 'id',
         'create_time': 'create_time',
         'create_time_ms': 'create_time_ms',
+        'currency_pair': 'currency_pair',
         'side': 'side',
         'role': 'role',
         'amount': 'amount',
@@ -67,6 +69,7 @@ class Trade(object):
         id=None,
         create_time=None,
         create_time_ms=None,
+        currency_pair=None,
         side=None,
         role=None,
         amount=None,
@@ -78,7 +81,7 @@ class Trade(object):
         gt_fee=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """Trade - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +90,7 @@ class Trade(object):
         self._id = None
         self._create_time = None
         self._create_time_ms = None
+        self._currency_pair = None
         self._side = None
         self._role = None
         self._amount = None
@@ -104,6 +108,8 @@ class Trade(object):
             self.create_time = create_time
         if create_time_ms is not None:
             self.create_time_ms = create_time_ms
+        if currency_pair is not None:
+            self.currency_pair = currency_pair
         if side is not None:
             self.side = side
         if role is not None:
@@ -191,6 +197,29 @@ class Trade(object):
         """
 
         self._create_time_ms = create_time_ms
+
+    @property
+    def currency_pair(self):
+        """Gets the currency_pair of this Trade.  # noqa: E501
+
+        Currency pair  # noqa: E501
+
+        :return: The currency_pair of this Trade.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_pair
+
+    @currency_pair.setter
+    def currency_pair(self, currency_pair):
+        """Sets the currency_pair of this Trade.
+
+        Currency pair  # noqa: E501
+
+        :param currency_pair: The currency_pair of this Trade.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_pair = currency_pair
 
     @property
     def side(self):
