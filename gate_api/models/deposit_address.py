@@ -32,12 +32,12 @@ class DepositAddress(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'currency': 'str', 'address': 'str', 'multichain_address': 'list[MultiChainAddressItem]'}
+    openapi_types = {'currency': 'str', 'address': 'str', 'multichain_addresses': 'list[MultiChainAddressItem]'}
 
-    attribute_map = {'currency': 'currency', 'address': 'address', 'multichain_address': 'multichain_address'}
+    attribute_map = {'currency': 'currency', 'address': 'address', 'multichain_addresses': 'multichain_addresses'}
 
     def __init__(
-        self, currency=None, address=None, multichain_address=None, local_vars_configuration=None
+        self, currency=None, address=None, multichain_addresses=None, local_vars_configuration=None
     ):  # noqa: E501
         # type: (str, str, list[MultiChainAddressItem], Configuration) -> None
         """DepositAddress - a model defined in OpenAPI"""  # noqa: E501
@@ -47,13 +47,13 @@ class DepositAddress(object):
 
         self._currency = None
         self._address = None
-        self._multichain_address = None
+        self._multichain_addresses = None
         self.discriminator = None
 
         self.currency = currency
         self.address = address
-        if multichain_address is not None:
-            self.multichain_address = multichain_address
+        if multichain_addresses is not None:
+            self.multichain_addresses = multichain_addresses
 
     @property
     def currency(self):
@@ -106,25 +106,25 @@ class DepositAddress(object):
         self._address = address
 
     @property
-    def multichain_address(self):
-        """Gets the multichain_address of this DepositAddress.  # noqa: E501
+    def multichain_addresses(self):
+        """Gets the multichain_addresses of this DepositAddress.  # noqa: E501
 
 
-        :return: The multichain_address of this DepositAddress.  # noqa: E501
+        :return: The multichain_addresses of this DepositAddress.  # noqa: E501
         :rtype: list[MultiChainAddressItem]
         """
-        return self._multichain_address
+        return self._multichain_addresses
 
-    @multichain_address.setter
-    def multichain_address(self, multichain_address):
-        """Sets the multichain_address of this DepositAddress.
+    @multichain_addresses.setter
+    def multichain_addresses(self, multichain_addresses):
+        """Sets the multichain_addresses of this DepositAddress.
 
 
-        :param multichain_address: The multichain_address of this DepositAddress.  # noqa: E501
+        :param multichain_addresses: The multichain_addresses of this DepositAddress.  # noqa: E501
         :type: list[MultiChainAddressItem]
         """
 
-        self._multichain_address = multichain_address
+        self._multichain_addresses = multichain_addresses
 
     def to_dict(self):
         """Returns the model properties as a dict"""
