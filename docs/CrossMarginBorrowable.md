@@ -1,11 +1,10 @@
-# FundingBookItem
+# CrossMarginBorrowable
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rate** | **str** | Loan rate | [optional] 
-**amount** | **str** | Borrowable amount | [optional] 
-**days** | **int** | The number of days till the loan repayment&#39;s dateline | [optional] 
+**currency** | **str** | Currency detail | [optional] 
+**amount** | **str** | Max borrowable amount | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

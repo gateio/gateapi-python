@@ -143,7 +143,7 @@ class MarginAccountBook(object):
     def time_ms(self):
         """Gets the time_ms of this MarginAccountBook.  # noqa: E501
 
-        Account changed timestamp in milliseconds  # noqa: E501
+        The timestamp of the change (in milliseconds)  # noqa: E501
 
         :return: The time_ms of this MarginAccountBook.  # noqa: E501
         :rtype: int
@@ -154,7 +154,7 @@ class MarginAccountBook(object):
     def time_ms(self, time_ms):
         """Sets the time_ms of this MarginAccountBook.
 
-        Account changed timestamp in milliseconds  # noqa: E501
+        The timestamp of the change (in milliseconds)  # noqa: E501
 
         :param time_ms: The time_ms of this MarginAccountBook.  # noqa: E501
         :type: int

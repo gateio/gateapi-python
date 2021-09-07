@@ -142,7 +142,7 @@ class FundingAccount(object):
     def lent(self):
         """Gets the lent of this FundingAccount.  # noqa: E501
 
-        Amount that is loaned but not repaid  # noqa: E501
+        Outstanding loan amount yet to be repaid  # noqa: E501
 
         :return: The lent of this FundingAccount.  # noqa: E501
         :rtype: str
@@ -153,7 +153,7 @@ class FundingAccount(object):
     def lent(self, lent):
         """Sets the lent of this FundingAccount.
 
-        Amount that is loaned but not repaid  # noqa: E501
+        Outstanding loan amount yet to be repaid  # noqa: E501
 
         :param lent: The lent of this FundingAccount.  # noqa: E501
         :type: str

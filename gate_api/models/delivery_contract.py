@@ -1059,7 +1059,7 @@ class DeliveryContract(object):
     def trade_size(self):
         """Gets the trade_size of this DeliveryContract.  # noqa: E501
 
-        Historical accumulation trade size  # noqa: E501
+        Historical accumulated trade size  # noqa: E501
 
         :return: The trade_size of this DeliveryContract.  # noqa: E501
         :rtype: int
@@ -1070,7 +1070,7 @@ class DeliveryContract(object):
     def trade_size(self, trade_size):
         """Sets the trade_size of this DeliveryContract.
 
-        Historical accumulation trade size  # noqa: E501
+        Historical accumulated trade size  # noqa: E501
 
         :param trade_size: The trade_size of this DeliveryContract.  # noqa: E501
         :type: int
@@ -1105,7 +1105,7 @@ class DeliveryContract(object):
     def config_change_time(self):
         """Gets the config_change_time of this DeliveryContract.  # noqa: E501
 
-        Configuration's last changed time  # noqa: E501
+        Last changed time of configuration  # noqa: E501
 
         :return: The config_change_time of this DeliveryContract.  # noqa: E501
         :rtype: float
@@ -1116,7 +1116,7 @@ class DeliveryContract(object):
     def config_change_time(self, config_change_time):
         """Sets the config_change_time of this DeliveryContract.
 
-        Configuration's last changed time  # noqa: E501
+        Last changed time of configuration  # noqa: E501
 
         :param config_change_time: The config_change_time of this DeliveryContract.  # noqa: E501
         :type: float

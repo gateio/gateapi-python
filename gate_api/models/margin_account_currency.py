@@ -165,7 +165,7 @@ class MarginAccountCurrency(object):
     def interest(self):
         """Gets the interest of this MarginAccountCurrency.  # noqa: E501
 
-        Interests unpaid  # noqa: E501
+        Unpaid interests  # noqa: E501
 
         :return: The interest of this MarginAccountCurrency.  # noqa: E501
         :rtype: str
@@ -176,7 +176,7 @@ class MarginAccountCurrency(object):
     def interest(self, interest):
         """Sets the interest of this MarginAccountCurrency.
 
-        Interests unpaid  # noqa: E501
+        Unpaid interests  # noqa: E501
 
         :param interest: The interest of this MarginAccountCurrency.  # noqa: E501
         :type: str

@@ -396,7 +396,7 @@ class Trade(object):
     def point_fee(self):
         """Gets the point_fee of this Trade.  # noqa: E501
 
-        Point used to deduct fee  # noqa: E501
+        Points used to deduct fee  # noqa: E501
 
         :return: The point_fee of this Trade.  # noqa: E501
         :rtype: str
@@ -407,7 +407,7 @@ class Trade(object):
     def point_fee(self, point_fee):
         """Sets the point_fee of this Trade.
 
-        Point used to deduct fee  # noqa: E501
+        Points used to deduct fee  # noqa: E501
 
         :param point_fee: The point_fee of this Trade.  # noqa: E501
         :type: str

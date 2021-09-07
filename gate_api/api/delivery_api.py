@@ -266,7 +266,7 @@ class DeliveryApi(object):
         :param str contract: Futures contract (required)
         :param str interval: Order depth. 0 means no aggregation is applied. default to 0
         :param int limit: Maximum number of order depth data in asks or bids
-        :param bool with_id: Whether order book update ID would be returned. This ID increments by 1 on every order book update
+        :param bool with_id: Whether the order book update ID will be returned. This ID increases by 1 on every order book update
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -295,7 +295,7 @@ class DeliveryApi(object):
         :param str contract: Futures contract (required)
         :param str interval: Order depth. 0 means no aggregation is applied. default to 0
         :param int limit: Maximum number of order depth data in asks or bids
-        :param bool with_id: Whether order book update ID would be returned. This ID increments by 1 on every order book update
+        :param bool with_id: Whether the order book update ID will be returned. This ID increases by 1 on every order book update
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -404,8 +404,8 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int limit: Maximum number of records returned in one list
-        :param str last_id: Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use `from` and `to` instead to limit time range
+        :param int limit: Maximum number of records to be returned in a single list
+        :param str last_id: Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. Use `from` and `to` instead to limit time range
         :param int _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned. 
         :param int to: Specify end time in Unix seconds, default to current time
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -433,8 +433,8 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int limit: Maximum number of records returned in one list
-        :param str last_id: Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use `from` and `to` instead to limit time range
+        :param int limit: Maximum number of records to be returned in a single list
+        :param str last_id: Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. Use `from` and `to` instead to limit time range
         :param int _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned. 
         :param int to: Specify end time in Unix seconds, default to current time
         :param _return_http_data_only: response data without head status code
@@ -550,7 +550,7 @@ class DeliveryApi(object):
         :param str contract: Futures contract (required)
         :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param int limit: Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
+        :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
         :param str interval: Interval time between data points
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -580,7 +580,7 @@ class DeliveryApi(object):
         :param str contract: Futures contract (required)
         :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param int limit: Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
+        :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
         :param str interval: Interval time between data points
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -795,7 +795,7 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -820,7 +820,7 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1021,7 +1021,7 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int _from: Start timestamp
         :param int to: End timestamp
         :param str type: Changing Type: - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate
@@ -1049,7 +1049,7 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int _from: Start timestamp
         :param int to: End timestamp
         :param str type: Changing Type: - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate
@@ -1753,7 +1753,7 @@ class DeliveryApi(object):
     def list_delivery_orders(self, settle, status, **kwargs):  # noqa: E501
         """List futures orders  # noqa: E501
 
-        Zero-fill order cannot be retrieved 60 seconds after cancellation  # noqa: E501
+        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_delivery_orders(settle, status, async_req=True)
@@ -1761,9 +1761,9 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param str status: List orders based on status (required)
+        :param str status: Only list the orders with this status (required)
         :param str contract: Futures contract
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :param int count_total: Whether to return total number matched. Default to 0(no return)
@@ -1784,7 +1784,7 @@ class DeliveryApi(object):
     def list_delivery_orders_with_http_info(self, settle, status, **kwargs):  # noqa: E501
         """List futures orders  # noqa: E501
 
-        Zero-fill order cannot be retrieved 60 seconds after cancellation  # noqa: E501
+        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_delivery_orders_with_http_info(settle, status, async_req=True)
@@ -1792,9 +1792,9 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param str status: List orders based on status (required)
+        :param str status: Only list the orders with this status (required)
         :param str contract: Futures contract
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :param int count_total: Whether to return total number matched. Default to 0(no return)
@@ -1908,7 +1908,7 @@ class DeliveryApi(object):
     def create_delivery_order(self, settle, futures_order, **kwargs):  # noqa: E501
         """Create a futures order  # noqa: E501
 
-        Zero-fill order cannot be retrieved 60 seconds after cancellation  # noqa: E501
+        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_delivery_order(settle, futures_order, async_req=True)
@@ -1934,7 +1934,7 @@ class DeliveryApi(object):
     def create_delivery_order_with_http_info(self, settle, futures_order, **kwargs):  # noqa: E501
         """Create a futures order  # noqa: E501
 
-        Zero-fill order cannot be retrieved 60 seconds after cancellation  # noqa: E501
+        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_delivery_order_with_http_info(settle, futures_order, async_req=True)
@@ -2030,7 +2030,7 @@ class DeliveryApi(object):
     def cancel_delivery_orders(self, settle, contract, **kwargs):  # noqa: E501
         """Cancel all `open` orders matched  # noqa: E501
 
-        Zero-fill order cannot be retrieved 60 seconds after cancellation  # noqa: E501
+        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_delivery_orders(settle, contract, async_req=True)
@@ -2039,7 +2039,7 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param str side: All bids or asks. Both included in not specified
+        :param str side: All bids or asks. Both included if not specified
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2057,7 +2057,7 @@ class DeliveryApi(object):
     def cancel_delivery_orders_with_http_info(self, settle, contract, **kwargs):  # noqa: E501
         """Cancel all `open` orders matched  # noqa: E501
 
-        Zero-fill order cannot be retrieved 60 seconds after cancellation  # noqa: E501
+        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_delivery_orders_with_http_info(settle, contract, async_req=True)
@@ -2066,7 +2066,7 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param str side: All bids or asks. Both included in not specified
+        :param str side: All bids or asks. Both included if not specified
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2151,7 +2151,7 @@ class DeliveryApi(object):
     def get_delivery_order(self, settle, order_id, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
 
-        Zero-fill order cannot be retrieved 60 seconds after cancellation  # noqa: E501
+        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_delivery_order(settle, order_id, async_req=True)
@@ -2159,7 +2159,7 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param str order_id: ID returned on order successfully being created (required)
+        :param str order_id: Retrieve the data of the order with the specified ID (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2177,7 +2177,7 @@ class DeliveryApi(object):
     def get_delivery_order_with_http_info(self, settle, order_id, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
 
-        Zero-fill order cannot be retrieved 60 seconds after cancellation  # noqa: E501
+        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_delivery_order_with_http_info(settle, order_id, async_req=True)
@@ -2185,7 +2185,7 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param str order_id: ID returned on order successfully being created (required)
+        :param str order_id: Retrieve the data of the order with the specified ID (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2275,7 +2275,7 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param str order_id: ID returned on order successfully being created (required)
+        :param str order_id: Retrieve the data of the order with the specified ID (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2300,7 +2300,7 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param str order_id: ID returned on order successfully being created (required)
+        :param str order_id: Retrieve the data of the order with the specified ID (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2392,7 +2392,7 @@ class DeliveryApi(object):
         :param str settle: Settle currency (required)
         :param str contract: Futures contract
         :param int order: Futures order ID, return related data only if specified
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :param int count_total: Whether to return total number matched. Default to 0(no return)
@@ -2422,7 +2422,7 @@ class DeliveryApi(object):
         :param str settle: Settle currency (required)
         :param str contract: Futures contract
         :param int order: Futures order ID, return related data only if specified
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :param int count_total: Whether to return total number matched. Default to 0(no return)
@@ -2537,7 +2537,7 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2563,7 +2563,7 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2663,7 +2663,7 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int at: Specify a liquidation timestamp
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -2690,7 +2690,7 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int at: Specify a liquidation timestamp
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -2791,7 +2791,7 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int at: Specify a settlement timestamp
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -2818,7 +2818,7 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int at: Specify a settlement timestamp
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -2918,9 +2918,9 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param str status: List orders based on status (required)
+        :param str status: Only list the orders with this status (required)
         :param str contract: Futures contract, return related data only if specified
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -2946,9 +2946,9 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param str status: List orders based on status (required)
+        :param str status: Only list the orders with this status (required)
         :param str contract: Futures contract, return related data only if specified
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -3310,7 +3310,7 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param str order_id: ID returned on order successfully being created (required)
+        :param str order_id: Retrieve the data of the order with the specified ID (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -3335,7 +3335,7 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param str order_id: ID returned on order successfully being created (required)
+        :param str order_id: Retrieve the data of the order with the specified ID (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -3427,7 +3427,7 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param str order_id: ID returned on order successfully being created (required)
+        :param str order_id: Retrieve the data of the order with the specified ID (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -3452,7 +3452,7 @@ class DeliveryApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param str order_id: ID returned on order successfully being created (required)
+        :param str order_id: Retrieve the data of the order with the specified ID (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

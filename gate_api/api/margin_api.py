@@ -241,7 +241,7 @@ class MarginApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieved specified currency related data (required)
+        :param str currency: Retrieve data of the specified currency (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -265,7 +265,7 @@ class MarginApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieved specified currency related data (required)
+        :param str currency: Retrieve data of the specified currency (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -448,7 +448,7 @@ class MarginApi(object):
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
         :param int page: Page number
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -478,7 +478,7 @@ class MarginApi(object):
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
         :param int page: Page number
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -579,7 +579,7 @@ class MarginApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieved specified currency related data
+        :param str currency: Retrieve data of the specified currency
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -603,7 +603,7 @@ class MarginApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieved specified currency related data
+        :param str currency: Retrieve data of the specified currency
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -678,12 +678,12 @@ class MarginApi(object):
         :param bool async_req: execute request asynchronously
         :param str status: Loan status (required)
         :param str side: Lend or borrow (required)
-        :param str currency: Retrieved specified currency related data
+        :param str currency: Retrieve data of the specified currency
         :param str currency_pair: Currency pair
         :param str sort_by: Specify which field is used to sort. `create_time` or `rate` is supported. Default to `create_time`
         :param bool reverse_sort: Whether to sort in descending order. Default to `true`
         :param int page: Page number
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -709,12 +709,12 @@ class MarginApi(object):
         :param bool async_req: execute request asynchronously
         :param str status: Loan status (required)
         :param str side: Lend or borrow (required)
-        :param str currency: Retrieved specified currency related data
+        :param str currency: Retrieve data of the specified currency
         :param str currency_pair: Currency pair
         :param str sort_by: Specify which field is used to sort. `create_time` or `rate` is supported. Default to `create_time`
         :param bool reverse_sort: Whether to sort in descending order. Default to `true`
         :param int page: Page number
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -936,8 +936,8 @@ class MarginApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieved specified currency related data (required)
-        :param str ids: Lending loan ID list separated by `,`. Maximum of 20 IDs are allowed in one request (required)
+        :param str currency: Retrieve data of the specified currency (required)
+        :param str ids: A comma-separated (,) list of IDs of the loans lent. Maximum of 20 IDs are allowed in a request (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -961,8 +961,8 @@ class MarginApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieved specified currency related data (required)
-        :param str ids: Lending loan ID list separated by `,`. Maximum of 20 IDs are allowed in one request (required)
+        :param str currency: Retrieve data of the specified currency (required)
+        :param str ids: A comma-separated (,) list of IDs of the loans lent. Maximum of 20 IDs are allowed in a request (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1152,7 +1152,7 @@ class MarginApi(object):
     def cancel_loan(self, loan_id, currency, **kwargs):  # noqa: E501
         """Cancel lending loan  # noqa: E501
 
-        Only lending loans can be cancelled  # noqa: E501
+        Only lent loans can be cancelled  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_loan(loan_id, currency, async_req=True)
@@ -1160,7 +1160,7 @@ class MarginApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
-        :param str currency: Retrieved specified currency related data (required)
+        :param str currency: Retrieve data of the specified currency (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1178,7 +1178,7 @@ class MarginApi(object):
     def cancel_loan_with_http_info(self, loan_id, currency, **kwargs):  # noqa: E501
         """Cancel lending loan  # noqa: E501
 
-        Only lending loans can be cancelled  # noqa: E501
+        Only lent loans can be cancelled  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_loan_with_http_info(loan_id, currency, async_req=True)
@@ -1186,7 +1186,7 @@ class MarginApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str loan_id: Loan ID (required)
-        :param str currency: Retrieved specified currency related data (required)
+        :param str currency: Retrieve data of the specified currency (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1603,7 +1603,7 @@ class MarginApi(object):
         )
 
     def list_loan_records(self, loan_id, **kwargs):  # noqa: E501
-        """List repayment records of specified loan  # noqa: E501
+        """List repayment records of a specific loan  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1614,7 +1614,7 @@ class MarginApi(object):
         :param str loan_id: Loan ID (required)
         :param str status: Loan record status
         :param int page: Page number
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1630,7 +1630,7 @@ class MarginApi(object):
         return self.list_loan_records_with_http_info(loan_id, **kwargs)  # noqa: E501
 
     def list_loan_records_with_http_info(self, loan_id, **kwargs):  # noqa: E501
-        """List repayment records of specified loan  # noqa: E501
+        """List repayment records of a specific loan  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1641,7 +1641,7 @@ class MarginApi(object):
         :param str loan_id: Loan ID (required)
         :param str status: Loan record status
         :param int page: Page number
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2167,7 +2167,7 @@ class MarginApi(object):
         )
 
     def get_margin_transferable(self, currency, **kwargs):  # noqa: E501
-        """Max transferable amount for specified margin currency  # noqa: E501
+        """Get the max transferable amount for a specific margin currency  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2175,7 +2175,7 @@ class MarginApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieved specified currency related data (required)
+        :param str currency: Retrieve data of the specified currency (required)
         :param str currency_pair: Currency pair
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -2192,7 +2192,7 @@ class MarginApi(object):
         return self.get_margin_transferable_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_margin_transferable_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """Max transferable amount for specified margin currency  # noqa: E501
+        """Get the max transferable amount for a specific margin currency  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2200,7 +2200,7 @@ class MarginApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieved specified currency related data (required)
+        :param str currency: Retrieve data of the specified currency (required)
         :param str currency_pair: Currency pair
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -2266,6 +2266,114 @@ class MarginApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='MarginTransferable',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+        )
+
+    def get_margin_borrowable(self, currency, **kwargs):  # noqa: E501
+        """Get the max borrowable amount for a specific margin currency  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_margin_borrowable(currency, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str currency: Retrieve data of the specified currency (required)
+        :param str currency_pair: Currency pair
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: gate_api.MarginBorrowable
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_margin_borrowable_with_http_info(currency, **kwargs)  # noqa: E501
+
+    def get_margin_borrowable_with_http_info(self, currency, **kwargs):  # noqa: E501
+        """Get the max borrowable amount for a specific margin currency  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_margin_borrowable_with_http_info(currency, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str currency: Retrieve data of the specified currency (required)
+        :param str currency_pair: Currency pair
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(gate_api.MarginBorrowable, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['currency', 'currency_pair']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_margin_borrowable" % k)
+            local_var_params[k] = v
+        del local_var_params['kwargs']
+        # verify the required parameter 'currency' is set
+        if self.api_client.client_side_validation and (
+            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `currency` when calling `get_margin_borrowable`"
+            )  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'currency' in local_var_params and local_var_params['currency'] is not None:  # noqa: E501
+            query_params.append(('currency', local_var_params['currency']))  # noqa: E501
+        if 'currency_pair' in local_var_params and local_var_params['currency_pair'] is not None:  # noqa: E501
+            query_params.append(('currency_pair', local_var_params['currency_pair']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiv4']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/margin/borrowable',
+            'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='MarginBorrowable',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -2580,8 +2688,8 @@ class MarginApi(object):
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
         :param int page: Page number
-        :param int limit: Maximum number of records returned in one list
-        :param str type: Filter by account change type. All types are returned if not specified.
+        :param int limit: Maximum number of records to be returned in a single list
+        :param str type: Only retrieve changes of the specified type. All types will be returned if not specified.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2610,8 +2718,8 @@ class MarginApi(object):
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
         :param int page: Page number
-        :param int limit: Maximum number of records returned in one list
-        :param str type: Filter by account change type. All types are returned if not specified.
+        :param int limit: Maximum number of records to be returned in a single list
+        :param str type: Only retrieve changes of the specified type. All types will be returned if not specified.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2717,7 +2825,7 @@ class MarginApi(object):
         :param bool async_req: execute request asynchronously
         :param int status: Filter by status. Supported values are 2 and 3. (required)
         :param str currency: Filter by currency
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param bool reverse: Whether to sort in descending order, which is the default. Set `reverse=false` to return ascending results
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2746,7 +2854,7 @@ class MarginApi(object):
         :param bool async_req: execute request asynchronously
         :param int status: Filter by status. Supported values are 2 and 3. (required)
         :param str currency: Filter by currency
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param bool reverse: Whether to sort in descending order, which is the default. Set `reverse=false` to return ascending results
         :param _return_http_data_only: response data without head status code
@@ -3072,7 +3180,7 @@ class MarginApi(object):
         :param bool async_req: execute request asynchronously
         :param str currency:
         :param str loan_id:
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param bool reverse: Whether to sort in descending order, which is the default. Set `reverse=false` to return ascending results
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -3101,7 +3209,7 @@ class MarginApi(object):
         :param bool async_req: execute request asynchronously
         :param str currency:
         :param str loan_id:
-        :param int limit: Maximum number of records returned in one list
+        :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param bool reverse: Whether to sort in descending order, which is the default. Set `reverse=false` to return ascending results
         :param _return_http_data_only: response data without head status code
@@ -3306,7 +3414,7 @@ class MarginApi(object):
         )
 
     def get_cross_margin_transferable(self, currency, **kwargs):  # noqa: E501
-        """Max transferable amount for specified cross margin currency  # noqa: E501
+        """Get the max transferable amount for a specific cross margin currency  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -3314,7 +3422,7 @@ class MarginApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieved specified currency related data (required)
+        :param str currency: Retrieve data of the specified currency (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -3330,7 +3438,7 @@ class MarginApi(object):
         return self.get_cross_margin_transferable_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_cross_margin_transferable_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """Max transferable amount for specified cross margin currency  # noqa: E501
+        """Get the max transferable amount for a specific cross margin currency  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -3338,7 +3446,7 @@ class MarginApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieved specified currency related data (required)
+        :param str currency: Retrieve data of the specified currency (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -3403,6 +3511,112 @@ class MarginApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='CrossMarginTransferable',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+        )
+
+    def get_cross_margin_borrowable(self, currency, **kwargs):  # noqa: E501
+        """Get the max borrowable amount for a specific cross margin currency  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_cross_margin_borrowable(currency, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str currency: Retrieve data of the specified currency (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: gate_api.CrossMarginBorrowable
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_cross_margin_borrowable_with_http_info(currency, **kwargs)  # noqa: E501
+
+    def get_cross_margin_borrowable_with_http_info(self, currency, **kwargs):  # noqa: E501
+        """Get the max borrowable amount for a specific cross margin currency  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_cross_margin_borrowable_with_http_info(currency, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str currency: Retrieve data of the specified currency (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(gate_api.CrossMarginBorrowable, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['currency']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'" " to method get_cross_margin_borrowable" % k
+                )
+            local_var_params[k] = v
+        del local_var_params['kwargs']
+        # verify the required parameter 'currency' is set
+        if self.api_client.client_side_validation and (
+            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `currency` when calling `get_cross_margin_borrowable`"
+            )  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'currency' in local_var_params and local_var_params['currency'] is not None:  # noqa: E501
+            query_params.append(('currency', local_var_params['currency']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiv4']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/margin/cross/borrowable',
+            'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CrossMarginBorrowable',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

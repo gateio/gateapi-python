@@ -32,24 +32,44 @@ class MarginAccount(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'currency_pair': 'str', 'base': 'MarginAccountCurrency', 'quote': 'MarginAccountCurrency'}
+    openapi_types = {
+        'currency_pair': 'str',
+        'locked': 'bool',
+        'risk': 'str',
+        'base': 'MarginAccountCurrency',
+        'quote': 'MarginAccountCurrency',
+    }
 
-    attribute_map = {'currency_pair': 'currency_pair', 'base': 'base', 'quote': 'quote'}
+    attribute_map = {
+        'currency_pair': 'currency_pair',
+        'locked': 'locked',
+        'risk': 'risk',
+        'base': 'base',
+        'quote': 'quote',
+    }
 
-    def __init__(self, currency_pair=None, base=None, quote=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, MarginAccountCurrency, MarginAccountCurrency, Configuration) -> None
+    def __init__(
+        self, currency_pair=None, locked=None, risk=None, base=None, quote=None, local_vars_configuration=None
+    ):  # noqa: E501
+        # type: (str, bool, str, MarginAccountCurrency, MarginAccountCurrency, Configuration) -> None
         """MarginAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._currency_pair = None
+        self._locked = None
+        self._risk = None
         self._base = None
         self._quote = None
         self.discriminator = None
 
         if currency_pair is not None:
             self.currency_pair = currency_pair
+        if locked is not None:
+            self.locked = locked
+        if risk is not None:
+            self.risk = risk
         if base is not None:
             self.base = base
         if quote is not None:
@@ -77,6 +97,52 @@ class MarginAccount(object):
         """
 
         self._currency_pair = currency_pair
+
+    @property
+    def locked(self):
+        """Gets the locked of this MarginAccount.  # noqa: E501
+
+        Whether account is locked  # noqa: E501
+
+        :return: The locked of this MarginAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._locked
+
+    @locked.setter
+    def locked(self, locked):
+        """Sets the locked of this MarginAccount.
+
+        Whether account is locked  # noqa: E501
+
+        :param locked: The locked of this MarginAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._locked = locked
+
+    @property
+    def risk(self):
+        """Gets the risk of this MarginAccount.  # noqa: E501
+
+        Current risk rate of margin account  # noqa: E501
+
+        :return: The risk of this MarginAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._risk
+
+    @risk.setter
+    def risk(self, risk):
+        """Sets the risk of this MarginAccount.
+
+        Current risk rate of margin account  # noqa: E501
+
+        :param risk: The risk of this MarginAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._risk = risk
 
     @property
     def base(self):

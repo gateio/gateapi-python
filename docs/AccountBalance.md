@@ -1,11 +1,11 @@
-# FundingBookItem
+# AccountBalance
 
+Total balances calculated with specified currency unit
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rate** | **str** | Loan rate | [optional] 
-**amount** | **str** | Borrowable amount | [optional] 
-**days** | **int** | The number of days till the loan repayment&#39;s dateline | [optional] 
+**amount** | **str** | Account total balance amount | [optional] 
+**currency** | **str** | Currency | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

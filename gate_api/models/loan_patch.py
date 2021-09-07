@@ -150,7 +150,7 @@ class LoanPatch(object):
     def currency_pair(self):
         """Gets the currency_pair of this LoanPatch.  # noqa: E501
 
-        Currency pair. Required for borrowing side  # noqa: E501
+        Currency pair. Required if borrowing  # noqa: E501
 
         :return: The currency_pair of this LoanPatch.  # noqa: E501
         :rtype: str
@@ -161,7 +161,7 @@ class LoanPatch(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this LoanPatch.
 
-        Currency pair. Required for borrowing side  # noqa: E501
+        Currency pair. Required if borrowing  # noqa: E501
 
         :param currency_pair: The currency_pair of this LoanPatch.  # noqa: E501
         :type: str

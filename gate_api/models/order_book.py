@@ -94,7 +94,7 @@ class OrderBook(object):
     def current(self):
         """Gets the current of this OrderBook.  # noqa: E501
 
-        Response data generation timestamp in milliseconds  # noqa: E501
+        The timestamp of the response data being generated (in milliseconds)  # noqa: E501
 
         :return: The current of this OrderBook.  # noqa: E501
         :rtype: int
@@ -105,7 +105,7 @@ class OrderBook(object):
     def current(self, current):
         """Sets the current of this OrderBook.
 
-        Response data generation timestamp in milliseconds  # noqa: E501
+        The timestamp of the response data being generated (in milliseconds)  # noqa: E501
 
         :param current: The current of this OrderBook.  # noqa: E501
         :type: int
@@ -117,7 +117,7 @@ class OrderBook(object):
     def update(self):
         """Gets the update of this OrderBook.  # noqa: E501
 
-        Order book changed timestamp in milliseconds  # noqa: E501
+        The timestamp of when the orderbook last changed (in milliseconds)  # noqa: E501
 
         :return: The update of this OrderBook.  # noqa: E501
         :rtype: int
@@ -128,7 +128,7 @@ class OrderBook(object):
     def update(self, update):
         """Sets the update of this OrderBook.
 
-        Order book changed timestamp in milliseconds  # noqa: E501
+        The timestamp of when the orderbook last changed (in milliseconds)  # noqa: E501
 
         :param update: The update of this OrderBook.  # noqa: E501
         :type: int

@@ -329,7 +329,7 @@ class CrossMarginLoan(object):
     def unpaid_interest(self):
         """Gets the unpaid_interest of this CrossMarginLoan.  # noqa: E501
 
-        Interest not repaid  # noqa: E501
+        Outstanding interest yet to be paid  # noqa: E501
 
         :return: The unpaid_interest of this CrossMarginLoan.  # noqa: E501
         :rtype: str
@@ -340,7 +340,7 @@ class CrossMarginLoan(object):
     def unpaid_interest(self, unpaid_interest):
         """Sets the unpaid_interest of this CrossMarginLoan.
 
-        Interest not repaid  # noqa: E501
+        Outstanding interest yet to be paid  # noqa: E501
 
         :param unpaid_interest: The unpaid_interest of this CrossMarginLoan.  # noqa: E501
         :type: str

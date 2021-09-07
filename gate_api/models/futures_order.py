@@ -231,7 +231,7 @@ class FuturesOrder(object):
     def create_time(self):
         """Gets the create_time of this FuturesOrder.  # noqa: E501
 
-        Order creation time  # noqa: E501
+        Creation time of order  # noqa: E501
 
         :return: The create_time of this FuturesOrder.  # noqa: E501
         :rtype: float
@@ -242,7 +242,7 @@ class FuturesOrder(object):
     def create_time(self, create_time):
         """Sets the create_time of this FuturesOrder.
 
-        Order creation time  # noqa: E501
+        Creation time of order  # noqa: E501
 
         :param create_time: The create_time of this FuturesOrder.  # noqa: E501
         :type: float
@@ -277,7 +277,7 @@ class FuturesOrder(object):
     def finish_as(self):
         """Gets the finish_as of this FuturesOrder.  # noqa: E501
 
-        How the order is finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close   # noqa: E501
+        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close   # noqa: E501
 
         :return: The finish_as of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -288,7 +288,7 @@ class FuturesOrder(object):
     def finish_as(self, finish_as):
         """Sets the finish_as of this FuturesOrder.
 
-        How the order is finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close   # noqa: E501
+        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close   # noqa: E501
 
         :param finish_as: The finish_as of this FuturesOrder.  # noqa: E501
         :type: str
@@ -394,7 +394,7 @@ class FuturesOrder(object):
     def iceberg(self):
         """Gets the iceberg of this FuturesOrder.  # noqa: E501
 
-        Display size for iceberg order. 0 for non-iceberg. Note that you would pay the taker fee for the hidden size  # noqa: E501
+        Display size for iceberg order. 0 for non-iceberg. Note that you will have to pay the taker fee for the hidden size  # noqa: E501
 
         :return: The iceberg of this FuturesOrder.  # noqa: E501
         :rtype: int
@@ -405,7 +405,7 @@ class FuturesOrder(object):
     def iceberg(self, iceberg):
         """Sets the iceberg of this FuturesOrder.
 
-        Display size for iceberg order. 0 for non-iceberg. Note that you would pay the taker fee for the hidden size  # noqa: E501
+        Display size for iceberg order. 0 for non-iceberg. Note that you will have to pay the taker fee for the hidden size  # noqa: E501
 
         :param iceberg: The iceberg of this FuturesOrder.  # noqa: E501
         :type: int

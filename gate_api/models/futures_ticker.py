@@ -525,7 +525,7 @@ class FuturesTicker(object):
     def quanto_base_rate(self):
         """Gets the quanto_base_rate of this FuturesTicker.  # noqa: E501
 
-        Exchange rate of base currency and settlement currency in Quanto contract. Not existed in contract of other types  # noqa: E501
+        Exchange rate of base currency and settlement currency in Quanto contract. Does not exists in contracts of other types  # noqa: E501
 
         :return: The quanto_base_rate of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -536,7 +536,7 @@ class FuturesTicker(object):
     def quanto_base_rate(self, quanto_base_rate):
         """Sets the quanto_base_rate of this FuturesTicker.
 
-        Exchange rate of base currency and settlement currency in Quanto contract. Not existed in contract of other types  # noqa: E501
+        Exchange rate of base currency and settlement currency in Quanto contract. Does not exists in contracts of other types  # noqa: E501
 
         :param quanto_base_rate: The quanto_base_rate of this FuturesTicker.  # noqa: E501
         :type: str

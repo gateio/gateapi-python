@@ -332,7 +332,7 @@ class FuturesPriceTriggeredOrder(object):
     def reason(self):
         """Gets the reason of this FuturesPriceTriggeredOrder.  # noqa: E501
 
-        Extra messages of how order is finished  # noqa: E501
+        Additional remarks on how the order was finished  # noqa: E501
 
         :return: The reason of this FuturesPriceTriggeredOrder.  # noqa: E501
         :rtype: str
@@ -343,7 +343,7 @@ class FuturesPriceTriggeredOrder(object):
     def reason(self, reason):
         """Sets the reason of this FuturesPriceTriggeredOrder.
 
-        Extra messages of how order is finished  # noqa: E501
+        Additional remarks on how the order was finished  # noqa: E501
 
         :param reason: The reason of this FuturesPriceTriggeredOrder.  # noqa: E501
         :type: str

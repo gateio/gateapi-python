@@ -880,7 +880,7 @@ class Contract(object):
     def trade_size(self):
         """Gets the trade_size of this Contract.  # noqa: E501
 
-        Historical accumulation trade size  # noqa: E501
+        Historical accumulated trade size  # noqa: E501
 
         :return: The trade_size of this Contract.  # noqa: E501
         :rtype: int
@@ -891,7 +891,7 @@ class Contract(object):
     def trade_size(self, trade_size):
         """Sets the trade_size of this Contract.
 
-        Historical accumulation trade size  # noqa: E501
+        Historical accumulated trade size  # noqa: E501
 
         :param trade_size: The trade_size of this Contract.  # noqa: E501
         :type: int
@@ -926,7 +926,7 @@ class Contract(object):
     def config_change_time(self):
         """Gets the config_change_time of this Contract.  # noqa: E501
 
-        Configuration's last changed time  # noqa: E501
+        Last changed time of configuration  # noqa: E501
 
         :return: The config_change_time of this Contract.  # noqa: E501
         :rtype: float
@@ -937,7 +937,7 @@ class Contract(object):
     def config_change_time(self, config_change_time):
         """Sets the config_change_time of this Contract.
 
-        Configuration's last changed time  # noqa: E501
+        Last changed time of configuration  # noqa: E501
 
         :param config_change_time: The config_change_time of this Contract.  # noqa: E501
         :type: float

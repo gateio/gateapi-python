@@ -249,7 +249,7 @@ class LedgerRecord(object):
     def memo(self):
         """Gets the memo of this LedgerRecord.  # noqa: E501
 
-        Extra withdrawal memo  # noqa: E501
+        Additional remarks with regards to the withdrawal  # noqa: E501
 
         :return: The memo of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -260,7 +260,7 @@ class LedgerRecord(object):
     def memo(self, memo):
         """Sets the memo of this LedgerRecord.
 
-        Extra withdrawal memo  # noqa: E501
+        Additional remarks with regards to the withdrawal  # noqa: E501
 
         :param memo: The memo of this LedgerRecord.  # noqa: E501
         :type: str
@@ -272,7 +272,7 @@ class LedgerRecord(object):
     def status(self):
         """Gets the status of this LedgerRecord.  # noqa: E501
 
-        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: waiting for manual approval - BCODE: GateCode operation  # noqa: E501
+        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: pending manual approval - BCODE: GateCode operation  # noqa: E501
 
         :return: The status of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -283,7 +283,7 @@ class LedgerRecord(object):
     def status(self, status):
         """Sets the status of this LedgerRecord.
 
-        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: waiting for manual approval - BCODE: GateCode operation  # noqa: E501
+        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: pending manual approval - BCODE: GateCode operation  # noqa: E501
 
         :param status: The status of this LedgerRecord.  # noqa: E501
         :type: str

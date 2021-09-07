@@ -133,7 +133,7 @@ class CrossMarginBalance(object):
     def interest(self):
         """Gets the interest of this CrossMarginBalance.  # noqa: E501
 
-        Interests unpaid  # noqa: E501
+        Unpaid interests  # noqa: E501
 
         :return: The interest of this CrossMarginBalance.  # noqa: E501
         :rtype: str
@@ -144,7 +144,7 @@ class CrossMarginBalance(object):
     def interest(self, interest):
         """Sets the interest of this CrossMarginBalance.
 
-        Interests unpaid  # noqa: E501
+        Unpaid interests  # noqa: E501
 
         :param interest: The interest of this CrossMarginBalance.  # noqa: E501
         :type: str

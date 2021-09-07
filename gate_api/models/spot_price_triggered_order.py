@@ -321,7 +321,7 @@ class SpotPriceTriggeredOrder(object):
     def reason(self):
         """Gets the reason of this SpotPriceTriggeredOrder.  # noqa: E501
 
-        Extra messages of how order is finished  # noqa: E501
+        Additional remarks on how the order was finished  # noqa: E501
 
         :return: The reason of this SpotPriceTriggeredOrder.  # noqa: E501
         :rtype: str
@@ -332,7 +332,7 @@ class SpotPriceTriggeredOrder(object):
     def reason(self, reason):
         """Sets the reason of this SpotPriceTriggeredOrder.
 
-        Extra messages of how order is finished  # noqa: E501
+        Additional remarks on how the order was finished  # noqa: E501
 
         :param reason: The reason of this SpotPriceTriggeredOrder.  # noqa: E501
         :type: str

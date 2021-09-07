@@ -4,10 +4,10 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_currencies**](SpotApi.md#list_currencies) | **GET** /spot/currencies | List all currencies&#39; detail
-[**get_currency**](SpotApi.md#get_currency) | **GET** /spot/currencies/{currency} | Get detail of one particular currency
+[**list_currencies**](SpotApi.md#list_currencies) | **GET** /spot/currencies | List all currencies&#39; details
+[**get_currency**](SpotApi.md#get_currency) | **GET** /spot/currencies/{currency} | Get details of a specific currency
 [**list_currency_pairs**](SpotApi.md#list_currency_pairs) | **GET** /spot/currency_pairs | List all currency pairs supported
-[**get_currency_pair**](SpotApi.md#get_currency_pair) | **GET** /spot/currency_pairs/{currency_pair} | Get detail of one single order
+[**get_currency_pair**](SpotApi.md#get_currency_pair) | **GET** /spot/currency_pairs/{currency_pair} | Get details of a specifc order
 [**list_tickers**](SpotApi.md#list_tickers) | **GET** /spot/tickers | Retrieve ticker information
 [**list_order_book**](SpotApi.md#list_order_book) | **GET** /spot/order_book | Retrieve order book
 [**list_trades**](SpotApi.md#list_trades) | **GET** /spot/trades | Retrieve market trades
@@ -33,7 +33,7 @@ Method | HTTP request | Description
 # **list_currencies**
 > list[Currency] list_currencies()
 
-List all currencies' detail
+List all currencies' details
 
 ### Example
 
@@ -52,7 +52,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.SpotApi(api_client)
 
 try:
-    # List all currencies' detail
+    # List all currencies' details
     api_response = api_instance.list_currencies()
     print(api_response)
 except GateApiException as ex:
@@ -87,7 +87,7 @@ No authorization required
 # **get_currency**
 > Currency get_currency(currency)
 
-Get detail of one particular currency
+Get details of a specific currency
 
 ### Example
 
@@ -107,7 +107,7 @@ api_instance = gate_api.SpotApi(api_client)
 currency = 'GT' # str | Currency name
 
 try:
-    # Get detail of one particular currency
+    # Get details of a specific currency
     api_response = api_instance.get_currency(currency)
     print(api_response)
 except GateApiException as ex:
@@ -199,7 +199,7 @@ No authorization required
 # **get_currency_pair**
 > CurrencyPair get_currency_pair(currency_pair)
 
-Get detail of one single order
+Get details of a specifc order
 
 ### Example
 
@@ -219,7 +219,7 @@ api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'ETH_BTC' # str | Currency pair
 
 try:
-    # Get detail of one single order
+    # Get details of a specifc order
     api_response = api_instance.get_currency_pair(currency_pair)
     print(api_response)
 except GateApiException as ex:
@@ -319,7 +319,7 @@ No authorization required
 
 Retrieve order book
 
-Order book will be sorted by price from high to low on bids; reversed on asks
+Order book will be sorted by price from high to low on bids; low to high on asks
 
 ### Example
 
@@ -401,9 +401,9 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'BTC_USDT' # str | Currency pair
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
-reverse = False # bool | Whether to retrieve records whose IDs are smaller than `last_id`'s. Default to larger ones.  When `last_id` is specified. Set `reverse` to `true` to trace back trading history; `false` to retrieve latest tradings.  No effect if `last_id` is not specified. (optional) (default to False)
+reverse = False # bool | Whether the id of records to be retrieved should be smaller than the last_id specified- true: Retrieve records where id is smaller than the specified last_id- false: Retrieve records where id is larger than the specified last_idDefault to false.  When `last_id` is specified. Set `reverse` to `true` to trace back trading history; `false` to retrieve latest tradings.  No effect if `last_id` is not specified. (optional) (default to False)
 
 try:
     # Retrieve market trades
@@ -420,9 +420,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency_pair** | **str**| Currency pair | 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
- **reverse** | **bool**| Whether to retrieve records whose IDs are smaller than &#x60;last_id&#x60;&#39;s. Default to larger ones.  When &#x60;last_id&#x60; is specified. Set &#x60;reverse&#x60; to &#x60;true&#x60; to trace back trading history; &#x60;false&#x60; to retrieve latest tradings.  No effect if &#x60;last_id&#x60; is not specified. | [optional] [default to False]
+ **reverse** | **bool**| Whether the id of records to be retrieved should be smaller than the last_id specified- true: Retrieve records where id is smaller than the specified last_id- false: Retrieve records where id is larger than the specified last_idDefault to false.  When &#x60;last_id&#x60; is specified. Set &#x60;reverse&#x60; to &#x60;true&#x60; to trace back trading history; &#x60;false&#x60; to retrieve latest tradings.  No effect if &#x60;last_id&#x60; is not specified. | [optional] [default to False]
 
 ### Return type
 
@@ -449,7 +449,7 @@ No authorization required
 
 Market candlesticks
 
-Maximum of 1000 points are returned in one query. Be sure not to exceed the limit when specifying `from`, `to` and `interval`
+Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
 
 ### Example
 
@@ -467,7 +467,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'BTC_USDT' # str | Currency pair
-limit = 100 # int | Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
+limit = 100 # int | Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
 _from = 1546905600 # int | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
 to = 1546935600 # int | End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time (optional)
 interval = '30m' # str | Interval time between data points (optional) (default to '30m')
@@ -487,7 +487,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency_pair** | **str**| Currency pair | 
- **limit** | **int**| Maximum recent data points returned. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
+ **limit** | **int**| Maximum recent data points to return. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
  **_from** | **int**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
  **to** | **int**| End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time | [optional] 
  **interval** | **str**| Interval time between data points | [optional] [default to &#39;30m&#39;]
@@ -610,7 +610,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-currency = 'BTC' # str | Retrieved specified currency related data (optional)
+currency = 'BTC' # str | Retrieve data of the specified currency (optional)
 
 try:
     # List spot accounts
@@ -626,7 +626,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **str**| Retrieved specified currency related data | [optional] 
+ **currency** | **str**| Retrieve data of the specified currency | [optional] 
 
 ### Return type
 
@@ -791,11 +791,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_orders**
-> list[Order] list_orders(currency_pair, status, page=page, limit=limit, account=account)
+> list[Order] list_orders(currency_pair, status, page=page, limit=limit, account=account, _from=_from, to=to, side=side)
 
 List orders
 
-Spot and margin orders are returned by default. If cross margin orders are needed, `account` must be set to `cross_margin`
+Spot and margin orders are returned by default. If cross margin orders are needed, `account` must be set to `cross_margin`  When `status` is `open`, i.e., listing open orders, only pagination parameters `page` and `limit` are supported and `limit` cannot be larger than 100. Query by `side` and time range parameters `from` and `to` are not supported.  When `status` is `finished`, i.e., listing finished orders, pagination parameters, time range parameters `from` and `to`, and `side` parameters are all supported.
 
 ### Example
 
@@ -824,12 +824,15 @@ api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'BTC_USDT' # str | Retrieve results with specified currency pair. It is required for open orders, but optional for finished ones.
 status = 'open' # str | List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled 
 page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum number of records returned. If `status` is `open`, maximum of `limit` is 100 (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned. If `status` is `open`, maximum of `limit` is 100 (optional) (default to 100)
 account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account (optional)
+_from = 56 # int | Time range beginning, default to 7 days before current time (optional)
+to = 56 # int | Time range ending, default to current time (optional)
+side = 'sell' # str | All bids or asks. Both included if not specified (optional)
 
 try:
     # List orders
-    api_response = api_instance.list_orders(currency_pair, status, page=page, limit=limit, account=account)
+    api_response = api_instance.list_orders(currency_pair, status, page=page, limit=limit, account=account, _from=_from, to=to, side=side)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -844,8 +847,11 @@ Name | Type | Description  | Notes
  **currency_pair** | **str**| Retrieve results with specified currency pair. It is required for open orders, but optional for finished ones. | 
  **status** | **str**| List orders based on status  &#x60;open&#x60; - order is waiting to be filled &#x60;finished&#x60; - order has been filled or cancelled  | 
  **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum number of records returned. If &#x60;status&#x60; is &#x60;open&#x60;, maximum of &#x60;limit&#x60; is 100 | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned. If &#x60;status&#x60; is &#x60;open&#x60;, maximum of &#x60;limit&#x60; is 100 | [optional] [default to 100]
  **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account | [optional] 
+ **_from** | **int**| Time range beginning, default to 7 days before current time | [optional] 
+ **to** | **int**| Time range ending, default to current time | [optional] 
+ **side** | **str**| All bids or asks. Both included if not specified | [optional] 
 
 ### Return type
 
@@ -872,7 +878,7 @@ Name | Type | Description  | Notes
 
 Create an order
 
-You can place orders with spot, margin or cross margin account through setting the `account `field. It defaults to `spot`, which means spot account is used to place orders.  When margin account is used, i.e., `account` is `margin`, `auto_borrow` field can be set to `true` to enable the server to borrow the amount lacked using `POST /margin/loans` when your account's balance is not enough. Whether margin orders' fill will be used to repay margin loans automatically is determined by the auto repayment setting in your **margin account**, which can be updated or queried using `/margin/auto_repay` API.  When cross margin account is used, i.e., `account` is `cross_margin`, `auto_borrow` can also be enabled to achieve borrowing the insufficient amount automatically if cross account's balance is not enough. But it differs from margin account that automatic repayment is determined by order's `auto_repay` field and only current order's fill will be used to repay cross margin loans.  Automatic repayment will be triggered when the order is finished, i.e., its status is either `cancelled` or `closed`.  **Order status**  An order waiting to be filled is `open`, and it stays `open` until it is filled totally. If fully filled, order is finished and its status turns to `closed`.If the order is cancelled before it is totally filled, whether or not partially filled, its status is `cancelled`. **Iceberg order**  `iceberg` field can be used to set the amount shown. Set to `-1` to hide totally. Note that the hidden part's fee will be charged using taker's fee rate. 
+You can place orders with spot, margin or cross margin account through setting the `account `field. It defaults to `spot`, which means spot account is used to place orders.  When margin account is used, i.e., `account` is `margin`, `auto_borrow` field can be set to `true` to enable the server to borrow the amount lacked using `POST /margin/loans` when your account's balance is not enough. Whether margin orders' fill will be used to repay margin loans automatically is determined by the auto repayment setting in your **margin account**, which can be updated or queried using `/margin/auto_repay` API.  When cross margin account is used, i.e., `account` is `cross_margin`, `auto_borrow` can also be enabled to achieve borrowing the insufficient amount automatically if cross account's balance is not enough. But it differs from margin account that automatic repayment is determined by order's `auto_repay` field and only current order's fill will be used to repay cross margin loans.  Automatic repayment will be triggered when the order is finished, i.e., its status is either `cancelled` or `closed`.  **Order status**  An order waiting to be filled is `open`, and it stays `open` until it is filled totally. If fully filled, order is finished and its status turns to `closed`.If the order is cancelled before it is totally filled, whether or not partially filled, its status is `cancelled`. **Iceberg order**  `iceberg` field can be used to set the amount shown. Set to `-1` to hide the order completely. Note that the hidden part's fee will be charged using taker's fee rate. 
 
 ### Example
 
@@ -968,7 +974,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'BTC_USDT' # str | Currency pair
-side = 'sell' # str | All bids or asks. Both included in not specified (optional)
+side = 'sell' # str | All bids or asks. Both included if not specified (optional)
 account = 'spot' # str | Specify account type. Default to all account types being included (optional)
 
 try:
@@ -986,7 +992,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency_pair** | **str**| Currency pair | 
- **side** | **str**| All bids or asks. Both included in not specified | [optional] 
+ **side** | **str**| All bids or asks. Both included if not specified | [optional] 
  **account** | **str**| Specify account type. Default to all account types being included | [optional] 
 
 ### Return type
@@ -1225,11 +1231,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_my_trades**
-> list[Trade] list_my_trades(currency_pair, limit=limit, page=page, order_id=order_id, account=account)
+> list[Trade] list_my_trades(currency_pair, limit=limit, page=page, order_id=order_id, account=account, _from=_from, to=to)
 
 List personal trading history
 
-Spot and margin trades are queried by default. If cross margin trades are needed, `account` must be set to `cross_margin`
+Spot and margin trades are queried by default. If cross margin trades are needed, `account` must be set to `cross_margin`  You can also set `from` and(or) `to` to query by time range
 
 ### Example
 
@@ -1256,14 +1262,16 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'BTC_USDT' # str | Retrieve results with specified currency pair. It is required for open orders, but optional for finished ones.
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 page = 1 # int | Page number (optional) (default to 1)
 order_id = '12345' # str | Filter trades with specified order ID. `currency_pair` is also required if this field is present (optional)
 account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account (optional)
+_from = 56 # int | Time range beginning, default to 7 days before current time (optional)
+to = 56 # int | Time range ending, default to current time (optional)
 
 try:
     # List personal trading history
-    api_response = api_instance.list_my_trades(currency_pair, limit=limit, page=page, order_id=order_id, account=account)
+    api_response = api_instance.list_my_trades(currency_pair, limit=limit, page=page, order_id=order_id, account=account, _from=_from, to=to)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1276,10 +1284,12 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency_pair** | **str**| Retrieve results with specified currency pair. It is required for open orders, but optional for finished ones. | 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **page** | **int**| Page number | [optional] [default to 1]
  **order_id** | **str**| Filter trades with specified order ID. &#x60;currency_pair&#x60; is also required if this field is present | [optional] 
  **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account | [optional] 
+ **_from** | **int**| Time range beginning, default to 7 days before current time | [optional] 
+ **to** | **int**| Time range ending, default to current time | [optional] 
 
 ### Return type
 
@@ -1330,10 +1340,10 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-status = 'status_example' # str | List orders based on status
+status = 'status_example' # str | Only list the orders with this status
 market = 'BTC_USDT' # str | Currency pair (optional)
 account = 'account_example' # str | Trading account (optional)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
@@ -1350,10 +1360,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **str**| List orders based on status | 
+ **status** | **str**| Only list the orders with this status | 
  **market** | **str**| Currency pair | [optional] 
  **account** | **str**| Trading account | [optional] 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
@@ -1541,7 +1551,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-order_id = 'order_id_example' # str | ID returned on order successfully being created
+order_id = 'order_id_example' # str | Retrieve the data of the order with the specified ID
 
 try:
     # Get a single order
@@ -1557,7 +1567,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **str**| ID returned on order successfully being created | 
+ **order_id** | **str**| Retrieve the data of the order with the specified ID | 
 
 ### Return type
 
@@ -1608,7 +1618,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-order_id = 'order_id_example' # str | ID returned on order successfully being created
+order_id = 'order_id_example' # str | Retrieve the data of the order with the specified ID
 
 try:
     # Cancel a single order
@@ -1624,7 +1634,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **str**| ID returned on order successfully being created | 
+ **order_id** | **str**| Retrieve the data of the order with the specified ID | 
 
 ### Return type
 

@@ -111,7 +111,7 @@ class SpotPriceTrigger(object):
     def expiration(self):
         """Gets the expiration of this SpotPriceTrigger.  # noqa: E501
 
-        How many seconds will the order wait for the condition being triggered. Order will be cancelled on timed out  # noqa: E501
+        How long (in seconds) to wait for the condition to be triggered before cancelling the order.  # noqa: E501
 
         :return: The expiration of this SpotPriceTrigger.  # noqa: E501
         :rtype: int
@@ -122,7 +122,7 @@ class SpotPriceTrigger(object):
     def expiration(self, expiration):
         """Sets the expiration of this SpotPriceTrigger.
 
-        How many seconds will the order wait for the condition being triggered. Order will be cancelled on timed out  # noqa: E501
+        How long (in seconds) to wait for the condition to be triggered before cancelling the order.  # noqa: E501
 
         :param expiration: The expiration of this SpotPriceTrigger.  # noqa: E501
         :type: int

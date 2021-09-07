@@ -185,7 +185,7 @@ settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
 interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
 limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
-with_id = False # bool | Whether order book update ID would be returned. This ID increments by 1 on every order book update (optional) (default to False)
+with_id = False # bool | Whether the order book update ID will be returned. This ID increases by 1 on every order book update (optional) (default to False)
 
 try:
     # Futures order book
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
  **contract** | **str**| Futures contract | 
  **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
  **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
- **with_id** | **bool**| Whether order book update ID would be returned. This ID increments by 1 on every order book update | [optional] [default to False]
+ **with_id** | **bool**| Whether the order book update ID will be returned. This ID increases by 1 on every order book update | [optional] [default to False]
 
 ### Return type
 
@@ -249,8 +249,8 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
-last_id = '12345' # str | Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use `from` and `to` instead to limit time range (optional)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+last_id = '12345' # str | Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. Use `from` and `to` instead to limit time range (optional)
 _from = 1546905600 # int | Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned.  (optional)
 to = 1546935600 # int | Specify end time in Unix seconds, default to current time (optional)
 
@@ -270,8 +270,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
- **last_id** | **str**| Specify list staring point using the id of last record in previous list-query results  This parameter is deprecated. Use &#x60;from&#x60; and &#x60;to&#x60; instead to limit time range | [optional] 
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
+ **last_id** | **str**| Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. Use &#x60;from&#x60; and &#x60;to&#x60; instead to limit time range | [optional] 
  **_from** | **int**| Specify starting time in Unix seconds. If not specified, &#x60;to&#x60; and &#x60;limit&#x60; will be used to limit response items. If items between &#x60;from&#x60; and &#x60;to&#x60; are more than &#x60;limit&#x60;, only &#x60;limit&#x60; number will be returned.  | [optional] 
  **to** | **int**| Specify end time in Unix seconds, default to current time | [optional] 
 
@@ -321,7 +321,7 @@ settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
 _from = 1546905600 # int | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
 to = 1546935600 # int | End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time (optional)
-limit = 100 # int | Maximum recent data points returned. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
+limit = 100 # int | Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
 interval = '5m' # str | Interval time between data points (optional) (default to '5m')
 
 try:
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
  **contract** | **str**| Futures contract | 
  **_from** | **int**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
  **to** | **int**| End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time | [optional] 
- **limit** | **int**| Maximum recent data points returned. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
+ **limit** | **int**| Maximum recent data points to return. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
  **interval** | **str**| Interval time between data points | [optional] [default to &#39;5m&#39;]
 
 ### Return type
@@ -447,7 +447,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 
 try:
     # Funding rate history
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
 
 ### Return type
 
@@ -508,7 +508,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 
 try:
     # Futures insurance balance history
@@ -525,7 +525,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
 
 ### Return type
 
@@ -639,7 +639,7 @@ settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 
 try:
     # Retrieve liquidation history
@@ -659,7 +659,7 @@ Name | Type | Description  | Notes
  **contract** | **str**| Futures contract, return related data only if specified | [optional] 
  **_from** | **int**| Start timestamp | [optional] 
  **to** | **int**| End timestamp | [optional] 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
 
 ### Return type
 
@@ -778,7 +778,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
 type = 'dnw' # str | Changing Type: - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate (optional)
@@ -798,7 +798,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **_from** | **int**| Start timestamp | [optional] 
  **to** | **int**| End timestamp | [optional] 
  **type** | **str**| Changing Type: - dnw: Deposit &amp; Withdraw - pnl: Profit &amp; Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit &amp; Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate | [optional] 
@@ -1534,7 +1534,7 @@ Name | Type | Description  | Notes
 
 List futures orders
 
-Zero-fill order cannot be retrieved 60 seconds after cancellation
+Zero-fill order cannot be retrieved for 60 seconds after cancellation
 
 ### Example
 
@@ -1562,8 +1562,8 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
-status = 'open' # str | List orders based on status
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+status = 'open' # str | Only list the orders with this status
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
 count_total = 0 # int | Whether to return total number matched. Default to 0(no return) (optional) (default to 0)
@@ -1584,8 +1584,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
- **status** | **str**| List orders based on status | 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **status** | **str**| Only list the orders with this status | 
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
  **count_total** | **int**| Whether to return total number matched. Default to 0(no return) | [optional] [default to 0]
@@ -1606,7 +1606,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved |  * X-Pagination-Limit - Request limit specified <br>  * X-Pagination-Offset - Request offset specified <br>  * X-Pagination-Total - Total number matched. Only returned on &#x60;count_total&#x60; set to 1 <br>  |
+**200** | List retrieved |  * X-Pagination-Limit - Request limit specified <br>  * X-Pagination-Offset - Request offset specified <br>  * X-Pagination-Total - Total number matched. Only returned if &#x60;count_total&#x60; set to 1 <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1615,7 +1615,7 @@ Name | Type | Description  | Notes
 
 Create a futures order
 
-Zero-fill order cannot be retrieved 60 seconds after cancellation
+Zero-fill order cannot be retrieved for 60 seconds after cancellation
 
 ### Example
 
@@ -1686,7 +1686,7 @@ Name | Type | Description  | Notes
 
 Cancel all `open` orders matched
 
-Zero-fill order cannot be retrieved 60 seconds after cancellation
+Zero-fill order cannot be retrieved for 60 seconds after cancellation
 
 ### Example
 
@@ -1714,7 +1714,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
-side = 'ask' # str | All bids or asks. Both included in not specified (optional)
+side = 'ask' # str | All bids or asks. Both included if not specified (optional)
 
 try:
     # Cancel all `open` orders matched
@@ -1732,7 +1732,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
- **side** | **str**| All bids or asks. Both included in not specified | [optional] 
+ **side** | **str**| All bids or asks. Both included if not specified | [optional] 
 
 ### Return type
 
@@ -1759,7 +1759,7 @@ Name | Type | Description  | Notes
 
 Get a single order
 
-Zero-fill order cannot be retrieved 60 seconds after cancellation
+Zero-fill order cannot be retrieved for 60 seconds after cancellation
 
 ### Example
 
@@ -1926,7 +1926,7 @@ api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 order = 12345 # int | Futures order ID, return related data only if specified (optional)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
 count_total = 0 # int | Whether to return total number matched. Default to 0(no return) (optional) (default to 0)
@@ -1948,7 +1948,7 @@ Name | Type | Description  | Notes
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract, return related data only if specified | [optional] 
  **order** | **int**| Futures order ID, return related data only if specified | [optional] 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
  **count_total** | **int**| Whether to return total number matched. Default to 0(no return) | [optional] [default to 0]
@@ -1969,7 +1969,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved |  * X-Pagination-Limit - Request limit specified <br>  * X-Pagination-Offset - Request offset specified <br>  * X-Pagination-Total - Total number matched. Only returned on &#x60;count_total&#x60; set to 1 <br>  |
+**200** | List retrieved |  * X-Pagination-Limit - Request limit specified <br>  * X-Pagination-Offset - Request offset specified <br>  * X-Pagination-Total - Total number matched. Only returned if &#x60;count_total&#x60; set to 1 <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2004,7 +2004,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
@@ -2025,7 +2025,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract, return related data only if specified | [optional] 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **_from** | **int**| Start timestamp | [optional] 
  **to** | **int**| End timestamp | [optional] 
@@ -2081,7 +2081,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 at = 0 # int | Specify a liquidation timestamp (optional) (default to 0)
 
 try:
@@ -2100,7 +2100,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract, return related data only if specified | [optional] 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **at** | **int**| Specify a liquidation timestamp | [optional] [default to 0]
 
 ### Return type
@@ -2153,9 +2153,9 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
-status = 'status_example' # str | List orders based on status
+status = 'status_example' # str | Only list the orders with this status
 contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
@@ -2173,9 +2173,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
- **status** | **str**| List orders based on status | 
+ **status** | **str**| Only list the orders with this status | 
  **contract** | **str**| Futures contract, return related data only if specified | [optional] 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
@@ -2366,7 +2366,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
-order_id = 'order_id_example' # str | ID returned on order successfully being created
+order_id = 'order_id_example' # str | Retrieve the data of the order with the specified ID
 
 try:
     # Get a single order
@@ -2383,7 +2383,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
- **order_id** | **str**| ID returned on order successfully being created | 
+ **order_id** | **str**| Retrieve the data of the order with the specified ID | 
 
 ### Return type
 
@@ -2435,7 +2435,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
-order_id = 'order_id_example' # str | ID returned on order successfully being created
+order_id = 'order_id_example' # str | Retrieve the data of the order with the specified ID
 
 try:
     # Cancel a single order
@@ -2452,7 +2452,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
- **order_id** | **str**| ID returned on order successfully being created | 
+ **order_id** | **str**| Retrieve the data of the order with the specified ID | 
 
 ### Return type
 

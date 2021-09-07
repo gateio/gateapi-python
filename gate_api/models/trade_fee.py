@@ -184,7 +184,7 @@ class TradeFee(object):
     def gt_discount(self):
         """Gets the gt_discount of this TradeFee.  # noqa: E501
 
-        Is GT deduction is enabled  # noqa: E501
+        If GT deduction is enabled  # noqa: E501
 
         :return: The gt_discount of this TradeFee.  # noqa: E501
         :rtype: bool
@@ -195,7 +195,7 @@ class TradeFee(object):
     def gt_discount(self, gt_discount):
         """Sets the gt_discount of this TradeFee.
 
-        Is GT deduction is enabled  # noqa: E501
+        If GT deduction is enabled  # noqa: E501
 
         :param gt_discount: The gt_discount of this TradeFee.  # noqa: E501
         :type: bool

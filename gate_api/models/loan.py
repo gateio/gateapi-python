@@ -50,6 +50,7 @@ class Loan(object):
         'unpaid_interest': 'str',
         'fee_rate': 'str',
         'orig_id': 'str',
+        'text': 'str',
     }
 
     attribute_map = {
@@ -70,6 +71,7 @@ class Loan(object):
         'unpaid_interest': 'unpaid_interest',
         'fee_rate': 'fee_rate',
         'orig_id': 'orig_id',
+        'text': 'text',
     }
 
     def __init__(
@@ -91,9 +93,10 @@ class Loan(object):
         unpaid_interest=None,
         fee_rate=None,
         orig_id=None,
+        text=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, int, bool, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, int, bool, str, str, str, str, str, str, str, str, Configuration) -> None
         """Loan - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -116,6 +119,7 @@ class Loan(object):
         self._unpaid_interest = None
         self._fee_rate = None
         self._orig_id = None
+        self._text = None
         self.discriminator = None
 
         if id is not None:
@@ -131,7 +135,8 @@ class Loan(object):
         if rate is not None:
             self.rate = rate
         self.amount = amount
-        self.days = days
+        if days is not None:
+            self.days = days
         if auto_renew is not None:
             self.auto_renew = auto_renew
         if currency_pair is not None:
@@ -148,6 +153,8 @@ class Loan(object):
             self.fee_rate = fee_rate
         if orig_id is not None:
             self.orig_id = orig_id
+        if text is not None:
+            self.text = text
 
     @property
     def id(self):
@@ -353,7 +360,7 @@ class Loan(object):
     def days(self):
         """Gets the days of this Loan.  # noqa: E501
 
-        Loan days  # noqa: E501
+        Loan days. Only 10 is supported for now  # noqa: E501
 
         :return: The days of this Loan.  # noqa: E501
         :rtype: int
@@ -364,13 +371,11 @@ class Loan(object):
     def days(self, days):
         """Sets the days of this Loan.
 
-        Loan days  # noqa: E501
+        Loan days. Only 10 is supported for now  # noqa: E501
 
         :param days: The days of this Loan.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and days is None:  # noqa: E501
-            raise ValueError("Invalid value for `days`, must not be `None`")  # noqa: E501
 
         self._days = days
 
@@ -378,7 +383,7 @@ class Loan(object):
     def auto_renew(self):
         """Gets the auto_renew of this Loan.  # noqa: E501
 
-        Auto renew the loan on expiration  # noqa: E501
+        Whether to auto renew the loan upon expiration  # noqa: E501
 
         :return: The auto_renew of this Loan.  # noqa: E501
         :rtype: bool
@@ -389,7 +394,7 @@ class Loan(object):
     def auto_renew(self, auto_renew):
         """Sets the auto_renew of this Loan.
 
-        Auto renew the loan on expiration  # noqa: E501
+        Whether to auto renew the loan upon expiration  # noqa: E501
 
         :param auto_renew: The auto_renew of this Loan.  # noqa: E501
         :type: bool
@@ -401,7 +406,7 @@ class Loan(object):
     def currency_pair(self):
         """Gets the currency_pair of this Loan.  # noqa: E501
 
-        Currency pair. Required for borrowing side  # noqa: E501
+        Currency pair. Required if borrowing  # noqa: E501
 
         :return: The currency_pair of this Loan.  # noqa: E501
         :rtype: str
@@ -412,7 +417,7 @@ class Loan(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this Loan.
 
-        Currency pair. Required for borrowing side  # noqa: E501
+        Currency pair. Required if borrowing  # noqa: E501
 
         :param currency_pair: The currency_pair of this Loan.  # noqa: E501
         :type: str
@@ -424,7 +429,7 @@ class Loan(object):
     def left(self):
         """Gets the left of this Loan.  # noqa: E501
 
-        Amount not lending out  # noqa: E501
+        Amount not lent out yet  # noqa: E501
 
         :return: The left of this Loan.  # noqa: E501
         :rtype: str
@@ -435,7 +440,7 @@ class Loan(object):
     def left(self, left):
         """Sets the left of this Loan.
 
-        Amount not lending out  # noqa: E501
+        Amount not lent out yet  # noqa: E501
 
         :param left: The left of this Loan.  # noqa: E501
         :type: str
@@ -493,7 +498,7 @@ class Loan(object):
     def unpaid_interest(self):
         """Gets the unpaid_interest of this Loan.  # noqa: E501
 
-        Interest not repaid  # noqa: E501
+        Outstanding interest yet to be paid  # noqa: E501
 
         :return: The unpaid_interest of this Loan.  # noqa: E501
         :rtype: str
@@ -504,7 +509,7 @@ class Loan(object):
     def unpaid_interest(self, unpaid_interest):
         """Sets the unpaid_interest of this Loan.
 
-        Interest not repaid  # noqa: E501
+        Outstanding interest yet to be paid  # noqa: E501
 
         :param unpaid_interest: The unpaid_interest of this Loan.  # noqa: E501
         :type: str
@@ -539,7 +544,7 @@ class Loan(object):
     def orig_id(self):
         """Gets the orig_id of this Loan.  # noqa: E501
 
-        Original loan ID if the loan is auto-renewed. Equal to `id` if not  # noqa: E501
+        Original loan ID of the loan if auto-renewed, otherwise equals to id  # noqa: E501
 
         :return: The orig_id of this Loan.  # noqa: E501
         :rtype: str
@@ -550,13 +555,36 @@ class Loan(object):
     def orig_id(self, orig_id):
         """Sets the orig_id of this Loan.
 
-        Original loan ID if the loan is auto-renewed. Equal to `id` if not  # noqa: E501
+        Original loan ID of the loan if auto-renewed, otherwise equals to id  # noqa: E501
 
         :param orig_id: The orig_id of this Loan.  # noqa: E501
         :type: str
         """
 
         self._orig_id = orig_id
+
+    @property
+    def text(self):
+        """Gets the text of this Loan.  # noqa: E501
+
+        User defined custom ID  # noqa: E501
+
+        :return: The text of this Loan.  # noqa: E501
+        :rtype: str
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """Sets the text of this Loan.
+
+        User defined custom ID  # noqa: E501
+
+        :param text: The text of this Loan.  # noqa: E501
+        :type: str
+        """
+
+        self._text = text
 
     def to_dict(self):
         """Returns the model properties as a dict"""

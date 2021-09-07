@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**list_withdrawals**](WalletApi.md#list_withdrawals) | **GET** /wallet/withdrawals | Retrieve withdrawal records
 [**list_deposits**](WalletApi.md#list_deposits) | **GET** /wallet/deposits | Retrieve deposit records
 [**transfer**](WalletApi.md#transfer) | **POST** /wallet/transfers | Transfer between trading accounts
-[**list_sub_account_transfers**](WalletApi.md#list_sub_account_transfers) | **GET** /wallet/sub_account_transfers | Transfer records between main and sub accounts
+[**list_sub_account_transfers**](WalletApi.md#list_sub_account_transfers) | **GET** /wallet/sub_account_transfers | Retrieve transfer records between main and sub accounts
 [**transfer_with_sub_account**](WalletApi.md#transfer_with_sub_account) | **POST** /wallet/sub_account_transfers | Transfer between main and sub accounts
 [**list_withdraw_status**](WalletApi.md#list_withdraw_status) | **GET** /wallet/withdraw_status | Retrieve withdrawal status
 [**list_sub_account_balances**](WalletApi.md#list_sub_account_balances) | **GET** /wallet/sub_account_balances | Retrieve sub account balances
 [**get_trade_fee**](WalletApi.md#get_trade_fee) | **GET** /wallet/fee | Retrieve personal trading fee
+[**get_total_balance**](WalletApi.md#get_total_balance) | **GET** /wallet/total_balance | Retrieve user&#39;s total balances
 
 
 # **get_deposit_address**
@@ -116,7 +117,7 @@ api_instance = gate_api.WalletApi(api_client)
 currency = 'BTC' # str | Filter by currency. Return all currency records if not specified (optional)
 _from = 1602120000 # int | Time range beginning, default to 7 days before current time (optional)
 to = 1602123600 # int | Time range ending, default to current time (optional)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
@@ -136,7 +137,7 @@ Name | Type | Description  | Notes
  **currency** | **str**| Filter by currency. Return all currency records if not specified | [optional] 
  **_from** | **int**| Time range beginning, default to 7 days before current time | [optional] 
  **to** | **int**| Time range ending, default to current time | [optional] 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
@@ -193,7 +194,7 @@ api_instance = gate_api.WalletApi(api_client)
 currency = 'BTC' # str | Filter by currency. Return all currency records if not specified (optional)
 _from = 1602120000 # int | Time range beginning, default to 7 days before current time (optional)
 to = 1602123600 # int | Time range ending, default to current time (optional)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
@@ -213,7 +214,7 @@ Name | Type | Description  | Notes
  **currency** | **str**| Filter by currency. Return all currency records if not specified | [optional] 
  **_from** | **int**| Time range beginning, default to 7 days before current time | [optional] 
  **to** | **int**| Time range ending, default to current time | [optional] 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
@@ -307,7 +308,7 @@ void (empty response body)
 # **list_sub_account_transfers**
 > list[SubAccountTransfer] list_sub_account_transfers(sub_uid=sub_uid, _from=_from, to=to, limit=limit, offset=offset)
 
-Transfer records between main and sub accounts
+Retrieve transfer records between main and sub accounts
 
 Record time range cannot exceed 30 days  > Note: only records after 2020-04-10 can be retrieved
 
@@ -338,11 +339,11 @@ api_instance = gate_api.WalletApi(api_client)
 sub_uid = '10003' # str | Sub account user ID. Return records related to all sub accounts if not specified (optional)
 _from = 1602120000 # int | Time range beginning, default to 7 days before current time (optional)
 to = 1602123600 # int | Time range ending, default to current time (optional)
-limit = 100 # int | Maximum number of records returned in one list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
-    # Transfer records between main and sub accounts
+    # Retrieve transfer records between main and sub accounts
     api_response = api_instance.list_sub_account_transfers(sub_uid=sub_uid, _from=_from, to=to, limit=limit, offset=offset)
     print(api_response)
 except GateApiException as ex:
@@ -358,7 +359,7 @@ Name | Type | Description  | Notes
  **sub_uid** | **str**| Sub account user ID. Return records related to all sub accounts if not specified | [optional] 
  **_from** | **int**| Time range beginning, default to 7 days before current time | [optional] 
  **to** | **int**| Time range ending, default to current time | [optional] 
- **limit** | **int**| Maximum number of records returned in one list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
@@ -478,7 +479,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
-currency = 'BTC' # str | Retrieved specified currency related data (optional)
+currency = 'BTC' # str | Retrieve data of the specified currency (optional)
 
 try:
     # Retrieve withdrawal status
@@ -494,7 +495,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **str**| Retrieved specified currency related data | [optional] 
+ **currency** | **str**| Retrieve data of the specified currency | [optional] 
 
 ### Return type
 
@@ -584,7 +585,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_trade_fee**
-> TradeFee get_trade_fee()
+> TradeFee get_trade_fee(currency_pair=currency_pair)
 
 Retrieve personal trading fee
 
@@ -612,10 +613,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
+currency_pair = 'BTC_USDT' # str | Specify a currency pair to retrieve precise fee rate  This field is optional. In most cases, the fee rate is identical among all currency pairs (optional)
 
 try:
     # Retrieve personal trading fee
-    api_response = api_instance.get_trade_fee()
+    api_response = api_instance.get_trade_fee(currency_pair=currency_pair)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -624,7 +626,10 @@ except ApiException as e:
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency_pair** | **str**| Specify a currency pair to retrieve precise fee rate  This field is optional. In most cases, the fee rate is identical among all currency pairs | [optional] 
 
 ### Return type
 
@@ -643,6 +648,73 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_total_balance**
+> TotalBalance get_total_balance(currency=currency)
+
+Retrieve user's total balances
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
+currency = 'USDT' # str | Currency unit used to calculate the balance amount. BTC, CNY, USD and USDT are allowed. USDT is the default. (optional) (default to 'USDT')
+
+try:
+    # Retrieve user's total balances
+    api_response = api_instance.get_total_balance(currency=currency)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling WalletApi->get_total_balance: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency** | **str**| Currency unit used to calculate the balance amount. BTC, CNY, USD and USDT are allowed. USDT is the default. | [optional] [default to &#39;USDT&#39;]
+
+### Return type
+
+[**TotalBalance**](TotalBalance.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Request is valid and is successfully responded |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

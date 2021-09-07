@@ -71,7 +71,7 @@ class FuturesOrderBook(object):
     def id(self):
         """Gets the id of this FuturesOrderBook.  # noqa: E501
 
-        Order Book ID. Increase by 1 on every order book change. Set `with_id=true` to include this field in response  # noqa: E501
+        Order Book ID. Increases by 1 on every order book change. Set `with_id=true` to include this field in response  # noqa: E501
 
         :return: The id of this FuturesOrderBook.  # noqa: E501
         :rtype: int
@@ -82,7 +82,7 @@ class FuturesOrderBook(object):
     def id(self, id):
         """Sets the id of this FuturesOrderBook.
 
-        Order Book ID. Increase by 1 on every order book change. Set `with_id=true` to include this field in response  # noqa: E501
+        Order Book ID. Increases by 1 on every order book change. Set `with_id=true` to include this field in response  # noqa: E501
 
         :param id: The id of this FuturesOrderBook.  # noqa: E501
         :type: int

@@ -73,7 +73,7 @@ class FuturesPriceTrigger(object):
     def strategy_type(self):
         """Gets the strategy_type of this FuturesPriceTrigger.  # noqa: E501
 
-        How the order will be triggered   - `0`: by price, which means order will be triggered on price condition satisfied  - `1`: by price gap, which means order will be triggered on gap of recent two prices of specified `price_type` satisfied.  Only `0` is supported currently  # noqa: E501
+        How the order will be triggered   - `0`: by price, which means the order will be triggered if price condition is satisfied  - `1`: by price gap, which means the order will be triggered if gap of recent two prices of specified `price_type` are satisfied.  Only `0` is supported currently  # noqa: E501
 
         :return: The strategy_type of this FuturesPriceTrigger.  # noqa: E501
         :rtype: int
@@ -84,7 +84,7 @@ class FuturesPriceTrigger(object):
     def strategy_type(self, strategy_type):
         """Sets the strategy_type of this FuturesPriceTrigger.
 
-        How the order will be triggered   - `0`: by price, which means order will be triggered on price condition satisfied  - `1`: by price gap, which means order will be triggered on gap of recent two prices of specified `price_type` satisfied.  Only `0` is supported currently  # noqa: E501
+        How the order will be triggered   - `0`: by price, which means the order will be triggered if price condition is satisfied  - `1`: by price gap, which means the order will be triggered if gap of recent two prices of specified `price_type` are satisfied.  Only `0` is supported currently  # noqa: E501
 
         :param strategy_type: The strategy_type of this FuturesPriceTrigger.  # noqa: E501
         :type: int
@@ -184,7 +184,7 @@ class FuturesPriceTrigger(object):
     def expiration(self):
         """Gets the expiration of this FuturesPriceTrigger.  # noqa: E501
 
-        How many seconds will the order wait for the condition being triggered. Order will be cancelled on timed out  # noqa: E501
+        How long (in seconds) to wait for the condition to be triggered before cancelling the order.  # noqa: E501
 
         :return: The expiration of this FuturesPriceTrigger.  # noqa: E501
         :rtype: int
@@ -195,7 +195,7 @@ class FuturesPriceTrigger(object):
     def expiration(self, expiration):
         """Sets the expiration of this FuturesPriceTrigger.
 
-        How many seconds will the order wait for the condition being triggered. Order will be cancelled on timed out  # noqa: E501
+        How long (in seconds) to wait for the condition to be triggered before cancelling the order.  # noqa: E501
 
         :param expiration: The expiration of this FuturesPriceTrigger.  # noqa: E501
         :type: int

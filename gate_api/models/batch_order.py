@@ -258,7 +258,7 @@ class BatchOrder(object):
     def succeeded(self):
         """Gets the succeeded of this BatchOrder.  # noqa: E501
 
-        Whether order succeeds  # noqa: E501
+        Whether the batch of orders succeeded  # noqa: E501
 
         :return: The succeeded of this BatchOrder.  # noqa: E501
         :rtype: bool
@@ -269,7 +269,7 @@ class BatchOrder(object):
     def succeeded(self, succeeded):
         """Sets the succeeded of this BatchOrder.
 
-        Whether order succeeds  # noqa: E501
+        Whether the batch of orders succeeded  # noqa: E501
 
         :param succeeded: The succeeded of this BatchOrder.  # noqa: E501
         :type: bool
@@ -281,7 +281,7 @@ class BatchOrder(object):
     def label(self):
         """Gets the label of this BatchOrder.  # noqa: E501
 
-        Error label, empty string if order succeeds  # noqa: E501
+        Error label, if any, otherwise an empty string  # noqa: E501
 
         :return: The label of this BatchOrder.  # noqa: E501
         :rtype: str
@@ -292,7 +292,7 @@ class BatchOrder(object):
     def label(self, label):
         """Sets the label of this BatchOrder.
 
-        Error label, empty string if order succeeds  # noqa: E501
+        Error label, if any, otherwise an empty string  # noqa: E501
 
         :param label: The label of this BatchOrder.  # noqa: E501
         :type: str
@@ -304,7 +304,7 @@ class BatchOrder(object):
     def message(self):
         """Gets the message of this BatchOrder.  # noqa: E501
 
-        Detailed error message, empty string if order succeeds  # noqa: E501
+        Detailed error message, if any, otherwise an empty string  # noqa: E501
 
         :return: The message of this BatchOrder.  # noqa: E501
         :rtype: str
@@ -315,7 +315,7 @@ class BatchOrder(object):
     def message(self, message):
         """Sets the message of this BatchOrder.
 
-        Detailed error message, empty string if order succeeds  # noqa: E501
+        Detailed error message, if any, otherwise an empty string  # noqa: E501
 
         :param message: The message of this BatchOrder.  # noqa: E501
         :type: str
@@ -350,7 +350,7 @@ class BatchOrder(object):
     def create_time(self):
         """Gets the create_time of this BatchOrder.  # noqa: E501
 
-        Order creation time  # noqa: E501
+        Creation time of order  # noqa: E501
 
         :return: The create_time of this BatchOrder.  # noqa: E501
         :rtype: str
@@ -361,7 +361,7 @@ class BatchOrder(object):
     def create_time(self, create_time):
         """Sets the create_time of this BatchOrder.
 
-        Order creation time  # noqa: E501
+        Creation time of order  # noqa: E501
 
         :param create_time: The create_time of this BatchOrder.  # noqa: E501
         :type: str
@@ -373,7 +373,7 @@ class BatchOrder(object):
     def update_time(self):
         """Gets the update_time of this BatchOrder.  # noqa: E501
 
-        Order last modification time  # noqa: E501
+        Last modification time of order  # noqa: E501
 
         :return: The update_time of this BatchOrder.  # noqa: E501
         :rtype: str
@@ -384,7 +384,7 @@ class BatchOrder(object):
     def update_time(self, update_time):
         """Sets the update_time of this BatchOrder.
 
-        Order last modification time  # noqa: E501
+        Last modification time of order  # noqa: E501
 
         :param update_time: The update_time of this BatchOrder.  # noqa: E501
         :type: str
@@ -396,7 +396,7 @@ class BatchOrder(object):
     def create_time_ms(self):
         """Gets the create_time_ms of this BatchOrder.  # noqa: E501
 
-        Order creation time in milliseconds  # noqa: E501
+        Creation time of order (in milliseconds)  # noqa: E501
 
         :return: The create_time_ms of this BatchOrder.  # noqa: E501
         :rtype: int
@@ -407,7 +407,7 @@ class BatchOrder(object):
     def create_time_ms(self, create_time_ms):
         """Sets the create_time_ms of this BatchOrder.
 
-        Order creation time in milliseconds  # noqa: E501
+        Creation time of order (in milliseconds)  # noqa: E501
 
         :param create_time_ms: The create_time_ms of this BatchOrder.  # noqa: E501
         :type: int
@@ -419,7 +419,7 @@ class BatchOrder(object):
     def update_time_ms(self):
         """Gets the update_time_ms of this BatchOrder.  # noqa: E501
 
-        Order last modification time in milliseconds  # noqa: E501
+        Last modification time of order (in milliseconds)  # noqa: E501
 
         :return: The update_time_ms of this BatchOrder.  # noqa: E501
         :rtype: int
@@ -430,7 +430,7 @@ class BatchOrder(object):
     def update_time_ms(self, update_time_ms):
         """Sets the update_time_ms of this BatchOrder.
 
-        Order last modification time in milliseconds  # noqa: E501
+        Last modification time of order (in milliseconds)  # noqa: E501
 
         :param update_time_ms: The update_time_ms of this BatchOrder.  # noqa: E501
         :type: int
@@ -653,7 +653,7 @@ class BatchOrder(object):
     def iceberg(self):
         """Gets the iceberg of this BatchOrder.  # noqa: E501
 
-        Amount to display for the iceberg order. Null or 0 for normal orders. Set to -1 to hide the amount totally  # noqa: E501
+        Amount to display for the iceberg order. Null or 0 for normal orders. Set to -1 to hide the order completely  # noqa: E501
 
         :return: The iceberg of this BatchOrder.  # noqa: E501
         :rtype: str
@@ -664,7 +664,7 @@ class BatchOrder(object):
     def iceberg(self, iceberg):
         """Sets the iceberg of this BatchOrder.
 
-        Amount to display for the iceberg order. Null or 0 for normal orders. Set to -1 to hide the amount totally  # noqa: E501
+        Amount to display for the iceberg order. Null or 0 for normal orders. Set to -1 to hide the order completely  # noqa: E501
 
         :param iceberg: The iceberg of this BatchOrder.  # noqa: E501
         :type: str
@@ -837,7 +837,7 @@ class BatchOrder(object):
     def point_fee(self):
         """Gets the point_fee of this BatchOrder.  # noqa: E501
 
-        Point used to deduct fee  # noqa: E501
+        Points used to deduct fee  # noqa: E501
 
         :return: The point_fee of this BatchOrder.  # noqa: E501
         :rtype: str
@@ -848,7 +848,7 @@ class BatchOrder(object):
     def point_fee(self, point_fee):
         """Sets the point_fee of this BatchOrder.
 
-        Point used to deduct fee  # noqa: E501
+        Points used to deduct fee  # noqa: E501
 
         :param point_fee: The point_fee of this BatchOrder.  # noqa: E501
         :type: str

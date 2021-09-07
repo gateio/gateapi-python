@@ -177,7 +177,7 @@ class MultiChainAddressItem(object):
     def obtain_failed(self):
         """Gets the obtain_failed of this MultiChainAddressItem.  # noqa: E501
 
-        Whether address is obtained. 0 means success. 1 is failure, which needs retries  # noqa: E501
+        The obtain failed status- 0: address successfully obtained- 1: failed to obtain address  # noqa: E501
 
         :return: The obtain_failed of this MultiChainAddressItem.  # noqa: E501
         :rtype: int
@@ -188,7 +188,7 @@ class MultiChainAddressItem(object):
     def obtain_failed(self, obtain_failed):
         """Sets the obtain_failed of this MultiChainAddressItem.
 
-        Whether address is obtained. 0 means success. 1 is failure, which needs retries  # noqa: E501
+        The obtain failed status- 0: address successfully obtained- 1: failed to obtain address  # noqa: E501
 
         :param obtain_failed: The obtain_failed of this MultiChainAddressItem.  # noqa: E501
         :type: int

@@ -14,6 +14,7 @@
 from __future__ import absolute_import
 
 # import models into model package
+from gate_api.models.account_balance import AccountBalance
 from gate_api.models.auto_repay_setting import AutoRepaySetting
 from gate_api.models.batch_order import BatchOrder
 from gate_api.models.cancel_order import CancelOrder
@@ -23,6 +24,7 @@ from gate_api.models.contract_stat import ContractStat
 from gate_api.models.cross_margin_account import CrossMarginAccount
 from gate_api.models.cross_margin_account_book import CrossMarginAccountBook
 from gate_api.models.cross_margin_balance import CrossMarginBalance
+from gate_api.models.cross_margin_borrowable import CrossMarginBorrowable
 from gate_api.models.cross_margin_currency import CrossMarginCurrency
 from gate_api.models.cross_margin_loan import CrossMarginLoan
 from gate_api.models.cross_margin_repay_request import CrossMarginRepayRequest
@@ -56,6 +58,7 @@ from gate_api.models.loan_record import LoanRecord
 from gate_api.models.margin_account import MarginAccount
 from gate_api.models.margin_account_book import MarginAccountBook
 from gate_api.models.margin_account_currency import MarginAccountCurrency
+from gate_api.models.margin_borrowable import MarginBorrowable
 from gate_api.models.margin_currency_pair import MarginCurrencyPair
 from gate_api.models.margin_transferable import MarginTransferable
 from gate_api.models.multi_chain_address_item import MultiChainAddressItem
@@ -75,6 +78,7 @@ from gate_api.models.spot_price_triggered_order import SpotPriceTriggeredOrder
 from gate_api.models.sub_account_balance import SubAccountBalance
 from gate_api.models.sub_account_transfer import SubAccountTransfer
 from gate_api.models.ticker import Ticker
+from gate_api.models.total_balance import TotalBalance
 from gate_api.models.trade import Trade
 from gate_api.models.trade_fee import TradeFee
 from gate_api.models.transfer import Transfer

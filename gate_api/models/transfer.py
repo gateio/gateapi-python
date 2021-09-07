@@ -112,7 +112,7 @@ class Transfer(object):
     def _from(self):
         """Gets the _from of this Transfer.  # noqa: E501
 
-        Account transferred from  # noqa: E501
+        Account to transfer from  # noqa: E501
 
         :return: The _from of this Transfer.  # noqa: E501
         :rtype: str
@@ -123,7 +123,7 @@ class Transfer(object):
     def _from(self, _from):
         """Sets the _from of this Transfer.
 
-        Account transferred from  # noqa: E501
+        Account to transfer from  # noqa: E501
 
         :param _from: The _from of this Transfer.  # noqa: E501
         :type: str
@@ -142,7 +142,7 @@ class Transfer(object):
     def to(self):
         """Gets the to of this Transfer.  # noqa: E501
 
-        Account transferred to  # noqa: E501
+        Account to transfer to  # noqa: E501
 
         :return: The to of this Transfer.  # noqa: E501
         :rtype: str
@@ -153,7 +153,7 @@ class Transfer(object):
     def to(self, to):
         """Sets the to of this Transfer.
 
-        Account transferred to  # noqa: E501
+        Account to transfer to  # noqa: E501
 
         :param to: The to of this Transfer.  # noqa: E501
         :type: str

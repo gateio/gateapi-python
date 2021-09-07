@@ -254,7 +254,7 @@ class FuturesInitialOrder(object):
     def reduce_only(self):
         """Gets the reduce_only of this FuturesInitialOrder.  # noqa: E501
 
-        Set to true to create an reduce-only order  # noqa: E501
+        Set to true to create a reduce-only order  # noqa: E501
 
         :return: The reduce_only of this FuturesInitialOrder.  # noqa: E501
         :rtype: bool
@@ -265,7 +265,7 @@ class FuturesInitialOrder(object):
     def reduce_only(self, reduce_only):
         """Sets the reduce_only of this FuturesInitialOrder.
 
-        Set to true to create an reduce-only order  # noqa: E501
+        Set to true to create a reduce-only order  # noqa: E501
 
         :param reduce_only: The reduce_only of this FuturesInitialOrder.  # noqa: E501
         :type: bool

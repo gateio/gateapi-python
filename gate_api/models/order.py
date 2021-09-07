@@ -259,7 +259,7 @@ class Order(object):
     def create_time(self):
         """Gets the create_time of this Order.  # noqa: E501
 
-        Order creation time  # noqa: E501
+        Creation time of order  # noqa: E501
 
         :return: The create_time of this Order.  # noqa: E501
         :rtype: str
@@ -270,7 +270,7 @@ class Order(object):
     def create_time(self, create_time):
         """Sets the create_time of this Order.
 
-        Order creation time  # noqa: E501
+        Creation time of order  # noqa: E501
 
         :param create_time: The create_time of this Order.  # noqa: E501
         :type: str
@@ -282,7 +282,7 @@ class Order(object):
     def update_time(self):
         """Gets the update_time of this Order.  # noqa: E501
 
-        Order last modification time  # noqa: E501
+        Last modification time of order  # noqa: E501
 
         :return: The update_time of this Order.  # noqa: E501
         :rtype: str
@@ -293,7 +293,7 @@ class Order(object):
     def update_time(self, update_time):
         """Sets the update_time of this Order.
 
-        Order last modification time  # noqa: E501
+        Last modification time of order  # noqa: E501
 
         :param update_time: The update_time of this Order.  # noqa: E501
         :type: str
@@ -305,7 +305,7 @@ class Order(object):
     def create_time_ms(self):
         """Gets the create_time_ms of this Order.  # noqa: E501
 
-        Order creation time in milliseconds  # noqa: E501
+        Creation time of order (in milliseconds)  # noqa: E501
 
         :return: The create_time_ms of this Order.  # noqa: E501
         :rtype: int
@@ -316,7 +316,7 @@ class Order(object):
     def create_time_ms(self, create_time_ms):
         """Sets the create_time_ms of this Order.
 
-        Order creation time in milliseconds  # noqa: E501
+        Creation time of order (in milliseconds)  # noqa: E501
 
         :param create_time_ms: The create_time_ms of this Order.  # noqa: E501
         :type: int
@@ -328,7 +328,7 @@ class Order(object):
     def update_time_ms(self):
         """Gets the update_time_ms of this Order.  # noqa: E501
 
-        Order last modification time in milliseconds  # noqa: E501
+        Last modification time of order (in milliseconds)  # noqa: E501
 
         :return: The update_time_ms of this Order.  # noqa: E501
         :rtype: int
@@ -339,7 +339,7 @@ class Order(object):
     def update_time_ms(self, update_time_ms):
         """Sets the update_time_ms of this Order.
 
-        Order last modification time in milliseconds  # noqa: E501
+        Last modification time of order (in milliseconds)  # noqa: E501
 
         :param update_time_ms: The update_time_ms of this Order.  # noqa: E501
         :type: int
@@ -570,7 +570,7 @@ class Order(object):
     def iceberg(self):
         """Gets the iceberg of this Order.  # noqa: E501
 
-        Amount to display for the iceberg order. Null or 0 for normal orders. Set to -1 to hide the amount totally  # noqa: E501
+        Amount to display for the iceberg order. Null or 0 for normal orders. Set to -1 to hide the order completely  # noqa: E501
 
         :return: The iceberg of this Order.  # noqa: E501
         :rtype: str
@@ -581,7 +581,7 @@ class Order(object):
     def iceberg(self, iceberg):
         """Sets the iceberg of this Order.
 
-        Amount to display for the iceberg order. Null or 0 for normal orders. Set to -1 to hide the amount totally  # noqa: E501
+        Amount to display for the iceberg order. Null or 0 for normal orders. Set to -1 to hide the order completely  # noqa: E501
 
         :param iceberg: The iceberg of this Order.  # noqa: E501
         :type: str
@@ -754,7 +754,7 @@ class Order(object):
     def point_fee(self):
         """Gets the point_fee of this Order.  # noqa: E501
 
-        Point used to deduct fee  # noqa: E501
+        Points used to deduct fee  # noqa: E501
 
         :return: The point_fee of this Order.  # noqa: E501
         :rtype: str
@@ -765,7 +765,7 @@ class Order(object):
     def point_fee(self, point_fee):
         """Sets the point_fee of this Order.
 
-        Point used to deduct fee  # noqa: E501
+        Points used to deduct fee  # noqa: E501
 
         :param point_fee: The point_fee of this Order.  # noqa: E501
         :type: str

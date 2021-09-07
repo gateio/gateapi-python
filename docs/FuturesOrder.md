@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Futures order ID | [optional] [readonly] 
 **user** | **int** | User ID | [optional] [readonly] 
-**create_time** | **float** | Order creation time | [optional] [readonly] 
+**create_time** | **float** | Creation time of order | [optional] [readonly] 
 **finish_time** | **float** | Order finished time. Not returned if order is open | [optional] [readonly] 
-**finish_as** | **str** | How the order is finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is &#x60;IOC&#x60;, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while &#x60;reduce-only&#x60; set- position_closed: cancelled because of position close  | [optional] [readonly] 
+**finish_as** | **str** | How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is &#x60;IOC&#x60;, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while &#x60;reduce-only&#x60; set- position_closed: cancelled because of position close  | [optional] [readonly] 
 **status** | **str** | Order status  - &#x60;open&#x60;: waiting to be traded - &#x60;finished&#x60;: finished | [optional] [readonly] 
 **contract** | **str** | Futures contract | 
 **size** | **int** | Order size. Specify positive number to make a bid, and negative number to ask | 
-**iceberg** | **int** | Display size for iceberg order. 0 for non-iceberg. Note that you would pay the taker fee for the hidden size | [optional] 
+**iceberg** | **int** | Display size for iceberg order. 0 for non-iceberg. Note that you will have to pay the taker fee for the hidden size | [optional] 
 **price** | **str** | Order price. 0 for market order with &#x60;tif&#x60; set as &#x60;ioc&#x60; | [optional] 
 **close** | **bool** | Set as &#x60;true&#x60; to close the position, with &#x60;size&#x60; set to 0 | [optional] [default to False]
 **is_close** | **bool** | Is the order to close position | [optional] [readonly] 

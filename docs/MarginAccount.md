@@ -5,6 +5,8 @@ Margin account detail. `base` refers to base currency, while `quotes to quote cu
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency_pair** | **str** | Currency pair | [optional] 
+**locked** | **bool** | Whether account is locked | [optional] 
+**risk** | **str** | Current risk rate of margin account | [optional] 
 **base** | [**MarginAccountCurrency**](MarginAccountCurrency.md) |  | [optional] 
 **quote** | [**MarginAccountCurrency**](MarginAccountCurrency.md) |  | [optional] 
 

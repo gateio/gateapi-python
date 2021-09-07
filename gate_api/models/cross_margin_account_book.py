@@ -100,7 +100,7 @@ class CrossMarginAccountBook(object):
     def time(self):
         """Gets the time of this CrossMarginAccountBook.  # noqa: E501
 
-        Account changed timestamp in milliseconds  # noqa: E501
+        The timestamp of the change (in milliseconds)  # noqa: E501
 
         :return: The time of this CrossMarginAccountBook.  # noqa: E501
         :rtype: int
@@ -111,7 +111,7 @@ class CrossMarginAccountBook(object):
     def time(self, time):
         """Sets the time of this CrossMarginAccountBook.
 
-        Account changed timestamp in milliseconds  # noqa: E501
+        The timestamp of the change (in milliseconds)  # noqa: E501
 
         :param time: The time of this CrossMarginAccountBook.  # noqa: E501
         :type: int

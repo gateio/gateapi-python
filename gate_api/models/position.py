@@ -606,7 +606,7 @@ class Position(object):
     def adl_ranking(self):
         """Gets the adl_ranking of this Position.  # noqa: E501
 
-        ADL ranking, range from 1 to 5  # noqa: E501
+        ADL ranking, ranging from 1 to 5  # noqa: E501
 
         :return: The adl_ranking of this Position.  # noqa: E501
         :rtype: int
@@ -617,7 +617,7 @@ class Position(object):
     def adl_ranking(self, adl_ranking):
         """Sets the adl_ranking of this Position.
 
-        ADL ranking, range from 1 to 5  # noqa: E501
+        ADL ranking, ranging from 1 to 5  # noqa: E501
 
         :param adl_ranking: The adl_ranking of this Position.  # noqa: E501
         :type: int
