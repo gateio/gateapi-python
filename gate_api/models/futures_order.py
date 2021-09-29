@@ -55,6 +55,7 @@ class FuturesOrder(object):
         'tkfr': 'str',
         'mkfr': 'str',
         'refu': 'int',
+        'auto_size': 'str',
     }
 
     attribute_map = {
@@ -80,6 +81,7 @@ class FuturesOrder(object):
         'tkfr': 'tkfr',
         'mkfr': 'mkfr',
         'refu': 'refu',
+        'auto_size': 'auto_size',
     }
 
     def __init__(
@@ -106,9 +108,10 @@ class FuturesOrder(object):
         tkfr=None,
         mkfr=None,
         refu=None,
+        auto_size=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, int, float, float, str, str, str, int, int, str, bool, bool, bool, bool, bool, str, int, str, str, str, str, int, Configuration) -> None
+        # type: (int, int, float, float, str, str, str, int, int, str, bool, bool, bool, bool, bool, str, int, str, str, str, str, int, str, Configuration) -> None
         """FuturesOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -136,6 +139,7 @@ class FuturesOrder(object):
         self._tkfr = None
         self._mkfr = None
         self._refu = None
+        self._auto_size = None
         self.discriminator = None
 
         if id is not None:
@@ -180,6 +184,8 @@ class FuturesOrder(object):
             self.mkfr = mkfr
         if refu is not None:
             self.refu = refu
+        if auto_size is not None:
+            self.auto_size = auto_size
 
     @property
     def id(self):
@@ -716,6 +722,36 @@ class FuturesOrder(object):
         """
 
         self._refu = refu
+
+    @property
+    def auto_size(self):
+        """Gets the auto_size of this FuturesOrder.  # noqa: E501
+
+        Set side to close dual-mode position. `close_long` closes the long side; while `close_short` the short one. Note `size` also needs to be set to 0  # noqa: E501
+
+        :return: The auto_size of this FuturesOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._auto_size
+
+    @auto_size.setter
+    def auto_size(self, auto_size):
+        """Sets the auto_size of this FuturesOrder.
+
+        Set side to close dual-mode position. `close_long` closes the long side; while `close_short` the short one. Note `size` also needs to be set to 0  # noqa: E501
+
+        :param auto_size: The auto_size of this FuturesOrder.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["close_long", "close_short"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and auto_size not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `auto_size` ({0}), must be one of {1}".format(  # noqa: E501
+                    auto_size, allowed_values
+                )
+            )
+
+        self._auto_size = auto_size
 
     def to_dict(self):
         """Returns the model properties as a dict"""

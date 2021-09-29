@@ -272,7 +272,7 @@ class LedgerRecord(object):
     def status(self):
         """Gets the status of this LedgerRecord.  # noqa: E501
 
-        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: pending manual approval - BCODE: GateCode operation  # noqa: E501
+        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: pending manual approval - BCODE: GateCode operation - EXTPEND: pending confirm after sending - FAIL: pending confirm when fail  # noqa: E501
 
         :return: The status of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -283,12 +283,12 @@ class LedgerRecord(object):
     def status(self, status):
         """Sets the status of this LedgerRecord.
 
-        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: pending manual approval - BCODE: GateCode operation  # noqa: E501
+        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: pending manual approval - BCODE: GateCode operation - EXTPEND: pending confirm after sending - FAIL: pending confirm when fail  # noqa: E501
 
         :param status: The status of this LedgerRecord.  # noqa: E501
         :type: str
         """
-        allowed_values = ["DONE", "CANCEL", "REQUEST", "MANUAL", "BCODE"]  # noqa: E501
+        allowed_values = ["DONE", "CANCEL", "REQUEST", "MANUAL", "BCODE", "EXTPEND", "FAIL"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `status` ({0}), must be one of {1}".format(status, allowed_values)  # noqa: E501

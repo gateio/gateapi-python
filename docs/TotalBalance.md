@@ -1,6 +1,6 @@
 # TotalBalance
 
-用户总资产信息
+User's balance in all accounts
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **tkfr** | **str** | Taker fee | [optional] [readonly] 
 **mkfr** | **str** | Maker fee | [optional] [readonly] 
 **refu** | **int** | Reference user ID | [optional] [readonly] 
+**auto_size** | **str** | Set side to close dual-mode position. &#x60;close_long&#x60; closes the long side; while &#x60;close_short&#x60; the short one. Note &#x60;size&#x60; also needs to be set to 0 | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
