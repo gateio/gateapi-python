@@ -445,7 +445,7 @@ class MarginApi(object):
         :param bool async_req: execute request asynchronously
         :param str currency: List records related to specified currency only. If specified, `currency_pair` is also required.
         :param str currency_pair: List records related to specified currency pair. Used in combination with `currency`. Ignored if `currency` is not provided
-        :param int _from: Time range beginning, default to 7 days before current time
+        :param int _from: Start timestamp of the query
         :param int to: Time range ending, default to current time
         :param int page: Page number
         :param int limit: Maximum number of records to be returned in a single list
@@ -475,7 +475,7 @@ class MarginApi(object):
         :param bool async_req: execute request asynchronously
         :param str currency: List records related to specified currency only. If specified, `currency_pair` is also required.
         :param str currency_pair: List records related to specified currency pair. Used in combination with `currency`. Ignored if `currency` is not provided
-        :param int _from: Time range beginning, default to 7 days before current time
+        :param int _from: Start timestamp of the query
         :param int to: Time range ending, default to current time
         :param int page: Page number
         :param int limit: Maximum number of records to be returned in a single list
@@ -2685,7 +2685,7 @@ class MarginApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency: Filter by currency
-        :param int _from: Time range beginning, default to 7 days before current time
+        :param int _from: Start timestamp of the query
         :param int to: Time range ending, default to current time
         :param int page: Page number
         :param int limit: Maximum number of records to be returned in a single list
@@ -2715,7 +2715,7 @@ class MarginApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency: Filter by currency
-        :param int _from: Time range beginning, default to 7 days before current time
+        :param int _from: Start timestamp of the query
         :param int to: Time range ending, default to current time
         :param int page: Page number
         :param int limit: Maximum number of records to be returned in a single list

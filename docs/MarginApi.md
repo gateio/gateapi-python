@@ -308,8 +308,8 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.MarginApi(api_client)
 currency = 'currency_example' # str | List records related to specified currency only. If specified, `currency_pair` is also required. (optional)
 currency_pair = 'currency_pair_example' # str | List records related to specified currency pair. Used in combination with `currency`. Ignored if `currency` is not provided (optional)
-_from = 56 # int | Time range beginning, default to 7 days before current time (optional)
-to = 56 # int | Time range ending, default to current time (optional)
+_from = 1627706330 # int | Start timestamp of the query (optional)
+to = 1635329650 # int | Time range ending, default to current time (optional)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency** | **str**| List records related to specified currency only. If specified, &#x60;currency_pair&#x60; is also required. | [optional] 
  **currency_pair** | **str**| List records related to specified currency pair. Used in combination with &#x60;currency&#x60;. Ignored if &#x60;currency&#x60; is not provided | [optional] 
- **_from** | **int**| Time range beginning, default to 7 days before current time | [optional] 
+ **_from** | **int**| Start timestamp of the query | [optional] 
  **to** | **int**| Time range ending, default to current time | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
@@ -1673,8 +1673,8 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginApi(api_client)
 currency = 'currency_example' # str | Filter by currency (optional)
-_from = 56 # int | Time range beginning, default to 7 days before current time (optional)
-to = 56 # int | Time range ending, default to current time (optional)
+_from = 1627706330 # int | Start timestamp of the query (optional)
+to = 1635329650 # int | Time range ending, default to current time (optional)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 type = 'borrow' # str | Only retrieve changes of the specified type. All types will be returned if not specified. (optional)
@@ -1694,7 +1694,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency** | **str**| Filter by currency | [optional] 
- **_from** | **int**| Time range beginning, default to 7 days before current time | [optional] 
+ **_from** | **int**| Start timestamp of the query | [optional] 
  **to** | **int**| Time range ending, default to current time | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
