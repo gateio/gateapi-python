@@ -38,8 +38,8 @@ class SpotPriceTriggeredOrder(object):
         'id': 'int',
         'user': 'int',
         'market': 'str',
-        'ctime': 'float',
-        'ftime': 'float',
+        'ctime': 'int',
+        'ftime': 'int',
         'fired_order_id': 'int',
         'status': 'str',
         'reason': 'str',
@@ -72,7 +72,7 @@ class SpotPriceTriggeredOrder(object):
         reason=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (SpotPriceTrigger, SpotPricePutOrder, int, int, str, float, float, int, str, str, Configuration) -> None
+        # type: (SpotPriceTrigger, SpotPricePutOrder, int, int, str, int, int, int, str, str, Configuration) -> None
         """SpotPriceTriggeredOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -232,7 +232,7 @@ class SpotPriceTriggeredOrder(object):
         Creation time  # noqa: E501
 
         :return: The ctime of this SpotPriceTriggeredOrder.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._ctime
 
@@ -243,7 +243,7 @@ class SpotPriceTriggeredOrder(object):
         Creation time  # noqa: E501
 
         :param ctime: The ctime of this SpotPriceTriggeredOrder.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._ctime = ctime
@@ -255,7 +255,7 @@ class SpotPriceTriggeredOrder(object):
         Finished time  # noqa: E501
 
         :return: The ftime of this SpotPriceTriggeredOrder.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._ftime
 
@@ -266,7 +266,7 @@ class SpotPriceTriggeredOrder(object):
         Finished time  # noqa: E501
 
         :param ftime: The ftime of this SpotPriceTriggeredOrder.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._ftime = ftime

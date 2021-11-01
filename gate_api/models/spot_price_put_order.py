@@ -56,8 +56,8 @@ class SpotPricePutOrder(object):
         side=None,
         price=None,
         amount=None,
-        account=None,
-        time_in_force=None,
+        account='normal',
+        time_in_force='gtc',
         local_vars_configuration=None,
     ):  # noqa: E501
         # type: (str, str, str, str, str, str, Configuration) -> None
