@@ -14,12 +14,13 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.22.4"
+__version__ = "4.23.0"
 
 # import apis into sdk package
 from gate_api.api.delivery_api import DeliveryApi
 from gate_api.api.futures_api import FuturesApi
 from gate_api.api.margin_api import MarginApi
+from gate_api.api.options_api import OptionsApi
 from gate_api.api.spot_api import SpotApi
 from gate_api.api.wallet_api import WalletApi
 from gate_api.api.withdrawal_api import WithdrawalApi
@@ -51,6 +52,7 @@ from gate_api.models.cross_margin_repay_request import CrossMarginRepayRequest
 from gate_api.models.cross_margin_repayment import CrossMarginRepayment
 from gate_api.models.cross_margin_transferable import CrossMarginTransferable
 from gate_api.models.currency import Currency
+from gate_api.models.currency_chain import CurrencyChain
 from gate_api.models.currency_pair import CurrencyPair
 from gate_api.models.delivery_contract import DeliveryContract
 from gate_api.models.delivery_settlement import DeliverySettlement
@@ -84,6 +86,17 @@ from gate_api.models.margin_transferable import MarginTransferable
 from gate_api.models.multi_chain_address_item import MultiChainAddressItem
 from gate_api.models.my_futures_trade import MyFuturesTrade
 from gate_api.models.open_orders import OpenOrders
+from gate_api.models.options_account import OptionsAccount
+from gate_api.models.options_account_book import OptionsAccountBook
+from gate_api.models.options_contract import OptionsContract
+from gate_api.models.options_my_trade import OptionsMyTrade
+from gate_api.models.options_order import OptionsOrder
+from gate_api.models.options_position import OptionsPosition
+from gate_api.models.options_position_close import OptionsPositionClose
+from gate_api.models.options_settlement import OptionsSettlement
+from gate_api.models.options_ticker import OptionsTicker
+from gate_api.models.options_underlying import OptionsUnderlying
+from gate_api.models.options_underlying_ticker import OptionsUnderlyingTicker
 from gate_api.models.order import Order
 from gate_api.models.order_book import OrderBook
 from gate_api.models.position import Position

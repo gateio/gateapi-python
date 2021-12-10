@@ -406,7 +406,7 @@ class FuturesApi(object):
         :param str contract: Futures contract (required)
         :param int limit: Maximum number of records to be returned in a single list
         :param str last_id: Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. Use `from` and `to` instead to limit time range
-        :param int _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned. 
+        :param int _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned.
         :param int to: Specify end time in Unix seconds, default to current time
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -435,7 +435,7 @@ class FuturesApi(object):
         :param str contract: Futures contract (required)
         :param int limit: Maximum number of records to be returned in a single list
         :param str last_id: Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. Use `from` and `to` instead to limit time range
-        :param int _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned. 
+        :param int _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned.
         :param int to: Specify end time in Unix seconds, default to current time
         :param _return_http_data_only: response data without head status code
                                        and headers

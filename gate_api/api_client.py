@@ -82,7 +82,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/4.22.4/python'
+        self.user_agent = 'OpenAPI-Generator/4.23.0/python'
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
@@ -102,7 +102,7 @@ class ApiClient(object):
     @property
     def pool(self):
         """Create thread pool on first request
-         avoids instantiating unused threadpool for blocking clients.
+        avoids instantiating unused threadpool for blocking clients.
         """
         if self._pool is None:
             atexit.register(self.close)
