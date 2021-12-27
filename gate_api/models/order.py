@@ -540,7 +540,7 @@ class Order(object):
     def time_in_force(self):
         """Gets the time_in_force of this Order.  # noqa: E501
 
-        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee  # noqa: E501
+        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none  # noqa: E501
 
         :return: The time_in_force of this Order.  # noqa: E501
         :rtype: str
@@ -551,12 +551,12 @@ class Order(object):
     def time_in_force(self, time_in_force):
         """Sets the time_in_force of this Order.
 
-        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee  # noqa: E501
+        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none  # noqa: E501
 
         :param time_in_force: The time_in_force of this Order.  # noqa: E501
         :type: str
         """
-        allowed_values = ["gtc", "ioc", "poc"]  # noqa: E501
+        allowed_values = ["gtc", "ioc", "poc", "fok"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and time_in_force not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `time_in_force` ({0}), must be one of {1}".format(  # noqa: E501
