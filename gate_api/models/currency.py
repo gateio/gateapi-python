@@ -39,6 +39,7 @@ class Currency(object):
         'withdraw_delayed': 'bool',
         'deposit_disabled': 'bool',
         'trade_disabled': 'bool',
+        'fixed_rate': 'str',
     }
 
     attribute_map = {
@@ -48,6 +49,7 @@ class Currency(object):
         'withdraw_delayed': 'withdraw_delayed',
         'deposit_disabled': 'deposit_disabled',
         'trade_disabled': 'trade_disabled',
+        'fixed_rate': 'fixed_rate',
     }
 
     def __init__(
@@ -58,9 +60,10 @@ class Currency(object):
         withdraw_delayed=None,
         deposit_disabled=None,
         trade_disabled=None,
+        fixed_rate=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, bool, bool, bool, bool, bool, Configuration) -> None
+        # type: (str, bool, bool, bool, bool, bool, str, Configuration) -> None
         """Currency - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +75,7 @@ class Currency(object):
         self._withdraw_delayed = None
         self._deposit_disabled = None
         self._trade_disabled = None
+        self._fixed_rate = None
         self.discriminator = None
 
         if currency is not None:
@@ -86,6 +90,8 @@ class Currency(object):
             self.deposit_disabled = deposit_disabled
         if trade_disabled is not None:
             self.trade_disabled = trade_disabled
+        if fixed_rate is not None:
+            self.fixed_rate = fixed_rate
 
     @property
     def currency(self):
@@ -224,6 +230,29 @@ class Currency(object):
         """
 
         self._trade_disabled = trade_disabled
+
+    @property
+    def fixed_rate(self):
+        """Gets the fixed_rate of this Currency.  # noqa: E501
+
+        Fixed fee rate. Only for fixed rate currencies, not valid for normal currencies  # noqa: E501
+
+        :return: The fixed_rate of this Currency.  # noqa: E501
+        :rtype: str
+        """
+        return self._fixed_rate
+
+    @fixed_rate.setter
+    def fixed_rate(self, fixed_rate):
+        """Sets the fixed_rate of this Currency.
+
+        Fixed fee rate. Only for fixed rate currencies, not valid for normal currencies  # noqa: E501
+
+        :param fixed_rate: The fixed_rate of this Currency.  # noqa: E501
+        :type: str
+        """
+
+        self._fixed_rate = fixed_rate
 
     def to_dict(self):
         """Returns the model properties as a dict"""

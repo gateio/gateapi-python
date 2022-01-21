@@ -253,7 +253,7 @@ class Trade(object):
     def role(self):
         """Gets the role of this Trade.  # noqa: E501
 
-        Trade role  # noqa: E501
+        Trade role. No value in public endpoints  # noqa: E501
 
         :return: The role of this Trade.  # noqa: E501
         :rtype: str
@@ -264,7 +264,7 @@ class Trade(object):
     def role(self, role):
         """Sets the role of this Trade.
 
-        Trade role  # noqa: E501
+        Trade role. No value in public endpoints  # noqa: E501
 
         :param role: The role of this Trade.  # noqa: E501
         :type: str
@@ -396,7 +396,7 @@ class Trade(object):
     def point_fee(self):
         """Gets the point_fee of this Trade.  # noqa: E501
 
-        Points used to deduct fee  # noqa: E501
+        Points used to deduct fee. No value in public endpoints  # noqa: E501
 
         :return: The point_fee of this Trade.  # noqa: E501
         :rtype: str
@@ -407,7 +407,7 @@ class Trade(object):
     def point_fee(self, point_fee):
         """Sets the point_fee of this Trade.
 
-        Points used to deduct fee  # noqa: E501
+        Points used to deduct fee. No value in public endpoints  # noqa: E501
 
         :param point_fee: The point_fee of this Trade.  # noqa: E501
         :type: str
@@ -419,7 +419,7 @@ class Trade(object):
     def gt_fee(self):
         """Gets the gt_fee of this Trade.  # noqa: E501
 
-        GT used to deduct fee  # noqa: E501
+        GT used to deduct fee. No value in public endpoints  # noqa: E501
 
         :return: The gt_fee of this Trade.  # noqa: E501
         :rtype: str
@@ -430,7 +430,7 @@ class Trade(object):
     def gt_fee(self, gt_fee):
         """Sets the gt_fee of this Trade.
 
-        GT used to deduct fee  # noqa: E501
+        GT used to deduct fee. No value in public endpoints  # noqa: E501
 
         :param gt_fee: The gt_fee of this Trade.  # noqa: E501
         :type: str
