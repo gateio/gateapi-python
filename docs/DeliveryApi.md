@@ -315,7 +315,7 @@ contract = 'BTC_USDT_20200814' # str | Futures contract
 _from = 1546905600 # int | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
 to = 1546935600 # int | End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time (optional)
 limit = 100 # int | Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
-interval = '5m' # str | Interval time between data points (optional) (default to '5m')
+interval = '5m' # str | Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0 (optional) (default to '5m')
 
 try:
     # Get futures candlesticks
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
  **_from** | **int**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
  **to** | **int**| End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time | [optional] 
  **limit** | **int**| Maximum recent data points to return. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
- **interval** | **str**| Interval time between data points | [optional] [default to &#39;5m&#39;]
+ **interval** | **str**| Interval time between data points. Note that &#x60;1w&#x60; means natual week(Mon-Sun), while &#x60;7d&#x60; means every 7d since unix 0 | [optional] [default to &#39;5m&#39;]
 
 ### Return type
 
@@ -974,7 +974,7 @@ Name | Type | Description  | Notes
 
 List futures orders
 
-Zero-fill order cannot be retrieved for 60 seconds after cancellation
+Zero-filled order cannot be retrieved 10 minutes after order cancellation
 
 ### Example
 
@@ -1055,7 +1055,7 @@ Name | Type | Description  | Notes
 
 Create a futures order
 
-Zero-fill order cannot be retrieved for 60 seconds after cancellation
+Zero-filled order cannot be retrieved 10 minutes after order cancellation
 
 ### Example
 
@@ -1126,7 +1126,7 @@ Name | Type | Description  | Notes
 
 Cancel all `open` orders matched
 
-Zero-fill order cannot be retrieved for 60 seconds after cancellation
+Zero-filled order cannot be retrieved 10 minutes after order cancellation
 
 ### Example
 
@@ -1199,7 +1199,7 @@ Name | Type | Description  | Notes
 
 Get a single order
 
-Zero-fill order cannot be retrieved for 60 seconds after cancellation
+Zero-filled order cannot be retrieved 10 minutes after order cancellation
 
 ### Example
 

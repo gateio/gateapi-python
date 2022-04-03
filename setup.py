@@ -13,7 +13,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "gate-api"
-VERSION = "4.23.2"
+VERSION = "4.23.3"
 # To install the library, run the following
 #
 # python setup.py install

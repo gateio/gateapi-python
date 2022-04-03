@@ -36,6 +36,7 @@ class SpotApi(object):
     def list_currencies(self, **kwargs):  # noqa: E501
         """List all currencies' details  # noqa: E501
 
+        Currency has two forms:  1. Only currency name, e.g., BTC, USDT 2. `<currency>_<chain>`, e.g., `HT_ETH`  The latter one occurs when one currency has multiple chains. Currency detail contains a `chain` field whatever the form is. To retrieve all chains of one currency, you can use use all the details which has the name of the currency or name starting with `<currency>_`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_currencies(async_req=True)
@@ -59,6 +60,7 @@ class SpotApi(object):
     def list_currencies_with_http_info(self, **kwargs):  # noqa: E501
         """List all currencies' details  # noqa: E501
 
+        Currency has two forms:  1. Only currency name, e.g., BTC, USDT 2. `<currency>_<chain>`, e.g., `HT_ETH`  The latter one occurs when one currency has multiple chains. Currency detail contains a `chain` field whatever the form is. To retrieve all chains of one currency, you can use use all the details which has the name of the currency or name starting with `<currency>_`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_currencies_with_http_info(async_req=True)

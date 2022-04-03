@@ -40,6 +40,7 @@ class Currency(object):
         'deposit_disabled': 'bool',
         'trade_disabled': 'bool',
         'fixed_rate': 'str',
+        'chain': 'str',
     }
 
     attribute_map = {
@@ -50,6 +51,7 @@ class Currency(object):
         'deposit_disabled': 'deposit_disabled',
         'trade_disabled': 'trade_disabled',
         'fixed_rate': 'fixed_rate',
+        'chain': 'chain',
     }
 
     def __init__(
@@ -61,9 +63,10 @@ class Currency(object):
         deposit_disabled=None,
         trade_disabled=None,
         fixed_rate=None,
+        chain=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, bool, bool, bool, bool, bool, str, Configuration) -> None
+        # type: (str, bool, bool, bool, bool, bool, str, str, Configuration) -> None
         """Currency - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +79,7 @@ class Currency(object):
         self._deposit_disabled = None
         self._trade_disabled = None
         self._fixed_rate = None
+        self._chain = None
         self.discriminator = None
 
         if currency is not None:
@@ -92,6 +96,8 @@ class Currency(object):
             self.trade_disabled = trade_disabled
         if fixed_rate is not None:
             self.fixed_rate = fixed_rate
+        if chain is not None:
+            self.chain = chain
 
     @property
     def currency(self):
@@ -253,6 +259,29 @@ class Currency(object):
         """
 
         self._fixed_rate = fixed_rate
+
+    @property
+    def chain(self):
+        """Gets the chain of this Currency.  # noqa: E501
+
+        Chain of currency  # noqa: E501
+
+        :return: The chain of this Currency.  # noqa: E501
+        :rtype: str
+        """
+        return self._chain
+
+    @chain.setter
+    def chain(self, chain):
+        """Sets the chain of this Currency.
+
+        Chain of currency  # noqa: E501
+
+        :param chain: The chain of this Currency.  # noqa: E501
+        :type: str
+        """
+
+        self._chain = chain
 
     def to_dict(self):
         """Returns the model properties as a dict"""

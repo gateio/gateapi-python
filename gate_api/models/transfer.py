@@ -220,7 +220,7 @@ class Transfer(object):
     def settle(self):
         """Gets the settle of this Transfer.  # noqa: E501
 
-        Futures settle currency. Required if `currency` is `POINT`  # noqa: E501
+        Futures settle currency. Required if transferring from or to futures account  # noqa: E501
 
         :return: The settle of this Transfer.  # noqa: E501
         :rtype: str
@@ -231,7 +231,7 @@ class Transfer(object):
     def settle(self, settle):
         """Sets the settle of this Transfer.
 
-        Futures settle currency. Required if `currency` is `POINT`  # noqa: E501
+        Futures settle currency. Required if transferring from or to futures account  # noqa: E501
 
         :param settle: The settle of this Transfer.  # noqa: E501
         :type: str

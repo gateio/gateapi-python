@@ -32,14 +32,35 @@ class CurrencyChain(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'chain': 'str', 'name_cn': 'str', 'name_en': 'str', 'is_disabled': 'int'}
+    openapi_types = {
+        'chain': 'str',
+        'name_cn': 'str',
+        'name_en': 'str',
+        'is_disabled': 'int',
+        'is_deposit_disabled': 'int',
+        'is_withdraw_disabled': 'int',
+    }
 
-    attribute_map = {'chain': 'chain', 'name_cn': 'name_cn', 'name_en': 'name_en', 'is_disabled': 'is_disabled'}
+    attribute_map = {
+        'chain': 'chain',
+        'name_cn': 'name_cn',
+        'name_en': 'name_en',
+        'is_disabled': 'is_disabled',
+        'is_deposit_disabled': 'is_deposit_disabled',
+        'is_withdraw_disabled': 'is_withdraw_disabled',
+    }
 
     def __init__(
-        self, chain=None, name_cn=None, name_en=None, is_disabled=None, local_vars_configuration=None
+        self,
+        chain=None,
+        name_cn=None,
+        name_en=None,
+        is_disabled=None,
+        is_deposit_disabled=None,
+        is_withdraw_disabled=None,
+        local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, int, Configuration) -> None
+        # type: (str, str, str, int, int, int, Configuration) -> None
         """CurrencyChain - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -49,6 +70,8 @@ class CurrencyChain(object):
         self._name_cn = None
         self._name_en = None
         self._is_disabled = None
+        self._is_deposit_disabled = None
+        self._is_withdraw_disabled = None
         self.discriminator = None
 
         if chain is not None:
@@ -59,6 +82,10 @@ class CurrencyChain(object):
             self.name_en = name_en
         if is_disabled is not None:
             self.is_disabled = is_disabled
+        if is_deposit_disabled is not None:
+            self.is_deposit_disabled = is_deposit_disabled
+        if is_withdraw_disabled is not None:
+            self.is_withdraw_disabled = is_withdraw_disabled
 
     @property
     def chain(self):
@@ -151,6 +178,52 @@ class CurrencyChain(object):
         """
 
         self._is_disabled = is_disabled
+
+    @property
+    def is_deposit_disabled(self):
+        """Gets the is_deposit_disabled of this CurrencyChain.  # noqa: E501
+
+        Is deposit disabled. 0 means not  # noqa: E501
+
+        :return: The is_deposit_disabled of this CurrencyChain.  # noqa: E501
+        :rtype: int
+        """
+        return self._is_deposit_disabled
+
+    @is_deposit_disabled.setter
+    def is_deposit_disabled(self, is_deposit_disabled):
+        """Sets the is_deposit_disabled of this CurrencyChain.
+
+        Is deposit disabled. 0 means not  # noqa: E501
+
+        :param is_deposit_disabled: The is_deposit_disabled of this CurrencyChain.  # noqa: E501
+        :type: int
+        """
+
+        self._is_deposit_disabled = is_deposit_disabled
+
+    @property
+    def is_withdraw_disabled(self):
+        """Gets the is_withdraw_disabled of this CurrencyChain.  # noqa: E501
+
+        Is withdrawal disabled. 0 means not  # noqa: E501
+
+        :return: The is_withdraw_disabled of this CurrencyChain.  # noqa: E501
+        :rtype: int
+        """
+        return self._is_withdraw_disabled
+
+    @is_withdraw_disabled.setter
+    def is_withdraw_disabled(self, is_withdraw_disabled):
+        """Sets the is_withdraw_disabled of this CurrencyChain.
+
+        Is withdrawal disabled. 0 means not  # noqa: E501
+
+        :param is_withdraw_disabled: The is_withdraw_disabled of this CurrencyChain.  # noqa: E501
+        :type: int
+        """
+
+        self._is_withdraw_disabled = is_withdraw_disabled
 
     def to_dict(self):
         """Returns the model properties as a dict"""

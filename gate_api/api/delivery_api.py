@@ -551,7 +551,7 @@ class DeliveryApi(object):
         :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
         :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
-        :param str interval: Interval time between data points
+        :param str interval: Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -581,7 +581,7 @@ class DeliveryApi(object):
         :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
         :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
-        :param str interval: Interval time between data points
+        :param str interval: Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1753,7 +1753,7 @@ class DeliveryApi(object):
     def list_delivery_orders(self, settle, status, **kwargs):  # noqa: E501
         """List futures orders  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_delivery_orders(settle, status, async_req=True)
@@ -1784,7 +1784,7 @@ class DeliveryApi(object):
     def list_delivery_orders_with_http_info(self, settle, status, **kwargs):  # noqa: E501
         """List futures orders  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_delivery_orders_with_http_info(settle, status, async_req=True)
@@ -1908,7 +1908,7 @@ class DeliveryApi(object):
     def create_delivery_order(self, settle, futures_order, **kwargs):  # noqa: E501
         """Create a futures order  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_delivery_order(settle, futures_order, async_req=True)
@@ -1934,7 +1934,7 @@ class DeliveryApi(object):
     def create_delivery_order_with_http_info(self, settle, futures_order, **kwargs):  # noqa: E501
         """Create a futures order  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_delivery_order_with_http_info(settle, futures_order, async_req=True)
@@ -2030,7 +2030,7 @@ class DeliveryApi(object):
     def cancel_delivery_orders(self, settle, contract, **kwargs):  # noqa: E501
         """Cancel all `open` orders matched  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_delivery_orders(settle, contract, async_req=True)
@@ -2057,7 +2057,7 @@ class DeliveryApi(object):
     def cancel_delivery_orders_with_http_info(self, settle, contract, **kwargs):  # noqa: E501
         """Cancel all `open` orders matched  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_delivery_orders_with_http_info(settle, contract, async_req=True)
@@ -2151,7 +2151,7 @@ class DeliveryApi(object):
     def get_delivery_order(self, settle, order_id, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_delivery_order(settle, order_id, async_req=True)
@@ -2177,7 +2177,7 @@ class DeliveryApi(object):
     def get_delivery_order_with_http_info(self, settle, order_id, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_delivery_order_with_http_info(settle, order_id, async_req=True)

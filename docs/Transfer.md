@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **to** | **str** | Account to transfer to | 
 **amount** | **str** | Transfer amount | 
 **currency_pair** | **str** | Margin currency pair. Required if transfer from or to margin account | [optional] 
-**settle** | **str** | Futures settle currency. Required if &#x60;currency&#x60; is &#x60;POINT&#x60; | [optional] 
+**settle** | **str** | Futures settle currency. Required if transferring from or to futures account | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

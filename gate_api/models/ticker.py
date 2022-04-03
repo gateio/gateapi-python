@@ -176,7 +176,7 @@ class Ticker(object):
     def lowest_ask(self):
         """Gets the lowest_ask of this Ticker.  # noqa: E501
 
-        Lowest ask  # noqa: E501
+        Recent lowest ask  # noqa: E501
 
         :return: The lowest_ask of this Ticker.  # noqa: E501
         :rtype: str
@@ -187,7 +187,7 @@ class Ticker(object):
     def lowest_ask(self, lowest_ask):
         """Sets the lowest_ask of this Ticker.
 
-        Lowest ask  # noqa: E501
+        Recent lowest ask  # noqa: E501
 
         :param lowest_ask: The lowest_ask of this Ticker.  # noqa: E501
         :type: str
@@ -199,7 +199,7 @@ class Ticker(object):
     def highest_bid(self):
         """Gets the highest_bid of this Ticker.  # noqa: E501
 
-        Highest bid  # noqa: E501
+        Recent highest bid  # noqa: E501
 
         :return: The highest_bid of this Ticker.  # noqa: E501
         :rtype: str
@@ -210,7 +210,7 @@ class Ticker(object):
     def highest_bid(self, highest_bid):
         """Sets the highest_bid of this Ticker.
 
-        Highest bid  # noqa: E501
+        Recent highest bid  # noqa: E501
 
         :param highest_bid: The highest_bid of this Ticker.  # noqa: E501
         :type: str
@@ -222,7 +222,7 @@ class Ticker(object):
     def change_percentage(self):
         """Gets the change_percentage of this Ticker.  # noqa: E501
 
-        Change percentage.  # noqa: E501
+        Change percentage in the last 24h  # noqa: E501
 
         :return: The change_percentage of this Ticker.  # noqa: E501
         :rtype: str
@@ -233,7 +233,7 @@ class Ticker(object):
     def change_percentage(self, change_percentage):
         """Sets the change_percentage of this Ticker.
 
-        Change percentage.  # noqa: E501
+        Change percentage in the last 24h  # noqa: E501
 
         :param change_percentage: The change_percentage of this Ticker.  # noqa: E501
         :type: str
@@ -245,7 +245,7 @@ class Ticker(object):
     def base_volume(self):
         """Gets the base_volume of this Ticker.  # noqa: E501
 
-        Base currency trade volume  # noqa: E501
+        Base currency trade volume in the last 24h  # noqa: E501
 
         :return: The base_volume of this Ticker.  # noqa: E501
         :rtype: str
@@ -256,7 +256,7 @@ class Ticker(object):
     def base_volume(self, base_volume):
         """Sets the base_volume of this Ticker.
 
-        Base currency trade volume  # noqa: E501
+        Base currency trade volume in the last 24h  # noqa: E501
 
         :param base_volume: The base_volume of this Ticker.  # noqa: E501
         :type: str
@@ -268,7 +268,7 @@ class Ticker(object):
     def quote_volume(self):
         """Gets the quote_volume of this Ticker.  # noqa: E501
 
-        Quote currency trade volume  # noqa: E501
+        Quote currency trade volume in the last 24h  # noqa: E501
 
         :return: The quote_volume of this Ticker.  # noqa: E501
         :rtype: str
@@ -279,7 +279,7 @@ class Ticker(object):
     def quote_volume(self, quote_volume):
         """Sets the quote_volume of this Ticker.
 
-        Quote currency trade volume  # noqa: E501
+        Quote currency trade volume in the last 24h  # noqa: E501
 
         :param quote_volume: The quote_volume of this Ticker.  # noqa: E501
         :type: str

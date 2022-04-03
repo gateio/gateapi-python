@@ -551,7 +551,7 @@ class FuturesApi(object):
         :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
         :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
-        :param str interval: Interval time between data points
+        :param str interval: Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -581,7 +581,7 @@ class FuturesApi(object):
         :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
         :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
-        :param str interval: Interval time between data points
+        :param str interval: Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2529,6 +2529,7 @@ class FuturesApi(object):
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
         :param str leverage: New position leverage (required)
+        :param str cross_leverage_limit: Cross margin leverage(valid only when `leverage` is 0)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2557,6 +2558,7 @@ class FuturesApi(object):
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
         :param str leverage: New position leverage (required)
+        :param str cross_leverage_limit: Cross margin leverage(valid only when `leverage` is 0)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2573,7 +2575,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'leverage']
+        all_params = ['settle', 'contract', 'leverage', 'cross_leverage_limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -2616,6 +2618,10 @@ class FuturesApi(object):
         query_params = []
         if 'leverage' in local_var_params and local_var_params['leverage'] is not None:  # noqa: E501
             query_params.append(('leverage', local_var_params['leverage']))  # noqa: E501
+        if (
+            'cross_leverage_limit' in local_var_params and local_var_params['cross_leverage_limit'] is not None
+        ):  # noqa: E501
+            query_params.append(('cross_leverage_limit', local_var_params['cross_leverage_limit']))  # noqa: E501
 
         header_params = {}
 
@@ -2780,7 +2786,7 @@ class FuturesApi(object):
     def list_futures_orders(self, settle, contract, status, **kwargs):  # noqa: E501
         """List futures orders  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_futures_orders(settle, contract, status, async_req=True)
@@ -2811,7 +2817,7 @@ class FuturesApi(object):
     def list_futures_orders_with_http_info(self, settle, contract, status, **kwargs):  # noqa: E501
         """List futures orders  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_futures_orders_with_http_info(settle, contract, status, async_req=True)
@@ -2942,7 +2948,7 @@ class FuturesApi(object):
     def create_futures_order(self, settle, futures_order, **kwargs):  # noqa: E501
         """Create a futures order  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        - Creating futures orders requires `size`, which is number of contracts instead of currency amount. You can use `quanto_multiplier` in contract detail response to know how much currency 1 size contract represents - Zero-filled order cannot be retrieved 10 minutes after order cancellation. You will get a 404 not found for such orders - Set `reduce_only` to `true` can keep the position from changing side when reducing position size - In single position mode, to close a position, you need to set `size` to 0 and `close` to `true` - In dual position mode, to close one side position, you need to set `auto_size` side, `reduce_only` to true and `size` to 0  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_futures_order(settle, futures_order, async_req=True)
@@ -2968,7 +2974,7 @@ class FuturesApi(object):
     def create_futures_order_with_http_info(self, settle, futures_order, **kwargs):  # noqa: E501
         """Create a futures order  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        - Creating futures orders requires `size`, which is number of contracts instead of currency amount. You can use `quanto_multiplier` in contract detail response to know how much currency 1 size contract represents - Zero-filled order cannot be retrieved 10 minutes after order cancellation. You will get a 404 not found for such orders - Set `reduce_only` to `true` can keep the position from changing side when reducing position size - In single position mode, to close a position, you need to set `size` to 0 and `close` to `true` - In dual position mode, to close one side position, you need to set `auto_size` side, `reduce_only` to true and `size` to 0  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_futures_order_with_http_info(settle, futures_order, async_req=True)
@@ -3064,7 +3070,7 @@ class FuturesApi(object):
     def cancel_futures_orders(self, settle, contract, **kwargs):  # noqa: E501
         """Cancel all `open` orders matched  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_futures_orders(settle, contract, async_req=True)
@@ -3091,7 +3097,7 @@ class FuturesApi(object):
     def cancel_futures_orders_with_http_info(self, settle, contract, **kwargs):  # noqa: E501
         """Cancel all `open` orders matched  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_futures_orders_with_http_info(settle, contract, async_req=True)
@@ -3185,7 +3191,7 @@ class FuturesApi(object):
     def get_futures_order(self, settle, order_id, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_futures_order(settle, order_id, async_req=True)
@@ -3211,7 +3217,7 @@ class FuturesApi(object):
     def get_futures_order_with_http_info(self, settle, order_id, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
 
-        Zero-fill order cannot be retrieved for 60 seconds after cancellation  # noqa: E501
+        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_futures_order_with_http_info(settle, order_id, async_req=True)
