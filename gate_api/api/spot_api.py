@@ -663,7 +663,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param int limit: Maximum number of records to be returned in a single list
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
-        :param bool reverse: Whether the id of records to be retrieved should be smaller than the last_id specified- true: Retrieve records where id is smaller than the specified last_id- false: Retrieve records where id is larger than the specified last_idDefault to false.  When `last_id` is specified. Set `reverse` to `true` to trace back trading history; `false` to retrieve latest tradings.  No effect if `last_id` is not specified.
+        :param bool reverse: Whether the id of records to be retrieved should be less than the last_id specified. Default to false.  When `last_id` is specified. Set `reverse` to `true` to trace back trading history; `false` to retrieve latest tradings.  No effect if `last_id` is not specified.
         :param int _from: Start timestamp of the query
         :param int to: Time range ending, default to current time
         :param int page: Page number
@@ -694,7 +694,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param int limit: Maximum number of records to be returned in a single list
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
-        :param bool reverse: Whether the id of records to be retrieved should be smaller than the last_id specified- true: Retrieve records where id is smaller than the specified last_id- false: Retrieve records where id is larger than the specified last_idDefault to false.  When `last_id` is specified. Set `reverse` to `true` to trace back trading history; `false` to retrieve latest tradings.  No effect if `last_id` is not specified.
+        :param bool reverse: Whether the id of records to be retrieved should be less than the last_id specified. Default to false.  When `last_id` is specified. Set `reverse` to `true` to trace back trading history; `false` to retrieve latest tradings.  No effect if `last_id` is not specified.
         :param int _from: Start timestamp of the query
         :param int to: Time range ending, default to current time
         :param int page: Page number
@@ -812,7 +812,7 @@ class SpotApi(object):
         :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
         :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param str interval: Interval time between data points
+        :param str interval: Interval time between data points. Note that `30d` means 1 natual month, not 30 days
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -841,7 +841,7 @@ class SpotApi(object):
         :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
         :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param str interval: Interval time between data points
+        :param str interval: Interval time between data points. Note that `30d` means 1 natual month, not 30 days
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

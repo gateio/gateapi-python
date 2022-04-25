@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.23.3"
+__version__ = "4.23.4"
 
 # import apis into sdk package
 from gate_api.api.delivery_api import DeliveryApi
@@ -66,6 +66,7 @@ from gate_api.models.futures_candlestick import FuturesCandlestick
 from gate_api.models.futures_initial_order import FuturesInitialOrder
 from gate_api.models.futures_liquidate import FuturesLiquidate
 from gate_api.models.futures_order import FuturesOrder
+from gate_api.models.futures_order_amendment import FuturesOrderAmendment
 from gate_api.models.futures_order_book import FuturesOrderBook
 from gate_api.models.futures_order_book_item import FuturesOrderBookItem
 from gate_api.models.futures_price_trigger import FuturesPriceTrigger
