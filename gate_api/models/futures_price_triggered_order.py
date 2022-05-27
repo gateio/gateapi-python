@@ -43,6 +43,8 @@ class FuturesPriceTriggeredOrder(object):
         'status': 'str',
         'finish_as': 'str',
         'reason': 'str',
+        'order_type': 'str',
+        'me_order_id': 'str',
     }
 
     attribute_map = {
@@ -56,6 +58,8 @@ class FuturesPriceTriggeredOrder(object):
         'status': 'status',
         'finish_as': 'finish_as',
         'reason': 'reason',
+        'order_type': 'order_type',
+        'me_order_id': 'me_order_id',
     }
 
     def __init__(
@@ -70,9 +74,11 @@ class FuturesPriceTriggeredOrder(object):
         status=None,
         finish_as=None,
         reason=None,
+        order_type=None,
+        me_order_id=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (FuturesInitialOrder, FuturesPriceTrigger, int, int, float, float, int, str, str, str, Configuration) -> None
+        # type: (FuturesInitialOrder, FuturesPriceTrigger, int, int, float, float, int, str, str, str, str, str, Configuration) -> None
         """FuturesPriceTriggeredOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -88,6 +94,8 @@ class FuturesPriceTriggeredOrder(object):
         self._status = None
         self._finish_as = None
         self._reason = None
+        self._order_type = None
+        self._me_order_id = None
         self.discriminator = None
 
         self.initial = initial
@@ -108,6 +116,10 @@ class FuturesPriceTriggeredOrder(object):
             self.finish_as = finish_as
         if reason is not None:
             self.reason = reason
+        if order_type is not None:
+            self.order_type = order_type
+        if me_order_id is not None:
+            self.me_order_id = me_order_id
 
     @property
     def initial(self):
@@ -274,7 +286,7 @@ class FuturesPriceTriggeredOrder(object):
     def status(self):
         """Gets the status of this FuturesPriceTriggeredOrder.  # noqa: E501
 
-        Order status.  # noqa: E501
+        Auto order status  - `open`: order is active - `finished`: order is finished - `inactive`: order is not active, only for close-long-order or close-short-order - `invalid`: order is invalid, only for close-long-order or close-short-order  # noqa: E501
 
         :return: The status of this FuturesPriceTriggeredOrder.  # noqa: E501
         :rtype: str
@@ -285,12 +297,12 @@ class FuturesPriceTriggeredOrder(object):
     def status(self, status):
         """Sets the status of this FuturesPriceTriggeredOrder.
 
-        Order status.  # noqa: E501
+        Auto order status  - `open`: order is active - `finished`: order is finished - `inactive`: order is not active, only for close-long-order or close-short-order - `invalid`: order is invalid, only for close-long-order or close-short-order  # noqa: E501
 
         :param status: The status of this FuturesPriceTriggeredOrder.  # noqa: E501
         :type: str
         """
-        allowed_values = ["open", "finished"]  # noqa: E501
+        allowed_values = ["open", "finished", "inactive", "invalid"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `status` ({0}), must be one of {1}".format(status, allowed_values)  # noqa: E501
@@ -350,6 +362,52 @@ class FuturesPriceTriggeredOrder(object):
         """
 
         self._reason = reason
+
+    @property
+    def order_type(self):
+        """Gets the order_type of this FuturesPriceTriggeredOrder.  # noqa: E501
+
+        Take-profit/stop-loss types, which include:  - `close-long-order`: order take-profit/stop-loss, close long position - `close-short-order`: order take-profit/stop-loss, close short position - `close-long-position`: position take-profit/stop-loss, close long position - `close-short-position`: position take-profit/stop-loss, close short position - `plan-close-long-position`: position planned take-profit/stop-loss, close long position - `plan-close-short-position`: position planned take-profit/stop-loss, close short position  The order take-profit/stop-loss can not be passed by request. These two types are read only.  # noqa: E501
+
+        :return: The order_type of this FuturesPriceTriggeredOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._order_type
+
+    @order_type.setter
+    def order_type(self, order_type):
+        """Sets the order_type of this FuturesPriceTriggeredOrder.
+
+        Take-profit/stop-loss types, which include:  - `close-long-order`: order take-profit/stop-loss, close long position - `close-short-order`: order take-profit/stop-loss, close short position - `close-long-position`: position take-profit/stop-loss, close long position - `close-short-position`: position take-profit/stop-loss, close short position - `plan-close-long-position`: position planned take-profit/stop-loss, close long position - `plan-close-short-position`: position planned take-profit/stop-loss, close short position  The order take-profit/stop-loss can not be passed by request. These two types are read only.  # noqa: E501
+
+        :param order_type: The order_type of this FuturesPriceTriggeredOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._order_type = order_type
+
+    @property
+    def me_order_id(self):
+        """Gets the me_order_id of this FuturesPriceTriggeredOrder.  # noqa: E501
+
+        Corresponding order ID of order take-profit/stop-loss.  # noqa: E501
+
+        :return: The me_order_id of this FuturesPriceTriggeredOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._me_order_id
+
+    @me_order_id.setter
+    def me_order_id(self, me_order_id):
+        """Sets the me_order_id of this FuturesPriceTriggeredOrder.
+
+        Corresponding order ID of order take-profit/stop-loss.  # noqa: E501
+
+        :param me_order_id: The me_order_id of this FuturesPriceTriggeredOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._me_order_id = me_order_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

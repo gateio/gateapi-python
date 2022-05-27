@@ -14,10 +14,11 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.23.4"
+__version__ = "4.24.0"
 
 # import apis into sdk package
 from gate_api.api.delivery_api import DeliveryApi
+from gate_api.api.flash_swap_api import FlashSwapApi
 from gate_api.api.futures_api import FuturesApi
 from gate_api.api.margin_api import MarginApi
 from gate_api.api.options_api import OptionsApi
@@ -57,12 +58,17 @@ from gate_api.models.currency_pair import CurrencyPair
 from gate_api.models.delivery_contract import DeliveryContract
 from gate_api.models.delivery_settlement import DeliverySettlement
 from gate_api.models.deposit_address import DepositAddress
+from gate_api.models.flash_swap_currency import FlashSwapCurrency
+from gate_api.models.flash_swap_order import FlashSwapOrder
+from gate_api.models.flash_swap_order_preview import FlashSwapOrderPreview
+from gate_api.models.flash_swap_order_request import FlashSwapOrderRequest
 from gate_api.models.funding_account import FundingAccount
 from gate_api.models.funding_book_item import FundingBookItem
 from gate_api.models.funding_rate_record import FundingRateRecord
 from gate_api.models.futures_account import FuturesAccount
 from gate_api.models.futures_account_book import FuturesAccountBook
 from gate_api.models.futures_candlestick import FuturesCandlestick
+from gate_api.models.futures_index_constituents import FuturesIndexConstituents
 from gate_api.models.futures_initial_order import FuturesInitialOrder
 from gate_api.models.futures_liquidate import FuturesLiquidate
 from gate_api.models.futures_order import FuturesOrder
@@ -73,6 +79,7 @@ from gate_api.models.futures_price_trigger import FuturesPriceTrigger
 from gate_api.models.futures_price_triggered_order import FuturesPriceTriggeredOrder
 from gate_api.models.futures_ticker import FuturesTicker
 from gate_api.models.futures_trade import FuturesTrade
+from gate_api.models.index_constituent import IndexConstituent
 from gate_api.models.insurance_record import InsuranceRecord
 from gate_api.models.ledger_record import LedgerRecord
 from gate_api.models.loan import Loan
@@ -110,6 +117,8 @@ from gate_api.models.spot_price_put_order import SpotPricePutOrder
 from gate_api.models.spot_price_trigger import SpotPriceTrigger
 from gate_api.models.spot_price_triggered_order import SpotPriceTriggeredOrder
 from gate_api.models.sub_account_balance import SubAccountBalance
+from gate_api.models.sub_account_futures_balance import SubAccountFuturesBalance
+from gate_api.models.sub_account_margin_balance import SubAccountMarginBalance
 from gate_api.models.sub_account_transfer import SubAccountTransfer
 from gate_api.models.ticker import Ticker
 from gate_api.models.total_balance import TotalBalance

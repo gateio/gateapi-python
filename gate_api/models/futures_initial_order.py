@@ -40,6 +40,7 @@ class FuturesInitialOrder(object):
         'tif': 'str',
         'text': 'str',
         'reduce_only': 'bool',
+        'auto_size': 'str',
         'is_reduce_only': 'bool',
         'is_close': 'bool',
     }
@@ -52,6 +53,7 @@ class FuturesInitialOrder(object):
         'tif': 'tif',
         'text': 'text',
         'reduce_only': 'reduce_only',
+        'auto_size': 'auto_size',
         'is_reduce_only': 'is_reduce_only',
         'is_close': 'is_close',
     }
@@ -65,11 +67,12 @@ class FuturesInitialOrder(object):
         tif='gtc',
         text=None,
         reduce_only=False,
+        auto_size=None,
         is_reduce_only=None,
         is_close=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, int, str, bool, str, str, bool, bool, bool, Configuration) -> None
+        # type: (str, int, str, bool, str, str, bool, str, bool, bool, Configuration) -> None
         """FuturesInitialOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +85,7 @@ class FuturesInitialOrder(object):
         self._tif = None
         self._text = None
         self._reduce_only = None
+        self._auto_size = None
         self._is_reduce_only = None
         self._is_close = None
         self.discriminator = None
@@ -98,6 +102,8 @@ class FuturesInitialOrder(object):
             self.text = text
         if reduce_only is not None:
             self.reduce_only = reduce_only
+        if auto_size is not None:
+            self.auto_size = auto_size
         if is_reduce_only is not None:
             self.is_reduce_only = is_reduce_only
         if is_close is not None:
@@ -272,6 +278,29 @@ class FuturesInitialOrder(object):
         """
 
         self._reduce_only = reduce_only
+
+    @property
+    def auto_size(self):
+        """Gets the auto_size of this FuturesInitialOrder.  # noqa: E501
+
+        Set side to close dual-mode position. `close_long` closes the long side; while `close_short` the short one. Note `size` also needs to be set to 0  # noqa: E501
+
+        :return: The auto_size of this FuturesInitialOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._auto_size
+
+    @auto_size.setter
+    def auto_size(self, auto_size):
+        """Sets the auto_size of this FuturesInitialOrder.
+
+        Set side to close dual-mode position. `close_long` closes the long side; while `close_short` the short one. Note `size` also needs to be set to 0  # noqa: E501
+
+        :param auto_size: The auto_size of this FuturesInitialOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._auto_size = auto_size
 
     @property
     def is_reduce_only(self):
