@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**list_spot_accounts**](SpotApi.md#list_spot_accounts) | **GET** /spot/accounts | List spot accounts
 [**create_batch_orders**](SpotApi.md#create_batch_orders) | **POST** /spot/batch_orders | Create a batch of orders
 [**list_all_open_orders**](SpotApi.md#list_all_open_orders) | **GET** /spot/open_orders | List all open orders
+[**create_cross_liquidate_order**](SpotApi.md#create_cross_liquidate_order) | **POST** /spot/cross_liquidate_orders | close position when cross-currency is disabled
 [**list_orders**](SpotApi.md#list_orders) | **GET** /spot/orders | List orders
 [**create_order**](SpotApi.md#create_order) | **POST** /spot/orders | Create an order
 [**cancel_orders**](SpotApi.md#cancel_orders) | **DELETE** /spot/orders | Cancel all &#x60;open&#x60; orders in specified currency pair
@@ -23,11 +24,12 @@ Method | HTTP request | Description
 [**get_order**](SpotApi.md#get_order) | **GET** /spot/orders/{order_id} | Get a single order
 [**cancel_order**](SpotApi.md#cancel_order) | **DELETE** /spot/orders/{order_id} | Cancel a single order
 [**list_my_trades**](SpotApi.md#list_my_trades) | **GET** /spot/my_trades | List personal trading history
+[**get_system_time**](SpotApi.md#get_system_time) | **GET** /spot/time | Get server current time
 [**list_spot_price_triggered_orders**](SpotApi.md#list_spot_price_triggered_orders) | **GET** /spot/price_orders | Retrieve running auto order list
 [**create_spot_price_triggered_order**](SpotApi.md#create_spot_price_triggered_order) | **POST** /spot/price_orders | Create a price-triggered order
 [**cancel_spot_price_triggered_order_list**](SpotApi.md#cancel_spot_price_triggered_order_list) | **DELETE** /spot/price_orders | Cancel all open orders
 [**get_spot_price_triggered_order**](SpotApi.md#get_spot_price_triggered_order) | **GET** /spot/price_orders/{order_id} | Get a single order
-[**cancel_spot_price_triggered_order**](SpotApi.md#cancel_spot_price_triggered_order) | **DELETE** /spot/price_orders/{order_id} | Cancel a single order
+[**cancel_spot_price_triggered_order**](SpotApi.md#cancel_spot_price_triggered_order) | **DELETE** /spot/price_orders/{order_id} | cancel a price-triggered order
 
 
 # **list_currencies**
@@ -257,7 +259,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_tickers**
-> list[Ticker] list_tickers(currency_pair=currency_pair)
+> list[Ticker] list_tickers(currency_pair=currency_pair, timezone=timezone)
 
 Retrieve ticker information
 
@@ -279,10 +281,11 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'BTC_USDT' # str | Currency pair (optional)
+timezone = 'utc0' # str | Timezone (optional)
 
 try:
     # Retrieve ticker information
-    api_response = api_instance.list_tickers(currency_pair=currency_pair)
+    api_response = api_instance.list_tickers(currency_pair=currency_pair, timezone=timezone)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -295,6 +298,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency_pair** | **str**| Currency pair | [optional] 
+ **timezone** | **str**| Timezone | [optional] 
 
 ### Return type
 
@@ -760,7 +764,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.SpotApi(api_client)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records returned in one page in each currency pair (optional) (default to 100)
-account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account (optional)
+account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only (optional)
 
 try:
     # List all open orders
@@ -778,7 +782,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of records returned in one page in each currency pair | [optional] [default to 100]
- **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account | [optional] 
+ **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account.  Portfolio margin account must set to &#x60;cross_margin&#x60; only | [optional] 
 
 ### Return type
 
@@ -797,6 +801,75 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_cross_liquidate_order**
+> Order create_cross_liquidate_order(liquidate_order)
+
+close position when cross-currency is disabled
+
+Currently, only cross-margin accounts are supported to close position when cross currencies are disabled.  Maximum buy quantity = (unpaid principal and interest - currency balance - the amount of the currency in the order book) / 0.998
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.SpotApi(api_client)
+liquidate_order = gate_api.LiquidateOrder() # LiquidateOrder | 
+
+try:
+    # close position when cross-currency is disabled
+    api_response = api_instance.create_cross_liquidate_order(liquidate_order)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling SpotApi->create_cross_liquidate_order: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **liquidate_order** | [**LiquidateOrder**](LiquidateOrder.md)|  | 
+
+### Return type
+
+[**Order**](Order.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | order created |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -835,7 +908,7 @@ currency_pair = 'BTC_USDT' # str | Retrieve results with specified currency pair
 status = 'open' # str | List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled 
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records to be returned. If `status` is `open`, maximum of `limit` is 100 (optional) (default to 100)
-account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account (optional)
+account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only (optional)
 _from = 1627706330 # int | Start timestamp of the query (optional)
 to = 1635329650 # int | Time range ending, default to current time (optional)
 side = 'sell' # str | All bids or asks. Both included if not specified (optional)
@@ -858,7 +931,7 @@ Name | Type | Description  | Notes
  **status** | **str**| List orders based on status  &#x60;open&#x60; - order is waiting to be filled &#x60;finished&#x60; - order has been filled or cancelled  | 
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of records to be returned. If &#x60;status&#x60; is &#x60;open&#x60;, maximum of &#x60;limit&#x60; is 100 | [optional] [default to 100]
- **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account | [optional] 
+ **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account.  Portfolio margin account must set to &#x60;cross_margin&#x60; only | [optional] 
  **_from** | **int**| Start timestamp of the query | [optional] 
  **to** | **int**| Time range ending, default to current time | [optional] 
  **side** | **str**| All bids or asks. Both included if not specified | [optional] 
@@ -985,7 +1058,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'BTC_USDT' # str | Currency pair
 side = 'sell' # str | All bids or asks. Both included if not specified (optional)
-account = 'spot' # str | Specify account type. Default to all account types being included (optional)
+account = 'spot' # str | Specify account type  - classic account：Default to all account types being included   - portfolio margin account：`cross_margin` only (optional)
 
 try:
     # Cancel all `open` orders in specified currency pair
@@ -1003,7 +1076,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency_pair** | **str**| Currency pair | 
  **side** | **str**| All bids or asks. Both included if not specified | [optional] 
- **account** | **str**| Specify account type. Default to all account types being included | [optional] 
+ **account** | **str**| Specify account type  - classic account：Default to all account types being included   - portfolio margin account：&#x60;cross_margin&#x60; only | [optional] 
 
 ### Return type
 
@@ -1099,7 +1172,7 @@ Name | Type | Description  | Notes
 
 Get a single order
 
-Spot and margin orders are queried by default. If cross margin orders are needed, `account` must be set to `cross_margin`
+Spot and margin orders are queried by default. If cross margin orders are needed or portfolio margin account are used, account must be set to cross_margin.
 
 ### Example
 
@@ -1127,7 +1200,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.SpotApi(api_client)
 order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted.
 currency_pair = 'BTC_USDT' # str | Currency pair
-account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account (optional)
+account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only (optional)
 
 try:
     # Get a single order
@@ -1145,7 +1218,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order_id** | **str**| Order ID returned, or user custom ID(i.e., &#x60;text&#x60; field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. | 
  **currency_pair** | **str**| Currency pair | 
- **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account | [optional] 
+ **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account.  Portfolio margin account must set to &#x60;cross_margin&#x60; only | [optional] 
 
 ### Return type
 
@@ -1172,7 +1245,7 @@ Name | Type | Description  | Notes
 
 Cancel a single order
 
-Spot and margin orders are cancelled by default. If trying to cancel cross margin orders, `account` must be set to `cross_margin`
+Spot and margin orders are cancelled by default. If trying to cancel cross margin orders or portfolio margin account are used, account must be set to cross_margin
 
 ### Example
 
@@ -1200,7 +1273,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.SpotApi(api_client)
 order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted.
 currency_pair = 'BTC_USDT' # str | Currency pair
-account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account (optional)
+account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only (optional)
 
 try:
     # Cancel a single order
@@ -1218,7 +1291,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order_id** | **str**| Order ID returned, or user custom ID(i.e., &#x60;text&#x60; field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. | 
  **currency_pair** | **str**| Currency pair | 
- **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account | [optional] 
+ **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account.  Portfolio margin account must set to &#x60;cross_margin&#x60; only | [optional] 
 
 ### Return type
 
@@ -1275,7 +1348,7 @@ currency_pair = 'BTC_USDT' # str | Retrieve results with specified currency pair
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 page = 1 # int | Page number (optional) (default to 1)
 order_id = '12345' # str | Filter trades with specified order ID. `currency_pair` is also required if this field is present (optional)
-account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account (optional)
+account = 'cross_margin' # str | Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only (optional)
 _from = 1627706330 # int | Start timestamp of the query (optional)
 to = 1635329650 # int | Time range ending, default to current time (optional)
 
@@ -1297,7 +1370,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **page** | **int**| Page number | [optional] [default to 1]
  **order_id** | **str**| Filter trades with specified order ID. &#x60;currency_pair&#x60; is also required if this field is present | [optional] 
- **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account | [optional] 
+ **account** | **str**| Specify operation account. Default to spot and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account.  Portfolio margin account must set to &#x60;cross_margin&#x60; only | [optional] 
  **_from** | **int**| Start timestamp of the query | [optional] 
  **to** | **int**| Time range ending, default to current time | [optional] 
 
@@ -1318,6 +1391,60 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_system_time**
+> SystemTime get_system_time()
+
+Get server current time
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.SpotApi(api_client)
+
+try:
+    # Get server current time
+    api_response = api_instance.get_system_time()
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling SpotApi->get_system_time: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SystemTime**](SystemTime.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1602,7 +1729,7 @@ Name | Type | Description  | Notes
 # **cancel_spot_price_triggered_order**
 > SpotPriceTriggeredOrder cancel_spot_price_triggered_order(order_id)
 
-Cancel a single order
+cancel a price-triggered order
 
 ### Example
 
@@ -1631,7 +1758,7 @@ api_instance = gate_api.SpotApi(api_client)
 order_id = 'order_id_example' # str | Retrieve the data of the order with the specified ID
 
 try:
-    # Cancel a single order
+    # cancel a price-triggered order
     api_response = api_instance.cancel_spot_price_triggered_order(order_id)
     print(api_response)
 except GateApiException as ex:

@@ -40,7 +40,7 @@ Method | HTTP request | Description
 [**create_price_triggered_order**](FuturesApi.md#create_price_triggered_order) | **POST** /futures/{settle}/price_orders | Create a price-triggered order
 [**cancel_price_triggered_order_list**](FuturesApi.md#cancel_price_triggered_order_list) | **DELETE** /futures/{settle}/price_orders | Cancel all open orders
 [**get_price_triggered_order**](FuturesApi.md#get_price_triggered_order) | **GET** /futures/{settle}/price_orders/{order_id} | Get a single order
-[**cancel_price_triggered_order**](FuturesApi.md#cancel_price_triggered_order) | **DELETE** /futures/{settle}/price_orders/{order_id} | Cancel a single order
+[**cancel_price_triggered_order**](FuturesApi.md#cancel_price_triggered_order) | **DELETE** /futures/{settle}/price_orders/{order_id} | cancel a price-triggered order
 
 
 # **list_futures_contracts**
@@ -2543,7 +2543,7 @@ Name | Type | Description  | Notes
 # **cancel_price_triggered_order**
 > FuturesPriceTriggeredOrder cancel_price_triggered_order(settle, order_id)
 
-Cancel a single order
+cancel a price-triggered order
 
 ### Example
 
@@ -2573,7 +2573,7 @@ settle = 'usdt' # str | Settle currency
 order_id = 'order_id_example' # str | Retrieve the data of the order with the specified ID
 
 try:
-    # Cancel a single order
+    # cancel a price-triggered order
     api_response = api_instance.cancel_price_triggered_order(settle, order_id)
     print(api_response)
 except GateApiException as ex:

@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.24.0"
+__version__ = "4.25.1"
 
 # import apis into sdk package
 from gate_api.api.delivery_api import DeliveryApi
@@ -67,6 +67,7 @@ from gate_api.models.funding_book_item import FundingBookItem
 from gate_api.models.funding_rate_record import FundingRateRecord
 from gate_api.models.futures_account import FuturesAccount
 from gate_api.models.futures_account_book import FuturesAccountBook
+from gate_api.models.futures_account_history import FuturesAccountHistory
 from gate_api.models.futures_candlestick import FuturesCandlestick
 from gate_api.models.futures_index_constituents import FuturesIndexConstituents
 from gate_api.models.futures_initial_order import FuturesInitialOrder
@@ -82,6 +83,7 @@ from gate_api.models.futures_trade import FuturesTrade
 from gate_api.models.index_constituent import IndexConstituent
 from gate_api.models.insurance_record import InsuranceRecord
 from gate_api.models.ledger_record import LedgerRecord
+from gate_api.models.liquidate_order import LiquidateOrder
 from gate_api.models.loan import Loan
 from gate_api.models.loan_patch import LoanPatch
 from gate_api.models.loan_record import LoanRecord
@@ -97,6 +99,7 @@ from gate_api.models.open_orders import OpenOrders
 from gate_api.models.options_account import OptionsAccount
 from gate_api.models.options_account_book import OptionsAccountBook
 from gate_api.models.options_contract import OptionsContract
+from gate_api.models.options_my_settlements import OptionsMySettlements
 from gate_api.models.options_my_trade import OptionsMyTrade
 from gate_api.models.options_order import OptionsOrder
 from gate_api.models.options_position import OptionsPosition
@@ -120,6 +123,7 @@ from gate_api.models.sub_account_balance import SubAccountBalance
 from gate_api.models.sub_account_futures_balance import SubAccountFuturesBalance
 from gate_api.models.sub_account_margin_balance import SubAccountMarginBalance
 from gate_api.models.sub_account_transfer import SubAccountTransfer
+from gate_api.models.system_time import SystemTime
 from gate_api.models.ticker import Ticker
 from gate_api.models.total_balance import TotalBalance
 from gate_api.models.trade import Trade

@@ -107,7 +107,7 @@ class CancelOrder(object):
     def account(self):
         """Gets the account of this CancelOrder.  # noqa: E501
 
-        If cancelled order is cross margin order, this field must be set and can only be `cross_margin`  # noqa: E501
+        If cancelled order is cross margin order or is portfolio margin account's API key, this field must be set and can only be `cross_margin`If cancelled order is cross margin order, this field must be set and can only be `cross_margin`  # noqa: E501
 
         :return: The account of this CancelOrder.  # noqa: E501
         :rtype: str
@@ -118,7 +118,7 @@ class CancelOrder(object):
     def account(self, account):
         """Sets the account of this CancelOrder.
 
-        If cancelled order is cross margin order, this field must be set and can only be `cross_margin`  # noqa: E501
+        If cancelled order is cross margin order or is portfolio margin account's API key, this field must be set and can only be `cross_margin`If cancelled order is cross margin order, this field must be set and can only be `cross_margin`  # noqa: E501
 
         :param account: The account of this CancelOrder.  # noqa: E501
         :type: str

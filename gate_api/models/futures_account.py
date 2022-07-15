@@ -41,6 +41,11 @@ class FuturesAccount(object):
         'point': 'str',
         'currency': 'str',
         'in_dual_mode': 'bool',
+        'enable_credit': 'bool',
+        'position_initial_margin': 'str',
+        'maintenance_margin': 'str',
+        'bonus': 'str',
+        'history': 'FuturesAccountHistory',
     }
 
     attribute_map = {
@@ -52,6 +57,11 @@ class FuturesAccount(object):
         'point': 'point',
         'currency': 'currency',
         'in_dual_mode': 'in_dual_mode',
+        'enable_credit': 'enable_credit',
+        'position_initial_margin': 'position_initial_margin',
+        'maintenance_margin': 'maintenance_margin',
+        'bonus': 'bonus',
+        'history': 'history',
     }
 
     def __init__(
@@ -64,9 +74,14 @@ class FuturesAccount(object):
         point=None,
         currency=None,
         in_dual_mode=None,
+        enable_credit=None,
+        position_initial_margin=None,
+        maintenance_margin=None,
+        bonus=None,
+        history=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, bool, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, bool, bool, str, str, str, FuturesAccountHistory, Configuration) -> None
         """FuturesAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +95,11 @@ class FuturesAccount(object):
         self._point = None
         self._currency = None
         self._in_dual_mode = None
+        self._enable_credit = None
+        self._position_initial_margin = None
+        self._maintenance_margin = None
+        self._bonus = None
+        self._history = None
         self.discriminator = None
 
         if total is not None:
@@ -98,12 +118,22 @@ class FuturesAccount(object):
             self.currency = currency
         if in_dual_mode is not None:
             self.in_dual_mode = in_dual_mode
+        if enable_credit is not None:
+            self.enable_credit = enable_credit
+        if position_initial_margin is not None:
+            self.position_initial_margin = position_initial_margin
+        if maintenance_margin is not None:
+            self.maintenance_margin = maintenance_margin
+        if bonus is not None:
+            self.bonus = bonus
+        if history is not None:
+            self.history = history
 
     @property
     def total(self):
         """Gets the total of this FuturesAccount.  # noqa: E501
 
-        Total assets, total = position_margin + order_margin + available  # noqa: E501
+        total = position_margin + order_margin + available  # noqa: E501
 
         :return: The total of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -114,7 +144,7 @@ class FuturesAccount(object):
     def total(self, total):
         """Sets the total of this FuturesAccount.
 
-        Total assets, total = position_margin + order_margin + available  # noqa: E501
+        total = position_margin + order_margin + available  # noqa: E501
 
         :param total: The total of this FuturesAccount.  # noqa: E501
         :type: str
@@ -195,7 +225,7 @@ class FuturesAccount(object):
     def available(self):
         """Gets the available of this FuturesAccount.  # noqa: E501
 
-        Available balance to transfer out or trade  # noqa: E501
+        The available balance for transferring or trading  # noqa: E501
 
         :return: The available of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -206,7 +236,7 @@ class FuturesAccount(object):
     def available(self, available):
         """Sets the available of this FuturesAccount.
 
-        Available balance to transfer out or trade  # noqa: E501
+        The available balance for transferring or trading  # noqa: E501
 
         :param available: The available of this FuturesAccount.  # noqa: E501
         :type: str
@@ -282,6 +312,119 @@ class FuturesAccount(object):
         """
 
         self._in_dual_mode = in_dual_mode
+
+    @property
+    def enable_credit(self):
+        """Gets the enable_credit of this FuturesAccount.  # noqa: E501
+
+        Whether portfolio margin account mode is enabled  # noqa: E501
+
+        :return: The enable_credit of this FuturesAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_credit
+
+    @enable_credit.setter
+    def enable_credit(self, enable_credit):
+        """Sets the enable_credit of this FuturesAccount.
+
+        Whether portfolio margin account mode is enabled  # noqa: E501
+
+        :param enable_credit: The enable_credit of this FuturesAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_credit = enable_credit
+
+    @property
+    def position_initial_margin(self):
+        """Gets the position_initial_margin of this FuturesAccount.  # noqa: E501
+
+        Initial margin position, applicable to the portfolio margin account model  # noqa: E501
+
+        :return: The position_initial_margin of this FuturesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._position_initial_margin
+
+    @position_initial_margin.setter
+    def position_initial_margin(self, position_initial_margin):
+        """Sets the position_initial_margin of this FuturesAccount.
+
+        Initial margin position, applicable to the portfolio margin account model  # noqa: E501
+
+        :param position_initial_margin: The position_initial_margin of this FuturesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._position_initial_margin = position_initial_margin
+
+    @property
+    def maintenance_margin(self):
+        """Gets the maintenance_margin of this FuturesAccount.  # noqa: E501
+
+        Maintenance margin position, applicable to the portfolio margin account model  # noqa: E501
+
+        :return: The maintenance_margin of this FuturesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._maintenance_margin
+
+    @maintenance_margin.setter
+    def maintenance_margin(self, maintenance_margin):
+        """Sets the maintenance_margin of this FuturesAccount.
+
+        Maintenance margin position, applicable to the portfolio margin account model  # noqa: E501
+
+        :param maintenance_margin: The maintenance_margin of this FuturesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._maintenance_margin = maintenance_margin
+
+    @property
+    def bonus(self):
+        """Gets the bonus of this FuturesAccount.  # noqa: E501
+
+        Perpetual Contract Bonus  # noqa: E501
+
+        :return: The bonus of this FuturesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._bonus
+
+    @bonus.setter
+    def bonus(self, bonus):
+        """Sets the bonus of this FuturesAccount.
+
+        Perpetual Contract Bonus  # noqa: E501
+
+        :param bonus: The bonus of this FuturesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._bonus = bonus
+
+    @property
+    def history(self):
+        """Gets the history of this FuturesAccount.  # noqa: E501
+
+
+        :return: The history of this FuturesAccount.  # noqa: E501
+        :rtype: FuturesAccountHistory
+        """
+        return self._history
+
+    @history.setter
+    def history(self, history):
+        """Sets the history of this FuturesAccount.
+
+
+        :param history: The history of this FuturesAccount.  # noqa: E501
+        :type: FuturesAccountHistory
+        """
+
+        self._history = history
 
     def to_dict(self):
         """Returns the model properties as a dict"""

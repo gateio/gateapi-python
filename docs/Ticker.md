@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **lowest_ask** | **str** | Recent lowest ask | [optional] 
 **highest_bid** | **str** | Recent highest bid | [optional] 
 **change_percentage** | **str** | Change percentage in the last 24h | [optional] 
+**change_utc0** | **str** | utc0 timezone, the percentage change in the last 24 hours | [optional] 
+**change_utc8** | **str** | utc8 timezone, the percentage change in the last 24 hours | [optional] 
 **base_volume** | **str** | Base currency trade volume in the last 24h | [optional] 
 **quote_volume** | **str** | Quote currency trade volume in the last 24h | [optional] 
 **high_24h** | **str** | Highest price in 24h | [optional] 

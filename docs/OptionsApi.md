@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_options_contract**](OptionsApi.md#get_options_contract) | **GET** /options/contracts/{contract} | Query specified contract detail
 [**list_options_settlements**](OptionsApi.md#list_options_settlements) | **GET** /options/settlements | List settlement history
 [**get_options_settlement**](OptionsApi.md#get_options_settlement) | **GET** /options/settlements/{contract} | Get specified contract&#39;s settlement
+[**list_my_options_settlements**](OptionsApi.md#list_my_options_settlements) | **GET** /options/my_settlements | List my options settlements
 [**list_options_order_book**](OptionsApi.md#list_options_order_book) | **GET** /options/order_book | Futures order book
 [**list_options_tickers**](OptionsApi.md#list_options_tickers) | **GET** /options/tickers | List tickers of options contracts
 [**list_options_underlying_tickers**](OptionsApi.md#list_options_underlying_tickers) | **GET** /options/underlying/tickers/{underlying} | Get underlying ticker
@@ -384,6 +385,83 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_my_options_settlements**
+> list[OptionsMySettlements] list_my_options_settlements(underlying, contract=contract, limit=limit, offset=offset, _from=_from, to=to)
+
+List my options settlements
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.OptionsApi(api_client)
+underlying = 'BTC_USDT' # str | Underlying
+contract = 'BTC_USDT-20210916-5000-C' # str | Contract name (optional)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
+_from = 1547706332 # int | Start timestamp (optional)
+to = 1547706332 # int | End timestamp (optional)
+
+try:
+    # List my options settlements
+    api_response = api_instance.list_my_options_settlements(underlying, contract=contract, limit=limit, offset=offset, _from=_from, to=to)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling OptionsApi->list_my_options_settlements: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **underlying** | **str**| Underlying | 
+ **contract** | **str**| Contract name | [optional] 
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
+ **_from** | **int**| Start timestamp | [optional] 
+ **to** | **int**| End timestamp | [optional] 
+
+### Return type
+
+[**list[OptionsMySettlements]**](OptionsMySettlements.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

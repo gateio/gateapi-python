@@ -432,7 +432,7 @@ class Order(object):
     def account(self):
         """Gets the account of this Order.  # noqa: E501
 
-        Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account  # noqa: E501
+        Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account. Portfolio margin account must set to `cross-margin`   # noqa: E501
 
         :return: The account of this Order.  # noqa: E501
         :rtype: str
@@ -443,7 +443,7 @@ class Order(object):
     def account(self, account):
         """Sets the account of this Order.
 
-        Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account  # noqa: E501
+        Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account. Portfolio margin account must set to `cross-margin`   # noqa: E501
 
         :param account: The account of this Order.  # noqa: E501
         :type: str

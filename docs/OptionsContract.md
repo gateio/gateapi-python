@@ -5,7 +5,7 @@ Futures contract details
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Futures contract | [optional] 
-**tag** | **str** | 标记 | [optional] 
+**tag** | **str** | tag | [optional] 
 **create_time** | **float** | Creation time | [optional] 
 **expiration_time** | **float** | Expiration time | [optional] 
 **is_call** | **bool** | &#x60;true&#x60; means call options, while &#x60;false&#x60; is put options | [optional] 

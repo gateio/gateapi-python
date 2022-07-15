@@ -41,6 +41,7 @@ class CrossMarginCurrency(object):
         'user_max_borrow_amount': 'str',
         'total_max_borrow_amount': 'str',
         'price': 'str',
+        'status': 'int',
     }
 
     attribute_map = {
@@ -52,6 +53,7 @@ class CrossMarginCurrency(object):
         'user_max_borrow_amount': 'user_max_borrow_amount',
         'total_max_borrow_amount': 'total_max_borrow_amount',
         'price': 'price',
+        'status': 'status',
     }
 
     def __init__(
@@ -64,9 +66,10 @@ class CrossMarginCurrency(object):
         user_max_borrow_amount=None,
         total_max_borrow_amount=None,
         price=None,
+        status=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, int, Configuration) -> None
         """CrossMarginCurrency - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +83,7 @@ class CrossMarginCurrency(object):
         self._user_max_borrow_amount = None
         self._total_max_borrow_amount = None
         self._price = None
+        self._status = None
         self.discriminator = None
 
         if name is not None:
@@ -98,6 +102,8 @@ class CrossMarginCurrency(object):
             self.total_max_borrow_amount = total_max_borrow_amount
         if price is not None:
             self.price = price
+        if status is not None:
+            self.status = status
 
     @property
     def name(self):
@@ -282,6 +288,29 @@ class CrossMarginCurrency(object):
         """
 
         self._price = price
+
+    @property
+    def status(self):
+        """Gets the status of this CrossMarginCurrency.  # noqa: E501
+
+        status  - `0` : disable  - `1` : enable  # noqa: E501
+
+        :return: The status of this CrossMarginCurrency.  # noqa: E501
+        :rtype: int
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this CrossMarginCurrency.
+
+        status  - `0` : disable  - `1` : enable  # noqa: E501
+
+        :param status: The status of this CrossMarginCurrency.  # noqa: E501
+        :type: int
+        """
+
+        self._status = status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

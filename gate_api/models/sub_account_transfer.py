@@ -275,7 +275,7 @@ class SubAccountTransfer(object):
     def sub_account_type(self):
         """Gets the sub_account_type of this SubAccountTransfer.  # noqa: E501
 
-        Target sub user's account. `spot` - spot account, `futures` - perpetual contract account  # noqa: E501
+        Target sub user's account. `spot` - spot account, `futures` - perpetual contract account, `cross_margin` - cross margin account  # noqa: E501
 
         :return: The sub_account_type of this SubAccountTransfer.  # noqa: E501
         :rtype: str
@@ -286,12 +286,12 @@ class SubAccountTransfer(object):
     def sub_account_type(self, sub_account_type):
         """Sets the sub_account_type of this SubAccountTransfer.
 
-        Target sub user's account. `spot` - spot account, `futures` - perpetual contract account  # noqa: E501
+        Target sub user's account. `spot` - spot account, `futures` - perpetual contract account, `cross_margin` - cross margin account  # noqa: E501
 
         :param sub_account_type: The sub_account_type of this SubAccountTransfer.  # noqa: E501
         :type: str
         """
-        allowed_values = ["spot", "futures"]  # noqa: E501
+        allowed_values = ["spot", "futures", "cross_margin"]  # noqa: E501
         if (
             self.local_vars_configuration.client_side_validation and sub_account_type not in allowed_values
         ):  # noqa: E501

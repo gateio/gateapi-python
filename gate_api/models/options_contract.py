@@ -228,7 +228,7 @@ class OptionsContract(object):
     def tag(self):
         """Gets the tag of this OptionsContract.  # noqa: E501
 
-        标记  # noqa: E501
+        tag  # noqa: E501
 
         :return: The tag of this OptionsContract.  # noqa: E501
         :rtype: str
@@ -239,7 +239,7 @@ class OptionsContract(object):
     def tag(self, tag):
         """Sets the tag of this OptionsContract.
 
-        标记  # noqa: E501
+        tag  # noqa: E501
 
         :param tag: The tag of this OptionsContract.  # noqa: E501
         :type: str

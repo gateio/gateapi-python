@@ -38,6 +38,8 @@ class Ticker(object):
         'lowest_ask': 'str',
         'highest_bid': 'str',
         'change_percentage': 'str',
+        'change_utc0': 'str',
+        'change_utc8': 'str',
         'base_volume': 'str',
         'quote_volume': 'str',
         'high_24h': 'str',
@@ -54,6 +56,8 @@ class Ticker(object):
         'lowest_ask': 'lowest_ask',
         'highest_bid': 'highest_bid',
         'change_percentage': 'change_percentage',
+        'change_utc0': 'change_utc0',
+        'change_utc8': 'change_utc8',
         'base_volume': 'base_volume',
         'quote_volume': 'quote_volume',
         'high_24h': 'high_24h',
@@ -71,6 +75,8 @@ class Ticker(object):
         lowest_ask=None,
         highest_bid=None,
         change_percentage=None,
+        change_utc0=None,
+        change_utc8=None,
         base_volume=None,
         quote_volume=None,
         high_24h=None,
@@ -81,7 +87,7 @@ class Ticker(object):
         etf_leverage=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, int, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, int, str, Configuration) -> None
         """Ticker - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,6 +98,8 @@ class Ticker(object):
         self._lowest_ask = None
         self._highest_bid = None
         self._change_percentage = None
+        self._change_utc0 = None
+        self._change_utc8 = None
         self._base_volume = None
         self._quote_volume = None
         self._high_24h = None
@@ -112,6 +120,10 @@ class Ticker(object):
             self.highest_bid = highest_bid
         if change_percentage is not None:
             self.change_percentage = change_percentage
+        if change_utc0 is not None:
+            self.change_utc0 = change_utc0
+        if change_utc8 is not None:
+            self.change_utc8 = change_utc8
         if base_volume is not None:
             self.base_volume = base_volume
         if quote_volume is not None:
@@ -240,6 +252,52 @@ class Ticker(object):
         """
 
         self._change_percentage = change_percentage
+
+    @property
+    def change_utc0(self):
+        """Gets the change_utc0 of this Ticker.  # noqa: E501
+
+        utc0 timezone, the percentage change in the last 24 hours  # noqa: E501
+
+        :return: The change_utc0 of this Ticker.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_utc0
+
+    @change_utc0.setter
+    def change_utc0(self, change_utc0):
+        """Sets the change_utc0 of this Ticker.
+
+        utc0 timezone, the percentage change in the last 24 hours  # noqa: E501
+
+        :param change_utc0: The change_utc0 of this Ticker.  # noqa: E501
+        :type: str
+        """
+
+        self._change_utc0 = change_utc0
+
+    @property
+    def change_utc8(self):
+        """Gets the change_utc8 of this Ticker.  # noqa: E501
+
+        utc8 timezone, the percentage change in the last 24 hours  # noqa: E501
+
+        :return: The change_utc8 of this Ticker.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_utc8
+
+    @change_utc8.setter
+    def change_utc8(self, change_utc8):
+        """Sets the change_utc8 of this Ticker.
+
+        utc8 timezone, the percentage change in the last 24 hours  # noqa: E501
+
+        :param change_utc8: The change_utc8 of this Ticker.  # noqa: E501
+        :type: str
+        """
+
+        self._change_utc8 = change_utc8
 
     @property
     def base_volume(self):

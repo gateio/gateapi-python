@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **entry_price** | **str** | Entry price | [optional] [readonly] 
 **liq_price** | **str** | Liquidation price | [optional] [readonly] 
 **mark_price** | **str** | Current mark price | [optional] [readonly] 
+**initial_margin** | **str** | The initial margin occupied by the position, applicable to the portfolio margin account | [optional] [readonly] 
+**maintenance_margin** | **str** | Maintenance margin required for the position, applicable to portfolio margin account | [optional] [readonly] 
 **unrealised_pnl** | **str** | Unrealized PNL | [optional] [readonly] 
 **realised_pnl** | **str** | Realized PNL | [optional] [readonly] 
 **history_pnl** | **str** | History realized PNL | [optional] [readonly] 

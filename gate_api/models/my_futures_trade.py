@@ -40,6 +40,9 @@ class MyFuturesTrade(object):
         'size': 'int',
         'price': 'str',
         'role': 'str',
+        'text': 'str',
+        'fee': 'str',
+        'point_fee': 'str',
     }
 
     attribute_map = {
@@ -50,6 +53,9 @@ class MyFuturesTrade(object):
         'size': 'size',
         'price': 'price',
         'role': 'role',
+        'text': 'text',
+        'fee': 'fee',
+        'point_fee': 'point_fee',
     }
 
     def __init__(
@@ -61,9 +67,12 @@ class MyFuturesTrade(object):
         size=None,
         price=None,
         role=None,
+        text=None,
+        fee=None,
+        point_fee=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, float, str, str, int, str, str, Configuration) -> None
+        # type: (int, float, str, str, int, str, str, str, str, str, Configuration) -> None
         """MyFuturesTrade - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +85,9 @@ class MyFuturesTrade(object):
         self._size = None
         self._price = None
         self._role = None
+        self._text = None
+        self._fee = None
+        self._point_fee = None
         self.discriminator = None
 
         if id is not None:
@@ -92,6 +104,12 @@ class MyFuturesTrade(object):
             self.price = price
         if role is not None:
             self.role = role
+        if text is not None:
+            self.text = text
+        if fee is not None:
+            self.fee = fee
+        if point_fee is not None:
+            self.point_fee = point_fee
 
     @property
     def id(self):
@@ -258,6 +276,75 @@ class MyFuturesTrade(object):
             )
 
         self._role = role
+
+    @property
+    def text(self):
+        """Gets the text of this MyFuturesTrade.  # noqa: E501
+
+        User defined information  # noqa: E501
+
+        :return: The text of this MyFuturesTrade.  # noqa: E501
+        :rtype: str
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """Sets the text of this MyFuturesTrade.
+
+        User defined information  # noqa: E501
+
+        :param text: The text of this MyFuturesTrade.  # noqa: E501
+        :type: str
+        """
+
+        self._text = text
+
+    @property
+    def fee(self):
+        """Gets the fee of this MyFuturesTrade.  # noqa: E501
+
+        Fee deducted  # noqa: E501
+
+        :return: The fee of this MyFuturesTrade.  # noqa: E501
+        :rtype: str
+        """
+        return self._fee
+
+    @fee.setter
+    def fee(self, fee):
+        """Sets the fee of this MyFuturesTrade.
+
+        Fee deducted  # noqa: E501
+
+        :param fee: The fee of this MyFuturesTrade.  # noqa: E501
+        :type: str
+        """
+
+        self._fee = fee
+
+    @property
+    def point_fee(self):
+        """Gets the point_fee of this MyFuturesTrade.  # noqa: E501
+
+        Points used to deduct fee  # noqa: E501
+
+        :return: The point_fee of this MyFuturesTrade.  # noqa: E501
+        :rtype: str
+        """
+        return self._point_fee
+
+    @point_fee.setter
+    def point_fee(self, point_fee):
+        """Sets the point_fee of this MyFuturesTrade.
+
+        Points used to deduct fee  # noqa: E501
+
+        :param point_fee: The point_fee of this MyFuturesTrade.  # noqa: E501
+        :type: str
+        """
+
+        self._point_fee = point_fee
 
     def to_dict(self):
         """Returns the model properties as a dict"""

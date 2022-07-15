@@ -45,6 +45,8 @@ class Position(object):
         'entry_price': 'str',
         'liq_price': 'str',
         'mark_price': 'str',
+        'initial_margin': 'str',
+        'maintenance_margin': 'str',
         'unrealised_pnl': 'str',
         'realised_pnl': 'str',
         'history_pnl': 'str',
@@ -71,6 +73,8 @@ class Position(object):
         'entry_price': 'entry_price',
         'liq_price': 'liq_price',
         'mark_price': 'mark_price',
+        'initial_margin': 'initial_margin',
+        'maintenance_margin': 'maintenance_margin',
         'unrealised_pnl': 'unrealised_pnl',
         'realised_pnl': 'realised_pnl',
         'history_pnl': 'history_pnl',
@@ -98,6 +102,8 @@ class Position(object):
         entry_price=None,
         liq_price=None,
         mark_price=None,
+        initial_margin=None,
+        maintenance_margin=None,
         unrealised_pnl=None,
         realised_pnl=None,
         history_pnl=None,
@@ -111,7 +117,7 @@ class Position(object):
         cross_leverage_limit=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, PositionCloseOrder, str, str, Configuration) -> None
+        # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, PositionCloseOrder, str, str, Configuration) -> None
         """Position - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -129,6 +135,8 @@ class Position(object):
         self._entry_price = None
         self._liq_price = None
         self._mark_price = None
+        self._initial_margin = None
+        self._maintenance_margin = None
         self._unrealised_pnl = None
         self._realised_pnl = None
         self._history_pnl = None
@@ -166,6 +174,10 @@ class Position(object):
             self.liq_price = liq_price
         if mark_price is not None:
             self.mark_price = mark_price
+        if initial_margin is not None:
+            self.initial_margin = initial_margin
+        if maintenance_margin is not None:
+            self.maintenance_margin = maintenance_margin
         if unrealised_pnl is not None:
             self.unrealised_pnl = unrealised_pnl
         if realised_pnl is not None:
@@ -463,6 +475,52 @@ class Position(object):
         """
 
         self._mark_price = mark_price
+
+    @property
+    def initial_margin(self):
+        """Gets the initial_margin of this Position.  # noqa: E501
+
+        The initial margin occupied by the position, applicable to the portfolio margin account  # noqa: E501
+
+        :return: The initial_margin of this Position.  # noqa: E501
+        :rtype: str
+        """
+        return self._initial_margin
+
+    @initial_margin.setter
+    def initial_margin(self, initial_margin):
+        """Sets the initial_margin of this Position.
+
+        The initial margin occupied by the position, applicable to the portfolio margin account  # noqa: E501
+
+        :param initial_margin: The initial_margin of this Position.  # noqa: E501
+        :type: str
+        """
+
+        self._initial_margin = initial_margin
+
+    @property
+    def maintenance_margin(self):
+        """Gets the maintenance_margin of this Position.  # noqa: E501
+
+        Maintenance margin required for the position, applicable to portfolio margin account  # noqa: E501
+
+        :return: The maintenance_margin of this Position.  # noqa: E501
+        :rtype: str
+        """
+        return self._maintenance_margin
+
+    @maintenance_margin.setter
+    def maintenance_margin(self, maintenance_margin):
+        """Sets the maintenance_margin of this Position.
+
+        Maintenance margin required for the position, applicable to portfolio margin account  # noqa: E501
+
+        :param maintenance_margin: The maintenance_margin of this Position.  # noqa: E501
+        :type: str
+        """
+
+        self._maintenance_margin = maintenance_margin
 
     @property
     def unrealised_pnl(self):

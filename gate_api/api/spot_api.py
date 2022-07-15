@@ -438,6 +438,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency_pair: Currency pair
+        :param str timezone: Timezone
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -463,6 +464,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency_pair: Currency pair
+        :param str timezone: Timezone
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -479,7 +481,7 @@ class SpotApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair']
+        all_params = ['currency_pair', 'timezone']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -495,6 +497,8 @@ class SpotApi(object):
         query_params = []
         if 'currency_pair' in local_var_params and local_var_params['currency_pair'] is not None:  # noqa: E501
             query_params.append(('currency_pair', local_var_params['currency_pair']))  # noqa: E501
+        if 'timezone' in local_var_params and local_var_params['timezone'] is not None:  # noqa: E501
+            query_params.append(('timezone', local_var_params['timezone']))  # noqa: E501
 
         header_params = {}
 
@@ -1245,7 +1249,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param int page: Page number
         :param int limit: Maximum number of records returned in one page in each currency pair
-        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1272,7 +1276,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param int page: Page number
         :param int limit: Maximum number of records returned in one page in each currency pair
-        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1358,6 +1362,119 @@ class SpotApi(object):
             collection_formats=collection_formats,
         )
 
+    def create_cross_liquidate_order(self, liquidate_order, **kwargs):  # noqa: E501
+        """close position when cross-currency is disabled  # noqa: E501
+
+        Currently, only cross-margin accounts are supported to close position when cross currencies are disabled.  Maximum buy quantity = (unpaid principal and interest - currency balance - the amount of the currency in the order book) / 0.998  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_cross_liquidate_order(liquidate_order, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param LiquidateOrder liquidate_order: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: gate_api.Order
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.create_cross_liquidate_order_with_http_info(liquidate_order, **kwargs)  # noqa: E501
+
+    def create_cross_liquidate_order_with_http_info(self, liquidate_order, **kwargs):  # noqa: E501
+        """close position when cross-currency is disabled  # noqa: E501
+
+        Currently, only cross-margin accounts are supported to close position when cross currencies are disabled.  Maximum buy quantity = (unpaid principal and interest - currency balance - the amount of the currency in the order book) / 0.998  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_cross_liquidate_order_with_http_info(liquidate_order, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param LiquidateOrder liquidate_order: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(gate_api.Order, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['liquidate_order']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'" " to method create_cross_liquidate_order" % k
+                )
+            local_var_params[k] = v
+        del local_var_params['kwargs']
+        # verify the required parameter 'liquidate_order' is set
+        if self.api_client.client_side_validation and (
+            'liquidate_order' not in local_var_params or local_var_params['liquidate_order'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `liquidate_order` when calling `create_cross_liquidate_order`"
+            )  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'liquidate_order' in local_var_params:
+            body_params = local_var_params['liquidate_order']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json']
+        )  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiv4']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/spot/cross_liquidate_orders',
+            'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Order',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+        )
+
     def list_orders(self, currency_pair, status, **kwargs):  # noqa: E501
         """List orders  # noqa: E501
 
@@ -1372,7 +1489,7 @@ class SpotApi(object):
         :param str status: List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled  (required)
         :param int page: Page number
         :param int limit: Maximum number of records to be returned. If `status` is `open`, maximum of `limit` is 100
-        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param int _from: Start timestamp of the query
         :param int to: Time range ending, default to current time
         :param str side: All bids or asks. Both included if not specified
@@ -1404,7 +1521,7 @@ class SpotApi(object):
         :param str status: List orders based on status  `open` - order is waiting to be filled `finished` - order has been filled or cancelled  (required)
         :param int page: Page number
         :param int limit: Maximum number of records to be returned. If `status` is `open`, maximum of `limit` is 100
-        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param int _from: Start timestamp of the query
         :param int to: Time range ending, default to current time
         :param str side: All bids or asks. Both included if not specified
@@ -1636,7 +1753,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param str currency_pair: Currency pair (required)
         :param str side: All bids or asks. Both included if not specified
-        :param str account: Specify account type. Default to all account types being included
+        :param str account: Specify account type  - classic account：Default to all account types being included   - portfolio margin account：`cross_margin` only
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1663,7 +1780,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param str currency_pair: Currency pair (required)
         :param str side: All bids or asks. Both included if not specified
-        :param str account: Specify account type. Default to all account types being included
+        :param str account: Specify account type  - classic account：Default to all account types being included   - portfolio margin account：`cross_margin` only
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1852,7 +1969,7 @@ class SpotApi(object):
     def get_order(self, order_id, currency_pair, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
 
-        Spot and margin orders are queried by default. If cross margin orders are needed, `account` must be set to `cross_margin`  # noqa: E501
+        Spot and margin orders are queried by default. If cross margin orders are needed or portfolio margin account are used, account must be set to cross_margin.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_order(order_id, currency_pair, async_req=True)
@@ -1861,7 +1978,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
-        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1879,7 +1996,7 @@ class SpotApi(object):
     def get_order_with_http_info(self, order_id, currency_pair, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
 
-        Spot and margin orders are queried by default. If cross margin orders are needed, `account` must be set to `cross_margin`  # noqa: E501
+        Spot and margin orders are queried by default. If cross margin orders are needed or portfolio margin account are used, account must be set to cross_margin.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_order_with_http_info(order_id, currency_pair, async_req=True)
@@ -1888,7 +2005,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
-        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1969,7 +2086,7 @@ class SpotApi(object):
     def cancel_order(self, order_id, currency_pair, **kwargs):  # noqa: E501
         """Cancel a single order  # noqa: E501
 
-        Spot and margin orders are cancelled by default. If trying to cancel cross margin orders, `account` must be set to `cross_margin`  # noqa: E501
+        Spot and margin orders are cancelled by default. If trying to cancel cross margin orders or portfolio margin account are used, account must be set to cross_margin  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_order(order_id, currency_pair, async_req=True)
@@ -1978,7 +2095,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
-        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1996,7 +2113,7 @@ class SpotApi(object):
     def cancel_order_with_http_info(self, order_id, currency_pair, **kwargs):  # noqa: E501
         """Cancel a single order  # noqa: E501
 
-        Spot and margin orders are cancelled by default. If trying to cancel cross margin orders, `account` must be set to `cross_margin`  # noqa: E501
+        Spot and margin orders are cancelled by default. If trying to cancel cross margin orders or portfolio margin account are used, account must be set to cross_margin  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.cancel_order_with_http_info(order_id, currency_pair, async_req=True)
@@ -2005,7 +2122,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
-        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2099,7 +2216,7 @@ class SpotApi(object):
         :param int limit: Maximum number of records to be returned in a single list
         :param int page: Page number
         :param str order_id: Filter trades with specified order ID. `currency_pair` is also required if this field is present
-        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param int _from: Start timestamp of the query
         :param int to: Time range ending, default to current time
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2130,7 +2247,7 @@ class SpotApi(object):
         :param int limit: Maximum number of records to be returned in a single list
         :param int page: Page number
         :param str order_id: Filter trades with specified order ID. `currency_pair` is also required if this field is present
-        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account
+        :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param int _from: Start timestamp of the query
         :param int to: Time range ending, default to current time
         :param _return_http_data_only: response data without head status code
@@ -2225,6 +2342,99 @@ class SpotApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='list[Trade]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+        )
+
+    def get_system_time(self, **kwargs):  # noqa: E501
+        """Get server current time  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_system_time(async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: gate_api.SystemTime
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_system_time_with_http_info(**kwargs)  # noqa: E501
+
+    def get_system_time_with_http_info(self, **kwargs):  # noqa: E501
+        """Get server current time  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_system_time_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(gate_api.SystemTime, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = []
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_system_time" % k)
+            local_var_params[k] = v
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/spot/time',
+            'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SystemTime',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -2695,7 +2905,7 @@ class SpotApi(object):
         )
 
     def cancel_spot_price_triggered_order(self, order_id, **kwargs):  # noqa: E501
-        """Cancel a single order  # noqa: E501
+        """cancel a price-triggered order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2719,7 +2929,7 @@ class SpotApi(object):
         return self.cancel_spot_price_triggered_order_with_http_info(order_id, **kwargs)  # noqa: E501
 
     def cancel_spot_price_triggered_order_with_http_info(self, order_id, **kwargs):  # noqa: E501
-        """Cancel a single order  # noqa: E501
+        """cancel a price-triggered order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

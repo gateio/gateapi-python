@@ -40,6 +40,12 @@ class CrossMarginAccount(object):
         'borrowed': 'str',
         'interest': 'str',
         'risk': 'str',
+        'total_initial_margin': 'str',
+        'total_margin_balance': 'str',
+        'total_maintenance_margin': 'str',
+        'total_initial_margin_rate': 'str',
+        'total_maintenance_margin_rate': 'str',
+        'total_available_margin': 'str',
     }
 
     attribute_map = {
@@ -50,6 +56,12 @@ class CrossMarginAccount(object):
         'borrowed': 'borrowed',
         'interest': 'interest',
         'risk': 'risk',
+        'total_initial_margin': 'total_initial_margin',
+        'total_margin_balance': 'total_margin_balance',
+        'total_maintenance_margin': 'total_maintenance_margin',
+        'total_initial_margin_rate': 'total_initial_margin_rate',
+        'total_maintenance_margin_rate': 'total_maintenance_margin_rate',
+        'total_available_margin': 'total_available_margin',
     }
 
     def __init__(
@@ -61,9 +73,15 @@ class CrossMarginAccount(object):
         borrowed=None,
         interest=None,
         risk=None,
+        total_initial_margin=None,
+        total_margin_balance=None,
+        total_maintenance_margin=None,
+        total_initial_margin_rate=None,
+        total_maintenance_margin_rate=None,
+        total_available_margin=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, bool, dict(str, CrossMarginBalance), str, str, str, str, Configuration) -> None
+        # type: (int, bool, dict(str, CrossMarginBalance), str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """CrossMarginAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +94,12 @@ class CrossMarginAccount(object):
         self._borrowed = None
         self._interest = None
         self._risk = None
+        self._total_initial_margin = None
+        self._total_margin_balance = None
+        self._total_maintenance_margin = None
+        self._total_initial_margin_rate = None
+        self._total_maintenance_margin_rate = None
+        self._total_available_margin = None
         self.discriminator = None
 
         if user_id is not None:
@@ -92,6 +116,18 @@ class CrossMarginAccount(object):
             self.interest = interest
         if risk is not None:
             self.risk = risk
+        if total_initial_margin is not None:
+            self.total_initial_margin = total_initial_margin
+        if total_margin_balance is not None:
+            self.total_margin_balance = total_margin_balance
+        if total_maintenance_margin is not None:
+            self.total_maintenance_margin = total_maintenance_margin
+        if total_initial_margin_rate is not None:
+            self.total_initial_margin_rate = total_initial_margin_rate
+        if total_maintenance_margin_rate is not None:
+            self.total_maintenance_margin_rate = total_maintenance_margin_rate
+        if total_available_margin is not None:
+            self.total_available_margin = total_available_margin
 
     @property
     def user_id(self):
@@ -251,6 +287,144 @@ class CrossMarginAccount(object):
         """
 
         self._risk = risk
+
+    @property
+    def total_initial_margin(self):
+        """Gets the total_initial_margin of this CrossMarginAccount.  # noqa: E501
+
+        Total initial margin  # noqa: E501
+
+        :return: The total_initial_margin of this CrossMarginAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._total_initial_margin
+
+    @total_initial_margin.setter
+    def total_initial_margin(self, total_initial_margin):
+        """Sets the total_initial_margin of this CrossMarginAccount.
+
+        Total initial margin  # noqa: E501
+
+        :param total_initial_margin: The total_initial_margin of this CrossMarginAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._total_initial_margin = total_initial_margin
+
+    @property
+    def total_margin_balance(self):
+        """Gets the total_margin_balance of this CrossMarginAccount.  # noqa: E501
+
+        Total margin balance  # noqa: E501
+
+        :return: The total_margin_balance of this CrossMarginAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._total_margin_balance
+
+    @total_margin_balance.setter
+    def total_margin_balance(self, total_margin_balance):
+        """Sets the total_margin_balance of this CrossMarginAccount.
+
+        Total margin balance  # noqa: E501
+
+        :param total_margin_balance: The total_margin_balance of this CrossMarginAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._total_margin_balance = total_margin_balance
+
+    @property
+    def total_maintenance_margin(self):
+        """Gets the total_maintenance_margin of this CrossMarginAccount.  # noqa: E501
+
+        Total maintenance margin  # noqa: E501
+
+        :return: The total_maintenance_margin of this CrossMarginAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._total_maintenance_margin
+
+    @total_maintenance_margin.setter
+    def total_maintenance_margin(self, total_maintenance_margin):
+        """Sets the total_maintenance_margin of this CrossMarginAccount.
+
+        Total maintenance margin  # noqa: E501
+
+        :param total_maintenance_margin: The total_maintenance_margin of this CrossMarginAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._total_maintenance_margin = total_maintenance_margin
+
+    @property
+    def total_initial_margin_rate(self):
+        """Gets the total_initial_margin_rate of this CrossMarginAccount.  # noqa: E501
+
+        Total initial margin rate  # noqa: E501
+
+        :return: The total_initial_margin_rate of this CrossMarginAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._total_initial_margin_rate
+
+    @total_initial_margin_rate.setter
+    def total_initial_margin_rate(self, total_initial_margin_rate):
+        """Sets the total_initial_margin_rate of this CrossMarginAccount.
+
+        Total initial margin rate  # noqa: E501
+
+        :param total_initial_margin_rate: The total_initial_margin_rate of this CrossMarginAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._total_initial_margin_rate = total_initial_margin_rate
+
+    @property
+    def total_maintenance_margin_rate(self):
+        """Gets the total_maintenance_margin_rate of this CrossMarginAccount.  # noqa: E501
+
+        Total maintenance margin rate  # noqa: E501
+
+        :return: The total_maintenance_margin_rate of this CrossMarginAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._total_maintenance_margin_rate
+
+    @total_maintenance_margin_rate.setter
+    def total_maintenance_margin_rate(self, total_maintenance_margin_rate):
+        """Sets the total_maintenance_margin_rate of this CrossMarginAccount.
+
+        Total maintenance margin rate  # noqa: E501
+
+        :param total_maintenance_margin_rate: The total_maintenance_margin_rate of this CrossMarginAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._total_maintenance_margin_rate = total_maintenance_margin_rate
+
+    @property
+    def total_available_margin(self):
+        """Gets the total_available_margin of this CrossMarginAccount.  # noqa: E501
+
+        Total available margin  # noqa: E501
+
+        :return: The total_available_margin of this CrossMarginAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._total_available_margin
+
+    @total_available_margin.setter
+    def total_available_margin(self, total_available_margin):
+        """Sets the total_available_margin of this CrossMarginAccount.
+
+        Total available margin  # noqa: E501
+
+        :param total_available_margin: The total_available_margin of this CrossMarginAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._total_available_margin = total_available_margin
 
     def to_dict(self):
         """Returns the model properties as a dict"""

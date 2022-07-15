@@ -33,7 +33,7 @@ Method | HTTP request | Description
 [**create_cross_margin_loan**](MarginApi.md#create_cross_margin_loan) | **POST** /margin/cross/loans | Create a cross margin borrow loan
 [**get_cross_margin_loan**](MarginApi.md#get_cross_margin_loan) | **GET** /margin/cross/loans/{loan_id} | Retrieve single borrow loan detail
 [**list_cross_margin_repayments**](MarginApi.md#list_cross_margin_repayments) | **GET** /margin/cross/repayments | Retrieve cross margin repayments
-[**repay_cross_margin_loan**](MarginApi.md#repay_cross_margin_loan) | **POST** /margin/cross/repayments | Repay cross margin loan
+[**repay_cross_margin_loan**](MarginApi.md#repay_cross_margin_loan) | **POST** /margin/cross/repayments | When the liquidity of the currency is insufficient and the transaction risk is high, the currency will be disabled, and funds cannot be transferred.When the available balance of cross-margin is insufficient, the balance of the spot account can be used for repayment. Please ensure that the balance of the spot account is sufficient, and system uses cross-margin account for repayment first
 [**get_cross_margin_transferable**](MarginApi.md#get_cross_margin_transferable) | **GET** /margin/cross/transferable | Get the max transferable amount for a specific cross margin currency
 [**get_cross_margin_borrowable**](MarginApi.md#get_cross_margin_borrowable) | **GET** /margin/cross/borrowable | Get the max borrowable amount for a specific cross margin currency
 
@@ -2013,7 +2013,7 @@ Name | Type | Description  | Notes
 # **repay_cross_margin_loan**
 > list[CrossMarginLoan] repay_cross_margin_loan(cross_margin_repay_request)
 
-Repay cross margin loan
+When the liquidity of the currency is insufficient and the transaction risk is high, the currency will be disabled, and funds cannot be transferred.When the available balance of cross-margin is insufficient, the balance of the spot account can be used for repayment. Please ensure that the balance of the spot account is sufficient, and system uses cross-margin account for repayment first
 
 ### Example
 
@@ -2042,7 +2042,7 @@ api_instance = gate_api.MarginApi(api_client)
 cross_margin_repay_request = gate_api.CrossMarginRepayRequest() # CrossMarginRepayRequest | 
 
 try:
-    # Repay cross margin loan
+    # When the liquidity of the currency is insufficient and the transaction risk is high, the currency will be disabled, and funds cannot be transferred.When the available balance of cross-margin is insufficient, the balance of the spot account can be used for repayment. Please ensure that the balance of the spot account is sufficient, and system uses cross-margin account for repayment first
     api_response = api_instance.repay_cross_margin_loan(cross_margin_repay_request)
     print(api_response)
 except GateApiException as ex:

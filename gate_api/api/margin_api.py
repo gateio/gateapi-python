@@ -3304,7 +3304,7 @@ class MarginApi(object):
         )
 
     def repay_cross_margin_loan(self, cross_margin_repay_request, **kwargs):  # noqa: E501
-        """Repay cross margin loan  # noqa: E501
+        """When the liquidity of the currency is insufficient and the transaction risk is high, the currency will be disabled, and funds cannot be transferred.When the available balance of cross-margin is insufficient, the balance of the spot account can be used for repayment. Please ensure that the balance of the spot account is sufficient, and system uses cross-margin account for repayment first  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -3328,7 +3328,7 @@ class MarginApi(object):
         return self.repay_cross_margin_loan_with_http_info(cross_margin_repay_request, **kwargs)  # noqa: E501
 
     def repay_cross_margin_loan_with_http_info(self, cross_margin_repay_request, **kwargs):  # noqa: E501
-        """Repay cross margin loan  # noqa: E501
+        """When the liquidity of the currency is insufficient and the transaction risk is high, the currency will be disabled, and funds cannot be transferred.When the available balance of cross-margin is insufficient, the balance of the spot account can be used for repayment. Please ensure that the balance of the spot account is sufficient, and system uses cross-margin account for repayment first  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
