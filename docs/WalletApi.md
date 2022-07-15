@@ -15,6 +15,8 @@ Method | HTTP request | Description
 [**list_sub_account_balances**](WalletApi.md#list_sub_account_balances) | **GET** /wallet/sub_account_balances | Retrieve sub account balances
 [**list_sub_account_margin_balances**](WalletApi.md#list_sub_account_margin_balances) | **GET** /wallet/sub_account_margin_balances | Query sub accounts&#39; margin balances
 [**list_sub_account_futures_balances**](WalletApi.md#list_sub_account_futures_balances) | **GET** /wallet/sub_account_futures_balances | Query sub accounts&#39; futures account balances
+[**list_sub_account_cross_margin_balances**](WalletApi.md#list_sub_account_cross_margin_balances) | **GET** /wallet/sub_account_cross_margin_balances | Query subaccount&#39;s cross_margin account info
+[**list_saved_address**](WalletApi.md#list_saved_address) | **GET** /wallet/saved_address | Query saved address
 [**get_trade_fee**](WalletApi.md#get_trade_fee) | **GET** /wallet/fee | Retrieve personal trading fee
 [**get_total_balance**](WalletApi.md#get_total_balance) | **GET** /wallet/total_balance | Retrieve user&#39;s total balances
 
@@ -299,7 +301,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **transfer**
-> transfer(transfer)
+> TransactionID transfer(transfer)
 
 Transfer between trading accounts
 
@@ -333,7 +335,8 @@ transfer = gate_api.Transfer() # Transfer |
 
 try:
     # Transfer between trading accounts
-    api_instance.transfer(transfer)
+    api_response = api_instance.transfer(transfer)
+    print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
@@ -348,7 +351,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**TransactionID**](TransactionID.md)
 
 ### Authorization
 
@@ -357,12 +360,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Balance transferred |  -  |
+**200** | Balance transferred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -764,6 +767,144 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[SubAccountFuturesBalance]**](SubAccountFuturesBalance.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_sub_account_cross_margin_balances**
+> list[SubAccountCrossMarginBalance] list_sub_account_cross_margin_balances(sub_uid=sub_uid)
+
+Query subaccount's cross_margin account info
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
+sub_uid = '10003' # str | Sub account user ID. Return records related to all sub accounts if not specified (optional)
+
+try:
+    # Query subaccount's cross_margin account info
+    api_response = api_instance.list_sub_account_cross_margin_balances(sub_uid=sub_uid)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling WalletApi->list_sub_account_cross_margin_balances: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sub_uid** | **str**| Sub account user ID. Return records related to all sub accounts if not specified | [optional] 
+
+### Return type
+
+[**list[SubAccountCrossMarginBalance]**](SubAccountCrossMarginBalance.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_saved_address**
+> list[SavedAddress] list_saved_address(currency, chain=chain, limit=limit)
+
+Query saved address
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
+currency = 'USDT' # str | Currency
+chain = '' # str | Chain name (optional) (default to '')
+limit = '50' # str | Maximum number returned, 100 at most (optional) (default to '50')
+
+try:
+    # Query saved address
+    api_response = api_instance.list_saved_address(currency, chain=chain, limit=limit)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling WalletApi->list_saved_address: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency** | **str**| Currency | 
+ **chain** | **str**| Chain name | [optional] [default to &#39;&#39;]
+ **limit** | **str**| Maximum number returned, 100 at most | [optional] [default to &#39;50&#39;]
+
+### Return type
+
+[**list[SavedAddress]**](SavedAddress.md)
 
 ### Authorization
 

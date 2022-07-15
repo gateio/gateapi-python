@@ -2454,7 +2454,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param str status: Only list the orders with this status (required)
         :param str market: Currency pair
-        :param str account: Trading account
+        :param str account: Trading account type.  Portfolio margin account must set to `cross_margin`
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2482,7 +2482,7 @@ class SpotApi(object):
         :param bool async_req: execute request asynchronously
         :param str status: Only list the orders with this status (required)
         :param str market: Currency pair
-        :param str account: Trading account
+        :param str account: Trading account type.  Portfolio margin account must set to `cross_margin`
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param _return_http_data_only: response data without head status code
@@ -2705,7 +2705,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str market: Currency pair
-        :param str account: Trading account
+        :param str account: Trading account type.  Portfolio margin account must set to `cross_margin`
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2730,7 +2730,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str market: Currency pair
-        :param str account: Trading account
+        :param str account: Trading account type.  Portfolio margin account must set to `cross_margin`
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

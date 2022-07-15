@@ -40,6 +40,7 @@ class MarginCurrencyPair(object):
         'min_base_amount': 'str',
         'min_quote_amount': 'str',
         'max_quote_amount': 'str',
+        'status': 'int',
     }
 
     attribute_map = {
@@ -50,6 +51,7 @@ class MarginCurrencyPair(object):
         'min_base_amount': 'min_base_amount',
         'min_quote_amount': 'min_quote_amount',
         'max_quote_amount': 'max_quote_amount',
+        'status': 'status',
     }
 
     def __init__(
@@ -61,9 +63,10 @@ class MarginCurrencyPair(object):
         min_base_amount=None,
         min_quote_amount=None,
         max_quote_amount=None,
+        status=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, int, str, str, str, Configuration) -> None
+        # type: (str, str, str, int, str, str, str, int, Configuration) -> None
         """MarginCurrencyPair - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +79,7 @@ class MarginCurrencyPair(object):
         self._min_base_amount = None
         self._min_quote_amount = None
         self._max_quote_amount = None
+        self._status = None
         self.discriminator = None
 
         if id is not None:
@@ -92,6 +96,8 @@ class MarginCurrencyPair(object):
             self.min_quote_amount = min_quote_amount
         if max_quote_amount is not None:
             self.max_quote_amount = max_quote_amount
+        if status is not None:
+            self.status = status
 
     @property
     def id(self):
@@ -253,6 +259,29 @@ class MarginCurrencyPair(object):
         """
 
         self._max_quote_amount = max_quote_amount
+
+    @property
+    def status(self):
+        """Gets the status of this MarginCurrencyPair.  # noqa: E501
+
+        Currency pair status   - `0`: disabled  - `1`: enabled  # noqa: E501
+
+        :return: The status of this MarginCurrencyPair.  # noqa: E501
+        :rtype: int
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this MarginCurrencyPair.
+
+        Currency pair status   - `0`: disabled  - `1`: enabled  # noqa: E501
+
+        :param status: The status of this MarginCurrencyPair.  # noqa: E501
+        :type: int
+        """
+
+        self._status = status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

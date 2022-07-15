@@ -190,7 +190,7 @@ class SpotPricePutOrder(object):
     def account(self):
         """Gets the account of this SpotPricePutOrder.  # noqa: E501
 
-        Trading type  - normal: spot trading - margin: margin trading  # noqa: E501
+        Trading account type.  Portfolio margin account must set to `cross_margin`  - normal: spot trading - margin: margin trading - cross_margin: cross_margin trading   # noqa: E501
 
         :return: The account of this SpotPricePutOrder.  # noqa: E501
         :rtype: str
@@ -201,14 +201,14 @@ class SpotPricePutOrder(object):
     def account(self, account):
         """Sets the account of this SpotPricePutOrder.
 
-        Trading type  - normal: spot trading - margin: margin trading  # noqa: E501
+        Trading account type.  Portfolio margin account must set to `cross_margin`  - normal: spot trading - margin: margin trading - cross_margin: cross_margin trading   # noqa: E501
 
         :param account: The account of this SpotPricePutOrder.  # noqa: E501
         :type: str
         """
         if self.local_vars_configuration.client_side_validation and account is None:  # noqa: E501
             raise ValueError("Invalid value for `account`, must not be `None`")  # noqa: E501
-        allowed_values = ["normal", "margin"]  # noqa: E501
+        allowed_values = ["normal", "margin", "cross_margin"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and account not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `account` ({0}), must be one of {1}".format(account, allowed_values)  # noqa: E501

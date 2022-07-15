@@ -1479,7 +1479,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.SpotApi(api_client)
 status = 'status_example' # str | Only list the orders with this status
 market = 'BTC_USDT' # str | Currency pair (optional)
-account = 'account_example' # str | Trading account (optional)
+account = 'account_example' # str | Trading account type.  Portfolio margin account must set to `cross_margin` (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
@@ -1499,7 +1499,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **status** | **str**| Only list the orders with this status | 
  **market** | **str**| Currency pair | [optional] 
- **account** | **str**| Trading account | [optional] 
+ **account** | **str**| Trading account type.  Portfolio margin account must set to &#x60;cross_margin&#x60; | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
@@ -1620,7 +1620,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 market = 'BTC_USDT' # str | Currency pair (optional)
-account = 'account_example' # str | Trading account (optional)
+account = 'account_example' # str | Trading account type.  Portfolio margin account must set to `cross_margin` (optional)
 
 try:
     # Cancel all open orders
@@ -1637,7 +1637,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **market** | **str**| Currency pair | [optional] 
- **account** | **str**| Trading account | [optional] 
+ **account** | **str**| Trading account type.  Portfolio margin account must set to &#x60;cross_margin&#x60; | [optional] 
 
 ### Return type
 
