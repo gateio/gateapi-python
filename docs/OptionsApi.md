@@ -11,10 +11,10 @@ Method | HTTP request | Description
 [**list_options_settlements**](OptionsApi.md#list_options_settlements) | **GET** /options/settlements | List settlement history
 [**get_options_settlement**](OptionsApi.md#get_options_settlement) | **GET** /options/settlements/{contract} | Get specified contract&#39;s settlement
 [**list_my_options_settlements**](OptionsApi.md#list_my_options_settlements) | **GET** /options/my_settlements | List my options settlements
-[**list_options_order_book**](OptionsApi.md#list_options_order_book) | **GET** /options/order_book | Futures order book
+[**list_options_order_book**](OptionsApi.md#list_options_order_book) | **GET** /options/order_book | Options order book
 [**list_options_tickers**](OptionsApi.md#list_options_tickers) | **GET** /options/tickers | List tickers of options contracts
 [**list_options_underlying_tickers**](OptionsApi.md#list_options_underlying_tickers) | **GET** /options/underlying/tickers/{underlying} | Get underlying ticker
-[**list_options_candlesticks**](OptionsApi.md#list_options_candlesticks) | **GET** /options/candlesticks | Get futures candlesticks
+[**list_options_candlesticks**](OptionsApi.md#list_options_candlesticks) | **GET** /options/candlesticks | Get options candlesticks
 [**list_options_underlying_candlesticks**](OptionsApi.md#list_options_underlying_candlesticks) | **GET** /options/underlying/candlesticks | Mark price candlesticks of an underlying
 [**list_options_trades**](OptionsApi.md#list_options_trades) | **GET** /options/trades | Options trade history
 [**list_options_account**](OptionsApi.md#list_options_account) | **GET** /options/accounts | List options account
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 [**list_options_positions**](OptionsApi.md#list_options_positions) | **GET** /options/positions | List user&#39;s positions of specified underlying
 [**get_options_position**](OptionsApi.md#get_options_position) | **GET** /options/positions/{contract} | Get specified contract position
 [**list_options_position_close**](OptionsApi.md#list_options_position_close) | **GET** /options/position_close | List user&#39;s liquidation history of specified underlying
-[**list_options_orders**](OptionsApi.md#list_options_orders) | **GET** /options/orders | List futures orders
+[**list_options_orders**](OptionsApi.md#list_options_orders) | **GET** /options/orders | List options orders
 [**create_options_order**](OptionsApi.md#create_options_order) | **POST** /options/orders | Create an options order
 [**cancel_options_orders**](OptionsApi.md#cancel_options_orders) | **DELETE** /options/orders | Cancel all &#x60;open&#x60; orders matched
 [**get_options_order**](OptionsApi.md#get_options_order) | **GET** /options/orders/{order_id} | Get a single order
@@ -104,7 +104,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
-underlying = 'BTC_USDT' # str | Underlying
+underlying = 'BTC_USDT' # str | Underlying (Obtained by listing underlying endpoint)
 
 try:
     # List all expiration times
@@ -120,7 +120,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **underlying** | **str**| Underlying | 
+ **underlying** | **str**| Underlying (Obtained by listing underlying endpoint) | 
 
 ### Return type
 
@@ -162,7 +162,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
-underlying = 'BTC_USDT' # str | Underlying
+underlying = 'BTC_USDT' # str | Underlying (Obtained by listing underlying endpoint)
 expiration = 1636588800 # int | Unix timestamp of the expiration time (optional)
 
 try:
@@ -179,7 +179,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **underlying** | **str**| Underlying | 
+ **underlying** | **str**| Underlying (Obtained by listing underlying endpoint) | 
  **expiration** | **int**| Unix timestamp of the expiration time | [optional] 
 
 ### Return type
@@ -280,7 +280,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
-underlying = 'BTC_USDT' # str | Underlying
+underlying = 'BTC_USDT' # str | Underlying (Obtained by listing underlying endpoint)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 _from = 1547706332 # int | Start timestamp (optional)
@@ -300,7 +300,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **underlying** | **str**| Underlying | 
+ **underlying** | **str**| Underlying (Obtained by listing underlying endpoint) | 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **_from** | **int**| Start timestamp | [optional] 
@@ -347,7 +347,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
 contract = 'BTC_USDT-20211130-65000-C' # str | 
-underlying = 'BTC_USDT' # str | Underlying
+underlying = 'BTC_USDT' # str | Underlying (Obtained by listing underlying endpoint)
 at = 56 # int | 
 
 try:
@@ -365,7 +365,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contract** | **str**|  | 
- **underlying** | **str**| Underlying | 
+ **underlying** | **str**| Underlying (Obtained by listing underlying endpoint) | 
  **at** | **int**|  | 
 
 ### Return type
@@ -417,8 +417,8 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
-underlying = 'BTC_USDT' # str | Underlying
-contract = 'BTC_USDT-20210916-5000-C' # str | Contract name (optional)
+underlying = 'BTC_USDT' # str | Underlying (Obtained by listing underlying endpoint)
+contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 _from = 1547706332 # int | Start timestamp (optional)
@@ -438,8 +438,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **underlying** | **str**| Underlying | 
- **contract** | **str**| Contract name | [optional] 
+ **underlying** | **str**| Underlying (Obtained by listing underlying endpoint) | 
+ **contract** | **str**| Options contract name | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **_from** | **int**| Start timestamp | [optional] 
@@ -468,7 +468,7 @@ Name | Type | Description  | Notes
 # **list_options_order_book**
 > FuturesOrderBook list_options_order_book(contract, interval=interval, limit=limit, with_id=with_id)
 
-Futures order book
+Options order book
 
 Bids will be sorted by price from high to low, while asks sorted reversely
 
@@ -487,13 +487,13 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
-contract = 'BTC_USDT' # str | Futures contract
+contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name
 interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
 limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
 with_id = False # bool | Whether the order book update ID will be returned. This ID increases by 1 on every order book update (optional) (default to False)
 
 try:
-    # Futures order book
+    # Options order book
     api_response = api_instance.list_options_order_book(contract, interval=interval, limit=limit, with_id=with_id)
     print(api_response)
 except GateApiException as ex:
@@ -506,7 +506,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| Futures contract | 
+ **contract** | **str**| Options contract name | 
  **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
  **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
  **with_id** | **bool**| Whether the order book update ID will be returned. This ID increases by 1 on every order book update | [optional] [default to False]
@@ -551,7 +551,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
-underlying = 'BTC_USDT' # str | Underlying
+underlying = 'BTC_USDT' # str | Underlying (Obtained by listing underlying endpoint)
 
 try:
     # List tickers of options contracts
@@ -567,7 +567,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **underlying** | **str**| Underlying | 
+ **underlying** | **str**| Underlying (Obtained by listing underlying endpoint) | 
 
 ### Return type
 
@@ -648,9 +648,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_options_candlesticks**
-> list[FuturesCandlestick] list_options_candlesticks(contract, limit=limit, _from=_from, to=to, interval=interval)
+> list[OptionsCandlestick] list_options_candlesticks(contract, limit=limit, _from=_from, to=to, interval=interval)
 
-Get futures candlesticks
+Get options candlesticks
 
 ### Example
 
@@ -667,14 +667,14 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
-contract = 'BTC_USDT' # str | Futures contract
+contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
 interval = '5m' # str | Interval time between data points (optional) (default to '5m')
 
 try:
-    # Get futures candlesticks
+    # Get options candlesticks
     api_response = api_instance.list_options_candlesticks(contract, limit=limit, _from=_from, to=to, interval=interval)
     print(api_response)
 except GateApiException as ex:
@@ -687,7 +687,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| Futures contract | 
+ **contract** | **str**| Options contract name | 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **_from** | **int**| Start timestamp | [optional] 
  **to** | **int**| End timestamp | [optional] 
@@ -695,7 +695,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[FuturesCandlestick]**](FuturesCandlestick.md)
+[**list[OptionsCandlestick]**](OptionsCandlestick.md)
 
 ### Authorization
 
@@ -733,7 +733,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
-underlying = 'BTC_USDT' # str | Underlying
+underlying = 'BTC_USDT' # str | Underlying (Obtained by listing underlying endpoint)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
@@ -753,7 +753,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **underlying** | **str**| Underlying | 
+ **underlying** | **str**| Underlying (Obtained by listing underlying endpoint) | 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **_from** | **int**| Start timestamp | [optional] 
  **to** | **int**| End timestamp | [optional] 
@@ -799,7 +799,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
-contract = 'BTC_USDT-20210916-5000-C' # str | Contract name (optional)
+contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name (optional)
 type = '1546935600' # str | `C` is call, while `P` is put (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
@@ -820,7 +820,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| Contract name | [optional] 
+ **contract** | **str**| Options contract name | [optional] 
  **type** | **str**| &#x60;C&#x60; is call, while &#x60;P&#x60; is put | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
@@ -1148,8 +1148,8 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
-underlying = 'BTC_USDT' # str | Underlying
-contract = 'BTC_USDT-20210916-5000-C' # str | Contract name (optional)
+underlying = 'BTC_USDT' # str | Underlying (Obtained by listing underlying endpoint)
+contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name (optional)
 
 try:
     # List user's liquidation history of specified underlying
@@ -1165,8 +1165,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **underlying** | **str**| Underlying | 
- **contract** | **str**| Contract name | [optional] 
+ **underlying** | **str**| Underlying (Obtained by listing underlying endpoint) | 
+ **contract** | **str**| Options contract name | [optional] 
 
 ### Return type
 
@@ -1191,7 +1191,7 @@ Name | Type | Description  | Notes
 # **list_options_orders**
 > list[OptionsOrder] list_options_orders(status, contract=contract, underlying=underlying, limit=limit, offset=offset, _from=_from, to=to)
 
-List futures orders
+List options orders
 
 ### Example
 
@@ -1218,7 +1218,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
 status = 'open' # str | Only list the orders with this status
-contract = 'BTC_USDT-20210916-5000-C' # str | Contract name (optional)
+contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name (optional)
 underlying = 'BTC_USDT' # str | Underlying (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
@@ -1226,7 +1226,7 @@ _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
 
 try:
-    # List futures orders
+    # List options orders
     api_response = api_instance.list_options_orders(status, contract=contract, underlying=underlying, limit=limit, offset=offset, _from=_from, to=to)
     print(api_response)
 except GateApiException as ex:
@@ -1240,7 +1240,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **status** | **str**| Only list the orders with this status | 
- **contract** | **str**| Contract name | [optional] 
+ **contract** | **str**| Options contract name | [optional] 
  **underlying** | **str**| Underlying | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
@@ -1363,7 +1363,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
-contract = 'BTC_USDT-20210916-5000-C' # str | Contract name (optional)
+contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name (optional)
 underlying = 'BTC_USDT' # str | Underlying (optional)
 side = 'ask' # str | All bids or asks. Both included if not specified (optional)
 
@@ -1381,7 +1381,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contract** | **str**| Contract name | [optional] 
+ **contract** | **str**| Options contract name | [optional] 
  **underlying** | **str**| Underlying | [optional] 
  **side** | **str**| All bids or asks. Both included if not specified | [optional] 
 
@@ -1568,8 +1568,8 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.OptionsApi(api_client)
-underlying = 'BTC_USDT' # str | Underlying
-contract = 'BTC_USDT-20210916-5000-C' # str | Contract name (optional)
+underlying = 'BTC_USDT' # str | Underlying (Obtained by listing underlying endpoint)
+contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 _from = 1547706332 # int | Start timestamp (optional)
@@ -1589,8 +1589,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **underlying** | **str**| Underlying | 
- **contract** | **str**| Contract name | [optional] 
+ **underlying** | **str**| Underlying (Obtained by listing underlying endpoint) | 
+ **contract** | **str**| Options contract name | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **_from** | **int**| Start timestamp | [optional] 

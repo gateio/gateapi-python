@@ -149,7 +149,7 @@ class OptionsMyTrade(object):
     def contract(self):
         """Gets the contract of this OptionsMyTrade.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Options contract name  # noqa: E501
 
         :return: The contract of this OptionsMyTrade.  # noqa: E501
         :rtype: str
@@ -160,7 +160,7 @@ class OptionsMyTrade(object):
     def contract(self, contract):
         """Sets the contract of this OptionsMyTrade.
 
-        Futures contract  # noqa: E501
+        Options contract name  # noqa: E501
 
         :param contract: The contract of this OptionsMyTrade.  # noqa: E501
         :type: str
@@ -218,7 +218,7 @@ class OptionsMyTrade(object):
     def price(self):
         """Gets the price of this OptionsMyTrade.  # noqa: E501
 
-        Trading price  # noqa: E501
+        Trading price (quote currency)  # noqa: E501
 
         :return: The price of this OptionsMyTrade.  # noqa: E501
         :rtype: str
@@ -229,7 +229,7 @@ class OptionsMyTrade(object):
     def price(self, price):
         """Sets the price of this OptionsMyTrade.
 
-        Trading price  # noqa: E501
+        Trading price (quote currency)  # noqa: E501
 
         :param price: The price of this OptionsMyTrade.  # noqa: E501
         :type: str
@@ -241,7 +241,7 @@ class OptionsMyTrade(object):
     def underlying_price(self):
         """Gets the underlying_price of this OptionsMyTrade.  # noqa: E501
 
-        Underlying price  # noqa: E501
+        Underlying price (quote currency)  # noqa: E501
 
         :return: The underlying_price of this OptionsMyTrade.  # noqa: E501
         :rtype: str
@@ -252,7 +252,7 @@ class OptionsMyTrade(object):
     def underlying_price(self, underlying_price):
         """Sets the underlying_price of this OptionsMyTrade.
 
-        Underlying price  # noqa: E501
+        Underlying price (quote currency)  # noqa: E501
 
         :param underlying_price: The underlying_price of this OptionsMyTrade.  # noqa: E501
         :type: str

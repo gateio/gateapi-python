@@ -5,11 +5,11 @@ data point in every timestamp
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **t** | **float** | Unix timestamp in seconds | [optional] 
-**v** | **int** | size volume. Only returned if &#x60;contract&#x60; is not prefixed | [optional] 
-**c** | **str** | Close price | [optional] 
-**h** | **str** | Highest price | [optional] 
-**l** | **str** | Lowest price | [optional] 
-**o** | **str** | Open price | [optional] 
+**v** | **int** | size volume (contract size). Only returned if &#x60;contract&#x60; is not prefixed | [optional] 
+**c** | **str** | Close price (quote currency) | [optional] 
+**h** | **str** | Highest price (quote currency) | [optional] 
+**l** | **str** | Lowest price (quote currency) | [optional] 
+**o** | **str** | Open price (quote currency) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

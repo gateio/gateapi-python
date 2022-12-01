@@ -5,9 +5,9 @@ Options contract detail
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Options contract name | [optional] 
-**last_price** | **str** | Last trading price | [optional] 
-**mark_price** | **str** | Current mark price | [optional] 
-**index_price** | **str** | Current index price | [optional] 
+**last_price** | **str** | Last trading price (quote currency) | [optional] 
+**mark_price** | **str** | Current mark price (quote currency) | [optional] 
+**index_price** | **str** | Current index price (quote currency) | [optional] 
 **ask1_size** | **int** | Best ask size | [optional] 
 **ask1_price** | **str** | Best ask price | [optional] 
 **bid1_size** | **int** | Best bid size | [optional] 

@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**transfer**](WalletApi.md#transfer) | **POST** /wallet/transfers | Transfer between trading accounts
 [**list_sub_account_transfers**](WalletApi.md#list_sub_account_transfers) | **GET** /wallet/sub_account_transfers | Retrieve transfer records between main and sub accounts
 [**transfer_with_sub_account**](WalletApi.md#transfer_with_sub_account) | **POST** /wallet/sub_account_transfers | Transfer between main and sub accounts
+[**sub_account_to_sub_account**](WalletApi.md#sub_account_to_sub_account) | **POST** /wallet/sub_account_to_sub_account | Sub-account transfers to sub-account
 [**list_withdraw_status**](WalletApi.md#list_withdraw_status) | **GET** /wallet/withdraw_status | Retrieve withdrawal status
 [**list_sub_account_balances**](WalletApi.md#list_sub_account_balances) | **GET** /wallet/sub_account_balances | Retrieve sub account balances
 [**list_sub_account_margin_balances**](WalletApi.md#list_sub_account_margin_balances) | **GET** /wallet/sub_account_margin_balances | Query sub accounts&#39; margin balances
@@ -400,7 +401,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
-sub_uid = '10003' # str | Sub account user ID. Return records related to all sub accounts if not specified (optional)
+sub_uid = '10003' # str | User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts (optional)
 _from = 1602120000 # int | Time range beginning, default to 7 days before current time (optional)
 to = 1602123600 # int | Time range ending, default to current time (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
@@ -420,7 +421,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_uid** | **str**| Sub account user ID. Return records related to all sub accounts if not specified | [optional] 
+ **sub_uid** | **str**| User ID of sub-account, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return the records of all sub accounts | [optional] 
  **_from** | **int**| Time range beginning, default to 7 days before current time | [optional] 
  **to** | **int**| Time range ending, default to current time | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
@@ -493,6 +494,72 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sub_account_transfer** | [**SubAccountTransfer**](SubAccountTransfer.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Balance transferred |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sub_account_to_sub_account**
+> sub_account_to_sub_account(sub_account_to_sub_account)
+
+Sub-account transfers to sub-account
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
+sub_account_to_sub_account = gate_api.SubAccountToSubAccount() # SubAccountToSubAccount | 
+
+try:
+    # Sub-account transfers to sub-account
+    api_instance.sub_account_to_sub_account(sub_account_to_sub_account)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling WalletApi->sub_account_to_sub_account: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sub_account_to_sub_account** | [**SubAccountToSubAccount**](SubAccountToSubAccount.md)|  | 
 
 ### Return type
 
@@ -610,7 +677,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
-sub_uid = '10003' # str | Sub account user ID. Return records related to all sub accounts if not specified (optional)
+sub_uid = '10003' # str | User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts (optional)
 
 try:
     # Retrieve sub account balances
@@ -626,7 +693,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_uid** | **str**| Sub account user ID. Return records related to all sub accounts if not specified | [optional] 
+ **sub_uid** | **str**| User ID of sub-account, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return the records of all sub accounts | [optional] 
 
 ### Return type
 
@@ -677,7 +744,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
-sub_uid = '10003' # str | Sub account user ID. Return records related to all sub accounts if not specified (optional)
+sub_uid = '10003' # str | User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts (optional)
 
 try:
     # Query sub accounts' margin balances
@@ -693,7 +760,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_uid** | **str**| Sub account user ID. Return records related to all sub accounts if not specified | [optional] 
+ **sub_uid** | **str**| User ID of sub-account, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return the records of all sub accounts | [optional] 
 
 ### Return type
 
@@ -744,7 +811,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
-sub_uid = '10003' # str | Sub account user ID. Return records related to all sub accounts if not specified (optional)
+sub_uid = '10003' # str | User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts (optional)
 settle = 'usdt' # str | Query only balances of specified settle currency (optional)
 
 try:
@@ -761,7 +828,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_uid** | **str**| Sub account user ID. Return records related to all sub accounts if not specified | [optional] 
+ **sub_uid** | **str**| User ID of sub-account, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return the records of all sub accounts | [optional] 
  **settle** | **str**| Query only balances of specified settle currency | [optional] 
 
 ### Return type
@@ -813,7 +880,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
-sub_uid = '10003' # str | Sub account user ID. Return records related to all sub accounts if not specified (optional)
+sub_uid = '10003' # str | User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts (optional)
 
 try:
     # Query subaccount's cross_margin account info
@@ -829,7 +896,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_uid** | **str**| Sub account user ID. Return records related to all sub accounts if not specified | [optional] 
+ **sub_uid** | **str**| User ID of sub-account, you can query multiple records separated by &#x60;,&#x60;. If not specified, it will return the records of all sub accounts | [optional] 
 
 ### Return type
 
@@ -923,7 +990,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_trade_fee**
-> TradeFee get_trade_fee(currency_pair=currency_pair)
+> TradeFee get_trade_fee(currency_pair=currency_pair, settle=settle)
 
 Retrieve personal trading fee
 
@@ -952,10 +1019,11 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.WalletApi(api_client)
 currency_pair = 'BTC_USDT' # str | Specify a currency pair to retrieve precise fee rate  This field is optional. In most cases, the fee rate is identical among all currency pairs (optional)
+settle = 'BTC' # str | Specify the settlement currency of the contract to get more accurate rate settings  This field is optional. Generally, the rate settings for all settlement currencies are the same. (optional)
 
 try:
     # Retrieve personal trading fee
-    api_response = api_instance.get_trade_fee(currency_pair=currency_pair)
+    api_response = api_instance.get_trade_fee(currency_pair=currency_pair, settle=settle)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -968,6 +1036,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency_pair** | **str**| Specify a currency pair to retrieve precise fee rate  This field is optional. In most cases, the fee rate is identical among all currency pairs | [optional] 
+ **settle** | **str**| Specify the settlement currency of the contract to get more accurate rate settings  This field is optional. Generally, the rate settings for all settlement currencies are the same. | [optional] 
 
 ### Return type
 

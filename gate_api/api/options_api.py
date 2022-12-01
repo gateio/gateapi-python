@@ -135,7 +135,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -159,7 +159,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -239,7 +239,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
         :param int expiration: Unix timestamp of the expiration time
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -264,7 +264,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
         :param int expiration: Unix timestamp of the expiration time
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -451,7 +451,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param int _from: Start timestamp
@@ -479,7 +479,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param int _from: Start timestamp
@@ -590,7 +590,7 @@ class OptionsApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str contract: (required)
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
         :param int at: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -616,7 +616,7 @@ class OptionsApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str contract: (required)
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
         :param int at: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -715,8 +715,8 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
-        :param str contract: Contract name
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
+        :param str contract: Options contract name
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param int _from: Start timestamp
@@ -744,8 +744,8 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
-        :param str contract: Contract name
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
+        :param str contract: Options contract name
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param int _from: Start timestamp
@@ -851,7 +851,7 @@ class OptionsApi(object):
         )
 
     def list_options_order_book(self, contract, **kwargs):  # noqa: E501
-        """Futures order book  # noqa: E501
+        """Options order book  # noqa: E501
 
         Bids will be sorted by price from high to low, while asks sorted reversely  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -860,7 +860,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Futures contract (required)
+        :param str contract: Options contract name (required)
         :param str interval: Order depth. 0 means no aggregation is applied. default to 0
         :param int limit: Maximum number of order depth data in asks or bids
         :param bool with_id: Whether the order book update ID will be returned. This ID increases by 1 on every order book update
@@ -879,7 +879,7 @@ class OptionsApi(object):
         return self.list_options_order_book_with_http_info(contract, **kwargs)  # noqa: E501
 
     def list_options_order_book_with_http_info(self, contract, **kwargs):  # noqa: E501
-        """Futures order book  # noqa: E501
+        """Options order book  # noqa: E501
 
         Bids will be sorted by price from high to low, while asks sorted reversely  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -888,7 +888,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Futures contract (required)
+        :param str contract: Options contract name (required)
         :param str interval: Order depth. 0 means no aggregation is applied. default to 0
         :param int limit: Maximum number of order depth data in asks or bids
         :param bool with_id: Whether the order book update ID will be returned. This ID increases by 1 on every order book update
@@ -989,7 +989,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1013,7 +1013,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1191,7 +1191,7 @@ class OptionsApi(object):
         )
 
     def list_options_candlesticks(self, contract, **kwargs):  # noqa: E501
-        """Get futures candlesticks  # noqa: E501
+        """Get options candlesticks  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1199,7 +1199,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Futures contract (required)
+        :param str contract: Options contract name (required)
         :param int limit: Maximum number of records to be returned in a single list
         :param int _from: Start timestamp
         :param int to: End timestamp
@@ -1211,7 +1211,7 @@ class OptionsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: list[gate_api.FuturesCandlestick]
+        :rtype: list[gate_api.OptionsCandlestick]
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1219,7 +1219,7 @@ class OptionsApi(object):
         return self.list_options_candlesticks_with_http_info(contract, **kwargs)  # noqa: E501
 
     def list_options_candlesticks_with_http_info(self, contract, **kwargs):  # noqa: E501
-        """Get futures candlesticks  # noqa: E501
+        """Get options candlesticks  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1227,7 +1227,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Futures contract (required)
+        :param str contract: Options contract name (required)
         :param int limit: Maximum number of records to be returned in a single list
         :param int _from: Start timestamp
         :param int to: End timestamp
@@ -1241,7 +1241,7 @@ class OptionsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: tuple(list[gate_api.FuturesCandlestick], status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(list[gate_api.OptionsCandlestick], status_code(int), headers(HTTPHeaderDict))
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1313,7 +1313,7 @@ class OptionsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[FuturesCandlestick]',  # noqa: E501
+            response_type='list[OptionsCandlestick]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -1331,7 +1331,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
         :param int limit: Maximum number of records to be returned in a single list
         :param int _from: Start timestamp
         :param int to: End timestamp
@@ -1359,7 +1359,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
         :param int limit: Maximum number of records to be returned in a single list
         :param int _from: Start timestamp
         :param int to: End timestamp
@@ -1465,7 +1465,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Contract name
+        :param str contract: Options contract name
         :param str type: `C` is call, while `P` is put
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
@@ -1494,7 +1494,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Contract name
+        :param str contract: Options contract name
         :param str type: `C` is call, while `P` is put
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
@@ -2025,8 +2025,8 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
-        :param str contract: Contract name
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
+        :param str contract: Options contract name
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2050,8 +2050,8 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
-        :param str contract: Contract name
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
+        :param str contract: Options contract name
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2127,7 +2127,7 @@ class OptionsApi(object):
         )
 
     def list_options_orders(self, status, **kwargs):  # noqa: E501
-        """List futures orders  # noqa: E501
+        """List options orders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2136,7 +2136,7 @@ class OptionsApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str status: Only list the orders with this status (required)
-        :param str contract: Contract name
+        :param str contract: Options contract name
         :param str underlying: Underlying
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
@@ -2157,7 +2157,7 @@ class OptionsApi(object):
         return self.list_options_orders_with_http_info(status, **kwargs)  # noqa: E501
 
     def list_options_orders_with_http_info(self, status, **kwargs):  # noqa: E501
-        """List futures orders  # noqa: E501
+        """List options orders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2166,7 +2166,7 @@ class OptionsApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str status: Only list the orders with this status (required)
-        :param str contract: Contract name
+        :param str contract: Options contract name
         :param str underlying: Underlying
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
@@ -2390,7 +2390,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Contract name
+        :param str contract: Options contract name
         :param str underlying: Underlying
         :param str side: All bids or asks. Both included if not specified
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2416,7 +2416,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Contract name
+        :param str contract: Options contract name
         :param str underlying: Underlying
         :param str side: All bids or asks. Both included if not specified
         :param _return_http_data_only: response data without head status code
@@ -2703,8 +2703,8 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
-        :param str contract: Contract name
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
+        :param str contract: Options contract name
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param int _from: Start timestamp
@@ -2732,8 +2732,8 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
-        :param str contract: Contract name
+        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
+        :param str contract: Options contract name
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param int _from: Start timestamp

@@ -41,7 +41,7 @@ class OptionsPosition(object):
         'realised_pnl': 'str',
         'unrealised_pnl': 'str',
         'pending_orders': 'int',
-        'close_order': 'PositionCloseOrder',
+        'close_order': 'OptionsPositionCloseOrder',
     }
 
     attribute_map = {
@@ -69,7 +69,7 @@ class OptionsPosition(object):
         close_order=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, int, str, str, str, str, int, PositionCloseOrder, Configuration) -> None
+        # type: (int, str, int, str, str, str, str, int, OptionsPositionCloseOrder, Configuration) -> None
         """OptionsPosition - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -131,7 +131,7 @@ class OptionsPosition(object):
     def contract(self):
         """Gets the contract of this OptionsPosition.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Options contract name  # noqa: E501
 
         :return: The contract of this OptionsPosition.  # noqa: E501
         :rtype: str
@@ -142,7 +142,7 @@ class OptionsPosition(object):
     def contract(self, contract):
         """Sets the contract of this OptionsPosition.
 
-        Futures contract  # noqa: E501
+        Options contract name  # noqa: E501
 
         :param contract: The contract of this OptionsPosition.  # noqa: E501
         :type: str
@@ -154,7 +154,7 @@ class OptionsPosition(object):
     def size(self):
         """Gets the size of this OptionsPosition.  # noqa: E501
 
-        Position size  # noqa: E501
+        Position size (contract size)  # noqa: E501
 
         :return: The size of this OptionsPosition.  # noqa: E501
         :rtype: int
@@ -165,7 +165,7 @@ class OptionsPosition(object):
     def size(self, size):
         """Sets the size of this OptionsPosition.
 
-        Position size  # noqa: E501
+        Position size (contract size)  # noqa: E501
 
         :param size: The size of this OptionsPosition.  # noqa: E501
         :type: int
@@ -177,7 +177,7 @@ class OptionsPosition(object):
     def entry_price(self):
         """Gets the entry_price of this OptionsPosition.  # noqa: E501
 
-        Entry price  # noqa: E501
+        Entry size (quote currency)  # noqa: E501
 
         :return: The entry_price of this OptionsPosition.  # noqa: E501
         :rtype: str
@@ -188,7 +188,7 @@ class OptionsPosition(object):
     def entry_price(self, entry_price):
         """Sets the entry_price of this OptionsPosition.
 
-        Entry price  # noqa: E501
+        Entry size (quote currency)  # noqa: E501
 
         :param entry_price: The entry_price of this OptionsPosition.  # noqa: E501
         :type: str
@@ -200,7 +200,7 @@ class OptionsPosition(object):
     def mark_price(self):
         """Gets the mark_price of this OptionsPosition.  # noqa: E501
 
-        Current mark price  # noqa: E501
+        Current mark price (quote currency)  # noqa: E501
 
         :return: The mark_price of this OptionsPosition.  # noqa: E501
         :rtype: str
@@ -211,7 +211,7 @@ class OptionsPosition(object):
     def mark_price(self, mark_price):
         """Sets the mark_price of this OptionsPosition.
 
-        Current mark price  # noqa: E501
+        Current mark price (quote currency)  # noqa: E501
 
         :param mark_price: The mark_price of this OptionsPosition.  # noqa: E501
         :type: str
@@ -294,7 +294,7 @@ class OptionsPosition(object):
 
 
         :return: The close_order of this OptionsPosition.  # noqa: E501
-        :rtype: PositionCloseOrder
+        :rtype: OptionsPositionCloseOrder
         """
         return self._close_order
 
@@ -304,7 +304,7 @@ class OptionsPosition(object):
 
 
         :param close_order: The close_order of this OptionsPosition.  # noqa: E501
-        :type: PositionCloseOrder
+        :type: OptionsPositionCloseOrder
         """
 
         self._close_order = close_order

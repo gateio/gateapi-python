@@ -114,7 +114,7 @@ class OptionsSettlement(object):
     def contract(self):
         """Gets the contract of this OptionsSettlement.  # noqa: E501
 
-        Contract name  # noqa: E501
+        Options contract name  # noqa: E501
 
         :return: The contract of this OptionsSettlement.  # noqa: E501
         :rtype: str
@@ -125,7 +125,7 @@ class OptionsSettlement(object):
     def contract(self, contract):
         """Sets the contract of this OptionsSettlement.
 
-        Contract name  # noqa: E501
+        Options contract name  # noqa: E501
 
         :param contract: The contract of this OptionsSettlement.  # noqa: E501
         :type: str
@@ -137,7 +137,7 @@ class OptionsSettlement(object):
     def profit(self):
         """Gets the profit of this OptionsSettlement.  # noqa: E501
 
-        Settlement profit per size  # noqa: E501
+        Settlement profit per size (quote currency)  # noqa: E501
 
         :return: The profit of this OptionsSettlement.  # noqa: E501
         :rtype: str
@@ -148,7 +148,7 @@ class OptionsSettlement(object):
     def profit(self, profit):
         """Sets the profit of this OptionsSettlement.
 
-        Settlement profit per size  # noqa: E501
+        Settlement profit per size (quote currency)  # noqa: E501
 
         :param profit: The profit of this OptionsSettlement.  # noqa: E501
         :type: str
@@ -160,7 +160,7 @@ class OptionsSettlement(object):
     def fee(self):
         """Gets the fee of this OptionsSettlement.  # noqa: E501
 
-        Settlement fee per size  # noqa: E501
+        Settlement fee per size (quote currency)  # noqa: E501
 
         :return: The fee of this OptionsSettlement.  # noqa: E501
         :rtype: str
@@ -171,7 +171,7 @@ class OptionsSettlement(object):
     def fee(self, fee):
         """Sets the fee of this OptionsSettlement.
 
-        Settlement fee per size  # noqa: E501
+        Settlement fee per size (quote currency)  # noqa: E501
 
         :param fee: The fee of this OptionsSettlement.  # noqa: E501
         :type: str
@@ -183,7 +183,7 @@ class OptionsSettlement(object):
     def strike_price(self):
         """Gets the strike_price of this OptionsSettlement.  # noqa: E501
 
-        Strike price  # noqa: E501
+        Strike price (quote currency)  # noqa: E501
 
         :return: The strike_price of this OptionsSettlement.  # noqa: E501
         :rtype: str
@@ -194,7 +194,7 @@ class OptionsSettlement(object):
     def strike_price(self, strike_price):
         """Sets the strike_price of this OptionsSettlement.
 
-        Strike price  # noqa: E501
+        Strike price (quote currency)  # noqa: E501
 
         :param strike_price: The strike_price of this OptionsSettlement.  # noqa: E501
         :type: str
@@ -206,7 +206,7 @@ class OptionsSettlement(object):
     def settle_price(self):
         """Gets the settle_price of this OptionsSettlement.  # noqa: E501
 
-        settlement price  # noqa: E501
+        Settlement price (quote currency)  # noqa: E501
 
         :return: The settle_price of this OptionsSettlement.  # noqa: E501
         :rtype: str
@@ -217,7 +217,7 @@ class OptionsSettlement(object):
     def settle_price(self, settle_price):
         """Sets the settle_price of this OptionsSettlement.
 
-        settlement price  # noqa: E501
+        Settlement price (quote currency)  # noqa: E501
 
         :param settle_price: The settle_price of this OptionsSettlement.  # noqa: E501
         :type: str

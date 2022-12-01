@@ -55,6 +55,7 @@ class OptionsOrder(object):
         'tkfr': 'str',
         'mkfr': 'str',
         'refu': 'int',
+        'refr': 'str',
     }
 
     attribute_map = {
@@ -80,6 +81,7 @@ class OptionsOrder(object):
         'tkfr': 'tkfr',
         'mkfr': 'mkfr',
         'refu': 'refu',
+        'refr': 'refr',
     }
 
     def __init__(
@@ -106,9 +108,10 @@ class OptionsOrder(object):
         tkfr=None,
         mkfr=None,
         refu=None,
+        refr=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, int, float, float, str, str, str, int, int, str, bool, bool, bool, bool, bool, str, int, str, str, str, str, int, Configuration) -> None
+        # type: (int, int, float, float, str, str, str, int, int, str, bool, bool, bool, bool, bool, str, int, str, str, str, str, int, str, Configuration) -> None
         """OptionsOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -136,6 +139,7 @@ class OptionsOrder(object):
         self._tkfr = None
         self._mkfr = None
         self._refu = None
+        self._refr = None
         self.discriminator = None
 
         if id is not None:
@@ -180,6 +184,8 @@ class OptionsOrder(object):
             self.mkfr = mkfr
         if refu is not None:
             self.refu = refu
+        if refr is not None:
+            self.refr = refr
 
     @property
     def id(self):
@@ -417,7 +423,7 @@ class OptionsOrder(object):
     def price(self):
         """Gets the price of this OptionsOrder.  # noqa: E501
 
-        Order price. 0 for market order with `tif` set as `ioc`  # noqa: E501
+        Order price. 0 for market order with `tif` set as `ioc` (USDT)  # noqa: E501
 
         :return: The price of this OptionsOrder.  # noqa: E501
         :rtype: str
@@ -428,7 +434,7 @@ class OptionsOrder(object):
     def price(self, price):
         """Sets the price of this OptionsOrder.
 
-        Order price. 0 for market order with `tif` set as `ioc`  # noqa: E501
+        Order price. 0 for market order with `tif` set as `ioc` (USDT)  # noqa: E501
 
         :param price: The price of this OptionsOrder.  # noqa: E501
         :type: str
@@ -555,7 +561,7 @@ class OptionsOrder(object):
     def tif(self):
         """Gets the tif of this OptionsOrder.  # noqa: E501
 
-        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, reduce-only  # noqa: E501
+        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee  # noqa: E501
 
         :return: The tif of this OptionsOrder.  # noqa: E501
         :rtype: str
@@ -566,7 +572,7 @@ class OptionsOrder(object):
     def tif(self, tif):
         """Sets the tif of this OptionsOrder.
 
-        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, reduce-only  # noqa: E501
+        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee  # noqa: E501
 
         :param tif: The tif of this OptionsOrder.  # noqa: E501
         :type: str
@@ -716,6 +722,29 @@ class OptionsOrder(object):
         """
 
         self._refu = refu
+
+    @property
+    def refr(self):
+        """Gets the refr of this OptionsOrder.  # noqa: E501
+
+        Referrer rebate  # noqa: E501
+
+        :return: The refr of this OptionsOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._refr
+
+    @refr.setter
+    def refr(self, refr):
+        """Sets the refr of this OptionsOrder.
+
+        Referrer rebate  # noqa: E501
+
+        :param refr: The refr of this OptionsOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._refr = refr
 
     def to_dict(self):
         """Returns the model properties as a dict"""

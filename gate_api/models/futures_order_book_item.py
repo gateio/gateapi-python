@@ -56,7 +56,7 @@ class FuturesOrderBookItem(object):
     def p(self):
         """Gets the p of this FuturesOrderBookItem.  # noqa: E501
 
-        Price  # noqa: E501
+        Price (quote currency)  # noqa: E501
 
         :return: The p of this FuturesOrderBookItem.  # noqa: E501
         :rtype: str
@@ -67,7 +67,7 @@ class FuturesOrderBookItem(object):
     def p(self, p):
         """Sets the p of this FuturesOrderBookItem.
 
-        Price  # noqa: E501
+        Price (quote currency)  # noqa: E501
 
         :param p: The p of this FuturesOrderBookItem.  # noqa: E501
         :type: str

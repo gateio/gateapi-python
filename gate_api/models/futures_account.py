@@ -133,7 +133,7 @@ class FuturesAccount(object):
     def total(self):
         """Gets the total of this FuturesAccount.  # noqa: E501
 
-        total = position_margin + order_margin + available  # noqa: E501
+        total is the balance after the user's accumulated deposit, withdraw, profit and loss (including realized profit and loss, fund, fee and referral rebate), excluding unrealized profit and loss.  total = SUM(history_dnw, history_pnl, history_fee, history_refr, history_fund)  # noqa: E501
 
         :return: The total of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -144,7 +144,7 @@ class FuturesAccount(object):
     def total(self, total):
         """Sets the total of this FuturesAccount.
 
-        total = position_margin + order_margin + available  # noqa: E501
+        total is the balance after the user's accumulated deposit, withdraw, profit and loss (including realized profit and loss, fund, fee and referral rebate), excluding unrealized profit and loss.  total = SUM(history_dnw, history_pnl, history_fee, history_refr, history_fund)  # noqa: E501
 
         :param total: The total of this FuturesAccount.  # noqa: E501
         :type: str

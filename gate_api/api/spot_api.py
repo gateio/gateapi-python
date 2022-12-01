@@ -665,7 +665,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency_pair: Currency pair (required)
-        :param int limit: Maximum number of records to be returned in a single list
+        :param int limit: Maximum number of records to be returned in a single list.  Default: 100, Minimum: 1, Maximum: 1000
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :param bool reverse: Whether the id of records to be retrieved should be less than the last_id specified. Default to false.  When `last_id` is specified. Set `reverse` to `true` to trace back trading history; `false` to retrieve latest tradings.  No effect if `last_id` is not specified.
         :param int _from: Start timestamp of the query
@@ -696,7 +696,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency_pair: Currency pair (required)
-        :param int limit: Maximum number of records to be returned in a single list
+        :param int limit: Maximum number of records to be returned in a single list.  Default: 100, Minimum: 1, Maximum: 1000
         :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
         :param bool reverse: Whether the id of records to be retrieved should be less than the last_id specified. Default to false.  When `last_id` is specified. Set `reverse` to `true` to trace back trading history; `false` to retrieve latest tradings.  No effect if `last_id` is not specified.
         :param int _from: Start timestamp of the query
@@ -1976,7 +1976,7 @@ class SpotApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. (required)
+        :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
         :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2003,7 +2003,7 @@ class SpotApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. (required)
+        :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
         :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _return_http_data_only: response data without head status code
@@ -2093,7 +2093,7 @@ class SpotApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. (required)
+        :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
         :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2120,7 +2120,7 @@ class SpotApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID are accepted only in the first 30 minutes after order creation.After that, only order ID is accepted. (required)
+        :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
         :param str account: Specify operation account. Default to spot and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _return_http_data_only: response data without head status code
@@ -2202,17 +2202,17 @@ class SpotApi(object):
             collection_formats=collection_formats,
         )
 
-    def list_my_trades(self, currency_pair, **kwargs):  # noqa: E501
+    def list_my_trades(self, **kwargs):  # noqa: E501
         """List personal trading history  # noqa: E501
 
-        Spot and margin trades are queried by default. If cross margin trades are needed, `account` must be set to `cross_margin`  You can also set `from` and(or) `to` to query by time range Time range parameters are handled as order finish time.  # noqa: E501
+        Spot and margin trades are queried by default. If cross margin trades are needed, `account` must be set to `cross_margin`  You can also set `from` and(or) `to` to query by time range. If you don't specify `from` and/or `to` parameters, only the last 7 days of data will be retured. The range of `from` and `to` is not alloed to exceed 30 days.  Time range parameters are handled as order finish time.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_my_trades(currency_pair, async_req=True)
+        >>> thread = api.list_my_trades(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Retrieve results with specified currency pair. It is required for open orders, but optional for finished ones. (required)
+        :param str currency_pair: Retrieve results with specified currency pair
         :param int limit: Maximum number of records to be returned in a single list
         :param int page: Page number
         :param str order_id: Filter trades with specified order ID. `currency_pair` is also required if this field is present
@@ -2231,19 +2231,19 @@ class SpotApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_my_trades_with_http_info(currency_pair, **kwargs)  # noqa: E501
+        return self.list_my_trades_with_http_info(**kwargs)  # noqa: E501
 
-    def list_my_trades_with_http_info(self, currency_pair, **kwargs):  # noqa: E501
+    def list_my_trades_with_http_info(self, **kwargs):  # noqa: E501
         """List personal trading history  # noqa: E501
 
-        Spot and margin trades are queried by default. If cross margin trades are needed, `account` must be set to `cross_margin`  You can also set `from` and(or) `to` to query by time range Time range parameters are handled as order finish time.  # noqa: E501
+        Spot and margin trades are queried by default. If cross margin trades are needed, `account` must be set to `cross_margin`  You can also set `from` and(or) `to` to query by time range. If you don't specify `from` and/or `to` parameters, only the last 7 days of data will be retured. The range of `from` and `to` is not alloed to exceed 30 days.  Time range parameters are handled as order finish time.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_my_trades_with_http_info(currency_pair, async_req=True)
+        >>> thread = api.list_my_trades_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Retrieve results with specified currency pair. It is required for open orders, but optional for finished ones. (required)
+        :param str currency_pair: Retrieve results with specified currency pair
         :param int limit: Maximum number of records to be returned in a single list
         :param int page: Page number
         :param str order_id: Filter trades with specified order ID. `currency_pair` is also required if this field is present
@@ -2274,13 +2274,6 @@ class SpotApi(object):
                 raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_my_trades" % k)
             local_var_params[k] = v
         del local_var_params['kwargs']
-        # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and (
-            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency_pair` when calling `list_my_trades`"
-            )  # noqa: E501
 
         if (
             self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
@@ -2435,6 +2428,118 @@ class SpotApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='SystemTime',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+        )
+
+    def countdown_cancel_all_spot(self, countdown_cancel_all_spot_task, **kwargs):  # noqa: E501
+        """Countdown cancel orders  # noqa: E501
+
+        When the timeout set by the user is reached, if there is no cancel or set a new countdown, the related pending orders will be automatically cancelled.  This endpoint can be called repeatedly to set a new countdown or cancel the countdown. For example, call this endpoint at 30s intervals, each countdown`timeout` is set to 30s. If this endpoint is not called again within 30 seconds, all pending orders on the specified `market` will be automatically cancelled, if no `market` is specified, all market pending orders will be cancelled. If the `timeout` is set to 0 within 30 seconds, the countdown timer will expire and the cacnel function will be cancelled.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.countdown_cancel_all_spot(countdown_cancel_all_spot_task, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param CountdownCancelAllSpotTask countdown_cancel_all_spot_task: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: gate_api.TriggerTime
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.countdown_cancel_all_spot_with_http_info(countdown_cancel_all_spot_task, **kwargs)  # noqa: E501
+
+    def countdown_cancel_all_spot_with_http_info(self, countdown_cancel_all_spot_task, **kwargs):  # noqa: E501
+        """Countdown cancel orders  # noqa: E501
+
+        When the timeout set by the user is reached, if there is no cancel or set a new countdown, the related pending orders will be automatically cancelled.  This endpoint can be called repeatedly to set a new countdown or cancel the countdown. For example, call this endpoint at 30s intervals, each countdown`timeout` is set to 30s. If this endpoint is not called again within 30 seconds, all pending orders on the specified `market` will be automatically cancelled, if no `market` is specified, all market pending orders will be cancelled. If the `timeout` is set to 0 within 30 seconds, the countdown timer will expire and the cacnel function will be cancelled.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.countdown_cancel_all_spot_with_http_info(countdown_cancel_all_spot_task, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param CountdownCancelAllSpotTask countdown_cancel_all_spot_task: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(gate_api.TriggerTime, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['countdown_cancel_all_spot_task']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method countdown_cancel_all_spot" % k)
+            local_var_params[k] = v
+        del local_var_params['kwargs']
+        # verify the required parameter 'countdown_cancel_all_spot_task' is set
+        if self.api_client.client_side_validation and (
+            'countdown_cancel_all_spot_task' not in local_var_params
+            or local_var_params['countdown_cancel_all_spot_task'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `countdown_cancel_all_spot_task` when calling `countdown_cancel_all_spot`"
+            )  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'countdown_cancel_all_spot_task' in local_var_params:
+            body_params = local_var_params['countdown_cancel_all_spot_task']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json']
+        )  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiv4']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/spot/countdown_cancel_all',
+            'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TriggerTime',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -2799,7 +2904,7 @@ class SpotApi(object):
         )
 
     def get_spot_price_triggered_order(self, order_id, **kwargs):  # noqa: E501
-        """Get a single order  # noqa: E501
+        """Get a price-triggered order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2823,7 +2928,7 @@ class SpotApi(object):
         return self.get_spot_price_triggered_order_with_http_info(order_id, **kwargs)  # noqa: E501
 
     def get_spot_price_triggered_order_with_http_info(self, order_id, **kwargs):  # noqa: E501
-        """Get a single order  # noqa: E501
+        """Get a price-triggered order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

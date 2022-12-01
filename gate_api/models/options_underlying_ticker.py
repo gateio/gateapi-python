@@ -105,7 +105,7 @@ class OptionsUnderlyingTicker(object):
     def index_price(self):
         """Gets the index_price of this OptionsUnderlyingTicker.  # noqa: E501
 
-        Index price  # noqa: E501
+        Index price (quote currency)  # noqa: E501
 
         :return: The index_price of this OptionsUnderlyingTicker.  # noqa: E501
         :rtype: str
@@ -116,7 +116,7 @@ class OptionsUnderlyingTicker(object):
     def index_price(self, index_price):
         """Sets the index_price of this OptionsUnderlyingTicker.
 
-        Index price  # noqa: E501
+        Index price (quote currency)  # noqa: E501
 
         :param index_price: The index_price of this OptionsUnderlyingTicker.  # noqa: E501
         :type: str

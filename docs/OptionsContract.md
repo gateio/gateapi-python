@@ -1,20 +1,20 @@
 # OptionsContract
 
-Futures contract details
+Options contract detail
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | Futures contract | [optional] 
+**name** | **str** | Options contract name | [optional] 
 **tag** | **str** | tag | [optional] 
 **create_time** | **float** | Creation time | [optional] 
 **expiration_time** | **float** | Expiration time | [optional] 
 **is_call** | **bool** | &#x60;true&#x60; means call options, while &#x60;false&#x60; is put options | [optional] 
 **multiplier** | **str** | Multiplier used in converting from invoicing to settlement currency | [optional] 
 **underlying** | **str** | Underlying | [optional] 
-**underlying_price** | **str** | Underlying price | [optional] 
+**underlying_price** | **str** | Underlying price (quote currency) | [optional] 
 **last_price** | **str** | Last trading price | [optional] 
-**mark_price** | **str** | Current mark price | [optional] 
-**index_price** | **str** | Current index price | [optional] 
+**mark_price** | **str** | Current mark price (quote currency) | [optional] 
+**index_price** | **str** | Current index price (quote currency) | [optional] 
 **maker_fee_rate** | **str** | Maker fee rate, where negative means rebate | [optional] 
 **taker_fee_rate** | **str** | Taker fee rate | [optional] 
 **order_price_round** | **str** | Minimum order price increment | [optional] 

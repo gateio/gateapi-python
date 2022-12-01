@@ -90,7 +90,7 @@ class OptionsAccountBook(object):
     def change(self):
         """Gets the change of this OptionsAccountBook.  # noqa: E501
 
-        Amount changed  # noqa: E501
+        Amount changed (USDT)  # noqa: E501
 
         :return: The change of this OptionsAccountBook.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class OptionsAccountBook(object):
     def change(self, change):
         """Sets the change of this OptionsAccountBook.
 
-        Amount changed  # noqa: E501
+        Amount changed (USDT)  # noqa: E501
 
         :param change: The change of this OptionsAccountBook.  # noqa: E501
         :type: str
@@ -113,7 +113,7 @@ class OptionsAccountBook(object):
     def balance(self):
         """Gets the balance of this OptionsAccountBook.  # noqa: E501
 
-        Account total balance after change  # noqa: E501
+        Account total balance after change (USDT)  # noqa: E501
 
         :return: The balance of this OptionsAccountBook.  # noqa: E501
         :rtype: str
@@ -124,7 +124,7 @@ class OptionsAccountBook(object):
     def balance(self, balance):
         """Sets the balance of this OptionsAccountBook.
 
-        Account total balance after change  # noqa: E501
+        Account total balance after change (USDT)  # noqa: E501
 
         :param balance: The balance of this OptionsAccountBook.  # noqa: E501
         :type: str

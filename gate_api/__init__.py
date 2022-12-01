@@ -14,9 +14,10 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.26.0"
+__version__ = "4.34.0"
 
 # import apis into sdk package
+from gate_api.api.sub_account_api import SubAccountApi
 from gate_api.api.delivery_api import DeliveryApi
 from gate_api.api.flash_swap_api import FlashSwapApi
 from gate_api.api.futures_api import FuturesApi
@@ -37,12 +38,16 @@ from gate_api.exceptions import ApiException
 
 # import models into sdk package
 from gate_api.models.account_balance import AccountBalance
+from gate_api.models.api_v4_key_perm import ApiV4KeyPerm
 from gate_api.models.auto_repay_setting import AutoRepaySetting
+from gate_api.models.batch_futures_order import BatchFuturesOrder
 from gate_api.models.batch_order import BatchOrder
 from gate_api.models.cancel_order import CancelOrder
 from gate_api.models.cancel_order_result import CancelOrderResult
 from gate_api.models.contract import Contract
 from gate_api.models.contract_stat import ContractStat
+from gate_api.models.countdown_cancel_all_futures_task import CountdownCancelAllFuturesTask
+from gate_api.models.countdown_cancel_all_spot_task import CountdownCancelAllSpotTask
 from gate_api.models.cross_margin_account import CrossMarginAccount
 from gate_api.models.cross_margin_account_book import CrossMarginAccountBook
 from gate_api.models.cross_margin_balance import CrossMarginBalance
@@ -76,6 +81,7 @@ from gate_api.models.futures_order import FuturesOrder
 from gate_api.models.futures_order_amendment import FuturesOrderAmendment
 from gate_api.models.futures_order_book import FuturesOrderBook
 from gate_api.models.futures_order_book_item import FuturesOrderBookItem
+from gate_api.models.futures_premium_index import FuturesPremiumIndex
 from gate_api.models.futures_price_trigger import FuturesPriceTrigger
 from gate_api.models.futures_price_triggered_order import FuturesPriceTriggeredOrder
 from gate_api.models.futures_ticker import FuturesTicker
@@ -98,12 +104,14 @@ from gate_api.models.my_futures_trade import MyFuturesTrade
 from gate_api.models.open_orders import OpenOrders
 from gate_api.models.options_account import OptionsAccount
 from gate_api.models.options_account_book import OptionsAccountBook
+from gate_api.models.options_candlestick import OptionsCandlestick
 from gate_api.models.options_contract import OptionsContract
 from gate_api.models.options_my_settlements import OptionsMySettlements
 from gate_api.models.options_my_trade import OptionsMyTrade
 from gate_api.models.options_order import OptionsOrder
 from gate_api.models.options_position import OptionsPosition
 from gate_api.models.options_position_close import OptionsPositionClose
+from gate_api.models.options_position_close_order import OptionsPositionCloseOrder
 from gate_api.models.options_settlement import OptionsSettlement
 from gate_api.models.options_ticker import OptionsTicker
 from gate_api.models.options_underlying import OptionsUnderlying
@@ -120,10 +128,13 @@ from gate_api.models.spot_account import SpotAccount
 from gate_api.models.spot_price_put_order import SpotPricePutOrder
 from gate_api.models.spot_price_trigger import SpotPriceTrigger
 from gate_api.models.spot_price_triggered_order import SpotPriceTriggeredOrder
+from gate_api.models.sub_account import SubAccount
 from gate_api.models.sub_account_balance import SubAccountBalance
 from gate_api.models.sub_account_cross_margin_balance import SubAccountCrossMarginBalance
 from gate_api.models.sub_account_futures_balance import SubAccountFuturesBalance
+from gate_api.models.sub_account_key import SubAccountKey
 from gate_api.models.sub_account_margin_balance import SubAccountMarginBalance
+from gate_api.models.sub_account_to_sub_account import SubAccountToSubAccount
 from gate_api.models.sub_account_transfer import SubAccountTransfer
 from gate_api.models.sub_cross_margin_account import SubCrossMarginAccount
 from gate_api.models.system_time import SystemTime
@@ -134,4 +145,5 @@ from gate_api.models.trade_fee import TradeFee
 from gate_api.models.transaction_id import TransactionID
 from gate_api.models.transfer import Transfer
 from gate_api.models.trigger_order_response import TriggerOrderResponse
+from gate_api.models.trigger_time import TriggerTime
 from gate_api.models.withdraw_status import WithdrawStatus

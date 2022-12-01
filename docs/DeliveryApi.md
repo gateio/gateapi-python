@@ -30,7 +30,7 @@ Method | HTTP request | Description
 [**list_price_triggered_delivery_orders**](DeliveryApi.md#list_price_triggered_delivery_orders) | **GET** /delivery/{settle}/price_orders | List all auto orders
 [**create_price_triggered_delivery_order**](DeliveryApi.md#create_price_triggered_delivery_order) | **POST** /delivery/{settle}/price_orders | Create a price-triggered order
 [**cancel_price_triggered_delivery_order_list**](DeliveryApi.md#cancel_price_triggered_delivery_order_list) | **DELETE** /delivery/{settle}/price_orders | Cancel all open orders
-[**get_price_triggered_delivery_order**](DeliveryApi.md#get_price_triggered_delivery_order) | **GET** /delivery/{settle}/price_orders/{order_id} | Get a single order
+[**get_price_triggered_delivery_order**](DeliveryApi.md#get_price_triggered_delivery_order) | **GET** /delivery/{settle}/price_orders/{order_id} | Get a price-triggered order
 [**cancel_price_triggered_delivery_order**](DeliveryApi.md#cancel_price_triggered_delivery_order) | **DELETE** /delivery/{settle}/price_orders/{order_id} | cancel a price-triggered order
 
 
@@ -1846,7 +1846,7 @@ Name | Type | Description  | Notes
 # **get_price_triggered_delivery_order**
 > FuturesPriceTriggeredOrder get_price_triggered_delivery_order(settle, order_id)
 
-Get a single order
+Get a price-triggered order
 
 ### Example
 
@@ -1876,7 +1876,7 @@ settle = 'usdt' # str | Settle currency
 order_id = 'order_id_example' # str | Retrieve the data of the order with the specified ID
 
 try:
-    # Get a single order
+    # Get a price-triggered order
     api_response = api_instance.get_price_triggered_delivery_order(settle, order_id)
     print(api_response)
 except GateApiException as ex:

@@ -104,8 +104,7 @@ class LedgerRecord(object):
             self.memo = memo
         if status is not None:
             self.status = status
-        if chain is not None:
-            self.chain = chain
+        self.chain = chain
         if fee is not None:
             self.fee = fee
 
@@ -336,6 +335,8 @@ class LedgerRecord(object):
         :param chain: The chain of this LedgerRecord.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and chain is None:  # noqa: E501
+            raise ValueError("Invalid value for `chain`, must not be `None`")  # noqa: E501
 
         self._chain = chain
 

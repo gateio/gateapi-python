@@ -561,7 +561,7 @@ class FuturesOrder(object):
     def tif(self):
         """Gets the tif of this FuturesOrder.  # noqa: E501
 
-        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, reduce-only  # noqa: E501
+        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none  # noqa: E501
 
         :return: The tif of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -572,12 +572,12 @@ class FuturesOrder(object):
     def tif(self, tif):
         """Sets the tif of this FuturesOrder.
 
-        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, reduce-only  # noqa: E501
+        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none  # noqa: E501
 
         :param tif: The tif of this FuturesOrder.  # noqa: E501
         :type: str
         """
-        allowed_values = ["gtc", "ioc", "poc"]  # noqa: E501
+        allowed_values = ["gtc", "ioc", "poc", "fok"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and tif not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `tif` ({0}), must be one of {1}".format(tif, allowed_values)  # noqa: E501

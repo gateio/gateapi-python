@@ -3301,7 +3301,7 @@ class DeliveryApi(object):
         )
 
     def get_price_triggered_delivery_order(self, settle, order_id, **kwargs):  # noqa: E501
-        """Get a single order  # noqa: E501
+        """Get a price-triggered order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -3326,7 +3326,7 @@ class DeliveryApi(object):
         return self.get_price_triggered_delivery_order_with_http_info(settle, order_id, **kwargs)  # noqa: E501
 
     def get_price_triggered_delivery_order_with_http_info(self, settle, order_id, **kwargs):  # noqa: E501
-        """Get a single order  # noqa: E501
+        """Get a price-triggered order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

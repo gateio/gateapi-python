@@ -107,7 +107,7 @@ class OptionsPositionClose(object):
     def contract(self):
         """Gets the contract of this OptionsPositionClose.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Options contract name  # noqa: E501
 
         :return: The contract of this OptionsPositionClose.  # noqa: E501
         :rtype: str
@@ -118,7 +118,7 @@ class OptionsPositionClose(object):
     def contract(self, contract):
         """Sets the contract of this OptionsPositionClose.
 
-        Futures contract  # noqa: E501
+        Options contract name  # noqa: E501
 
         :param contract: The contract of this OptionsPositionClose.  # noqa: E501
         :type: str

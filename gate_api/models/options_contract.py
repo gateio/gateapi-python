@@ -205,7 +205,7 @@ class OptionsContract(object):
     def name(self):
         """Gets the name of this OptionsContract.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Options contract name  # noqa: E501
 
         :return: The name of this OptionsContract.  # noqa: E501
         :rtype: str
@@ -216,7 +216,7 @@ class OptionsContract(object):
     def name(self, name):
         """Sets the name of this OptionsContract.
 
-        Futures contract  # noqa: E501
+        Options contract name  # noqa: E501
 
         :param name: The name of this OptionsContract.  # noqa: E501
         :type: str
@@ -366,7 +366,7 @@ class OptionsContract(object):
     def underlying_price(self):
         """Gets the underlying_price of this OptionsContract.  # noqa: E501
 
-        Underlying price  # noqa: E501
+        Underlying price (quote currency)  # noqa: E501
 
         :return: The underlying_price of this OptionsContract.  # noqa: E501
         :rtype: str
@@ -377,7 +377,7 @@ class OptionsContract(object):
     def underlying_price(self, underlying_price):
         """Sets the underlying_price of this OptionsContract.
 
-        Underlying price  # noqa: E501
+        Underlying price (quote currency)  # noqa: E501
 
         :param underlying_price: The underlying_price of this OptionsContract.  # noqa: E501
         :type: str
@@ -412,7 +412,7 @@ class OptionsContract(object):
     def mark_price(self):
         """Gets the mark_price of this OptionsContract.  # noqa: E501
 
-        Current mark price  # noqa: E501
+        Current mark price (quote currency)  # noqa: E501
 
         :return: The mark_price of this OptionsContract.  # noqa: E501
         :rtype: str
@@ -423,7 +423,7 @@ class OptionsContract(object):
     def mark_price(self, mark_price):
         """Sets the mark_price of this OptionsContract.
 
-        Current mark price  # noqa: E501
+        Current mark price (quote currency)  # noqa: E501
 
         :param mark_price: The mark_price of this OptionsContract.  # noqa: E501
         :type: str
@@ -435,7 +435,7 @@ class OptionsContract(object):
     def index_price(self):
         """Gets the index_price of this OptionsContract.  # noqa: E501
 
-        Current index price  # noqa: E501
+        Current index price (quote currency)  # noqa: E501
 
         :return: The index_price of this OptionsContract.  # noqa: E501
         :rtype: str
@@ -446,7 +446,7 @@ class OptionsContract(object):
     def index_price(self, index_price):
         """Sets the index_price of this OptionsContract.
 
-        Current index price  # noqa: E501
+        Current index price (quote currency)  # noqa: E501
 
         :param index_price: The index_price of this OptionsContract.  # noqa: E501
         :type: str

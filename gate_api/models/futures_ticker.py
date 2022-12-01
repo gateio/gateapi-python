@@ -50,6 +50,8 @@ class FuturesTicker(object):
         'funding_rate_indicative': 'str',
         'index_price': 'str',
         'quanto_base_rate': 'str',
+        'basis_rate': 'str',
+        'basis_value': 'str',
     }
 
     attribute_map = {
@@ -70,6 +72,8 @@ class FuturesTicker(object):
         'funding_rate_indicative': 'funding_rate_indicative',
         'index_price': 'index_price',
         'quanto_base_rate': 'quanto_base_rate',
+        'basis_rate': 'basis_rate',
+        'basis_value': 'basis_value',
     }
 
     def __init__(
@@ -91,9 +95,11 @@ class FuturesTicker(object):
         funding_rate_indicative=None,
         index_price=None,
         quanto_base_rate=None,
+        basis_rate=None,
+        basis_value=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """FuturesTicker - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -116,6 +122,8 @@ class FuturesTicker(object):
         self._funding_rate_indicative = None
         self._index_price = None
         self._quanto_base_rate = None
+        self._basis_rate = None
+        self._basis_value = None
         self.discriminator = None
 
         if contract is not None:
@@ -152,6 +160,10 @@ class FuturesTicker(object):
             self.index_price = index_price
         if quanto_base_rate is not None:
             self.quanto_base_rate = quanto_base_rate
+        if basis_rate is not None:
+            self.basis_rate = basis_rate
+        if basis_value is not None:
+            self.basis_value = basis_value
 
     @property
     def contract(self):
@@ -543,6 +555,52 @@ class FuturesTicker(object):
         """
 
         self._quanto_base_rate = quanto_base_rate
+
+    @property
+    def basis_rate(self):
+        """Gets the basis_rate of this FuturesTicker.  # noqa: E501
+
+        Basis rate  # noqa: E501
+
+        :return: The basis_rate of this FuturesTicker.  # noqa: E501
+        :rtype: str
+        """
+        return self._basis_rate
+
+    @basis_rate.setter
+    def basis_rate(self, basis_rate):
+        """Sets the basis_rate of this FuturesTicker.
+
+        Basis rate  # noqa: E501
+
+        :param basis_rate: The basis_rate of this FuturesTicker.  # noqa: E501
+        :type: str
+        """
+
+        self._basis_rate = basis_rate
+
+    @property
+    def basis_value(self):
+        """Gets the basis_value of this FuturesTicker.  # noqa: E501
+
+        Basis value  # noqa: E501
+
+        :return: The basis_value of this FuturesTicker.  # noqa: E501
+        :rtype: str
+        """
+        return self._basis_value
+
+    @basis_value.setter
+    def basis_value(self, basis_value):
+        """Sets the basis_value of this FuturesTicker.
+
+        Basis value  # noqa: E501
+
+        :param basis_value: The basis_value of this FuturesTicker.  # noqa: E501
+        :type: str
+        """
+
+        self._basis_value = basis_value
 
     def to_dict(self):
         """Returns the model properties as a dict"""

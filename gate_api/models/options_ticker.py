@@ -186,7 +186,7 @@ class OptionsTicker(object):
     def last_price(self):
         """Gets the last_price of this OptionsTicker.  # noqa: E501
 
-        Last trading price  # noqa: E501
+        Last trading price (quote currency)  # noqa: E501
 
         :return: The last_price of this OptionsTicker.  # noqa: E501
         :rtype: str
@@ -197,7 +197,7 @@ class OptionsTicker(object):
     def last_price(self, last_price):
         """Sets the last_price of this OptionsTicker.
 
-        Last trading price  # noqa: E501
+        Last trading price (quote currency)  # noqa: E501
 
         :param last_price: The last_price of this OptionsTicker.  # noqa: E501
         :type: str
@@ -209,7 +209,7 @@ class OptionsTicker(object):
     def mark_price(self):
         """Gets the mark_price of this OptionsTicker.  # noqa: E501
 
-        Current mark price  # noqa: E501
+        Current mark price (quote currency)  # noqa: E501
 
         :return: The mark_price of this OptionsTicker.  # noqa: E501
         :rtype: str
@@ -220,7 +220,7 @@ class OptionsTicker(object):
     def mark_price(self, mark_price):
         """Sets the mark_price of this OptionsTicker.
 
-        Current mark price  # noqa: E501
+        Current mark price (quote currency)  # noqa: E501
 
         :param mark_price: The mark_price of this OptionsTicker.  # noqa: E501
         :type: str
@@ -232,7 +232,7 @@ class OptionsTicker(object):
     def index_price(self):
         """Gets the index_price of this OptionsTicker.  # noqa: E501
 
-        Current index price  # noqa: E501
+        Current index price (quote currency)  # noqa: E501
 
         :return: The index_price of this OptionsTicker.  # noqa: E501
         :rtype: str
@@ -243,7 +243,7 @@ class OptionsTicker(object):
     def index_price(self, index_price):
         """Sets the index_price of this OptionsTicker.
 
-        Current index price  # noqa: E501
+        Current index price (quote currency)  # noqa: E501
 
         :param index_price: The index_price of this OptionsTicker.  # noqa: E501
         :type: str

@@ -155,7 +155,7 @@ class OptionsMySettlements(object):
     def contract(self):
         """Gets the contract of this OptionsMySettlements.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Options contract name  # noqa: E501
 
         :return: The contract of this OptionsMySettlements.  # noqa: E501
         :rtype: str
@@ -166,7 +166,7 @@ class OptionsMySettlements(object):
     def contract(self, contract):
         """Sets the contract of this OptionsMySettlements.
 
-        Futures contract  # noqa: E501
+        Options contract name  # noqa: E501
 
         :param contract: The contract of this OptionsMySettlements.  # noqa: E501
         :type: str
@@ -178,7 +178,7 @@ class OptionsMySettlements(object):
     def strike_price(self):
         """Gets the strike_price of this OptionsMySettlements.  # noqa: E501
 
-        Strike price  # noqa: E501
+        Strike price (quote currency)  # noqa: E501
 
         :return: The strike_price of this OptionsMySettlements.  # noqa: E501
         :rtype: str
@@ -189,7 +189,7 @@ class OptionsMySettlements(object):
     def strike_price(self, strike_price):
         """Sets the strike_price of this OptionsMySettlements.
 
-        Strike price  # noqa: E501
+        Strike price (quote currency)  # noqa: E501
 
         :param strike_price: The strike_price of this OptionsMySettlements.  # noqa: E501
         :type: str
@@ -201,7 +201,7 @@ class OptionsMySettlements(object):
     def settle_price(self):
         """Gets the settle_price of this OptionsMySettlements.  # noqa: E501
 
-        settlement price  # noqa: E501
+        Settlement price (quote currency)  # noqa: E501
 
         :return: The settle_price of this OptionsMySettlements.  # noqa: E501
         :rtype: str
@@ -212,7 +212,7 @@ class OptionsMySettlements(object):
     def settle_price(self, settle_price):
         """Sets the settle_price of this OptionsMySettlements.
 
-        settlement price  # noqa: E501
+        Settlement price (quote currency)  # noqa: E501
 
         :param settle_price: The settle_price of this OptionsMySettlements.  # noqa: E501
         :type: str
@@ -247,7 +247,7 @@ class OptionsMySettlements(object):
     def settle_profit(self):
         """Gets the settle_profit of this OptionsMySettlements.  # noqa: E501
 
-        Settlement profit  # noqa: E501
+        Settlement profit (quote currency)  # noqa: E501
 
         :return: The settle_profit of this OptionsMySettlements.  # noqa: E501
         :rtype: str
@@ -258,7 +258,7 @@ class OptionsMySettlements(object):
     def settle_profit(self, settle_profit):
         """Sets the settle_profit of this OptionsMySettlements.
 
-        Settlement profit  # noqa: E501
+        Settlement profit (quote currency)  # noqa: E501
 
         :param settle_profit: The settle_profit of this OptionsMySettlements.  # noqa: E501
         :type: str
@@ -270,7 +270,7 @@ class OptionsMySettlements(object):
     def fee(self):
         """Gets the fee of this OptionsMySettlements.  # noqa: E501
 
-        Fee  # noqa: E501
+        Fee (quote currency)  # noqa: E501
 
         :return: The fee of this OptionsMySettlements.  # noqa: E501
         :rtype: str
@@ -281,7 +281,7 @@ class OptionsMySettlements(object):
     def fee(self, fee):
         """Sets the fee of this OptionsMySettlements.
 
-        Fee  # noqa: E501
+        Fee (quote currency)  # noqa: E501
 
         :param fee: The fee of this OptionsMySettlements.  # noqa: E501
         :type: str
@@ -293,7 +293,7 @@ class OptionsMySettlements(object):
     def realised_pnl(self):
         """Gets the realised_pnl of this OptionsMySettlements.  # noqa: E501
 
-        The accumulated profit and loss of opening a position, including premium, fee, settlement profit, etc.  # noqa: E501
+        The accumulated profit and loss of opening a position, including premium, fee, settlement profit, etc. (quote currency)  # noqa: E501
 
         :return: The realised_pnl of this OptionsMySettlements.  # noqa: E501
         :rtype: str
@@ -304,7 +304,7 @@ class OptionsMySettlements(object):
     def realised_pnl(self, realised_pnl):
         """Sets the realised_pnl of this OptionsMySettlements.
 
-        The accumulated profit and loss of opening a position, including premium, fee, settlement profit, etc.  # noqa: E501
+        The accumulated profit and loss of opening a position, including premium, fee, settlement profit, etc. (quote currency)  # noqa: E501
 
         :param realised_pnl: The realised_pnl of this OptionsMySettlements.  # noqa: E501
         :type: str

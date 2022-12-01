@@ -79,7 +79,7 @@ class FuturesOrderAmendment(object):
     def price(self):
         """Gets the price of this FuturesOrderAmendment.  # noqa: E501
 
-        New order price. New price cannot take any orders  # noqa: E501
+        New order price.  # noqa: E501
 
         :return: The price of this FuturesOrderAmendment.  # noqa: E501
         :rtype: str
@@ -90,7 +90,7 @@ class FuturesOrderAmendment(object):
     def price(self, price):
         """Sets the price of this FuturesOrderAmendment.
 
-        New order price. New price cannot take any orders  # noqa: E501
+        New order price.  # noqa: E501
 
         :param price: The price of this FuturesOrderAmendment.  # noqa: E501
         :type: str

@@ -626,7 +626,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
+        :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
         :param int limit: Maximum number of records to be returned in a single list
@@ -655,7 +655,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
+        :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
         :param int _from: Time range beginning, default to 7 days before current time
         :param int to: Time range ending, default to current time
         :param int limit: Maximum number of records to be returned in a single list
@@ -860,6 +860,115 @@ class WalletApi(object):
             collection_formats=collection_formats,
         )
 
+    def sub_account_to_sub_account(self, sub_account_to_sub_account, **kwargs):  # noqa: E501
+        """Sub-account transfers to sub-account  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.sub_account_to_sub_account(sub_account_to_sub_account, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param SubAccountToSubAccount sub_account_to_sub_account: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: None
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.sub_account_to_sub_account_with_http_info(sub_account_to_sub_account, **kwargs)  # noqa: E501
+
+    def sub_account_to_sub_account_with_http_info(self, sub_account_to_sub_account, **kwargs):  # noqa: E501
+        """Sub-account transfers to sub-account  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.sub_account_to_sub_account_with_http_info(sub_account_to_sub_account, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param SubAccountToSubAccount sub_account_to_sub_account: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: None
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['sub_account_to_sub_account']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'" " to method sub_account_to_sub_account" % k
+                )
+            local_var_params[k] = v
+        del local_var_params['kwargs']
+        # verify the required parameter 'sub_account_to_sub_account' is set
+        if self.api_client.client_side_validation and (
+            'sub_account_to_sub_account' not in local_var_params
+            or local_var_params['sub_account_to_sub_account'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `sub_account_to_sub_account` when calling `sub_account_to_sub_account`"
+            )  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'sub_account_to_sub_account' in local_var_params:
+            body_params = local_var_params['sub_account_to_sub_account']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json']
+        )  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiv4']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/wallet/sub_account_to_sub_account',
+            'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+        )
+
     def list_withdraw_status(self, **kwargs):  # noqa: E501
         """Retrieve withdrawal status  # noqa: E501
 
@@ -966,7 +1075,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
+        :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -990,7 +1099,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
+        :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1063,7 +1172,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
+        :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1087,7 +1196,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
+        :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1162,7 +1271,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
+        :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
         :param str settle: Query only balances of specified settle currency
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -1187,7 +1296,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
+        :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
         :param str settle: Query only balances of specified settle currency
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -1265,7 +1374,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
+        :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1289,7 +1398,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str sub_uid: Sub account user ID. Return records related to all sub accounts if not specified
+        :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1477,6 +1586,7 @@ class WalletApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency_pair: Specify a currency pair to retrieve precise fee rate  This field is optional. In most cases, the fee rate is identical among all currency pairs
+        :param str settle: Specify the settlement currency of the contract to get more accurate rate settings  This field is optional. Generally, the rate settings for all settlement currencies are the same.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1501,6 +1611,7 @@ class WalletApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency_pair: Specify a currency pair to retrieve precise fee rate  This field is optional. In most cases, the fee rate is identical among all currency pairs
+        :param str settle: Specify the settlement currency of the contract to get more accurate rate settings  This field is optional. Generally, the rate settings for all settlement currencies are the same.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1517,7 +1628,7 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair']
+        all_params = ['currency_pair', 'settle']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -1533,6 +1644,8 @@ class WalletApi(object):
         query_params = []
         if 'currency_pair' in local_var_params and local_var_params['currency_pair'] is not None:  # noqa: E501
             query_params.append(('currency_pair', local_var_params['currency_pair']))  # noqa: E501
+        if 'settle' in local_var_params and local_var_params['settle'] is not None:  # noqa: E501
+            query_params.append(('settle', local_var_params['settle']))  # noqa: E501
 
         header_params = {}
 

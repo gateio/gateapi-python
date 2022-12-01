@@ -57,6 +57,8 @@ class Order(object):
         'fee_currency': 'str',
         'point_fee': 'str',
         'gt_fee': 'str',
+        'gt_maker_fee': 'str',
+        'gt_taker_fee': 'str',
         'gt_discount': 'bool',
         'rebated_fee': 'str',
         'rebated_fee_currency': 'str',
@@ -87,6 +89,8 @@ class Order(object):
         'fee_currency': 'fee_currency',
         'point_fee': 'point_fee',
         'gt_fee': 'gt_fee',
+        'gt_maker_fee': 'gt_maker_fee',
+        'gt_taker_fee': 'gt_taker_fee',
         'gt_discount': 'gt_discount',
         'rebated_fee': 'rebated_fee',
         'rebated_fee_currency': 'rebated_fee_currency',
@@ -118,12 +122,14 @@ class Order(object):
         fee_currency=None,
         point_fee=None,
         gt_fee=None,
+        gt_maker_fee=None,
+        gt_taker_fee=None,
         gt_discount=None,
         rebated_fee=None,
         rebated_fee_currency=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, bool, bool, str, str, str, str, str, str, str, bool, str, str, Configuration) -> None
+        # type: (str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, bool, bool, str, str, str, str, str, str, str, str, str, bool, str, str, Configuration) -> None
         """Order - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -153,6 +159,8 @@ class Order(object):
         self._fee_currency = None
         self._point_fee = None
         self._gt_fee = None
+        self._gt_maker_fee = None
+        self._gt_taker_fee = None
         self._gt_discount = None
         self._rebated_fee = None
         self._rebated_fee_currency = None
@@ -179,7 +187,8 @@ class Order(object):
             self.account = account
         self.side = side
         self.amount = amount
-        self.price = price
+        if price is not None:
+            self.price = price
         if time_in_force is not None:
             self.time_in_force = time_in_force
         if iceberg is not None:
@@ -202,6 +211,10 @@ class Order(object):
             self.point_fee = point_fee
         if gt_fee is not None:
             self.gt_fee = gt_fee
+        if gt_maker_fee is not None:
+            self.gt_maker_fee = gt_maker_fee
+        if gt_taker_fee is not None:
+            self.gt_taker_fee = gt_taker_fee
         if gt_discount is not None:
             self.gt_discount = gt_discount
         if rebated_fee is not None:
@@ -404,7 +417,7 @@ class Order(object):
     def type(self):
         """Gets the type of this Order.  # noqa: E501
 
-        Order type. limit - limit order  # noqa: E501
+        Order Type   - limit : Limit Order - market : Market Order  # noqa: E501
 
         :return: The type of this Order.  # noqa: E501
         :rtype: str
@@ -415,12 +428,12 @@ class Order(object):
     def type(self, type):
         """Sets the type of this Order.
 
-        Order type. limit - limit order  # noqa: E501
+        Order Type   - limit : Limit Order - market : Market Order  # noqa: E501
 
         :param type: The type of this Order.  # noqa: E501
         :type: str
         """
-        allowed_values = ["limit"]  # noqa: E501
+        allowed_values = ["limit", "market"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}".format(type, allowed_values)  # noqa: E501
@@ -490,7 +503,7 @@ class Order(object):
     def amount(self):
         """Gets the amount of this Order.  # noqa: E501
 
-        Trade amount  # noqa: E501
+        When `type` is limit, it refers to base currency.  For instance, `BTC_USDT` means `BTC`  When `type` is `market`, it refers to different currency according to `side`  - `side` : `buy` means quote currency, `BTC_USDT` means `USDT` - `side` : `sell` means base currency，`BTC_USDT` means `BTC`   # noqa: E501
 
         :return: The amount of this Order.  # noqa: E501
         :rtype: str
@@ -501,7 +514,7 @@ class Order(object):
     def amount(self, amount):
         """Sets the amount of this Order.
 
-        Trade amount  # noqa: E501
+        When `type` is limit, it refers to base currency.  For instance, `BTC_USDT` means `BTC`  When `type` is `market`, it refers to different currency according to `side`  - `side` : `buy` means quote currency, `BTC_USDT` means `USDT` - `side` : `sell` means base currency，`BTC_USDT` means `BTC`   # noqa: E501
 
         :param amount: The amount of this Order.  # noqa: E501
         :type: str
@@ -515,7 +528,7 @@ class Order(object):
     def price(self):
         """Gets the price of this Order.  # noqa: E501
 
-        Order price  # noqa: E501
+        Price can't be empty when `type`= `limit`  # noqa: E501
 
         :return: The price of this Order.  # noqa: E501
         :rtype: str
@@ -526,13 +539,11 @@ class Order(object):
     def price(self, price):
         """Sets the price of this Order.
 
-        Order price  # noqa: E501
+        Price can't be empty when `type`= `limit`  # noqa: E501
 
         :param price: The price of this Order.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and price is None:  # noqa: E501
-            raise ValueError("Invalid value for `price`, must not be `None`")  # noqa: E501
 
         self._price = price
 
@@ -540,7 +551,7 @@ class Order(object):
     def time_in_force(self):
         """Gets the time_in_force of this Order.  # noqa: E501
 
-        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none  # noqa: E501
+        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none Only `ioc` and `fok` are supported when `type`=`market`  # noqa: E501
 
         :return: The time_in_force of this Order.  # noqa: E501
         :rtype: str
@@ -551,7 +562,7 @@ class Order(object):
     def time_in_force(self, time_in_force):
         """Sets the time_in_force of this Order.
 
-        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none  # noqa: E501
+        Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee - fok: FillOrKill, fill either completely or none Only `ioc` and `fok` are supported when `type`=`market`  # noqa: E501
 
         :param time_in_force: The time_in_force of this Order.  # noqa: E501
         :type: str
@@ -795,6 +806,52 @@ class Order(object):
         """
 
         self._gt_fee = gt_fee
+
+    @property
+    def gt_maker_fee(self):
+        """Gets the gt_maker_fee of this Order.  # noqa: E501
+
+        GT used to deduct maker fee  # noqa: E501
+
+        :return: The gt_maker_fee of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._gt_maker_fee
+
+    @gt_maker_fee.setter
+    def gt_maker_fee(self, gt_maker_fee):
+        """Sets the gt_maker_fee of this Order.
+
+        GT used to deduct maker fee  # noqa: E501
+
+        :param gt_maker_fee: The gt_maker_fee of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._gt_maker_fee = gt_maker_fee
+
+    @property
+    def gt_taker_fee(self):
+        """Gets the gt_taker_fee of this Order.  # noqa: E501
+
+        GT used to deduct taker fee  # noqa: E501
+
+        :return: The gt_taker_fee of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._gt_taker_fee
+
+    @gt_taker_fee.setter
+    def gt_taker_fee(self, gt_taker_fee):
+        """Sets the gt_taker_fee of this Order.
+
+        GT used to deduct taker fee  # noqa: E501
+
+        :param gt_taker_fee: The gt_taker_fee of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._gt_taker_fee = gt_taker_fee
 
     @property
     def gt_discount(self):

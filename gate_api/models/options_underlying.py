@@ -79,7 +79,7 @@ class OptionsUnderlying(object):
     def index_price(self):
         """Gets the index_price of this OptionsUnderlying.  # noqa: E501
 
-        Spot index price  # noqa: E501
+        Spot index price (quote currency)  # noqa: E501
 
         :return: The index_price of this OptionsUnderlying.  # noqa: E501
         :rtype: str
@@ -90,7 +90,7 @@ class OptionsUnderlying(object):
     def index_price(self, index_price):
         """Sets the index_price of this OptionsUnderlying.
 
-        Spot index price  # noqa: E501
+        Spot index price (quote currency)  # noqa: E501
 
         :param index_price: The index_price of this OptionsUnderlying.  # noqa: E501
         :type: str
