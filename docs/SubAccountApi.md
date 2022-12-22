@@ -557,7 +557,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **lock_sub_account**
-> lock_sub_account(user_id, body)
+> lock_sub_account(user_id)
 
 Lock the sub-account
 
@@ -586,11 +586,10 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SubAccountApi(api_client)
 user_id = 56 # int | The user id of the sub-account
-body = None # object | 
 
 try:
     # Lock the sub-account
-    api_instance.lock_sub_account(user_id, body)
+    api_instance.lock_sub_account(user_id)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
@@ -602,7 +601,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **int**| The user id of the sub-account | 
- **body** | **object**|  | 
 
 ### Return type
 
@@ -614,7 +612,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 ### HTTP response details
@@ -625,7 +623,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unlock_sub_account**
-> unlock_sub_account(user_id, body)
+> unlock_sub_account(user_id)
 
 Unlock the sub-account
 
@@ -654,11 +652,10 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SubAccountApi(api_client)
 user_id = 56 # int | The user id of the sub-account
-body = None # object | 
 
 try:
     # Unlock the sub-account
-    api_instance.unlock_sub_account(user_id, body)
+    api_instance.unlock_sub_account(user_id)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
@@ -670,7 +667,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **int**| The user id of the sub-account | 
- **body** | **object**|  | 
 
 ### Return type
 
@@ -682,7 +678,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 ### HTTP response details

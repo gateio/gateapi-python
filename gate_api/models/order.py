@@ -53,6 +53,7 @@ class Order(object):
         'left': 'str',
         'fill_price': 'str',
         'filled_total': 'str',
+        'avg_deal_price': 'str',
         'fee': 'str',
         'fee_currency': 'str',
         'point_fee': 'str',
@@ -85,6 +86,7 @@ class Order(object):
         'left': 'left',
         'fill_price': 'fill_price',
         'filled_total': 'filled_total',
+        'avg_deal_price': 'avg_deal_price',
         'fee': 'fee',
         'fee_currency': 'fee_currency',
         'point_fee': 'point_fee',
@@ -118,6 +120,7 @@ class Order(object):
         left=None,
         fill_price=None,
         filled_total=None,
+        avg_deal_price=None,
         fee=None,
         fee_currency=None,
         point_fee=None,
@@ -129,7 +132,7 @@ class Order(object):
         rebated_fee_currency=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, bool, bool, str, str, str, str, str, str, str, str, str, bool, str, str, Configuration) -> None
+        # type: (str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, bool, bool, str, str, str, str, str, str, str, str, str, str, bool, str, str, Configuration) -> None
         """Order - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -155,6 +158,7 @@ class Order(object):
         self._left = None
         self._fill_price = None
         self._filled_total = None
+        self._avg_deal_price = None
         self._fee = None
         self._fee_currency = None
         self._point_fee = None
@@ -203,6 +207,8 @@ class Order(object):
             self.fill_price = fill_price
         if filled_total is not None:
             self.filled_total = filled_total
+        if avg_deal_price is not None:
+            self.avg_deal_price = avg_deal_price
         if fee is not None:
             self.fee = fee
         if fee_currency is not None:
@@ -249,7 +255,7 @@ class Order(object):
     def text(self):
         """Gets the text of this Order.  # noqa: E501
 
-        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 28 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)   # noqa: E501
+        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 28 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)  Besides user defined information, reserved contents are listed below, denoting how the order is created:  - 101: from android - 102: from IOS - 103: from IPAD - 104: from webapp - 3: from web - 2: from apiv2 - apiv4: from apiv4   # noqa: E501
 
         :return: The text of this Order.  # noqa: E501
         :rtype: str
@@ -260,7 +266,7 @@ class Order(object):
     def text(self, text):
         """Sets the text of this Order.
 
-        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 28 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)   # noqa: E501
+        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 28 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)  Besides user defined information, reserved contents are listed below, denoting how the order is created:  - 101: from android - 102: from IOS - 103: from IPAD - 104: from webapp - 3: from web - 2: from apiv2 - apiv4: from apiv4   # noqa: E501
 
         :param text: The text of this Order.  # noqa: E501
         :type: str
@@ -417,7 +423,7 @@ class Order(object):
     def type(self):
         """Gets the type of this Order.  # noqa: E501
 
-        Order Type   - limit : Limit Order - market : Market Order  # noqa: E501
+        Order Type    - limit : Limit Order - market : Market Order  # noqa: E501
 
         :return: The type of this Order.  # noqa: E501
         :rtype: str
@@ -428,7 +434,7 @@ class Order(object):
     def type(self, type):
         """Sets the type of this Order.
 
-        Order Type   - limit : Limit Order - market : Market Order  # noqa: E501
+        Order Type    - limit : Limit Order - market : Market Order  # noqa: E501
 
         :param type: The type of this Order.  # noqa: E501
         :type: str
@@ -714,6 +720,29 @@ class Order(object):
         """
 
         self._filled_total = filled_total
+
+    @property
+    def avg_deal_price(self):
+        """Gets the avg_deal_price of this Order.  # noqa: E501
+
+        Average fill price  # noqa: E501
+
+        :return: The avg_deal_price of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._avg_deal_price
+
+    @avg_deal_price.setter
+    def avg_deal_price(self, avg_deal_price):
+        """Sets the avg_deal_price of this Order.
+
+        Average fill price  # noqa: E501
+
+        :param avg_deal_price: The avg_deal_price of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._avg_deal_price = avg_deal_price
 
     @property
     def fee(self):

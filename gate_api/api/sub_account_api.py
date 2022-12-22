@@ -914,17 +914,16 @@ class SubAccountApi(object):
             collection_formats=collection_formats,
         )
 
-    def lock_sub_account(self, user_id, body, **kwargs):  # noqa: E501
+    def lock_sub_account(self, user_id, **kwargs):  # noqa: E501
         """Lock the sub-account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.lock_sub_account(user_id, body, async_req=True)
+        >>> thread = api.lock_sub_account(user_id, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
         :param int user_id: The user id of the sub-account (required)
-        :param object body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -937,19 +936,18 @@ class SubAccountApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.lock_sub_account_with_http_info(user_id, body, **kwargs)  # noqa: E501
+        return self.lock_sub_account_with_http_info(user_id, **kwargs)  # noqa: E501
 
-    def lock_sub_account_with_http_info(self, user_id, body, **kwargs):  # noqa: E501
+    def lock_sub_account_with_http_info(self, user_id, **kwargs):  # noqa: E501
         """Lock the sub-account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.lock_sub_account_with_http_info(user_id, body, async_req=True)
+        >>> thread = api.lock_sub_account_with_http_info(user_id, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
         :param int user_id: The user id of the sub-account (required)
-        :param object body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -966,7 +964,7 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['user_id', 'body']
+        all_params = ['user_id']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -981,11 +979,6 @@ class SubAccountApi(object):
             raise ApiValueError(
                 "Missing the required parameter `user_id` when calling `lock_sub_account`"
             )  # noqa: E501
-        # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and (
-            'body' not in local_var_params or local_var_params['body'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `body` when calling `lock_sub_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1001,13 +994,6 @@ class SubAccountApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
-
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
@@ -1029,17 +1015,16 @@ class SubAccountApi(object):
             collection_formats=collection_formats,
         )
 
-    def unlock_sub_account(self, user_id, body, **kwargs):  # noqa: E501
+    def unlock_sub_account(self, user_id, **kwargs):  # noqa: E501
         """Unlock the sub-account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.unlock_sub_account(user_id, body, async_req=True)
+        >>> thread = api.unlock_sub_account(user_id, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
         :param int user_id: The user id of the sub-account (required)
-        :param object body: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1052,19 +1037,18 @@ class SubAccountApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.unlock_sub_account_with_http_info(user_id, body, **kwargs)  # noqa: E501
+        return self.unlock_sub_account_with_http_info(user_id, **kwargs)  # noqa: E501
 
-    def unlock_sub_account_with_http_info(self, user_id, body, **kwargs):  # noqa: E501
+    def unlock_sub_account_with_http_info(self, user_id, **kwargs):  # noqa: E501
         """Unlock the sub-account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.unlock_sub_account_with_http_info(user_id, body, async_req=True)
+        >>> thread = api.unlock_sub_account_with_http_info(user_id, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
         :param int user_id: The user id of the sub-account (required)
-        :param object body: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1081,7 +1065,7 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['user_id', 'body']
+        all_params = ['user_id']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -1096,11 +1080,6 @@ class SubAccountApi(object):
             raise ApiValueError(
                 "Missing the required parameter `user_id` when calling `unlock_sub_account`"
             )  # noqa: E501
-        # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and (
-            'body' not in local_var_params or local_var_params['body'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `body` when calling `unlock_sub_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1116,13 +1095,6 @@ class SubAccountApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
-
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 

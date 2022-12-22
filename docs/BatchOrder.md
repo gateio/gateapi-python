@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **update_time_ms** | **int** | Last modification time of order (in milliseconds) | [optional] [readonly] 
 **status** | **str** | Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: filled - &#x60;cancelled&#x60;: cancelled | [optional] [readonly] 
 **currency_pair** | **str** | Currency pair | [optional] 
-**type** | **str** | Order type. limit - limit order | [optional] [default to 'limit']
+**type** | **str** | Order Type    - limit : Limit Order - market : Market Order | [optional] [default to 'limit']
 **account** | **str** | Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account | [optional] [default to 'spot']
 **side** | **str** | Order side | [optional] 
 **amount** | **str** | Trade amount | [optional] 

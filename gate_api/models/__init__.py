@@ -95,6 +95,7 @@ from gate_api.models.options_underlying import OptionsUnderlying
 from gate_api.models.options_underlying_ticker import OptionsUnderlyingTicker
 from gate_api.models.order import Order
 from gate_api.models.order_book import OrderBook
+from gate_api.models.order_patch import OrderPatch
 from gate_api.models.position import Position
 from gate_api.models.position_close import PositionClose
 from gate_api.models.position_close_order import PositionCloseOrder

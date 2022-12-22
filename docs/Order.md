@@ -5,14 +5,14 @@ Spot order details
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | Order ID | [optional] [readonly] 
-**text** | **str** | User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 28 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)  | [optional] 
+**text** | **str** | User defined information. If not empty, must follow the rules below:  1. prefixed with &#x60;t-&#x60; 2. no longer than 28 bytes without &#x60;t-&#x60; prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)  Besides user defined information, reserved contents are listed below, denoting how the order is created:  - 101: from android - 102: from IOS - 103: from IPAD - 104: from webapp - 3: from web - 2: from apiv2 - apiv4: from apiv4  | [optional] 
 **create_time** | **str** | Creation time of order | [optional] [readonly] 
 **update_time** | **str** | Last modification time of order | [optional] [readonly] 
 **create_time_ms** | **int** | Creation time of order (in milliseconds) | [optional] [readonly] 
 **update_time_ms** | **int** | Last modification time of order (in milliseconds) | [optional] [readonly] 
 **status** | **str** | Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: filled - &#x60;cancelled&#x60;: cancelled | [optional] [readonly] 
 **currency_pair** | **str** | Currency pair | 
-**type** | **str** | Order Type   - limit : Limit Order - market : Market Order | [optional] [default to 'limit']
+**type** | **str** | Order Type    - limit : Limit Order - market : Market Order | [optional] [default to 'limit']
 **account** | **str** | Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account. Portfolio margin account must set to &#x60;cross-margin&#x60;  | [optional] [default to 'spot']
 **side** | **str** | Order side | 
 **amount** | **str** | When &#x60;type&#x60; is limit, it refers to base currency.  For instance, &#x60;BTC_USDT&#x60; means &#x60;BTC&#x60;  When &#x60;type&#x60; is &#x60;market&#x60;, it refers to different currency according to &#x60;side&#x60;  - &#x60;side&#x60; : &#x60;buy&#x60; means quote currency, &#x60;BTC_USDT&#x60; means &#x60;USDT&#x60; - &#x60;side&#x60; : &#x60;sell&#x60; means base currency，&#x60;BTC_USDT&#x60; means &#x60;BTC&#x60;  | 
@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **left** | **str** | Amount left to fill | [optional] [readonly] 
 **fill_price** | **str** | Total filled in quote currency. Deprecated in favor of &#x60;filled_total&#x60; | [optional] [readonly] 
 **filled_total** | **str** | Total filled in quote currency | [optional] [readonly] 
+**avg_deal_price** | **str** | Average fill price | [optional] [readonly] 
 **fee** | **str** | Fee deducted | [optional] [readonly] 
 **fee_currency** | **str** | Fee currency unit | [optional] [readonly] 
 **point_fee** | **str** | Points used to deduct fee | [optional] [readonly] 

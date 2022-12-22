@@ -493,7 +493,7 @@ class BatchOrder(object):
     def type(self):
         """Gets the type of this BatchOrder.  # noqa: E501
 
-        Order type. limit - limit order  # noqa: E501
+        Order Type    - limit : Limit Order - market : Market Order  # noqa: E501
 
         :return: The type of this BatchOrder.  # noqa: E501
         :rtype: str
@@ -504,12 +504,12 @@ class BatchOrder(object):
     def type(self, type):
         """Sets the type of this BatchOrder.
 
-        Order type. limit - limit order  # noqa: E501
+        Order Type    - limit : Limit Order - market : Market Order  # noqa: E501
 
         :param type: The type of this BatchOrder.  # noqa: E501
         :type: str
         """
-        allowed_values = ["limit"]  # noqa: E501
+        allowed_values = ["limit", "market"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}".format(type, allowed_values)  # noqa: E501

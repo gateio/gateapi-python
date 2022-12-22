@@ -46,6 +46,7 @@ class CrossMarginAccount(object):
         'total_initial_margin_rate': 'str',
         'total_maintenance_margin_rate': 'str',
         'total_available_margin': 'str',
+        'portfolio_margin_total': 'str',
     }
 
     attribute_map = {
@@ -62,6 +63,7 @@ class CrossMarginAccount(object):
         'total_initial_margin_rate': 'total_initial_margin_rate',
         'total_maintenance_margin_rate': 'total_maintenance_margin_rate',
         'total_available_margin': 'total_available_margin',
+        'portfolio_margin_total': 'portfolio_margin_total',
     }
 
     def __init__(
@@ -79,9 +81,10 @@ class CrossMarginAccount(object):
         total_initial_margin_rate=None,
         total_maintenance_margin_rate=None,
         total_available_margin=None,
+        portfolio_margin_total=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, bool, dict(str, CrossMarginBalance), str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (int, bool, dict(str, CrossMarginBalance), str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """CrossMarginAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -100,6 +103,7 @@ class CrossMarginAccount(object):
         self._total_initial_margin_rate = None
         self._total_maintenance_margin_rate = None
         self._total_available_margin = None
+        self._portfolio_margin_total = None
         self.discriminator = None
 
         if user_id is not None:
@@ -128,6 +132,8 @@ class CrossMarginAccount(object):
             self.total_maintenance_margin_rate = total_maintenance_margin_rate
         if total_available_margin is not None:
             self.total_available_margin = total_available_margin
+        if portfolio_margin_total is not None:
+            self.portfolio_margin_total = portfolio_margin_total
 
     @property
     def user_id(self):
@@ -425,6 +431,29 @@ class CrossMarginAccount(object):
         """
 
         self._total_available_margin = total_available_margin
+
+    @property
+    def portfolio_margin_total(self):
+        """Gets the portfolio_margin_total of this CrossMarginAccount.  # noqa: E501
+
+        Total amount of the portfolio margin account  # noqa: E501
+
+        :return: The portfolio_margin_total of this CrossMarginAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._portfolio_margin_total
+
+    @portfolio_margin_total.setter
+    def portfolio_margin_total(self, portfolio_margin_total):
+        """Sets the portfolio_margin_total of this CrossMarginAccount.
+
+        Total amount of the portfolio margin account  # noqa: E501
+
+        :param portfolio_margin_total: The portfolio_margin_total of this CrossMarginAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._portfolio_margin_total = portfolio_margin_total
 
     def to_dict(self):
         """Returns the model properties as a dict"""
