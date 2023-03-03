@@ -1,11 +1,11 @@
-# FundingBookItem
+# AgencyCommissionHistory
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rate** | **str** | Loan rate (daily rate) | [optional] 
-**amount** | **str** | Borrowable amount | [optional] 
-**days** | **int** | The number of days till the loan repayment&#39;s dateline | [optional] 
+**currency_pair** | **str** | Currency pair | [optional] 
+**total** | **int** | Total | [optional] 
+**list** | [**list[AgencyCommission]**](AgencyCommission.md) | List of comission history | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

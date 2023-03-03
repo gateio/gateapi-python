@@ -225,7 +225,7 @@ class FuturesAccount(object):
     def available(self):
         """Gets the available of this FuturesAccount.  # noqa: E501
 
-        The available balance for transferring or trading  # noqa: E501
+        The available balance for transferring or trading(including bonus.  Bonus can't be be withdrawn. The transfer amount needs to deduct the bonus)  # noqa: E501
 
         :return: The available of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -236,7 +236,7 @@ class FuturesAccount(object):
     def available(self, available):
         """Sets the available of this FuturesAccount.
 
-        The available balance for transferring or trading  # noqa: E501
+        The available balance for transferring or trading(including bonus.  Bonus can't be be withdrawn. The transfer amount needs to deduct the bonus)  # noqa: E501
 
         :param available: The available of this FuturesAccount.  # noqa: E501
         :type: str

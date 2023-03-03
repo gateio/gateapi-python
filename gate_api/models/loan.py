@@ -312,7 +312,7 @@ class Loan(object):
     def rate(self):
         """Gets the rate of this Loan.  # noqa: E501
 
-        Loan rate. Only rates in [0.0002, 0.002] are supported.  Not required in lending. Market rate calculated from recent rates will be used if not set  # noqa: E501
+        Loan rate. Only rates in [0.0001, 0.01] are supported.  Not required in lending. Market rate calculated from recent rates will be used if not set  # noqa: E501
 
         :return: The rate of this Loan.  # noqa: E501
         :rtype: str
@@ -323,7 +323,7 @@ class Loan(object):
     def rate(self, rate):
         """Sets the rate of this Loan.
 
-        Loan rate. Only rates in [0.0002, 0.002] are supported.  Not required in lending. Market rate calculated from recent rates will be used if not set  # noqa: E501
+        Loan rate. Only rates in [0.0001, 0.01] are supported.  Not required in lending. Market rate calculated from recent rates will be used if not set  # noqa: E501
 
         :param rate: The rate of this Loan.  # noqa: E501
         :type: str

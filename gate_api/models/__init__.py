@@ -15,6 +15,10 @@ from __future__ import absolute_import
 
 # import models into model package
 from gate_api.models.account_balance import AccountBalance
+from gate_api.models.agency_commission import AgencyCommission
+from gate_api.models.agency_commission_history import AgencyCommissionHistory
+from gate_api.models.agency_transaction import AgencyTransaction
+from gate_api.models.agency_transaction_history import AgencyTransactionHistory
 from gate_api.models.api_v4_key_perm import ApiV4KeyPerm
 from gate_api.models.auto_repay_setting import AutoRepaySetting
 from gate_api.models.batch_futures_order import BatchFuturesOrder
@@ -50,6 +54,7 @@ from gate_api.models.funding_rate_record import FundingRateRecord
 from gate_api.models.futures_account import FuturesAccount
 from gate_api.models.futures_account_book import FuturesAccountBook
 from gate_api.models.futures_account_history import FuturesAccountHistory
+from gate_api.models.futures_auto_deleverage import FuturesAutoDeleverage
 from gate_api.models.futures_candlestick import FuturesCandlestick
 from gate_api.models.futures_index_constituents import FuturesIndexConstituents
 from gate_api.models.futures_initial_order import FuturesInitialOrder
@@ -103,6 +108,7 @@ from gate_api.models.repay_request import RepayRequest
 from gate_api.models.repayment import Repayment
 from gate_api.models.saved_address import SavedAddress
 from gate_api.models.spot_account import SpotAccount
+from gate_api.models.spot_fee import SpotFee
 from gate_api.models.spot_price_put_order import SpotPricePutOrder
 from gate_api.models.spot_price_trigger import SpotPriceTrigger
 from gate_api.models.spot_price_triggered_order import SpotPriceTriggeredOrder

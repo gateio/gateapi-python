@@ -32,12 +32,14 @@ class FuturesCandlestick(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'t': 'float', 'v': 'int', 'c': 'str', 'h': 'str', 'l': 'str', 'o': 'str'}
+    openapi_types = {'t': 'float', 'v': 'int', 'c': 'str', 'h': 'str', 'l': 'str', 'o': 'str', 'sum': 'str'}
 
-    attribute_map = {'t': 't', 'v': 'v', 'c': 'c', 'h': 'h', 'l': 'l', 'o': 'o'}
+    attribute_map = {'t': 't', 'v': 'v', 'c': 'c', 'h': 'h', 'l': 'l', 'o': 'o', 'sum': 'sum'}
 
-    def __init__(self, t=None, v=None, c=None, h=None, l=None, o=None, local_vars_configuration=None):  # noqa: E501
-        # type: (float, int, str, str, str, str, Configuration) -> None
+    def __init__(
+        self, t=None, v=None, c=None, h=None, l=None, o=None, sum=None, local_vars_configuration=None
+    ):  # noqa: E501
+        # type: (float, int, str, str, str, str, str, Configuration) -> None
         """FuturesCandlestick - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -49,6 +51,7 @@ class FuturesCandlestick(object):
         self._h = None
         self._l = None
         self._o = None
+        self._sum = None
         self.discriminator = None
 
         if t is not None:
@@ -63,6 +66,8 @@ class FuturesCandlestick(object):
             self.l = l
         if o is not None:
             self.o = o
+        if sum is not None:
+            self.sum = sum
 
     @property
     def t(self):
@@ -201,6 +206,29 @@ class FuturesCandlestick(object):
         """
 
         self._o = o
+
+    @property
+    def sum(self):
+        """Gets the sum of this FuturesCandlestick.  # noqa: E501
+
+        Trading volume (unit: Quote currency)  # noqa: E501
+
+        :return: The sum of this FuturesCandlestick.  # noqa: E501
+        :rtype: str
+        """
+        return self._sum
+
+    @sum.setter
+    def sum(self, sum):
+        """Sets the sum of this FuturesCandlestick.
+
+        Trading volume (unit: Quote currency)  # noqa: E501
+
+        :param sum: The sum of this FuturesCandlestick.  # noqa: E501
+        :type: str
+        """
+
+        self._sum = sum
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | Record ID | [optional] [readonly] 
 **txid** | **str** | Hash record of the withdrawal | [optional] [readonly] 
+**withdraw_order_id** | **str** | Client order id, up to 32 length and can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)  | [optional] 
 **timestamp** | **str** | Operation time | [optional] [readonly] 
 **amount** | **str** | Currency amount | 
 **currency** | **str** | Currency name | 

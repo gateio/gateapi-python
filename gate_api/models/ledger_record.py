@@ -35,6 +35,7 @@ class LedgerRecord(object):
     openapi_types = {
         'id': 'str',
         'txid': 'str',
+        'withdraw_order_id': 'str',
         'timestamp': 'str',
         'amount': 'str',
         'currency': 'str',
@@ -48,6 +49,7 @@ class LedgerRecord(object):
     attribute_map = {
         'id': 'id',
         'txid': 'txid',
+        'withdraw_order_id': 'withdraw_order_id',
         'timestamp': 'timestamp',
         'amount': 'amount',
         'currency': 'currency',
@@ -62,6 +64,7 @@ class LedgerRecord(object):
         self,
         id=None,
         txid=None,
+        withdraw_order_id=None,
         timestamp=None,
         amount=None,
         currency=None,
@@ -72,7 +75,7 @@ class LedgerRecord(object):
         fee=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """LedgerRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +83,7 @@ class LedgerRecord(object):
 
         self._id = None
         self._txid = None
+        self._withdraw_order_id = None
         self._timestamp = None
         self._amount = None
         self._currency = None
@@ -94,6 +98,8 @@ class LedgerRecord(object):
             self.id = id
         if txid is not None:
             self.txid = txid
+        if withdraw_order_id is not None:
+            self.withdraw_order_id = withdraw_order_id
         if timestamp is not None:
             self.timestamp = timestamp
         self.amount = amount
@@ -153,6 +159,29 @@ class LedgerRecord(object):
         """
 
         self._txid = txid
+
+    @property
+    def withdraw_order_id(self):
+        """Gets the withdraw_order_id of this LedgerRecord.  # noqa: E501
+
+        Client order id, up to 32 length and can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)   # noqa: E501
+
+        :return: The withdraw_order_id of this LedgerRecord.  # noqa: E501
+        :rtype: str
+        """
+        return self._withdraw_order_id
+
+    @withdraw_order_id.setter
+    def withdraw_order_id(self, withdraw_order_id):
+        """Sets the withdraw_order_id of this LedgerRecord.
+
+        Client order id, up to 32 length and can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)   # noqa: E501
+
+        :param withdraw_order_id: The withdraw_order_id of this LedgerRecord.  # noqa: E501
+        :type: str
+        """
+
+        self._withdraw_order_id = withdraw_order_id
 
     @property
     def timestamp(self):

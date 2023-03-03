@@ -132,7 +132,7 @@ class CrossMarginCurrency(object):
     def rate(self):
         """Gets the rate of this CrossMarginCurrency.  # noqa: E501
 
-        Loan rate  # noqa: E501
+        Minimum lending rate (hourly rate)  # noqa: E501
 
         :return: The rate of this CrossMarginCurrency.  # noqa: E501
         :rtype: str
@@ -143,7 +143,7 @@ class CrossMarginCurrency(object):
     def rate(self, rate):
         """Sets the rate of this CrossMarginCurrency.
 
-        Loan rate  # noqa: E501
+        Minimum lending rate (hourly rate)  # noqa: E501
 
         :param rate: The rate of this CrossMarginCurrency.  # noqa: E501
         :type: str

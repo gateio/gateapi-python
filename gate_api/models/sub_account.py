@@ -38,6 +38,7 @@ class SubAccount(object):
         'password': 'str',
         'email': 'str',
         'state': 'int',
+        'type': 'int',
         'user_id': 'int',
         'create_time': 'int',
     }
@@ -48,6 +49,7 @@ class SubAccount(object):
         'password': 'password',
         'email': 'email',
         'state': 'state',
+        'type': 'type',
         'user_id': 'user_id',
         'create_time': 'create_time',
     }
@@ -59,11 +61,12 @@ class SubAccount(object):
         password=None,
         email=None,
         state=None,
+        type=None,
         user_id=None,
         create_time=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, int, int, int, Configuration) -> None
+        # type: (str, str, str, str, int, int, int, int, Configuration) -> None
         """SubAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,6 +77,7 @@ class SubAccount(object):
         self._password = None
         self._email = None
         self._state = None
+        self._type = None
         self._user_id = None
         self._create_time = None
         self.discriminator = None
@@ -87,6 +91,8 @@ class SubAccount(object):
             self.email = email
         if state is not None:
             self.state = state
+        if type is not None:
+            self.type = type
         if user_id is not None:
             self.user_id = user_id
         if create_time is not None:
@@ -208,6 +214,29 @@ class SubAccount(object):
         """
 
         self._state = state
+
+    @property
+    def type(self):
+        """Gets the type of this SubAccount.  # noqa: E501
+
+        Type: 1-Sub-account  # noqa: E501
+
+        :return: The type of this SubAccount.  # noqa: E501
+        :rtype: int
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this SubAccount.
+
+        Type: 1-Sub-account  # noqa: E501
+
+        :param type: The type of this SubAccount.  # noqa: E501
+        :type: int
+        """
+
+        self._type = type
 
     @property
     def user_id(self):
