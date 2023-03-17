@@ -29,9 +29,12 @@ from gate_api.models.contract import Contract
 from gate_api.models.contract_stat import ContractStat
 from gate_api.models.countdown_cancel_all_futures_task import CountdownCancelAllFuturesTask
 from gate_api.models.countdown_cancel_all_spot_task import CountdownCancelAllSpotTask
+from gate_api.models.create_uni_lend import CreateUniLend
+from gate_api.models.create_uni_loan import CreateUniLoan
 from gate_api.models.cross_margin_account import CrossMarginAccount
 from gate_api.models.cross_margin_account_book import CrossMarginAccountBook
 from gate_api.models.cross_margin_balance import CrossMarginBalance
+from gate_api.models.cross_margin_balance1 import CrossMarginBalance1
 from gate_api.models.cross_margin_borrowable import CrossMarginBorrowable
 from gate_api.models.cross_margin_currency import CrossMarginCurrency
 from gate_api.models.cross_margin_loan import CrossMarginLoan
@@ -81,8 +84,10 @@ from gate_api.models.margin_account_currency import MarginAccountCurrency
 from gate_api.models.margin_borrowable import MarginBorrowable
 from gate_api.models.margin_currency_pair import MarginCurrencyPair
 from gate_api.models.margin_transferable import MarginTransferable
+from gate_api.models.max_uni_borrowable import MaxUniBorrowable
 from gate_api.models.multi_chain_address_item import MultiChainAddressItem
 from gate_api.models.my_futures_trade import MyFuturesTrade
+from gate_api.models.my_futures_trade_time_range import MyFuturesTradeTimeRange
 from gate_api.models.open_orders import OpenOrders
 from gate_api.models.options_account import OptionsAccount
 from gate_api.models.options_account_book import OptionsAccountBook
@@ -101,6 +106,7 @@ from gate_api.models.options_underlying_ticker import OptionsUnderlyingTicker
 from gate_api.models.order import Order
 from gate_api.models.order_book import OrderBook
 from gate_api.models.order_patch import OrderPatch
+from gate_api.models.patch_uni_lend import PatchUniLend
 from gate_api.models.position import Position
 from gate_api.models.position_close import PositionClose
 from gate_api.models.position_close_order import PositionCloseOrder
@@ -130,4 +136,13 @@ from gate_api.models.transaction_id import TransactionID
 from gate_api.models.transfer import Transfer
 from gate_api.models.trigger_order_response import TriggerOrderResponse
 from gate_api.models.trigger_time import TriggerTime
+from gate_api.models.uni_currency import UniCurrency
+from gate_api.models.uni_currency_pair import UniCurrencyPair
+from gate_api.models.uni_interest_record import UniInterestRecord
+from gate_api.models.uni_lend import UniLend
+from gate_api.models.uni_lend_interest import UniLendInterest
+from gate_api.models.uni_lend_record import UniLendRecord
+from gate_api.models.uni_loan import UniLoan
+from gate_api.models.uni_loan_interest_record import UniLoanInterestRecord
+from gate_api.models.uni_loan_record import UniLoanRecord
 from gate_api.models.withdraw_status import WithdrawStatus

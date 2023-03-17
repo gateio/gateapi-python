@@ -1754,7 +1754,7 @@ Name | Type | Description  | Notes
 
 Create a futures order
 
-- Creating futures orders requires `size`, which is number of contracts instead of currency amount. You can use `quanto_multiplier` in contract detail response to know how much currency 1 size contract represents - Zero-filled order cannot be retrieved 10 minutes after order cancellation. You will get a 404 not found for such orders - Set `reduce_only` to `true` can keep the position from changing side when reducing position size - In single position mode, to close a position, you need to set `size` to 0 and `close` to `true` - In dual position mode, to close one side position, you need to set `auto_size` side, `reduce_only` to true and `size` to 0
+- Creating futures orders requires `size`, which is number of contracts instead of currency amount. You can use `quanto_multiplier` in contract detail response to know how much currency 1 size contract represents - Zero-filled order cannot be retrieved 10 minutes after order cancellation. You will get a 404 not found for such orders - Set `reduce_only` to `true` can keep the position from changing side when reducing position size - In single position mode, to close a position, you need to set `size` to 0 and `close` to `true` - In dual position mode, to close one side position, you need to set `auto_size` side, `reduce_only` to true and `size` to 0 - Set `stp_act` to decide the strategy of self-trade prevention. For detailed usage, refer to the `stp_act` parameter in request body 
 
 ### Example
 
@@ -2253,7 +2253,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_my_trades_with_time_range**
-> list[MyFuturesTrade] get_my_trades_with_time_range(settle, contract=contract, _from=_from, to=to, limit=limit, offset=offset)
+> list[MyFuturesTradeTimeRange] get_my_trades_with_time_range(settle, contract=contract, _from=_from, to=to, limit=limit, offset=offset)
 
 List personal trading history by time range
 
@@ -2311,7 +2311,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[MyFuturesTrade]**](MyFuturesTrade.md)
+[**list[MyFuturesTradeTimeRange]**](MyFuturesTradeTimeRange.md)
 
 ### Authorization
 

@@ -67,6 +67,7 @@ class Contract(object):
         'orders_limit': 'int',
         'enable_bonus': 'bool',
         'enable_credit': 'bool',
+        'create_time': 'float',
     }
 
     attribute_map = {
@@ -104,6 +105,7 @@ class Contract(object):
         'orders_limit': 'orders_limit',
         'enable_bonus': 'enable_bonus',
         'enable_credit': 'enable_credit',
+        'create_time': 'create_time',
     }
 
     def __init__(
@@ -142,9 +144,10 @@ class Contract(object):
         orders_limit=None,
         enable_bonus=None,
         enable_credit=None,
+        create_time=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, float, str, str, str, int, int, str, str, str, int, int, int, int, float, bool, int, bool, bool, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, float, str, str, str, int, int, str, str, str, int, int, int, int, float, bool, int, bool, bool, float, Configuration) -> None
         """Contract - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -184,6 +187,7 @@ class Contract(object):
         self._orders_limit = None
         self._enable_bonus = None
         self._enable_credit = None
+        self._create_time = None
         self.discriminator = None
 
         if name is not None:
@@ -254,6 +258,8 @@ class Contract(object):
             self.enable_bonus = enable_bonus
         if enable_credit is not None:
             self.enable_credit = enable_credit
+        if create_time is not None:
+            self.create_time = create_time
 
     @property
     def name(self):
@@ -1048,6 +1054,29 @@ class Contract(object):
         """
 
         self._enable_credit = enable_credit
+
+    @property
+    def create_time(self):
+        """Gets the create_time of this Contract.  # noqa: E501
+
+        Created time of the contract  # noqa: E501
+
+        :return: The create_time of this Contract.  # noqa: E501
+        :rtype: float
+        """
+        return self._create_time
+
+    @create_time.setter
+    def create_time(self, create_time):
+        """Sets the create_time of this Contract.
+
+        Created time of the contract  # noqa: E501
+
+        :param create_time: The create_time of this Contract.  # noqa: E501
+        :type: float
+        """
+
+        self._create_time = create_time
 
     def to_dict(self):
         """Returns the model properties as a dict"""

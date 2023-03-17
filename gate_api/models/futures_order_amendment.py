@@ -32,12 +32,12 @@ class FuturesOrderAmendment(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'size': 'int', 'price': 'str'}
+    openapi_types = {'size': 'int', 'price': 'str', 'amend_text': 'str'}
 
-    attribute_map = {'size': 'size', 'price': 'price'}
+    attribute_map = {'size': 'size', 'price': 'price', 'amend_text': 'amend_text'}
 
-    def __init__(self, size=None, price=None, local_vars_configuration=None):  # noqa: E501
-        # type: (int, str, Configuration) -> None
+    def __init__(self, size=None, price=None, amend_text=None, local_vars_configuration=None):  # noqa: E501
+        # type: (int, str, str, Configuration) -> None
         """FuturesOrderAmendment - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -45,12 +45,15 @@ class FuturesOrderAmendment(object):
 
         self._size = None
         self._price = None
+        self._amend_text = None
         self.discriminator = None
 
         if size is not None:
             self.size = size
         if price is not None:
             self.price = price
+        if amend_text is not None:
+            self.amend_text = amend_text
 
     @property
     def size(self):
@@ -97,6 +100,29 @@ class FuturesOrderAmendment(object):
         """
 
         self._price = price
+
+    @property
+    def amend_text(self):
+        """Gets the amend_text of this FuturesOrderAmendment.  # noqa: E501
+
+        Custom info during amending order  # noqa: E501
+
+        :return: The amend_text of this FuturesOrderAmendment.  # noqa: E501
+        :rtype: str
+        """
+        return self._amend_text
+
+    @amend_text.setter
+    def amend_text(self, amend_text):
+        """Sets the amend_text of this FuturesOrderAmendment.
+
+        Custom info during amending order  # noqa: E501
+
+        :param amend_text: The amend_text of this FuturesOrderAmendment.  # noqa: E501
+        :type: str
+        """
+
+        self._amend_text = amend_text
 
     def to_dict(self):
         """Returns the model properties as a dict"""

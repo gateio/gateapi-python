@@ -664,7 +664,7 @@ class Position(object):
     def adl_ranking(self):
         """Gets the adl_ranking of this Position.  # noqa: E501
 
-        ADL ranking, ranging from 1 to 5  # noqa: E501
+        Ranking of auto deleveraging, a total of 1-5 grades, `1` is the highest, `5` is the lowest, and `6` is the special case when there is no position held or in liquidation  # noqa: E501
 
         :return: The adl_ranking of this Position.  # noqa: E501
         :rtype: int
@@ -675,7 +675,7 @@ class Position(object):
     def adl_ranking(self, adl_ranking):
         """Sets the adl_ranking of this Position.
 
-        ADL ranking, ranging from 1 to 5  # noqa: E501
+        Ranking of auto deleveraging, a total of 1-5 grades, `1` is the highest, `5` is the lowest, and `6` is the special case when there is no position held or in liquidation  # noqa: E501
 
         :param adl_ranking: The adl_ranking of this Position.  # noqa: E501
         :type: int

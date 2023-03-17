@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user_id** | **int** | User ID of the cross margin account. 0 means that the subaccount has not yet opened a cross margin account | [optional] 
 **locked** | **bool** | Whether account is locked | [optional] 
-**balances** | [**dict(str, CrossMarginBalance)**](CrossMarginBalance.md) |  | [optional] 
+**balances** | [**dict(str, CrossMarginBalance1)**](CrossMarginBalance1.md) |  | [optional] 
 **total** | **str** | Total account value in USDT, i.e., the sum of all currencies&#39; &#x60;(available+freeze)*price*discount&#x60; | [optional] 
 **borrowed** | **str** | Total borrowed value in USDT, i.e., the sum of all currencies&#39; &#x60;borrowed*price*discount&#x60; | [optional] 
 **borrowed_net** | **str** | Total borrowed value in USDT * borrowed factor | [optional] 

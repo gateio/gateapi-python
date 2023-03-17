@@ -32,14 +32,44 @@ class CrossMarginBalance(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'available': 'str', 'freeze': 'str', 'borrowed': 'str', 'interest': 'str'}
+    openapi_types = {
+        'available': 'str',
+        'freeze': 'str',
+        'borrowed': 'str',
+        'interest': 'str',
+        'negative_liab': 'str',
+        'futures_pos_liab': 'str',
+        'equity': 'str',
+        'total_freeze': 'str',
+        'total_liab': 'str',
+    }
 
-    attribute_map = {'available': 'available', 'freeze': 'freeze', 'borrowed': 'borrowed', 'interest': 'interest'}
+    attribute_map = {
+        'available': 'available',
+        'freeze': 'freeze',
+        'borrowed': 'borrowed',
+        'interest': 'interest',
+        'negative_liab': 'negative_liab',
+        'futures_pos_liab': 'futures_pos_liab',
+        'equity': 'equity',
+        'total_freeze': 'total_freeze',
+        'total_liab': 'total_liab',
+    }
 
     def __init__(
-        self, available=None, freeze=None, borrowed=None, interest=None, local_vars_configuration=None
+        self,
+        available=None,
+        freeze=None,
+        borrowed=None,
+        interest=None,
+        negative_liab=None,
+        futures_pos_liab=None,
+        equity=None,
+        total_freeze=None,
+        total_liab=None,
+        local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, Configuration) -> None
         """CrossMarginBalance - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -49,6 +79,11 @@ class CrossMarginBalance(object):
         self._freeze = None
         self._borrowed = None
         self._interest = None
+        self._negative_liab = None
+        self._futures_pos_liab = None
+        self._equity = None
+        self._total_freeze = None
+        self._total_liab = None
         self.discriminator = None
 
         if available is not None:
@@ -59,6 +94,16 @@ class CrossMarginBalance(object):
             self.borrowed = borrowed
         if interest is not None:
             self.interest = interest
+        if negative_liab is not None:
+            self.negative_liab = negative_liab
+        if futures_pos_liab is not None:
+            self.futures_pos_liab = futures_pos_liab
+        if equity is not None:
+            self.equity = equity
+        if total_freeze is not None:
+            self.total_freeze = total_freeze
+        if total_liab is not None:
+            self.total_liab = total_liab
 
     @property
     def available(self):
@@ -151,6 +196,121 @@ class CrossMarginBalance(object):
         """
 
         self._interest = interest
+
+    @property
+    def negative_liab(self):
+        """Gets the negative_liab of this CrossMarginBalance.  # noqa: E501
+
+        Negative Liabilities  # noqa: E501
+
+        :return: The negative_liab of this CrossMarginBalance.  # noqa: E501
+        :rtype: str
+        """
+        return self._negative_liab
+
+    @negative_liab.setter
+    def negative_liab(self, negative_liab):
+        """Sets the negative_liab of this CrossMarginBalance.
+
+        Negative Liabilities  # noqa: E501
+
+        :param negative_liab: The negative_liab of this CrossMarginBalance.  # noqa: E501
+        :type: str
+        """
+
+        self._negative_liab = negative_liab
+
+    @property
+    def futures_pos_liab(self):
+        """Gets the futures_pos_liab of this CrossMarginBalance.  # noqa: E501
+
+        Borrowing to Open Positions in Futures  # noqa: E501
+
+        :return: The futures_pos_liab of this CrossMarginBalance.  # noqa: E501
+        :rtype: str
+        """
+        return self._futures_pos_liab
+
+    @futures_pos_liab.setter
+    def futures_pos_liab(self, futures_pos_liab):
+        """Sets the futures_pos_liab of this CrossMarginBalance.
+
+        Borrowing to Open Positions in Futures  # noqa: E501
+
+        :param futures_pos_liab: The futures_pos_liab of this CrossMarginBalance.  # noqa: E501
+        :type: str
+        """
+
+        self._futures_pos_liab = futures_pos_liab
+
+    @property
+    def equity(self):
+        """Gets the equity of this CrossMarginBalance.  # noqa: E501
+
+        Equity  # noqa: E501
+
+        :return: The equity of this CrossMarginBalance.  # noqa: E501
+        :rtype: str
+        """
+        return self._equity
+
+    @equity.setter
+    def equity(self, equity):
+        """Sets the equity of this CrossMarginBalance.
+
+        Equity  # noqa: E501
+
+        :param equity: The equity of this CrossMarginBalance.  # noqa: E501
+        :type: str
+        """
+
+        self._equity = equity
+
+    @property
+    def total_freeze(self):
+        """Gets the total_freeze of this CrossMarginBalance.  # noqa: E501
+
+        Total occupied  # noqa: E501
+
+        :return: The total_freeze of this CrossMarginBalance.  # noqa: E501
+        :rtype: str
+        """
+        return self._total_freeze
+
+    @total_freeze.setter
+    def total_freeze(self, total_freeze):
+        """Sets the total_freeze of this CrossMarginBalance.
+
+        Total occupied  # noqa: E501
+
+        :param total_freeze: The total_freeze of this CrossMarginBalance.  # noqa: E501
+        :type: str
+        """
+
+        self._total_freeze = total_freeze
+
+    @property
+    def total_liab(self):
+        """Gets the total_liab of this CrossMarginBalance.  # noqa: E501
+
+        Total liabilities  # noqa: E501
+
+        :return: The total_liab of this CrossMarginBalance.  # noqa: E501
+        :rtype: str
+        """
+        return self._total_liab
+
+    @total_liab.setter
+    def total_liab(self, total_liab):
+        """Sets the total_liab of this CrossMarginBalance.
+
+        Total liabilities  # noqa: E501
+
+        :param total_liab: The total_liab of this CrossMarginBalance.  # noqa: E501
+        :type: str
+        """
+
+        self._total_liab = total_liab
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -35,7 +35,7 @@ class SubCrossMarginAccount(object):
     openapi_types = {
         'user_id': 'int',
         'locked': 'bool',
-        'balances': 'dict(str, CrossMarginBalance)',
+        'balances': 'dict(str, CrossMarginBalance1)',
         'total': 'str',
         'borrowed': 'str',
         'borrowed_net': 'str',
@@ -90,7 +90,7 @@ class SubCrossMarginAccount(object):
         total_available_margin=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, bool, dict(str, CrossMarginBalance), str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (int, bool, dict(str, CrossMarginBalance1), str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """SubCrossMarginAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -199,7 +199,7 @@ class SubCrossMarginAccount(object):
 
 
         :return: The balances of this SubCrossMarginAccount.  # noqa: E501
-        :rtype: dict(str, CrossMarginBalance)
+        :rtype: dict(str, CrossMarginBalance1)
         """
         return self._balances
 
@@ -209,7 +209,7 @@ class SubCrossMarginAccount(object):
 
 
         :param balances: The balances of this SubCrossMarginAccount.  # noqa: E501
-        :type: dict(str, CrossMarginBalance)
+        :type: dict(str, CrossMarginBalance1)
         """
 
         self._balances = balances
