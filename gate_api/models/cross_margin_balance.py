@@ -201,7 +201,7 @@ class CrossMarginBalance(object):
     def negative_liab(self):
         """Gets the negative_liab of this CrossMarginBalance.  # noqa: E501
 
-        Negative Liabilities  # noqa: E501
+        Negative Liabilities. Formula:Min[available+total+unrealized_pnl,0]  # noqa: E501
 
         :return: The negative_liab of this CrossMarginBalance.  # noqa: E501
         :rtype: str
@@ -212,7 +212,7 @@ class CrossMarginBalance(object):
     def negative_liab(self, negative_liab):
         """Sets the negative_liab of this CrossMarginBalance.
 
-        Negative Liabilities  # noqa: E501
+        Negative Liabilities. Formula:Min[available+total+unrealized_pnl,0]  # noqa: E501
 
         :param negative_liab: The negative_liab of this CrossMarginBalance.  # noqa: E501
         :type: str
@@ -247,7 +247,7 @@ class CrossMarginBalance(object):
     def equity(self):
         """Gets the equity of this CrossMarginBalance.  # noqa: E501
 
-        Equity  # noqa: E501
+        Equity. Formula: available + freeze - borrowed + total + unrealized_pnl  # noqa: E501
 
         :return: The equity of this CrossMarginBalance.  # noqa: E501
         :rtype: str
@@ -258,7 +258,7 @@ class CrossMarginBalance(object):
     def equity(self, equity):
         """Sets the equity of this CrossMarginBalance.
 
-        Equity  # noqa: E501
+        Equity. Formula: available + freeze - borrowed + total + unrealized_pnl  # noqa: E501
 
         :param equity: The equity of this CrossMarginBalance.  # noqa: E501
         :type: str
@@ -270,7 +270,7 @@ class CrossMarginBalance(object):
     def total_freeze(self):
         """Gets the total_freeze of this CrossMarginBalance.  # noqa: E501
 
-        Total occupied  # noqa: E501
+        Total freeze. Formula: position_initial_margin + order_margin  # noqa: E501
 
         :return: The total_freeze of this CrossMarginBalance.  # noqa: E501
         :rtype: str
@@ -281,7 +281,7 @@ class CrossMarginBalance(object):
     def total_freeze(self, total_freeze):
         """Sets the total_freeze of this CrossMarginBalance.
 
-        Total occupied  # noqa: E501
+        Total freeze. Formula: position_initial_margin + order_margin  # noqa: E501
 
         :param total_freeze: The total_freeze of this CrossMarginBalance.  # noqa: E501
         :type: str
@@ -293,7 +293,7 @@ class CrossMarginBalance(object):
     def total_liab(self):
         """Gets the total_liab of this CrossMarginBalance.  # noqa: E501
 
-        Total liabilities  # noqa: E501
+        Total liabilities. Formula: Max[Abs[Min[quity - total_freeze,0], borrowed]] - futures_pos_liab  # noqa: E501
 
         :return: The total_liab of this CrossMarginBalance.  # noqa: E501
         :rtype: str
@@ -304,7 +304,7 @@ class CrossMarginBalance(object):
     def total_liab(self, total_liab):
         """Sets the total_liab of this CrossMarginBalance.
 
-        Total liabilities  # noqa: E501
+        Total liabilities. Formula: Max[Abs[Min[quity - total_freeze,0], borrowed]] - futures_pos_liab  # noqa: E501
 
         :param total_liab: The total_liab of this CrossMarginBalance.  # noqa: E501
         :type: str

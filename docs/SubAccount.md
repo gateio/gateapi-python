@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **password** | **str** | The sub-account&#39;s password. (Default: the same as main account&#39;s password) | [optional] 
 **email** | **str** | The sub-account&#39;s email address. (Default: the same as main account&#39;s email address) | [optional] 
 **state** | **int** | State: 1-normal, 2-locked\&quot; | [optional] [readonly] 
-**type** | **int** | Type: 1-Sub-account | [optional] 
+**type** | **int** | \&quot;Sub-account type: 1 - sub-account, 3 - cross margin account | [optional] 
 **user_id** | **int** | The user id of the sub-account | [optional] [readonly] 
 **create_time** | **int** | Created time | [optional] [readonly] 
 

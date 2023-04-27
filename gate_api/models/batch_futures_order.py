@@ -59,6 +59,8 @@ class BatchFuturesOrder(object):
         'mkfr': 'str',
         'refu': 'int',
         'auto_size': 'str',
+        'stp_act': 'str',
+        'stp_id': 'int',
     }
 
     attribute_map = {
@@ -88,6 +90,8 @@ class BatchFuturesOrder(object):
         'mkfr': 'mkfr',
         'refu': 'refu',
         'auto_size': 'auto_size',
+        'stp_act': 'stp_act',
+        'stp_id': 'stp_id',
     }
 
     def __init__(
@@ -118,9 +122,11 @@ class BatchFuturesOrder(object):
         mkfr=None,
         refu=None,
         auto_size=None,
+        stp_act=None,
+        stp_id=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (bool, str, str, int, int, float, float, str, str, str, int, int, str, bool, bool, bool, bool, bool, str, int, str, str, str, str, int, str, Configuration) -> None
+        # type: (bool, str, str, int, int, float, float, str, str, str, int, int, str, bool, bool, bool, bool, bool, str, int, str, str, str, str, int, str, str, int, Configuration) -> None
         """BatchFuturesOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -152,6 +158,8 @@ class BatchFuturesOrder(object):
         self._mkfr = None
         self._refu = None
         self._auto_size = None
+        self._stp_act = None
+        self._stp_id = None
         self.discriminator = None
 
         if succeeded is not None:
@@ -206,6 +214,10 @@ class BatchFuturesOrder(object):
             self.refu = refu
         if auto_size is not None:
             self.auto_size = auto_size
+        if stp_act is not None:
+            self.stp_act = stp_act
+        if stp_id is not None:
+            self.stp_id = stp_id
 
     @property
     def succeeded(self):
@@ -372,7 +384,7 @@ class BatchFuturesOrder(object):
     def finish_as(self):
         """Gets the finish_as of this BatchFuturesOrder.  # noqa: E501
 
-        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close   # noqa: E501
+        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close - stp: cancelled because self trade prevention   # noqa: E501
 
         :return: The finish_as of this BatchFuturesOrder.  # noqa: E501
         :rtype: str
@@ -383,7 +395,7 @@ class BatchFuturesOrder(object):
     def finish_as(self, finish_as):
         """Sets the finish_as of this BatchFuturesOrder.
 
-        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close   # noqa: E501
+        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close - stp: cancelled because self trade prevention   # noqa: E501
 
         :param finish_as: The finish_as of this BatchFuturesOrder.  # noqa: E501
         :type: str
@@ -397,6 +409,7 @@ class BatchFuturesOrder(object):
             "reduce_only",
             "position_closed",
             "reduce_out",
+            "stp",
         ]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and finish_as not in allowed_values:  # noqa: E501
             raise ValueError(
@@ -837,6 +850,57 @@ class BatchFuturesOrder(object):
             )
 
         self._auto_size = auto_size
+
+    @property
+    def stp_act(self):
+        """Gets the stp_act of this BatchFuturesOrder.  # noqa: E501
+
+        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, Cancel old orders and keep new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
+
+        :return: The stp_act of this BatchFuturesOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._stp_act
+
+    @stp_act.setter
+    def stp_act(self, stp_act):
+        """Sets the stp_act of this BatchFuturesOrder.
+
+        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, Cancel old orders and keep new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
+
+        :param stp_act: The stp_act of this BatchFuturesOrder.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["co", "cn", "cb", "-"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and stp_act not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `stp_act` ({0}), must be one of {1}".format(stp_act, allowed_values)  # noqa: E501
+            )
+
+        self._stp_act = stp_act
+
+    @property
+    def stp_id(self):
+        """Gets the stp_id of this BatchFuturesOrder.  # noqa: E501
+
+        Orders between users in the same `stp_id` group are not allowed to be self-traded  1. If the `stp_id` of two orders being matched is non-zero and equal, they will not be executed. Instead, the corresponding strategy will be executed based on the `stp_act` of the taker. 2. `stp_id` returns `0` by default for orders that have not been set for `STP group`  # noqa: E501
+
+        :return: The stp_id of this BatchFuturesOrder.  # noqa: E501
+        :rtype: int
+        """
+        return self._stp_id
+
+    @stp_id.setter
+    def stp_id(self, stp_id):
+        """Sets the stp_id of this BatchFuturesOrder.
+
+        Orders between users in the same `stp_id` group are not allowed to be self-traded  1. If the `stp_id` of two orders being matched is non-zero and equal, they will not be executed. Instead, the corresponding strategy will be executed based on the `stp_act` of the taker. 2. `stp_id` returns `0` by default for orders that have not been set for `STP group`  # noqa: E501
+
+        :param stp_id: The stp_id of this BatchFuturesOrder.  # noqa: E501
+        :type: int
+        """
+
+        self._stp_id = stp_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

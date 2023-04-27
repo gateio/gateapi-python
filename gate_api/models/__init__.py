@@ -15,6 +15,7 @@ from __future__ import absolute_import
 
 # import models into model package
 from gate_api.models.account_balance import AccountBalance
+from gate_api.models.account_detail import AccountDetail
 from gate_api.models.agency_commission import AgencyCommission
 from gate_api.models.agency_commission_history import AgencyCommissionHistory
 from gate_api.models.agency_transaction import AgencyTransaction
@@ -51,6 +52,7 @@ from gate_api.models.flash_swap_currency import FlashSwapCurrency
 from gate_api.models.flash_swap_order import FlashSwapOrder
 from gate_api.models.flash_swap_order_preview import FlashSwapOrderPreview
 from gate_api.models.flash_swap_order_request import FlashSwapOrderRequest
+from gate_api.models.flash_swap_preview_request import FlashSwapPreviewRequest
 from gate_api.models.funding_account import FundingAccount
 from gate_api.models.funding_book_item import FundingBookItem
 from gate_api.models.funding_rate_record import FundingRateRecord

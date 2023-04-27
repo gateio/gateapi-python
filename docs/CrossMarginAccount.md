@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user_id** | **int** | User ID | [optional] 
+**refresh_time** | **int** | Time of the most recent refresh | [optional] 
 **locked** | **bool** | Whether account is locked | [optional] 
 **balances** | [**dict(str, CrossMarginBalance)**](CrossMarginBalance.md) |  | [optional] 
 **total** | **str** | Total account value in USDT, i.e., the sum of all currencies&#39; &#x60;(available+freeze)*price*discount&#x60; | [optional] 

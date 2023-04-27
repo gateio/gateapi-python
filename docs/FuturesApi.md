@@ -2209,7 +2209,7 @@ contract = 'BTC_USDT' # str | Futures contract, return related data only if spec
 order = 12345 # int | Futures order ID, return related data only if specified (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
-last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
+last_id = '12345' # str | Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. If you need to iterate through and retrieve more records, we recommend using 'GET /futures/{settle}/my_trades_timerange'. (optional)
 
 try:
     # List personal trading history
@@ -2230,7 +2230,7 @@ Name | Type | Description  | Notes
  **order** | **int**| Futures order ID, return related data only if specified | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
- **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
+ **last_id** | **str**| Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. If you need to iterate through and retrieve more records, we recommend using &#39;GET /futures/{settle}/my_trades_timerange&#39;. | [optional] 
 
 ### Return type
 

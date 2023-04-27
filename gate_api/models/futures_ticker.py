@@ -52,6 +52,8 @@ class FuturesTicker(object):
         'quanto_base_rate': 'str',
         'basis_rate': 'str',
         'basis_value': 'str',
+        'lowest_ask': 'str',
+        'highest_bid': 'str',
     }
 
     attribute_map = {
@@ -74,6 +76,8 @@ class FuturesTicker(object):
         'quanto_base_rate': 'quanto_base_rate',
         'basis_rate': 'basis_rate',
         'basis_value': 'basis_value',
+        'lowest_ask': 'lowest_ask',
+        'highest_bid': 'highest_bid',
     }
 
     def __init__(
@@ -97,9 +101,11 @@ class FuturesTicker(object):
         quanto_base_rate=None,
         basis_rate=None,
         basis_value=None,
+        lowest_ask=None,
+        highest_bid=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """FuturesTicker - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -124,6 +130,8 @@ class FuturesTicker(object):
         self._quanto_base_rate = None
         self._basis_rate = None
         self._basis_value = None
+        self._lowest_ask = None
+        self._highest_bid = None
         self.discriminator = None
 
         if contract is not None:
@@ -164,6 +172,10 @@ class FuturesTicker(object):
             self.basis_rate = basis_rate
         if basis_value is not None:
             self.basis_value = basis_value
+        if lowest_ask is not None:
+            self.lowest_ask = lowest_ask
+        if highest_bid is not None:
+            self.highest_bid = highest_bid
 
     @property
     def contract(self):
@@ -601,6 +613,52 @@ class FuturesTicker(object):
         """
 
         self._basis_value = basis_value
+
+    @property
+    def lowest_ask(self):
+        """Gets the lowest_ask of this FuturesTicker.  # noqa: E501
+
+        Recent lowest ask  # noqa: E501
+
+        :return: The lowest_ask of this FuturesTicker.  # noqa: E501
+        :rtype: str
+        """
+        return self._lowest_ask
+
+    @lowest_ask.setter
+    def lowest_ask(self, lowest_ask):
+        """Sets the lowest_ask of this FuturesTicker.
+
+        Recent lowest ask  # noqa: E501
+
+        :param lowest_ask: The lowest_ask of this FuturesTicker.  # noqa: E501
+        :type: str
+        """
+
+        self._lowest_ask = lowest_ask
+
+    @property
+    def highest_bid(self):
+        """Gets the highest_bid of this FuturesTicker.  # noqa: E501
+
+        Recent highest bid  # noqa: E501
+
+        :return: The highest_bid of this FuturesTicker.  # noqa: E501
+        :rtype: str
+        """
+        return self._highest_bid
+
+    @highest_bid.setter
+    def highest_bid(self, highest_bid):
+        """Sets the highest_bid of this FuturesTicker.
+
+        Recent highest bid  # noqa: E501
+
+        :param highest_bid: The highest_bid of this FuturesTicker.  # noqa: E501
+        :type: str
+        """
+
+        self._highest_bid = highest_bid
 
     def to_dict(self):
         """Returns the model properties as a dict"""

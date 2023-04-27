@@ -479,16 +479,16 @@ class FlashSwapApi(object):
             collection_formats=collection_formats,
         )
 
-    def preview_flash_swap_order(self, flash_swap_order_request, **kwargs):  # noqa: E501
+    def preview_flash_swap_order(self, flash_swap_preview_request, **kwargs):  # noqa: E501
         """Initiate a flash swap order preview  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.preview_flash_swap_order(flash_swap_order_request, async_req=True)
+        >>> thread = api.preview_flash_swap_order(flash_swap_preview_request, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param FlashSwapOrderRequest flash_swap_order_request: (required)
+        :param FlashSwapPreviewRequest flash_swap_preview_request: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -501,18 +501,18 @@ class FlashSwapApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.preview_flash_swap_order_with_http_info(flash_swap_order_request, **kwargs)  # noqa: E501
+        return self.preview_flash_swap_order_with_http_info(flash_swap_preview_request, **kwargs)  # noqa: E501
 
-    def preview_flash_swap_order_with_http_info(self, flash_swap_order_request, **kwargs):  # noqa: E501
+    def preview_flash_swap_order_with_http_info(self, flash_swap_preview_request, **kwargs):  # noqa: E501
         """Initiate a flash swap order preview  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.preview_flash_swap_order_with_http_info(flash_swap_order_request, async_req=True)
+        >>> thread = api.preview_flash_swap_order_with_http_info(flash_swap_preview_request, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param FlashSwapOrderRequest flash_swap_order_request: (required)
+        :param FlashSwapPreviewRequest flash_swap_preview_request: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -529,7 +529,7 @@ class FlashSwapApi(object):
 
         local_var_params = locals()
 
-        all_params = ['flash_swap_order_request']
+        all_params = ['flash_swap_preview_request']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -537,13 +537,13 @@ class FlashSwapApi(object):
                 raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method preview_flash_swap_order" % k)
             local_var_params[k] = v
         del local_var_params['kwargs']
-        # verify the required parameter 'flash_swap_order_request' is set
+        # verify the required parameter 'flash_swap_preview_request' is set
         if self.api_client.client_side_validation and (
-            'flash_swap_order_request' not in local_var_params
-            or local_var_params['flash_swap_order_request'] is None  # noqa: E501
+            'flash_swap_preview_request' not in local_var_params
+            or local_var_params['flash_swap_preview_request'] is None  # noqa: E501
         ):  # noqa: E501
             raise ApiValueError(
-                "Missing the required parameter `flash_swap_order_request` when calling `preview_flash_swap_order`"
+                "Missing the required parameter `flash_swap_preview_request` when calling `preview_flash_swap_order`"
             )  # noqa: E501
 
         collection_formats = {}
@@ -558,8 +558,8 @@ class FlashSwapApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'flash_swap_order_request' in local_var_params:
-            body_params = local_var_params['flash_swap_order_request']
+        if 'flash_swap_preview_request' in local_var_params:
+            body_params = local_var_params['flash_swap_preview_request']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 

@@ -35,6 +35,7 @@ class Order(object):
     openapi_types = {
         'id': 'str',
         'text': 'str',
+        'amend_text': 'str',
         'create_time': 'str',
         'update_time': 'str',
         'create_time_ms': 'int',
@@ -63,11 +64,15 @@ class Order(object):
         'gt_discount': 'bool',
         'rebated_fee': 'str',
         'rebated_fee_currency': 'str',
+        'stp_id': 'int',
+        'stp_act': 'str',
+        'finish_as': 'str',
     }
 
     attribute_map = {
         'id': 'id',
         'text': 'text',
+        'amend_text': 'amend_text',
         'create_time': 'create_time',
         'update_time': 'update_time',
         'create_time_ms': 'create_time_ms',
@@ -96,12 +101,16 @@ class Order(object):
         'gt_discount': 'gt_discount',
         'rebated_fee': 'rebated_fee',
         'rebated_fee_currency': 'rebated_fee_currency',
+        'stp_id': 'stp_id',
+        'stp_act': 'stp_act',
+        'finish_as': 'finish_as',
     }
 
     def __init__(
         self,
         id=None,
         text=None,
+        amend_text=None,
         create_time=None,
         update_time=None,
         create_time_ms=None,
@@ -130,9 +139,12 @@ class Order(object):
         gt_discount=None,
         rebated_fee=None,
         rebated_fee_currency=None,
+        stp_id=None,
+        stp_act=None,
+        finish_as=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, bool, bool, str, str, str, str, str, str, str, str, str, str, bool, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, bool, bool, str, str, str, str, str, str, str, str, str, str, bool, str, str, int, str, str, Configuration) -> None
         """Order - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -140,6 +152,7 @@ class Order(object):
 
         self._id = None
         self._text = None
+        self._amend_text = None
         self._create_time = None
         self._update_time = None
         self._create_time_ms = None
@@ -168,12 +181,17 @@ class Order(object):
         self._gt_discount = None
         self._rebated_fee = None
         self._rebated_fee_currency = None
+        self._stp_id = None
+        self._stp_act = None
+        self._finish_as = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         if text is not None:
             self.text = text
+        if amend_text is not None:
+            self.amend_text = amend_text
         if create_time is not None:
             self.create_time = create_time
         if update_time is not None:
@@ -227,6 +245,12 @@ class Order(object):
             self.rebated_fee = rebated_fee
         if rebated_fee_currency is not None:
             self.rebated_fee_currency = rebated_fee_currency
+        if stp_id is not None:
+            self.stp_id = stp_id
+        if stp_act is not None:
+            self.stp_act = stp_act
+        if finish_as is not None:
+            self.finish_as = finish_as
 
     @property
     def id(self):
@@ -273,6 +297,29 @@ class Order(object):
         """
 
         self._text = text
+
+    @property
+    def amend_text(self):
+        """Gets the amend_text of this Order.  # noqa: E501
+
+        The custom data that the user remarked when amending the order  # noqa: E501
+
+        :return: The amend_text of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._amend_text
+
+    @amend_text.setter
+    def amend_text(self, amend_text):
+        """Sets the amend_text of this Order.
+
+        The custom data that the user remarked when amending the order  # noqa: E501
+
+        :param amend_text: The amend_text of this Order.  # noqa: E501
+        :type: str
+        """
+
+        self._amend_text = amend_text
 
     @property
     def create_time(self):
@@ -950,6 +997,87 @@ class Order(object):
         """
 
         self._rebated_fee_currency = rebated_fee_currency
+
+    @property
+    def stp_id(self):
+        """Gets the stp_id of this Order.  # noqa: E501
+
+        Orders between users in the same `stp_id` group are not allowed to be self-traded  1. If the `stp_id` of two orders being matched is non-zero and equal, they will not be executed. Instead, the corresponding strategy will be executed based on the `stp_act` of the taker. 2. `stp_id` returns `0` by default for orders that have not been set for `STP group`  # noqa: E501
+
+        :return: The stp_id of this Order.  # noqa: E501
+        :rtype: int
+        """
+        return self._stp_id
+
+    @stp_id.setter
+    def stp_id(self, stp_id):
+        """Sets the stp_id of this Order.
+
+        Orders between users in the same `stp_id` group are not allowed to be self-traded  1. If the `stp_id` of two orders being matched is non-zero and equal, they will not be executed. Instead, the corresponding strategy will be executed based on the `stp_act` of the taker. 2. `stp_id` returns `0` by default for orders that have not been set for `STP group`  # noqa: E501
+
+        :param stp_id: The stp_id of this Order.  # noqa: E501
+        :type: int
+        """
+
+        self._stp_id = stp_id
+
+    @property
+    def stp_act(self):
+        """Gets the stp_act of this Order.  # noqa: E501
+
+        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, Cancel old orders and keep new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
+
+        :return: The stp_act of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._stp_act
+
+    @stp_act.setter
+    def stp_act(self, stp_act):
+        """Sets the stp_act of this Order.
+
+        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, Cancel old orders and keep new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
+
+        :param stp_act: The stp_act of this Order.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["cn", "co", "cb", "-"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and stp_act not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `stp_act` ({0}), must be one of {1}".format(stp_act, allowed_values)  # noqa: E501
+            )
+
+        self._stp_act = stp_act
+
+    @property
+    def finish_as(self):
+        """Gets the finish_as of this Order.  # noqa: E501
+
+        How the order was finished.  - open: processing - filled: filled totally - cancelled: manually cancelled - ioc: time in force is `IOC`, finish immediately - stp: cancelled because self trade prevention   # noqa: E501
+
+        :return: The finish_as of this Order.  # noqa: E501
+        :rtype: str
+        """
+        return self._finish_as
+
+    @finish_as.setter
+    def finish_as(self, finish_as):
+        """Sets the finish_as of this Order.
+
+        How the order was finished.  - open: processing - filled: filled totally - cancelled: manually cancelled - ioc: time in force is `IOC`, finish immediately - stp: cancelled because self trade prevention   # noqa: E501
+
+        :param finish_as: The finish_as of this Order.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["open", "filled", "cancelled", "ioc", "stp"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and finish_as not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `finish_as` ({0}), must be one of {1}".format(  # noqa: E501
+                    finish_as, allowed_values
+                )
+            )
+
+        self._finish_as = finish_as
 
     def to_dict(self):
         """Returns the model properties as a dict"""

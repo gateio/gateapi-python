@@ -192,7 +192,7 @@ class CrossMarginAccountBook(object):
     def type(self):
         """Gets the type of this CrossMarginAccountBook.  # noqa: E501
 
-        Account change type, including:  - in: transferals into cross margin account - out: transferals out from cross margin account - repay: loan repayment - borrow: borrowed loan - interest: interest - new_order: new order locked - order_fill: order fills - referral_fee: fee refund from referrals - order_fee: order fee generated from fills - unknown: unknown type  # noqa: E501
+        Account change type, including:  - in: transferals into cross margin account - out: transferals out from cross margin account - repay: loan repayment - borrow: borrowed loan - interest: interest - new_order: new order locked - order_fill: order fills - referral_fee: fee refund from referrals - order_fee: order fee generated from fills - futures_in: transfer into futures account - futures_out: transfer out of futures account - unknown: unknown type  # noqa: E501
 
         :return: The type of this CrossMarginAccountBook.  # noqa: E501
         :rtype: str
@@ -203,7 +203,7 @@ class CrossMarginAccountBook(object):
     def type(self, type):
         """Sets the type of this CrossMarginAccountBook.
 
-        Account change type, including:  - in: transferals into cross margin account - out: transferals out from cross margin account - repay: loan repayment - borrow: borrowed loan - interest: interest - new_order: new order locked - order_fill: order fills - referral_fee: fee refund from referrals - order_fee: order fee generated from fills - unknown: unknown type  # noqa: E501
+        Account change type, including:  - in: transferals into cross margin account - out: transferals out from cross margin account - repay: loan repayment - borrow: borrowed loan - interest: interest - new_order: new order locked - order_fill: order fills - referral_fee: fee refund from referrals - order_fee: order fee generated from fills - futures_in: transfer into futures account - futures_out: transfer out of futures account - unknown: unknown type  # noqa: E501
 
         :param type: The type of this CrossMarginAccountBook.  # noqa: E501
         :type: str
@@ -218,6 +218,8 @@ class CrossMarginAccountBook(object):
             "order_fill",
             "referral_fee",
             "order_fee",
+            "futures_in",
+            "futures_out",
             "unknown",
         ]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501

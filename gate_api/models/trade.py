@@ -46,6 +46,7 @@ class Trade(object):
         'fee_currency': 'str',
         'point_fee': 'str',
         'gt_fee': 'str',
+        'amend_text': 'str',
     }
 
     attribute_map = {
@@ -62,6 +63,7 @@ class Trade(object):
         'fee_currency': 'fee_currency',
         'point_fee': 'point_fee',
         'gt_fee': 'gt_fee',
+        'amend_text': 'amend_text',
     }
 
     def __init__(
@@ -79,9 +81,10 @@ class Trade(object):
         fee_currency=None,
         point_fee=None,
         gt_fee=None,
+        amend_text=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """Trade - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -100,6 +103,7 @@ class Trade(object):
         self._fee_currency = None
         self._point_fee = None
         self._gt_fee = None
+        self._amend_text = None
         self.discriminator = None
 
         if id is not None:
@@ -128,6 +132,8 @@ class Trade(object):
             self.point_fee = point_fee
         if gt_fee is not None:
             self.gt_fee = gt_fee
+        if amend_text is not None:
+            self.amend_text = amend_text
 
     @property
     def id(self):
@@ -437,6 +443,29 @@ class Trade(object):
         """
 
         self._gt_fee = gt_fee
+
+    @property
+    def amend_text(self):
+        """Gets the amend_text of this Trade.  # noqa: E501
+
+        The custom data that the user remarked when amending the order  # noqa: E501
+
+        :return: The amend_text of this Trade.  # noqa: E501
+        :rtype: str
+        """
+        return self._amend_text
+
+    @amend_text.setter
+    def amend_text(self, amend_text):
+        """Sets the amend_text of this Trade.
+
+        The custom data that the user remarked when amending the order  # noqa: E501
+
+        :param amend_text: The amend_text of this Trade.  # noqa: E501
+        :type: str
+        """
+
+        self._amend_text = amend_text
 
     def to_dict(self):
         """Returns the model properties as a dict"""

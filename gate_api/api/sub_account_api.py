@@ -42,6 +42,7 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
+        :param str type: `0` to list all types of sub-accounts (currently supporting cross margin accounts and sub-accounts).  `1` to list sub-accounts only. If no parameter is passed, only sub-accounts will be listed by default.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -65,6 +66,7 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
+        :param str type: `0` to list all types of sub-accounts (currently supporting cross margin accounts and sub-accounts).  `1` to list sub-accounts only. If no parameter is passed, only sub-accounts will be listed by default.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -81,7 +83,7 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = []
+        all_params = ['type']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -95,6 +97,8 @@ class SubAccountApi(object):
         path_params = {}
 
         query_params = []
+        if 'type' in local_var_params and local_var_params['type'] is not None:  # noqa: E501
+            query_params.append(('type', local_var_params['type']))  # noqa: E501
 
         header_params = {}
 

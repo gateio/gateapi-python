@@ -3954,7 +3954,7 @@ class FuturesApi(object):
         :param int order: Futures order ID, return related data only if specified
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
-        :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
+        :param str last_id: Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. If you need to iterate through and retrieve more records, we recommend using 'GET /futures/{settle}/my_trades_timerange'.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -3983,7 +3983,7 @@ class FuturesApi(object):
         :param int order: Futures order ID, return related data only if specified
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
-        :param str last_id: Specify list staring point using the `id` of last record in previous list-query results
+        :param str last_id: Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. If you need to iterate through and retrieve more records, we recommend using 'GET /futures/{settle}/my_trades_timerange'.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

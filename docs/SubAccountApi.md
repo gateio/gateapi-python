@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **list_sub_accounts**
-> list[SubAccount] list_sub_accounts()
+> list[SubAccount] list_sub_accounts(type=type)
 
 List sub-accounts
 
@@ -45,10 +45,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SubAccountApi(api_client)
+type = '0' # str | `0` to list all types of sub-accounts (currently supporting cross margin accounts and sub-accounts).  `1` to list sub-accounts only. If no parameter is passed, only sub-accounts will be listed by default. (optional)
 
 try:
     # List sub-accounts
-    api_response = api_instance.list_sub_accounts()
+    api_response = api_instance.list_sub_accounts(type=type)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -57,7 +58,10 @@ except ApiException as e:
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | **str**| &#x60;0&#x60; to list all types of sub-accounts (currently supporting cross margin accounts and sub-accounts).  &#x60;1&#x60; to list sub-accounts only. If no parameter is passed, only sub-accounts will be listed by default. | [optional] 
 
 ### Return type
 

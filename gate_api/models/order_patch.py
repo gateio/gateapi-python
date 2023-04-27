@@ -32,12 +32,12 @@ class OrderPatch(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'amount': 'str', 'price': 'str'}
+    openapi_types = {'amount': 'str', 'price': 'str', 'amend_text': 'str'}
 
-    attribute_map = {'amount': 'amount', 'price': 'price'}
+    attribute_map = {'amount': 'amount', 'price': 'price', 'amend_text': 'amend_text'}
 
-    def __init__(self, amount=None, price=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, Configuration) -> None
+    def __init__(self, amount=None, price=None, amend_text=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, Configuration) -> None
         """OrderPatch - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -45,12 +45,15 @@ class OrderPatch(object):
 
         self._amount = None
         self._price = None
+        self._amend_text = None
         self.discriminator = None
 
         if amount is not None:
             self.amount = amount
         if price is not None:
             self.price = price
+        if amend_text is not None:
+            self.amend_text = amend_text
 
     @property
     def amount(self):
@@ -97,6 +100,31 @@ class OrderPatch(object):
         """
 
         self._price = price
+
+    @property
+    def amend_text(self):
+        """Gets the amend_text of this OrderPatch.  # noqa: E501
+
+        Custom info during amending order  # noqa: E501
+
+        :return: The amend_text of this OrderPatch.  # noqa: E501
+        :rtype: str
+        """
+        return self._amend_text
+
+    @amend_text.setter
+    def amend_text(self, amend_text):
+        """Sets the amend_text of this OrderPatch.
+
+        Custom info during amending order  # noqa: E501
+
+        :param amend_text: The amend_text of this OrderPatch.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and amend_text is not None and len(amend_text) > 31:
+            raise ValueError("Invalid value for `amend_text`, length must be less than or equal to `31`")  # noqa: E501
+
+        self._amend_text = amend_text
 
     def to_dict(self):
         """Returns the model properties as a dict"""

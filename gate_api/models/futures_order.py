@@ -776,7 +776,7 @@ class FuturesOrder(object):
     def stp_id(self):
         """Gets the stp_id of this FuturesOrder.  # noqa: E501
 
-        Orders between users in the same `stp_id` group are not allowed to be self-traded  1. If the `stp_id` of the two orders is not `0` and equal when matching, the trade will not be executed, but the strategy will be executed according to the `stp_act` of the `taker` 2. `stp_id` returns `0` by default for orders that have not been set for `STP group`  # noqa: E501
+        Orders between users in the same `stp_id` group are not allowed to be self-traded  1. If the `stp_id` of two orders being matched is non-zero and equal, they will not be executed. Instead, the corresponding strategy will be executed based on the `stp_act` of the taker. 2. `stp_id` returns `0` by default for orders that have not been set for `STP group`  # noqa: E501
 
         :return: The stp_id of this FuturesOrder.  # noqa: E501
         :rtype: int
@@ -787,7 +787,7 @@ class FuturesOrder(object):
     def stp_id(self, stp_id):
         """Sets the stp_id of this FuturesOrder.
 
-        Orders between users in the same `stp_id` group are not allowed to be self-traded  1. If the `stp_id` of the two orders is not `0` and equal when matching, the trade will not be executed, but the strategy will be executed according to the `stp_act` of the `taker` 2. `stp_id` returns `0` by default for orders that have not been set for `STP group`  # noqa: E501
+        Orders between users in the same `stp_id` group are not allowed to be self-traded  1. If the `stp_id` of two orders being matched is non-zero and equal, they will not be executed. Instead, the corresponding strategy will be executed based on the `stp_act` of the taker. 2. `stp_id` returns `0` by default for orders that have not been set for `STP group`  # noqa: E501
 
         :param stp_id: The stp_id of this FuturesOrder.  # noqa: E501
         :type: int
@@ -799,7 +799,7 @@ class FuturesOrder(object):
     def stp_act(self):
         """Gets the stp_act of this FuturesOrder.  # noqa: E501
 
-        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. Users don't pass `stp_act` parameter when placing order, `stp_act` field of the order does not return。  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, Cancel old orders and keep new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
+        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, Cancel old orders and keep new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
 
         :return: The stp_act of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -810,12 +810,12 @@ class FuturesOrder(object):
     def stp_act(self, stp_act):
         """Sets the stp_act of this FuturesOrder.
 
-        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. Users don't pass `stp_act` parameter when placing order, `stp_act` field of the order does not return。  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, Cancel old orders and keep new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
+        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, Cancel old orders and keep new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
 
         :param stp_act: The stp_act of this FuturesOrder.  # noqa: E501
         :type: str
         """
-        allowed_values = ["co", "cn", "cb"]  # noqa: E501
+        allowed_values = ["co", "cn", "cb", "-"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and stp_act not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `stp_act` ({0}), must be one of {1}".format(stp_act, allowed_values)  # noqa: E501

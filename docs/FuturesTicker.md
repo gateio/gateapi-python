@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **quanto_base_rate** | **str** | Exchange rate of base currency and settlement currency in Quanto contract. Does not exists in contracts of other types | [optional] 
 **basis_rate** | **str** | Basis rate | [optional] 
 **basis_value** | **str** | Basis value | [optional] 
+**lowest_ask** | **str** | Recent lowest ask | [optional] 
+**highest_bid** | **str** | Recent highest bid | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

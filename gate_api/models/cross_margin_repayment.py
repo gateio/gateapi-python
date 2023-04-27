@@ -137,7 +137,7 @@ class CrossMarginRepayment(object):
     def loan_id(self):
         """Gets the loan_id of this CrossMarginRepayment.  # noqa: E501
 
-        Borrow loan ID  # noqa: E501
+        Loan record ID  # noqa: E501
 
         :return: The loan_id of this CrossMarginRepayment.  # noqa: E501
         :rtype: str
@@ -148,7 +148,7 @@ class CrossMarginRepayment(object):
     def loan_id(self, loan_id):
         """Sets the loan_id of this CrossMarginRepayment.
 
-        Borrow loan ID  # noqa: E501
+        Loan record ID  # noqa: E501
 
         :param loan_id: The loan_id of this CrossMarginRepayment.  # noqa: E501
         :type: str

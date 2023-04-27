@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **preview_flash_swap_order**
-> FlashSwapOrderPreview preview_flash_swap_order(flash_swap_order_request)
+> FlashSwapOrderPreview preview_flash_swap_order(flash_swap_preview_request)
 
 Initiate a flash swap order preview
 
@@ -307,11 +307,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FlashSwapApi(api_client)
-flash_swap_order_request = gate_api.FlashSwapOrderRequest() # FlashSwapOrderRequest | 
+flash_swap_preview_request = gate_api.FlashSwapPreviewRequest() # FlashSwapPreviewRequest | 
 
 try:
     # Initiate a flash swap order preview
-    api_response = api_instance.preview_flash_swap_order(flash_swap_order_request)
+    api_response = api_instance.preview_flash_swap_order(flash_swap_preview_request)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -323,7 +323,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **flash_swap_order_request** | [**FlashSwapOrderRequest**](FlashSwapOrderRequest.md)|  | 
+ **flash_swap_preview_request** | [**FlashSwapPreviewRequest**](FlashSwapPreviewRequest.md)|  | 
 
 ### Return type
 

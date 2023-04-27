@@ -219,7 +219,7 @@ class SubAccount(object):
     def type(self):
         """Gets the type of this SubAccount.  # noqa: E501
 
-        Type: 1-Sub-account  # noqa: E501
+        \"Sub-account type: 1 - sub-account, 3 - cross margin account  # noqa: E501
 
         :return: The type of this SubAccount.  # noqa: E501
         :rtype: int
@@ -230,7 +230,7 @@ class SubAccount(object):
     def type(self, type):
         """Sets the type of this SubAccount.
 
-        Type: 1-Sub-account  # noqa: E501
+        \"Sub-account type: 1 - sub-account, 3 - cross margin account  # noqa: E501
 
         :param type: The type of this SubAccount.  # noqa: E501
         :type: int

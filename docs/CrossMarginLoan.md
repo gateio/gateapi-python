@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Borrow loan ID | [optional] [readonly] 
+**id** | **str** | Loan record ID | [optional] [readonly] 
 **create_time** | **int** | Creation timestamp, in milliseconds | [optional] [readonly] 
 **update_time** | **int** | Update timestamp, in milliseconds | [optional] [readonly] 
 **currency** | **str** | Currency name | 

@@ -34,6 +34,7 @@ class CrossMarginAccount(object):
     """
     openapi_types = {
         'user_id': 'int',
+        'refresh_time': 'int',
         'locked': 'bool',
         'balances': 'dict(str, CrossMarginBalance)',
         'total': 'str',
@@ -53,6 +54,7 @@ class CrossMarginAccount(object):
 
     attribute_map = {
         'user_id': 'user_id',
+        'refresh_time': 'refresh_time',
         'locked': 'locked',
         'balances': 'balances',
         'total': 'total',
@@ -73,6 +75,7 @@ class CrossMarginAccount(object):
     def __init__(
         self,
         user_id=None,
+        refresh_time=None,
         locked=None,
         balances=None,
         total=None,
@@ -90,13 +93,14 @@ class CrossMarginAccount(object):
         portfolio_margin_total_equity=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, bool, dict(str, CrossMarginBalance), str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (int, int, bool, dict(str, CrossMarginBalance), str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """CrossMarginAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._user_id = None
+        self._refresh_time = None
         self._locked = None
         self._balances = None
         self._total = None
@@ -116,6 +120,8 @@ class CrossMarginAccount(object):
 
         if user_id is not None:
             self.user_id = user_id
+        if refresh_time is not None:
+            self.refresh_time = refresh_time
         if locked is not None:
             self.locked = locked
         if balances is not None:
@@ -169,6 +175,29 @@ class CrossMarginAccount(object):
         """
 
         self._user_id = user_id
+
+    @property
+    def refresh_time(self):
+        """Gets the refresh_time of this CrossMarginAccount.  # noqa: E501
+
+        Time of the most recent refresh  # noqa: E501
+
+        :return: The refresh_time of this CrossMarginAccount.  # noqa: E501
+        :rtype: int
+        """
+        return self._refresh_time
+
+    @refresh_time.setter
+    def refresh_time(self, refresh_time):
+        """Sets the refresh_time of this CrossMarginAccount.
+
+        Time of the most recent refresh  # noqa: E501
+
+        :param refresh_time: The refresh_time of this CrossMarginAccount.  # noqa: E501
+        :type: int
+        """
+
+        self._refresh_time = refresh_time
 
     @property
     def locked(self):

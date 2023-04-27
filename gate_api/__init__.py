@@ -14,12 +14,13 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.42.0"
+__version__ = "4.45.0"
 
 # import apis into sdk package
 from gate_api.api.earn_uni_api import EarnUniApi
 from gate_api.api.margin_uni_api import MarginUniApi
 from gate_api.api.sub_account_api import SubAccountApi
+from gate_api.api.account_api import AccountApi
 from gate_api.api.delivery_api import DeliveryApi
 from gate_api.api.flash_swap_api import FlashSwapApi
 from gate_api.api.futures_api import FuturesApi
@@ -41,6 +42,7 @@ from gate_api.exceptions import ApiException
 
 # import models into sdk package
 from gate_api.models.account_balance import AccountBalance
+from gate_api.models.account_detail import AccountDetail
 from gate_api.models.agency_commission import AgencyCommission
 from gate_api.models.agency_commission_history import AgencyCommissionHistory
 from gate_api.models.agency_transaction import AgencyTransaction
@@ -77,6 +79,7 @@ from gate_api.models.flash_swap_currency import FlashSwapCurrency
 from gate_api.models.flash_swap_order import FlashSwapOrder
 from gate_api.models.flash_swap_order_preview import FlashSwapOrderPreview
 from gate_api.models.flash_swap_order_request import FlashSwapOrderRequest
+from gate_api.models.flash_swap_preview_request import FlashSwapPreviewRequest
 from gate_api.models.funding_account import FundingAccount
 from gate_api.models.funding_book_item import FundingBookItem
 from gate_api.models.funding_rate_record import FundingRateRecord

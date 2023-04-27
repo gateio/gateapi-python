@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **fee_currency** | **str** | Fee currency unit. No value in public endpoints | [optional] 
 **point_fee** | **str** | Points used to deduct fee. No value in public endpoints | [optional] 
 **gt_fee** | **str** | GT used to deduct fee. No value in public endpoints | [optional] 
+**amend_text** | **str** | The custom data that the user remarked when amending the order | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
