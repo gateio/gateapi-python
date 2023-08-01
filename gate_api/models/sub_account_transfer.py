@@ -38,6 +38,7 @@ class SubAccountTransfer(object):
         'direction': 'str',
         'amount': 'str',
         'uid': 'str',
+        'client_order_id': 'str',
         'timest': 'str',
         'source': 'str',
         'sub_account_type': 'str',
@@ -49,6 +50,7 @@ class SubAccountTransfer(object):
         'direction': 'direction',
         'amount': 'amount',
         'uid': 'uid',
+        'client_order_id': 'client_order_id',
         'timest': 'timest',
         'source': 'source',
         'sub_account_type': 'sub_account_type',
@@ -61,12 +63,13 @@ class SubAccountTransfer(object):
         direction=None,
         amount=None,
         uid=None,
+        client_order_id=None,
         timest=None,
         source=None,
         sub_account_type='spot',
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, Configuration) -> None
         """SubAccountTransfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +80,7 @@ class SubAccountTransfer(object):
         self._direction = None
         self._amount = None
         self._uid = None
+        self._client_order_id = None
         self._timest = None
         self._source = None
         self._sub_account_type = None
@@ -88,6 +92,8 @@ class SubAccountTransfer(object):
         self.amount = amount
         if uid is not None:
             self.uid = uid
+        if client_order_id is not None:
+            self.client_order_id = client_order_id
         if timest is not None:
             self.timest = timest
         if source is not None:
@@ -224,6 +230,29 @@ class SubAccountTransfer(object):
         """
 
         self._uid = uid
+
+    @property
+    def client_order_id(self):
+        """Gets the client_order_id of this SubAccountTransfer.  # noqa: E501
+
+        The custom ID provided by the customer serves as a safeguard against duplicate transfers. It can be a combination of letters (case-sensitive), numbers, hyphens '-', and underscores '_', with a length ranging from 1 to 64 characters.  # noqa: E501
+
+        :return: The client_order_id of this SubAccountTransfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_order_id
+
+    @client_order_id.setter
+    def client_order_id(self, client_order_id):
+        """Sets the client_order_id of this SubAccountTransfer.
+
+        The custom ID provided by the customer serves as a safeguard against duplicate transfers. It can be a combination of letters (case-sensitive), numbers, hyphens '-', and underscores '_', with a length ranging from 1 to 64 characters.  # noqa: E501
+
+        :param client_order_id: The client_order_id of this SubAccountTransfer.  # noqa: E501
+        :type: str
+        """
+
+        self._client_order_id = client_order_id
 
     @property
     def timest(self):

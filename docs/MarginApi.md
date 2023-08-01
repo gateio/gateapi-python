@@ -36,6 +36,7 @@ Method | HTTP request | Description
 [**repay_cross_margin_loan**](MarginApi.md#repay_cross_margin_loan) | **POST** /margin/cross/repayments | Cross margin repayments
 [**get_cross_margin_interest_records**](MarginApi.md#get_cross_margin_interest_records) | **GET** /margin/cross/interest_records | Interest records for the cross margin account
 [**get_cross_margin_transferable**](MarginApi.md#get_cross_margin_transferable) | **GET** /margin/cross/transferable | Get the max transferable amount for a specific cross margin currency
+[**get_cross_margin_estimate_rate**](MarginApi.md#get_cross_margin_estimate_rate) | **GET** /margin/cross/estimate_rate | Estimated interest rates
 [**get_cross_margin_borrowable**](MarginApi.md#get_cross_margin_borrowable) | **GET** /margin/cross/borrowable | Get the max borrowable amount for a specific cross margin currency
 
 
@@ -107,7 +108,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_margin_account_book**
-> list[MarginAccountBook] list_margin_account_book(currency=currency, currency_pair=currency_pair, _from=_from, to=to, page=page, limit=limit)
+> list[MarginAccountBook] list_margin_account_book(currency=currency, currency_pair=currency_pair, type=type, _from=_from, to=to, page=page, limit=limit)
 
 List margin account balance change history
 
@@ -139,6 +140,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.MarginApi(api_client)
 currency = 'currency_example' # str | List records related to specified currency only. If specified, `currency_pair` is also required. (optional)
 currency_pair = 'currency_pair_example' # str | List records related to specified currency pair. Used in combination with `currency`. Ignored if `currency` is not provided (optional)
+type = 'lend' # str | Only retrieve changes of the specified type. All types will be returned if not specified. (optional)
 _from = 1627706330 # int | Start timestamp of the query (optional)
 to = 1635329650 # int | Time range ending, default to current time (optional)
 page = 1 # int | Page number (optional) (default to 1)
@@ -146,7 +148,7 @@ limit = 100 # int | Maximum number of records to be returned in a single list (o
 
 try:
     # List margin account balance change history
-    api_response = api_instance.list_margin_account_book(currency=currency, currency_pair=currency_pair, _from=_from, to=to, page=page, limit=limit)
+    api_response = api_instance.list_margin_account_book(currency=currency, currency_pair=currency_pair, type=type, _from=_from, to=to, page=page, limit=limit)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -160,6 +162,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency** | **str**| List records related to specified currency only. If specified, &#x60;currency_pair&#x60; is also required. | [optional] 
  **currency_pair** | **str**| List records related to specified currency pair. Used in combination with &#x60;currency&#x60;. Ignored if &#x60;currency&#x60; is not provided | [optional] 
+ **type** | **str**| Only retrieve changes of the specified type. All types will be returned if not specified. | [optional] 
  **_from** | **int**| Start timestamp of the query | [optional] 
  **to** | **int**| Time range ending, default to current time | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
@@ -1752,7 +1755,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginApi(api_client)
-status = 56 # int | Filter by status. Supported values are 2 and 3.
+status = 56 # int | Filter by status. Supported values are 2 and 3. (deprecated.)
 currency = 'currency_example' # str | Filter by currency (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
@@ -1772,7 +1775,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **int**| Filter by status. Supported values are 2 and 3. | 
+ **status** | **int**| Filter by status. Supported values are 2 and 3. (deprecated.) | 
  **currency** | **str**| Filter by currency | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
@@ -2218,8 +2221,77 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_cross_margin_estimate_rate**
+> dict(str, str) get_cross_margin_estimate_rate(currencies)
+
+Estimated interest rates
+
+Please note that the interest rates are subject to change based on the borrowing and lending demand, and therefore, the provided rates may not be entirely accurate.
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginApi(api_client)
+currencies = ['[\"BTC\",\"GT\"]'] # list[str] | An array of up to 10 specifying the currency name
+
+try:
+    # Estimated interest rates
+    api_response = api_instance.get_cross_margin_estimate_rate(currencies)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling MarginApi->get_cross_margin_estimate_rate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencies** | [**list[str]**](str.md)| An array of up to 10 specifying the currency name | 
+
+### Return type
+
+**dict(str, str)**
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_cross_margin_borrowable**
-> CrossMarginBorrowable get_cross_margin_borrowable(currency)
+> PortfolioBorrowable get_cross_margin_borrowable(currency)
 
 Get the max borrowable amount for a specific cross margin currency
 
@@ -2267,7 +2339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CrossMarginBorrowable**](CrossMarginBorrowable.md)
+[**PortfolioBorrowable**](PortfolioBorrowable.md)
 
 ### Authorization
 

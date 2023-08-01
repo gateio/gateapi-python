@@ -863,6 +863,7 @@ class WalletApi(object):
     def sub_account_to_sub_account(self, sub_account_to_sub_account, **kwargs):  # noqa: E501
         """Sub-account transfers to sub-account  # noqa: E501
 
+        It is possible to perform balance transfers between two sub-accounts under the same main account. You can use either the API Key of the main account or the API Key of the sub-account to initiate the transfer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.sub_account_to_sub_account(sub_account_to_sub_account, async_req=True)
@@ -887,6 +888,7 @@ class WalletApi(object):
     def sub_account_to_sub_account_with_http_info(self, sub_account_to_sub_account, **kwargs):  # noqa: E501
         """Sub-account transfers to sub-account  # noqa: E501
 
+        It is possible to perform balance transfers between two sub-accounts under the same main account. You can use either the API Key of the main account or the API Key of the sub-account to initiate the transfer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.sub_account_to_sub_account_with_http_info(sub_account_to_sub_account, async_req=True)

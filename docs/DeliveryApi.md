@@ -289,7 +289,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_delivery_candlesticks**
-> list[FuturesCandlestick] list_delivery_candlesticks(settle, contract, _from=_from, to=to, limit=limit, interval=interval)
+> list[DeliveryCandlestick] list_delivery_candlesticks(settle, contract, _from=_from, to=to, limit=limit, interval=interval)
 
 Get futures candlesticks
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[FuturesCandlestick]**](FuturesCandlestick.md)
+[**list[DeliveryCandlestick]**](DeliveryCandlestick.md)
 
 ### Authorization
 

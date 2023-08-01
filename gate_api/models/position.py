@@ -58,6 +58,7 @@ class Position(object):
         'close_order': 'PositionCloseOrder',
         'mode': 'str',
         'cross_leverage_limit': 'str',
+        'update_time': 'int',
     }
 
     attribute_map = {
@@ -86,6 +87,7 @@ class Position(object):
         'close_order': 'close_order',
         'mode': 'mode',
         'cross_leverage_limit': 'cross_leverage_limit',
+        'update_time': 'update_time',
     }
 
     def __init__(
@@ -115,9 +117,10 @@ class Position(object):
         close_order=None,
         mode=None,
         cross_leverage_limit=None,
+        update_time=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, PositionCloseOrder, str, str, Configuration) -> None
+        # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, PositionCloseOrder, str, str, int, Configuration) -> None
         """Position - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -148,6 +151,7 @@ class Position(object):
         self._close_order = None
         self._mode = None
         self._cross_leverage_limit = None
+        self._update_time = None
         self.discriminator = None
 
         if user is not None:
@@ -199,6 +203,8 @@ class Position(object):
             self.mode = mode
         if cross_leverage_limit is not None:
             self.cross_leverage_limit = cross_leverage_limit
+        if update_time is not None:
+            self.update_time = update_time
 
     @property
     def user(self):
@@ -777,6 +783,29 @@ class Position(object):
         """
 
         self._cross_leverage_limit = cross_leverage_limit
+
+    @property
+    def update_time(self):
+        """Gets the update_time of this Position.  # noqa: E501
+
+        Last update time  # noqa: E501
+
+        :return: The update_time of this Position.  # noqa: E501
+        :rtype: int
+        """
+        return self._update_time
+
+    @update_time.setter
+    def update_time(self, update_time):
+        """Sets the update_time of this Position.
+
+        Last update time  # noqa: E501
+
+        :param update_time: The update_time of this Position.  # noqa: E501
+        :type: int
+        """
+
+        self._update_time = update_time
 
     def to_dict(self):
         """Returns the model properties as a dict"""

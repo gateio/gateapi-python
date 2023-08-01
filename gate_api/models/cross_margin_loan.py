@@ -255,7 +255,7 @@ class CrossMarginLoan(object):
     def status(self):
         """Gets the status of this CrossMarginLoan.  # noqa: E501
 
-        Borrow loan status, which includes:  - 1: failed to borrow - 2: borrowed but not repaid - 3: repayment complete  # noqa: E501
+        Deprecated. Currently, all statuses have been set to 2.  Borrow loan status, which includes:  - 1: failed to borrow - 2: borrowed but not repaid - 3: repayment complete  # noqa: E501
 
         :return: The status of this CrossMarginLoan.  # noqa: E501
         :rtype: int
@@ -266,7 +266,7 @@ class CrossMarginLoan(object):
     def status(self, status):
         """Sets the status of this CrossMarginLoan.
 
-        Borrow loan status, which includes:  - 1: failed to borrow - 2: borrowed but not repaid - 3: repayment complete  # noqa: E501
+        Deprecated. Currently, all statuses have been set to 2.  Borrow loan status, which includes:  - 1: failed to borrow - 2: borrowed but not repaid - 3: repayment complete  # noqa: E501
 
         :param status: The status of this CrossMarginLoan.  # noqa: E501
         :type: int

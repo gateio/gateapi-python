@@ -230,6 +230,127 @@ class MarginUniApi(object):
             collection_formats=collection_formats,
         )
 
+    def get_margin_uni_estimate_rate(self, currencies, **kwargs):  # noqa: E501
+        """Estimate interest Rate  # noqa: E501
+
+        Please note that the interest rates are subject to change based on the borrowing and lending demand, and therefore, the provided rates may not be entirely accurate.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_margin_uni_estimate_rate(currencies, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param list[str] currencies: An array of up to 10 specifying the currency name (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: dict
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_margin_uni_estimate_rate_with_http_info(currencies, **kwargs)  # noqa: E501
+
+    def get_margin_uni_estimate_rate_with_http_info(self, currencies, **kwargs):  # noqa: E501
+        """Estimate interest Rate  # noqa: E501
+
+        Please note that the interest rates are subject to change based on the borrowing and lending demand, and therefore, the provided rates may not be entirely accurate.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_margin_uni_estimate_rate_with_http_info(currencies, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param list[str] currencies: An array of up to 10 specifying the currency name (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(dict, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['currencies']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'" " to method get_margin_uni_estimate_rate" % k
+                )
+            local_var_params[k] = v
+        del local_var_params['kwargs']
+        # verify the required parameter 'currencies' is set
+        if self.api_client.client_side_validation and (
+            'currencies' not in local_var_params or local_var_params['currencies'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `currencies` when calling `get_margin_uni_estimate_rate`"
+            )  # noqa: E501
+
+        if self.api_client.client_side_validation and (
+            'currencies' in local_var_params and len(local_var_params['currencies']) > 10  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `currencies` when calling `get_margin_uni_estimate_rate`, number of items must be less than or equal to `10`"
+            )  # noqa: E501
+        if self.api_client.client_side_validation and (
+            'currencies' in local_var_params and len(local_var_params['currencies']) < 1  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `currencies` when calling `get_margin_uni_estimate_rate`, number of items must be greater than or equal to `1`"
+            )  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'currencies' in local_var_params and local_var_params['currencies'] is not None:  # noqa: E501
+            query_params.append(('currencies', local_var_params['currencies']))  # noqa: E501
+            collection_formats['currencies'] = 'multi'  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiv4']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/margin/uni/estimate_rate',
+            'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='dict(str, str)',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+        )
+
     def list_uni_loans(self, **kwargs):  # noqa: E501
         """List loans  # noqa: E501
 

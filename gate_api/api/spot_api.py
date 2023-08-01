@@ -1230,6 +1230,143 @@ class SpotApi(object):
             collection_formats=collection_formats,
         )
 
+    def list_spot_account_book(self, **kwargs):  # noqa: E501
+        """Query account book  # noqa: E501
+
+        Record time range cannot exceed 30 days  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_spot_account_book(async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str currency: Retrieve data of the specified currency
+        :param int _from: Start timestamp of the query
+        :param int to: Time range ending, default to current time
+        :param int page: Page number
+        :param int limit: Maximum number of records to be returned in a single list
+        :param str type: Only retrieve changes of the specified type. All types will be returned if not specified.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: list[gate_api.SpotAccountBook]
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.list_spot_account_book_with_http_info(**kwargs)  # noqa: E501
+
+    def list_spot_account_book_with_http_info(self, **kwargs):  # noqa: E501
+        """Query account book  # noqa: E501
+
+        Record time range cannot exceed 30 days  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_spot_account_book_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str currency: Retrieve data of the specified currency
+        :param int _from: Start timestamp of the query
+        :param int to: Time range ending, default to current time
+        :param int page: Page number
+        :param int limit: Maximum number of records to be returned in a single list
+        :param str type: Only retrieve changes of the specified type. All types will be returned if not specified.
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(list[gate_api.SpotAccountBook], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['currency', '_from', 'to', 'page', 'limit', 'type']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_spot_account_book" % k)
+            local_var_params[k] = v
+        del local_var_params['kwargs']
+
+        if (
+            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `page` when calling `list_spot_account_book`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_spot_account_book`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_spot_account_book`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'currency' in local_var_params and local_var_params['currency'] is not None:  # noqa: E501
+            query_params.append(('currency', local_var_params['currency']))  # noqa: E501
+        if '_from' in local_var_params and local_var_params['_from'] is not None:  # noqa: E501
+            query_params.append(('from', local_var_params['_from']))  # noqa: E501
+        if 'to' in local_var_params and local_var_params['to'] is not None:  # noqa: E501
+            query_params.append(('to', local_var_params['to']))  # noqa: E501
+        if 'page' in local_var_params and local_var_params['page'] is not None:  # noqa: E501
+            query_params.append(('page', local_var_params['page']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'type' in local_var_params and local_var_params['type'] is not None:  # noqa: E501
+            query_params.append(('type', local_var_params['type']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiv4']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/spot/account_book',
+            'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SpotAccountBook]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+        )
+
     def create_batch_orders(self, order, **kwargs):  # noqa: E501
         """Create a batch of orders  # noqa: E501
 
@@ -1959,17 +2096,17 @@ class SpotApi(object):
             collection_formats=collection_formats,
         )
 
-    def cancel_batch_orders(self, cancel_order, **kwargs):  # noqa: E501
+    def cancel_batch_orders(self, cancel_batch_order, **kwargs):  # noqa: E501
         """Cancel a batch of orders with an ID list  # noqa: E501
 
         Multiple currency pairs can be specified, but maximum 20 orders are allowed per request  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cancel_batch_orders(cancel_order, async_req=True)
+        >>> thread = api.cancel_batch_orders(cancel_batch_order, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param list[CancelOrder] cancel_order: (required)
+        :param list[CancelBatchOrder] cancel_batch_order: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1982,19 +2119,19 @@ class SpotApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.cancel_batch_orders_with_http_info(cancel_order, **kwargs)  # noqa: E501
+        return self.cancel_batch_orders_with_http_info(cancel_batch_order, **kwargs)  # noqa: E501
 
-    def cancel_batch_orders_with_http_info(self, cancel_order, **kwargs):  # noqa: E501
+    def cancel_batch_orders_with_http_info(self, cancel_batch_order, **kwargs):  # noqa: E501
         """Cancel a batch of orders with an ID list  # noqa: E501
 
         Multiple currency pairs can be specified, but maximum 20 orders are allowed per request  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cancel_batch_orders_with_http_info(cancel_order, async_req=True)
+        >>> thread = api.cancel_batch_orders_with_http_info(cancel_batch_order, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param list[CancelOrder] cancel_order: (required)
+        :param list[CancelBatchOrder] cancel_batch_order: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2011,7 +2148,7 @@ class SpotApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cancel_order']
+        all_params = ['cancel_batch_order']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -2019,12 +2156,12 @@ class SpotApi(object):
                 raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_batch_orders" % k)
             local_var_params[k] = v
         del local_var_params['kwargs']
-        # verify the required parameter 'cancel_order' is set
+        # verify the required parameter 'cancel_batch_order' is set
         if self.api_client.client_side_validation and (
-            'cancel_order' not in local_var_params or local_var_params['cancel_order'] is None  # noqa: E501
+            'cancel_batch_order' not in local_var_params or local_var_params['cancel_batch_order'] is None  # noqa: E501
         ):  # noqa: E501
             raise ApiValueError(
-                "Missing the required parameter `cancel_order` when calling `cancel_batch_orders`"
+                "Missing the required parameter `cancel_batch_order` when calling `cancel_batch_orders`"
             )  # noqa: E501
 
         collection_formats = {}
@@ -2039,8 +2176,8 @@ class SpotApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'cancel_order' in local_var_params:
-            body_params = local_var_params['cancel_order']
+        if 'cancel_batch_order' in local_var_params:
+            body_params = local_var_params['cancel_batch_order']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
 

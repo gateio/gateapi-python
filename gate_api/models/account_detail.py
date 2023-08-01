@@ -32,14 +32,24 @@ class AccountDetail(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'ip_whitelist': 'list[str]', 'currency_pairs': 'list[str]', 'user_id': 'int'}
+    openapi_types = {
+        'ip_whitelist': 'list[str]',
+        'currency_pairs': 'list[str]',
+        'user_id': 'int',
+        'key': 'AccountDetailKey',
+    }
 
-    attribute_map = {'ip_whitelist': 'ip_whitelist', 'currency_pairs': 'currency_pairs', 'user_id': 'user_id'}
+    attribute_map = {
+        'ip_whitelist': 'ip_whitelist',
+        'currency_pairs': 'currency_pairs',
+        'user_id': 'user_id',
+        'key': 'key',
+    }
 
     def __init__(
-        self, ip_whitelist=None, currency_pairs=None, user_id=None, local_vars_configuration=None
+        self, ip_whitelist=None, currency_pairs=None, user_id=None, key=None, local_vars_configuration=None
     ):  # noqa: E501
-        # type: (list[str], list[str], int, Configuration) -> None
+        # type: (list[str], list[str], int, AccountDetailKey, Configuration) -> None
         """AccountDetail - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,6 +58,7 @@ class AccountDetail(object):
         self._ip_whitelist = None
         self._currency_pairs = None
         self._user_id = None
+        self._key = None
         self.discriminator = None
 
         if ip_whitelist is not None:
@@ -56,6 +67,8 @@ class AccountDetail(object):
             self.currency_pairs = currency_pairs
         if user_id is not None:
             self.user_id = user_id
+        if key is not None:
+            self.key = key
 
     @property
     def ip_whitelist(self):
@@ -125,6 +138,27 @@ class AccountDetail(object):
         """
 
         self._user_id = user_id
+
+    @property
+    def key(self):
+        """Gets the key of this AccountDetail.  # noqa: E501
+
+
+        :return: The key of this AccountDetail.  # noqa: E501
+        :rtype: AccountDetailKey
+        """
+        return self._key
+
+    @key.setter
+    def key(self, key):
+        """Sets the key of this AccountDetail.
+
+
+        :param key: The key of this AccountDetail.  # noqa: E501
+        :type: AccountDetailKey
+        """
+
+        self._key = key
 
     def to_dict(self):
         """Returns the model properties as a dict"""

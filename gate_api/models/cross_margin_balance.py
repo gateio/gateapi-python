@@ -247,7 +247,7 @@ class CrossMarginBalance(object):
     def equity(self):
         """Gets the equity of this CrossMarginBalance.  # noqa: E501
 
-        Equity. Formula: available + freeze - borrowed + total + unrealized_pnl  # noqa: E501
+        Equity. Formula: available + freeze - borrowed + futures account's total + unrealized_pnl  # noqa: E501
 
         :return: The equity of this CrossMarginBalance.  # noqa: E501
         :rtype: str
@@ -258,7 +258,7 @@ class CrossMarginBalance(object):
     def equity(self, equity):
         """Sets the equity of this CrossMarginBalance.
 
-        Equity. Formula: available + freeze - borrowed + total + unrealized_pnl  # noqa: E501
+        Equity. Formula: available + freeze - borrowed + futures account's total + unrealized_pnl  # noqa: E501
 
         :param equity: The equity of this CrossMarginBalance.  # noqa: E501
         :type: str
@@ -270,7 +270,7 @@ class CrossMarginBalance(object):
     def total_freeze(self):
         """Gets the total_freeze of this CrossMarginBalance.  # noqa: E501
 
-        Total freeze. Formula: position_initial_margin + order_margin  # noqa: E501
+        Total freeze. Formula: freeze + position_initial_margin + order_margin  # noqa: E501
 
         :return: The total_freeze of this CrossMarginBalance.  # noqa: E501
         :rtype: str
@@ -281,7 +281,7 @@ class CrossMarginBalance(object):
     def total_freeze(self, total_freeze):
         """Sets the total_freeze of this CrossMarginBalance.
 
-        Total freeze. Formula: position_initial_margin + order_margin  # noqa: E501
+        Total freeze. Formula: freeze + position_initial_margin + order_margin  # noqa: E501
 
         :param total_freeze: The total_freeze of this CrossMarginBalance.  # noqa: E501
         :type: str

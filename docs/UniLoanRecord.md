@@ -1,6 +1,6 @@
 # UniLoanRecord
 
-Loan record
+Loan records
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

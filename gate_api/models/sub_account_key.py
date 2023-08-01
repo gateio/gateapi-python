@@ -34,6 +34,7 @@ class SubAccountKey(object):
     """
     openapi_types = {
         'user_id': 'str',
+        'mode': 'int',
         'name': 'str',
         'perms': 'list[ApiV4KeyPerm]',
         'ip_whitelist': 'list[str]',
@@ -45,6 +46,7 @@ class SubAccountKey(object):
 
     attribute_map = {
         'user_id': 'user_id',
+        'mode': 'mode',
         'name': 'name',
         'perms': 'perms',
         'ip_whitelist': 'ip_whitelist',
@@ -57,6 +59,7 @@ class SubAccountKey(object):
     def __init__(
         self,
         user_id=None,
+        mode=None,
         name=None,
         perms=None,
         ip_whitelist=None,
@@ -66,13 +69,14 @@ class SubAccountKey(object):
         updated_at=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, list[ApiV4KeyPerm], list[str], str, int, str, str, Configuration) -> None
+        # type: (str, int, str, list[ApiV4KeyPerm], list[str], str, int, str, str, Configuration) -> None
         """SubAccountKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._user_id = None
+        self._mode = None
         self._name = None
         self._perms = None
         self._ip_whitelist = None
@@ -84,6 +88,8 @@ class SubAccountKey(object):
 
         if user_id is not None:
             self.user_id = user_id
+        if mode is not None:
+            self.mode = mode
         if name is not None:
             self.name = name
         if perms is not None:
@@ -121,6 +127,29 @@ class SubAccountKey(object):
         """
 
         self._user_id = user_id
+
+    @property
+    def mode(self):
+        """Gets the mode of this SubAccountKey.  # noqa: E501
+
+        Mode: 1 - classic 2 - portfolio account  # noqa: E501
+
+        :return: The mode of this SubAccountKey.  # noqa: E501
+        :rtype: int
+        """
+        return self._mode
+
+    @mode.setter
+    def mode(self, mode):
+        """Sets the mode of this SubAccountKey.
+
+        Mode: 1 - classic 2 - portfolio account  # noqa: E501
+
+        :param mode: The mode of this SubAccountKey.  # noqa: E501
+        :type: int
+        """
+
+        self._mode = mode
 
     @property
     def name(self):

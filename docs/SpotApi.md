@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**get_fee**](SpotApi.md#get_fee) | **GET** /spot/fee | Query user trading fee rates
 [**get_batch_spot_fee**](SpotApi.md#get_batch_spot_fee) | **GET** /spot/batch_fee | Query a batch of user trading fee rates
 [**list_spot_accounts**](SpotApi.md#list_spot_accounts) | **GET** /spot/accounts | List spot accounts
+[**list_spot_account_book**](SpotApi.md#list_spot_account_book) | **GET** /spot/account_book | Query account book
 [**create_batch_orders**](SpotApi.md#create_batch_orders) | **POST** /spot/batch_orders | Create a batch of orders
 [**list_all_open_orders**](SpotApi.md#list_all_open_orders) | **GET** /spot/open_orders | List all open orders
 [**create_cross_liquidate_order**](SpotApi.md#create_cross_liquidate_order) | **POST** /spot/cross_liquidate_orders | close position when cross-currency is disabled
@@ -732,6 +733,85 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_spot_account_book**
+> list[SpotAccountBook] list_spot_account_book(currency=currency, _from=_from, to=to, page=page, limit=limit, type=type)
+
+Query account book
+
+Record time range cannot exceed 30 days
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.SpotApi(api_client)
+currency = 'BTC' # str | Retrieve data of the specified currency (optional)
+_from = 1627706330 # int | Start timestamp of the query (optional)
+to = 1635329650 # int | Time range ending, default to current time (optional)
+page = 1 # int | Page number (optional) (default to 1)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+type = 'lend' # str | Only retrieve changes of the specified type. All types will be returned if not specified. (optional)
+
+try:
+    # Query account book
+    api_response = api_instance.list_spot_account_book(currency=currency, _from=_from, to=to, page=page, limit=limit, type=type)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling SpotApi->list_spot_account_book: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency** | **str**| Retrieve data of the specified currency | [optional] 
+ **_from** | **int**| Start timestamp of the query | [optional] 
+ **to** | **int**| Time range ending, default to current time | [optional] 
+ **page** | **int**| Page number | [optional] [default to 1]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
+ **type** | **str**| Only retrieve changes of the specified type. All types will be returned if not specified. | [optional] 
+
+### Return type
+
+[**list[SpotAccountBook]**](SpotAccountBook.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **create_batch_orders**
 > list[BatchOrder] create_batch_orders(order)
 
@@ -1169,7 +1249,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_batch_orders**
-> list[CancelOrderResult] cancel_batch_orders(cancel_order)
+> list[CancelOrderResult] cancel_batch_orders(cancel_batch_order)
 
 Cancel a batch of orders with an ID list
 
@@ -1199,11 +1279,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-cancel_order = [gate_api.CancelOrder()] # list[CancelOrder] | 
+cancel_batch_order = [gate_api.CancelBatchOrder()] # list[CancelBatchOrder] | 
 
 try:
     # Cancel a batch of orders with an ID list
-    api_response = api_instance.cancel_batch_orders(cancel_order)
+    api_response = api_instance.cancel_batch_orders(cancel_batch_order)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1215,7 +1295,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cancel_order** | [**list[CancelOrder]**](CancelOrder.md)|  | 
+ **cancel_batch_order** | [**list[CancelBatchOrder]**](CancelBatchOrder.md)|  | 
 
 ### Return type
 

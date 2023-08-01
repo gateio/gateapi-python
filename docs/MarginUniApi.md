@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**list_uni_currency_pairs**](MarginUniApi.md#list_uni_currency_pairs) | **GET** /margin/uni/currency_pairs | List lending markets
 [**get_uni_currency_pair**](MarginUniApi.md#get_uni_currency_pair) | **GET** /margin/uni/currency_pairs/{currency_pair} | Get detail of lending market
+[**get_margin_uni_estimate_rate**](MarginUniApi.md#get_margin_uni_estimate_rate) | **GET** /margin/uni/estimate_rate | Estimate interest Rate
 [**list_uni_loans**](MarginUniApi.md#list_uni_loans) | **GET** /margin/uni/loans | List loans
 [**create_uni_loan**](MarginUniApi.md#create_uni_loan) | **POST** /margin/uni/loans | Borrow or repay
 [**list_uni_loan_records**](MarginUniApi.md#list_uni_loan_records) | **GET** /margin/uni/loan_records | Get load records
@@ -112,6 +113,75 @@ Name | Type | Description  | Notes
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_margin_uni_estimate_rate**
+> dict(str, str) get_margin_uni_estimate_rate(currencies)
+
+Estimate interest Rate
+
+Please note that the interest rates are subject to change based on the borrowing and lending demand, and therefore, the provided rates may not be entirely accurate.
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MarginUniApi(api_client)
+currencies = ['[\"BTC\",\"GT\"]'] # list[str] | An array of up to 10 specifying the currency name
+
+try:
+    # Estimate interest Rate
+    api_response = api_instance.get_margin_uni_estimate_rate(currencies)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling MarginUniApi->get_margin_uni_estimate_rate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencies** | [**list[str]**](str.md)| An array of up to 10 specifying the currency name | 
+
+### Return type
+
+**dict(str, str)**
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
 
 ### HTTP request headers
 

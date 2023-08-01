@@ -34,60 +34,92 @@ class OptionsPosition(object):
     """
     openapi_types = {
         'user': 'int',
+        'underlying': 'str',
+        'underlying_price': 'str',
         'contract': 'str',
         'size': 'int',
         'entry_price': 'str',
         'mark_price': 'str',
+        'mark_iv': 'str',
         'realised_pnl': 'str',
         'unrealised_pnl': 'str',
         'pending_orders': 'int',
         'close_order': 'OptionsPositionCloseOrder',
+        'delta': 'str',
+        'gamma': 'str',
+        'vega': 'str',
+        'theta': 'str',
     }
 
     attribute_map = {
         'user': 'user',
+        'underlying': 'underlying',
+        'underlying_price': 'underlying_price',
         'contract': 'contract',
         'size': 'size',
         'entry_price': 'entry_price',
         'mark_price': 'mark_price',
+        'mark_iv': 'mark_iv',
         'realised_pnl': 'realised_pnl',
         'unrealised_pnl': 'unrealised_pnl',
         'pending_orders': 'pending_orders',
         'close_order': 'close_order',
+        'delta': 'delta',
+        'gamma': 'gamma',
+        'vega': 'vega',
+        'theta': 'theta',
     }
 
     def __init__(
         self,
         user=None,
+        underlying=None,
+        underlying_price=None,
         contract=None,
         size=None,
         entry_price=None,
         mark_price=None,
+        mark_iv=None,
         realised_pnl=None,
         unrealised_pnl=None,
         pending_orders=None,
         close_order=None,
+        delta=None,
+        gamma=None,
+        vega=None,
+        theta=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, int, str, str, str, str, int, OptionsPositionCloseOrder, Configuration) -> None
+        # type: (int, str, str, str, int, str, str, str, str, str, int, OptionsPositionCloseOrder, str, str, str, str, Configuration) -> None
         """OptionsPosition - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._user = None
+        self._underlying = None
+        self._underlying_price = None
         self._contract = None
         self._size = None
         self._entry_price = None
         self._mark_price = None
+        self._mark_iv = None
         self._realised_pnl = None
         self._unrealised_pnl = None
         self._pending_orders = None
         self._close_order = None
+        self._delta = None
+        self._gamma = None
+        self._vega = None
+        self._theta = None
         self.discriminator = None
 
         if user is not None:
             self.user = user
+        if underlying is not None:
+            self.underlying = underlying
+        if underlying_price is not None:
+            self.underlying_price = underlying_price
         if contract is not None:
             self.contract = contract
         if size is not None:
@@ -96,6 +128,8 @@ class OptionsPosition(object):
             self.entry_price = entry_price
         if mark_price is not None:
             self.mark_price = mark_price
+        if mark_iv is not None:
+            self.mark_iv = mark_iv
         if realised_pnl is not None:
             self.realised_pnl = realised_pnl
         if unrealised_pnl is not None:
@@ -103,6 +137,14 @@ class OptionsPosition(object):
         if pending_orders is not None:
             self.pending_orders = pending_orders
         self.close_order = close_order
+        if delta is not None:
+            self.delta = delta
+        if gamma is not None:
+            self.gamma = gamma
+        if vega is not None:
+            self.vega = vega
+        if theta is not None:
+            self.theta = theta
 
     @property
     def user(self):
@@ -126,6 +168,52 @@ class OptionsPosition(object):
         """
 
         self._user = user
+
+    @property
+    def underlying(self):
+        """Gets the underlying of this OptionsPosition.  # noqa: E501
+
+        Underlying  # noqa: E501
+
+        :return: The underlying of this OptionsPosition.  # noqa: E501
+        :rtype: str
+        """
+        return self._underlying
+
+    @underlying.setter
+    def underlying(self, underlying):
+        """Sets the underlying of this OptionsPosition.
+
+        Underlying  # noqa: E501
+
+        :param underlying: The underlying of this OptionsPosition.  # noqa: E501
+        :type: str
+        """
+
+        self._underlying = underlying
+
+    @property
+    def underlying_price(self):
+        """Gets the underlying_price of this OptionsPosition.  # noqa: E501
+
+        Underlying price (quote currency)  # noqa: E501
+
+        :return: The underlying_price of this OptionsPosition.  # noqa: E501
+        :rtype: str
+        """
+        return self._underlying_price
+
+    @underlying_price.setter
+    def underlying_price(self, underlying_price):
+        """Sets the underlying_price of this OptionsPosition.
+
+        Underlying price (quote currency)  # noqa: E501
+
+        :param underlying_price: The underlying_price of this OptionsPosition.  # noqa: E501
+        :type: str
+        """
+
+        self._underlying_price = underlying_price
 
     @property
     def contract(self):
@@ -220,6 +308,29 @@ class OptionsPosition(object):
         self._mark_price = mark_price
 
     @property
+    def mark_iv(self):
+        """Gets the mark_iv of this OptionsPosition.  # noqa: E501
+
+        Implied volatility  # noqa: E501
+
+        :return: The mark_iv of this OptionsPosition.  # noqa: E501
+        :rtype: str
+        """
+        return self._mark_iv
+
+    @mark_iv.setter
+    def mark_iv(self, mark_iv):
+        """Sets the mark_iv of this OptionsPosition.
+
+        Implied volatility  # noqa: E501
+
+        :param mark_iv: The mark_iv of this OptionsPosition.  # noqa: E501
+        :type: str
+        """
+
+        self._mark_iv = mark_iv
+
+    @property
     def realised_pnl(self):
         """Gets the realised_pnl of this OptionsPosition.  # noqa: E501
 
@@ -308,6 +419,98 @@ class OptionsPosition(object):
         """
 
         self._close_order = close_order
+
+    @property
+    def delta(self):
+        """Gets the delta of this OptionsPosition.  # noqa: E501
+
+        Delta  # noqa: E501
+
+        :return: The delta of this OptionsPosition.  # noqa: E501
+        :rtype: str
+        """
+        return self._delta
+
+    @delta.setter
+    def delta(self, delta):
+        """Sets the delta of this OptionsPosition.
+
+        Delta  # noqa: E501
+
+        :param delta: The delta of this OptionsPosition.  # noqa: E501
+        :type: str
+        """
+
+        self._delta = delta
+
+    @property
+    def gamma(self):
+        """Gets the gamma of this OptionsPosition.  # noqa: E501
+
+        Gamma  # noqa: E501
+
+        :return: The gamma of this OptionsPosition.  # noqa: E501
+        :rtype: str
+        """
+        return self._gamma
+
+    @gamma.setter
+    def gamma(self, gamma):
+        """Sets the gamma of this OptionsPosition.
+
+        Gamma  # noqa: E501
+
+        :param gamma: The gamma of this OptionsPosition.  # noqa: E501
+        :type: str
+        """
+
+        self._gamma = gamma
+
+    @property
+    def vega(self):
+        """Gets the vega of this OptionsPosition.  # noqa: E501
+
+        Vega  # noqa: E501
+
+        :return: The vega of this OptionsPosition.  # noqa: E501
+        :rtype: str
+        """
+        return self._vega
+
+    @vega.setter
+    def vega(self, vega):
+        """Sets the vega of this OptionsPosition.
+
+        Vega  # noqa: E501
+
+        :param vega: The vega of this OptionsPosition.  # noqa: E501
+        :type: str
+        """
+
+        self._vega = vega
+
+    @property
+    def theta(self):
+        """Gets the theta of this OptionsPosition.  # noqa: E501
+
+        Theta  # noqa: E501
+
+        :return: The theta of this OptionsPosition.  # noqa: E501
+        :rtype: str
+        """
+        return self._theta
+
+    @theta.setter
+    def theta(self, theta):
+        """Sets the theta of this OptionsPosition.
+
+        Theta  # noqa: E501
+
+        :param theta: The theta of this OptionsPosition.  # noqa: E501
+        :type: str
+        """
+
+        self._theta = theta
 
     def to_dict(self):
         """Returns the model properties as a dict"""

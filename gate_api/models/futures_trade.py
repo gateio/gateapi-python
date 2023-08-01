@@ -39,6 +39,7 @@ class FuturesTrade(object):
         'contract': 'str',
         'size': 'int',
         'price': 'str',
+        'is_internal': 'bool',
     }
 
     attribute_map = {
@@ -48,6 +49,7 @@ class FuturesTrade(object):
         'contract': 'contract',
         'size': 'size',
         'price': 'price',
+        'is_internal': 'is_internal',
     }
 
     def __init__(
@@ -58,9 +60,10 @@ class FuturesTrade(object):
         contract=None,
         size=None,
         price=None,
+        is_internal=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, float, float, str, int, str, Configuration) -> None
+        # type: (int, float, float, str, int, str, bool, Configuration) -> None
         """FuturesTrade - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +75,7 @@ class FuturesTrade(object):
         self._contract = None
         self._size = None
         self._price = None
+        self._is_internal = None
         self.discriminator = None
 
         if id is not None:
@@ -86,6 +90,8 @@ class FuturesTrade(object):
             self.size = size
         if price is not None:
             self.price = price
+        if is_internal is not None:
+            self.is_internal = is_internal
 
     @property
     def id(self):
@@ -224,6 +230,29 @@ class FuturesTrade(object):
         """
 
         self._price = price
+
+    @property
+    def is_internal(self):
+        """Gets the is_internal of this FuturesTrade.  # noqa: E501
+
+        Whether internal trade. Internal trade refers to the takeover of liquidation orders by the insurance fund and ADL users. Since it is not a normal matching on the market depth, the transaction price may deviate, and it will not be recorded in the K-line. If it is not an internal trade, this field will not be returned.  # noqa: E501
+
+        :return: The is_internal of this FuturesTrade.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_internal
+
+    @is_internal.setter
+    def is_internal(self, is_internal):
+        """Sets the is_internal of this FuturesTrade.
+
+        Whether internal trade. Internal trade refers to the takeover of liquidation orders by the insurance fund and ADL users. Since it is not a normal matching on the market depth, the transaction price may deviate, and it will not be recorded in the K-line. If it is not an internal trade, this field will not be returned.  # noqa: E501
+
+        :param is_internal: The is_internal of this FuturesTrade.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_internal = is_internal
 
     def to_dict(self):
         """Returns the model properties as a dict"""

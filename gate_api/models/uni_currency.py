@@ -108,7 +108,7 @@ class UniCurrency(object):
     def min_lend_amount(self):
         """Gets the min_lend_amount of this UniCurrency.  # noqa: E501
 
-        Minimum lend amount  # noqa: E501
+        The minimum lending amount, in the unit of the currency.  # noqa: E501
 
         :return: The min_lend_amount of this UniCurrency.  # noqa: E501
         :rtype: str
@@ -119,7 +119,7 @@ class UniCurrency(object):
     def min_lend_amount(self, min_lend_amount):
         """Sets the min_lend_amount of this UniCurrency.
 
-        Minimum lend amount  # noqa: E501
+        The minimum lending amount, in the unit of the currency.  # noqa: E501
 
         :param min_lend_amount: The min_lend_amount of this UniCurrency.  # noqa: E501
         :type: str
@@ -131,7 +131,7 @@ class UniCurrency(object):
     def max_lend_amount(self):
         """Gets the max_lend_amount of this UniCurrency.  # noqa: E501
 
-        Maximum lend amount  # noqa: E501
+        The total maximum lending amount, in USDT  # noqa: E501
 
         :return: The max_lend_amount of this UniCurrency.  # noqa: E501
         :rtype: str
@@ -142,7 +142,7 @@ class UniCurrency(object):
     def max_lend_amount(self, max_lend_amount):
         """Sets the max_lend_amount of this UniCurrency.
 
-        Maximum lend amount  # noqa: E501
+        The total maximum lending amount, in USDT  # noqa: E501
 
         :param max_lend_amount: The max_lend_amount of this UniCurrency.  # noqa: E501
         :type: str

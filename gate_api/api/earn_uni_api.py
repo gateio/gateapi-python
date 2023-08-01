@@ -581,6 +581,8 @@ class EarnUniApi(object):
         :param str currency: Retrieve data of the specified currency
         :param int page: Page number
         :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param int _from: Start timestamp
+        :param int to: End timestamp
         :param str type: type: lend - lend, redeem - redeem
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -608,6 +610,8 @@ class EarnUniApi(object):
         :param str currency: Retrieve data of the specified currency
         :param int page: Page number
         :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param int _from: Start timestamp
+        :param int to: End timestamp
         :param str type: type: lend - lend, redeem - redeem
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -625,7 +629,7 @@ class EarnUniApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', 'page', 'limit', 'type']
+        all_params = ['currency', 'page', 'limit', '_from', 'to', 'type']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -663,6 +667,10 @@ class EarnUniApi(object):
             query_params.append(('page', local_var_params['page']))  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if '_from' in local_var_params and local_var_params['_from'] is not None:  # noqa: E501
+            query_params.append(('from', local_var_params['_from']))  # noqa: E501
+        if 'to' in local_var_params and local_var_params['to'] is not None:  # noqa: E501
+            query_params.append(('to', local_var_params['to']))  # noqa: E501
         if 'type' in local_var_params and local_var_params['type'] is not None:  # noqa: E501
             query_params.append(('type', local_var_params['type']))  # noqa: E501
 
