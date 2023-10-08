@@ -548,9 +548,9 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
+        :param int _from: 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
+        :param int limit: 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝
         :param str interval: Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -578,9 +578,9 @@ class DeliveryApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
+        :param int _from: 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
+        :param int limit: 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝
         :param str interval: Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0
         :param _return_http_data_only: response data without head status code
                                        and headers

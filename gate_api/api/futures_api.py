@@ -558,10 +558,10 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
+        :param int _from: 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
-        :param str interval: Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0
+        :param int limit: 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝
+        :param str interval: 数据点的时间间隔，注意 1w 代表一个自然周，7d 的时间是和 Unix 初始时间对齐, 30d 代表一个自然月
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -588,10 +588,10 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
+        :param int _from: 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
-        :param str interval: Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0
+        :param int limit: 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝
+        :param str interval: 数据点的时间间隔，注意 1w 代表一个自然周，7d 的时间是和 Unix 初始时间对齐, 30d 代表一个自然月
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -697,9 +697,9 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
+        :param int _from: 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
+        :param int limit: 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝
         :param str interval: Interval time between data points
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -727,9 +727,9 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
+        :param int _from: 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
+        :param int limit: 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝
         :param str interval: Interval time between data points
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -1823,6 +1823,7 @@ class FuturesApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
+        :param bool holding: 只返回真实持仓-true,全部返回-false
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1847,6 +1848,7 @@ class FuturesApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
+        :param bool holding: 只返回真实持仓-true,全部返回-false
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1863,7 +1865,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle']
+        all_params = ['settle', 'holding']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -1884,6 +1886,8 @@ class FuturesApi(object):
             path_params['settle'] = local_var_params['settle']  # noqa: E501
 
         query_params = []
+        if 'holding' in local_var_params and local_var_params['holding'] is not None:  # noqa: E501
+            query_params.append(('holding', local_var_params['holding']))  # noqa: E501
 
         header_params = {}
 
@@ -4232,6 +4236,7 @@ class FuturesApi(object):
         :param int to: End timestamp
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
+        :param str role: 查询角色，Maker 或 Taker
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -4261,6 +4266,7 @@ class FuturesApi(object):
         :param int to: End timestamp
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
+        :param str role: 查询角色，Maker 或 Taker
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -4277,7 +4283,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', '_from', 'to', 'limit', 'offset']
+        all_params = ['settle', 'contract', '_from', 'to', 'limit', 'offset', 'role']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -4330,6 +4336,8 @@ class FuturesApi(object):
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
         if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
             query_params.append(('offset', local_var_params['offset']))  # noqa: E501
+        if 'role' in local_var_params and local_var_params['role'] is not None:  # noqa: E501
+            query_params.append(('role', local_var_params['role']))  # noqa: E501
 
         header_params = {}
 
@@ -4376,6 +4384,8 @@ class FuturesApi(object):
         :param int offset: List offset, starting from 0
         :param int _from: Start timestamp
         :param int to: End timestamp
+        :param str side: 方向筛选，做多(long)或做空(short)
+        :param str pnl: 盈亏判断，盈利(profit)或亏损(loss)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -4405,6 +4415,8 @@ class FuturesApi(object):
         :param int offset: List offset, starting from 0
         :param int _from: Start timestamp
         :param int to: End timestamp
+        :param str side: 方向筛选，做多(long)或做空(short)
+        :param str pnl: 盈亏判断，盈利(profit)或亏损(loss)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -4421,7 +4433,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'limit', 'offset', '_from', 'to']
+        all_params = ['settle', 'contract', 'limit', 'offset', '_from', 'to', 'side', 'pnl']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -4472,6 +4484,10 @@ class FuturesApi(object):
             query_params.append(('from', local_var_params['_from']))  # noqa: E501
         if 'to' in local_var_params and local_var_params['to'] is not None:  # noqa: E501
             query_params.append(('to', local_var_params['to']))  # noqa: E501
+        if 'side' in local_var_params and local_var_params['side'] is not None:  # noqa: E501
+            query_params.append(('side', local_var_params['side']))  # noqa: E501
+        if 'pnl' in local_var_params and local_var_params['pnl'] is not None:  # noqa: E501
+            query_params.append(('pnl', local_var_params['pnl']))  # noqa: E501
 
         header_params = {}
 

@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**create_stp_group**](AccountApi.md#create_stp_group) | **POST** /account/stp_groups | Create STP Group
 [**list_stp_groups_users**](AccountApi.md#list_stp_groups_users) | **GET** /account/stp_groups/{stp_id}/users | List users of the STP group
 [**add_stp_group_users**](AccountApi.md#add_stp_group_users) | **POST** /account/stp_groups/{stp_id}/users | Add users to the STP group
+[**delete_stp_group_users**](AccountApi.md#delete_stp_group_users) | **DELETE** /account/stp_groups/{stp_id}/users | STP用户组中删除用户
 
 
 # **get_account_detail**
@@ -349,6 +350,77 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | User added successfully. Returning the current users within the STP group. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_stp_group_users**
+> list[StpGroupUser] delete_stp_group_users(stp_id, request_body)
+
+STP用户组中删除用户
+
+- 只允许创建此STP组的主账号删除STP用户组用户 - 只允许删除当前主账户下的账户，不允许跨主账户
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.AccountApi(api_client)
+stp_id = 1 # int | STP Group ID
+request_body = [[1,2,3]] # list[int] | User ID
+
+try:
+    # STP用户组中删除用户
+    api_response = api_instance.delete_stp_group_users(stp_id, request_body)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling AccountApi->delete_stp_group_users: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stp_id** | **int**| STP Group ID | 
+ **request_body** | [**list[int]**](int.md)| User ID | 
+
+### Return type
+
+[**list[StpGroupUser]**](StpGroupUser.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | 删除用户成功，返回当前STP组内用户 |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

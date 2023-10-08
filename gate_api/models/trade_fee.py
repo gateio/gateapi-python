@@ -43,6 +43,8 @@ class TradeFee(object):
         'point_type': 'str',
         'futures_taker_fee': 'str',
         'futures_maker_fee': 'str',
+        'delivery_taker_fee': 'str',
+        'delivery_maker_fee': 'str',
     }
 
     attribute_map = {
@@ -56,6 +58,8 @@ class TradeFee(object):
         'point_type': 'point_type',
         'futures_taker_fee': 'futures_taker_fee',
         'futures_maker_fee': 'futures_maker_fee',
+        'delivery_taker_fee': 'delivery_taker_fee',
+        'delivery_maker_fee': 'delivery_maker_fee',
     }
 
     def __init__(
@@ -70,9 +74,11 @@ class TradeFee(object):
         point_type=None,
         futures_taker_fee=None,
         futures_maker_fee=None,
+        delivery_taker_fee=None,
+        delivery_maker_fee=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, str, bool, str, str, str, str, str, str, Configuration) -> None
+        # type: (int, str, str, bool, str, str, str, str, str, str, str, str, Configuration) -> None
         """TradeFee - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -88,6 +94,8 @@ class TradeFee(object):
         self._point_type = None
         self._futures_taker_fee = None
         self._futures_maker_fee = None
+        self._delivery_taker_fee = None
+        self._delivery_maker_fee = None
         self.discriminator = None
 
         if user_id is not None:
@@ -110,6 +118,10 @@ class TradeFee(object):
             self.futures_taker_fee = futures_taker_fee
         if futures_maker_fee is not None:
             self.futures_maker_fee = futures_maker_fee
+        if delivery_taker_fee is not None:
+            self.delivery_taker_fee = delivery_taker_fee
+        if delivery_maker_fee is not None:
+            self.delivery_maker_fee = delivery_maker_fee
 
     @property
     def user_id(self):
@@ -340,6 +352,52 @@ class TradeFee(object):
         """
 
         self._futures_maker_fee = futures_maker_fee
+
+    @property
+    def delivery_taker_fee(self):
+        """Gets the delivery_taker_fee of this TradeFee.  # noqa: E501
+
+        交割合约 taker 费率  # noqa: E501
+
+        :return: The delivery_taker_fee of this TradeFee.  # noqa: E501
+        :rtype: str
+        """
+        return self._delivery_taker_fee
+
+    @delivery_taker_fee.setter
+    def delivery_taker_fee(self, delivery_taker_fee):
+        """Sets the delivery_taker_fee of this TradeFee.
+
+        交割合约 taker 费率  # noqa: E501
+
+        :param delivery_taker_fee: The delivery_taker_fee of this TradeFee.  # noqa: E501
+        :type: str
+        """
+
+        self._delivery_taker_fee = delivery_taker_fee
+
+    @property
+    def delivery_maker_fee(self):
+        """Gets the delivery_maker_fee of this TradeFee.  # noqa: E501
+
+        交割合约 maker 费率  # noqa: E501
+
+        :return: The delivery_maker_fee of this TradeFee.  # noqa: E501
+        :rtype: str
+        """
+        return self._delivery_maker_fee
+
+    @delivery_maker_fee.setter
+    def delivery_maker_fee(self, delivery_maker_fee):
+        """Sets the delivery_maker_fee of this TradeFee.
+
+        交割合约 maker 费率  # noqa: E501
+
+        :param delivery_maker_fee: The delivery_maker_fee of this TradeFee.  # noqa: E501
+        :type: str
+        """
+
+        self._delivery_maker_fee = delivery_maker_fee
 
     def to_dict(self):
         """Returns the model properties as a dict"""

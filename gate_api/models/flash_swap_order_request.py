@@ -105,7 +105,7 @@ class FlashSwapOrderRequest(object):
     def sell_currency(self):
         """Gets the sell_currency of this FlashSwapOrderRequest.  # noqa: E501
 
-        Currency to sell which can be retrieved from supported currency list API `GET /flash_swap/currencies`  # noqa: E501
+        卖出的资产名称， 根据接口`查询支持闪兑的所有交易对列表 GET /flash_swap/currency_pairs`获取  # noqa: E501
 
         :return: The sell_currency of this FlashSwapOrderRequest.  # noqa: E501
         :rtype: str
@@ -116,7 +116,7 @@ class FlashSwapOrderRequest(object):
     def sell_currency(self, sell_currency):
         """Sets the sell_currency of this FlashSwapOrderRequest.
 
-        Currency to sell which can be retrieved from supported currency list API `GET /flash_swap/currencies`  # noqa: E501
+        卖出的资产名称， 根据接口`查询支持闪兑的所有交易对列表 GET /flash_swap/currency_pairs`获取  # noqa: E501
 
         :param sell_currency: The sell_currency of this FlashSwapOrderRequest.  # noqa: E501
         :type: str
@@ -155,7 +155,7 @@ class FlashSwapOrderRequest(object):
     def buy_currency(self):
         """Gets the buy_currency of this FlashSwapOrderRequest.  # noqa: E501
 
-        Currency to buy which can be retrieved from supported currency list API `GET /flash_swap/currencies`  # noqa: E501
+        买入的资产名称， 根据接口`查询支持闪兑的所有交易对列表 GET /flash_swap/currency_pairs`获取  # noqa: E501
 
         :return: The buy_currency of this FlashSwapOrderRequest.  # noqa: E501
         :rtype: str
@@ -166,7 +166,7 @@ class FlashSwapOrderRequest(object):
     def buy_currency(self, buy_currency):
         """Sets the buy_currency of this FlashSwapOrderRequest.
 
-        Currency to buy which can be retrieved from supported currency list API `GET /flash_swap/currencies`  # noqa: E501
+        买入的资产名称， 根据接口`查询支持闪兑的所有交易对列表 GET /flash_swap/currency_pairs`获取  # noqa: E501
 
         :param buy_currency: The buy_currency of this FlashSwapOrderRequest.  # noqa: E501
         :type: str

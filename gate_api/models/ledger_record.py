@@ -43,7 +43,6 @@ class LedgerRecord(object):
         'memo': 'str',
         'status': 'str',
         'chain': 'str',
-        'fee': 'str',
     }
 
     attribute_map = {
@@ -57,7 +56,6 @@ class LedgerRecord(object):
         'memo': 'memo',
         'status': 'status',
         'chain': 'chain',
-        'fee': 'fee',
     }
 
     def __init__(
@@ -72,10 +70,9 @@ class LedgerRecord(object):
         memo=None,
         status=None,
         chain=None,
-        fee=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """LedgerRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,7 +88,6 @@ class LedgerRecord(object):
         self._memo = None
         self._status = None
         self._chain = None
-        self._fee = None
         self.discriminator = None
 
         if id is not None:
@@ -111,8 +107,6 @@ class LedgerRecord(object):
         if status is not None:
             self.status = status
         self.chain = chain
-        if fee is not None:
-            self.fee = fee
 
     @property
     def id(self):
@@ -368,29 +362,6 @@ class LedgerRecord(object):
             raise ValueError("Invalid value for `chain`, must not be `None`")  # noqa: E501
 
         self._chain = chain
-
-    @property
-    def fee(self):
-        """Gets the fee of this LedgerRecord.  # noqa: E501
-
-        Fee  # noqa: E501
-
-        :return: The fee of this LedgerRecord.  # noqa: E501
-        :rtype: str
-        """
-        return self._fee
-
-    @fee.setter
-    def fee(self, fee):
-        """Sets the fee of this LedgerRecord.
-
-        Fee  # noqa: E501
-
-        :param fee: The fee of this LedgerRecord.  # noqa: E501
-        :type: str
-        """
-
-        self._fee = fee
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -39,6 +39,7 @@ class CrossMarginRepayment(object):
         'currency': 'str',
         'principal': 'str',
         'interest': 'str',
+        'repayment_type': 'str',
     }
 
     attribute_map = {
@@ -48,6 +49,7 @@ class CrossMarginRepayment(object):
         'currency': 'currency',
         'principal': 'principal',
         'interest': 'interest',
+        'repayment_type': 'repayment_type',
     }
 
     def __init__(
@@ -58,9 +60,10 @@ class CrossMarginRepayment(object):
         currency=None,
         principal=None,
         interest=None,
+        repayment_type=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, int, str, str, str, str, Configuration) -> None
+        # type: (str, int, str, str, str, str, str, Configuration) -> None
         """CrossMarginRepayment - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +75,7 @@ class CrossMarginRepayment(object):
         self._currency = None
         self._principal = None
         self._interest = None
+        self._repayment_type = None
         self.discriminator = None
 
         if id is not None:
@@ -86,6 +90,8 @@ class CrossMarginRepayment(object):
             self.principal = principal
         if interest is not None:
             self.interest = interest
+        if repayment_type is not None:
+            self.repayment_type = repayment_type
 
     @property
     def id(self):
@@ -224,6 +230,29 @@ class CrossMarginRepayment(object):
         """
 
         self._interest = interest
+
+    @property
+    def repayment_type(self):
+        """Gets the repayment_type of this CrossMarginRepayment.  # noqa: E501
+
+        还款类型 , none - 无还款类型, manual_repay - 手动还款 , auto_repay - 自动还款, cancel_auto_repay - 撤单后自动还款  # noqa: E501
+
+        :return: The repayment_type of this CrossMarginRepayment.  # noqa: E501
+        :rtype: str
+        """
+        return self._repayment_type
+
+    @repayment_type.setter
+    def repayment_type(self, repayment_type):
+        """Sets the repayment_type of this CrossMarginRepayment.
+
+        还款类型 , none - 无还款类型, manual_repay - 手动还款 , auto_repay - 自动还款, cancel_auto_repay - 撤单后自动还款  # noqa: E501
+
+        :param repayment_type: The repayment_type of this CrossMarginRepayment.  # noqa: E501
+        :type: str
+        """
+
+        self._repayment_type = repayment_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

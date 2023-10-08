@@ -36,6 +36,7 @@ class CurrencyChain(object):
         'chain': 'str',
         'name_cn': 'str',
         'name_en': 'str',
+        'contract_address': 'str',
         'is_disabled': 'int',
         'is_deposit_disabled': 'int',
         'is_withdraw_disabled': 'int',
@@ -45,6 +46,7 @@ class CurrencyChain(object):
         'chain': 'chain',
         'name_cn': 'name_cn',
         'name_en': 'name_en',
+        'contract_address': 'contract_address',
         'is_disabled': 'is_disabled',
         'is_deposit_disabled': 'is_deposit_disabled',
         'is_withdraw_disabled': 'is_withdraw_disabled',
@@ -55,12 +57,13 @@ class CurrencyChain(object):
         chain=None,
         name_cn=None,
         name_en=None,
+        contract_address=None,
         is_disabled=None,
         is_deposit_disabled=None,
         is_withdraw_disabled=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, int, int, int, Configuration) -> None
+        # type: (str, str, str, str, int, int, int, Configuration) -> None
         """CurrencyChain - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +72,7 @@ class CurrencyChain(object):
         self._chain = None
         self._name_cn = None
         self._name_en = None
+        self._contract_address = None
         self._is_disabled = None
         self._is_deposit_disabled = None
         self._is_withdraw_disabled = None
@@ -80,6 +84,8 @@ class CurrencyChain(object):
             self.name_cn = name_cn
         if name_en is not None:
             self.name_en = name_en
+        if contract_address is not None:
+            self.contract_address = contract_address
         if is_disabled is not None:
             self.is_disabled = is_disabled
         if is_deposit_disabled is not None:
@@ -155,6 +161,29 @@ class CurrencyChain(object):
         """
 
         self._name_en = name_en
+
+    @property
+    def contract_address(self):
+        """Gets the contract_address of this CurrencyChain.  # noqa: E501
+
+        币种智能合约地址，如果没有地址则为空字串  # noqa: E501
+
+        :return: The contract_address of this CurrencyChain.  # noqa: E501
+        :rtype: str
+        """
+        return self._contract_address
+
+    @contract_address.setter
+    def contract_address(self, contract_address):
+        """Sets the contract_address of this CurrencyChain.
+
+        币种智能合约地址，如果没有地址则为空字串  # noqa: E501
+
+        :param contract_address: The contract_address of this CurrencyChain.  # noqa: E501
+        :type: str
+        """
+
+        self._contract_address = contract_address
 
     @property
     def is_disabled(self):

@@ -1,26 +1,25 @@
-# gate_api.PortfolioApi
+# gate_api.CollateralLoanApi
 
 All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_portfolio_accounts**](PortfolioApi.md#list_portfolio_accounts) | **GET** /portfolio/accounts | Get portfolio account information
-[**list_account_portfolio_mode**](PortfolioApi.md#list_account_portfolio_mode) | **GET** /portfolio/account_mode | Retrieve the account&#39;s portfolio mode
-[**set_account_portfolio_mode**](PortfolioApi.md#set_account_portfolio_mode) | **POST** /portfolio/account_mode | Configure the account&#39;s portfolio mode.
-[**get_portfolio_borrowable**](PortfolioApi.md#get_portfolio_borrowable) | **GET** /portfolio/borrowable | Retrieve the maximum borrowable amount for the account.
-[**get_portfolio_transferable**](PortfolioApi.md#get_portfolio_transferable) | **GET** /portfolio/transferable | Retrieve the maximum amount that can be transferred out from the account
-[**list_portfolio_uni_loan_interest_records**](PortfolioApi.md#list_portfolio_uni_loan_interest_records) | **GET** /portfolio/loans | List loans
-[**create_portfolio_loan**](PortfolioApi.md#create_portfolio_loan) | **POST** /portfolio/loans | Borrow or repay
-[**list_portfolio_loan_records**](PortfolioApi.md#list_portfolio_loan_records) | **GET** /portfolio/loan_records | Get load records
-[**list_portfolio_loan_interest_records**](PortfolioApi.md#list_portfolio_loan_interest_records) | **GET** /portfolio/interest_records | List interest records
+[**list_collateral_loan_orders**](CollateralLoanApi.md#list_collateral_loan_orders) | **GET** /loan/collateral/orders | 查询抵押借币订单列表
+[**create_collateral_loan**](CollateralLoanApi.md#create_collateral_loan) | **POST** /loan/collateral/orders | 抵押借币借贷下单
+[**get_collateral_loan_order_detail**](CollateralLoanApi.md#get_collateral_loan_order_detail) | **GET** /loan/collateral/orders/{order_id} | Get a single order
+[**repay_collateral_loan**](CollateralLoanApi.md#repay_collateral_loan) | **POST** /loan/collateral/repay | 抵押借币还款
+[**list_repay_records**](CollateralLoanApi.md#list_repay_records) | **GET** /loan/collateral/repay_records | 查询抵押借币还款记录
+[**list_collateral_records**](CollateralLoanApi.md#list_collateral_records) | **GET** /loan/collateral/collaterals | 查询质押物调整记录
+[**operate_collateral**](CollateralLoanApi.md#operate_collateral) | **POST** /loan/collateral/collaterals | 增加或赎回质押物
+[**get_user_total_amount**](CollateralLoanApi.md#get_user_total_amount) | **GET** /loan/collateral/total_amount | 查询用户总借贷与质押数量
+[**get_user_ltv_info**](CollateralLoanApi.md#get_user_ltv_info) | **GET** /loan/collateral/ltv | 查询用户质押率和可借剩余币种
+[**list_collateral_currencies**](CollateralLoanApi.md#list_collateral_currencies) | **GET** /loan/collateral/currencies | 查询支持的借款币种和抵押币种
 
 
-# **list_portfolio_accounts**
-> PortfolioAccount list_portfolio_accounts(currency=currency)
+# **list_collateral_loan_orders**
+> list[CollateralOrder] list_collateral_loan_orders(page=page, limit=limit, collateral_currency=collateral_currency, borrow_currency=borrow_currency)
 
-Get portfolio account information
-
-The assets of each currency in the account will be adjusted according to their liquidity, defined by corresponding adjustment coefficients, and then uniformly converted to USD to calculate the total asset value and position value of the account.  You can refer to the [Formula](#portfolio-account) in the documentation
+查询抵押借币订单列表
 
 ### Example
 
@@ -45,28 +44,34 @@ configuration = gate_api.Configuration(
 
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
-api_instance = gate_api.PortfolioApi(api_client)
-currency = 'BTC' # str | Retrieve data of the specified currency (optional)
+api_instance = gate_api.CollateralLoanApi(api_client)
+page = 1 # int | Page number (optional) (default to 1)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+collateral_currency = 'BTC' # str | 质押币种 (optional)
+borrow_currency = 'USDT' # str | 借款币种 (optional)
 
 try:
-    # Get portfolio account information
-    api_response = api_instance.list_portfolio_accounts(currency=currency)
+    # 查询抵押借币订单列表
+    api_response = api_instance.list_collateral_loan_orders(page=page, limit=limit, collateral_currency=collateral_currency, borrow_currency=borrow_currency)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
-    print("Exception when calling PortfolioApi->list_portfolio_accounts: %s\n" % e)
+    print("Exception when calling CollateralLoanApi->list_collateral_loan_orders: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **str**| Retrieve data of the specified currency | [optional] 
+ **page** | **int**| Page number | [optional] [default to 1]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
+ **collateral_currency** | **str**| 质押币种 | [optional] 
+ **borrow_currency** | **str**| 借款币种 | [optional] 
 
 ### Return type
 
-[**PortfolioAccount**](PortfolioAccount.md)
+[**list[CollateralOrder]**](CollateralOrder.md)
 
 ### Authorization
 
@@ -84,12 +89,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_account_portfolio_mode**
-> dict(str, bool) list_account_portfolio_mode()
+# **create_collateral_loan**
+> OrderResp create_collateral_loan(create_collateral_order)
 
-Retrieve the account's portfolio mode
-
-cross_margin - 现货全仓保证金
+抵押借币借贷下单
 
 ### Example
 
@@ -114,91 +117,28 @@ configuration = gate_api.Configuration(
 
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
-api_instance = gate_api.PortfolioApi(api_client)
+api_instance = gate_api.CollateralLoanApi(api_client)
+create_collateral_order = gate_api.CreateCollateralOrder() # CreateCollateralOrder | 
 
 try:
-    # Retrieve the account's portfolio mode
-    api_response = api_instance.list_account_portfolio_mode()
+    # 抵押借币借贷下单
+    api_response = api_instance.create_collateral_loan(create_collateral_order)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
-    print("Exception when calling PortfolioApi->list_account_portfolio_mode: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-**dict(str, bool)**
-
-### Authorization
-
-[apiv4](../README.md#apiv4)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **set_account_portfolio_mode**
-> dict(str, bool) set_account_portfolio_mode(portfolio_mode)
-
-Configure the account's portfolio mode.
-
-### Example
-
-* Api Key Authentication (apiv4):
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException, GateApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure APIv4 key authorization
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4",
-    key = "YOU_API_KEY",
-    secret = "YOUR_API_SECRET"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.PortfolioApi(api_client)
-portfolio_mode = gate_api.PortfolioMode() # PortfolioMode | 
-
-try:
-    # Configure the account's portfolio mode.
-    api_response = api_instance.set_account_portfolio_mode(portfolio_mode)
-    print(api_response)
-except GateApiException as ex:
-    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
-except ApiException as e:
-    print("Exception when calling PortfolioApi->set_account_portfolio_mode: %s\n" % e)
+    print("Exception when calling CollateralLoanApi->create_collateral_loan: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_mode** | [**PortfolioMode**](PortfolioMode.md)|  | 
+ **create_collateral_order** | [**CreateCollateralOrder**](CreateCollateralOrder.md)|  | 
 
 ### Return type
 
-**dict(str, bool)**
+[**OrderResp**](OrderResp.md)
 
 ### Authorization
 
@@ -212,14 +152,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | 下单成功 |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_portfolio_borrowable**
-> PortfolioBorrowable get_portfolio_borrowable(currency)
+# **get_collateral_loan_order_detail**
+> CollateralOrder get_collateral_loan_order_detail(order_id)
 
-Retrieve the maximum borrowable amount for the account.
+Get a single order
 
 ### Example
 
@@ -244,28 +184,28 @@ configuration = gate_api.Configuration(
 
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
-api_instance = gate_api.PortfolioApi(api_client)
-currency = 'BTC' # str | Retrieve data of the specified currency
+api_instance = gate_api.CollateralLoanApi(api_client)
+order_id = 100001 # int | Order ID returned on successful order creation
 
 try:
-    # Retrieve the maximum borrowable amount for the account.
-    api_response = api_instance.get_portfolio_borrowable(currency)
+    # Get a single order
+    api_response = api_instance.get_collateral_loan_order_detail(order_id)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
-    print("Exception when calling PortfolioApi->get_portfolio_borrowable: %s\n" % e)
+    print("Exception when calling CollateralLoanApi->get_collateral_loan_order_detail: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **str**| Retrieve data of the specified currency | 
+ **order_id** | **int**| Order ID returned on successful order creation | 
 
 ### Return type
 
-[**PortfolioBorrowable**](PortfolioBorrowable.md)
+[**CollateralOrder**](CollateralOrder.md)
 
 ### Authorization
 
@@ -279,14 +219,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | 订单详情查询成功 |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_portfolio_transferable**
-> PortfolioTransferable get_portfolio_transferable(currency)
+# **repay_collateral_loan**
+> RepayResp repay_collateral_loan(repay_loan)
 
-Retrieve the maximum amount that can be transferred out from the account
+抵押借币还款
 
 ### Example
 
@@ -311,28 +251,28 @@ configuration = gate_api.Configuration(
 
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
-api_instance = gate_api.PortfolioApi(api_client)
-currency = 'BTC' # str | Retrieve data of the specified currency
+api_instance = gate_api.CollateralLoanApi(api_client)
+repay_loan = gate_api.RepayLoan() # RepayLoan | 
 
 try:
-    # Retrieve the maximum amount that can be transferred out from the account
-    api_response = api_instance.get_portfolio_transferable(currency)
+    # 抵押借币还款
+    api_response = api_instance.repay_collateral_loan(repay_loan)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
-    print("Exception when calling PortfolioApi->get_portfolio_transferable: %s\n" % e)
+    print("Exception when calling CollateralLoanApi->repay_collateral_loan: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **str**| Retrieve data of the specified currency | 
+ **repay_loan** | [**RepayLoan**](RepayLoan.md)|  | 
 
 ### Return type
 
-[**PortfolioTransferable**](PortfolioTransferable.md)
+[**RepayResp**](RepayResp.md)
 
 ### Authorization
 
@@ -340,20 +280,20 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Operated successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_portfolio_uni_loan_interest_records**
-> list[UniLoan] list_portfolio_uni_loan_interest_records(currency=currency, page=page, limit=limit)
+# **list_repay_records**
+> list[RepayRecord] list_repay_records(source, borrow_currency=borrow_currency, collateral_currency=collateral_currency, page=page, limit=limit, _from=_from, to=to)
 
-List loans
+查询抵押借币还款记录
 
 ### Example
 
@@ -378,32 +318,40 @@ configuration = gate_api.Configuration(
 
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
-api_instance = gate_api.PortfolioApi(api_client)
-currency = 'BTC' # str | Retrieve data of the specified currency (optional)
+api_instance = gate_api.CollateralLoanApi(api_client)
+source = 'repay' # str | 操作类型 ;  repay - 普通还款, liquidate - 平仓
+borrow_currency = 'USDT' # str | 借款币种 (optional)
+collateral_currency = 'BTC' # str | 质押币种 (optional)
 page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum response items.  Default: 100, minimum: 1, Maximum: 100 (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+_from = 1609459200 # int | Start timestamp of the query (optional)
+to = 1609459200 # int | Time range ending, default to current time (optional)
 
 try:
-    # List loans
-    api_response = api_instance.list_portfolio_uni_loan_interest_records(currency=currency, page=page, limit=limit)
+    # 查询抵押借币还款记录
+    api_response = api_instance.list_repay_records(source, borrow_currency=borrow_currency, collateral_currency=collateral_currency, page=page, limit=limit, _from=_from, to=to)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
-    print("Exception when calling PortfolioApi->list_portfolio_uni_loan_interest_records: %s\n" % e)
+    print("Exception when calling CollateralLoanApi->list_repay_records: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **str**| Retrieve data of the specified currency | [optional] 
+ **source** | **str**| 操作类型 ;  repay - 普通还款, liquidate - 平仓 | 
+ **borrow_currency** | **str**| 借款币种 | [optional] 
+ **collateral_currency** | **str**| 质押币种 | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum response items.  Default: 100, minimum: 1, Maximum: 100 | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
+ **_from** | **int**| Start timestamp of the query | [optional] 
+ **to** | **int**| Time range ending, default to current time | [optional] 
 
 ### Return type
 
-[**list[UniLoan]**](UniLoan.md)
+[**list[RepayRecord]**](RepayRecord.md)
 
 ### Authorization
 
@@ -421,12 +369,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_portfolio_loan**
-> create_portfolio_loan(portfolio_loan)
+# **list_collateral_records**
+> list[CollateralRecord] list_collateral_records(page=page, limit=limit, _from=_from, to=to, borrow_currency=borrow_currency, collateral_currency=collateral_currency)
 
-Borrow or repay
-
-When borrowing, it is essential to ensure that the borrowed amount is not below the minimum borrowing threshold for the specific cryptocurrency and does not exceed the maximum borrowing limit set by the platform and the user.  The interest on the loan will be automatically deducted from the account at regular intervals. It is the user's responsibility to manage the repayment of the borrowed amount.  For repayment, the option to repay the entire borrowed amount is available by setting the parameter `repaid_all=true`
+查询质押物调整记录
 
 ### Example
 
@@ -451,23 +397,100 @@ configuration = gate_api.Configuration(
 
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
-api_instance = gate_api.PortfolioApi(api_client)
-portfolio_loan = gate_api.PortfolioLoan() # PortfolioLoan | 
+api_instance = gate_api.CollateralLoanApi(api_client)
+page = 1 # int | Page number (optional) (default to 1)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+_from = 1609459200 # int | Start timestamp of the query (optional)
+to = 1609459200 # int | Time range ending, default to current time (optional)
+borrow_currency = 'USDT' # str | 借款币种 (optional)
+collateral_currency = 'BTC' # str | 质押币种 (optional)
 
 try:
-    # Borrow or repay
-    api_instance.create_portfolio_loan(portfolio_loan)
+    # 查询质押物调整记录
+    api_response = api_instance.list_collateral_records(page=page, limit=limit, _from=_from, to=to, borrow_currency=borrow_currency, collateral_currency=collateral_currency)
+    print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
-    print("Exception when calling PortfolioApi->create_portfolio_loan: %s\n" % e)
+    print("Exception when calling CollateralLoanApi->list_collateral_records: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_loan** | [**PortfolioLoan**](PortfolioLoan.md)|  | 
+ **page** | **int**| Page number | [optional] [default to 1]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
+ **_from** | **int**| Start timestamp of the query | [optional] 
+ **to** | **int**| Time range ending, default to current time | [optional] 
+ **borrow_currency** | **str**| 借款币种 | [optional] 
+ **collateral_currency** | **str**| 质押币种 | [optional] 
+
+### Return type
+
+[**list[CollateralRecord]**](CollateralRecord.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **operate_collateral**
+> operate_collateral(collateral_align)
+
+增加或赎回质押物
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.CollateralLoanApi(api_client)
+collateral_align = gate_api.CollateralAlign() # CollateralAlign | 
+
+try:
+    # 增加或赎回质押物
+    api_instance.operate_collateral(collateral_align)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling CollateralLoanApi->operate_collateral: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **collateral_align** | [**CollateralAlign**](CollateralAlign.md)|  | 
 
 ### Return type
 
@@ -489,10 +512,10 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_portfolio_loan_records**
-> list[PortfolioLoanRecord] list_portfolio_loan_records(type=type, currency=currency, page=page, limit=limit)
+# **get_user_total_amount**
+> UserTotalAmount get_user_total_amount()
 
-Get load records
+查询用户总借贷与质押数量
 
 ### Example
 
@@ -517,34 +540,24 @@ configuration = gate_api.Configuration(
 
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
-api_instance = gate_api.PortfolioApi(api_client)
-type = 'type_example' # str | The types of lending records, borrow - indicates the action of borrowing funds, repay - indicates the action of repaying the borrowed funds (optional)
-currency = 'BTC' # str | Retrieve data of the specified currency (optional)
-page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum response items.  Default: 100, minimum: 1, Maximum: 100 (optional) (default to 100)
+api_instance = gate_api.CollateralLoanApi(api_client)
 
 try:
-    # Get load records
-    api_response = api_instance.list_portfolio_loan_records(type=type, currency=currency, page=page, limit=limit)
+    # 查询用户总借贷与质押数量
+    api_response = api_instance.get_user_total_amount()
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
-    print("Exception when calling PortfolioApi->list_portfolio_loan_records: %s\n" % e)
+    print("Exception when calling CollateralLoanApi->get_user_total_amount: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **str**| The types of lending records, borrow - indicates the action of borrowing funds, repay - indicates the action of repaying the borrowed funds | [optional] 
- **currency** | **str**| Retrieve data of the specified currency | [optional] 
- **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum response items.  Default: 100, minimum: 1, Maximum: 100 | [optional] [default to 100]
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[PortfolioLoanRecord]**](PortfolioLoanRecord.md)
+[**UserTotalAmount**](UserTotalAmount.md)
 
 ### Authorization
 
@@ -562,10 +575,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_portfolio_loan_interest_records**
-> list[UniLoanInterestRecord] list_portfolio_loan_interest_records(currency=currency, page=page, limit=limit)
+# **get_user_ltv_info**
+> UserLtvInfo get_user_ltv_info(collateral_currency, borrow_currency)
 
-List interest records
+查询用户质押率和可借剩余币种
 
 ### Example
 
@@ -590,36 +603,92 @@ configuration = gate_api.Configuration(
 
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
-api_instance = gate_api.PortfolioApi(api_client)
-currency = 'BTC' # str | Retrieve data of the specified currency (optional)
-page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum response items.  Default: 100, minimum: 1, Maximum: 100 (optional) (default to 100)
+api_instance = gate_api.CollateralLoanApi(api_client)
+collateral_currency = 'BTC' # str | 质押币种
+borrow_currency = 'USDT' # str | 借款币种
 
 try:
-    # List interest records
-    api_response = api_instance.list_portfolio_loan_interest_records(currency=currency, page=page, limit=limit)
+    # 查询用户质押率和可借剩余币种
+    api_response = api_instance.get_user_ltv_info(collateral_currency, borrow_currency)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
-    print("Exception when calling PortfolioApi->list_portfolio_loan_interest_records: %s\n" % e)
+    print("Exception when calling CollateralLoanApi->get_user_ltv_info: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **str**| Retrieve data of the specified currency | [optional] 
- **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum response items.  Default: 100, minimum: 1, Maximum: 100 | [optional] [default to 100]
+ **collateral_currency** | **str**| 质押币种 | 
+ **borrow_currency** | **str**| 借款币种 | 
 
 ### Return type
 
-[**list[UniLoanInterestRecord]**](UniLoanInterestRecord.md)
+[**UserLtvInfo**](UserLtvInfo.md)
 
 ### Authorization
 
 [apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_collateral_currencies**
+> list[CollateralLoanCurrency] list_collateral_currencies(loan_currency=loan_currency)
+
+查询支持的借款币种和抵押币种
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.CollateralLoanApi(api_client)
+loan_currency = 'BTC' # str | 借款币种参数,当loan_currency没传时会返回支持的所有借款币种,当传loan_currency时会查询该借款币种支持的抵押币种数组 (optional)
+
+try:
+    # 查询支持的借款币种和抵押币种
+    api_response = api_instance.list_collateral_currencies(loan_currency=loan_currency)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling CollateralLoanApi->list_collateral_currencies: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **loan_currency** | **str**| 借款币种参数,当loan_currency没传时会返回支持的所有借款币种,当传loan_currency时会查询该借款币种支持的抵押币种数组 | [optional] 
+
+### Return type
+
+[**list[CollateralLoanCurrency]**](CollateralLoanCurrency.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
