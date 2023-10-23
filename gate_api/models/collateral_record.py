@@ -115,7 +115,7 @@ class CollateralRecord(object):
     def order_id(self):
         """Gets the order_id of this CollateralRecord.  # noqa: E501
 
-        订单id  # noqa: E501
+        Order ID  # noqa: E501
 
         :return: The order_id of this CollateralRecord.  # noqa: E501
         :rtype: int
@@ -126,7 +126,7 @@ class CollateralRecord(object):
     def order_id(self, order_id):
         """Sets the order_id of this CollateralRecord.
 
-        订单id  # noqa: E501
+        Order ID  # noqa: E501
 
         :param order_id: The order_id of this CollateralRecord.  # noqa: E501
         :type: int
@@ -138,7 +138,7 @@ class CollateralRecord(object):
     def record_id(self):
         """Gets the record_id of this CollateralRecord.  # noqa: E501
 
-        质押物记录 id  # noqa: E501
+        Collateral record ID  # noqa: E501
 
         :return: The record_id of this CollateralRecord.  # noqa: E501
         :rtype: int
@@ -149,7 +149,7 @@ class CollateralRecord(object):
     def record_id(self, record_id):
         """Sets the record_id of this CollateralRecord.
 
-        质押物记录 id  # noqa: E501
+        Collateral record ID  # noqa: E501
 
         :param record_id: The record_id of this CollateralRecord.  # noqa: E501
         :type: int
@@ -161,7 +161,7 @@ class CollateralRecord(object):
     def borrow_currency(self):
         """Gets the borrow_currency of this CollateralRecord.  # noqa: E501
 
-        借款币种  # noqa: E501
+        Borrowed currency  # noqa: E501
 
         :return: The borrow_currency of this CollateralRecord.  # noqa: E501
         :rtype: str
@@ -172,7 +172,7 @@ class CollateralRecord(object):
     def borrow_currency(self, borrow_currency):
         """Sets the borrow_currency of this CollateralRecord.
 
-        借款币种  # noqa: E501
+        Borrowed currency  # noqa: E501
 
         :param borrow_currency: The borrow_currency of this CollateralRecord.  # noqa: E501
         :type: str
@@ -184,7 +184,7 @@ class CollateralRecord(object):
     def borrow_amount(self):
         """Gets the borrow_amount of this CollateralRecord.  # noqa: E501
 
-        借款数量  # noqa: E501
+        Borrowing amount  # noqa: E501
 
         :return: The borrow_amount of this CollateralRecord.  # noqa: E501
         :rtype: str
@@ -195,7 +195,7 @@ class CollateralRecord(object):
     def borrow_amount(self, borrow_amount):
         """Sets the borrow_amount of this CollateralRecord.
 
-        借款数量  # noqa: E501
+        Borrowing amount  # noqa: E501
 
         :param borrow_amount: The borrow_amount of this CollateralRecord.  # noqa: E501
         :type: str
@@ -207,7 +207,7 @@ class CollateralRecord(object):
     def collateral_currency(self):
         """Gets the collateral_currency of this CollateralRecord.  # noqa: E501
 
-        质押币种  # noqa: E501
+        Collateral  # noqa: E501
 
         :return: The collateral_currency of this CollateralRecord.  # noqa: E501
         :rtype: str
@@ -218,7 +218,7 @@ class CollateralRecord(object):
     def collateral_currency(self, collateral_currency):
         """Sets the collateral_currency of this CollateralRecord.
 
-        质押币种  # noqa: E501
+        Collateral  # noqa: E501
 
         :param collateral_currency: The collateral_currency of this CollateralRecord.  # noqa: E501
         :type: str
@@ -230,7 +230,7 @@ class CollateralRecord(object):
     def before_collateral(self):
         """Gets the before_collateral of this CollateralRecord.  # noqa: E501
 
-        调整前质押数量  # noqa: E501
+        The collateral amount before adjustment  # noqa: E501
 
         :return: The before_collateral of this CollateralRecord.  # noqa: E501
         :rtype: str
@@ -241,7 +241,7 @@ class CollateralRecord(object):
     def before_collateral(self, before_collateral):
         """Sets the before_collateral of this CollateralRecord.
 
-        调整前质押数量  # noqa: E501
+        The collateral amount before adjustment  # noqa: E501
 
         :param before_collateral: The before_collateral of this CollateralRecord.  # noqa: E501
         :type: str
@@ -253,7 +253,7 @@ class CollateralRecord(object):
     def after_collateral(self):
         """Gets the after_collateral of this CollateralRecord.  # noqa: E501
 
-        调整后质押数量  # noqa: E501
+        The collateral amount after adjustment  # noqa: E501
 
         :return: The after_collateral of this CollateralRecord.  # noqa: E501
         :rtype: str
@@ -264,7 +264,7 @@ class CollateralRecord(object):
     def after_collateral(self, after_collateral):
         """Sets the after_collateral of this CollateralRecord.
 
-        调整后质押数量  # noqa: E501
+        The collateral amount after adjustment  # noqa: E501
 
         :param after_collateral: The after_collateral of this CollateralRecord.  # noqa: E501
         :type: str
@@ -276,7 +276,7 @@ class CollateralRecord(object):
     def before_ltv(self):
         """Gets the before_ltv of this CollateralRecord.  # noqa: E501
 
-        调整前质押率  # noqa: E501
+        The collateral ratio before adjustment  # noqa: E501
 
         :return: The before_ltv of this CollateralRecord.  # noqa: E501
         :rtype: str
@@ -287,7 +287,7 @@ class CollateralRecord(object):
     def before_ltv(self, before_ltv):
         """Sets the before_ltv of this CollateralRecord.
 
-        调整前质押率  # noqa: E501
+        The collateral ratio before adjustment  # noqa: E501
 
         :param before_ltv: The before_ltv of this CollateralRecord.  # noqa: E501
         :type: str
@@ -299,7 +299,7 @@ class CollateralRecord(object):
     def after_ltv(self):
         """Gets the after_ltv of this CollateralRecord.  # noqa: E501
 
-        调整后质押率  # noqa: E501
+        The collateral ratio after adjustment  # noqa: E501
 
         :return: The after_ltv of this CollateralRecord.  # noqa: E501
         :rtype: str
@@ -310,7 +310,7 @@ class CollateralRecord(object):
     def after_ltv(self, after_ltv):
         """Sets the after_ltv of this CollateralRecord.
 
-        调整后质押率  # noqa: E501
+        The collateral ratio after adjustment  # noqa: E501
 
         :param after_ltv: The after_ltv of this CollateralRecord.  # noqa: E501
         :type: str
@@ -322,7 +322,7 @@ class CollateralRecord(object):
     def operate_time(self):
         """Gets the operate_time of this CollateralRecord.  # noqa: E501
 
-        操作时间，时间戳，单位秒  # noqa: E501
+        Timestamp of the operation, in seconds  # noqa: E501
 
         :return: The operate_time of this CollateralRecord.  # noqa: E501
         :rtype: int
@@ -333,7 +333,7 @@ class CollateralRecord(object):
     def operate_time(self, operate_time):
         """Sets the operate_time of this CollateralRecord.
 
-        操作时间，时间戳，单位秒  # noqa: E501
+        Timestamp of the operation, in seconds  # noqa: E501
 
         :param operate_time: The operate_time of this CollateralRecord.  # noqa: E501
         :type: int

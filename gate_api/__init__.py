@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.56.0"
+__version__ = "4.57.0"
 
 # import apis into sdk package
 from gate_api.api.earn_uni_api import EarnUniApi
@@ -50,8 +50,10 @@ from gate_api.models.agency_commission import AgencyCommission
 from gate_api.models.agency_commission_history import AgencyCommissionHistory
 from gate_api.models.agency_transaction import AgencyTransaction
 from gate_api.models.agency_transaction_history import AgencyTransactionHistory
+from gate_api.models.amend_order_result import AmendOrderResult
 from gate_api.models.api_v4_key_perm import ApiV4KeyPerm
 from gate_api.models.auto_repay_setting import AutoRepaySetting
+from gate_api.models.batch_amend_item import BatchAmendItem
 from gate_api.models.batch_futures_order import BatchFuturesOrder
 from gate_api.models.batch_order import BatchOrder
 from gate_api.models.cancel_batch_order import CancelBatchOrder
@@ -191,7 +193,9 @@ from gate_api.models.transfer import Transfer
 from gate_api.models.trigger_order_response import TriggerOrderResponse
 from gate_api.models.trigger_time import TriggerTime
 from gate_api.models.uni_currency import UniCurrency
+from gate_api.models.uni_currency_interest import UniCurrencyInterest
 from gate_api.models.uni_currency_pair import UniCurrencyPair
+from gate_api.models.uni_interest_mode import UniInterestMode
 from gate_api.models.uni_interest_record import UniInterestRecord
 from gate_api.models.uni_lend import UniLend
 from gate_api.models.uni_lend_interest import UniLendInterest

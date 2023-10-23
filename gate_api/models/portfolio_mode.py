@@ -54,7 +54,7 @@ class PortfolioMode(object):
     def mode(self):
         """Gets the mode of this PortfolioMode.  # noqa: E501
 
-        保证金模式 - cross_margin : 现货全仓保证金  # noqa: E501
+        Portfolio mode - cross_margin : cross margin  # noqa: E501
 
         :return: The mode of this PortfolioMode.  # noqa: E501
         :rtype: str
@@ -65,7 +65,7 @@ class PortfolioMode(object):
     def mode(self, mode):
         """Sets the mode of this PortfolioMode.
 
-        保证金模式 - cross_margin : 现货全仓保证金  # noqa: E501
+        Portfolio mode - cross_margin : cross margin  # noqa: E501
 
         :param mode: The mode of this PortfolioMode.  # noqa: E501
         :type: str
@@ -79,7 +79,7 @@ class PortfolioMode(object):
     def enabled(self):
         """Gets the enabled of this PortfolioMode.  # noqa: E501
 
-        是否启用  # noqa: E501
+        Is it enabled?  # noqa: E501
 
         :return: The enabled of this PortfolioMode.  # noqa: E501
         :rtype: bool
@@ -90,7 +90,7 @@ class PortfolioMode(object):
     def enabled(self, enabled):
         """Sets the enabled of this PortfolioMode.
 
-        是否启用  # noqa: E501
+        Is it enabled?  # noqa: E501
 
         :param enabled: The enabled of this PortfolioMode.  # noqa: E501
         :type: bool

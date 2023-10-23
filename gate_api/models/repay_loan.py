@@ -56,7 +56,7 @@ class RepayLoan(object):
     def order_id(self):
         """Gets the order_id of this RepayLoan.  # noqa: E501
 
-        订单id  # noqa: E501
+        Order ID  # noqa: E501
 
         :return: The order_id of this RepayLoan.  # noqa: E501
         :rtype: int
@@ -67,7 +67,7 @@ class RepayLoan(object):
     def order_id(self, order_id):
         """Sets the order_id of this RepayLoan.
 
-        订单id  # noqa: E501
+        Order ID  # noqa: E501
 
         :param order_id: The order_id of this RepayLoan.  # noqa: E501
         :type: int
@@ -81,7 +81,7 @@ class RepayLoan(object):
     def repay_amount(self):
         """Gets the repay_amount of this RepayLoan.  # noqa: E501
 
-        还款数量，部分还款时候是必须  # noqa: E501
+        Repayment amount, it is mandatory when making partial repayments  # noqa: E501
 
         :return: The repay_amount of this RepayLoan.  # noqa: E501
         :rtype: str
@@ -92,7 +92,7 @@ class RepayLoan(object):
     def repay_amount(self, repay_amount):
         """Sets the repay_amount of this RepayLoan.
 
-        还款数量，部分还款时候是必须  # noqa: E501
+        Repayment amount, it is mandatory when making partial repayments  # noqa: E501
 
         :param repay_amount: The repay_amount of this RepayLoan.  # noqa: E501
         :type: str
@@ -106,7 +106,7 @@ class RepayLoan(object):
     def repaid_all(self):
         """Gets the repaid_all of this RepayLoan.  # noqa: E501
 
-        还款方式, 为`true`时全部还款, 为`false`时部分还款; 当为`false`部分还款时，不允许repay_amount参数大于用户剩余待还  # noqa: E501
+        Repayment method, set to `true` for full repayment, and `false` for partial repayment; When set to false for partial repayment, the repay_amount parameter cannot be greater than the remaining amount to be repaid by the user.   # noqa: E501
 
         :return: The repaid_all of this RepayLoan.  # noqa: E501
         :rtype: bool
@@ -117,7 +117,7 @@ class RepayLoan(object):
     def repaid_all(self, repaid_all):
         """Sets the repaid_all of this RepayLoan.
 
-        还款方式, 为`true`时全部还款, 为`false`时部分还款; 当为`false`部分还款时，不允许repay_amount参数大于用户剩余待还  # noqa: E501
+        Repayment method, set to `true` for full repayment, and `false` for partial repayment; When set to false for partial repayment, the repay_amount parameter cannot be greater than the remaining amount to be repaid by the user.   # noqa: E501
 
         :param repaid_all: The repaid_all of this RepayLoan.  # noqa: E501
         :type: bool

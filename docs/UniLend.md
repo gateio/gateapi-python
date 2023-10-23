@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **lent_amount** | **str** | Lent amount | [optional] [readonly] 
 **frozen_amount** | **str** | Frozen amount | [optional] [readonly] 
 **min_rate** | **str** | Minimum interest rate | [optional] [readonly] 
+**interest_status** | **str** | Interest status: interest_dividend - regular dividend, interest_reinvest - interest reinvestment | [optional] [readonly] 
+**reinvest_left_amount** | **str** | Amount not reinvested | [optional] [readonly] 
 **create_time** | **int** | Created time of the lending order | [optional] [readonly] 
 **update_time** | **int** | Upated time of the lending order | [optional] [readonly] 
 

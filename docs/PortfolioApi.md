@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 Retrieve the account's portfolio mode
 
-cross_margin - 现货全仓保证金
+cross_margin - cross margin
 
 ### Example
 

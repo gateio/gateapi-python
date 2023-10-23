@@ -56,7 +56,7 @@ class ApiV4KeyPerm(object):
     def name(self):
         """Gets the name of this ApiV4KeyPerm.  # noqa: E501
 
-        Permission name (all permissions will be removed if no value is passed)  - wallet: wallet - spot: spot/margin - futures: perpetual contract - delivery: delivery - earn: earn - options: options  # noqa: E501
+        Permission name (all permissions will be removed if no value is passed)  - wallet: wallet - spot: spot/margin - futures: perpetual contract - delivery: delivery - earn: earn - options: options- account: Account - portfolio: Portfolio - loan: Loan  # noqa: E501
 
         :return: The name of this ApiV4KeyPerm.  # noqa: E501
         :rtype: str
@@ -67,12 +67,22 @@ class ApiV4KeyPerm(object):
     def name(self, name):
         """Sets the name of this ApiV4KeyPerm.
 
-        Permission name (all permissions will be removed if no value is passed)  - wallet: wallet - spot: spot/margin - futures: perpetual contract - delivery: delivery - earn: earn - options: options  # noqa: E501
+        Permission name (all permissions will be removed if no value is passed)  - wallet: wallet - spot: spot/margin - futures: perpetual contract - delivery: delivery - earn: earn - options: options- account: Account - portfolio: Portfolio - loan: Loan  # noqa: E501
 
         :param name: The name of this ApiV4KeyPerm.  # noqa: E501
         :type: str
         """
-        allowed_values = ["wallet", "spot", "futures", "delivery", "earn", "options"]  # noqa: E501
+        allowed_values = [
+            "wallet",
+            "spot",
+            "futures",
+            "delivery",
+            "earn",
+            "options",
+            "account",
+            "portfolio",
+            "loan",
+        ]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and name not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `name` ({0}), must be one of {1}".format(name, allowed_values)  # noqa: E501

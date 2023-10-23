@@ -65,7 +65,7 @@ class CollateralAlign(object):
     def order_id(self):
         """Gets the order_id of this CollateralAlign.  # noqa: E501
 
-        订单id  # noqa: E501
+        Order ID  # noqa: E501
 
         :return: The order_id of this CollateralAlign.  # noqa: E501
         :rtype: int
@@ -76,7 +76,7 @@ class CollateralAlign(object):
     def order_id(self, order_id):
         """Sets the order_id of this CollateralAlign.
 
-        订单id  # noqa: E501
+        Order ID  # noqa: E501
 
         :param order_id: The order_id of this CollateralAlign.  # noqa: E501
         :type: int
@@ -90,7 +90,7 @@ class CollateralAlign(object):
     def collateral_currency(self):
         """Gets the collateral_currency of this CollateralAlign.  # noqa: E501
 
-        质押币种  # noqa: E501
+        Collateral  # noqa: E501
 
         :return: The collateral_currency of this CollateralAlign.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class CollateralAlign(object):
     def collateral_currency(self, collateral_currency):
         """Sets the collateral_currency of this CollateralAlign.
 
-        质押币种  # noqa: E501
+        Collateral  # noqa: E501
 
         :param collateral_currency: The collateral_currency of this CollateralAlign.  # noqa: E501
         :type: str
@@ -115,7 +115,7 @@ class CollateralAlign(object):
     def collateral_amount(self):
         """Gets the collateral_amount of this CollateralAlign.  # noqa: E501
 
-        质押数量  # noqa: E501
+        Collateral amount  # noqa: E501
 
         :return: The collateral_amount of this CollateralAlign.  # noqa: E501
         :rtype: str
@@ -126,7 +126,7 @@ class CollateralAlign(object):
     def collateral_amount(self, collateral_amount):
         """Sets the collateral_amount of this CollateralAlign.
 
-        质押数量  # noqa: E501
+        Collateral amount  # noqa: E501
 
         :param collateral_amount: The collateral_amount of this CollateralAlign.  # noqa: E501
         :type: str
@@ -140,7 +140,7 @@ class CollateralAlign(object):
     def type(self):
         """Gets the type of this CollateralAlign.  # noqa: E501
 
-        操作类型, append - 补充 , redeem - 提取  # noqa: E501
+        Operation types: append - for adding collateral, redeem - for withdrawing collateral  # noqa: E501
 
         :return: The type of this CollateralAlign.  # noqa: E501
         :rtype: str
@@ -151,7 +151,7 @@ class CollateralAlign(object):
     def type(self, type):
         """Sets the type of this CollateralAlign.
 
-        操作类型, append - 补充 , redeem - 提取  # noqa: E501
+        Operation types: append - for adding collateral, redeem - for withdrawing collateral  # noqa: E501
 
         :param type: The type of this CollateralAlign.  # noqa: E501
         :type: str

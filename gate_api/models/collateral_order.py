@@ -151,7 +151,7 @@ class CollateralOrder(object):
     def order_id(self):
         """Gets the order_id of this CollateralOrder.  # noqa: E501
 
-        订单id  # noqa: E501
+        Order ID  # noqa: E501
 
         :return: The order_id of this CollateralOrder.  # noqa: E501
         :rtype: int
@@ -162,7 +162,7 @@ class CollateralOrder(object):
     def order_id(self, order_id):
         """Sets the order_id of this CollateralOrder.
 
-        订单id  # noqa: E501
+        Order ID  # noqa: E501
 
         :param order_id: The order_id of this CollateralOrder.  # noqa: E501
         :type: int
@@ -174,7 +174,7 @@ class CollateralOrder(object):
     def collateral_currency(self):
         """Gets the collateral_currency of this CollateralOrder.  # noqa: E501
 
-        质押币种  # noqa: E501
+        Collateral  # noqa: E501
 
         :return: The collateral_currency of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -185,7 +185,7 @@ class CollateralOrder(object):
     def collateral_currency(self, collateral_currency):
         """Sets the collateral_currency of this CollateralOrder.
 
-        质押币种  # noqa: E501
+        Collateral  # noqa: E501
 
         :param collateral_currency: The collateral_currency of this CollateralOrder.  # noqa: E501
         :type: str
@@ -197,7 +197,7 @@ class CollateralOrder(object):
     def collateral_amount(self):
         """Gets the collateral_amount of this CollateralOrder.  # noqa: E501
 
-        质押数量  # noqa: E501
+        Collateral amount  # noqa: E501
 
         :return: The collateral_amount of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -208,7 +208,7 @@ class CollateralOrder(object):
     def collateral_amount(self, collateral_amount):
         """Sets the collateral_amount of this CollateralOrder.
 
-        质押数量  # noqa: E501
+        Collateral amount  # noqa: E501
 
         :param collateral_amount: The collateral_amount of this CollateralOrder.  # noqa: E501
         :type: str
@@ -220,7 +220,7 @@ class CollateralOrder(object):
     def borrow_currency(self):
         """Gets the borrow_currency of this CollateralOrder.  # noqa: E501
 
-        借款币种  # noqa: E501
+        Borrowed currency  # noqa: E501
 
         :return: The borrow_currency of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -231,7 +231,7 @@ class CollateralOrder(object):
     def borrow_currency(self, borrow_currency):
         """Sets the borrow_currency of this CollateralOrder.
 
-        借款币种  # noqa: E501
+        Borrowed currency  # noqa: E501
 
         :param borrow_currency: The borrow_currency of this CollateralOrder.  # noqa: E501
         :type: str
@@ -243,7 +243,7 @@ class CollateralOrder(object):
     def borrow_amount(self):
         """Gets the borrow_amount of this CollateralOrder.  # noqa: E501
 
-        借款数量  # noqa: E501
+        Borrowing amount  # noqa: E501
 
         :return: The borrow_amount of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -254,7 +254,7 @@ class CollateralOrder(object):
     def borrow_amount(self, borrow_amount):
         """Sets the borrow_amount of this CollateralOrder.
 
-        借款数量  # noqa: E501
+        Borrowing amount  # noqa: E501
 
         :param borrow_amount: The borrow_amount of this CollateralOrder.  # noqa: E501
         :type: str
@@ -266,7 +266,7 @@ class CollateralOrder(object):
     def repaid_amount(self):
         """Gets the repaid_amount of this CollateralOrder.  # noqa: E501
 
-        已还款数量  # noqa: E501
+        Repaid amount  # noqa: E501
 
         :return: The repaid_amount of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -277,7 +277,7 @@ class CollateralOrder(object):
     def repaid_amount(self, repaid_amount):
         """Sets the repaid_amount of this CollateralOrder.
 
-        已还款数量  # noqa: E501
+        Repaid amount  # noqa: E501
 
         :param repaid_amount: The repaid_amount of this CollateralOrder.  # noqa: E501
         :type: str
@@ -289,7 +289,7 @@ class CollateralOrder(object):
     def repaid_principal(self):
         """Gets the repaid_principal of this CollateralOrder.  # noqa: E501
 
-        已还本金  # noqa: E501
+        Repaid principal  # noqa: E501
 
         :return: The repaid_principal of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -300,7 +300,7 @@ class CollateralOrder(object):
     def repaid_principal(self, repaid_principal):
         """Sets the repaid_principal of this CollateralOrder.
 
-        已还本金  # noqa: E501
+        Repaid principal  # noqa: E501
 
         :param repaid_principal: The repaid_principal of this CollateralOrder.  # noqa: E501
         :type: str
@@ -312,7 +312,7 @@ class CollateralOrder(object):
     def repaid_interest(self):
         """Gets the repaid_interest of this CollateralOrder.  # noqa: E501
 
-        已还利息  # noqa: E501
+        Repaid interest  # noqa: E501
 
         :return: The repaid_interest of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -323,7 +323,7 @@ class CollateralOrder(object):
     def repaid_interest(self, repaid_interest):
         """Sets the repaid_interest of this CollateralOrder.
 
-        已还利息  # noqa: E501
+        Repaid interest  # noqa: E501
 
         :param repaid_interest: The repaid_interest of this CollateralOrder.  # noqa: E501
         :type: str
@@ -335,7 +335,7 @@ class CollateralOrder(object):
     def init_ltv(self):
         """Gets the init_ltv of this CollateralOrder.  # noqa: E501
 
-        初始质押率  # noqa: E501
+        The initial collateralization rate  # noqa: E501
 
         :return: The init_ltv of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -346,7 +346,7 @@ class CollateralOrder(object):
     def init_ltv(self, init_ltv):
         """Sets the init_ltv of this CollateralOrder.
 
-        初始质押率  # noqa: E501
+        The initial collateralization rate  # noqa: E501
 
         :param init_ltv: The init_ltv of this CollateralOrder.  # noqa: E501
         :type: str
@@ -358,7 +358,7 @@ class CollateralOrder(object):
     def current_ltv(self):
         """Gets the current_ltv of this CollateralOrder.  # noqa: E501
 
-        当前质押率  # noqa: E501
+        The current collateralization rate  # noqa: E501
 
         :return: The current_ltv of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -369,7 +369,7 @@ class CollateralOrder(object):
     def current_ltv(self, current_ltv):
         """Sets the current_ltv of this CollateralOrder.
 
-        当前质押率  # noqa: E501
+        The current collateralization rate  # noqa: E501
 
         :param current_ltv: The current_ltv of this CollateralOrder.  # noqa: E501
         :type: str
@@ -381,7 +381,7 @@ class CollateralOrder(object):
     def liquidate_ltv(self):
         """Gets the liquidate_ltv of this CollateralOrder.  # noqa: E501
 
-        平仓质押率  # noqa: E501
+        The liquidation collateralization rate  # noqa: E501
 
         :return: The liquidate_ltv of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -392,7 +392,7 @@ class CollateralOrder(object):
     def liquidate_ltv(self, liquidate_ltv):
         """Sets the liquidate_ltv of this CollateralOrder.
 
-        平仓质押率  # noqa: E501
+        The liquidation collateralization rate  # noqa: E501
 
         :param liquidate_ltv: The liquidate_ltv of this CollateralOrder.  # noqa: E501
         :type: str
@@ -404,7 +404,7 @@ class CollateralOrder(object):
     def status(self):
         """Gets the status of this CollateralOrder.  # noqa: E501
 
-        订单状态: - initial: 下单初始状态 - collateral_deducted: 扣除质押物成功 - collateral_returning: 放款失败-待退回质押物 - lent: 放款成功 - repaying: 还款中 - liquidating: 平仓中 - finished: 已完成 - closed_liquidated: 已结束-平仓还款结束  # noqa: E501
+        Order status: - initial: Initial state after placing the order - collateral_deducted: Collateral deduction successful - collateral_returning: Loan failed - Collateral return pending - lent: Loan successful - repaying: Repayment in progress - liquidating: Liquidation in progress - finished: Order completed - closed_liquidated: Liquidation and repayment completed  # noqa: E501
 
         :return: The status of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -415,7 +415,7 @@ class CollateralOrder(object):
     def status(self, status):
         """Sets the status of this CollateralOrder.
 
-        订单状态: - initial: 下单初始状态 - collateral_deducted: 扣除质押物成功 - collateral_returning: 放款失败-待退回质押物 - lent: 放款成功 - repaying: 还款中 - liquidating: 平仓中 - finished: 已完成 - closed_liquidated: 已结束-平仓还款结束  # noqa: E501
+        Order status: - initial: Initial state after placing the order - collateral_deducted: Collateral deduction successful - collateral_returning: Loan failed - Collateral return pending - lent: Loan successful - repaying: Repayment in progress - liquidating: Liquidation in progress - finished: Order completed - closed_liquidated: Liquidation and repayment completed  # noqa: E501
 
         :param status: The status of this CollateralOrder.  # noqa: E501
         :type: str
@@ -427,7 +427,7 @@ class CollateralOrder(object):
     def borrow_time(self):
         """Gets the borrow_time of this CollateralOrder.  # noqa: E501
 
-        借款时间，时间戳，单位秒  # noqa: E501
+        Borrowing time, timestamp in seconds  # noqa: E501
 
         :return: The borrow_time of this CollateralOrder.  # noqa: E501
         :rtype: int
@@ -438,7 +438,7 @@ class CollateralOrder(object):
     def borrow_time(self, borrow_time):
         """Sets the borrow_time of this CollateralOrder.
 
-        借款时间，时间戳，单位秒  # noqa: E501
+        Borrowing time, timestamp in seconds  # noqa: E501
 
         :param borrow_time: The borrow_time of this CollateralOrder.  # noqa: E501
         :type: int
@@ -450,7 +450,7 @@ class CollateralOrder(object):
     def left_repay_total(self):
         """Gets the left_repay_total of this CollateralOrder.  # noqa: E501
 
-        待还本息（待还本金+待还利息）  # noqa: E501
+        Outstanding principal and interest (outstanding principal + outstanding interest)  # noqa: E501
 
         :return: The left_repay_total of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -461,7 +461,7 @@ class CollateralOrder(object):
     def left_repay_total(self, left_repay_total):
         """Sets the left_repay_total of this CollateralOrder.
 
-        待还本息（待还本金+待还利息）  # noqa: E501
+        Outstanding principal and interest (outstanding principal + outstanding interest)  # noqa: E501
 
         :param left_repay_total: The left_repay_total of this CollateralOrder.  # noqa: E501
         :type: str
@@ -473,7 +473,7 @@ class CollateralOrder(object):
     def left_repay_principal(self):
         """Gets the left_repay_principal of this CollateralOrder.  # noqa: E501
 
-        待还本金  # noqa: E501
+        outstanding principal  # noqa: E501
 
         :return: The left_repay_principal of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -484,7 +484,7 @@ class CollateralOrder(object):
     def left_repay_principal(self, left_repay_principal):
         """Sets the left_repay_principal of this CollateralOrder.
 
-        待还本金  # noqa: E501
+        outstanding principal  # noqa: E501
 
         :param left_repay_principal: The left_repay_principal of this CollateralOrder.  # noqa: E501
         :type: str
@@ -496,7 +496,7 @@ class CollateralOrder(object):
     def left_repay_interest(self):
         """Gets the left_repay_interest of this CollateralOrder.  # noqa: E501
 
-        待还利息  # noqa: E501
+        outstanding interest  # noqa: E501
 
         :return: The left_repay_interest of this CollateralOrder.  # noqa: E501
         :rtype: str
@@ -507,7 +507,7 @@ class CollateralOrder(object):
     def left_repay_interest(self, left_repay_interest):
         """Sets the left_repay_interest of this CollateralOrder.
 
-        待还利息  # noqa: E501
+        outstanding interest  # noqa: E501
 
         :param left_repay_interest: The left_repay_interest of this CollateralOrder.  # noqa: E501
         :type: str

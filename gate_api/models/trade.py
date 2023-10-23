@@ -47,6 +47,8 @@ class Trade(object):
         'point_fee': 'str',
         'gt_fee': 'str',
         'amend_text': 'str',
+        'sequence_id': 'str',
+        'text': 'str',
     }
 
     attribute_map = {
@@ -64,6 +66,8 @@ class Trade(object):
         'point_fee': 'point_fee',
         'gt_fee': 'gt_fee',
         'amend_text': 'amend_text',
+        'sequence_id': 'sequence_id',
+        'text': 'text',
     }
 
     def __init__(
@@ -82,9 +86,11 @@ class Trade(object):
         point_fee=None,
         gt_fee=None,
         amend_text=None,
+        sequence_id=None,
+        text=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """Trade - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -104,6 +110,8 @@ class Trade(object):
         self._point_fee = None
         self._gt_fee = None
         self._amend_text = None
+        self._sequence_id = None
+        self._text = None
         self.discriminator = None
 
         if id is not None:
@@ -134,6 +142,10 @@ class Trade(object):
             self.gt_fee = gt_fee
         if amend_text is not None:
             self.amend_text = amend_text
+        if sequence_id is not None:
+            self.sequence_id = sequence_id
+        if text is not None:
+            self.text = text
 
     @property
     def id(self):
@@ -466,6 +478,52 @@ class Trade(object):
         """
 
         self._amend_text = amend_text
+
+    @property
+    def sequence_id(self):
+        """Gets the sequence_id of this Trade.  # noqa: E501
+
+        Represents a unique and consecutive trade ID within a single market. It is used to track and identify trades in the specific market  # noqa: E501
+
+        :return: The sequence_id of this Trade.  # noqa: E501
+        :rtype: str
+        """
+        return self._sequence_id
+
+    @sequence_id.setter
+    def sequence_id(self, sequence_id):
+        """Sets the sequence_id of this Trade.
+
+        Represents a unique and consecutive trade ID within a single market. It is used to track and identify trades in the specific market  # noqa: E501
+
+        :param sequence_id: The sequence_id of this Trade.  # noqa: E501
+        :type: str
+        """
+
+        self._sequence_id = sequence_id
+
+    @property
+    def text(self):
+        """Gets the text of this Trade.  # noqa: E501
+
+        User defined information. No value in public endpoints  # noqa: E501
+
+        :return: The text of this Trade.  # noqa: E501
+        :rtype: str
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """Sets the text of this Trade.
+
+        User defined information. No value in public endpoints  # noqa: E501
+
+        :param text: The text of this Trade.  # noqa: E501
+        :type: str
+        """
+
+        self._text = text
 
     def to_dict(self):
         """Returns the model properties as a dict"""

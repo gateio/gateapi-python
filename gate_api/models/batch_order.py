@@ -539,7 +539,7 @@ class BatchOrder(object):
     def account(self):
         """Gets the account of this BatchOrder.  # noqa: E501
 
-        Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account  # noqa: E501
+        Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account, portfolio - portfolio account  # noqa: E501
 
         :return: The account of this BatchOrder.  # noqa: E501
         :rtype: str
@@ -550,12 +550,12 @@ class BatchOrder(object):
     def account(self, account):
         """Sets the account of this BatchOrder.
 
-        Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account  # noqa: E501
+        Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account, portfolio - portfolio account  # noqa: E501
 
         :param account: The account of this BatchOrder.  # noqa: E501
         :type: str
         """
-        allowed_values = ["spot", "margin", "cross_margin"]  # noqa: E501
+        allowed_values = ["spot", "margin", "cross_margin", "portfolio"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and account not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `account` ({0}), must be one of {1}".format(account, allowed_values)  # noqa: E501

@@ -558,10 +558,10 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int _from: 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间
+        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param int limit: 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝
-        :param str interval: 数据点的时间间隔，注意 1w 代表一个自然周，7d 的时间是和 Unix 初始时间对齐, 30d 代表一个自然月
+        :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
+        :param str interval: Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0.  Note that 30d means 1 natual month, not 30 days
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -588,10 +588,10 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int _from: 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间
+        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param int limit: 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝
-        :param str interval: 数据点的时间间隔，注意 1w 代表一个自然周，7d 的时间是和 Unix 初始时间对齐, 30d 代表一个自然月
+        :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
+        :param str interval: Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0.  Note that 30d means 1 natual month, not 30 days
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -697,9 +697,9 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int _from: 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间
+        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param int limit: 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝
+        :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
         :param str interval: Interval time between data points
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -727,9 +727,9 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int _from: 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间
+        :param int _from: Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified
         :param int to: End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time
-        :param int limit: 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝
+        :param int limit: Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected.
         :param str interval: Interval time between data points
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -1823,7 +1823,7 @@ class FuturesApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param bool holding: 只返回真实持仓-true,全部返回-false
+        :param bool holding: Return only real positions - true, return all - false.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1848,7 +1848,7 @@ class FuturesApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
-        :param bool holding: 只返回真实持仓-true,全部返回-false
+        :param bool holding: Return only real positions - true, return all - false.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -4236,7 +4236,7 @@ class FuturesApi(object):
         :param int to: End timestamp
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
-        :param str role: 查询角色，Maker 或 Taker
+        :param str role: Query role, maker or taker.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -4266,7 +4266,7 @@ class FuturesApi(object):
         :param int to: End timestamp
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
-        :param str role: 查询角色，Maker 或 Taker
+        :param str role: Query role, maker or taker.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -4384,8 +4384,8 @@ class FuturesApi(object):
         :param int offset: List offset, starting from 0
         :param int _from: Start timestamp
         :param int to: End timestamp
-        :param str side: 方向筛选，做多(long)或做空(short)
-        :param str pnl: 盈亏判断，盈利(profit)或亏损(loss)
+        :param str side: Query side.  long or shot
+        :param str pnl: Query profit or loss
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -4415,8 +4415,8 @@ class FuturesApi(object):
         :param int offset: List offset, starting from 0
         :param int _from: Start timestamp
         :param int to: End timestamp
-        :param str side: 方向筛选，做多(long)或做空(short)
-        :param str pnl: 盈亏判断，盈利(profit)或亏损(loss)
+        :param str side: Query side.  long or shot
+        :param str pnl: Query profit or loss
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

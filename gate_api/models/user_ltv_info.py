@@ -97,7 +97,7 @@ class UserLtvInfo(object):
     def collateral_currency(self):
         """Gets the collateral_currency of this UserLtvInfo.  # noqa: E501
 
-        质押币种  # noqa: E501
+        Collateral  # noqa: E501
 
         :return: The collateral_currency of this UserLtvInfo.  # noqa: E501
         :rtype: str
@@ -108,7 +108,7 @@ class UserLtvInfo(object):
     def collateral_currency(self, collateral_currency):
         """Sets the collateral_currency of this UserLtvInfo.
 
-        质押币种  # noqa: E501
+        Collateral  # noqa: E501
 
         :param collateral_currency: The collateral_currency of this UserLtvInfo.  # noqa: E501
         :type: str
@@ -120,7 +120,7 @@ class UserLtvInfo(object):
     def borrow_currency(self):
         """Gets the borrow_currency of this UserLtvInfo.  # noqa: E501
 
-        借款币种  # noqa: E501
+        Borrowed currency  # noqa: E501
 
         :return: The borrow_currency of this UserLtvInfo.  # noqa: E501
         :rtype: str
@@ -131,7 +131,7 @@ class UserLtvInfo(object):
     def borrow_currency(self, borrow_currency):
         """Sets the borrow_currency of this UserLtvInfo.
 
-        借款币种  # noqa: E501
+        Borrowed currency  # noqa: E501
 
         :param borrow_currency: The borrow_currency of this UserLtvInfo.  # noqa: E501
         :type: str
@@ -143,7 +143,7 @@ class UserLtvInfo(object):
     def init_ltv(self):
         """Gets the init_ltv of this UserLtvInfo.  # noqa: E501
 
-        初始质押率  # noqa: E501
+        The initial collateralization rate  # noqa: E501
 
         :return: The init_ltv of this UserLtvInfo.  # noqa: E501
         :rtype: str
@@ -154,7 +154,7 @@ class UserLtvInfo(object):
     def init_ltv(self, init_ltv):
         """Sets the init_ltv of this UserLtvInfo.
 
-        初始质押率  # noqa: E501
+        The initial collateralization rate  # noqa: E501
 
         :param init_ltv: The init_ltv of this UserLtvInfo.  # noqa: E501
         :type: str
@@ -166,7 +166,7 @@ class UserLtvInfo(object):
     def alert_ltv(self):
         """Gets the alert_ltv of this UserLtvInfo.  # noqa: E501
 
-        预警质押率  # noqa: E501
+        Warning collateralization ratio  # noqa: E501
 
         :return: The alert_ltv of this UserLtvInfo.  # noqa: E501
         :rtype: str
@@ -177,7 +177,7 @@ class UserLtvInfo(object):
     def alert_ltv(self, alert_ltv):
         """Sets the alert_ltv of this UserLtvInfo.
 
-        预警质押率  # noqa: E501
+        Warning collateralization ratio  # noqa: E501
 
         :param alert_ltv: The alert_ltv of this UserLtvInfo.  # noqa: E501
         :type: str
@@ -189,7 +189,7 @@ class UserLtvInfo(object):
     def liquidate_ltv(self):
         """Gets the liquidate_ltv of this UserLtvInfo.  # noqa: E501
 
-        平仓质押率  # noqa: E501
+        The liquidation collateralization rate  # noqa: E501
 
         :return: The liquidate_ltv of this UserLtvInfo.  # noqa: E501
         :rtype: str
@@ -200,7 +200,7 @@ class UserLtvInfo(object):
     def liquidate_ltv(self, liquidate_ltv):
         """Sets the liquidate_ltv of this UserLtvInfo.
 
-        平仓质押率  # noqa: E501
+        The liquidation collateralization rate  # noqa: E501
 
         :param liquidate_ltv: The liquidate_ltv of this UserLtvInfo.  # noqa: E501
         :type: str
@@ -212,7 +212,7 @@ class UserLtvInfo(object):
     def min_borrow_amount(self):
         """Gets the min_borrow_amount of this UserLtvInfo.  # noqa: E501
 
-        借款币种的最小可借数量  # noqa: E501
+        Minimum borrowable amount for the loan currency  # noqa: E501
 
         :return: The min_borrow_amount of this UserLtvInfo.  # noqa: E501
         :rtype: str
@@ -223,7 +223,7 @@ class UserLtvInfo(object):
     def min_borrow_amount(self, min_borrow_amount):
         """Sets the min_borrow_amount of this UserLtvInfo.
 
-        借款币种的最小可借数量  # noqa: E501
+        Minimum borrowable amount for the loan currency  # noqa: E501
 
         :param min_borrow_amount: The min_borrow_amount of this UserLtvInfo.  # noqa: E501
         :type: str
@@ -235,7 +235,7 @@ class UserLtvInfo(object):
     def left_borrowable_amount(self):
         """Gets the left_borrowable_amount of this UserLtvInfo.  # noqa: E501
 
-        借款币种的剩余可借数量  # noqa: E501
+        Remaining borrowable amount for the loan currency  # noqa: E501
 
         :return: The left_borrowable_amount of this UserLtvInfo.  # noqa: E501
         :rtype: str
@@ -246,7 +246,7 @@ class UserLtvInfo(object):
     def left_borrowable_amount(self, left_borrowable_amount):
         """Sets the left_borrowable_amount of this UserLtvInfo.
 
-        借款币种的剩余可借数量  # noqa: E501
+        Remaining borrowable amount for the loan currency  # noqa: E501
 
         :param left_borrowable_amount: The left_borrowable_amount of this UserLtvInfo.  # noqa: E501
         :type: str

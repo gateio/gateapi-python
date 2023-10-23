@@ -357,7 +357,7 @@ class TradeFee(object):
     def delivery_taker_fee(self):
         """Gets the delivery_taker_fee of this TradeFee.  # noqa: E501
 
-        交割合约 taker 费率  # noqa: E501
+        Delivery trading taker fee  # noqa: E501
 
         :return: The delivery_taker_fee of this TradeFee.  # noqa: E501
         :rtype: str
@@ -368,7 +368,7 @@ class TradeFee(object):
     def delivery_taker_fee(self, delivery_taker_fee):
         """Sets the delivery_taker_fee of this TradeFee.
 
-        交割合约 taker 费率  # noqa: E501
+        Delivery trading taker fee  # noqa: E501
 
         :param delivery_taker_fee: The delivery_taker_fee of this TradeFee.  # noqa: E501
         :type: str
@@ -380,7 +380,7 @@ class TradeFee(object):
     def delivery_maker_fee(self):
         """Gets the delivery_maker_fee of this TradeFee.  # noqa: E501
 
-        交割合约 maker 费率  # noqa: E501
+        Delivery trading maker fee  # noqa: E501
 
         :return: The delivery_maker_fee of this TradeFee.  # noqa: E501
         :rtype: str
@@ -391,7 +391,7 @@ class TradeFee(object):
     def delivery_maker_fee(self, delivery_maker_fee):
         """Sets the delivery_maker_fee of this TradeFee.
 
-        交割合约 maker 费率  # noqa: E501
+        Delivery trading maker fee  # noqa: E501
 
         :param delivery_maker_fee: The delivery_maker_fee of this TradeFee.  # noqa: E501
         :type: str

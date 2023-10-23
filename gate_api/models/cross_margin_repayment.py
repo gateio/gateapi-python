@@ -235,7 +235,7 @@ class CrossMarginRepayment(object):
     def repayment_type(self):
         """Gets the repayment_type of this CrossMarginRepayment.  # noqa: E501
 
-        还款类型 , none - 无还款类型, manual_repay - 手动还款 , auto_repay - 自动还款, cancel_auto_repay - 撤单后自动还款  # noqa: E501
+        Repayment type: none - no repayment type, manual_repay - manual repayment, auto_repay - automatic repayment, cancel_auto_repay - automatic repayment after cancellation  # noqa: E501
 
         :return: The repayment_type of this CrossMarginRepayment.  # noqa: E501
         :rtype: str
@@ -246,7 +246,7 @@ class CrossMarginRepayment(object):
     def repayment_type(self, repayment_type):
         """Sets the repayment_type of this CrossMarginRepayment.
 
-        还款类型 , none - 无还款类型, manual_repay - 手动还款 , auto_repay - 自动还款, cancel_auto_repay - 撤单后自动还款  # noqa: E501
+        Repayment type: none - no repayment type, manual_repay - manual repayment, auto_repay - automatic repayment, cancel_auto_repay - automatic repayment after cancellation  # noqa: E501
 
         :param repayment_type: The repayment_type of this CrossMarginRepayment.  # noqa: E501
         :type: str

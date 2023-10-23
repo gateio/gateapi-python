@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **chain** | **str** | Chain name | [optional] 
 **name_cn** | **str** | Chain name in Chinese | [optional] 
 **name_en** | **str** | Chain name in English | [optional] 
-**contract_address** | **str** | 币种智能合约地址，如果没有地址则为空字串 | [optional] 
+**contract_address** | **str** | Smart contract address for the currency; if no address is available, it will be an empty string | [optional] 
 **is_disabled** | **int** | If it is disabled. 0 means NOT being disabled | [optional] 
 **is_deposit_disabled** | **int** | Is deposit disabled. 0 means not | [optional] 
 **is_withdraw_disabled** | **int** | Is withdrawal disabled. 0 means not | [optional] 

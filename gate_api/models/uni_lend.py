@@ -39,6 +39,8 @@ class UniLend(object):
         'lent_amount': 'str',
         'frozen_amount': 'str',
         'min_rate': 'str',
+        'interest_status': 'str',
+        'reinvest_left_amount': 'str',
         'create_time': 'int',
         'update_time': 'int',
     }
@@ -50,6 +52,8 @@ class UniLend(object):
         'lent_amount': 'lent_amount',
         'frozen_amount': 'frozen_amount',
         'min_rate': 'min_rate',
+        'interest_status': 'interest_status',
+        'reinvest_left_amount': 'reinvest_left_amount',
         'create_time': 'create_time',
         'update_time': 'update_time',
     }
@@ -62,11 +66,13 @@ class UniLend(object):
         lent_amount=None,
         frozen_amount=None,
         min_rate=None,
+        interest_status=None,
+        reinvest_left_amount=None,
         create_time=None,
         update_time=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, int, int, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, int, int, Configuration) -> None
         """UniLend - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +84,8 @@ class UniLend(object):
         self._lent_amount = None
         self._frozen_amount = None
         self._min_rate = None
+        self._interest_status = None
+        self._reinvest_left_amount = None
         self._create_time = None
         self._update_time = None
         self.discriminator = None
@@ -94,6 +102,10 @@ class UniLend(object):
             self.frozen_amount = frozen_amount
         if min_rate is not None:
             self.min_rate = min_rate
+        if interest_status is not None:
+            self.interest_status = interest_status
+        if reinvest_left_amount is not None:
+            self.reinvest_left_amount = reinvest_left_amount
         if create_time is not None:
             self.create_time = create_time
         if update_time is not None:
@@ -236,6 +248,52 @@ class UniLend(object):
         """
 
         self._min_rate = min_rate
+
+    @property
+    def interest_status(self):
+        """Gets the interest_status of this UniLend.  # noqa: E501
+
+        Interest status: interest_dividend - regular dividend, interest_reinvest - interest reinvestment  # noqa: E501
+
+        :return: The interest_status of this UniLend.  # noqa: E501
+        :rtype: str
+        """
+        return self._interest_status
+
+    @interest_status.setter
+    def interest_status(self, interest_status):
+        """Sets the interest_status of this UniLend.
+
+        Interest status: interest_dividend - regular dividend, interest_reinvest - interest reinvestment  # noqa: E501
+
+        :param interest_status: The interest_status of this UniLend.  # noqa: E501
+        :type: str
+        """
+
+        self._interest_status = interest_status
+
+    @property
+    def reinvest_left_amount(self):
+        """Gets the reinvest_left_amount of this UniLend.  # noqa: E501
+
+        Amount not reinvested  # noqa: E501
+
+        :return: The reinvest_left_amount of this UniLend.  # noqa: E501
+        :rtype: str
+        """
+        return self._reinvest_left_amount
+
+    @reinvest_left_amount.setter
+    def reinvest_left_amount(self, reinvest_left_amount):
+        """Sets the reinvest_left_amount of this UniLend.
+
+        Amount not reinvested  # noqa: E501
+
+        :param reinvest_left_amount: The reinvest_left_amount of this UniLend.  # noqa: E501
+        :type: str
+        """
+
+        self._reinvest_left_amount = reinvest_left_amount
 
     @property
     def create_time(self):

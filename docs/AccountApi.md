@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**create_stp_group**](AccountApi.md#create_stp_group) | **POST** /account/stp_groups | Create STP Group
 [**list_stp_groups_users**](AccountApi.md#list_stp_groups_users) | **GET** /account/stp_groups/{stp_id}/users | List users of the STP group
 [**add_stp_group_users**](AccountApi.md#add_stp_group_users) | **POST** /account/stp_groups/{stp_id}/users | Add users to the STP group
-[**delete_stp_group_users**](AccountApi.md#delete_stp_group_users) | **DELETE** /account/stp_groups/{stp_id}/users | STP用户组中删除用户
+[**delete_stp_group_users**](AccountApi.md#delete_stp_group_users) | **DELETE** /account/stp_groups/{stp_id}/users | Delete the user in the STP group
 
 
 # **get_account_detail**
@@ -356,9 +356,9 @@ Name | Type | Description  | Notes
 # **delete_stp_group_users**
 > list[StpGroupUser] delete_stp_group_users(stp_id, request_body)
 
-STP用户组中删除用户
+Delete the user in the STP group
 
-- 只允许创建此STP组的主账号删除STP用户组用户 - 只允许删除当前主账户下的账户，不允许跨主账户
+- Only the main account that created this STP group is allowed to delete users from the STP user group - Deletion is limited to accounts under the current main account; cross-account deletion is not permitted
 
 ### Example
 
@@ -388,7 +388,7 @@ stp_id = 1 # int | STP Group ID
 request_body = [[1,2,3]] # list[int] | User ID
 
 try:
-    # STP用户组中删除用户
+    # Delete the user in the STP group
     api_response = api_instance.delete_stp_group_users(stp_id, request_body)
     print(api_response)
 except GateApiException as ex:
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | 删除用户成功，返回当前STP组内用户 |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

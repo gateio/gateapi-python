@@ -4,22 +4,22 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_collateral_loan_orders**](CollateralLoanApi.md#list_collateral_loan_orders) | **GET** /loan/collateral/orders | 查询抵押借币订单列表
-[**create_collateral_loan**](CollateralLoanApi.md#create_collateral_loan) | **POST** /loan/collateral/orders | 抵押借币借贷下单
+[**list_collateral_loan_orders**](CollateralLoanApi.md#list_collateral_loan_orders) | **GET** /loan/collateral/orders | List Orders
+[**create_collateral_loan**](CollateralLoanApi.md#create_collateral_loan) | **POST** /loan/collateral/orders | Place order
 [**get_collateral_loan_order_detail**](CollateralLoanApi.md#get_collateral_loan_order_detail) | **GET** /loan/collateral/orders/{order_id} | Get a single order
-[**repay_collateral_loan**](CollateralLoanApi.md#repay_collateral_loan) | **POST** /loan/collateral/repay | 抵押借币还款
-[**list_repay_records**](CollateralLoanApi.md#list_repay_records) | **GET** /loan/collateral/repay_records | 查询抵押借币还款记录
-[**list_collateral_records**](CollateralLoanApi.md#list_collateral_records) | **GET** /loan/collateral/collaterals | 查询质押物调整记录
-[**operate_collateral**](CollateralLoanApi.md#operate_collateral) | **POST** /loan/collateral/collaterals | 增加或赎回质押物
-[**get_user_total_amount**](CollateralLoanApi.md#get_user_total_amount) | **GET** /loan/collateral/total_amount | 查询用户总借贷与质押数量
-[**get_user_ltv_info**](CollateralLoanApi.md#get_user_ltv_info) | **GET** /loan/collateral/ltv | 查询用户质押率和可借剩余币种
-[**list_collateral_currencies**](CollateralLoanApi.md#list_collateral_currencies) | **GET** /loan/collateral/currencies | 查询支持的借款币种和抵押币种
+[**repay_collateral_loan**](CollateralLoanApi.md#repay_collateral_loan) | **POST** /loan/collateral/repay | Repayment
+[**list_repay_records**](CollateralLoanApi.md#list_repay_records) | **GET** /loan/collateral/repay_records | Repayment history
+[**list_collateral_records**](CollateralLoanApi.md#list_collateral_records) | **GET** /loan/collateral/collaterals | Query collateral adjustment records
+[**operate_collateral**](CollateralLoanApi.md#operate_collateral) | **POST** /loan/collateral/collaterals | Increase or redeem collateral
+[**get_user_total_amount**](CollateralLoanApi.md#get_user_total_amount) | **GET** /loan/collateral/total_amount | Query the total borrowing and collateral amount for the user
+[**get_user_ltv_info**](CollateralLoanApi.md#get_user_ltv_info) | **GET** /loan/collateral/ltv | Query user&#39;s collateralization ratio
+[**list_collateral_currencies**](CollateralLoanApi.md#list_collateral_currencies) | **GET** /loan/collateral/currencies | Query supported borrowing and collateral currencies
 
 
 # **list_collateral_loan_orders**
 > list[CollateralOrder] list_collateral_loan_orders(page=page, limit=limit, collateral_currency=collateral_currency, borrow_currency=borrow_currency)
 
-查询抵押借币订单列表
+List Orders
 
 ### Example
 
@@ -47,11 +47,11 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.CollateralLoanApi(api_client)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
-collateral_currency = 'BTC' # str | 质押币种 (optional)
-borrow_currency = 'USDT' # str | 借款币种 (optional)
+collateral_currency = 'BTC' # str | Collateral (optional)
+borrow_currency = 'USDT' # str | Borrowed currency (optional)
 
 try:
-    # 查询抵押借币订单列表
+    # List Orders
     api_response = api_instance.list_collateral_loan_orders(page=page, limit=limit, collateral_currency=collateral_currency, borrow_currency=borrow_currency)
     print(api_response)
 except GateApiException as ex:
@@ -66,8 +66,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
- **collateral_currency** | **str**| 质押币种 | [optional] 
- **borrow_currency** | **str**| 借款币种 | [optional] 
+ **collateral_currency** | **str**| Collateral | [optional] 
+ **borrow_currency** | **str**| Borrowed currency | [optional] 
 
 ### Return type
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 # **create_collateral_loan**
 > OrderResp create_collateral_loan(create_collateral_order)
 
-抵押借币借贷下单
+Place order
 
 ### Example
 
@@ -121,7 +121,7 @@ api_instance = gate_api.CollateralLoanApi(api_client)
 create_collateral_order = gate_api.CreateCollateralOrder() # CreateCollateralOrder | 
 
 try:
-    # 抵押借币借贷下单
+    # Place order
     api_response = api_instance.create_collateral_loan(create_collateral_order)
     print(api_response)
 except GateApiException as ex:
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | 下单成功 |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -219,14 +219,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | 订单详情查询成功 |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **repay_collateral_loan**
 > RepayResp repay_collateral_loan(repay_loan)
 
-抵押借币还款
+Repayment
 
 ### Example
 
@@ -255,7 +255,7 @@ api_instance = gate_api.CollateralLoanApi(api_client)
 repay_loan = gate_api.RepayLoan() # RepayLoan | 
 
 try:
-    # 抵押借币还款
+    # Repayment
     api_response = api_instance.repay_collateral_loan(repay_loan)
     print(api_response)
 except GateApiException as ex:
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 # **list_repay_records**
 > list[RepayRecord] list_repay_records(source, borrow_currency=borrow_currency, collateral_currency=collateral_currency, page=page, limit=limit, _from=_from, to=to)
 
-查询抵押借币还款记录
+Repayment history
 
 ### Example
 
@@ -319,16 +319,16 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.CollateralLoanApi(api_client)
-source = 'repay' # str | 操作类型 ;  repay - 普通还款, liquidate - 平仓
-borrow_currency = 'USDT' # str | 借款币种 (optional)
-collateral_currency = 'BTC' # str | 质押币种 (optional)
+source = 'repay' # str | Operation type: repay - Regular repayment, liquidate - Liquidation
+borrow_currency = 'USDT' # str | Borrowed currency (optional)
+collateral_currency = 'BTC' # str | Collateral (optional)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 _from = 1609459200 # int | Start timestamp of the query (optional)
 to = 1609459200 # int | Time range ending, default to current time (optional)
 
 try:
-    # 查询抵押借币还款记录
+    # Repayment history
     api_response = api_instance.list_repay_records(source, borrow_currency=borrow_currency, collateral_currency=collateral_currency, page=page, limit=limit, _from=_from, to=to)
     print(api_response)
 except GateApiException as ex:
@@ -341,9 +341,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **source** | **str**| 操作类型 ;  repay - 普通还款, liquidate - 平仓 | 
- **borrow_currency** | **str**| 借款币种 | [optional] 
- **collateral_currency** | **str**| 质押币种 | [optional] 
+ **source** | **str**| Operation type: repay - Regular repayment, liquidate - Liquidation | 
+ **borrow_currency** | **str**| Borrowed currency | [optional] 
+ **collateral_currency** | **str**| Collateral | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **_from** | **int**| Start timestamp of the query | [optional] 
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 # **list_collateral_records**
 > list[CollateralRecord] list_collateral_records(page=page, limit=limit, _from=_from, to=to, borrow_currency=borrow_currency, collateral_currency=collateral_currency)
 
-查询质押物调整记录
+Query collateral adjustment records
 
 ### Example
 
@@ -402,11 +402,11 @@ page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 _from = 1609459200 # int | Start timestamp of the query (optional)
 to = 1609459200 # int | Time range ending, default to current time (optional)
-borrow_currency = 'USDT' # str | 借款币种 (optional)
-collateral_currency = 'BTC' # str | 质押币种 (optional)
+borrow_currency = 'USDT' # str | Borrowed currency (optional)
+collateral_currency = 'BTC' # str | Collateral (optional)
 
 try:
-    # 查询质押物调整记录
+    # Query collateral adjustment records
     api_response = api_instance.list_collateral_records(page=page, limit=limit, _from=_from, to=to, borrow_currency=borrow_currency, collateral_currency=collateral_currency)
     print(api_response)
 except GateApiException as ex:
@@ -423,8 +423,8 @@ Name | Type | Description  | Notes
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **_from** | **int**| Start timestamp of the query | [optional] 
  **to** | **int**| Time range ending, default to current time | [optional] 
- **borrow_currency** | **str**| 借款币种 | [optional] 
- **collateral_currency** | **str**| 质押币种 | [optional] 
+ **borrow_currency** | **str**| Borrowed currency | [optional] 
+ **collateral_currency** | **str**| Collateral | [optional] 
 
 ### Return type
 
@@ -449,7 +449,7 @@ Name | Type | Description  | Notes
 # **operate_collateral**
 > operate_collateral(collateral_align)
 
-增加或赎回质押物
+Increase or redeem collateral
 
 ### Example
 
@@ -478,7 +478,7 @@ api_instance = gate_api.CollateralLoanApi(api_client)
 collateral_align = gate_api.CollateralAlign() # CollateralAlign | 
 
 try:
-    # 增加或赎回质押物
+    # Increase or redeem collateral
     api_instance.operate_collateral(collateral_align)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -515,7 +515,7 @@ void (empty response body)
 # **get_user_total_amount**
 > UserTotalAmount get_user_total_amount()
 
-查询用户总借贷与质押数量
+Query the total borrowing and collateral amount for the user
 
 ### Example
 
@@ -543,7 +543,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.CollateralLoanApi(api_client)
 
 try:
-    # 查询用户总借贷与质押数量
+    # Query the total borrowing and collateral amount for the user
     api_response = api_instance.get_user_total_amount()
     print(api_response)
 except GateApiException as ex:
@@ -578,7 +578,7 @@ This endpoint does not need any parameter.
 # **get_user_ltv_info**
 > UserLtvInfo get_user_ltv_info(collateral_currency, borrow_currency)
 
-查询用户质押率和可借剩余币种
+Query user's collateralization ratio
 
 ### Example
 
@@ -604,11 +604,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.CollateralLoanApi(api_client)
-collateral_currency = 'BTC' # str | 质押币种
-borrow_currency = 'USDT' # str | 借款币种
+collateral_currency = 'BTC' # str | Collateral
+borrow_currency = 'USDT' # str | Borrowed currency
 
 try:
-    # 查询用户质押率和可借剩余币种
+    # Query user's collateralization ratio
     api_response = api_instance.get_user_ltv_info(collateral_currency, borrow_currency)
     print(api_response)
 except GateApiException as ex:
@@ -621,8 +621,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collateral_currency** | **str**| 质押币种 | 
- **borrow_currency** | **str**| 借款币种 | 
+ **collateral_currency** | **str**| Collateral | 
+ **borrow_currency** | **str**| Borrowed currency | 
 
 ### Return type
 
@@ -647,7 +647,7 @@ Name | Type | Description  | Notes
 # **list_collateral_currencies**
 > list[CollateralLoanCurrency] list_collateral_currencies(loan_currency=loan_currency)
 
-查询支持的借款币种和抵押币种
+Query supported borrowing and collateral currencies
 
 ### Example
 
@@ -664,10 +664,10 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.CollateralLoanApi(api_client)
-loan_currency = 'BTC' # str | 借款币种参数,当loan_currency没传时会返回支持的所有借款币种,当传loan_currency时会查询该借款币种支持的抵押币种数组 (optional)
+loan_currency = 'BTC' # str | The parameter loan_currency is used to specify the borrowing currency. If loan_currency is not provided, the API will return all supported borrowing currencies. If loan_currency is provided, the API will return an array of collateral currencies supported for the specified borrowing currency. (optional)
 
 try:
-    # 查询支持的借款币种和抵押币种
+    # Query supported borrowing and collateral currencies
     api_response = api_instance.list_collateral_currencies(loan_currency=loan_currency)
     print(api_response)
 except GateApiException as ex:
@@ -680,7 +680,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loan_currency** | **str**| 借款币种参数,当loan_currency没传时会返回支持的所有借款币种,当传loan_currency时会查询该借款币种支持的抵押币种数组 | [optional] 
+ **loan_currency** | **str**| The parameter loan_currency is used to specify the borrowing currency. If loan_currency is not provided, the API will return all supported borrowing currencies. If loan_currency is provided, the API will return an array of collateral currencies supported for the specified borrowing currency. | [optional] 
 
 ### Return type
 

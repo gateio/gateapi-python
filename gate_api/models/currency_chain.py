@@ -166,7 +166,7 @@ class CurrencyChain(object):
     def contract_address(self):
         """Gets the contract_address of this CurrencyChain.  # noqa: E501
 
-        币种智能合约地址，如果没有地址则为空字串  # noqa: E501
+        Smart contract address for the currency; if no address is available, it will be an empty string  # noqa: E501
 
         :return: The contract_address of this CurrencyChain.  # noqa: E501
         :rtype: str
@@ -177,7 +177,7 @@ class CurrencyChain(object):
     def contract_address(self, contract_address):
         """Sets the contract_address of this CurrencyChain.
 
-        币种智能合约地址，如果没有地址则为空字串  # noqa: E501
+        Smart contract address for the currency; if no address is available, it will be an empty string  # noqa: E501
 
         :param contract_address: The contract_address of this CurrencyChain.  # noqa: E501
         :type: str

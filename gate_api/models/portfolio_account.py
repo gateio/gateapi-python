@@ -448,7 +448,7 @@ class PortfolioAccount(object):
     def portfolio_margin_total(self):
         """Gets the portfolio_margin_total of this PortfolioAccount.  # noqa: E501
 
-        Total amount of the portfolio margin account  # noqa: E501
+        Total margin balance of the account  # noqa: E501
 
         :return: The portfolio_margin_total of this PortfolioAccount.  # noqa: E501
         :rtype: str
@@ -459,7 +459,7 @@ class PortfolioAccount(object):
     def portfolio_margin_total(self, portfolio_margin_total):
         """Sets the portfolio_margin_total of this PortfolioAccount.
 
-        Total amount of the portfolio margin account  # noqa: E501
+        Total margin balance of the account  # noqa: E501
 
         :param portfolio_margin_total: The portfolio_margin_total of this PortfolioAccount.  # noqa: E501
         :type: str
@@ -471,7 +471,7 @@ class PortfolioAccount(object):
     def portfolio_margin_total_liab(self):
         """Gets the portfolio_margin_total_liab of this PortfolioAccount.  # noqa: E501
 
-        Total liabilities of the portfolio margin account  # noqa: E501
+        Total liabilities of the account  # noqa: E501
 
         :return: The portfolio_margin_total_liab of this PortfolioAccount.  # noqa: E501
         :rtype: str
@@ -482,7 +482,7 @@ class PortfolioAccount(object):
     def portfolio_margin_total_liab(self, portfolio_margin_total_liab):
         """Sets the portfolio_margin_total_liab of this PortfolioAccount.
 
-        Total liabilities of the portfolio margin account  # noqa: E501
+        Total liabilities of the account  # noqa: E501
 
         :param portfolio_margin_total_liab: The portfolio_margin_total_liab of this PortfolioAccount.  # noqa: E501
         :type: str
@@ -494,7 +494,7 @@ class PortfolioAccount(object):
     def portfolio_margin_total_equity(self):
         """Gets the portfolio_margin_total_equity of this PortfolioAccount.  # noqa: E501
 
-        Total equity of the portfolio margin account  # noqa: E501
+        Total equity of the account  # noqa: E501
 
         :return: The portfolio_margin_total_equity of this PortfolioAccount.  # noqa: E501
         :rtype: str
@@ -505,7 +505,7 @@ class PortfolioAccount(object):
     def portfolio_margin_total_equity(self, portfolio_margin_total_equity):
         """Sets the portfolio_margin_total_equity of this PortfolioAccount.
 
-        Total equity of the portfolio margin account  # noqa: E501
+        Total equity of the account  # noqa: E501
 
         :param portfolio_margin_total_equity: The portfolio_margin_total_equity of this PortfolioAccount.  # noqa: E501
         :type: str

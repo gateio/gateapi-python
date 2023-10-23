@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **point_type** | **str** | Point type. 0 - Initial version. 1 - new version since 202009 | [optional] 
 **futures_taker_fee** | **str** | Futures trading taker fee | [optional] 
 **futures_maker_fee** | **str** | Future trading maker fee | [optional] 
-**delivery_taker_fee** | **str** | 交割合约 taker 费率 | [optional] 
-**delivery_maker_fee** | **str** | 交割合约 maker 费率 | [optional] 
+**delivery_taker_fee** | **str** | Delivery trading taker fee | [optional] 
+**delivery_maker_fee** | **str** | Delivery trading maker fee | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

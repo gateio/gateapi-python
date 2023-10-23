@@ -32,7 +32,15 @@ class SpotAccountBook(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'id': 'str', 'time': 'int', 'currency': 'str', 'change': 'str', 'balance': 'str', 'type': 'str'}
+    openapi_types = {
+        'id': 'str',
+        'time': 'int',
+        'currency': 'str',
+        'change': 'str',
+        'balance': 'str',
+        'type': 'str',
+        'text': 'str',
+    }
 
     attribute_map = {
         'id': 'id',
@@ -41,12 +49,21 @@ class SpotAccountBook(object):
         'change': 'change',
         'balance': 'balance',
         'type': 'type',
+        'text': 'text',
     }
 
     def __init__(
-        self, id=None, time=None, currency=None, change=None, balance=None, type=None, local_vars_configuration=None
+        self,
+        id=None,
+        time=None,
+        currency=None,
+        change=None,
+        balance=None,
+        type=None,
+        text=None,
+        local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, int, str, str, str, str, Configuration) -> None
+        # type: (str, int, str, str, str, str, str, Configuration) -> None
         """SpotAccountBook - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,6 +75,7 @@ class SpotAccountBook(object):
         self._change = None
         self._balance = None
         self._type = None
+        self._text = None
         self.discriminator = None
 
         if id is not None:
@@ -72,6 +90,8 @@ class SpotAccountBook(object):
             self.balance = balance
         if type is not None:
             self.type = type
+        if text is not None:
+            self.text = text
 
     @property
     def id(self):
@@ -210,6 +230,29 @@ class SpotAccountBook(object):
         """
 
         self._type = type
+
+    @property
+    def text(self):
+        """Gets the text of this SpotAccountBook.  # noqa: E501
+
+        Additional information  # noqa: E501
+
+        :return: The text of this SpotAccountBook.  # noqa: E501
+        :rtype: str
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """Sets the text of this SpotAccountBook.
+
+        Additional information  # noqa: E501
+
+        :param text: The text of this SpotAccountBook.  # noqa: E501
+        :type: str
+        """
+
+        self._text = text
 
     def to_dict(self):
         """Returns the model properties as a dict"""

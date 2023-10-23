@@ -56,7 +56,7 @@ class RepayResp(object):
     def repaid_principal(self):
         """Gets the repaid_principal of this RepayResp.  # noqa: E501
 
-        本金  # noqa: E501
+        Principal  # noqa: E501
 
         :return: The repaid_principal of this RepayResp.  # noqa: E501
         :rtype: str
@@ -67,7 +67,7 @@ class RepayResp(object):
     def repaid_principal(self, repaid_principal):
         """Sets the repaid_principal of this RepayResp.
 
-        本金  # noqa: E501
+        Principal  # noqa: E501
 
         :param repaid_principal: The repaid_principal of this RepayResp.  # noqa: E501
         :type: str

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | id | [optional] [readonly] 
 **type** | **str** | type: borrow - borrow, repay - repay | [optional] [readonly] 
-**repayment_type** | **str** | 还款类型 , none - 无还款类型, manual_repay - 手动还款 , auto_repay - 自动还款, cancel_auto_repay - 撤单后自动还款 | [optional] [readonly] 
+**repayment_type** | **str** | Repayment type: none - no repayment type, manual_repay - manual repayment, auto_repay - automatic repayment, cancel_auto_repay - automatic repayment after cancellation | [optional] [readonly] 
 **currency_pair** | **str** | Currency pair | [optional] [readonly] 
 **currency** | **str** | Currency | [optional] [readonly] 
 **amount** | **str** | The amount of lending or repaying | [optional] [readonly] 

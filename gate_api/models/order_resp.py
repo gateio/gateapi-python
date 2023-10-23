@@ -53,7 +53,7 @@ class OrderResp(object):
     def order_id(self):
         """Gets the order_id of this OrderResp.  # noqa: E501
 
-        订单id  # noqa: E501
+        Order ID  # noqa: E501
 
         :return: The order_id of this OrderResp.  # noqa: E501
         :rtype: int
@@ -64,7 +64,7 @@ class OrderResp(object):
     def order_id(self, order_id):
         """Sets the order_id of this OrderResp.
 
-        订单id  # noqa: E501
+        Order ID  # noqa: E501
 
         :param order_id: The order_id of this OrderResp.  # noqa: E501
         :type: int

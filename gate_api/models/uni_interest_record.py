@@ -32,13 +32,21 @@ class UniInterestRecord(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'status': 'int', 'currency': 'str', 'actual_rate': 'str', 'interest': 'str', 'create_time': 'int'}
+    openapi_types = {
+        'status': 'int',
+        'currency': 'str',
+        'actual_rate': 'str',
+        'interest': 'str',
+        'interest_status': 'str',
+        'create_time': 'int',
+    }
 
     attribute_map = {
         'status': 'status',
         'currency': 'currency',
         'actual_rate': 'actual_rate',
         'interest': 'interest',
+        'interest_status': 'interest_status',
         'create_time': 'create_time',
     }
 
@@ -48,10 +56,11 @@ class UniInterestRecord(object):
         currency=None,
         actual_rate=None,
         interest=None,
+        interest_status=None,
         create_time=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, str, str, int, Configuration) -> None
+        # type: (int, str, str, str, str, int, Configuration) -> None
         """UniInterestRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +70,7 @@ class UniInterestRecord(object):
         self._currency = None
         self._actual_rate = None
         self._interest = None
+        self._interest_status = None
         self._create_time = None
         self.discriminator = None
 
@@ -72,6 +82,8 @@ class UniInterestRecord(object):
             self.actual_rate = actual_rate
         if interest is not None:
             self.interest = interest
+        if interest_status is not None:
+            self.interest_status = interest_status
         if create_time is not None:
             self.create_time = create_time
 
@@ -166,6 +178,29 @@ class UniInterestRecord(object):
         """
 
         self._interest = interest
+
+    @property
+    def interest_status(self):
+        """Gets the interest_status of this UniInterestRecord.  # noqa: E501
+
+        Interest status: interest_dividend - regular dividend, interest_reinvest - interest reinvestment  # noqa: E501
+
+        :return: The interest_status of this UniInterestRecord.  # noqa: E501
+        :rtype: str
+        """
+        return self._interest_status
+
+    @interest_status.setter
+    def interest_status(self, interest_status):
+        """Sets the interest_status of this UniInterestRecord.
+
+        Interest status: interest_dividend - regular dividend, interest_reinvest - interest reinvestment  # noqa: E501
+
+        :param interest_status: The interest_status of this UniInterestRecord.  # noqa: E501
+        :type: str
+        """
+
+        self._interest_status = interest_status
 
     @property
     def create_time(self):

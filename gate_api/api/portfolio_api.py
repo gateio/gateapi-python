@@ -135,7 +135,7 @@ class PortfolioApi(object):
     def list_account_portfolio_mode(self, **kwargs):  # noqa: E501
         """Retrieve the account's portfolio mode  # noqa: E501
 
-        cross_margin - 现货全仓保证金  # noqa: E501
+        cross_margin - cross margin  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_account_portfolio_mode(async_req=True)
@@ -159,7 +159,7 @@ class PortfolioApi(object):
     def list_account_portfolio_mode_with_http_info(self, **kwargs):  # noqa: E501
         """Retrieve the account's portfolio mode  # noqa: E501
 
-        cross_margin - 现货全仓保证金  # noqa: E501
+        cross_margin - cross margin  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_account_portfolio_mode_with_http_info(async_req=True)

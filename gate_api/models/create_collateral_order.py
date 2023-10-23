@@ -75,7 +75,7 @@ class CreateCollateralOrder(object):
     def collateral_amount(self):
         """Gets the collateral_amount of this CreateCollateralOrder.  # noqa: E501
 
-        质押数量  # noqa: E501
+        Collateral amount  # noqa: E501
 
         :return: The collateral_amount of this CreateCollateralOrder.  # noqa: E501
         :rtype: str
@@ -86,7 +86,7 @@ class CreateCollateralOrder(object):
     def collateral_amount(self, collateral_amount):
         """Sets the collateral_amount of this CreateCollateralOrder.
 
-        质押数量  # noqa: E501
+        Collateral amount  # noqa: E501
 
         :param collateral_amount: The collateral_amount of this CreateCollateralOrder.  # noqa: E501
         :type: str
@@ -100,7 +100,7 @@ class CreateCollateralOrder(object):
     def collateral_currency(self):
         """Gets the collateral_currency of this CreateCollateralOrder.  # noqa: E501
 
-        质押币种  # noqa: E501
+        Collateral  # noqa: E501
 
         :return: The collateral_currency of this CreateCollateralOrder.  # noqa: E501
         :rtype: str
@@ -111,7 +111,7 @@ class CreateCollateralOrder(object):
     def collateral_currency(self, collateral_currency):
         """Sets the collateral_currency of this CreateCollateralOrder.
 
-        质押币种  # noqa: E501
+        Collateral  # noqa: E501
 
         :param collateral_currency: The collateral_currency of this CreateCollateralOrder.  # noqa: E501
         :type: str
@@ -125,7 +125,7 @@ class CreateCollateralOrder(object):
     def borrow_amount(self):
         """Gets the borrow_amount of this CreateCollateralOrder.  # noqa: E501
 
-        借款数量  # noqa: E501
+        Borrowing amount  # noqa: E501
 
         :return: The borrow_amount of this CreateCollateralOrder.  # noqa: E501
         :rtype: str
@@ -136,7 +136,7 @@ class CreateCollateralOrder(object):
     def borrow_amount(self, borrow_amount):
         """Sets the borrow_amount of this CreateCollateralOrder.
 
-        借款数量  # noqa: E501
+        Borrowing amount  # noqa: E501
 
         :param borrow_amount: The borrow_amount of this CreateCollateralOrder.  # noqa: E501
         :type: str
@@ -150,7 +150,7 @@ class CreateCollateralOrder(object):
     def borrow_currency(self):
         """Gets the borrow_currency of this CreateCollateralOrder.  # noqa: E501
 
-        借款币种  # noqa: E501
+        Borrowed currency  # noqa: E501
 
         :return: The borrow_currency of this CreateCollateralOrder.  # noqa: E501
         :rtype: str
@@ -161,7 +161,7 @@ class CreateCollateralOrder(object):
     def borrow_currency(self, borrow_currency):
         """Sets the borrow_currency of this CreateCollateralOrder.
 
-        借款币种  # noqa: E501
+        Borrowed currency  # noqa: E501
 
         :param borrow_currency: The borrow_currency of this CreateCollateralOrder.  # noqa: E501
         :type: str

@@ -330,10 +330,10 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
-_from = 1546905600 # int | 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间 (optional)
+_from = 1546905600 # int | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
 to = 1546935600 # int | End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time (optional)
-limit = 100 # int | 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝 (optional) (default to 100)
-interval = '5m' # str | 数据点的时间间隔，注意 1w 代表一个自然周，7d 的时间是和 Unix 初始时间对齐, 30d 代表一个自然月 (optional) (default to '5m')
+limit = 100 # int | Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
+interval = '5m' # str | Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0.  Note that 30d means 1 natual month, not 30 days (optional) (default to '5m')
 
 try:
     # Get futures candlesticks
@@ -351,10 +351,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
- **_from** | **int**| 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间 | [optional] 
+ **_from** | **int**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
  **to** | **int**| End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time | [optional] 
- **limit** | **int**| 指定数据点的数量，适用于取最近 &#x60;limit&#x60; 数量的数据，该字段与 &#x60;from&#x60;, &#x60;to&#x60; 互斥，如果指定了 &#x60;from&#x60;, &#x60;to&#x60; 中的任意字段，该字段会被拒绝 | [optional] [default to 100]
- **interval** | **str**| 数据点的时间间隔，注意 1w 代表一个自然周，7d 的时间是和 Unix 初始时间对齐, 30d 代表一个自然月 | [optional] [default to &#39;5m&#39;]
+ **limit** | **int**| Maximum recent data points to return. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
+ **interval** | **str**| Interval time between data points. Note that &#x60;1w&#x60; means natual week(Mon-Sun), while &#x60;7d&#x60; means every 7d since unix 0.  Note that 30d means 1 natual month, not 30 days | [optional] [default to &#39;5m&#39;]
 
 ### Return type
 
@@ -400,9 +400,9 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
-_from = 1546905600 # int | 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间 (optional)
+_from = 1546905600 # int | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
 to = 1546935600 # int | End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time (optional)
-limit = 100 # int | 指定数据点的数量，适用于取最近 `limit` 数量的数据，该字段与 `from`, `to` 互斥，如果指定了 `from`, `to` 中的任意字段，该字段会被拒绝 (optional) (default to 100)
+limit = 100 # int | Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
 interval = '5m' # str | Interval time between data points (optional) (default to '5m')
 
 try:
@@ -421,9 +421,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
- **_from** | **int**| 指定 K 线图的起始时间，注意时间格式为秒(s)精度的 Unix 时间戳，不指定则默认为 to - 100 * interval，即向前最多 100 个点的时间 | [optional] 
+ **_from** | **int**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
  **to** | **int**| End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time | [optional] 
- **limit** | **int**| 指定数据点的数量，适用于取最近 &#x60;limit&#x60; 数量的数据，该字段与 &#x60;from&#x60;, &#x60;to&#x60; 互斥，如果指定了 &#x60;from&#x60;, &#x60;to&#x60; 中的任意字段，该字段会被拒绝 | [optional] [default to 100]
+ **limit** | **int**| Maximum recent data points to return. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
  **interval** | **str**| Interval time between data points | [optional] [default to &#39;5m&#39;]
 
 ### Return type
@@ -994,7 +994,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
-holding = true # bool | 只返回真实持仓-true,全部返回-false (optional)
+holding = true # bool | Return only real positions - true, return all - false. (optional)
 
 try:
     # List all positions of a user
@@ -1011,7 +1011,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
- **holding** | **bool**| 只返回真实持仓-true,全部返回-false | [optional] 
+ **holding** | **bool**| Return only real positions - true, return all - false. | [optional] 
 
 ### Return type
 
@@ -2368,7 +2368,7 @@ _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
-role = 'maker' # str | 查询角色，Maker 或 Taker (optional)
+role = 'maker' # str | Query role, maker or taker. (optional)
 
 try:
     # List personal trading history by time range
@@ -2390,7 +2390,7 @@ Name | Type | Description  | Notes
  **to** | **int**| End timestamp | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
- **role** | **str**| 查询角色，Maker 或 Taker | [optional] 
+ **role** | **str**| Query role, maker or taker. | [optional] 
 
 ### Return type
 
@@ -2447,8 +2447,8 @@ limit = 100 # int | Maximum number of records to be returned in a single list (o
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
-side = 'short' # str | 方向筛选，做多(long)或做空(short) (optional)
-pnl = 'profit' # str | 盈亏判断，盈利(profit)或亏损(loss) (optional)
+side = 'short' # str | Query side.  long or shot (optional)
+pnl = 'profit' # str | Query profit or loss (optional)
 
 try:
     # List position close history
@@ -2470,8 +2470,8 @@ Name | Type | Description  | Notes
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **_from** | **int**| Start timestamp | [optional] 
  **to** | **int**| End timestamp | [optional] 
- **side** | **str**| 方向筛选，做多(long)或做空(short) | [optional] 
- **pnl** | **str**| 盈亏判断，盈利(profit)或亏损(loss) | [optional] 
+ **side** | **str**| Query side.  long or shot | [optional] 
+ **pnl** | **str**| Query profit or loss | [optional] 
 
 ### Return type
 

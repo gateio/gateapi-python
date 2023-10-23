@@ -565,9 +565,9 @@ class AccountApi(object):
         )
 
     def delete_stp_group_users(self, stp_id, request_body, **kwargs):  # noqa: E501
-        """STP用户组中删除用户  # noqa: E501
+        """Delete the user in the STP group  # noqa: E501
 
-        - 只允许创建此STP组的主账号删除STP用户组用户 - 只允许删除当前主账户下的账户，不允许跨主账户  # noqa: E501
+        - Only the main account that created this STP group is allowed to delete users from the STP user group - Deletion is limited to accounts under the current main account; cross-account deletion is not permitted  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_stp_group_users(stp_id, request_body, async_req=True)
@@ -591,9 +591,9 @@ class AccountApi(object):
         return self.delete_stp_group_users_with_http_info(stp_id, request_body, **kwargs)  # noqa: E501
 
     def delete_stp_group_users_with_http_info(self, stp_id, request_body, **kwargs):  # noqa: E501
-        """STP用户组中删除用户  # noqa: E501
+        """Delete the user in the STP group  # noqa: E501
 
-        - 只允许创建此STP组的主账号删除STP用户组用户 - 只允许删除当前主账户下的账户，不允许跨主账户  # noqa: E501
+        - Only the main account that created this STP group is allowed to delete users from the STP user group - Deletion is limited to accounts under the current main account; cross-account deletion is not permitted  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_stp_group_users_with_http_info(stp_id, request_body, async_req=True)

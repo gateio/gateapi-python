@@ -133,7 +133,7 @@ class RepayRecord(object):
     def order_id(self):
         """Gets the order_id of this RepayRecord.  # noqa: E501
 
-        订单id  # noqa: E501
+        Order ID  # noqa: E501
 
         :return: The order_id of this RepayRecord.  # noqa: E501
         :rtype: int
@@ -144,7 +144,7 @@ class RepayRecord(object):
     def order_id(self, order_id):
         """Sets the order_id of this RepayRecord.
 
-        订单id  # noqa: E501
+        Order ID  # noqa: E501
 
         :param order_id: The order_id of this RepayRecord.  # noqa: E501
         :type: int
@@ -156,7 +156,7 @@ class RepayRecord(object):
     def record_id(self):
         """Gets the record_id of this RepayRecord.  # noqa: E501
 
-        还款记录 id  # noqa: E501
+        Repayment record ID  # noqa: E501
 
         :return: The record_id of this RepayRecord.  # noqa: E501
         :rtype: int
@@ -167,7 +167,7 @@ class RepayRecord(object):
     def record_id(self, record_id):
         """Sets the record_id of this RepayRecord.
 
-        还款记录 id  # noqa: E501
+        Repayment record ID  # noqa: E501
 
         :param record_id: The record_id of this RepayRecord.  # noqa: E501
         :type: int
@@ -202,7 +202,7 @@ class RepayRecord(object):
     def borrow_currency(self):
         """Gets the borrow_currency of this RepayRecord.  # noqa: E501
 
-        借款币种  # noqa: E501
+        Borrowed currency  # noqa: E501
 
         :return: The borrow_currency of this RepayRecord.  # noqa: E501
         :rtype: str
@@ -213,7 +213,7 @@ class RepayRecord(object):
     def borrow_currency(self, borrow_currency):
         """Sets the borrow_currency of this RepayRecord.
 
-        借款币种  # noqa: E501
+        Borrowed currency  # noqa: E501
 
         :param borrow_currency: The borrow_currency of this RepayRecord.  # noqa: E501
         :type: str
@@ -225,7 +225,7 @@ class RepayRecord(object):
     def collateral_currency(self):
         """Gets the collateral_currency of this RepayRecord.  # noqa: E501
 
-        质押币种  # noqa: E501
+        Collateral  # noqa: E501
 
         :return: The collateral_currency of this RepayRecord.  # noqa: E501
         :rtype: str
@@ -236,7 +236,7 @@ class RepayRecord(object):
     def collateral_currency(self, collateral_currency):
         """Sets the collateral_currency of this RepayRecord.
 
-        质押币种  # noqa: E501
+        Collateral  # noqa: E501
 
         :param collateral_currency: The collateral_currency of this RepayRecord.  # noqa: E501
         :type: str
@@ -248,7 +248,7 @@ class RepayRecord(object):
     def init_ltv(self):
         """Gets the init_ltv of this RepayRecord.  # noqa: E501
 
-        初始质押率  # noqa: E501
+        The initial collateralization rate  # noqa: E501
 
         :return: The init_ltv of this RepayRecord.  # noqa: E501
         :rtype: str
@@ -259,7 +259,7 @@ class RepayRecord(object):
     def init_ltv(self, init_ltv):
         """Sets the init_ltv of this RepayRecord.
 
-        初始质押率  # noqa: E501
+        The initial collateralization rate  # noqa: E501
 
         :param init_ltv: The init_ltv of this RepayRecord.  # noqa: E501
         :type: str
@@ -271,7 +271,7 @@ class RepayRecord(object):
     def borrow_time(self):
         """Gets the borrow_time of this RepayRecord.  # noqa: E501
 
-        借款时间，时间戳  # noqa: E501
+        Borrowing time, timestamp  # noqa: E501
 
         :return: The borrow_time of this RepayRecord.  # noqa: E501
         :rtype: int
@@ -282,7 +282,7 @@ class RepayRecord(object):
     def borrow_time(self, borrow_time):
         """Sets the borrow_time of this RepayRecord.
 
-        借款时间，时间戳  # noqa: E501
+        Borrowing time, timestamp  # noqa: E501
 
         :param borrow_time: The borrow_time of this RepayRecord.  # noqa: E501
         :type: int
@@ -294,7 +294,7 @@ class RepayRecord(object):
     def repay_time(self):
         """Gets the repay_time of this RepayRecord.  # noqa: E501
 
-        还款时间，时间戳  # noqa: E501
+        Repayment time, timestamp  # noqa: E501
 
         :return: The repay_time of this RepayRecord.  # noqa: E501
         :rtype: int
@@ -305,7 +305,7 @@ class RepayRecord(object):
     def repay_time(self, repay_time):
         """Sets the repay_time of this RepayRecord.
 
-        还款时间，时间戳  # noqa: E501
+        Repayment time, timestamp  # noqa: E501
 
         :param repay_time: The repay_time of this RepayRecord.  # noqa: E501
         :type: int
@@ -317,7 +317,7 @@ class RepayRecord(object):
     def total_interest(self):
         """Gets the total_interest of this RepayRecord.  # noqa: E501
 
-        总计息  # noqa: E501
+        Total interest  # noqa: E501
 
         :return: The total_interest of this RepayRecord.  # noqa: E501
         :rtype: str
@@ -328,7 +328,7 @@ class RepayRecord(object):
     def total_interest(self, total_interest):
         """Sets the total_interest of this RepayRecord.
 
-        总计息  # noqa: E501
+        Total interest  # noqa: E501
 
         :param total_interest: The total_interest of this RepayRecord.  # noqa: E501
         :type: str
@@ -340,7 +340,7 @@ class RepayRecord(object):
     def before_left_principal(self):
         """Gets the before_left_principal of this RepayRecord.  # noqa: E501
 
-        还款前待还本金  # noqa: E501
+        Principal to be repaid before repayment  # noqa: E501
 
         :return: The before_left_principal of this RepayRecord.  # noqa: E501
         :rtype: str
@@ -351,7 +351,7 @@ class RepayRecord(object):
     def before_left_principal(self, before_left_principal):
         """Sets the before_left_principal of this RepayRecord.
 
-        还款前待还本金  # noqa: E501
+        Principal to be repaid before repayment  # noqa: E501
 
         :param before_left_principal: The before_left_principal of this RepayRecord.  # noqa: E501
         :type: str
@@ -363,7 +363,7 @@ class RepayRecord(object):
     def after_left_principal(self):
         """Gets the after_left_principal of this RepayRecord.  # noqa: E501
 
-        还款后待还本金  # noqa: E501
+        Principal to be repaid after repayment  # noqa: E501
 
         :return: The after_left_principal of this RepayRecord.  # noqa: E501
         :rtype: str
@@ -374,7 +374,7 @@ class RepayRecord(object):
     def after_left_principal(self, after_left_principal):
         """Sets the after_left_principal of this RepayRecord.
 
-        还款后待还本金  # noqa: E501
+        Principal to be repaid after repayment  # noqa: E501
 
         :param after_left_principal: The after_left_principal of this RepayRecord.  # noqa: E501
         :type: str
@@ -386,7 +386,7 @@ class RepayRecord(object):
     def before_left_collateral(self):
         """Gets the before_left_collateral of this RepayRecord.  # noqa: E501
 
-        还款前质押物数量  # noqa: E501
+        Collateral quantity before repayment  # noqa: E501
 
         :return: The before_left_collateral of this RepayRecord.  # noqa: E501
         :rtype: str
@@ -397,7 +397,7 @@ class RepayRecord(object):
     def before_left_collateral(self, before_left_collateral):
         """Sets the before_left_collateral of this RepayRecord.
 
-        还款前质押物数量  # noqa: E501
+        Collateral quantity before repayment  # noqa: E501
 
         :param before_left_collateral: The before_left_collateral of this RepayRecord.  # noqa: E501
         :type: str
@@ -409,7 +409,7 @@ class RepayRecord(object):
     def after_left_collateral(self):
         """Gets the after_left_collateral of this RepayRecord.  # noqa: E501
 
-        还款后质押物数量  # noqa: E501
+        Collateral quantity after repayment  # noqa: E501
 
         :return: The after_left_collateral of this RepayRecord.  # noqa: E501
         :rtype: str
@@ -420,7 +420,7 @@ class RepayRecord(object):
     def after_left_collateral(self, after_left_collateral):
         """Sets the after_left_collateral of this RepayRecord.
 
-        还款后质押物数量  # noqa: E501
+        Collateral quantity after repayment  # noqa: E501
 
         :param after_left_collateral: The after_left_collateral of this RepayRecord.  # noqa: E501
         :type: str
