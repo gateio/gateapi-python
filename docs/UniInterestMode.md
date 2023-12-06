@@ -1,6 +1,6 @@
 # UniInterestMode
 
-余币宝利息复投开关
+Lend & Earn interest reinvestment toggle
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_withdrawals**
-> list[LedgerRecord] list_withdrawals(currency=currency, _from=_from, to=to, limit=limit, offset=offset)
+> list[WithdrawalRecord] list_withdrawals(currency=currency, _from=_from, to=to, limit=limit, offset=offset)
 
 Retrieve withdrawal records
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[LedgerRecord]**](LedgerRecord.md)
+[**list[WithdrawalRecord]**](WithdrawalRecord.md)
 
 ### Authorization
 

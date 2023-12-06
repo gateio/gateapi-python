@@ -498,7 +498,7 @@ class Order(object):
     def account(self):
         """Gets the account of this Order.  # noqa: E501
 
-        Account type, spot - spot account, margin - margin account, cross_margin - cross margin account, portfolio - portfolio account  Portfolio margin account must set to `cross_margin`  # noqa: E501
+        Account types， spot - spot account, margin - margin account, unified - unified account, cross_margin - cross margin account.  Portfolio margin accounts can only be set to `cross_margin`  # noqa: E501
 
         :return: The account of this Order.  # noqa: E501
         :rtype: str
@@ -509,16 +509,11 @@ class Order(object):
     def account(self, account):
         """Sets the account of this Order.
 
-        Account type, spot - spot account, margin - margin account, cross_margin - cross margin account, portfolio - portfolio account  Portfolio margin account must set to `cross_margin`  # noqa: E501
+        Account types， spot - spot account, margin - margin account, unified - unified account, cross_margin - cross margin account.  Portfolio margin accounts can only be set to `cross_margin`  # noqa: E501
 
         :param account: The account of this Order.  # noqa: E501
         :type: str
         """
-        allowed_values = ["spot", "margin", "cross_margin", "portfolio"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and account not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `account` ({0}), must be one of {1}".format(account, allowed_values)  # noqa: E501
-            )
 
         self._account = account
 

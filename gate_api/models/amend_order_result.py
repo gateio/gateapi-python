@@ -264,7 +264,7 @@ class AmendOrderResult(object):
     def account(self):
         """Gets the account of this AmendOrderResult.  # noqa: E501
 
-        Account types， spot - spot account, margin - margin account, portfolio - portfolio margin account, cross_margin - cross margin account.Portfolio margin accounts can only be set to `cross_margin`  # noqa: E501
+        Account types， spot - spot account, margin - margin account, unified - unified account, cross_margin - cross margin account.Portfolio margin accounts can only be set to `cross_margin`  # noqa: E501
 
         :return: The account of this AmendOrderResult.  # noqa: E501
         :rtype: str
@@ -275,7 +275,7 @@ class AmendOrderResult(object):
     def account(self, account):
         """Sets the account of this AmendOrderResult.
 
-        Account types， spot - spot account, margin - margin account, portfolio - portfolio margin account, cross_margin - cross margin account.Portfolio margin accounts can only be set to `cross_margin`  # noqa: E501
+        Account types， spot - spot account, margin - margin account, unified - unified account, cross_margin - cross margin account.Portfolio margin accounts can only be set to `cross_margin`  # noqa: E501
 
         :param account: The account of this AmendOrderResult.  # noqa: E501
         :type: str

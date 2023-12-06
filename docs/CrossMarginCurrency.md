@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **user_max_borrow_amount** | **str** | Maximum borrow value allowed per user, in USDT | [optional] 
 **total_max_borrow_amount** | **str** | Maximum borrow value allowed for this currency, in USDT | [optional] 
 **price** | **str** | Price change between this currency and USDT | [optional] 
+**loanable** | **bool** | Whether currency is borrowed | [optional] 
 **status** | **int** | status  - &#x60;0&#x60; : disable  - &#x60;1&#x60; : enable | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

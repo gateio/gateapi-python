@@ -41,6 +41,7 @@ class CrossMarginCurrency(object):
         'user_max_borrow_amount': 'str',
         'total_max_borrow_amount': 'str',
         'price': 'str',
+        'loanable': 'bool',
         'status': 'int',
     }
 
@@ -53,6 +54,7 @@ class CrossMarginCurrency(object):
         'user_max_borrow_amount': 'user_max_borrow_amount',
         'total_max_borrow_amount': 'total_max_borrow_amount',
         'price': 'price',
+        'loanable': 'loanable',
         'status': 'status',
     }
 
@@ -66,10 +68,11 @@ class CrossMarginCurrency(object):
         user_max_borrow_amount=None,
         total_max_borrow_amount=None,
         price=None,
+        loanable=None,
         status=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, int, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, bool, int, Configuration) -> None
         """CrossMarginCurrency - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +86,7 @@ class CrossMarginCurrency(object):
         self._user_max_borrow_amount = None
         self._total_max_borrow_amount = None
         self._price = None
+        self._loanable = None
         self._status = None
         self.discriminator = None
 
@@ -102,6 +106,8 @@ class CrossMarginCurrency(object):
             self.total_max_borrow_amount = total_max_borrow_amount
         if price is not None:
             self.price = price
+        if loanable is not None:
+            self.loanable = loanable
         if status is not None:
             self.status = status
 
@@ -288,6 +294,29 @@ class CrossMarginCurrency(object):
         """
 
         self._price = price
+
+    @property
+    def loanable(self):
+        """Gets the loanable of this CrossMarginCurrency.  # noqa: E501
+
+        Whether currency is borrowed  # noqa: E501
+
+        :return: The loanable of this CrossMarginCurrency.  # noqa: E501
+        :rtype: bool
+        """
+        return self._loanable
+
+    @loanable.setter
+    def loanable(self, loanable):
+        """Sets the loanable of this CrossMarginCurrency.
+
+        Whether currency is borrowed  # noqa: E501
+
+        :param loanable: The loanable of this CrossMarginCurrency.  # noqa: E501
+        :type: bool
+        """
+
+        self._loanable = loanable
 
     @property
     def status(self):

@@ -39,6 +39,8 @@ class CurrencyPair(object):
         'fee': 'str',
         'min_base_amount': 'str',
         'min_quote_amount': 'str',
+        'max_base_amount': 'str',
+        'max_quote_amount': 'str',
         'amount_precision': 'int',
         'precision': 'int',
         'trade_status': 'str',
@@ -53,6 +55,8 @@ class CurrencyPair(object):
         'fee': 'fee',
         'min_base_amount': 'min_base_amount',
         'min_quote_amount': 'min_quote_amount',
+        'max_base_amount': 'max_base_amount',
+        'max_quote_amount': 'max_quote_amount',
         'amount_precision': 'amount_precision',
         'precision': 'precision',
         'trade_status': 'trade_status',
@@ -68,6 +72,8 @@ class CurrencyPair(object):
         fee=None,
         min_base_amount=None,
         min_quote_amount=None,
+        max_base_amount=None,
+        max_quote_amount=None,
         amount_precision=None,
         precision=None,
         trade_status=None,
@@ -75,7 +81,7 @@ class CurrencyPair(object):
         buy_start=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, int, int, str, int, int, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, int, int, str, int, int, Configuration) -> None
         """CurrencyPair - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +93,8 @@ class CurrencyPair(object):
         self._fee = None
         self._min_base_amount = None
         self._min_quote_amount = None
+        self._max_base_amount = None
+        self._max_quote_amount = None
         self._amount_precision = None
         self._precision = None
         self._trade_status = None
@@ -106,6 +114,10 @@ class CurrencyPair(object):
             self.min_base_amount = min_base_amount
         if min_quote_amount is not None:
             self.min_quote_amount = min_quote_amount
+        if max_base_amount is not None:
+            self.max_base_amount = max_base_amount
+        if max_quote_amount is not None:
+            self.max_quote_amount = max_quote_amount
         if amount_precision is not None:
             self.amount_precision = amount_precision
         if precision is not None:
@@ -254,6 +266,52 @@ class CurrencyPair(object):
         """
 
         self._min_quote_amount = min_quote_amount
+
+    @property
+    def max_base_amount(self):
+        """Gets the max_base_amount of this CurrencyPair.  # noqa: E501
+
+        Maximum amount of base currency to trade, `null` means no limit  # noqa: E501
+
+        :return: The max_base_amount of this CurrencyPair.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_base_amount
+
+    @max_base_amount.setter
+    def max_base_amount(self, max_base_amount):
+        """Sets the max_base_amount of this CurrencyPair.
+
+        Maximum amount of base currency to trade, `null` means no limit  # noqa: E501
+
+        :param max_base_amount: The max_base_amount of this CurrencyPair.  # noqa: E501
+        :type: str
+        """
+
+        self._max_base_amount = max_base_amount
+
+    @property
+    def max_quote_amount(self):
+        """Gets the max_quote_amount of this CurrencyPair.  # noqa: E501
+
+        Maximum amount of quote currency to trade, `null` means no limit  # noqa: E501
+
+        :return: The max_quote_amount of this CurrencyPair.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_quote_amount
+
+    @max_quote_amount.setter
+    def max_quote_amount(self, max_quote_amount):
+        """Sets the max_quote_amount of this CurrencyPair.
+
+        Maximum amount of quote currency to trade, `null` means no limit  # noqa: E501
+
+        :param max_quote_amount: The max_quote_amount of this CurrencyPair.  # noqa: E501
+        :type: str
+        """
+
+        self._max_quote_amount = max_quote_amount
 
     @property
     def amount_precision(self):

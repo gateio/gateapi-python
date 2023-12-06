@@ -36,6 +36,7 @@ class AccountDetail(object):
         'ip_whitelist': 'list[str]',
         'currency_pairs': 'list[str]',
         'user_id': 'int',
+        'tier': 'int',
         'key': 'AccountDetailKey',
     }
 
@@ -43,13 +44,14 @@ class AccountDetail(object):
         'ip_whitelist': 'ip_whitelist',
         'currency_pairs': 'currency_pairs',
         'user_id': 'user_id',
+        'tier': 'tier',
         'key': 'key',
     }
 
     def __init__(
-        self, ip_whitelist=None, currency_pairs=None, user_id=None, key=None, local_vars_configuration=None
+        self, ip_whitelist=None, currency_pairs=None, user_id=None, tier=None, key=None, local_vars_configuration=None
     ):  # noqa: E501
-        # type: (list[str], list[str], int, AccountDetailKey, Configuration) -> None
+        # type: (list[str], list[str], int, int, AccountDetailKey, Configuration) -> None
         """AccountDetail - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,6 +60,7 @@ class AccountDetail(object):
         self._ip_whitelist = None
         self._currency_pairs = None
         self._user_id = None
+        self._tier = None
         self._key = None
         self.discriminator = None
 
@@ -67,6 +70,8 @@ class AccountDetail(object):
             self.currency_pairs = currency_pairs
         if user_id is not None:
             self.user_id = user_id
+        if tier is not None:
+            self.tier = tier
         if key is not None:
             self.key = key
 
@@ -138,6 +143,29 @@ class AccountDetail(object):
         """
 
         self._user_id = user_id
+
+    @property
+    def tier(self):
+        """Gets the tier of this AccountDetail.  # noqa: E501
+
+        User VIP level  # noqa: E501
+
+        :return: The tier of this AccountDetail.  # noqa: E501
+        :rtype: int
+        """
+        return self._tier
+
+    @tier.setter
+    def tier(self, tier):
+        """Sets the tier of this AccountDetail.
+
+        User VIP level  # noqa: E501
+
+        :param tier: The tier of this AccountDetail.  # noqa: E501
+        :type: int
+        """
+
+        self._tier = tier
 
     @property
     def key(self):

@@ -87,7 +87,7 @@ class SpotPricePutOrder(object):
     def type(self):
         """Gets the type of this SpotPricePutOrder.  # noqa: E501
 
-        Order type, default to `limit`  # noqa: E501
+        Order type，default to `limit`  - limit : Limit Order - market : Market Order  # noqa: E501
 
         :return: The type of this SpotPricePutOrder.  # noqa: E501
         :rtype: str
@@ -98,11 +98,16 @@ class SpotPricePutOrder(object):
     def type(self, type):
         """Sets the type of this SpotPricePutOrder.
 
-        Order type, default to `limit`  # noqa: E501
+        Order type，default to `limit`  - limit : Limit Order - market : Market Order  # noqa: E501
 
         :param type: The type of this SpotPricePutOrder.  # noqa: E501
         :type: str
         """
+        allowed_values = ["limit", "market"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `type` ({0}), must be one of {1}".format(type, allowed_values)  # noqa: E501
+            )
 
         self._type = type
 
@@ -165,7 +170,7 @@ class SpotPricePutOrder(object):
     def amount(self):
         """Gets the amount of this SpotPricePutOrder.  # noqa: E501
 
-        Order amount  # noqa: E501
+        When `type` is limit, it refers to base currency.  For instance, `BTC_USDT` means `BTC`  When `type` is `market`, it refers to different currency according to `side`  - `side` : `buy` means quote currency, `BTC_USDT` means `USDT` - `side` : `sell` means base currency，`BTC_USDT` means `BTC`   # noqa: E501
 
         :return: The amount of this SpotPricePutOrder.  # noqa: E501
         :rtype: str
@@ -176,7 +181,7 @@ class SpotPricePutOrder(object):
     def amount(self, amount):
         """Sets the amount of this SpotPricePutOrder.
 
-        Order amount  # noqa: E501
+        When `type` is limit, it refers to base currency.  For instance, `BTC_USDT` means `BTC`  When `type` is `market`, it refers to different currency according to `side`  - `side` : `buy` means quote currency, `BTC_USDT` means `USDT` - `side` : `sell` means base currency，`BTC_USDT` means `BTC`   # noqa: E501
 
         :param amount: The amount of this SpotPricePutOrder.  # noqa: E501
         :type: str

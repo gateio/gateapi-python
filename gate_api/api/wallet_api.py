@@ -263,7 +263,7 @@ class WalletApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: list[gate_api.LedgerRecord]
+        :rtype: list[gate_api.WithdrawalRecord]
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -294,7 +294,7 @@ class WalletApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: tuple(list[gate_api.LedgerRecord], status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(list[gate_api.WithdrawalRecord], status_code(int), headers(HTTPHeaderDict))
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -365,7 +365,7 @@ class WalletApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[LedgerRecord]',  # noqa: E501
+            response_type='list[WithdrawalRecord]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

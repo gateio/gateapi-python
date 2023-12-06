@@ -14,16 +14,17 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.57.0"
+__version__ = "4.60.1"
 
 # import apis into sdk package
 from gate_api.api.earn_uni_api import EarnUniApi
 from gate_api.api.margin_uni_api import MarginUniApi
-from gate_api.api.portfolio_api import PortfolioApi
 from gate_api.api.sub_account_api import SubAccountApi
+from gate_api.api.unified_api import UnifiedApi
 from gate_api.api.account_api import AccountApi
 from gate_api.api.collateral_loan_api import CollateralLoanApi
 from gate_api.api.delivery_api import DeliveryApi
+from gate_api.api.earn_api import EarnApi
 from gate_api.api.flash_swap_api import FlashSwapApi
 from gate_api.api.futures_api import FuturesApi
 from gate_api.api.margin_api import MarginApi
@@ -85,6 +86,9 @@ from gate_api.models.delivery_candlestick import DeliveryCandlestick
 from gate_api.models.delivery_contract import DeliveryContract
 from gate_api.models.delivery_settlement import DeliverySettlement
 from gate_api.models.deposit_address import DepositAddress
+from gate_api.models.dual_get_orders import DualGetOrders
+from gate_api.models.dual_get_plans import DualGetPlans
+from gate_api.models.eth2_swap import Eth2Swap
 from gate_api.models.flash_swap_currency import FlashSwapCurrency
 from gate_api.models.flash_swap_currency_pair import FlashSwapCurrencyPair
 from gate_api.models.flash_swap_order import FlashSwapOrder
@@ -150,13 +154,7 @@ from gate_api.models.order_book import OrderBook
 from gate_api.models.order_patch import OrderPatch
 from gate_api.models.order_resp import OrderResp
 from gate_api.models.patch_uni_lend import PatchUniLend
-from gate_api.models.portfolio_account import PortfolioAccount
-from gate_api.models.portfolio_borrowable import PortfolioBorrowable
-from gate_api.models.portfolio_loan import PortfolioLoan
-from gate_api.models.portfolio_loan_record import PortfolioLoanRecord
-from gate_api.models.portfolio_margin_balance import PortfolioMarginBalance
-from gate_api.models.portfolio_mode import PortfolioMode
-from gate_api.models.portfolio_transferable import PortfolioTransferable
+from gate_api.models.place_dual_investment_order import PlaceDualInvestmentOrder
 from gate_api.models.position import Position
 from gate_api.models.position_close import PositionClose
 from gate_api.models.position_close_order import PositionCloseOrder
@@ -174,6 +172,11 @@ from gate_api.models.spot_price_trigger import SpotPriceTrigger
 from gate_api.models.spot_price_triggered_order import SpotPriceTriggeredOrder
 from gate_api.models.stp_group import StpGroup
 from gate_api.models.stp_group_user import StpGroupUser
+from gate_api.models.structured_buy import StructuredBuy
+from gate_api.models.structured_get_project_list import StructuredGetProjectList
+from gate_api.models.structured_get_project_list_request import StructuredGetProjectListRequest
+from gate_api.models.structured_order_list import StructuredOrderList
+from gate_api.models.structured_order_list_request import StructuredOrderListRequest
 from gate_api.models.sub_account import SubAccount
 from gate_api.models.sub_account_balance import SubAccountBalance
 from gate_api.models.sub_account_cross_margin_balance import SubAccountCrossMarginBalance
@@ -203,6 +206,14 @@ from gate_api.models.uni_lend_record import UniLendRecord
 from gate_api.models.uni_loan import UniLoan
 from gate_api.models.uni_loan_interest_record import UniLoanInterestRecord
 from gate_api.models.uni_loan_record import UniLoanRecord
+from gate_api.models.unified_account import UnifiedAccount
+from gate_api.models.unified_balance import UnifiedBalance
+from gate_api.models.unified_borrowable import UnifiedBorrowable
+from gate_api.models.unified_loan import UnifiedLoan
+from gate_api.models.unified_loan_record import UnifiedLoanRecord
+from gate_api.models.unified_mode import UnifiedMode
+from gate_api.models.unified_transferable import UnifiedTransferable
 from gate_api.models.user_ltv_info import UserLtvInfo
 from gate_api.models.user_total_amount import UserTotalAmount
 from gate_api.models.withdraw_status import WithdrawStatus
+from gate_api.models.withdrawal_record import WithdrawalRecord

@@ -1684,6 +1684,7 @@ class FuturesApi(object):
     def list_futures_account_book(self, settle, **kwargs):  # noqa: E501
         """Query account book  # noqa: E501
 
+        If the `contract` field is provided, it can only filter records that include this field after 2023-10-30.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_futures_account_book(settle, async_req=True)
@@ -1691,6 +1692,7 @@ class FuturesApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
+        :param str contract: Futures contract, return related data only if specified
         :param int limit: Maximum number of records to be returned in a single list
         :param int _from: Start timestamp
         :param int to: End timestamp
@@ -1712,6 +1714,7 @@ class FuturesApi(object):
     def list_futures_account_book_with_http_info(self, settle, **kwargs):  # noqa: E501
         """Query account book  # noqa: E501
 
+        If the `contract` field is provided, it can only filter records that include this field after 2023-10-30.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_futures_account_book_with_http_info(settle, async_req=True)
@@ -1719,6 +1722,7 @@ class FuturesApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
+        :param str contract: Futures contract, return related data only if specified
         :param int limit: Maximum number of records to be returned in a single list
         :param int _from: Start timestamp
         :param int to: End timestamp
@@ -1739,7 +1743,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'limit', '_from', 'to', 'type']
+        all_params = ['settle', 'contract', 'limit', '_from', 'to', 'type']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -1774,6 +1778,8 @@ class FuturesApi(object):
             path_params['settle'] = local_var_params['settle']  # noqa: E501
 
         query_params = []
+        if 'contract' in local_var_params and local_var_params['contract'] is not None:  # noqa: E501
+            query_params.append(('contract', local_var_params['contract']))  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
         if '_from' in local_var_params and local_var_params['_from'] is not None:  # noqa: E501
@@ -3056,7 +3062,7 @@ class FuturesApi(object):
     def list_futures_orders(self, settle, status, **kwargs):  # noqa: E501
         """List futures orders  # noqa: E501
 
-        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
+        - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use `GET /futures/{settle}/orders_timerange`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_futures_orders(settle, status, async_req=True)
@@ -3086,7 +3092,7 @@ class FuturesApi(object):
     def list_futures_orders_with_http_info(self, settle, status, **kwargs):  # noqa: E501
         """List futures orders  # noqa: E501
 
-        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
+        - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use `GET /futures/{settle}/orders_timerange`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_futures_orders_with_http_info(settle, status, async_req=True)
@@ -3718,7 +3724,7 @@ class FuturesApi(object):
     def get_futures_order(self, settle, order_id, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
 
-        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
+        - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.    # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_futures_order(settle, order_id, async_req=True)
@@ -3744,7 +3750,7 @@ class FuturesApi(object):
     def get_futures_order_with_http_info(self, settle, order_id, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
 
-        Zero-filled order cannot be retrieved 10 minutes after order cancellation  # noqa: E501
+        - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.    # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_futures_order_with_http_info(settle, order_id, async_req=True)
@@ -4084,6 +4090,7 @@ class FuturesApi(object):
     def get_my_trades(self, settle, **kwargs):  # noqa: E501
         """List personal trading history  # noqa: E501
 
+        By default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use `GET /futures/{settle}/my_trades_timerange`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_my_trades(settle, async_req=True)
@@ -4113,6 +4120,7 @@ class FuturesApi(object):
     def get_my_trades_with_http_info(self, settle, **kwargs):  # noqa: E501
         """List personal trading history  # noqa: E501
 
+        By default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use `GET /futures/{settle}/my_trades_timerange`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_my_trades_with_http_info(settle, async_req=True)

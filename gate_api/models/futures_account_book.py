@@ -32,14 +32,38 @@ class FuturesAccountBook(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'time': 'float', 'change': 'str', 'balance': 'str', 'type': 'str', 'text': 'str'}
+    openapi_types = {
+        'time': 'float',
+        'change': 'str',
+        'balance': 'str',
+        'type': 'str',
+        'text': 'str',
+        'contract': 'str',
+        'trade_id': 'str',
+    }
 
-    attribute_map = {'time': 'time', 'change': 'change', 'balance': 'balance', 'type': 'type', 'text': 'text'}
+    attribute_map = {
+        'time': 'time',
+        'change': 'change',
+        'balance': 'balance',
+        'type': 'type',
+        'text': 'text',
+        'contract': 'contract',
+        'trade_id': 'trade_id',
+    }
 
     def __init__(
-        self, time=None, change=None, balance=None, type=None, text=None, local_vars_configuration=None
+        self,
+        time=None,
+        change=None,
+        balance=None,
+        type=None,
+        text=None,
+        contract=None,
+        trade_id=None,
+        local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (float, str, str, str, str, Configuration) -> None
+        # type: (float, str, str, str, str, str, str, Configuration) -> None
         """FuturesAccountBook - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -50,6 +74,8 @@ class FuturesAccountBook(object):
         self._balance = None
         self._type = None
         self._text = None
+        self._contract = None
+        self._trade_id = None
         self.discriminator = None
 
         if time is not None:
@@ -62,6 +88,10 @@ class FuturesAccountBook(object):
             self.type = type
         if text is not None:
             self.text = text
+        if contract is not None:
+            self.contract = contract
+        if trade_id is not None:
+            self.trade_id = trade_id
 
     @property
     def time(self):
@@ -182,6 +212,52 @@ class FuturesAccountBook(object):
         """
 
         self._text = text
+
+    @property
+    def contract(self):
+        """Gets the contract of this FuturesAccountBook.  # noqa: E501
+
+        Futures contract, the field is only available for data after 2023-10-30.  # noqa: E501
+
+        :return: The contract of this FuturesAccountBook.  # noqa: E501
+        :rtype: str
+        """
+        return self._contract
+
+    @contract.setter
+    def contract(self, contract):
+        """Sets the contract of this FuturesAccountBook.
+
+        Futures contract, the field is only available for data after 2023-10-30.  # noqa: E501
+
+        :param contract: The contract of this FuturesAccountBook.  # noqa: E501
+        :type: str
+        """
+
+        self._contract = contract
+
+    @property
+    def trade_id(self):
+        """Gets the trade_id of this FuturesAccountBook.  # noqa: E501
+
+        trade id  # noqa: E501
+
+        :return: The trade_id of this FuturesAccountBook.  # noqa: E501
+        :rtype: str
+        """
+        return self._trade_id
+
+    @trade_id.setter
+    def trade_id(self, trade_id):
+        """Sets the trade_id of this FuturesAccountBook.
+
+        trade id  # noqa: E501
+
+        :param trade_id: The trade_id of this FuturesAccountBook.  # noqa: E501
+        :type: str
+        """
+
+        self._trade_id = trade_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

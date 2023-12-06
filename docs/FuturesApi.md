@@ -890,9 +890,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_account_book**
-> list[FuturesAccountBook] list_futures_account_book(settle, limit=limit, _from=_from, to=to, type=type)
+> list[FuturesAccountBook] list_futures_account_book(settle, contract=contract, limit=limit, _from=_from, to=to, type=type)
 
 Query account book
+
+If the `contract` field is provided, it can only filter records that include this field after 2023-10-30.
 
 ### Example
 
@@ -919,6 +921,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
@@ -926,7 +929,7 @@ type = 'dnw' # str | Changing Type: - dnw: Deposit & Withdraw - pnl: Profit & Lo
 
 try:
     # Query account book
-    api_response = api_instance.list_futures_account_book(settle, limit=limit, _from=_from, to=to, type=type)
+    api_response = api_instance.list_futures_account_book(settle, contract=contract, limit=limit, _from=_from, to=to, type=type)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -939,6 +942,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **_from** | **int**| Start timestamp | [optional] 
  **to** | **int**| End timestamp | [optional] 
@@ -1679,7 +1683,7 @@ Name | Type | Description  | Notes
 
 List futures orders
 
-Zero-filled order cannot be retrieved 10 minutes after order cancellation
+- Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use `GET /futures/{settle}/orders_timerange`.
 
 ### Example
 
@@ -2050,7 +2054,7 @@ Name | Type | Description  | Notes
 
 Get a single order
 
-Zero-filled order cannot be retrieved 10 minutes after order cancellation
+- Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
 
 ### Example
 
@@ -2260,6 +2264,8 @@ Name | Type | Description  | Notes
 > list[MyFuturesTrade] get_my_trades(settle, contract=contract, order=order, limit=limit, offset=offset, last_id=last_id)
 
 List personal trading history
+
+By default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use `GET /futures/{settle}/my_trades_timerange`.
 
 ### Example
 

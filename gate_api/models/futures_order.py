@@ -59,6 +59,7 @@ class FuturesOrder(object):
         'stp_id': 'int',
         'stp_act': 'str',
         'amend_text': 'str',
+        'biz_info': 'str',
     }
 
     attribute_map = {
@@ -88,6 +89,7 @@ class FuturesOrder(object):
         'stp_id': 'stp_id',
         'stp_act': 'stp_act',
         'amend_text': 'amend_text',
+        'biz_info': 'biz_info',
     }
 
     def __init__(
@@ -118,9 +120,10 @@ class FuturesOrder(object):
         stp_id=None,
         stp_act=None,
         amend_text=None,
+        biz_info=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, int, float, float, str, str, str, int, int, str, bool, bool, bool, bool, bool, str, int, str, str, str, str, int, str, int, str, str, Configuration) -> None
+        # type: (int, int, float, float, str, str, str, int, int, str, bool, bool, bool, bool, bool, str, int, str, str, str, str, int, str, int, str, str, str, Configuration) -> None
         """FuturesOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -152,6 +155,7 @@ class FuturesOrder(object):
         self._stp_id = None
         self._stp_act = None
         self._amend_text = None
+        self._biz_info = None
         self.discriminator = None
 
         if id is not None:
@@ -204,6 +208,8 @@ class FuturesOrder(object):
             self.stp_act = stp_act
         if amend_text is not None:
             self.amend_text = amend_text
+        if biz_info is not None:
+            self.biz_info = biz_info
 
     @property
     def id(self):
@@ -845,6 +851,29 @@ class FuturesOrder(object):
         """
 
         self._amend_text = amend_text
+
+    @property
+    def biz_info(self):
+        """Gets the biz_info of this FuturesOrder.  # noqa: E501
+
+        Additional information  # noqa: E501
+
+        :return: The biz_info of this FuturesOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._biz_info
+
+    @biz_info.setter
+    def biz_info(self, biz_info):
+        """Sets the biz_info of this FuturesOrder.
+
+        Additional information  # noqa: E501
+
+        :param biz_info: The biz_info of this FuturesOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._biz_info = biz_info
 
     def to_dict(self):
         """Returns the model properties as a dict"""

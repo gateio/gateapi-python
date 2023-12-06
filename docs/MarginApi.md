@@ -2291,7 +2291,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_cross_margin_borrowable**
-> PortfolioBorrowable get_cross_margin_borrowable(currency)
+> UnifiedBorrowable get_cross_margin_borrowable(currency)
 
 Get the max borrowable amount for a specific cross margin currency
 
@@ -2339,7 +2339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioBorrowable**](PortfolioBorrowable.md)
+[**UnifiedBorrowable**](UnifiedBorrowable.md)
 
 ### Authorization
 
