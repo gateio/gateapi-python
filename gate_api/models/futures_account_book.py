@@ -166,7 +166,7 @@ class FuturesAccountBook(object):
     def type(self):
         """Gets the type of this FuturesAccountBook.  # noqa: E501
 
-        Changing Type: - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate  # noqa: E501
+        Changing Type：  - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate - bonus_offset: bouns deduction  # noqa: E501
 
         :return: The type of this FuturesAccountBook.  # noqa: E501
         :rtype: str
@@ -177,12 +177,22 @@ class FuturesAccountBook(object):
     def type(self, type):
         """Sets the type of this FuturesAccountBook.
 
-        Changing Type: - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate  # noqa: E501
+        Changing Type：  - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate - bonus_offset: bouns deduction  # noqa: E501
 
         :param type: The type of this FuturesAccountBook.  # noqa: E501
         :type: str
         """
-        allowed_values = ["dnw", "pnl", "fee", "refr", "fund", "point_dnw", "point_fee", "point_refr"]  # noqa: E501
+        allowed_values = [
+            "dnw",
+            "pnl",
+            "fee",
+            "refr",
+            "fund",
+            "point_dnw",
+            "point_fee",
+            "point_refr",
+            "bonus_offset",
+        ]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}".format(type, allowed_values)  # noqa: E501
