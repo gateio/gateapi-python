@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_stp_group_users**
-> list[StpGroupUser] delete_stp_group_users(stp_id, request_body)
+> list[StpGroupUser] delete_stp_group_users(stp_id, user_id)
 
 Delete the user in the STP group
 
@@ -385,11 +385,11 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.AccountApi(api_client)
 stp_id = 1 # int | STP Group ID
-request_body = [[1,2,3]] # list[int] | User ID
+user_id = 1 # int | STP user ID, multiple can be separated by commas
 
 try:
     # Delete the user in the STP group
-    api_response = api_instance.delete_stp_group_users(stp_id, request_body)
+    api_response = api_instance.delete_stp_group_users(stp_id, user_id)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -402,7 +402,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **stp_id** | **int**| STP Group ID | 
- **request_body** | [**list[int]**](int.md)| User ID | 
+ **user_id** | **int**| STP user ID, multiple can be separated by commas | 
 
 ### Return type
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

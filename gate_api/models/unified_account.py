@@ -241,7 +241,7 @@ class UnifiedAccount(object):
     def total(self):
         """Gets the total of this UnifiedAccount.  # noqa: E501
 
-        The total asset value in USDT. Sum of `(available + freeze) * price`  # noqa: E501
+        The total asset value in USD, calculated as the sum of the product of `(available + freeze) * price` for all currencies.  # noqa: E501
 
         :return: The total of this UnifiedAccount.  # noqa: E501
         :rtype: str
@@ -252,7 +252,7 @@ class UnifiedAccount(object):
     def total(self, total):
         """Sets the total of this UnifiedAccount.
 
-        The total asset value in USDT. Sum of `(available + freeze) * price`  # noqa: E501
+        The total asset value in USD, calculated as the sum of the product of `(available + freeze) * price` for all currencies.  # noqa: E501
 
         :param total: The total of this UnifiedAccount.  # noqa: E501
         :type: str
@@ -264,7 +264,7 @@ class UnifiedAccount(object):
     def borrowed(self):
         """Gets the borrowed of this UnifiedAccount.  # noqa: E501
 
-        The total borrowed amount in USDT equivalent. Sum of `borrowed * price`   # noqa: E501
+        The total borrowed amount in USD, calculated as the sum of the product of `borrowed * price` for all currencies (excluding points cards).  # noqa: E501
 
         :return: The borrowed of this UnifiedAccount.  # noqa: E501
         :rtype: str
@@ -275,7 +275,7 @@ class UnifiedAccount(object):
     def borrowed(self, borrowed):
         """Sets the borrowed of this UnifiedAccount.
 
-        The total borrowed amount in USDT equivalent. Sum of `borrowed * price`   # noqa: E501
+        The total borrowed amount in USD, calculated as the sum of the product of `borrowed * price` for all currencies (excluding points cards).  # noqa: E501
 
         :param borrowed: The borrowed of this UnifiedAccount.  # noqa: E501
         :type: str

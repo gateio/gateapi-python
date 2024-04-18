@@ -674,7 +674,7 @@ class Contract(object):
     def risk_limit_base(self):
         """Gets the risk_limit_base of this Contract.  # noqa: E501
 
-        Risk limit base  # noqa: E501
+        Risk limit base,deprecated  # noqa: E501
 
         :return: The risk_limit_base of this Contract.  # noqa: E501
         :rtype: str
@@ -685,7 +685,7 @@ class Contract(object):
     def risk_limit_base(self, risk_limit_base):
         """Sets the risk_limit_base of this Contract.
 
-        Risk limit base  # noqa: E501
+        Risk limit base,deprecated  # noqa: E501
 
         :param risk_limit_base: The risk_limit_base of this Contract.  # noqa: E501
         :type: str
@@ -697,7 +697,7 @@ class Contract(object):
     def risk_limit_step(self):
         """Gets the risk_limit_step of this Contract.  # noqa: E501
 
-        Step of adjusting risk limit  # noqa: E501
+        Step of adjusting risk limit,deprecated  # noqa: E501
 
         :return: The risk_limit_step of this Contract.  # noqa: E501
         :rtype: str
@@ -708,7 +708,7 @@ class Contract(object):
     def risk_limit_step(self, risk_limit_step):
         """Sets the risk_limit_step of this Contract.
 
-        Step of adjusting risk limit  # noqa: E501
+        Step of adjusting risk limit,deprecated  # noqa: E501
 
         :param risk_limit_step: The risk_limit_step of this Contract.  # noqa: E501
         :type: str
@@ -720,7 +720,7 @@ class Contract(object):
     def risk_limit_max(self):
         """Gets the risk_limit_max of this Contract.  # noqa: E501
 
-        Maximum risk limit the contract allowed  # noqa: E501
+        Maximum risk limit the contract allowed,deprecated,It is recommended to use /futures/{settle}/risk_limit_tiers to query risk limits.  # noqa: E501
 
         :return: The risk_limit_max of this Contract.  # noqa: E501
         :rtype: str
@@ -731,7 +731,7 @@ class Contract(object):
     def risk_limit_max(self, risk_limit_max):
         """Sets the risk_limit_max of this Contract.
 
-        Maximum risk limit the contract allowed  # noqa: E501
+        Maximum risk limit the contract allowed,deprecated,It is recommended to use /futures/{settle}/risk_limit_tiers to query risk limits.  # noqa: E501
 
         :param risk_limit_max: The risk_limit_max of this Contract.  # noqa: E501
         :type: str

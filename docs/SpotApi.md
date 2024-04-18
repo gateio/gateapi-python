@@ -532,7 +532,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_fee**
-> TradeFee get_fee(currency_pair=currency_pair)
+> SpotFee get_fee(currency_pair=currency_pair)
 
 Query user trading fee rates
 
@@ -582,7 +582,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TradeFee**](TradeFee.md)
+[**SpotFee**](SpotFee.md)
 
 ### Authorization
 
@@ -1177,7 +1177,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_orders**
-> list[Order] cancel_orders(currency_pair, side=side, account=account)
+> list[Order] cancel_orders(currency_pair, side=side, account=account, action_mode=action_mode)
 
 Cancel all `open` orders in specified currency pair
 
@@ -1210,10 +1210,11 @@ api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'BTC_USDT' # str | Currency pair
 side = 'sell' # str | All bids or asks. Both included if not specified (optional)
 account = 'spot' # str | Specify account type  - classic account：Default to all account types being included   - portfolio margin account：`cross_margin` only (optional)
+action_mode = 'ACK' # str | Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) (optional)
 
 try:
     # Cancel all `open` orders in specified currency pair
-    api_response = api_instance.cancel_orders(currency_pair, side=side, account=account)
+    api_response = api_instance.cancel_orders(currency_pair, side=side, account=account, action_mode=action_mode)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1228,6 +1229,7 @@ Name | Type | Description  | Notes
  **currency_pair** | **str**| Currency pair | 
  **side** | **str**| All bids or asks. Both included if not specified | [optional] 
  **account** | **str**| Specify account type  - classic account：Default to all account types being included   - portfolio margin account：&#x60;cross_margin&#x60; only | [optional] 
+ **action_mode** | **str**| Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) | [optional] 
 
 ### Return type
 
@@ -1392,7 +1394,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_order**
-> Order cancel_order(order_id, currency_pair, account=account)
+> Order cancel_order(order_id, currency_pair, account=account, action_mode=action_mode)
 
 Cancel a single order
 
@@ -1425,10 +1427,11 @@ api_instance = gate_api.SpotApi(api_client)
 order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted.
 currency_pair = 'BTC_USDT' # str | Currency pair
 account = 'cross_margin' # str | Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only (optional)
+action_mode = 'ACK' # str | Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) (optional)
 
 try:
     # Cancel a single order
-    api_response = api_instance.cancel_order(order_id, currency_pair, account=account)
+    api_response = api_instance.cancel_order(order_id, currency_pair, account=account, action_mode=action_mode)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1443,6 +1446,7 @@ Name | Type | Description  | Notes
  **order_id** | **str**| Order ID returned, or user custom ID(i.e., &#x60;text&#x60; field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted. | 
  **currency_pair** | **str**| Currency pair | 
  **account** | **str**| Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account.  Portfolio margin account must set to &#x60;cross_margin&#x60; only | [optional] 
+ **action_mode** | **str**| Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) | [optional] 
 
 ### Return type
 
@@ -1744,7 +1748,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amend_batch_orders**
-> list[AmendOrderResult] amend_batch_orders(batch_amend_item)
+> list[BatchOrder] amend_batch_orders(batch_amend_item)
 
 Batch modification of orders
 
@@ -1794,7 +1798,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[AmendOrderResult]**](AmendOrderResult.md)
+[**list[BatchOrder]**](BatchOrder.md)
 
 ### Authorization
 

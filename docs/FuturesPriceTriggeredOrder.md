@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **finish_as** | **str** | How order is finished | [optional] [readonly] 
 **reason** | **str** | Additional remarks on how the order was finished | [optional] [readonly] 
 **order_type** | **str** | Take-profit/stop-loss types, which include:  - &#x60;close-long-order&#x60;: order take-profit/stop-loss, close long position - &#x60;close-short-order&#x60;: order take-profit/stop-loss, close short position - &#x60;close-long-position&#x60;: position take-profit/stop-loss, close long position - &#x60;close-short-position&#x60;: position take-profit/stop-loss, close short position - &#x60;plan-close-long-position&#x60;: position planned take-profit/stop-loss, close long position - &#x60;plan-close-short-position&#x60;: position planned take-profit/stop-loss, close short position  The order take-profit/stop-loss can not be passed by request. These two types are read only. | [optional] 
-**me_order_id** | **str** | Corresponding order ID of order take-profit/stop-loss. | [optional] [readonly] 
+**me_order_id** | **int** | Corresponding order ID of order take-profit/stop-loss. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

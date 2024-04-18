@@ -49,6 +49,9 @@ class Position(object):
         'maintenance_margin': 'str',
         'unrealised_pnl': 'str',
         'realised_pnl': 'str',
+        'pnl_pnl': 'str',
+        'pnl_fund': 'str',
+        'pnl_fee': 'str',
         'history_pnl': 'str',
         'last_close_pnl': 'str',
         'realised_point': 'str',
@@ -59,6 +62,7 @@ class Position(object):
         'mode': 'str',
         'cross_leverage_limit': 'str',
         'update_time': 'int',
+        'open_time': 'int',
     }
 
     attribute_map = {
@@ -78,6 +82,9 @@ class Position(object):
         'maintenance_margin': 'maintenance_margin',
         'unrealised_pnl': 'unrealised_pnl',
         'realised_pnl': 'realised_pnl',
+        'pnl_pnl': 'pnl_pnl',
+        'pnl_fund': 'pnl_fund',
+        'pnl_fee': 'pnl_fee',
         'history_pnl': 'history_pnl',
         'last_close_pnl': 'last_close_pnl',
         'realised_point': 'realised_point',
@@ -88,6 +95,7 @@ class Position(object):
         'mode': 'mode',
         'cross_leverage_limit': 'cross_leverage_limit',
         'update_time': 'update_time',
+        'open_time': 'open_time',
     }
 
     def __init__(
@@ -108,6 +116,9 @@ class Position(object):
         maintenance_margin=None,
         unrealised_pnl=None,
         realised_pnl=None,
+        pnl_pnl=None,
+        pnl_fund=None,
+        pnl_fee=None,
         history_pnl=None,
         last_close_pnl=None,
         realised_point=None,
@@ -118,9 +129,10 @@ class Position(object):
         mode=None,
         cross_leverage_limit=None,
         update_time=None,
+        open_time=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, PositionCloseOrder, str, str, int, Configuration) -> None
+        # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, PositionCloseOrder, str, str, int, int, Configuration) -> None
         """Position - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -142,6 +154,9 @@ class Position(object):
         self._maintenance_margin = None
         self._unrealised_pnl = None
         self._realised_pnl = None
+        self._pnl_pnl = None
+        self._pnl_fund = None
+        self._pnl_fee = None
         self._history_pnl = None
         self._last_close_pnl = None
         self._realised_point = None
@@ -152,6 +167,7 @@ class Position(object):
         self._mode = None
         self._cross_leverage_limit = None
         self._update_time = None
+        self._open_time = None
         self.discriminator = None
 
         if user is not None:
@@ -186,6 +202,12 @@ class Position(object):
             self.unrealised_pnl = unrealised_pnl
         if realised_pnl is not None:
             self.realised_pnl = realised_pnl
+        if pnl_pnl is not None:
+            self.pnl_pnl = pnl_pnl
+        if pnl_fund is not None:
+            self.pnl_fund = pnl_fund
+        if pnl_fee is not None:
+            self.pnl_fee = pnl_fee
         if history_pnl is not None:
             self.history_pnl = history_pnl
         if last_close_pnl is not None:
@@ -205,6 +227,8 @@ class Position(object):
             self.cross_leverage_limit = cross_leverage_limit
         if update_time is not None:
             self.update_time = update_time
+        if open_time is not None:
+            self.open_time = open_time
 
     @property
     def user(self):
@@ -575,6 +599,75 @@ class Position(object):
         self._realised_pnl = realised_pnl
 
     @property
+    def pnl_pnl(self):
+        """Gets the pnl_pnl of this Position.  # noqa: E501
+
+        Realized PNL - Position P/L  # noqa: E501
+
+        :return: The pnl_pnl of this Position.  # noqa: E501
+        :rtype: str
+        """
+        return self._pnl_pnl
+
+    @pnl_pnl.setter
+    def pnl_pnl(self, pnl_pnl):
+        """Sets the pnl_pnl of this Position.
+
+        Realized PNL - Position P/L  # noqa: E501
+
+        :param pnl_pnl: The pnl_pnl of this Position.  # noqa: E501
+        :type: str
+        """
+
+        self._pnl_pnl = pnl_pnl
+
+    @property
+    def pnl_fund(self):
+        """Gets the pnl_fund of this Position.  # noqa: E501
+
+        Realized PNL -  Funding Fees  # noqa: E501
+
+        :return: The pnl_fund of this Position.  # noqa: E501
+        :rtype: str
+        """
+        return self._pnl_fund
+
+    @pnl_fund.setter
+    def pnl_fund(self, pnl_fund):
+        """Sets the pnl_fund of this Position.
+
+        Realized PNL -  Funding Fees  # noqa: E501
+
+        :param pnl_fund: The pnl_fund of this Position.  # noqa: E501
+        :type: str
+        """
+
+        self._pnl_fund = pnl_fund
+
+    @property
+    def pnl_fee(self):
+        """Gets the pnl_fee of this Position.  # noqa: E501
+
+        Realized PNL - Transaction Fees  # noqa: E501
+
+        :return: The pnl_fee of this Position.  # noqa: E501
+        :rtype: str
+        """
+        return self._pnl_fee
+
+    @pnl_fee.setter
+    def pnl_fee(self, pnl_fee):
+        """Sets the pnl_fee of this Position.
+
+        Realized PNL - Transaction Fees  # noqa: E501
+
+        :param pnl_fee: The pnl_fee of this Position.  # noqa: E501
+        :type: str
+        """
+
+        self._pnl_fee = pnl_fee
+
+    @property
     def history_pnl(self):
         """Gets the history_pnl of this Position.  # noqa: E501
 
@@ -806,6 +899,29 @@ class Position(object):
         """
 
         self._update_time = update_time
+
+    @property
+    def open_time(self):
+        """Gets the open_time of this Position.  # noqa: E501
+
+        First Open Time  # noqa: E501
+
+        :return: The open_time of this Position.  # noqa: E501
+        :rtype: int
+        """
+        return self._open_time
+
+    @open_time.setter
+    def open_time(self, open_time):
+        """Sets the open_time of this Position.
+
+        First Open Time  # noqa: E501
+
+        :param open_time: The open_time of this Position.  # noqa: E501
+        :type: int
+        """
+
+        self._open_time = open_time
 
     def to_dict(self):
         """Returns the model properties as a dict"""

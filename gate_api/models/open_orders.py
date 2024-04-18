@@ -82,7 +82,7 @@ class OpenOrders(object):
     def total(self):
         """Gets the total of this OpenOrders.  # noqa: E501
 
-        Total open orders in this currency pair  # noqa: E501
+        The total number of pending orders for this trading pair on the current page  # noqa: E501
 
         :return: The total of this OpenOrders.  # noqa: E501
         :rtype: int
@@ -93,7 +93,7 @@ class OpenOrders(object):
     def total(self, total):
         """Sets the total of this OpenOrders.
 
-        Total open orders in this currency pair  # noqa: E501
+        The total number of pending orders for this trading pair on the current page  # noqa: E501
 
         :param total: The total of this OpenOrders.  # noqa: E501
         :type: int

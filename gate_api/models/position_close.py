@@ -32,14 +32,53 @@ class PositionClose(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'time': 'float', 'contract': 'str', 'side': 'str', 'pnl': 'str', 'text': 'str'}
+    openapi_types = {
+        'time': 'float',
+        'contract': 'str',
+        'side': 'str',
+        'pnl': 'str',
+        'pnl_pnl': 'str',
+        'pnl_fund': 'str',
+        'pnl_fee': 'str',
+        'text': 'str',
+        'max_size': 'str',
+        'first_open_time': 'int',
+        'long_price': 'str',
+        'short_price': 'str',
+    }
 
-    attribute_map = {'time': 'time', 'contract': 'contract', 'side': 'side', 'pnl': 'pnl', 'text': 'text'}
+    attribute_map = {
+        'time': 'time',
+        'contract': 'contract',
+        'side': 'side',
+        'pnl': 'pnl',
+        'pnl_pnl': 'pnl_pnl',
+        'pnl_fund': 'pnl_fund',
+        'pnl_fee': 'pnl_fee',
+        'text': 'text',
+        'max_size': 'max_size',
+        'first_open_time': 'first_open_time',
+        'long_price': 'long_price',
+        'short_price': 'short_price',
+    }
 
     def __init__(
-        self, time=None, contract=None, side=None, pnl=None, text=None, local_vars_configuration=None
+        self,
+        time=None,
+        contract=None,
+        side=None,
+        pnl=None,
+        pnl_pnl=None,
+        pnl_fund=None,
+        pnl_fee=None,
+        text=None,
+        max_size=None,
+        first_open_time=None,
+        long_price=None,
+        short_price=None,
+        local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (float, str, str, str, str, Configuration) -> None
+        # type: (float, str, str, str, str, str, str, str, str, int, str, str, Configuration) -> None
         """PositionClose - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -49,7 +88,14 @@ class PositionClose(object):
         self._contract = None
         self._side = None
         self._pnl = None
+        self._pnl_pnl = None
+        self._pnl_fund = None
+        self._pnl_fee = None
         self._text = None
+        self._max_size = None
+        self._first_open_time = None
+        self._long_price = None
+        self._short_price = None
         self.discriminator = None
 
         if time is not None:
@@ -60,8 +106,22 @@ class PositionClose(object):
             self.side = side
         if pnl is not None:
             self.pnl = pnl
+        if pnl_pnl is not None:
+            self.pnl_pnl = pnl_pnl
+        if pnl_fund is not None:
+            self.pnl_fund = pnl_fund
+        if pnl_fee is not None:
+            self.pnl_fee = pnl_fee
         if text is not None:
             self.text = text
+        if max_size is not None:
+            self.max_size = max_size
+        if first_open_time is not None:
+            self.first_open_time = first_open_time
+        if long_price is not None:
+            self.long_price = long_price
+        if short_price is not None:
+            self.short_price = short_price
 
     @property
     def time(self):
@@ -161,6 +221,75 @@ class PositionClose(object):
         self._pnl = pnl
 
     @property
+    def pnl_pnl(self):
+        """Gets the pnl_pnl of this PositionClose.  # noqa: E501
+
+        PNL - Position P/L  # noqa: E501
+
+        :return: The pnl_pnl of this PositionClose.  # noqa: E501
+        :rtype: str
+        """
+        return self._pnl_pnl
+
+    @pnl_pnl.setter
+    def pnl_pnl(self, pnl_pnl):
+        """Sets the pnl_pnl of this PositionClose.
+
+        PNL - Position P/L  # noqa: E501
+
+        :param pnl_pnl: The pnl_pnl of this PositionClose.  # noqa: E501
+        :type: str
+        """
+
+        self._pnl_pnl = pnl_pnl
+
+    @property
+    def pnl_fund(self):
+        """Gets the pnl_fund of this PositionClose.  # noqa: E501
+
+        PNL - Funding Fees  # noqa: E501
+
+        :return: The pnl_fund of this PositionClose.  # noqa: E501
+        :rtype: str
+        """
+        return self._pnl_fund
+
+    @pnl_fund.setter
+    def pnl_fund(self, pnl_fund):
+        """Sets the pnl_fund of this PositionClose.
+
+        PNL - Funding Fees  # noqa: E501
+
+        :param pnl_fund: The pnl_fund of this PositionClose.  # noqa: E501
+        :type: str
+        """
+
+        self._pnl_fund = pnl_fund
+
+    @property
+    def pnl_fee(self):
+        """Gets the pnl_fee of this PositionClose.  # noqa: E501
+
+        PNL - Transaction Fees  # noqa: E501
+
+        :return: The pnl_fee of this PositionClose.  # noqa: E501
+        :rtype: str
+        """
+        return self._pnl_fee
+
+    @pnl_fee.setter
+    def pnl_fee(self, pnl_fee):
+        """Sets the pnl_fee of this PositionClose.
+
+        PNL - Transaction Fees  # noqa: E501
+
+        :param pnl_fee: The pnl_fee of this PositionClose.  # noqa: E501
+        :type: str
+        """
+
+        self._pnl_fee = pnl_fee
+
+    @property
     def text(self):
         """Gets the text of this PositionClose.  # noqa: E501
 
@@ -182,6 +311,98 @@ class PositionClose(object):
         """
 
         self._text = text
+
+    @property
+    def max_size(self):
+        """Gets the max_size of this PositionClose.  # noqa: E501
+
+        Max Trade Size  # noqa: E501
+
+        :return: The max_size of this PositionClose.  # noqa: E501
+        :rtype: str
+        """
+        return self._max_size
+
+    @max_size.setter
+    def max_size(self, max_size):
+        """Sets the max_size of this PositionClose.
+
+        Max Trade Size  # noqa: E501
+
+        :param max_size: The max_size of this PositionClose.  # noqa: E501
+        :type: str
+        """
+
+        self._max_size = max_size
+
+    @property
+    def first_open_time(self):
+        """Gets the first_open_time of this PositionClose.  # noqa: E501
+
+        First Open Time  # noqa: E501
+
+        :return: The first_open_time of this PositionClose.  # noqa: E501
+        :rtype: int
+        """
+        return self._first_open_time
+
+    @first_open_time.setter
+    def first_open_time(self, first_open_time):
+        """Sets the first_open_time of this PositionClose.
+
+        First Open Time  # noqa: E501
+
+        :param first_open_time: The first_open_time of this PositionClose.  # noqa: E501
+        :type: int
+        """
+
+        self._first_open_time = first_open_time
+
+    @property
+    def long_price(self):
+        """Gets the long_price of this PositionClose.  # noqa: E501
+
+        When 'side' is 'long,' it indicates the opening average price; when 'side' is 'short,' it indicates the closing average price.  # noqa: E501
+
+        :return: The long_price of this PositionClose.  # noqa: E501
+        :rtype: str
+        """
+        return self._long_price
+
+    @long_price.setter
+    def long_price(self, long_price):
+        """Sets the long_price of this PositionClose.
+
+        When 'side' is 'long,' it indicates the opening average price; when 'side' is 'short,' it indicates the closing average price.  # noqa: E501
+
+        :param long_price: The long_price of this PositionClose.  # noqa: E501
+        :type: str
+        """
+
+        self._long_price = long_price
+
+    @property
+    def short_price(self):
+        """Gets the short_price of this PositionClose.  # noqa: E501
+
+        When 'side' is 'long,' it indicates the opening average price; when 'side' is 'short,' it indicates the closing average price  # noqa: E501
+
+        :return: The short_price of this PositionClose.  # noqa: E501
+        :rtype: str
+        """
+        return self._short_price
+
+    @short_price.setter
+    def short_price(self, short_price):
+        """Sets the short_price of this PositionClose.
+
+        When 'side' is 'long,' it indicates the opening average price; when 'side' is 'short,' it indicates the closing average price  # noqa: E501
+
+        :param short_price: The short_price of this PositionClose.  # noqa: E501
+        :type: str
+        """
+
+        self._short_price = short_price
 
     def to_dict(self):
         """Returns the model properties as a dict"""

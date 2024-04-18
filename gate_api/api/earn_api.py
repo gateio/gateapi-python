@@ -432,117 +432,19 @@ class EarnApi(object):
             collection_formats=collection_formats,
         )
 
-    def cancel_dual_order(self, order_id, **kwargs):  # noqa: E501
-        """Cancel Dual Investment order  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cancel_dual_order(order_id, async_req=True)
-        >>> result = thread.get()
-
-        :param bool async_req: execute request asynchronously
-        :param int order_id: Order ID (required)
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :rtype: None
-        :return: If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        return self.cancel_dual_order_with_http_info(order_id, **kwargs)  # noqa: E501
-
-    def cancel_dual_order_with_http_info(self, order_id, **kwargs):  # noqa: E501
-        """Cancel Dual Investment order  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cancel_dual_order_with_http_info(order_id, async_req=True)
-        >>> result = thread.get()
-
-        :param bool async_req: execute request asynchronously
-        :param int order_id: Order ID (required)
-        :param _return_http_data_only: response data without head status code
-                                       and headers
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :rtype: None
-        :return: If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        local_var_params = locals()
-
-        all_params = ['order_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
-
-        for k, v in six.iteritems(local_var_params['kwargs']):
-            if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_dual_order" % k)
-            local_var_params[k] = v
-        del local_var_params['kwargs']
-        # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and (
-            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `order_id` when calling `cancel_dual_order`"
-            )  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'order_id' in local_var_params:
-            path_params['order_id'] = local_var_params['order_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = ['apiv4']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/earn/dual/orders/{order_id}',
-            'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
-
-    def list_structured_products(self, structured_get_project_list_request, **kwargs):  # noqa: E501
+    def list_structured_products(self, status, **kwargs):  # noqa: E501
         """Structured Product List  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_structured_products(structured_get_project_list_request, async_req=True)
+        >>> thread = api.list_structured_products(status, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param StructuredGetProjectListRequest structured_get_project_list_request: (required)
+        :param str status: Status (default: all)  `in_process`-processing  `will_begin`-unstarted  `wait_settlement`-unsettled  `done`-finish (required)
+        :param str type: Product Type (default all)  `SharkFin2.0`-SharkFin  `BullishSharkFin`-BullishSharkFin  `BearishSharkFin`-BearishSharkFin `DoubleNoTouch`-DoubleNoTouch `RangeAccrual`-RangeAccrual `SnowBall`-SnowBall
+        :param int page: Page number
+        :param int limit: Maximum number of records to be returned in a single list
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -555,18 +457,21 @@ class EarnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_structured_products_with_http_info(structured_get_project_list_request, **kwargs)  # noqa: E501
+        return self.list_structured_products_with_http_info(status, **kwargs)  # noqa: E501
 
-    def list_structured_products_with_http_info(self, structured_get_project_list_request, **kwargs):  # noqa: E501
+    def list_structured_products_with_http_info(self, status, **kwargs):  # noqa: E501
         """Structured Product List  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_structured_products_with_http_info(structured_get_project_list_request, async_req=True)
+        >>> thread = api.list_structured_products_with_http_info(status, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param StructuredGetProjectListRequest structured_get_project_list_request: (required)
+        :param str status: Status (default: all)  `in_process`-processing  `will_begin`-unstarted  `wait_settlement`-unsettled  `done`-finish (required)
+        :param str type: Product Type (default all)  `SharkFin2.0`-SharkFin  `BullishSharkFin`-BullishSharkFin  `BearishSharkFin`-BearishSharkFin `DoubleNoTouch`-DoubleNoTouch `RangeAccrual`-RangeAccrual `SnowBall`-SnowBall
+        :param int page: Page number
+        :param int limit: Maximum number of records to be returned in a single list
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -583,7 +488,7 @@ class EarnApi(object):
 
         local_var_params = locals()
 
-        all_params = ['structured_get_project_list_request']
+        all_params = ['status', 'type', 'page', 'limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -591,20 +496,45 @@ class EarnApi(object):
                 raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_structured_products" % k)
             local_var_params[k] = v
         del local_var_params['kwargs']
-        # verify the required parameter 'structured_get_project_list_request' is set
+        # verify the required parameter 'status' is set
         if self.api_client.client_side_validation and (
-            'structured_get_project_list_request' not in local_var_params
-            or local_var_params['structured_get_project_list_request'] is None  # noqa: E501
+            'status' not in local_var_params or local_var_params['status'] is None  # noqa: E501
         ):  # noqa: E501
             raise ApiValueError(
-                "Missing the required parameter `structured_get_project_list_request` when calling `list_structured_products`"
+                "Missing the required parameter `status` when calling `list_structured_products`"
             )  # noqa: E501
 
+        if (
+            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `page` when calling `list_structured_products`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_structured_products`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_structured_products`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
+        if 'type' in local_var_params and local_var_params['type'] is not None:  # noqa: E501
+            query_params.append(('type', local_var_params['type']))  # noqa: E501
+        if 'status' in local_var_params and local_var_params['status'] is not None:  # noqa: E501
+            query_params.append(('status', local_var_params['status']))  # noqa: E501
+        if 'page' in local_var_params and local_var_params['page'] is not None:  # noqa: E501
+            query_params.append(('page', local_var_params['page']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
 
         header_params = {}
 
@@ -612,15 +542,8 @@ class EarnApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'structured_get_project_list_request' in local_var_params:
-            body_params = local_var_params['structured_get_project_list_request']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
@@ -643,16 +566,19 @@ class EarnApi(object):
             collection_formats=collection_formats,
         )
 
-    def list_structured_orders(self, structured_order_list_request, **kwargs):  # noqa: E501
+    def list_structured_orders(self, **kwargs):  # noqa: E501
         """Structured Product Order List  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_structured_orders(structured_order_list_request, async_req=True)
+        >>> thread = api.list_structured_orders(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param StructuredOrderListRequest structured_order_list_request: (required)
+        :param int _from: Start timestamp
+        :param int to: End timestamp
+        :param int page: Page number
+        :param int limit: Maximum number of records to be returned in a single list
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -665,18 +591,21 @@ class EarnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_structured_orders_with_http_info(structured_order_list_request, **kwargs)  # noqa: E501
+        return self.list_structured_orders_with_http_info(**kwargs)  # noqa: E501
 
-    def list_structured_orders_with_http_info(self, structured_order_list_request, **kwargs):  # noqa: E501
+    def list_structured_orders_with_http_info(self, **kwargs):  # noqa: E501
         """Structured Product Order List  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_structured_orders_with_http_info(structured_order_list_request, async_req=True)
+        >>> thread = api.list_structured_orders_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param StructuredOrderListRequest structured_order_list_request: (required)
+        :param int _from: Start timestamp
+        :param int to: End timestamp
+        :param int page: Page number
+        :param int limit: Maximum number of records to be returned in a single list
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -693,7 +622,7 @@ class EarnApi(object):
 
         local_var_params = locals()
 
-        all_params = ['structured_order_list_request']
+        all_params = ['_from', 'to', 'page', 'limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -701,20 +630,38 @@ class EarnApi(object):
                 raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_structured_orders" % k)
             local_var_params[k] = v
         del local_var_params['kwargs']
-        # verify the required parameter 'structured_order_list_request' is set
-        if self.api_client.client_side_validation and (
-            'structured_order_list_request' not in local_var_params
-            or local_var_params['structured_order_list_request'] is None  # noqa: E501
+
+        if (
+            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
         ):  # noqa: E501
             raise ApiValueError(
-                "Missing the required parameter `structured_order_list_request` when calling `list_structured_orders`"
+                "Invalid value for parameter `page` when calling `list_structured_orders`, must be a value greater than or equal to `1`"
             )  # noqa: E501
-
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_structured_orders`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_structured_orders`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
+        if '_from' in local_var_params and local_var_params['_from'] is not None:  # noqa: E501
+            query_params.append(('from', local_var_params['_from']))  # noqa: E501
+        if 'to' in local_var_params and local_var_params['to'] is not None:  # noqa: E501
+            query_params.append(('to', local_var_params['to']))  # noqa: E501
+        if 'page' in local_var_params and local_var_params['page'] is not None:  # noqa: E501
+            query_params.append(('page', local_var_params['page']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
 
         header_params = {}
 
@@ -722,15 +669,8 @@ class EarnApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'structured_order_list_request' in local_var_params:
-            body_params = local_var_params['structured_order_list_request']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501

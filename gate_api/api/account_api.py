@@ -564,18 +564,18 @@ class AccountApi(object):
             collection_formats=collection_formats,
         )
 
-    def delete_stp_group_users(self, stp_id, request_body, **kwargs):  # noqa: E501
+    def delete_stp_group_users(self, stp_id, user_id, **kwargs):  # noqa: E501
         """Delete the user in the STP group  # noqa: E501
 
         - Only the main account that created this STP group is allowed to delete users from the STP user group - Deletion is limited to accounts under the current main account; cross-account deletion is not permitted  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_stp_group_users(stp_id, request_body, async_req=True)
+        >>> thread = api.delete_stp_group_users(stp_id, user_id, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
         :param int stp_id: STP Group ID (required)
-        :param list[int] request_body: User ID (required)
+        :param int user_id: STP user ID, multiple can be separated by commas (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -588,20 +588,20 @@ class AccountApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.delete_stp_group_users_with_http_info(stp_id, request_body, **kwargs)  # noqa: E501
+        return self.delete_stp_group_users_with_http_info(stp_id, user_id, **kwargs)  # noqa: E501
 
-    def delete_stp_group_users_with_http_info(self, stp_id, request_body, **kwargs):  # noqa: E501
+    def delete_stp_group_users_with_http_info(self, stp_id, user_id, **kwargs):  # noqa: E501
         """Delete the user in the STP group  # noqa: E501
 
         - Only the main account that created this STP group is allowed to delete users from the STP user group - Deletion is limited to accounts under the current main account; cross-account deletion is not permitted  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_stp_group_users_with_http_info(stp_id, request_body, async_req=True)
+        >>> thread = api.delete_stp_group_users_with_http_info(stp_id, user_id, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
         :param int stp_id: STP Group ID (required)
-        :param list[int] request_body: User ID (required)
+        :param int user_id: STP user ID, multiple can be separated by commas (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -618,7 +618,7 @@ class AccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['stp_id', 'request_body']
+        all_params = ['stp_id', 'user_id']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -633,12 +633,12 @@ class AccountApi(object):
             raise ApiValueError(
                 "Missing the required parameter `stp_id` when calling `delete_stp_group_users`"
             )  # noqa: E501
-        # verify the required parameter 'request_body' is set
+        # verify the required parameter 'user_id' is set
         if self.api_client.client_side_validation and (
-            'request_body' not in local_var_params or local_var_params['request_body'] is None  # noqa: E501
+            'user_id' not in local_var_params or local_var_params['user_id'] is None  # noqa: E501
         ):  # noqa: E501
             raise ApiValueError(
-                "Missing the required parameter `request_body` when calling `delete_stp_group_users`"
+                "Missing the required parameter `user_id` when calling `delete_stp_group_users`"
             )  # noqa: E501
 
         collection_formats = {}
@@ -648,6 +648,8 @@ class AccountApi(object):
             path_params['stp_id'] = local_var_params['stp_id']  # noqa: E501
 
         query_params = []
+        if 'user_id' in local_var_params and local_var_params['user_id'] is not None:  # noqa: E501
+            query_params.append(('user_id', local_var_params['user_id']))  # noqa: E501
 
         header_params = {}
 
@@ -655,15 +657,8 @@ class AccountApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'request_body' in local_var_params:
-            body_params = local_var_params['request_body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501

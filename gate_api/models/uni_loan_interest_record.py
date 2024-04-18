@@ -38,6 +38,7 @@ class UniLoanInterestRecord(object):
         'actual_rate': 'str',
         'interest': 'str',
         'status': 'int',
+        'type': 'str',
         'create_time': 'int',
     }
 
@@ -47,6 +48,7 @@ class UniLoanInterestRecord(object):
         'actual_rate': 'actual_rate',
         'interest': 'interest',
         'status': 'status',
+        'type': 'type',
         'create_time': 'create_time',
     }
 
@@ -57,10 +59,11 @@ class UniLoanInterestRecord(object):
         actual_rate=None,
         interest=None,
         status=None,
+        type=None,
         create_time=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, int, int, Configuration) -> None
+        # type: (str, str, str, str, int, str, int, Configuration) -> None
         """UniLoanInterestRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +74,7 @@ class UniLoanInterestRecord(object):
         self._actual_rate = None
         self._interest = None
         self._status = None
+        self._type = None
         self._create_time = None
         self.discriminator = None
 
@@ -84,6 +88,8 @@ class UniLoanInterestRecord(object):
             self.interest = interest
         if status is not None:
             self.status = status
+        if type is not None:
+            self.type = type
         if create_time is not None:
             self.create_time = create_time
 
@@ -201,6 +207,29 @@ class UniLoanInterestRecord(object):
         """
 
         self._status = status
+
+    @property
+    def type(self):
+        """Gets the type of this UniLoanInterestRecord.  # noqa: E501
+
+        Type, platform - platform，margin - margin  # noqa: E501
+
+        :return: The type of this UniLoanInterestRecord.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this UniLoanInterestRecord.
+
+        Type, platform - platform，margin - margin  # noqa: E501
+
+        :param type: The type of this UniLoanInterestRecord.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
 
     @property
     def create_time(self):

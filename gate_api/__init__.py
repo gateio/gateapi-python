@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.60.2"
+__version__ = "4.70.0"
 
 # import apis into sdk package
 from gate_api.api.earn_uni_api import EarnUniApi
@@ -28,6 +28,7 @@ from gate_api.api.earn_api import EarnApi
 from gate_api.api.flash_swap_api import FlashSwapApi
 from gate_api.api.futures_api import FuturesApi
 from gate_api.api.margin_api import MarginApi
+from gate_api.api.multi_collateral_loan_api import MultiCollateralLoanApi
 from gate_api.api.options_api import OptionsApi
 from gate_api.api.rebate_api import RebateApi
 from gate_api.api.spot_api import SpotApi
@@ -51,23 +52,35 @@ from gate_api.models.agency_commission import AgencyCommission
 from gate_api.models.agency_commission_history import AgencyCommissionHistory
 from gate_api.models.agency_transaction import AgencyTransaction
 from gate_api.models.agency_transaction_history import AgencyTransactionHistory
-from gate_api.models.amend_order_result import AmendOrderResult
-from gate_api.models.api_v4_key_perm import ApiV4KeyPerm
 from gate_api.models.auto_repay_setting import AutoRepaySetting
 from gate_api.models.batch_amend_item import BatchAmendItem
 from gate_api.models.batch_futures_order import BatchFuturesOrder
 from gate_api.models.batch_order import BatchOrder
+from gate_api.models.borrow_currency_info import BorrowCurrencyInfo
+from gate_api.models.broker_commission import BrokerCommission
+from gate_api.models.broker_commission1 import BrokerCommission1
+from gate_api.models.broker_transaction import BrokerTransaction
+from gate_api.models.broker_transaction1 import BrokerTransaction1
 from gate_api.models.cancel_batch_order import CancelBatchOrder
 from gate_api.models.cancel_order_result import CancelOrderResult
+from gate_api.models.collateral_adjust import CollateralAdjust
+from gate_api.models.collateral_adjust_res import CollateralAdjustRes
 from gate_api.models.collateral_align import CollateralAlign
+from gate_api.models.collateral_currency import CollateralCurrency
+from gate_api.models.collateral_currency_info import CollateralCurrencyInfo
+from gate_api.models.collateral_currency_res import CollateralCurrencyRes
+from gate_api.models.collateral_fix_rate import CollateralFixRate
 from gate_api.models.collateral_loan_currency import CollateralLoanCurrency
+from gate_api.models.collateral_ltv import CollateralLtv
 from gate_api.models.collateral_order import CollateralOrder
 from gate_api.models.collateral_record import CollateralRecord
 from gate_api.models.contract import Contract
 from gate_api.models.contract_stat import ContractStat
+from gate_api.models.convert_small_balance import ConvertSmallBalance
 from gate_api.models.countdown_cancel_all_futures_task import CountdownCancelAllFuturesTask
 from gate_api.models.countdown_cancel_all_spot_task import CountdownCancelAllSpotTask
 from gate_api.models.create_collateral_order import CreateCollateralOrder
+from gate_api.models.create_multi_collateral_order import CreateMultiCollateralOrder
 from gate_api.models.create_uni_lend import CreateUniLend
 from gate_api.models.create_uni_loan import CreateUniLoan
 from gate_api.models.cross_margin_account import CrossMarginAccount
@@ -82,6 +95,7 @@ from gate_api.models.cross_margin_transferable import CrossMarginTransferable
 from gate_api.models.currency import Currency
 from gate_api.models.currency_chain import CurrencyChain
 from gate_api.models.currency_pair import CurrencyPair
+from gate_api.models.currency_quota import CurrencyQuota
 from gate_api.models.delivery_candlestick import DeliveryCandlestick
 from gate_api.models.delivery_contract import DeliveryContract
 from gate_api.models.delivery_settlement import DeliverySettlement
@@ -98,6 +112,7 @@ from gate_api.models.flash_swap_preview_request import FlashSwapPreviewRequest
 from gate_api.models.funding_account import FundingAccount
 from gate_api.models.funding_book_item import FundingBookItem
 from gate_api.models.funding_rate_record import FundingRateRecord
+from gate_api.models.future_cancel_order_result import FutureCancelOrderResult
 from gate_api.models.futures_account import FuturesAccount
 from gate_api.models.futures_account_book import FuturesAccountBook
 from gate_api.models.futures_account_history import FuturesAccountHistory
@@ -106,6 +121,7 @@ from gate_api.models.futures_candlestick import FuturesCandlestick
 from gate_api.models.futures_fee import FuturesFee
 from gate_api.models.futures_index_constituents import FuturesIndexConstituents
 from gate_api.models.futures_initial_order import FuturesInitialOrder
+from gate_api.models.futures_limit_risk_tiers import FuturesLimitRiskTiers
 from gate_api.models.futures_liq_order import FuturesLiqOrder
 from gate_api.models.futures_liquidate import FuturesLiquidate
 from gate_api.models.futures_order import FuturesOrder
@@ -132,6 +148,15 @@ from gate_api.models.margin_currency_pair import MarginCurrencyPair
 from gate_api.models.margin_transferable import MarginTransferable
 from gate_api.models.max_uni_borrowable import MaxUniBorrowable
 from gate_api.models.multi_chain_address_item import MultiChainAddressItem
+from gate_api.models.multi_collateral_currency import MultiCollateralCurrency
+from gate_api.models.multi_collateral_item import MultiCollateralItem
+from gate_api.models.multi_collateral_order import MultiCollateralOrder
+from gate_api.models.multi_collateral_record import MultiCollateralRecord
+from gate_api.models.multi_collateral_record_currency import MultiCollateralRecordCurrency
+from gate_api.models.multi_loan_item import MultiLoanItem
+from gate_api.models.multi_loan_repay_item import MultiLoanRepayItem
+from gate_api.models.multi_repay_record import MultiRepayRecord
+from gate_api.models.multi_repay_resp import MultiRepayResp
 from gate_api.models.my_futures_trade import MyFuturesTrade
 from gate_api.models.my_futures_trade_time_range import MyFuturesTradeTimeRange
 from gate_api.models.open_orders import OpenOrders
@@ -158,12 +183,20 @@ from gate_api.models.place_dual_investment_order import PlaceDualInvestmentOrder
 from gate_api.models.position import Position
 from gate_api.models.position_close import PositionClose
 from gate_api.models.position_close_order import PositionCloseOrder
+from gate_api.models.repay_currency_res import RepayCurrencyRes
 from gate_api.models.repay_loan import RepayLoan
+from gate_api.models.repay_multi_loan import RepayMultiLoan
 from gate_api.models.repay_record import RepayRecord
+from gate_api.models.repay_record_currency import RepayRecordCurrency
+from gate_api.models.repay_record_left_interest import RepayRecordLeftInterest
+from gate_api.models.repay_record_repaid_currency import RepayRecordRepaidCurrency
+from gate_api.models.repay_record_total_interest import RepayRecordTotalInterest
 from gate_api.models.repay_request import RepayRequest
 from gate_api.models.repay_resp import RepayResp
 from gate_api.models.repayment import Repayment
 from gate_api.models.saved_address import SavedAddress
+from gate_api.models.small_balance import SmallBalance
+from gate_api.models.small_balance_history import SmallBalanceHistory
 from gate_api.models.spot_account import SpotAccount
 from gate_api.models.spot_account_book import SpotAccountBook
 from gate_api.models.spot_fee import SpotFee
@@ -174,14 +207,13 @@ from gate_api.models.stp_group import StpGroup
 from gate_api.models.stp_group_user import StpGroupUser
 from gate_api.models.structured_buy import StructuredBuy
 from gate_api.models.structured_get_project_list import StructuredGetProjectList
-from gate_api.models.structured_get_project_list_request import StructuredGetProjectListRequest
 from gate_api.models.structured_order_list import StructuredOrderList
-from gate_api.models.structured_order_list_request import StructuredOrderListRequest
 from gate_api.models.sub_account import SubAccount
 from gate_api.models.sub_account_balance import SubAccountBalance
 from gate_api.models.sub_account_cross_margin_balance import SubAccountCrossMarginBalance
 from gate_api.models.sub_account_futures_balance import SubAccountFuturesBalance
 from gate_api.models.sub_account_key import SubAccountKey
+from gate_api.models.sub_account_key_perms import SubAccountKeyPerms
 from gate_api.models.sub_account_margin_balance import SubAccountMarginBalance
 from gate_api.models.sub_account_to_sub_account import SubAccountToSubAccount
 from gate_api.models.sub_account_transfer import SubAccountTransfer
@@ -209,6 +241,8 @@ from gate_api.models.uni_loan_record import UniLoanRecord
 from gate_api.models.unified_account import UnifiedAccount
 from gate_api.models.unified_balance import UnifiedBalance
 from gate_api.models.unified_borrowable import UnifiedBorrowable
+from gate_api.models.unified_discount import UnifiedDiscount
+from gate_api.models.unified_discount_tiers import UnifiedDiscountTiers
 from gate_api.models.unified_loan import UnifiedLoan
 from gate_api.models.unified_loan_record import UnifiedLoanRecord
 from gate_api.models.unified_mode import UnifiedMode

@@ -44,7 +44,7 @@ class FuturesPriceTriggeredOrder(object):
         'finish_as': 'str',
         'reason': 'str',
         'order_type': 'str',
-        'me_order_id': 'str',
+        'me_order_id': 'int',
     }
 
     attribute_map = {
@@ -78,7 +78,7 @@ class FuturesPriceTriggeredOrder(object):
         me_order_id=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (FuturesInitialOrder, FuturesPriceTrigger, int, int, float, float, int, str, str, str, str, str, Configuration) -> None
+        # type: (FuturesInitialOrder, FuturesPriceTrigger, int, int, float, float, int, str, str, str, str, int, Configuration) -> None
         """FuturesPriceTriggeredOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -393,7 +393,7 @@ class FuturesPriceTriggeredOrder(object):
         Corresponding order ID of order take-profit/stop-loss.  # noqa: E501
 
         :return: The me_order_id of this FuturesPriceTriggeredOrder.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._me_order_id
 
@@ -404,7 +404,7 @@ class FuturesPriceTriggeredOrder(object):
         Corresponding order ID of order take-profit/stop-loss.  # noqa: E501
 
         :param me_order_id: The me_order_id of this FuturesPriceTriggeredOrder.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._me_order_id = me_order_id

@@ -173,13 +173,6 @@ class SubAccountTransfer(object):
         """
         if self.local_vars_configuration.client_side_validation and direction is None:  # noqa: E501
             raise ValueError("Invalid value for `direction`, must not be `None`")  # noqa: E501
-        allowed_values = ["to", "from"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and direction not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `direction` ({0}), must be one of {1}".format(  # noqa: E501
-                    direction, allowed_values
-                )
-            )
 
         self._direction = direction
 
@@ -320,15 +313,6 @@ class SubAccountTransfer(object):
         :param sub_account_type: The sub_account_type of this SubAccountTransfer.  # noqa: E501
         :type: str
         """
-        allowed_values = ["spot", "futures", "cross_margin", "delivery"]  # noqa: E501
-        if (
-            self.local_vars_configuration.client_side_validation and sub_account_type not in allowed_values
-        ):  # noqa: E501
-            raise ValueError(
-                "Invalid value for `sub_account_type` ({0}), must be one of {1}".format(  # noqa: E501
-                    sub_account_type, allowed_values
-                )
-            )
 
         self._sub_account_type = sub_account_type
 

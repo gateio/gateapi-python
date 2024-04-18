@@ -32,14 +32,20 @@ class LiquidateOrder(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'text': 'str', 'currency_pair': 'str', 'amount': 'str', 'price': 'str'}
+    openapi_types = {'text': 'str', 'currency_pair': 'str', 'amount': 'str', 'price': 'str', 'action_mode': 'str'}
 
-    attribute_map = {'text': 'text', 'currency_pair': 'currency_pair', 'amount': 'amount', 'price': 'price'}
+    attribute_map = {
+        'text': 'text',
+        'currency_pair': 'currency_pair',
+        'amount': 'amount',
+        'price': 'price',
+        'action_mode': 'action_mode',
+    }
 
     def __init__(
-        self, text=None, currency_pair=None, amount=None, price=None, local_vars_configuration=None
+        self, text=None, currency_pair=None, amount=None, price=None, action_mode=None, local_vars_configuration=None
     ):  # noqa: E501
-        # type: (str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, Configuration) -> None
         """LiquidateOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -49,6 +55,7 @@ class LiquidateOrder(object):
         self._currency_pair = None
         self._amount = None
         self._price = None
+        self._action_mode = None
         self.discriminator = None
 
         if text is not None:
@@ -56,6 +63,8 @@ class LiquidateOrder(object):
         self.currency_pair = currency_pair
         self.amount = amount
         self.price = price
+        if action_mode is not None:
+            self.action_mode = action_mode
 
     @property
     def text(self):
@@ -154,6 +163,29 @@ class LiquidateOrder(object):
             raise ValueError("Invalid value for `price`, must not be `None`")  # noqa: E501
 
         self._price = price
+
+    @property
+    def action_mode(self):
+        """Gets the action_mode of this LiquidateOrder.  # noqa: E501
+
+        Processing Mode:  Different fields are returned when placing an order based on action_mode. This field is only valid during the request, and it is not included in the response result ACK: Asynchronous mode, only returns key order fields RESULT: No clearing information FULL: Full mode (default)  # noqa: E501
+
+        :return: The action_mode of this LiquidateOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._action_mode
+
+    @action_mode.setter
+    def action_mode(self, action_mode):
+        """Sets the action_mode of this LiquidateOrder.
+
+        Processing Mode:  Different fields are returned when placing an order based on action_mode. This field is only valid during the request, and it is not included in the response result ACK: Asynchronous mode, only returns key order fields RESULT: No clearing information FULL: Full mode (default)  # noqa: E501
+
+        :param action_mode: The action_mode of this LiquidateOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._action_mode = action_mode
 
     def to_dict(self):
         """Returns the model properties as a dict"""

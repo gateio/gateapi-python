@@ -43,6 +43,8 @@ class FuturesApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
+        :param int limit: Maximum number of records to be returned in a single list
+        :param int offset: List offset, starting from 0
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -67,6 +69,8 @@ class FuturesApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
+        :param int limit: Maximum number of records to be returned in a single list
+        :param int offset: List offset, starting from 0
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -83,7 +87,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle']
+        all_params = ['settle', 'limit', 'offset']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -99,6 +103,24 @@ class FuturesApi(object):
                 "Missing the required parameter `settle` when calling `list_futures_contracts`"
             )  # noqa: E501
 
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_futures_contracts`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_futures_contracts`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `offset` when calling `list_futures_contracts`, must be a value greater than or equal to `0`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -106,6 +128,10 @@ class FuturesApi(object):
             path_params['settle'] = local_var_params['settle']  # noqa: E501
 
         query_params = []
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
+            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
 
         header_params = {}
 
@@ -1577,6 +1603,121 @@ class FuturesApi(object):
             collection_formats=collection_formats,
         )
 
+    def list_risk_limit_tiers(self, settle, contract, **kwargs):  # noqa: E501
+        """List risk limit tiers  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_risk_limit_tiers(settle, contract, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str settle: Settle currency (required)
+        :param str contract: Futures contract (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: list[gate_api.FuturesLimitRiskTiers]
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.list_risk_limit_tiers_with_http_info(settle, contract, **kwargs)  # noqa: E501
+
+    def list_risk_limit_tiers_with_http_info(self, settle, contract, **kwargs):  # noqa: E501
+        """List risk limit tiers  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_risk_limit_tiers_with_http_info(settle, contract, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str settle: Settle currency (required)
+        :param str contract: Futures contract (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(list[gate_api.FuturesLimitRiskTiers], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['settle', 'contract']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_risk_limit_tiers" % k)
+            local_var_params[k] = v
+        del local_var_params['kwargs']
+        # verify the required parameter 'settle' is set
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `list_risk_limit_tiers`"
+            )  # noqa: E501
+        # verify the required parameter 'contract' is set
+        if self.api_client.client_side_validation and (
+            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `contract` when calling `list_risk_limit_tiers`"
+            )  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'settle' in local_var_params:
+            path_params['settle'] = local_var_params['settle']  # noqa: E501
+
+        query_params = []
+        if 'contract' in local_var_params and local_var_params['contract'] is not None:  # noqa: E501
+            query_params.append(('contract', local_var_params['contract']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/futures/{settle}/risk_limit_tiers',
+            'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[FuturesLimitRiskTiers]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+        )
+
     def list_futures_accounts(self, settle, **kwargs):  # noqa: E501
         """Query futures account  # noqa: E501
 
@@ -1694,6 +1835,7 @@ class FuturesApi(object):
         :param str settle: Settle currency (required)
         :param str contract: Futures contract, return related data only if specified
         :param int limit: Maximum number of records to be returned in a single list
+        :param int offset: List offset, starting from 0
         :param int _from: Start timestamp
         :param int to: End timestamp
         :param str type: Changing Type：  - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate - bonus_offset: bouns deduction
@@ -1724,6 +1866,7 @@ class FuturesApi(object):
         :param str settle: Settle currency (required)
         :param str contract: Futures contract, return related data only if specified
         :param int limit: Maximum number of records to be returned in a single list
+        :param int offset: List offset, starting from 0
         :param int _from: Start timestamp
         :param int to: End timestamp
         :param str type: Changing Type：  - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate - bonus_offset: bouns deduction
@@ -1743,7 +1886,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'limit', '_from', 'to', 'type']
+        all_params = ['settle', 'contract', 'limit', 'offset', '_from', 'to', 'type']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -1771,6 +1914,12 @@ class FuturesApi(object):
             raise ApiValueError(
                 "Invalid value for parameter `limit` when calling `list_futures_account_book`, must be a value greater than or equal to `1`"
             )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `offset` when calling `list_futures_account_book`, must be a value greater than or equal to `0`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1782,6 +1931,8 @@ class FuturesApi(object):
             query_params.append(('contract', local_var_params['contract']))  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
+            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
         if '_from' in local_var_params and local_var_params['_from'] is not None:  # noqa: E501
             query_params.append(('from', local_var_params['_from']))  # noqa: E501
         if 'to' in local_var_params and local_var_params['to'] is not None:  # noqa: E501
@@ -1830,6 +1981,8 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param bool holding: Return only real positions - true, return all - false.
+        :param int limit: Maximum number of records to be returned in a single list
+        :param int offset: List offset, starting from 0
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1855,6 +2008,8 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param bool holding: Return only real positions - true, return all - false.
+        :param int limit: Maximum number of records to be returned in a single list
+        :param int offset: List offset, starting from 0
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1871,7 +2026,7 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'holding']
+        all_params = ['settle', 'holding', 'limit', 'offset']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -1885,6 +2040,24 @@ class FuturesApi(object):
         ):  # noqa: E501
             raise ApiValueError("Missing the required parameter `settle` when calling `list_positions`")  # noqa: E501
 
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_positions`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_positions`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `offset` when calling `list_positions`, must be a value greater than or equal to `0`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1894,6 +2067,10 @@ class FuturesApi(object):
         query_params = []
         if 'holding' in local_var_params and local_var_params['holding'] is not None:  # noqa: E501
             query_params.append(('holding', local_var_params['holding']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
+            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
 
         header_params = {}
 
@@ -5008,6 +5185,130 @@ class FuturesApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='dict(str, FuturesFee)',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats,
+        )
+
+    def cancel_batch_future_orders(self, settle, request_body, **kwargs):  # noqa: E501
+        """Cancel a batch of orders with an ID list  # noqa: E501
+
+        Multiple distinct order ID list can be specified。Each request can cancel a maximum of 20 records.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.cancel_batch_future_orders(settle, request_body, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str settle: Settle currency (required)
+        :param list[str] request_body: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: list[gate_api.FutureCancelOrderResult]
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.cancel_batch_future_orders_with_http_info(settle, request_body, **kwargs)  # noqa: E501
+
+    def cancel_batch_future_orders_with_http_info(self, settle, request_body, **kwargs):  # noqa: E501
+        """Cancel a batch of orders with an ID list  # noqa: E501
+
+        Multiple distinct order ID list can be specified。Each request can cancel a maximum of 20 records.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.cancel_batch_future_orders_with_http_info(settle, request_body, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str settle: Settle currency (required)
+        :param list[str] request_body: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(list[gate_api.FutureCancelOrderResult], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['settle', 'request_body']
+        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'" " to method cancel_batch_future_orders" % k
+                )
+            local_var_params[k] = v
+        del local_var_params['kwargs']
+        # verify the required parameter 'settle' is set
+        if self.api_client.client_side_validation and (
+            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `settle` when calling `cancel_batch_future_orders`"
+            )  # noqa: E501
+        # verify the required parameter 'request_body' is set
+        if self.api_client.client_side_validation and (
+            'request_body' not in local_var_params or local_var_params['request_body'] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `request_body` when calling `cancel_batch_future_orders`"
+            )  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'settle' in local_var_params:
+            path_params['settle'] = local_var_params['settle']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request_body' in local_var_params:
+            body_params = local_var_params['request_body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json']
+        )  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiv4']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/futures/{settle}/batch_cancel_orders',
+            'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[FutureCancelOrderResult]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

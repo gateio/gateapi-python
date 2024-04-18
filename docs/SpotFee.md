@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **loan_fee** | **str** | Loan fee rate of margin lending | [optional] 
 **point_type** | **str** | Point type. 0 - Initial version. 1 - new version since 202009 | [optional] 
 **currency_pair** | **str** | Currency pair | [optional] 
+**debit_fee** | **int** | Deduction types for rates, 1 - GT deduction, 2 - Point card deduction, 3 - VIP rates | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

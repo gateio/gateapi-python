@@ -20,6 +20,9 @@ Method | HTTP request | Description
 [**list_saved_address**](WalletApi.md#list_saved_address) | **GET** /wallet/saved_address | Query saved address
 [**get_trade_fee**](WalletApi.md#get_trade_fee) | **GET** /wallet/fee | Retrieve personal trading fee
 [**get_total_balance**](WalletApi.md#get_total_balance) | **GET** /wallet/total_balance | Retrieve user&#39;s total balances
+[**list_small_balance**](WalletApi.md#list_small_balance) | **GET** /wallet/small_balance | List small balance
+[**convert_small_balance**](WalletApi.md#convert_small_balance) | **POST** /wallet/small_balance | Convert small balance
+[**list_small_balance_history**](WalletApi.md#list_small_balance_history) | **GET** /wallet/small_balance_history | List small balance history
 
 
 # **list_currency_chains**
@@ -258,7 +261,7 @@ api_instance = gate_api.WalletApi(api_client)
 currency = 'BTC' # str | Filter by currency. Return all currency records if not specified (optional)
 _from = 1602120000 # int | Time range beginning, default to 7 days before current time (optional)
 to = 1602123600 # int | Time range ending, default to current time (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+limit = 100 # int | The maximum number of entries returned in the list is limited to 500 transactions. (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
@@ -278,7 +281,7 @@ Name | Type | Description  | Notes
  **currency** | **str**| Filter by currency. Return all currency records if not specified | [optional] 
  **_from** | **int**| Time range beginning, default to 7 days before current time | [optional] 
  **to** | **int**| Time range ending, default to current time | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
+ **limit** | **int**| The maximum number of entries returned in the list is limited to 500 transactions. | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
@@ -1126,6 +1129,206 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Request is valid and is successfully responded |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_small_balance**
+> SmallBalance list_small_balance()
+
+List small balance
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
+
+try:
+    # List small balance
+    api_response = api_instance.list_small_balance()
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling WalletApi->list_small_balance: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SmallBalance**](SmallBalance.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **convert_small_balance**
+> convert_small_balance(convert_small_balance)
+
+Convert small balance
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
+convert_small_balance = gate_api.ConvertSmallBalance() # ConvertSmallBalance | 
+
+try:
+    # Convert small balance
+    api_instance.convert_small_balance(convert_small_balance)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling WalletApi->convert_small_balance: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **convert_small_balance** | [**ConvertSmallBalance**](ConvertSmallBalance.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_small_balance_history**
+> SmallBalanceHistory list_small_balance_history(currency=currency, page=page, limit=limit)
+
+List small balance history
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
+currency = 'currency_example' # str | Currency (optional)
+page = 1 # int | Page number (optional) (default to 1)
+limit = 100 # int | Maximum response items.  Default: 100, minimum: 1, Maximum: 100 (optional) (default to 100)
+
+try:
+    # List small balance history
+    api_response = api_instance.list_small_balance_history(currency=currency, page=page, limit=limit)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling WalletApi->list_small_balance_history: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency** | **str**| Currency | [optional] 
+ **page** | **int**| Page number | [optional] [default to 1]
+ **limit** | **int**| Maximum response items.  Default: 100, minimum: 1, Maximum: 100 | [optional] [default to 100]
+
+### Return type
+
+[**SmallBalanceHistory**](SmallBalanceHistory.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

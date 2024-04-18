@@ -39,6 +39,7 @@ class SpotPricePutOrder(object):
         'amount': 'str',
         'account': 'str',
         'time_in_force': 'str',
+        'text': 'str',
     }
 
     attribute_map = {
@@ -48,6 +49,7 @@ class SpotPricePutOrder(object):
         'amount': 'amount',
         'account': 'account',
         'time_in_force': 'time_in_force',
+        'text': 'text',
     }
 
     def __init__(
@@ -58,9 +60,10 @@ class SpotPricePutOrder(object):
         amount=None,
         account='normal',
         time_in_force='gtc',
+        text=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, Configuration) -> None
         """SpotPricePutOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +75,7 @@ class SpotPricePutOrder(object):
         self._amount = None
         self._account = None
         self._time_in_force = None
+        self._text = None
         self.discriminator = None
 
         if type is not None:
@@ -82,6 +86,8 @@ class SpotPricePutOrder(object):
         self.account = account
         if time_in_force is not None:
             self.time_in_force = time_in_force
+        if text is not None:
+            self.text = text
 
     @property
     def type(self):
@@ -250,6 +256,29 @@ class SpotPricePutOrder(object):
             )
 
         self._time_in_force = time_in_force
+
+    @property
+    def text(self):
+        """Gets the text of this SpotPricePutOrder.  # noqa: E501
+
+        The source of the order, including: - web: web - api: api - app: app  # noqa: E501
+
+        :return: The text of this SpotPricePutOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """Sets the text of this SpotPricePutOrder.
+
+        The source of the order, including: - web: web - api: api - app: app  # noqa: E501
+
+        :param text: The text of this SpotPricePutOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._text = text
 
     def to_dict(self):
         """Returns the model properties as a dict"""

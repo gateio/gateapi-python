@@ -164,7 +164,7 @@ class SubAccountToSubAccount(object):
     def sub_account_from_type(self):
         """Gets the sub_account_from_type of this SubAccountToSubAccount.  # noqa: E501
 
-        Transfer from the account.  `spot` - spot account, `futures` - perpetual contract account, `cross_margin` - cross margin account  # noqa: E501
+        The sub-account's outgoing trading account, spot - spot account, futures - perpetual contract account, delivery - delivery contract account, cross_margin - cross-margin account.\"  # noqa: E501
 
         :return: The sub_account_from_type of this SubAccountToSubAccount.  # noqa: E501
         :rtype: str
@@ -175,22 +175,13 @@ class SubAccountToSubAccount(object):
     def sub_account_from_type(self, sub_account_from_type):
         """Sets the sub_account_from_type of this SubAccountToSubAccount.
 
-        Transfer from the account.  `spot` - spot account, `futures` - perpetual contract account, `cross_margin` - cross margin account  # noqa: E501
+        The sub-account's outgoing trading account, spot - spot account, futures - perpetual contract account, delivery - delivery contract account, cross_margin - cross-margin account.\"  # noqa: E501
 
         :param sub_account_from_type: The sub_account_from_type of this SubAccountToSubAccount.  # noqa: E501
         :type: str
         """
         if self.local_vars_configuration.client_side_validation and sub_account_from_type is None:  # noqa: E501
             raise ValueError("Invalid value for `sub_account_from_type`, must not be `None`")  # noqa: E501
-        allowed_values = ["spot", "futures", "cross_margin"]  # noqa: E501
-        if (
-            self.local_vars_configuration.client_side_validation and sub_account_from_type not in allowed_values
-        ):  # noqa: E501
-            raise ValueError(
-                "Invalid value for `sub_account_from_type` ({0}), must be one of {1}".format(  # noqa: E501
-                    sub_account_from_type, allowed_values
-                )
-            )
 
         self._sub_account_from_type = sub_account_from_type
 
@@ -223,7 +214,7 @@ class SubAccountToSubAccount(object):
     def sub_account_to_type(self):
         """Gets the sub_account_to_type of this SubAccountToSubAccount.  # noqa: E501
 
-        Transfer to the account.  `spot` - spot account, `futures` - perpetual contract account, `cross_margin` - cross margin account  # noqa: E501
+        The sub-account's incoming trading account, spot - spot account, futures - perpetual contract account, delivery - delivery contract account, cross_margin - cross-margin account.  # noqa: E501
 
         :return: The sub_account_to_type of this SubAccountToSubAccount.  # noqa: E501
         :rtype: str
@@ -234,22 +225,13 @@ class SubAccountToSubAccount(object):
     def sub_account_to_type(self, sub_account_to_type):
         """Sets the sub_account_to_type of this SubAccountToSubAccount.
 
-        Transfer to the account.  `spot` - spot account, `futures` - perpetual contract account, `cross_margin` - cross margin account  # noqa: E501
+        The sub-account's incoming trading account, spot - spot account, futures - perpetual contract account, delivery - delivery contract account, cross_margin - cross-margin account.  # noqa: E501
 
         :param sub_account_to_type: The sub_account_to_type of this SubAccountToSubAccount.  # noqa: E501
         :type: str
         """
         if self.local_vars_configuration.client_side_validation and sub_account_to_type is None:  # noqa: E501
             raise ValueError("Invalid value for `sub_account_to_type`, must not be `None`")  # noqa: E501
-        allowed_values = ["spot", "futures", "cross_margin"]  # noqa: E501
-        if (
-            self.local_vars_configuration.client_side_validation and sub_account_to_type not in allowed_values
-        ):  # noqa: E501
-            raise ValueError(
-                "Invalid value for `sub_account_to_type` ({0}), must be one of {1}".format(  # noqa: E501
-                    sub_account_to_type, allowed_values
-                )
-            )
 
         self._sub_account_to_type = sub_account_to_type
 

@@ -32,12 +32,19 @@ class AccountBalance(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'amount': 'str', 'currency': 'str'}
+    openapi_types = {'amount': 'str', 'currency': 'str', 'unrealised_pnl': 'str', 'borrowed': 'str'}
 
-    attribute_map = {'amount': 'amount', 'currency': 'currency'}
+    attribute_map = {
+        'amount': 'amount',
+        'currency': 'currency',
+        'unrealised_pnl': 'unrealised_pnl',
+        'borrowed': 'borrowed',
+    }
 
-    def __init__(self, amount=None, currency=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, Configuration) -> None
+    def __init__(
+        self, amount=None, currency=None, unrealised_pnl=None, borrowed=None, local_vars_configuration=None
+    ):  # noqa: E501
+        # type: (str, str, str, str, Configuration) -> None
         """AccountBalance - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -45,12 +52,18 @@ class AccountBalance(object):
 
         self._amount = None
         self._currency = None
+        self._unrealised_pnl = None
+        self._borrowed = None
         self.discriminator = None
 
         if amount is not None:
             self.amount = amount
         if currency is not None:
             self.currency = currency
+        if unrealised_pnl is not None:
+            self.unrealised_pnl = unrealised_pnl
+        if borrowed is not None:
+            self.borrowed = borrowed
 
     @property
     def amount(self):
@@ -102,6 +115,52 @@ class AccountBalance(object):
             )
 
         self._currency = currency
+
+    @property
+    def unrealised_pnl(self):
+        """Gets the unrealised_pnl of this AccountBalance.  # noqa: E501
+
+        Unrealised_pnl, this field will only appear in futures, options, delivery, and total accounts  # noqa: E501
+
+        :return: The unrealised_pnl of this AccountBalance.  # noqa: E501
+        :rtype: str
+        """
+        return self._unrealised_pnl
+
+    @unrealised_pnl.setter
+    def unrealised_pnl(self, unrealised_pnl):
+        """Sets the unrealised_pnl of this AccountBalance.
+
+        Unrealised_pnl, this field will only appear in futures, options, delivery, and total accounts  # noqa: E501
+
+        :param unrealised_pnl: The unrealised_pnl of this AccountBalance.  # noqa: E501
+        :type: str
+        """
+
+        self._unrealised_pnl = unrealised_pnl
+
+    @property
+    def borrowed(self):
+        """Gets the borrowed of this AccountBalance.  # noqa: E501
+
+        Borrowed，this field will only appear in margin and cross_margin accounts  # noqa: E501
+
+        :return: The borrowed of this AccountBalance.  # noqa: E501
+        :rtype: str
+        """
+        return self._borrowed
+
+    @borrowed.setter
+    def borrowed(self, borrowed):
+        """Sets the borrowed of this AccountBalance.
+
+        Borrowed，this field will only appear in margin and cross_margin accounts  # noqa: E501
+
+        :param borrowed: The borrowed of this AccountBalance.  # noqa: E501
+        :type: str
+        """
+
+        self._borrowed = borrowed
 
     def to_dict(self):
         """Returns the model properties as a dict"""

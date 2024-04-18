@@ -36,6 +36,7 @@ class UniLoan(object):
         'currency': 'str',
         'currency_pair': 'str',
         'amount': 'str',
+        'type': 'str',
         'create_time': 'int',
         'update_time': 'int',
     }
@@ -44,6 +45,7 @@ class UniLoan(object):
         'currency': 'currency',
         'currency_pair': 'currency_pair',
         'amount': 'amount',
+        'type': 'type',
         'create_time': 'create_time',
         'update_time': 'update_time',
     }
@@ -53,11 +55,12 @@ class UniLoan(object):
         currency=None,
         currency_pair=None,
         amount=None,
+        type=None,
         create_time=None,
         update_time=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, int, int, Configuration) -> None
+        # type: (str, str, str, str, int, int, Configuration) -> None
         """UniLoan - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +69,7 @@ class UniLoan(object):
         self._currency = None
         self._currency_pair = None
         self._amount = None
+        self._type = None
         self._create_time = None
         self._update_time = None
         self.discriminator = None
@@ -76,6 +80,8 @@ class UniLoan(object):
             self.currency_pair = currency_pair
         if amount is not None:
             self.amount = amount
+        if type is not None:
+            self.type = type
         if create_time is not None:
             self.create_time = create_time
         if update_time is not None:
@@ -149,6 +155,29 @@ class UniLoan(object):
         """
 
         self._amount = amount
+
+    @property
+    def type(self):
+        """Gets the type of this UniLoan.  # noqa: E501
+
+        Loan type, platform - platform, margin - margin  # noqa: E501
+
+        :return: The type of this UniLoan.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this UniLoan.
+
+        Loan type, platform - platform, margin - margin  # noqa: E501
+
+        :param type: The type of this UniLoan.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
 
     @property
     def create_time(self):

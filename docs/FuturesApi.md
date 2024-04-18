@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**list_contract_stats**](FuturesApi.md#list_contract_stats) | **GET** /futures/{settle}/contract_stats | Futures stats
 [**get_index_constituents**](FuturesApi.md#get_index_constituents) | **GET** /futures/{settle}/index_constituents/{index} | Get index constituents
 [**list_liquidated_orders**](FuturesApi.md#list_liquidated_orders) | **GET** /futures/{settle}/liq_orders | Retrieve liquidation history
+[**list_risk_limit_tiers**](FuturesApi.md#list_risk_limit_tiers) | **GET** /futures/{settle}/risk_limit_tiers | List risk limit tiers
 [**list_futures_accounts**](FuturesApi.md#list_futures_accounts) | **GET** /futures/{settle}/accounts | Query futures account
 [**list_futures_account_book**](FuturesApi.md#list_futures_account_book) | **GET** /futures/{settle}/account_book | Query account book
 [**list_positions**](FuturesApi.md#list_positions) | **GET** /futures/{settle}/positions | List all positions of a user
@@ -43,6 +44,7 @@ Method | HTTP request | Description
 [**list_auto_deleverages**](FuturesApi.md#list_auto_deleverages) | **GET** /futures/{settle}/auto_deleverages | List Auto-Deleveraging History
 [**countdown_cancel_all_futures**](FuturesApi.md#countdown_cancel_all_futures) | **POST** /futures/{settle}/countdown_cancel_all | Countdown cancel orders
 [**get_futures_fee**](FuturesApi.md#get_futures_fee) | **GET** /futures/{settle}/fee | Query user trading fee rates
+[**cancel_batch_future_orders**](FuturesApi.md#cancel_batch_future_orders) | **POST** /futures/{settle}/batch_cancel_orders | Cancel a batch of orders with an ID list
 [**list_price_triggered_orders**](FuturesApi.md#list_price_triggered_orders) | **GET** /futures/{settle}/price_orders | List all auto orders
 [**create_price_triggered_order**](FuturesApi.md#create_price_triggered_order) | **POST** /futures/{settle}/price_orders | Create a price-triggered order
 [**cancel_price_triggered_order_list**](FuturesApi.md#cancel_price_triggered_order_list) | **DELETE** /futures/{settle}/price_orders | Cancel all open orders
@@ -51,7 +53,7 @@ Method | HTTP request | Description
 
 
 # **list_futures_contracts**
-> list[Contract] list_futures_contracts(settle)
+> list[Contract] list_futures_contracts(settle, limit=limit, offset=offset)
 
 List all futures contracts
 
@@ -71,10 +73,12 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
     # List all futures contracts
-    api_response = api_instance.list_futures_contracts(settle)
+    api_response = api_instance.list_futures_contracts(settle, limit=limit, offset=offset)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -87,6 +91,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
 
@@ -822,6 +828,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_risk_limit_tiers**
+> list[FuturesLimitRiskTiers] list_risk_limit_tiers(settle, contract)
+
+List risk limit tiers
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
+
+try:
+    # List risk limit tiers
+    api_response = api_instance.list_risk_limit_tiers(settle, contract)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling FuturesApi->list_risk_limit_tiers: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
+
+### Return type
+
+[**list[FuturesLimitRiskTiers]**](FuturesLimitRiskTiers.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_futures_accounts**
 > FuturesAccount list_futures_accounts(settle)
 
@@ -890,7 +956,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_account_book**
-> list[FuturesAccountBook] list_futures_account_book(settle, contract=contract, limit=limit, _from=_from, to=to, type=type)
+> list[FuturesAccountBook] list_futures_account_book(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, type=type)
 
 Query account book
 
@@ -923,13 +989,14 @@ api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
 type = 'dnw' # str | Changing Type：  - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate - bonus_offset: bouns deduction (optional)
 
 try:
     # Query account book
-    api_response = api_instance.list_futures_account_book(settle, contract=contract, limit=limit, _from=_from, to=to, type=type)
+    api_response = api_instance.list_futures_account_book(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, type=type)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -944,6 +1011,7 @@ Name | Type | Description  | Notes
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract, return related data only if specified | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **_from** | **int**| Start timestamp | [optional] 
  **to** | **int**| End timestamp | [optional] 
  **type** | **str**| Changing Type：  - dnw: Deposit &amp; Withdraw - pnl: Profit &amp; Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit &amp; Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate - bonus_offset: bouns deduction | [optional] 
@@ -969,7 +1037,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_positions**
-> list[Position] list_positions(settle, holding=holding)
+> list[Position] list_positions(settle, holding=holding, limit=limit, offset=offset)
 
 List all positions of a user
 
@@ -999,10 +1067,12 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 holding = true # bool | Return only real positions - true, return all - false. (optional)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
     # List all positions of a user
-    api_response = api_instance.list_positions(settle, holding=holding)
+    api_response = api_instance.list_positions(settle, holding=holding, limit=limit, offset=offset)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1016,6 +1086,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **holding** | **bool**| Return only real positions - true, return all - false. | [optional] 
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
 
@@ -2782,6 +2854,77 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **cancel_batch_future_orders**
+> list[FutureCancelOrderResult] cancel_batch_future_orders(settle, request_body)
+
+Cancel a batch of orders with an ID list
+
+Multiple distinct order ID list can be specified。Each request can cancel a maximum of 20 records.
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'usdt' # str | Settle currency
+request_body = ['request_body_example'] # list[str] | 
+
+try:
+    # Cancel a batch of orders with an ID list
+    api_response = api_instance.cancel_batch_future_orders(settle, request_body)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling FuturesApi->cancel_batch_future_orders: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | 
+ **request_body** | [**list[str]**](str.md)|  | 
+
+### Return type
+
+[**list[FutureCancelOrderResult]**](FutureCancelOrderResult.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Order cancellation operation completed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

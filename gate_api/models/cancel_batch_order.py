@@ -32,12 +32,14 @@ class CancelBatchOrder(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'currency_pair': 'str', 'id': 'str', 'account': 'str'}
+    openapi_types = {'currency_pair': 'str', 'id': 'str', 'account': 'str', 'action_mode': 'str'}
 
-    attribute_map = {'currency_pair': 'currency_pair', 'id': 'id', 'account': 'account'}
+    attribute_map = {'currency_pair': 'currency_pair', 'id': 'id', 'account': 'account', 'action_mode': 'action_mode'}
 
-    def __init__(self, currency_pair=None, id=None, account=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, str, Configuration) -> None
+    def __init__(
+        self, currency_pair=None, id=None, account=None, action_mode=None, local_vars_configuration=None
+    ):  # noqa: E501
+        # type: (str, str, str, str, Configuration) -> None
         """CancelBatchOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -46,12 +48,15 @@ class CancelBatchOrder(object):
         self._currency_pair = None
         self._id = None
         self._account = None
+        self._action_mode = None
         self.discriminator = None
 
         self.currency_pair = currency_pair
         self.id = id
         if account is not None:
             self.account = account
+        if action_mode is not None:
+            self.action_mode = action_mode
 
     @property
     def currency_pair(self):
@@ -125,6 +130,29 @@ class CancelBatchOrder(object):
         """
 
         self._account = account
+
+    @property
+    def action_mode(self):
+        """Gets the action_mode of this CancelBatchOrder.  # noqa: E501
+
+        Processing Mode: When placing an order, different fields are returned based on action_mode. This field is only valid during the request and is not included in the response result ACK: Asynchronous mode, only returns key order fields RESULT: No clearing information FULL: Full mode (default)  # noqa: E501
+
+        :return: The action_mode of this CancelBatchOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._action_mode
+
+    @action_mode.setter
+    def action_mode(self, action_mode):
+        """Sets the action_mode of this CancelBatchOrder.
+
+        Processing Mode: When placing an order, different fields are returned based on action_mode. This field is only valid during the request and is not included in the response result ACK: Asynchronous mode, only returns key order fields RESULT: No clearing information FULL: Full mode (default)  # noqa: E501
+
+        :param action_mode: The action_mode of this CancelBatchOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._action_mode = action_mode
 
     def to_dict(self):
         """Returns the model properties as a dict"""

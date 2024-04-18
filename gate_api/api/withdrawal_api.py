@@ -34,7 +34,7 @@ class WithdrawalApi(object):
         self.api_client = api_client
 
     def withdraw(self, ledger_record, **kwargs):  # noqa: E501
-        """Withdraw  # noqa: E501
+        """Withdrawals to Gate addresses do not incur transaction fees.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -58,7 +58,7 @@ class WithdrawalApi(object):
         return self.withdraw_with_http_info(ledger_record, **kwargs)  # noqa: E501
 
     def withdraw_with_http_info(self, ledger_record, **kwargs):  # noqa: E501
-        """Withdraw  # noqa: E501
+        """Withdrawals to Gate addresses do not incur transaction fees.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

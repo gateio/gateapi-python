@@ -2084,7 +2084,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_cross_margin_interest_records**
-> list[UniLoanInterestRecord] get_cross_margin_interest_records(currency=currency, page=page, limit=limit)
+> list[UniLoanInterestRecord] get_cross_margin_interest_records(currency=currency, page=page, limit=limit, _from=_from, to=to)
 
 Interest records for the cross margin account
 
@@ -2115,10 +2115,12 @@ api_instance = gate_api.MarginApi(api_client)
 currency = 'BTC' # str | Retrieve data of the specified currency (optional)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum response items.  Default: 100, minimum: 1, Maximum: 100 (optional) (default to 100)
+_from = 1547706332 # int | Start timestamp (optional)
+to = 1547706332 # int | End timestamp (optional)
 
 try:
     # Interest records for the cross margin account
-    api_response = api_instance.get_cross_margin_interest_records(currency=currency, page=page, limit=limit)
+    api_response = api_instance.get_cross_margin_interest_records(currency=currency, page=page, limit=limit, _from=_from, to=to)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -2133,6 +2135,8 @@ Name | Type | Description  | Notes
  **currency** | **str**| Retrieve data of the specified currency | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum response items.  Default: 100, minimum: 1, Maximum: 100 | [optional] [default to 100]
+ **_from** | **int**| Start timestamp | [optional] 
+ **to** | **int**| End timestamp | [optional] 
 
 ### Return type
 

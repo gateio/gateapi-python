@@ -33,6 +33,8 @@ class BatchOrder(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'order_id': 'str',
+        'amend_text': 'str',
         'text': 'str',
         'succeeded': 'bool',
         'label': 'str',
@@ -54,8 +56,10 @@ class BatchOrder(object):
         'auto_borrow': 'bool',
         'auto_repay': 'bool',
         'left': 'str',
+        'filled_amount': 'str',
         'fill_price': 'str',
         'filled_total': 'str',
+        'avg_deal_price': 'str',
         'fee': 'str',
         'fee_currency': 'str',
         'point_fee': 'str',
@@ -69,6 +73,8 @@ class BatchOrder(object):
     }
 
     attribute_map = {
+        'order_id': 'order_id',
+        'amend_text': 'amend_text',
         'text': 'text',
         'succeeded': 'succeeded',
         'label': 'label',
@@ -90,8 +96,10 @@ class BatchOrder(object):
         'auto_borrow': 'auto_borrow',
         'auto_repay': 'auto_repay',
         'left': 'left',
+        'filled_amount': 'filled_amount',
         'fill_price': 'fill_price',
         'filled_total': 'filled_total',
+        'avg_deal_price': 'avg_deal_price',
         'fee': 'fee',
         'fee_currency': 'fee_currency',
         'point_fee': 'point_fee',
@@ -106,6 +114,8 @@ class BatchOrder(object):
 
     def __init__(
         self,
+        order_id=None,
+        amend_text=None,
         text=None,
         succeeded=None,
         label=None,
@@ -127,8 +137,10 @@ class BatchOrder(object):
         auto_borrow=None,
         auto_repay=None,
         left=None,
+        filled_amount=None,
         fill_price=None,
         filled_total=None,
+        avg_deal_price=None,
         fee=None,
         fee_currency=None,
         point_fee=None,
@@ -141,12 +153,14 @@ class BatchOrder(object):
         finish_as=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, bool, str, str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, bool, bool, str, str, str, str, str, str, str, bool, str, str, int, str, str, Configuration) -> None
+        # type: (str, str, str, bool, str, str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, bool, bool, str, str, str, str, str, str, str, str, str, bool, str, str, int, str, str, Configuration) -> None
         """BatchOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._order_id = None
+        self._amend_text = None
         self._text = None
         self._succeeded = None
         self._label = None
@@ -168,8 +182,10 @@ class BatchOrder(object):
         self._auto_borrow = None
         self._auto_repay = None
         self._left = None
+        self._filled_amount = None
         self._fill_price = None
         self._filled_total = None
+        self._avg_deal_price = None
         self._fee = None
         self._fee_currency = None
         self._point_fee = None
@@ -182,6 +198,10 @@ class BatchOrder(object):
         self._finish_as = None
         self.discriminator = None
 
+        if order_id is not None:
+            self.order_id = order_id
+        if amend_text is not None:
+            self.amend_text = amend_text
         if text is not None:
             self.text = text
         if succeeded is not None:
@@ -224,10 +244,14 @@ class BatchOrder(object):
             self.auto_repay = auto_repay
         if left is not None:
             self.left = left
+        if filled_amount is not None:
+            self.filled_amount = filled_amount
         if fill_price is not None:
             self.fill_price = fill_price
         if filled_total is not None:
             self.filled_total = filled_total
+        if avg_deal_price is not None:
+            self.avg_deal_price = avg_deal_price
         if fee is not None:
             self.fee = fee
         if fee_currency is not None:
@@ -248,6 +272,52 @@ class BatchOrder(object):
             self.stp_act = stp_act
         if finish_as is not None:
             self.finish_as = finish_as
+
+    @property
+    def order_id(self):
+        """Gets the order_id of this BatchOrder.  # noqa: E501
+
+        Order ID  # noqa: E501
+
+        :return: The order_id of this BatchOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._order_id
+
+    @order_id.setter
+    def order_id(self, order_id):
+        """Sets the order_id of this BatchOrder.
+
+        Order ID  # noqa: E501
+
+        :param order_id: The order_id of this BatchOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._order_id = order_id
+
+    @property
+    def amend_text(self):
+        """Gets the amend_text of this BatchOrder.  # noqa: E501
+
+        The custom data that the user remarked when amending the order  # noqa: E501
+
+        :return: The amend_text of this BatchOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._amend_text
+
+    @amend_text.setter
+    def amend_text(self, amend_text):
+        """Sets the amend_text of this BatchOrder.
+
+        The custom data that the user remarked when amending the order  # noqa: E501
+
+        :param amend_text: The amend_text of this BatchOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._amend_text = amend_text
 
     @property
     def text(self):
@@ -717,7 +787,7 @@ class BatchOrder(object):
     def auto_repay(self):
         """Gets the auto_repay of this BatchOrder.  # noqa: E501
 
-        Enable or disable automatic repayment for automatic borrow loan generated by cross margin order. Default is disabled. Note that:  1. This field is only effective for cross margin orders. Margin account does not support setting auto repayment for orders. 2. `auto_borrow` and `auto_repay` cannot be both set to true in one order.  # noqa: E501
+        Enable or disable automatic repayment for automatic borrow loan generated by cross margin order. Default is disabled. Note that:  1. This field is only effective for cross margin orders. Margin account does not support setting auto repayment for orders. 2. `auto_borrow` and `auto_repay` can be both set to true in one order.  # noqa: E501
 
         :return: The auto_repay of this BatchOrder.  # noqa: E501
         :rtype: bool
@@ -728,7 +798,7 @@ class BatchOrder(object):
     def auto_repay(self, auto_repay):
         """Sets the auto_repay of this BatchOrder.
 
-        Enable or disable automatic repayment for automatic borrow loan generated by cross margin order. Default is disabled. Note that:  1. This field is only effective for cross margin orders. Margin account does not support setting auto repayment for orders. 2. `auto_borrow` and `auto_repay` cannot be both set to true in one order.  # noqa: E501
+        Enable or disable automatic repayment for automatic borrow loan generated by cross margin order. Default is disabled. Note that:  1. This field is only effective for cross margin orders. Margin account does not support setting auto repayment for orders. 2. `auto_borrow` and `auto_repay` can be both set to true in one order.  # noqa: E501
 
         :param auto_repay: The auto_repay of this BatchOrder.  # noqa: E501
         :type: bool
@@ -758,6 +828,29 @@ class BatchOrder(object):
         """
 
         self._left = left
+
+    @property
+    def filled_amount(self):
+        """Gets the filled_amount of this BatchOrder.  # noqa: E501
+
+        Amount traded to fill   # noqa: E501
+
+        :return: The filled_amount of this BatchOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._filled_amount
+
+    @filled_amount.setter
+    def filled_amount(self, filled_amount):
+        """Sets the filled_amount of this BatchOrder.
+
+        Amount traded to fill   # noqa: E501
+
+        :param filled_amount: The filled_amount of this BatchOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._filled_amount = filled_amount
 
     @property
     def fill_price(self):
@@ -804,6 +897,29 @@ class BatchOrder(object):
         """
 
         self._filled_total = filled_total
+
+    @property
+    def avg_deal_price(self):
+        """Gets the avg_deal_price of this BatchOrder.  # noqa: E501
+
+        Average fill price  # noqa: E501
+
+        :return: The avg_deal_price of this BatchOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._avg_deal_price
+
+    @avg_deal_price.setter
+    def avg_deal_price(self, avg_deal_price):
+        """Sets the avg_deal_price of this BatchOrder.
+
+        Average fill price  # noqa: E501
+
+        :param avg_deal_price: The avg_deal_price of this BatchOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._avg_deal_price = avg_deal_price
 
     @property
     def fee(self):

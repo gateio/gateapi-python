@@ -40,6 +40,7 @@ class CurrencyChain(object):
         'is_disabled': 'int',
         'is_deposit_disabled': 'int',
         'is_withdraw_disabled': 'int',
+        'decimal': 'str',
     }
 
     attribute_map = {
@@ -50,6 +51,7 @@ class CurrencyChain(object):
         'is_disabled': 'is_disabled',
         'is_deposit_disabled': 'is_deposit_disabled',
         'is_withdraw_disabled': 'is_withdraw_disabled',
+        'decimal': 'decimal',
     }
 
     def __init__(
@@ -61,9 +63,10 @@ class CurrencyChain(object):
         is_disabled=None,
         is_deposit_disabled=None,
         is_withdraw_disabled=None,
+        decimal=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, int, int, int, Configuration) -> None
+        # type: (str, str, str, str, int, int, int, str, Configuration) -> None
         """CurrencyChain - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +79,7 @@ class CurrencyChain(object):
         self._is_disabled = None
         self._is_deposit_disabled = None
         self._is_withdraw_disabled = None
+        self._decimal = None
         self.discriminator = None
 
         if chain is not None:
@@ -92,6 +96,8 @@ class CurrencyChain(object):
             self.is_deposit_disabled = is_deposit_disabled
         if is_withdraw_disabled is not None:
             self.is_withdraw_disabled = is_withdraw_disabled
+        if decimal is not None:
+            self.decimal = decimal
 
     @property
     def chain(self):
@@ -253,6 +259,29 @@ class CurrencyChain(object):
         """
 
         self._is_withdraw_disabled = is_withdraw_disabled
+
+    @property
+    def decimal(self):
+        """Gets the decimal of this CurrencyChain.  # noqa: E501
+
+        Withdrawal precision  # noqa: E501
+
+        :return: The decimal of this CurrencyChain.  # noqa: E501
+        :rtype: str
+        """
+        return self._decimal
+
+    @decimal.setter
+    def decimal(self, decimal):
+        """Sets the decimal of this CurrencyChain.
+
+        Withdrawal precision  # noqa: E501
+
+        :param decimal: The decimal of this CurrencyChain.  # noqa: E501
+        :type: str
+        """
+
+        self._decimal = decimal
 
     def to_dict(self):
         """Returns the model properties as a dict"""

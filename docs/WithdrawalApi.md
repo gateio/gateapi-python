@@ -4,14 +4,14 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**withdraw**](WithdrawalApi.md#withdraw) | **POST** /withdrawals | Withdraw
+[**withdraw**](WithdrawalApi.md#withdraw) | **POST** /withdrawals | Withdrawals to Gate addresses do not incur transaction fees.
 [**cancel_withdrawal**](WithdrawalApi.md#cancel_withdrawal) | **DELETE** /withdrawals/{withdrawal_id} | Cancel withdrawal with specified ID
 
 
 # **withdraw**
 > LedgerRecord withdraw(ledger_record)
 
-Withdraw
+Withdrawals to Gate addresses do not incur transaction fees.
 
 ### Example
 
@@ -40,7 +40,7 @@ api_instance = gate_api.WithdrawalApi(api_client)
 ledger_record = gate_api.LedgerRecord() # LedgerRecord | 
 
 try:
-    # Withdraw
+    # Withdrawals to Gate addresses do not incur transaction fees.
     api_response = api_instance.withdraw(ledger_record)
     print(api_response)
 except GateApiException as ex:

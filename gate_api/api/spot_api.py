@@ -948,7 +948,7 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: gate_api.TradeFee
+        :rtype: gate_api.SpotFee
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -975,7 +975,7 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: tuple(gate_api.TradeFee, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(gate_api.SpotFee, status_code(int), headers(HTTPHeaderDict))
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1020,7 +1020,7 @@ class SpotApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='TradeFee',  # noqa: E501
+            response_type='SpotFee',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -1995,6 +1995,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param str side: All bids or asks. Both included if not specified
         :param str account: Specify account type  - classic account：Default to all account types being included   - portfolio margin account：`cross_margin` only
+        :param str action_mode: Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2022,6 +2023,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param str side: All bids or asks. Both included if not specified
         :param str account: Specify account type  - classic account：Default to all account types being included   - portfolio margin account：`cross_margin` only
+        :param str action_mode: Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2038,7 +2040,7 @@ class SpotApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair', 'side', 'account']
+        all_params = ['currency_pair', 'side', 'account', 'action_mode']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -2065,6 +2067,8 @@ class SpotApi(object):
             query_params.append(('side', local_var_params['side']))  # noqa: E501
         if 'account' in local_var_params and local_var_params['account'] is not None:  # noqa: E501
             query_params.append(('account', local_var_params['account']))  # noqa: E501
+        if 'action_mode' in local_var_params and local_var_params['action_mode'] is not None:  # noqa: E501
+            query_params.append(('action_mode', local_var_params['action_mode']))  # noqa: E501
 
         header_params = {}
 
@@ -2337,6 +2341,7 @@ class SpotApi(object):
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
         :param str account: Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
+        :param str action_mode: Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2364,6 +2369,7 @@ class SpotApi(object):
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted. (required)
         :param str currency_pair: Currency pair (required)
         :param str account: Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
+        :param str action_mode: Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2380,7 +2386,7 @@ class SpotApi(object):
 
         local_var_params = locals()
 
-        all_params = ['order_id', 'currency_pair', 'account']
+        all_params = ['order_id', 'currency_pair', 'account', 'action_mode']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -2412,6 +2418,8 @@ class SpotApi(object):
             query_params.append(('currency_pair', local_var_params['currency_pair']))  # noqa: E501
         if 'account' in local_var_params and local_var_params['account'] is not None:  # noqa: E501
             query_params.append(('account', local_var_params['account']))  # noqa: E501
+        if 'action_mode' in local_var_params and local_var_params['action_mode'] is not None:  # noqa: E501
+            query_params.append(('action_mode', local_var_params['action_mode']))  # noqa: E501
 
         header_params = {}
 
@@ -2940,7 +2948,7 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: list[gate_api.AmendOrderResult]
+        :rtype: list[gate_api.BatchOrder]
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2967,7 +2975,7 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: tuple(list[gate_api.AmendOrderResult], status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(list[gate_api.BatchOrder], status_code(int), headers(HTTPHeaderDict))
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3024,7 +3032,7 @@ class SpotApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[AmendOrderResult]',  # noqa: E501
+            response_type='list[BatchOrder]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

@@ -45,6 +45,7 @@ class TradeFee(object):
         'futures_maker_fee': 'str',
         'delivery_taker_fee': 'str',
         'delivery_maker_fee': 'str',
+        'debit_fee': 'int',
     }
 
     attribute_map = {
@@ -60,6 +61,7 @@ class TradeFee(object):
         'futures_maker_fee': 'futures_maker_fee',
         'delivery_taker_fee': 'delivery_taker_fee',
         'delivery_maker_fee': 'delivery_maker_fee',
+        'debit_fee': 'debit_fee',
     }
 
     def __init__(
@@ -76,9 +78,10 @@ class TradeFee(object):
         futures_maker_fee=None,
         delivery_taker_fee=None,
         delivery_maker_fee=None,
+        debit_fee=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, str, bool, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (int, str, str, bool, str, str, str, str, str, str, str, str, int, Configuration) -> None
         """TradeFee - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,6 +99,7 @@ class TradeFee(object):
         self._futures_maker_fee = None
         self._delivery_taker_fee = None
         self._delivery_maker_fee = None
+        self._debit_fee = None
         self.discriminator = None
 
         if user_id is not None:
@@ -122,6 +126,8 @@ class TradeFee(object):
             self.delivery_taker_fee = delivery_taker_fee
         if delivery_maker_fee is not None:
             self.delivery_maker_fee = delivery_maker_fee
+        if debit_fee is not None:
+            self.debit_fee = debit_fee
 
     @property
     def user_id(self):
@@ -398,6 +404,29 @@ class TradeFee(object):
         """
 
         self._delivery_maker_fee = delivery_maker_fee
+
+    @property
+    def debit_fee(self):
+        """Gets the debit_fee of this TradeFee.  # noqa: E501
+
+        Deduction types for rates, 1 - GT deduction, 2 - Point card deduction, 3 - VIP rates  # noqa: E501
+
+        :return: The debit_fee of this TradeFee.  # noqa: E501
+        :rtype: int
+        """
+        return self._debit_fee
+
+    @debit_fee.setter
+    def debit_fee(self, debit_fee):
+        """Sets the debit_fee of this TradeFee.
+
+        Deduction types for rates, 1 - GT deduction, 2 - Point card deduction, 3 - VIP rates  # noqa: E501
+
+        :param debit_fee: The debit_fee of this TradeFee.  # noqa: E501
+        :type: int
+        """
+
+        self._debit_fee = debit_fee
 
     def to_dict(self):
         """Returns the model properties as a dict"""

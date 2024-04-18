@@ -237,7 +237,7 @@ class FuturesInitialOrder(object):
     def text(self):
         """Gets the text of this FuturesInitialOrder.  # noqa: E501
 
-        How the order is created. Possible values are: web, api and app  # noqa: E501
+        The source of the order, including: - web: web - api: api - app: app  # noqa: E501
 
         :return: The text of this FuturesInitialOrder.  # noqa: E501
         :rtype: str
@@ -248,7 +248,7 @@ class FuturesInitialOrder(object):
     def text(self, text):
         """Sets the text of this FuturesInitialOrder.
 
-        How the order is created. Possible values are: web, api and app  # noqa: E501
+        The source of the order, including: - web: web - api: api - app: app  # noqa: E501
 
         :param text: The text of this FuturesInitialOrder.  # noqa: E501
         :type: str

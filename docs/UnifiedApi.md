@@ -13,6 +13,8 @@ Method | HTTP request | Description
 [**create_unified_loan**](UnifiedApi.md#create_unified_loan) | **POST** /unified/loans | Borrow or repay
 [**list_unified_loan_records**](UnifiedApi.md#list_unified_loan_records) | **GET** /unified/loan_records | Get load records
 [**list_unified_loan_interest_records**](UnifiedApi.md#list_unified_loan_interest_records) | **GET** /unified/interest_records | List interest records
+[**get_unified_estimate_rate**](UnifiedApi.md#get_unified_estimate_rate) | **GET** /unified/estimate_rate | Get unified estimate rate
+[**list_currency_discount_tiers**](UnifiedApi.md#list_currency_discount_tiers) | **GET** /unified/currency_discount_tiers | list currency discount tiers
 
 
 # **list_unified_accounts**
@@ -351,7 +353,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_unified_loans**
-> list[UniLoan] list_unified_loans(currency=currency, page=page, limit=limit)
+> list[UniLoan] list_unified_loans(currency=currency, page=page, limit=limit, type=type)
 
 List loans
 
@@ -382,10 +384,11 @@ api_instance = gate_api.UnifiedApi(api_client)
 currency = 'BTC' # str | Retrieve data of the specified currency (optional)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum response items.  Default: 100, minimum: 1, Maximum: 100 (optional) (default to 100)
+type = 'platform' # str | Loan type, platform - platform, margin - margin (optional)
 
 try:
     # List loans
-    api_response = api_instance.list_unified_loans(currency=currency, page=page, limit=limit)
+    api_response = api_instance.list_unified_loans(currency=currency, page=page, limit=limit, type=type)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -400,6 +403,7 @@ Name | Type | Description  | Notes
  **currency** | **str**| Retrieve data of the specified currency | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum response items.  Default: 100, minimum: 1, Maximum: 100 | [optional] [default to 100]
+ **type** | **str**| Loan type, platform - platform, margin - margin | [optional] 
 
 ### Return type
 
@@ -563,7 +567,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_unified_loan_interest_records**
-> list[UniLoanInterestRecord] list_unified_loan_interest_records(currency=currency, page=page, limit=limit)
+> list[UniLoanInterestRecord] list_unified_loan_interest_records(currency=currency, page=page, limit=limit, type=type)
 
 List interest records
 
@@ -594,10 +598,11 @@ api_instance = gate_api.UnifiedApi(api_client)
 currency = 'BTC' # str | Retrieve data of the specified currency (optional)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum response items.  Default: 100, minimum: 1, Maximum: 100 (optional) (default to 100)
+type = 'platform' # str | Loan type, platform - platform, margin - margin (optional)
 
 try:
     # List interest records
-    api_response = api_instance.list_unified_loan_interest_records(currency=currency, page=page, limit=limit)
+    api_response = api_instance.list_unified_loan_interest_records(currency=currency, page=page, limit=limit, type=type)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -612,6 +617,7 @@ Name | Type | Description  | Notes
  **currency** | **str**| Retrieve data of the specified currency | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum response items.  Default: 100, minimum: 1, Maximum: 100 | [optional] [default to 100]
+ **type** | **str**| Loan type, platform - platform, margin - margin | [optional] 
 
 ### Return type
 
@@ -620,6 +626,129 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_unified_estimate_rate**
+> dict(str, str) get_unified_estimate_rate(currencies)
+
+Get unified estimate rate
+
+Due to fluctuations in lending depth, hourly interest rates may vary, and thus, I cannot provide exact rates. When a currency is not supported, the interest rate returned will be an empty string.
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.UnifiedApi(api_client)
+currencies = ['[\"BTC\",\"GT\"]'] # list[str] | Specify the currency names for querying in an array, separated by commas, with a maximum of 10 currencies.
+
+try:
+    # Get unified estimate rate
+    api_response = api_instance.get_unified_estimate_rate(currencies)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling UnifiedApi->get_unified_estimate_rate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencies** | [**list[str]**](str.md)| Specify the currency names for querying in an array, separated by commas, with a maximum of 10 currencies. | 
+
+### Return type
+
+**dict(str, str)**
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_currency_discount_tiers**
+> list[UnifiedDiscount] list_currency_discount_tiers()
+
+list currency discount tiers
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.UnifiedApi(api_client)
+
+try:
+    # list currency discount tiers
+    api_response = api_instance.list_currency_discount_tiers()
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling UnifiedApi->list_currency_discount_tiers: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**list[UnifiedDiscount]**](UnifiedDiscount.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

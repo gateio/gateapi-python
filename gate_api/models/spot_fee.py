@@ -42,6 +42,7 @@ class SpotFee(object):
         'loan_fee': 'str',
         'point_type': 'str',
         'currency_pair': 'str',
+        'debit_fee': 'int',
     }
 
     attribute_map = {
@@ -54,6 +55,7 @@ class SpotFee(object):
         'loan_fee': 'loan_fee',
         'point_type': 'point_type',
         'currency_pair': 'currency_pair',
+        'debit_fee': 'debit_fee',
     }
 
     def __init__(
@@ -67,9 +69,10 @@ class SpotFee(object):
         loan_fee=None,
         point_type=None,
         currency_pair=None,
+        debit_fee=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, str, bool, str, str, str, str, str, Configuration) -> None
+        # type: (int, str, str, bool, str, str, str, str, str, int, Configuration) -> None
         """SpotFee - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +87,7 @@ class SpotFee(object):
         self._loan_fee = None
         self._point_type = None
         self._currency_pair = None
+        self._debit_fee = None
         self.discriminator = None
 
         if user_id is not None:
@@ -104,6 +108,8 @@ class SpotFee(object):
             self.point_type = point_type
         if currency_pair is not None:
             self.currency_pair = currency_pair
+        if debit_fee is not None:
+            self.debit_fee = debit_fee
 
     @property
     def user_id(self):
@@ -311,6 +317,29 @@ class SpotFee(object):
         """
 
         self._currency_pair = currency_pair
+
+    @property
+    def debit_fee(self):
+        """Gets the debit_fee of this SpotFee.  # noqa: E501
+
+        Deduction types for rates, 1 - GT deduction, 2 - Point card deduction, 3 - VIP rates  # noqa: E501
+
+        :return: The debit_fee of this SpotFee.  # noqa: E501
+        :rtype: int
+        """
+        return self._debit_fee
+
+    @debit_fee.setter
+    def debit_fee(self, debit_fee):
+        """Sets the debit_fee of this SpotFee.
+
+        Deduction types for rates, 1 - GT deduction, 2 - Point card deduction, 3 - VIP rates  # noqa: E501
+
+        :param debit_fee: The debit_fee of this SpotFee.  # noqa: E501
+        :type: int
+        """
+
+        self._debit_fee = debit_fee
 
     def to_dict(self):
         """Returns the model properties as a dict"""

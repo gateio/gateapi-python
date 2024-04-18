@@ -36,7 +36,7 @@ class SubAccountKey(object):
         'user_id': 'str',
         'mode': 'int',
         'name': 'str',
-        'perms': 'list[ApiV4KeyPerm]',
+        'perms': 'list[SubAccountKeyPerms]',
         'ip_whitelist': 'list[str]',
         'key': 'str',
         'state': 'int',
@@ -69,7 +69,7 @@ class SubAccountKey(object):
         updated_at=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, int, str, list[ApiV4KeyPerm], list[str], str, int, str, str, Configuration) -> None
+        # type: (str, int, str, list[SubAccountKeyPerms], list[str], str, int, str, str, Configuration) -> None
         """SubAccountKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -180,7 +180,7 @@ class SubAccountKey(object):
 
 
         :return: The perms of this SubAccountKey.  # noqa: E501
-        :rtype: list[ApiV4KeyPerm]
+        :rtype: list[SubAccountKeyPerms]
         """
         return self._perms
 
@@ -190,7 +190,7 @@ class SubAccountKey(object):
 
 
         :param perms: The perms of this SubAccountKey.  # noqa: E501
-        :type: list[ApiV4KeyPerm]
+        :type: list[SubAccountKeyPerms]
         """
 
         self._perms = perms
