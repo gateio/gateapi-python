@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**delete_sub_account_keys**](SubAccountApi.md#delete_sub_account_keys) | **DELETE** /sub_accounts/{user_id}/keys/{key} | Delete API key of the sub-account
 [**lock_sub_account**](SubAccountApi.md#lock_sub_account) | **POST** /sub_accounts/{user_id}/lock | Lock the sub-account
 [**unlock_sub_account**](SubAccountApi.md#unlock_sub_account) | **POST** /sub_accounts/{user_id}/unlock | Unlock the sub-account
+[**list_unified_mode**](SubAccountApi.md#list_unified_mode) | **GET** /sub_accounts/unified_mode | Get sub-account mode
 
 
 # **list_sub_accounts**
@@ -689,6 +690,71 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Unlock successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_unified_mode**
+> list[SubUserMode] list_unified_mode()
+
+Get sub-account mode
+
+Unified account mode： - `classic`: Classic account mode - `multi_currency`: Multi-currency margin mode - `portfolio`: Portfolio margin mode
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.SubAccountApi(api_client)
+
+try:
+    # Get sub-account mode
+    api_response = api_instance.list_unified_mode()
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling SubAccountApi->list_unified_mode: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**list[SubUserMode]**](SubUserMode.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -49,6 +49,9 @@ class UnifiedAccount(object):
         'unified_account_total_liab': 'str',
         'unified_account_total_equity': 'str',
         'leverage': 'str',
+        'spot_order_loss': 'str',
+        'spot_hedge': 'bool',
+        'use_funding': 'bool',
     }
 
     attribute_map = {
@@ -68,6 +71,9 @@ class UnifiedAccount(object):
         'unified_account_total_liab': 'unified_account_total_liab',
         'unified_account_total_equity': 'unified_account_total_equity',
         'leverage': 'leverage',
+        'spot_order_loss': 'spot_order_loss',
+        'spot_hedge': 'spot_hedge',
+        'use_funding': 'use_funding',
     }
 
     def __init__(
@@ -88,9 +94,12 @@ class UnifiedAccount(object):
         unified_account_total_liab=None,
         unified_account_total_equity=None,
         leverage=None,
+        spot_order_loss=None,
+        spot_hedge=None,
+        use_funding=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, int, bool, dict(str, UnifiedBalance), str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (int, int, bool, dict(str, UnifiedBalance), str, str, str, str, str, str, str, str, str, str, str, str, str, bool, bool, Configuration) -> None
         """UnifiedAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -112,6 +121,9 @@ class UnifiedAccount(object):
         self._unified_account_total_liab = None
         self._unified_account_total_equity = None
         self._leverage = None
+        self._spot_order_loss = None
+        self._spot_hedge = None
+        self._use_funding = None
         self.discriminator = None
 
         if user_id is not None:
@@ -146,6 +158,12 @@ class UnifiedAccount(object):
             self.unified_account_total_equity = unified_account_total_equity
         if leverage is not None:
             self.leverage = leverage
+        if spot_order_loss is not None:
+            self.spot_order_loss = spot_order_loss
+        if spot_hedge is not None:
+            self.spot_hedge = spot_hedge
+        if use_funding is not None:
+            self.use_funding = use_funding
 
     @property
     def user_id(self):
@@ -512,6 +530,75 @@ class UnifiedAccount(object):
         """
 
         self._leverage = leverage
+
+    @property
+    def spot_order_loss(self):
+        """Gets the spot_order_loss of this UnifiedAccount.  # noqa: E501
+
+        Total order loss, in USDT  # noqa: E501
+
+        :return: The spot_order_loss of this UnifiedAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._spot_order_loss
+
+    @spot_order_loss.setter
+    def spot_order_loss(self, spot_order_loss):
+        """Sets the spot_order_loss of this UnifiedAccount.
+
+        Total order loss, in USDT  # noqa: E501
+
+        :param spot_order_loss: The spot_order_loss of this UnifiedAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._spot_order_loss = spot_order_loss
+
+    @property
+    def spot_hedge(self):
+        """Gets the spot_hedge of this UnifiedAccount.  # noqa: E501
+
+        Spot hedging status, true - enabled, false - not enabled.  # noqa: E501
+
+        :return: The spot_hedge of this UnifiedAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._spot_hedge
+
+    @spot_hedge.setter
+    def spot_hedge(self, spot_hedge):
+        """Sets the spot_hedge of this UnifiedAccount.
+
+        Spot hedging status, true - enabled, false - not enabled.  # noqa: E501
+
+        :param spot_hedge: The spot_hedge of this UnifiedAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._spot_hedge = spot_hedge
+
+    @property
+    def use_funding(self):
+        """Gets the use_funding of this UnifiedAccount.  # noqa: E501
+
+        Whether to use funds as margin  # noqa: E501
+
+        :return: The use_funding of this UnifiedAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_funding
+
+    @use_funding.setter
+    def use_funding(self, use_funding):
+        """Sets the use_funding of this UnifiedAccount.
+
+        Whether to use funds as margin  # noqa: E501
+
+        :param use_funding: The use_funding of this UnifiedAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_funding = use_funding
 
     def to_dict(self):
         """Returns the model properties as a dict"""

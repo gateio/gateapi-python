@@ -27,6 +27,7 @@ Method | HTTP request | Description
 [**list_delivery_position_close**](DeliveryApi.md#list_delivery_position_close) | **GET** /delivery/{settle}/position_close | List position close history
 [**list_delivery_liquidates**](DeliveryApi.md#list_delivery_liquidates) | **GET** /delivery/{settle}/liquidates | List liquidation history
 [**list_delivery_settlements**](DeliveryApi.md#list_delivery_settlements) | **GET** /delivery/{settle}/settlements | List settlement history
+[**list_delivery_risk_limit_tiers**](DeliveryApi.md#list_delivery_risk_limit_tiers) | **GET** /delivery/{settle}/risk_limit_tiers | List risk limit tiers
 [**list_price_triggered_delivery_orders**](DeliveryApi.md#list_price_triggered_delivery_orders) | **GET** /delivery/{settle}/price_orders | List all auto orders
 [**create_price_triggered_delivery_order**](DeliveryApi.md#create_price_triggered_delivery_order) | **POST** /delivery/{settle}/price_orders | Create a price-triggered order
 [**cancel_price_triggered_delivery_order_list**](DeliveryApi.md#cancel_price_triggered_delivery_order_list) | **DELETE** /delivery/{settle}/price_orders | Cancel all open orders
@@ -1627,6 +1628,72 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_delivery_risk_limit_tiers**
+> list[FuturesLimitRiskTiers] list_delivery_risk_limit_tiers(settle, contract=contract, limit=limit, offset=offset)
+
+List risk limit tiers
+
+When the 'contract' parameter is not passed, the default is to query the risk limits for the top 100 markets.'Limit' and 'offset' correspond to pagination queries at the market level, not to the length of the returned array. This only takes effect when the 'contract' parameter is empty.
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.DeliveryApi(api_client)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT_20200814' # str | Futures contract (optional)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
+
+try:
+    # List risk limit tiers
+    api_response = api_instance.list_delivery_risk_limit_tiers(settle, contract=contract, limit=limit, offset=offset)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling DeliveryApi->list_delivery_risk_limit_tiers: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | [optional] 
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
+
+### Return type
+
+[**list[FuturesLimitRiskTiers]**](FuturesLimitRiskTiers.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

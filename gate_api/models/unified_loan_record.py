@@ -36,6 +36,7 @@ class UnifiedLoanRecord(object):
         'id': 'int',
         'type': 'str',
         'repayment_type': 'str',
+        'borrow_type': 'str',
         'currency_pair': 'str',
         'currency': 'str',
         'amount': 'str',
@@ -46,6 +47,7 @@ class UnifiedLoanRecord(object):
         'id': 'id',
         'type': 'type',
         'repayment_type': 'repayment_type',
+        'borrow_type': 'borrow_type',
         'currency_pair': 'currency_pair',
         'currency': 'currency',
         'amount': 'amount',
@@ -57,13 +59,14 @@ class UnifiedLoanRecord(object):
         id=None,
         type=None,
         repayment_type=None,
+        borrow_type=None,
         currency_pair=None,
         currency=None,
         amount=None,
         create_time=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, str, str, str, str, int, Configuration) -> None
+        # type: (int, str, str, str, str, str, str, int, Configuration) -> None
         """UnifiedLoanRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +75,7 @@ class UnifiedLoanRecord(object):
         self._id = None
         self._type = None
         self._repayment_type = None
+        self._borrow_type = None
         self._currency_pair = None
         self._currency = None
         self._amount = None
@@ -84,6 +88,8 @@ class UnifiedLoanRecord(object):
             self.type = type
         if repayment_type is not None:
             self.repayment_type = repayment_type
+        if borrow_type is not None:
+            self.borrow_type = borrow_type
         if currency_pair is not None:
             self.currency_pair = currency_pair
         if currency is not None:
@@ -161,6 +167,29 @@ class UnifiedLoanRecord(object):
         """
 
         self._repayment_type = repayment_type
+
+    @property
+    def borrow_type(self):
+        """Gets the borrow_type of this UnifiedLoanRecord.  # noqa: E501
+
+        Loan type, returned when querying loan records. manual_borrow - Manual repayment , auto_borrow - Automatic repayment  # noqa: E501
+
+        :return: The borrow_type of this UnifiedLoanRecord.  # noqa: E501
+        :rtype: str
+        """
+        return self._borrow_type
+
+    @borrow_type.setter
+    def borrow_type(self, borrow_type):
+        """Sets the borrow_type of this UnifiedLoanRecord.
+
+        Loan type, returned when querying loan records. manual_borrow - Manual repayment , auto_borrow - Automatic repayment  # noqa: E501
+
+        :param borrow_type: The borrow_type of this UnifiedLoanRecord.  # noqa: E501
+        :type: str
+        """
+
+        self._borrow_type = borrow_type
 
     @property
     def currency_pair(self):

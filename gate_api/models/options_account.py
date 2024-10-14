@@ -35,44 +35,71 @@ class OptionsAccount(object):
     openapi_types = {
         'user': 'int',
         'total': 'str',
+        'position_value': 'str',
+        'equity': 'str',
         'short_enabled': 'bool',
+        'mmp_enabled': 'bool',
+        'liq_triggered': 'bool',
+        'margin_mode': 'int',
         'unrealised_pnl': 'str',
         'init_margin': 'str',
         'maint_margin': 'str',
         'order_margin': 'str',
+        'ask_order_margin': 'str',
+        'bid_order_margin': 'str',
         'available': 'str',
         'point': 'str',
         'currency': 'str',
+        'orders_limit': 'int',
+        'position_notional_limit': 'int',
     }
 
     attribute_map = {
         'user': 'user',
         'total': 'total',
+        'position_value': 'position_value',
+        'equity': 'equity',
         'short_enabled': 'short_enabled',
+        'mmp_enabled': 'mmp_enabled',
+        'liq_triggered': 'liq_triggered',
+        'margin_mode': 'margin_mode',
         'unrealised_pnl': 'unrealised_pnl',
         'init_margin': 'init_margin',
         'maint_margin': 'maint_margin',
         'order_margin': 'order_margin',
+        'ask_order_margin': 'ask_order_margin',
+        'bid_order_margin': 'bid_order_margin',
         'available': 'available',
         'point': 'point',
         'currency': 'currency',
+        'orders_limit': 'orders_limit',
+        'position_notional_limit': 'position_notional_limit',
     }
 
     def __init__(
         self,
         user=None,
         total=None,
+        position_value=None,
+        equity=None,
         short_enabled=None,
+        mmp_enabled=None,
+        liq_triggered=None,
+        margin_mode=None,
         unrealised_pnl=None,
         init_margin=None,
         maint_margin=None,
         order_margin=None,
+        ask_order_margin=None,
+        bid_order_margin=None,
         available=None,
         point=None,
         currency=None,
+        orders_limit=None,
+        position_notional_limit=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, bool, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (int, str, str, str, bool, bool, bool, int, str, str, str, str, str, str, str, str, str, int, int, Configuration) -> None
         """OptionsAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,22 +107,41 @@ class OptionsAccount(object):
 
         self._user = None
         self._total = None
+        self._position_value = None
+        self._equity = None
         self._short_enabled = None
+        self._mmp_enabled = None
+        self._liq_triggered = None
+        self._margin_mode = None
         self._unrealised_pnl = None
         self._init_margin = None
         self._maint_margin = None
         self._order_margin = None
+        self._ask_order_margin = None
+        self._bid_order_margin = None
         self._available = None
         self._point = None
         self._currency = None
+        self._orders_limit = None
+        self._position_notional_limit = None
         self.discriminator = None
 
         if user is not None:
             self.user = user
         if total is not None:
             self.total = total
+        if position_value is not None:
+            self.position_value = position_value
+        if equity is not None:
+            self.equity = equity
         if short_enabled is not None:
             self.short_enabled = short_enabled
+        if mmp_enabled is not None:
+            self.mmp_enabled = mmp_enabled
+        if liq_triggered is not None:
+            self.liq_triggered = liq_triggered
+        if margin_mode is not None:
+            self.margin_mode = margin_mode
         if unrealised_pnl is not None:
             self.unrealised_pnl = unrealised_pnl
         if init_margin is not None:
@@ -104,12 +150,20 @@ class OptionsAccount(object):
             self.maint_margin = maint_margin
         if order_margin is not None:
             self.order_margin = order_margin
+        if ask_order_margin is not None:
+            self.ask_order_margin = ask_order_margin
+        if bid_order_margin is not None:
+            self.bid_order_margin = bid_order_margin
         if available is not None:
             self.available = available
         if point is not None:
             self.point = point
         if currency is not None:
             self.currency = currency
+        if orders_limit is not None:
+            self.orders_limit = orders_limit
+        if position_notional_limit is not None:
+            self.position_notional_limit = position_notional_limit
 
     @property
     def user(self):
@@ -138,7 +192,7 @@ class OptionsAccount(object):
     def total(self):
         """Gets the total of this OptionsAccount.  # noqa: E501
 
-        Total account balance  # noqa: E501
+        账户余额  # noqa: E501
 
         :return: The total of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -149,13 +203,59 @@ class OptionsAccount(object):
     def total(self, total):
         """Sets the total of this OptionsAccount.
 
-        Total account balance  # noqa: E501
+        账户余额  # noqa: E501
 
         :param total: The total of this OptionsAccount.  # noqa: E501
         :type: str
         """
 
         self._total = total
+
+    @property
+    def position_value(self):
+        """Gets the position_value of this OptionsAccount.  # noqa: E501
+
+        仓位价值，做多仓位价值为正，做空仓位价值为负  # noqa: E501
+
+        :return: The position_value of this OptionsAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._position_value
+
+    @position_value.setter
+    def position_value(self, position_value):
+        """Sets the position_value of this OptionsAccount.
+
+        仓位价值，做多仓位价值为正，做空仓位价值为负  # noqa: E501
+
+        :param position_value: The position_value of this OptionsAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._position_value = position_value
+
+    @property
+    def equity(self):
+        """Gets the equity of this OptionsAccount.  # noqa: E501
+
+        账户权益，账户余额与仓位价值的和  # noqa: E501
+
+        :return: The equity of this OptionsAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._equity
+
+    @equity.setter
+    def equity(self, equity):
+        """Sets the equity of this OptionsAccount.
+
+        账户权益，账户余额与仓位价值的和  # noqa: E501
+
+        :param equity: The equity of this OptionsAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._equity = equity
 
     @property
     def short_enabled(self):
@@ -179,6 +279,82 @@ class OptionsAccount(object):
         """
 
         self._short_enabled = short_enabled
+
+    @property
+    def mmp_enabled(self):
+        """Gets the mmp_enabled of this OptionsAccount.  # noqa: E501
+
+        是否启用MMP  # noqa: E501
+
+        :return: The mmp_enabled of this OptionsAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._mmp_enabled
+
+    @mmp_enabled.setter
+    def mmp_enabled(self, mmp_enabled):
+        """Sets the mmp_enabled of this OptionsAccount.
+
+        是否启用MMP  # noqa: E501
+
+        :param mmp_enabled: The mmp_enabled of this OptionsAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._mmp_enabled = mmp_enabled
+
+    @property
+    def liq_triggered(self):
+        """Gets the liq_triggered of this OptionsAccount.  # noqa: E501
+
+        是否触发仓位强平  # noqa: E501
+
+        :return: The liq_triggered of this OptionsAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._liq_triggered
+
+    @liq_triggered.setter
+    def liq_triggered(self, liq_triggered):
+        """Sets the liq_triggered of this OptionsAccount.
+
+        是否触发仓位强平  # noqa: E501
+
+        :param liq_triggered: The liq_triggered of this OptionsAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._liq_triggered = liq_triggered
+
+    @property
+    def margin_mode(self):
+        """Gets the margin_mode of this OptionsAccount.  # noqa: E501
+
+        ｜ 保证金模式： - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式  # noqa: E501
+
+        :return: The margin_mode of this OptionsAccount.  # noqa: E501
+        :rtype: int
+        """
+        return self._margin_mode
+
+    @margin_mode.setter
+    def margin_mode(self, margin_mode):
+        """Sets the margin_mode of this OptionsAccount.
+
+        ｜ 保证金模式： - 0：经典现货保证金模式 - 1：跨币种保证金模式 - 2：组合保证金模式  # noqa: E501
+
+        :param margin_mode: The margin_mode of this OptionsAccount.  # noqa: E501
+        :type: int
+        """
+        allowed_values = [0, 1, 2]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and margin_mode not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `margin_mode` ({0}), must be one of {1}".format(  # noqa: E501
+                    margin_mode, allowed_values
+                )
+            )
+
+        self._margin_mode = margin_mode
 
     @property
     def unrealised_pnl(self):
@@ -273,6 +449,52 @@ class OptionsAccount(object):
         self._order_margin = order_margin
 
     @property
+    def ask_order_margin(self):
+        """Gets the ask_order_margin of this OptionsAccount.  # noqa: E501
+
+        未完成卖单的保证金  # noqa: E501
+
+        :return: The ask_order_margin of this OptionsAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._ask_order_margin
+
+    @ask_order_margin.setter
+    def ask_order_margin(self, ask_order_margin):
+        """Sets the ask_order_margin of this OptionsAccount.
+
+        未完成卖单的保证金  # noqa: E501
+
+        :param ask_order_margin: The ask_order_margin of this OptionsAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._ask_order_margin = ask_order_margin
+
+    @property
+    def bid_order_margin(self):
+        """Gets the bid_order_margin of this OptionsAccount.  # noqa: E501
+
+        未完成买单的保证金  # noqa: E501
+
+        :return: The bid_order_margin of this OptionsAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._bid_order_margin
+
+    @bid_order_margin.setter
+    def bid_order_margin(self, bid_order_margin):
+        """Sets the bid_order_margin of this OptionsAccount.
+
+        未完成买单的保证金  # noqa: E501
+
+        :param bid_order_margin: The bid_order_margin of this OptionsAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._bid_order_margin = bid_order_margin
+
+    @property
     def available(self):
         """Gets the available of this OptionsAccount.  # noqa: E501
 
@@ -340,6 +562,52 @@ class OptionsAccount(object):
         """
 
         self._currency = currency
+
+    @property
+    def orders_limit(self):
+        """Gets the orders_limit of this OptionsAccount.  # noqa: E501
+
+        未完成订单数量上限  # noqa: E501
+
+        :return: The orders_limit of this OptionsAccount.  # noqa: E501
+        :rtype: int
+        """
+        return self._orders_limit
+
+    @orders_limit.setter
+    def orders_limit(self, orders_limit):
+        """Sets the orders_limit of this OptionsAccount.
+
+        未完成订单数量上限  # noqa: E501
+
+        :param orders_limit: The orders_limit of this OptionsAccount.  # noqa: E501
+        :type: int
+        """
+
+        self._orders_limit = orders_limit
+
+    @property
+    def position_notional_limit(self):
+        """Gets the position_notional_limit of this OptionsAccount.  # noqa: E501
+
+        名义价值上限，包含仓位以及未完成订单的名义价值  # noqa: E501
+
+        :return: The position_notional_limit of this OptionsAccount.  # noqa: E501
+        :rtype: int
+        """
+        return self._position_notional_limit
+
+    @position_notional_limit.setter
+    def position_notional_limit(self, position_notional_limit):
+        """Sets the position_notional_limit of this OptionsAccount.
+
+        名义价值上限，包含仓位以及未完成订单的名义价值  # noqa: E501
+
+        :param position_notional_limit: The position_notional_limit of this OptionsAccount.  # noqa: E501
+        :type: int
+        """
+
+        self._position_notional_limit = position_notional_limit
 
     def to_dict(self):
         """Returns the model properties as a dict"""

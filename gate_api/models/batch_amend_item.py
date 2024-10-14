@@ -39,6 +39,7 @@ class BatchAmendItem(object):
         'amount': 'str',
         'price': 'str',
         'amend_text': 'str',
+        'action_mode': 'str',
     }
 
     attribute_map = {
@@ -48,6 +49,7 @@ class BatchAmendItem(object):
         'amount': 'amount',
         'price': 'price',
         'amend_text': 'amend_text',
+        'action_mode': 'action_mode',
     }
 
     def __init__(
@@ -58,9 +60,10 @@ class BatchAmendItem(object):
         amount=None,
         price=None,
         amend_text=None,
+        action_mode=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, Configuration) -> None
         """BatchAmendItem - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +75,7 @@ class BatchAmendItem(object):
         self._amount = None
         self._price = None
         self._amend_text = None
+        self._action_mode = None
         self.discriminator = None
 
         self.order_id = order_id
@@ -84,6 +88,8 @@ class BatchAmendItem(object):
             self.price = price
         if amend_text is not None:
             self.amend_text = amend_text
+        if action_mode is not None:
+            self.action_mode = action_mode
 
     @property
     def order_id(self):
@@ -228,6 +234,29 @@ class BatchAmendItem(object):
             raise ValueError("Invalid value for `amend_text`, length must be less than or equal to `31`")  # noqa: E501
 
         self._amend_text = amend_text
+
+    @property
+    def action_mode(self):
+        """Gets the action_mode of this BatchAmendItem.  # noqa: E501
+
+        Processing Mode: When placing an order, different fields are returned based on action_mode. This field is only valid during the request and is not included in the response result ACK: Asynchronous mode, only returns key order fields RESULT: No clearing information FULL: Full mode (default)  # noqa: E501
+
+        :return: The action_mode of this BatchAmendItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._action_mode
+
+    @action_mode.setter
+    def action_mode(self, action_mode):
+        """Sets the action_mode of this BatchAmendItem.
+
+        Processing Mode: When placing an order, different fields are returned based on action_mode. This field is only valid during the request and is not included in the response result ACK: Asynchronous mode, only returns key order fields RESULT: No clearing information FULL: Full mode (default)  # noqa: E501
+
+        :param action_mode: The action_mode of this BatchAmendItem.  # noqa: E501
+        :type: str
+        """
+
+        self._action_mode = action_mode
 
     def to_dict(self):
         """Returns the model properties as a dict"""

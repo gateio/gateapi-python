@@ -48,6 +48,8 @@ class OptionsOrder(object):
         'reduce_only': 'bool',
         'is_reduce_only': 'bool',
         'is_liq': 'bool',
+        'mmp': 'bool',
+        'is_mmp': 'bool',
         'tif': 'str',
         'left': 'int',
         'fill_price': 'str',
@@ -74,6 +76,8 @@ class OptionsOrder(object):
         'reduce_only': 'reduce_only',
         'is_reduce_only': 'is_reduce_only',
         'is_liq': 'is_liq',
+        'mmp': 'mmp',
+        'is_mmp': 'is_mmp',
         'tif': 'tif',
         'left': 'left',
         'fill_price': 'fill_price',
@@ -101,6 +105,8 @@ class OptionsOrder(object):
         reduce_only=False,
         is_reduce_only=None,
         is_liq=None,
+        mmp=False,
+        is_mmp=None,
         tif='gtc',
         left=None,
         fill_price=None,
@@ -111,7 +117,7 @@ class OptionsOrder(object):
         refr=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, int, float, float, str, str, str, int, int, str, bool, bool, bool, bool, bool, str, int, str, str, str, str, int, str, Configuration) -> None
+        # type: (int, int, float, float, str, str, str, int, int, str, bool, bool, bool, bool, bool, bool, bool, str, int, str, str, str, str, int, str, Configuration) -> None
         """OptionsOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -132,6 +138,8 @@ class OptionsOrder(object):
         self._reduce_only = None
         self._is_reduce_only = None
         self._is_liq = None
+        self._mmp = None
+        self._is_mmp = None
         self._tif = None
         self._left = None
         self._fill_price = None
@@ -170,6 +178,10 @@ class OptionsOrder(object):
             self.is_reduce_only = is_reduce_only
         if is_liq is not None:
             self.is_liq = is_liq
+        if mmp is not None:
+            self.mmp = mmp
+        if is_mmp is not None:
+            self.is_mmp = is_mmp
         if tif is not None:
             self.tif = tif
         if left is not None:
@@ -283,7 +295,7 @@ class OptionsOrder(object):
     def finish_as(self):
         """Gets the finish_as of this OptionsOrder.  # noqa: E501
 
-        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close   # noqa: E501
+        结束方式，包括：  - filled: 完全成交 - cancelled: 用户撤销 - liquidated: 强制平仓撤销 - ioc: 未立即完全成交，因为tif设置为ioc - auto_deleveraged: 自动减仓撤销 - reduce_only: 增持仓位撤销，因为设置reduce_only或平仓 - position_closed: 因为仓位平掉了，所以挂单被撤掉 - reduce_out: 只减仓被排除的不容易成交的挂单 - mmp_cancelled: MMP撤销  # noqa: E501
 
         :return: The finish_as of this OptionsOrder.  # noqa: E501
         :rtype: str
@@ -294,7 +306,7 @@ class OptionsOrder(object):
     def finish_as(self, finish_as):
         """Sets the finish_as of this OptionsOrder.
 
-        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close   # noqa: E501
+        结束方式，包括：  - filled: 完全成交 - cancelled: 用户撤销 - liquidated: 强制平仓撤销 - ioc: 未立即完全成交，因为tif设置为ioc - auto_deleveraged: 自动减仓撤销 - reduce_only: 增持仓位撤销，因为设置reduce_only或平仓 - position_closed: 因为仓位平掉了，所以挂单被撤掉 - reduce_out: 只减仓被排除的不容易成交的挂单 - mmp_cancelled: MMP撤销  # noqa: E501
 
         :param finish_as: The finish_as of this OptionsOrder.  # noqa: E501
         :type: str
@@ -308,6 +320,7 @@ class OptionsOrder(object):
             "reduce_only",
             "position_closed",
             "reduce_out",
+            "mmp_cancelled",
         ]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and finish_as not in allowed_values:  # noqa: E501
             raise ValueError(
@@ -556,6 +569,52 @@ class OptionsOrder(object):
         """
 
         self._is_liq = is_liq
+
+    @property
+    def mmp(self):
+        """Gets the mmp of this OptionsOrder.  # noqa: E501
+
+        设置为 true 的时候，为MMP委托  # noqa: E501
+
+        :return: The mmp of this OptionsOrder.  # noqa: E501
+        :rtype: bool
+        """
+        return self._mmp
+
+    @mmp.setter
+    def mmp(self, mmp):
+        """Sets the mmp of this OptionsOrder.
+
+        设置为 true 的时候，为MMP委托  # noqa: E501
+
+        :param mmp: The mmp of this OptionsOrder.  # noqa: E501
+        :type: bool
+        """
+
+        self._mmp = mmp
+
+    @property
+    def is_mmp(self):
+        """Gets the is_mmp of this OptionsOrder.  # noqa: E501
+
+        是否为MMP委托。对应请求中的`mmp`。  # noqa: E501
+
+        :return: The is_mmp of this OptionsOrder.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_mmp
+
+    @is_mmp.setter
+    def is_mmp(self, is_mmp):
+        """Sets the is_mmp of this OptionsOrder.
+
+        是否为MMP委托。对应请求中的`mmp`。  # noqa: E501
+
+        :param is_mmp: The is_mmp of this OptionsOrder.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_mmp = is_mmp
 
     @property
     def tif(self):

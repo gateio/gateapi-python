@@ -164,7 +164,7 @@ class SubAccountToSubAccount(object):
     def sub_account_from_type(self):
         """Gets the sub_account_from_type of this SubAccountToSubAccount.  # noqa: E501
 
-        The sub-account's outgoing trading account, spot - spot account, futures - perpetual contract account, delivery - delivery contract account, cross_margin - cross-margin account.\"  # noqa: E501
+        The sub-account's outgoing trading account, spot - spot account, futures - perpetual contract account, delivery - delivery contract account.  # noqa: E501
 
         :return: The sub_account_from_type of this SubAccountToSubAccount.  # noqa: E501
         :rtype: str
@@ -175,7 +175,7 @@ class SubAccountToSubAccount(object):
     def sub_account_from_type(self, sub_account_from_type):
         """Sets the sub_account_from_type of this SubAccountToSubAccount.
 
-        The sub-account's outgoing trading account, spot - spot account, futures - perpetual contract account, delivery - delivery contract account, cross_margin - cross-margin account.\"  # noqa: E501
+        The sub-account's outgoing trading account, spot - spot account, futures - perpetual contract account, delivery - delivery contract account.  # noqa: E501
 
         :param sub_account_from_type: The sub_account_from_type of this SubAccountToSubAccount.  # noqa: E501
         :type: str
@@ -214,7 +214,7 @@ class SubAccountToSubAccount(object):
     def sub_account_to_type(self):
         """Gets the sub_account_to_type of this SubAccountToSubAccount.  # noqa: E501
 
-        The sub-account's incoming trading account, spot - spot account, futures - perpetual contract account, delivery - delivery contract account, cross_margin - cross-margin account.  # noqa: E501
+        The sub-account's incoming trading account, spot - spot account, futures - perpetual contract account, delivery - delivery contract account  # noqa: E501
 
         :return: The sub_account_to_type of this SubAccountToSubAccount.  # noqa: E501
         :rtype: str
@@ -225,7 +225,7 @@ class SubAccountToSubAccount(object):
     def sub_account_to_type(self, sub_account_to_type):
         """Sets the sub_account_to_type of this SubAccountToSubAccount.
 
-        The sub-account's incoming trading account, spot - spot account, futures - perpetual contract account, delivery - delivery contract account, cross_margin - cross-margin account.  # noqa: E501
+        The sub-account's incoming trading account, spot - spot account, futures - perpetual contract account, delivery - delivery contract account  # noqa: E501
 
         :param sub_account_to_type: The sub_account_to_type of this SubAccountToSubAccount.  # noqa: E501
         :type: str

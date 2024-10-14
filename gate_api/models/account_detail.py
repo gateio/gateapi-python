@@ -38,6 +38,7 @@ class AccountDetail(object):
         'user_id': 'int',
         'tier': 'int',
         'key': 'AccountDetailKey',
+        'copy_trading_role': 'int',
     }
 
     attribute_map = {
@@ -46,12 +47,20 @@ class AccountDetail(object):
         'user_id': 'user_id',
         'tier': 'tier',
         'key': 'key',
+        'copy_trading_role': 'copy_trading_role',
     }
 
     def __init__(
-        self, ip_whitelist=None, currency_pairs=None, user_id=None, tier=None, key=None, local_vars_configuration=None
+        self,
+        ip_whitelist=None,
+        currency_pairs=None,
+        user_id=None,
+        tier=None,
+        key=None,
+        copy_trading_role=None,
+        local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (list[str], list[str], int, int, AccountDetailKey, Configuration) -> None
+        # type: (list[str], list[str], int, int, AccountDetailKey, int, Configuration) -> None
         """AccountDetail - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,6 +71,7 @@ class AccountDetail(object):
         self._user_id = None
         self._tier = None
         self._key = None
+        self._copy_trading_role = None
         self.discriminator = None
 
         if ip_whitelist is not None:
@@ -74,6 +84,8 @@ class AccountDetail(object):
             self.tier = tier
         if key is not None:
             self.key = key
+        if copy_trading_role is not None:
+            self.copy_trading_role = copy_trading_role
 
     @property
     def ip_whitelist(self):
@@ -187,6 +199,29 @@ class AccountDetail(object):
         """
 
         self._key = key
+
+    @property
+    def copy_trading_role(self):
+        """Gets the copy_trading_role of this AccountDetail.  # noqa: E501
+
+        User role: 0 - Ordinary user 1 - Order leader 2 - Follower 3 - Order leader and follower  # noqa: E501
+
+        :return: The copy_trading_role of this AccountDetail.  # noqa: E501
+        :rtype: int
+        """
+        return self._copy_trading_role
+
+    @copy_trading_role.setter
+    def copy_trading_role(self, copy_trading_role):
+        """Sets the copy_trading_role of this AccountDetail.
+
+        User role: 0 - Ordinary user 1 - Order leader 2 - Follower 3 - Order leader and follower  # noqa: E501
+
+        :param copy_trading_role: The copy_trading_role of this AccountDetail.  # noqa: E501
+        :type: int
+        """
+
+        self._copy_trading_role = copy_trading_role
 
     def to_dict(self):
         """Returns the model properties as a dict"""

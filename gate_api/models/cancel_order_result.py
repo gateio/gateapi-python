@@ -35,6 +35,7 @@ class CancelOrderResult(object):
     openapi_types = {
         'currency_pair': 'str',
         'id': 'str',
+        'text': 'str',
         'succeeded': 'bool',
         'label': 'str',
         'message': 'str',
@@ -44,6 +45,7 @@ class CancelOrderResult(object):
     attribute_map = {
         'currency_pair': 'currency_pair',
         'id': 'id',
+        'text': 'text',
         'succeeded': 'succeeded',
         'label': 'label',
         'message': 'message',
@@ -54,13 +56,14 @@ class CancelOrderResult(object):
         self,
         currency_pair=None,
         id=None,
+        text=None,
         succeeded=None,
         label=None,
         message=None,
         account=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, bool, str, str, str, Configuration) -> None
+        # type: (str, str, str, bool, str, str, str, Configuration) -> None
         """CancelOrderResult - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +71,7 @@ class CancelOrderResult(object):
 
         self._currency_pair = None
         self._id = None
+        self._text = None
         self._succeeded = None
         self._label = None
         self._message = None
@@ -78,6 +82,8 @@ class CancelOrderResult(object):
             self.currency_pair = currency_pair
         if id is not None:
             self.id = id
+        if text is not None:
+            self.text = text
         if succeeded is not None:
             self.succeeded = succeeded
         if label is not None:
@@ -132,6 +138,29 @@ class CancelOrderResult(object):
         """
 
         self._id = id
+
+    @property
+    def text(self):
+        """Gets the text of this CancelOrderResult.  # noqa: E501
+
+        Custom order information  # noqa: E501
+
+        :return: The text of this CancelOrderResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """Sets the text of this CancelOrderResult.
+
+        Custom order information  # noqa: E501
+
+        :param text: The text of this CancelOrderResult.  # noqa: E501
+        :type: str
+        """
+
+        self._text = text
 
     @property
     def succeeded(self):

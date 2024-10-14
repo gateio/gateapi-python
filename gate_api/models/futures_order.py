@@ -307,7 +307,7 @@ class FuturesOrder(object):
     def finish_as(self):
         """Gets the finish_as of this FuturesOrder.  # noqa: E501
 
-        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close - stp: cancelled because self trade prevention   # noqa: E501
+        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close - position_closed: canceled because the position was closed - reduce_out: only reduce positions by excluding hard-to-fill orders - stp: cancelled because self trade prevention   # noqa: E501
 
         :return: The finish_as of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -318,7 +318,7 @@ class FuturesOrder(object):
     def finish_as(self, finish_as):
         """Sets the finish_as of this FuturesOrder.
 
-        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close - stp: cancelled because self trade prevention   # noqa: E501
+        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close - position_closed: canceled because the position was closed - reduce_out: only reduce positions by excluding hard-to-fill orders - stp: cancelled because self trade prevention   # noqa: E501
 
         :param finish_as: The finish_as of this FuturesOrder.  # noqa: E501
         :type: str

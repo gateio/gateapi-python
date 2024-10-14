@@ -40,8 +40,9 @@ class SubAccountKey(object):
         'ip_whitelist': 'list[str]',
         'key': 'str',
         'state': 'int',
-        'created_at': 'str',
-        'updated_at': 'str',
+        'created_at': 'int',
+        'updated_at': 'int',
+        'last_access': 'int',
     }
 
     attribute_map = {
@@ -54,6 +55,7 @@ class SubAccountKey(object):
         'state': 'state',
         'created_at': 'created_at',
         'updated_at': 'updated_at',
+        'last_access': 'last_access',
     }
 
     def __init__(
@@ -67,9 +69,10 @@ class SubAccountKey(object):
         state=None,
         created_at=None,
         updated_at=None,
+        last_access=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, int, str, list[SubAccountKeyPerms], list[str], str, int, str, str, Configuration) -> None
+        # type: (str, int, str, list[SubAccountKeyPerms], list[str], str, int, int, int, int, Configuration) -> None
         """SubAccountKey - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +87,7 @@ class SubAccountKey(object):
         self._state = None
         self._created_at = None
         self._updated_at = None
+        self._last_access = None
         self.discriminator = None
 
         if user_id is not None:
@@ -104,6 +108,8 @@ class SubAccountKey(object):
             self.created_at = created_at
         if updated_at is not None:
             self.updated_at = updated_at
+        if last_access is not None:
+            self.last_access = last_access
 
     @property
     def user_id(self):
@@ -271,7 +277,7 @@ class SubAccountKey(object):
         Creation time  # noqa: E501
 
         :return: The created_at of this SubAccountKey.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._created_at
 
@@ -282,7 +288,7 @@ class SubAccountKey(object):
         Creation time  # noqa: E501
 
         :param created_at: The created_at of this SubAccountKey.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._created_at = created_at
@@ -294,7 +300,7 @@ class SubAccountKey(object):
         Last update time  # noqa: E501
 
         :return: The updated_at of this SubAccountKey.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._updated_at
 
@@ -305,10 +311,33 @@ class SubAccountKey(object):
         Last update time  # noqa: E501
 
         :param updated_at: The updated_at of this SubAccountKey.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._updated_at = updated_at
+
+    @property
+    def last_access(self):
+        """Gets the last_access of this SubAccountKey.  # noqa: E501
+
+        Last access time  # noqa: E501
+
+        :return: The last_access of this SubAccountKey.  # noqa: E501
+        :rtype: int
+        """
+        return self._last_access
+
+    @last_access.setter
+    def last_access(self, last_access):
+        """Sets the last_access of this SubAccountKey.
+
+        Last access time  # noqa: E501
+
+        :param last_access: The last_access of this SubAccountKey.  # noqa: E501
+        :type: int
+        """
+
+        self._last_access = last_access
 
     def to_dict(self):
         """Returns the model properties as a dict"""

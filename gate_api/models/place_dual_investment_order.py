@@ -32,12 +32,12 @@ class PlaceDualInvestmentOrder(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'plan_id': 'str', 'copies': 'str'}
+    openapi_types = {'plan_id': 'str', 'copies': 'str', 'is_max': 'int'}
 
-    attribute_map = {'plan_id': 'plan_id', 'copies': 'copies'}
+    attribute_map = {'plan_id': 'plan_id', 'copies': 'copies', 'is_max': 'is_max'}
 
-    def __init__(self, plan_id=None, copies=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, Configuration) -> None
+    def __init__(self, plan_id=None, copies=None, is_max=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, int, Configuration) -> None
         """PlaceDualInvestmentOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -45,10 +45,13 @@ class PlaceDualInvestmentOrder(object):
 
         self._plan_id = None
         self._copies = None
+        self._is_max = None
         self.discriminator = None
 
         self.plan_id = plan_id
         self.copies = copies
+        if is_max is not None:
+            self.is_max = is_max
 
     @property
     def plan_id(self):
@@ -99,6 +102,29 @@ class PlaceDualInvestmentOrder(object):
             raise ValueError("Invalid value for `copies`, must not be `None`")  # noqa: E501
 
         self._copies = copies
+
+    @property
+    def is_max(self):
+        """Gets the is_max of this PlaceDualInvestmentOrder.  # noqa: E501
+
+        Is it the maximum subscription?  # noqa: E501
+
+        :return: The is_max of this PlaceDualInvestmentOrder.  # noqa: E501
+        :rtype: int
+        """
+        return self._is_max
+
+    @is_max.setter
+    def is_max(self, is_max):
+        """Sets the is_max of this PlaceDualInvestmentOrder.
+
+        Is it the maximum subscription?  # noqa: E501
+
+        :param is_max: The is_max of this PlaceDualInvestmentOrder.  # noqa: E501
+        :type: int
+        """
+
+        self._is_max = is_max
 
     def to_dict(self):
         """Returns the model properties as a dict"""

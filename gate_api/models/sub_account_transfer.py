@@ -297,7 +297,7 @@ class SubAccountTransfer(object):
     def sub_account_type(self):
         """Gets the sub_account_type of this SubAccountTransfer.  # noqa: E501
 
-        Target sub user's account. `spot` - spot account, `futures` - perpetual contract account, `cross_margin` - cross margin account, `delivery` - delivery account  # noqa: E501
+        Target sub user's account. `spot` - spot account, `futures` - perpetual contract account, `delivery` - delivery account  # noqa: E501
 
         :return: The sub_account_type of this SubAccountTransfer.  # noqa: E501
         :rtype: str
@@ -308,7 +308,7 @@ class SubAccountTransfer(object):
     def sub_account_type(self, sub_account_type):
         """Sets the sub_account_type of this SubAccountTransfer.
 
-        Target sub user's account. `spot` - spot account, `futures` - perpetual contract account, `cross_margin` - cross margin account, `delivery` - delivery account  # noqa: E501
+        Target sub user's account. `spot` - spot account, `futures` - perpetual contract account, `delivery` - delivery account  # noqa: E501
 
         :param sub_account_type: The sub_account_type of this SubAccountTransfer.  # noqa: E501
         :type: str

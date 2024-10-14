@@ -32,22 +32,25 @@ class ConvertSmallBalance(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'currency': 'list[str]'}
+    openapi_types = {'currency': 'list[str]', 'is_all': 'bool'}
 
-    attribute_map = {'currency': 'currency'}
+    attribute_map = {'currency': 'currency', 'is_all': 'is_all'}
 
-    def __init__(self, currency=None, local_vars_configuration=None):  # noqa: E501
-        # type: (list[str], Configuration) -> None
+    def __init__(self, currency=None, is_all=None, local_vars_configuration=None):  # noqa: E501
+        # type: (list[str], bool, Configuration) -> None
         """ConvertSmallBalance - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._currency = None
+        self._is_all = None
         self.discriminator = None
 
         if currency is not None:
             self.currency = currency
+        if is_all is not None:
+            self.is_all = is_all
 
     @property
     def currency(self):
@@ -71,6 +74,29 @@ class ConvertSmallBalance(object):
         """
 
         self._currency = currency
+
+    @property
+    def is_all(self):
+        """Gets the is_all of this ConvertSmallBalance.  # noqa: E501
+
+        Whether to exchange all  # noqa: E501
+
+        :return: The is_all of this ConvertSmallBalance.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_all
+
+    @is_all.setter
+    def is_all(self, is_all):
+        """Sets the is_all of this ConvertSmallBalance.
+
+        Whether to exchange all  # noqa: E501
+
+        :param is_all: The is_all of this ConvertSmallBalance.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_all = is_all
 
     def to_dict(self):
         """Returns the model properties as a dict"""

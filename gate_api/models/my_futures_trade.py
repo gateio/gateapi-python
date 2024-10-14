@@ -38,6 +38,7 @@ class MyFuturesTrade(object):
         'contract': 'str',
         'order_id': 'str',
         'size': 'int',
+        'close_size': 'int',
         'price': 'str',
         'role': 'str',
         'text': 'str',
@@ -51,6 +52,7 @@ class MyFuturesTrade(object):
         'contract': 'contract',
         'order_id': 'order_id',
         'size': 'size',
+        'close_size': 'close_size',
         'price': 'price',
         'role': 'role',
         'text': 'text',
@@ -65,6 +67,7 @@ class MyFuturesTrade(object):
         contract=None,
         order_id=None,
         size=None,
+        close_size=None,
         price=None,
         role=None,
         text=None,
@@ -72,7 +75,7 @@ class MyFuturesTrade(object):
         point_fee=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, float, str, str, int, str, str, str, str, str, Configuration) -> None
+        # type: (int, float, str, str, int, int, str, str, str, str, str, Configuration) -> None
         """MyFuturesTrade - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +86,7 @@ class MyFuturesTrade(object):
         self._contract = None
         self._order_id = None
         self._size = None
+        self._close_size = None
         self._price = None
         self._role = None
         self._text = None
@@ -100,6 +104,8 @@ class MyFuturesTrade(object):
             self.order_id = order_id
         if size is not None:
             self.size = size
+        if close_size is not None:
+            self.close_size = close_size
         if price is not None:
             self.price = price
         if role is not None:
@@ -225,6 +231,29 @@ class MyFuturesTrade(object):
         """
 
         self._size = size
+
+    @property
+    def close_size(self):
+        """Gets the close_size of this MyFuturesTrade.  # noqa: E501
+
+        Number of closed positions:  close_size=0 && size＞0       Open long position close_size=0 && size＜0       Open short position close_size>0 && size>0 && size <= close_size Close short postion close_size>0 && size>0 && size > close_size Close short position and open long position close_size<0 && size<0 && size >= close_size Close long postion close_size<0 && size<0 && size < close_size Close long position and open short position  # noqa: E501
+
+        :return: The close_size of this MyFuturesTrade.  # noqa: E501
+        :rtype: int
+        """
+        return self._close_size
+
+    @close_size.setter
+    def close_size(self, close_size):
+        """Sets the close_size of this MyFuturesTrade.
+
+        Number of closed positions:  close_size=0 && size＞0       Open long position close_size=0 && size＜0       Open short position close_size>0 && size>0 && size <= close_size Close short postion close_size>0 && size>0 && size > close_size Close short position and open long position close_size<0 && size<0 && size >= close_size Close long postion close_size<0 && size<0 && size < close_size Close long position and open short position  # noqa: E501
+
+        :param close_size: The close_size of this MyFuturesTrade.  # noqa: E501
+        :type: int
+        """
+
+        self._close_size = close_size
 
     @property
     def price(self):

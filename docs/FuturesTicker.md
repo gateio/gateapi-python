@@ -23,7 +23,9 @@ Name | Type | Description | Notes
 **basis_rate** | **str** | Basis rate | [optional] 
 **basis_value** | **str** | Basis value | [optional] 
 **lowest_ask** | **str** | Recent lowest ask | [optional] 
+**lowest_size** | **str** | The latest seller&#39;s lowest price order quantity | [optional] 
 **highest_bid** | **str** | Recent highest bid | [optional] 
+**highest_size** | **str** | The latest buyer&#39;s highest price order volume | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

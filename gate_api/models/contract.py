@@ -973,7 +973,7 @@ class Contract(object):
     def in_delisting(self):
         """Gets the in_delisting of this Contract.  # noqa: E501
 
-        Contract is delisting  # noqa: E501
+        `in_delisting=true` And when position_size>0, it means the contract is in the offline transition period `in_delisting=true` And when position_size=0, it means the contract is offline  # noqa: E501
 
         :return: The in_delisting of this Contract.  # noqa: E501
         :rtype: bool
@@ -984,7 +984,7 @@ class Contract(object):
     def in_delisting(self, in_delisting):
         """Sets the in_delisting of this Contract.
 
-        Contract is delisting  # noqa: E501
+        `in_delisting=true` And when position_size>0, it means the contract is in the offline transition period `in_delisting=true` And when position_size=0, it means the contract is offline  # noqa: E501
 
         :param in_delisting: The in_delisting of this Contract.  # noqa: E501
         :type: bool

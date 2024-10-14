@@ -38,6 +38,7 @@ class FuturesLimitRiskTiers(object):
         'initial_rate': 'str',
         'maintenance_rate': 'str',
         'leverage_max': 'str',
+        'contract': 'str',
     }
 
     attribute_map = {
@@ -46,6 +47,7 @@ class FuturesLimitRiskTiers(object):
         'initial_rate': 'initial_rate',
         'maintenance_rate': 'maintenance_rate',
         'leverage_max': 'leverage_max',
+        'contract': 'contract',
     }
 
     def __init__(
@@ -55,9 +57,10 @@ class FuturesLimitRiskTiers(object):
         initial_rate=None,
         maintenance_rate=None,
         leverage_max=None,
+        contract=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (int, str, str, str, str, Configuration) -> None
+        # type: (int, str, str, str, str, str, Configuration) -> None
         """FuturesLimitRiskTiers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +71,7 @@ class FuturesLimitRiskTiers(object):
         self._initial_rate = None
         self._maintenance_rate = None
         self._leverage_max = None
+        self._contract = None
         self.discriminator = None
 
         if tier is not None:
@@ -80,6 +84,8 @@ class FuturesLimitRiskTiers(object):
             self.maintenance_rate = maintenance_rate
         if leverage_max is not None:
             self.leverage_max = leverage_max
+        if contract is not None:
+            self.contract = contract
 
     @property
     def tier(self):
@@ -195,6 +201,29 @@ class FuturesLimitRiskTiers(object):
         """
 
         self._leverage_max = leverage_max
+
+    @property
+    def contract(self):
+        """Gets the contract of this FuturesLimitRiskTiers.  # noqa: E501
+
+        Markets, visible only during market pagination requests  # noqa: E501
+
+        :return: The contract of this FuturesLimitRiskTiers.  # noqa: E501
+        :rtype: str
+        """
+        return self._contract
+
+    @contract.setter
+    def contract(self, contract):
+        """Sets the contract of this FuturesLimitRiskTiers.
+
+        Markets, visible only during market pagination requests  # noqa: E501
+
+        :param contract: The contract of this FuturesLimitRiskTiers.  # noqa: E501
+        :type: str
+        """
+
+        self._contract = contract
 
     def to_dict(self):
         """Returns the model properties as a dict"""

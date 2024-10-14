@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**list_small_balance**](WalletApi.md#list_small_balance) | **GET** /wallet/small_balance | List small balance
 [**convert_small_balance**](WalletApi.md#convert_small_balance) | **POST** /wallet/small_balance | Convert small balance
 [**list_small_balance_history**](WalletApi.md#list_small_balance_history) | **GET** /wallet/small_balance_history | List small balance history
+[**list_push_orders**](WalletApi.md#list_push_orders) | **GET** /wallet/push | Retrieve the UID transfer history
 
 
 # **list_currency_chains**
@@ -309,7 +310,7 @@ Name | Type | Description  | Notes
 
 Transfer between trading accounts
 
-Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 3. spot - delivery 4. spot - cross margin 5. spot - options
+Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 3. spot - delivery 4. spot - options
 
 ### Example
 
@@ -451,7 +452,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **transfer_with_sub_account**
-> transfer_with_sub_account(sub_account_transfer)
+> TransactionID transfer_with_sub_account(sub_account_transfer)
 
 Transfer between main and sub accounts
 
@@ -485,7 +486,8 @@ sub_account_transfer = gate_api.SubAccountTransfer() # SubAccountTransfer |
 
 try:
     # Transfer between main and sub accounts
-    api_instance.transfer_with_sub_account(sub_account_transfer)
+    api_response = api_instance.transfer_with_sub_account(sub_account_transfer)
+    print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
@@ -500,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**TransactionID**](TransactionID.md)
 
 ### Authorization
 
@@ -509,17 +511,17 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Balance transferred |  -  |
+**200** | Balance transferred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sub_account_to_sub_account**
-> sub_account_to_sub_account(sub_account_to_sub_account)
+> TransactionID sub_account_to_sub_account(sub_account_to_sub_account)
 
 Sub-account transfers to sub-account
 
@@ -553,7 +555,8 @@ sub_account_to_sub_account = gate_api.SubAccountToSubAccount() # SubAccountToSub
 
 try:
     # Sub-account transfers to sub-account
-    api_instance.sub_account_to_sub_account(sub_account_to_sub_account)
+    api_response = api_instance.sub_account_to_sub_account(sub_account_to_sub_account)
+    print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
@@ -568,7 +571,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**TransactionID**](TransactionID.md)
 
 ### Authorization
 
@@ -577,12 +580,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Balance transferred |  -  |
+**200** | Balance transferred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -924,7 +927,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_saved_address**
-> list[SavedAddress] list_saved_address(currency, chain=chain, limit=limit)
+> list[SavedAddress] list_saved_address(currency, chain=chain, limit=limit, page=page)
 
 Query saved address
 
@@ -955,10 +958,11 @@ api_instance = gate_api.WalletApi(api_client)
 currency = 'USDT' # str | Currency
 chain = '' # str | Chain name (optional) (default to '')
 limit = '50' # str | Maximum number returned, 100 at most (optional) (default to '50')
+page = 1 # int | Page number (optional) (default to 1)
 
 try:
     # Query saved address
-    api_response = api_instance.list_saved_address(currency, chain=chain, limit=limit)
+    api_response = api_instance.list_saved_address(currency, chain=chain, limit=limit, page=page)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -973,6 +977,7 @@ Name | Type | Description  | Notes
  **currency** | **str**| Currency | 
  **chain** | **str**| Chain name | [optional] [default to &#39;&#39;]
  **limit** | **str**| Maximum number returned, 100 at most | [optional] [default to &#39;50&#39;]
+ **page** | **int**| Page number | [optional] [default to 1]
 
 ### Return type
 
@@ -1315,6 +1320,81 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SmallBalanceHistory**](SmallBalanceHistory.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_push_orders**
+> list[UidPushOrder] list_push_orders(id=id, _from=_from, to=to, limit=limit, offset=offset)
+
+Retrieve the UID transfer history
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.WalletApi(api_client)
+id = 56 # int | Order ID (optional)
+_from = 56 # int | The start time of the query record. If not specified, it defaults to 7 days forward from the current time, in seconds Unix timestamp (optional)
+to = 56 # int | The end time of the query record. If not specified, the default is the current time, which is a Unix timestamp in seconds. (optional)
+limit = 100 # int | The maximum number of items returned in the list, the default value is 100 (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
+
+try:
+    # Retrieve the UID transfer history
+    api_response = api_instance.list_push_orders(id=id, _from=_from, to=to, limit=limit, offset=offset)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling WalletApi->list_push_orders: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| Order ID | [optional] 
+ **_from** | **int**| The start time of the query record. If not specified, it defaults to 7 days forward from the current time, in seconds Unix timestamp | [optional] 
+ **to** | **int**| The end time of the query record. If not specified, the default is the current time, which is a Unix timestamp in seconds. | [optional] 
+ **limit** | **int**| The maximum number of items returned in the list, the default value is 100 | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
+
+### Return type
+
+[**list[UidPushOrder]**](UidPushOrder.md)
 
 ### Authorization
 

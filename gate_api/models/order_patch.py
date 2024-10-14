@@ -32,25 +32,52 @@ class OrderPatch(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'amount': 'str', 'price': 'str', 'amend_text': 'str', 'action_mode': 'str'}
+    openapi_types = {
+        'currency_pair': 'str',
+        'account': 'str',
+        'amount': 'str',
+        'price': 'str',
+        'amend_text': 'str',
+        'action_mode': 'str',
+    }
 
-    attribute_map = {'amount': 'amount', 'price': 'price', 'amend_text': 'amend_text', 'action_mode': 'action_mode'}
+    attribute_map = {
+        'currency_pair': 'currency_pair',
+        'account': 'account',
+        'amount': 'amount',
+        'price': 'price',
+        'amend_text': 'amend_text',
+        'action_mode': 'action_mode',
+    }
 
     def __init__(
-        self, amount=None, price=None, amend_text=None, action_mode=None, local_vars_configuration=None
+        self,
+        currency_pair=None,
+        account=None,
+        amount=None,
+        price=None,
+        amend_text=None,
+        action_mode=None,
+        local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, Configuration) -> None
         """OrderPatch - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._currency_pair = None
+        self._account = None
         self._amount = None
         self._price = None
         self._amend_text = None
         self._action_mode = None
         self.discriminator = None
 
+        if currency_pair is not None:
+            self.currency_pair = currency_pair
+        if account is not None:
+            self.account = account
         if amount is not None:
             self.amount = amount
         if price is not None:
@@ -59,6 +86,52 @@ class OrderPatch(object):
             self.amend_text = amend_text
         if action_mode is not None:
             self.action_mode = action_mode
+
+    @property
+    def currency_pair(self):
+        """Gets the currency_pair of this OrderPatch.  # noqa: E501
+
+        Currency pair  # noqa: E501
+
+        :return: The currency_pair of this OrderPatch.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_pair
+
+    @currency_pair.setter
+    def currency_pair(self, currency_pair):
+        """Sets the currency_pair of this OrderPatch.
+
+        Currency pair  # noqa: E501
+
+        :param currency_pair: The currency_pair of this OrderPatch.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_pair = currency_pair
+
+    @property
+    def account(self):
+        """Gets the account of this OrderPatch.  # noqa: E501
+
+        指定查询账户。  # noqa: E501
+
+        :return: The account of this OrderPatch.  # noqa: E501
+        :rtype: str
+        """
+        return self._account
+
+    @account.setter
+    def account(self, account):
+        """Sets the account of this OrderPatch.
+
+        指定查询账户。  # noqa: E501
+
+        :param account: The account of this OrderPatch.  # noqa: E501
+        :type: str
+        """
+
+        self._account = account
 
     @property
     def amount(self):

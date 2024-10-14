@@ -396,7 +396,7 @@ No authorization required
 
 Retrieve market trades
 
-You can use `from` and `to` to query by time range, or use `last_id` by scrolling page. The default behavior is by time range.  Scrolling query using `last_id` is not recommended any more. If `last_id` is specified, time range query parameters will be ignored.
+You can use `from` and `to` to query by time range, or use `last_id` by scrolling page. The default behavior is by time range, The query range is the last 30 days.  Scrolling query using `last_id` is not recommended any more. If `last_id` is specified, time range query parameters will be ignored.
 
 ### Example
 
@@ -1177,11 +1177,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_orders**
-> list[Order] cancel_orders(currency_pair, side=side, account=account, action_mode=action_mode)
+> list[OrderCancel] cancel_orders(currency_pair=currency_pair, side=side, account=account, action_mode=action_mode)
 
 Cancel all `open` orders in specified currency pair
 
-If `account` is not set, all open orders, including spot, portfolio, margin and cross margin ones, will be cancelled.  You can set `account` to cancel only orders within the specified account
+If `account` is not set, all open orders, including spot, portfolio, margin and cross margin ones, will be cancelled. If `currency_pair` is not specified, all pending orders for trading pairs will be cancelled. You can set `account` to cancel only orders within the specified account
 
 ### Example
 
@@ -1207,14 +1207,14 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
-currency_pair = 'BTC_USDT' # str | Currency pair
+currency_pair = 'BTC_USDT' # str | Currency pair (optional)
 side = 'sell' # str | All bids or asks. Both included if not specified (optional)
-account = 'spot' # str | Specify account type  - classic account：Default to all account types being included   - portfolio margin account：`cross_margin` only (optional)
+account = 'spot' # str | Specify account type:  - Classic account: Includes all if not specified - Unified account: Specify `unified` - Unified account (legacy): Can only specify `cross_margin` (optional)
 action_mode = 'ACK' # str | Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) (optional)
 
 try:
     # Cancel all `open` orders in specified currency pair
-    api_response = api_instance.cancel_orders(currency_pair, side=side, account=account, action_mode=action_mode)
+    api_response = api_instance.cancel_orders(currency_pair=currency_pair, side=side, account=account, action_mode=action_mode)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1226,14 +1226,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency_pair** | **str**| Currency pair | 
+ **currency_pair** | **str**| Currency pair | [optional] 
  **side** | **str**| All bids or asks. Both included if not specified | [optional] 
- **account** | **str**| Specify account type  - classic account：Default to all account types being included   - portfolio margin account：&#x60;cross_margin&#x60; only | [optional] 
+ **account** | **str**| Specify account type:  - Classic account: Includes all if not specified - Unified account: Specify &#x60;unified&#x60; - Unified account (legacy): Can only specify &#x60;cross_margin&#x60; | [optional] 
  **action_mode** | **str**| Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) | [optional] 
 
 ### Return type
 
-[**list[Order]**](Order.md)
+[**list[OrderCancel]**](OrderCancel.md)
 
 ### Authorization
 
@@ -1352,7 +1352,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted.
-currency_pair = 'BTC_USDT' # str | Currency pair
+currency_pair = 'BTC_USDT' # str | Specify the transaction pair to query. If you are querying pending order records, this field is required. If you are querying traded records, this field can be left blank.
 account = 'cross_margin' # str | Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only (optional)
 
 try:
@@ -1370,7 +1370,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order_id** | **str**| Order ID returned, or user custom ID(i.e., &#x60;text&#x60; field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted. | 
- **currency_pair** | **str**| Currency pair | 
+ **currency_pair** | **str**| Specify the transaction pair to query. If you are querying pending order records, this field is required. If you are querying traded records, this field can be left blank. | 
  **account** | **str**| Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account.  Portfolio margin account must set to &#x60;cross_margin&#x60; only | [optional] 
 
 ### Return type
@@ -1469,11 +1469,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amend_order**
-> Order amend_order(order_id, currency_pair, order_patch, account=account)
+> Order amend_order(order_id, order_patch, currency_pair=currency_pair, account=account)
 
 Amend an order
 
-By default, the orders of spot, portfolio and margin account are updated.  If you need to modify orders of the `cross-margin` account, you must specify account as `cross_margin`.  For portfolio margin account, only `cross_margin` account is supported.  Currently, only supports modification of `price` or `amount` fields.  Regarding rate limiting: modify order and create order sharing rate limiting rules. Regarding matching priority: Only reducing the quantity without modifying the priority of matching, altering the price or increasing the quantity will adjust the priority to the new price at the end Note: If the modified amount is less than the fill amount, the order will be cancelled.
+By default, the orders of spot, portfolio and margin account are updated.  If you need to modify orders of the `cross-margin` account, you must specify account as `cross_margin`.  For portfolio margin account, only `cross_margin` account is supported.  Currently, both request body and query support currency_pair and account parameter passing, but request body has higher priority  Currently, only supports modification of `price` or `amount` fields.  Regarding rate limiting: modify order and create order sharing rate limiting rules. Regarding matching priority: Only reducing the quantity without modifying the priority of matching, altering the price or increasing the quantity will adjust the priority to the new price at the end Note: If the modified amount is less than the fill amount, the order will be cancelled.
 
 ### Example
 
@@ -1500,13 +1500,13 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted.
-currency_pair = 'BTC_USDT' # str | Currency pair
 order_patch = gate_api.OrderPatch() # OrderPatch | 
+currency_pair = 'BTC_USDT' # str | Currency pair (optional)
 account = 'cross_margin' # str | Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only (optional)
 
 try:
     # Amend an order
-    api_response = api_instance.amend_order(order_id, currency_pair, order_patch, account=account)
+    api_response = api_instance.amend_order(order_id, order_patch, currency_pair=currency_pair, account=account)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1519,8 +1519,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order_id** | **str**| Order ID returned, or user custom ID(i.e., &#x60;text&#x60; field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted. | 
- **currency_pair** | **str**| Currency pair | 
  **order_patch** | [**OrderPatch**](OrderPatch.md)|  | 
+ **currency_pair** | **str**| Currency pair | [optional] 
  **account** | **str**| Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account.  Portfolio margin account must set to &#x60;cross_margin&#x60; only | [optional] 
 
 ### Return type
@@ -1575,7 +1575,7 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 currency_pair = 'BTC_USDT' # str | Retrieve results with specified currency pair (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+limit = 100 # int | Maximum number of records to be returned in a single list.  Default: 100, Minimum: 1, Maximum: 1000 (optional) (default to 100)
 page = 1 # int | Page number (optional) (default to 1)
 order_id = '12345' # str | Filter trades with specified order ID. `currency_pair` is also required if this field is present (optional)
 account = 'cross_margin' # str | Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only (optional)
@@ -1597,7 +1597,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency_pair** | **str**| Retrieve results with specified currency pair | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records to be returned in a single list.  Default: 100, Minimum: 1, Maximum: 1000 | [optional] [default to 100]
  **page** | **int**| Page number | [optional] [default to 1]
  **order_id** | **str**| Filter trades with specified order ID. &#x60;currency_pair&#x60; is also required if this field is present | [optional] 
  **account** | **str**| Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account.  Portfolio margin account must set to &#x60;cross_margin&#x60; only | [optional] 

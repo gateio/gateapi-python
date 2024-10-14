@@ -41,6 +41,9 @@ class UnifiedBalance(object):
         'equity': 'str',
         'total_freeze': 'str',
         'total_liab': 'str',
+        'spot_in_use': 'str',
+        'funding': 'str',
+        'funding_version': 'str',
     }
 
     attribute_map = {
@@ -52,6 +55,9 @@ class UnifiedBalance(object):
         'equity': 'equity',
         'total_freeze': 'total_freeze',
         'total_liab': 'total_liab',
+        'spot_in_use': 'spot_in_use',
+        'funding': 'funding',
+        'funding_version': 'funding_version',
     }
 
     def __init__(
@@ -64,9 +70,12 @@ class UnifiedBalance(object):
         equity=None,
         total_freeze=None,
         total_liab=None,
+        spot_in_use=None,
+        funding=None,
+        funding_version=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """UnifiedBalance - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +89,9 @@ class UnifiedBalance(object):
         self._equity = None
         self._total_freeze = None
         self._total_liab = None
+        self._spot_in_use = None
+        self._funding = None
+        self._funding_version = None
         self.discriminator = None
 
         if available is not None:
@@ -98,6 +110,12 @@ class UnifiedBalance(object):
             self.total_freeze = total_freeze
         if total_liab is not None:
             self.total_liab = total_liab
+        if spot_in_use is not None:
+            self.spot_in_use = spot_in_use
+        if funding is not None:
+            self.funding = funding
+        if funding_version is not None:
+            self.funding_version = funding_version
 
     @property
     def available(self):
@@ -282,6 +300,75 @@ class UnifiedBalance(object):
         """
 
         self._total_liab = total_liab
+
+    @property
+    def spot_in_use(self):
+        """Gets the spot_in_use of this UnifiedBalance.  # noqa: E501
+
+        Spot hedging utilization  # noqa: E501
+
+        :return: The spot_in_use of this UnifiedBalance.  # noqa: E501
+        :rtype: str
+        """
+        return self._spot_in_use
+
+    @spot_in_use.setter
+    def spot_in_use(self, spot_in_use):
+        """Sets the spot_in_use of this UnifiedBalance.
+
+        Spot hedging utilization  # noqa: E501
+
+        :param spot_in_use: The spot_in_use of this UnifiedBalance.  # noqa: E501
+        :type: str
+        """
+
+        self._spot_in_use = spot_in_use
+
+    @property
+    def funding(self):
+        """Gets the funding of this UnifiedBalance.  # noqa: E501
+
+        Quantity of funding  # noqa: E501
+
+        :return: The funding of this UnifiedBalance.  # noqa: E501
+        :rtype: str
+        """
+        return self._funding
+
+    @funding.setter
+    def funding(self, funding):
+        """Sets the funding of this UnifiedBalance.
+
+        Quantity of funding  # noqa: E501
+
+        :param funding: The funding of this UnifiedBalance.  # noqa: E501
+        :type: str
+        """
+
+        self._funding = funding
+
+    @property
+    def funding_version(self):
+        """Gets the funding_version of this UnifiedBalance.  # noqa: E501
+
+        Funding version  # noqa: E501
+
+        :return: The funding_version of this UnifiedBalance.  # noqa: E501
+        :rtype: str
+        """
+        return self._funding_version
+
+    @funding_version.setter
+    def funding_version(self, funding_version):
+        """Sets the funding_version of this UnifiedBalance.
+
+        Funding version  # noqa: E501
+
+        :param funding_version: The funding_version of this UnifiedBalance.  # noqa: E501
+        :type: str
+        """
+
+        self._funding_version = funding_version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

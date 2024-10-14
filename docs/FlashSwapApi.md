@@ -67,7 +67,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_flash_swap_currency_pair**
-> list[FlashSwapCurrencyPair] list_flash_swap_currency_pair(currency=currency)
+> list[FlashSwapCurrencyPair] list_flash_swap_currency_pair(currency=currency, page=page, limit=limit)
 
 List All Supported Currency Pairs In Flash Swap
 
@@ -89,10 +89,12 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FlashSwapApi(api_client)
 currency = 'BTC' # str | Retrieve data of the specified currency (optional)
+page = 1 # int | Page number (optional) (default to 1)
+limit = 1000 # int | Maximum response items.  Default: 100, minimum: 1, Maximum: 1000 (optional) (default to 1000)
 
 try:
     # List All Supported Currency Pairs In Flash Swap
-    api_response = api_instance.list_flash_swap_currency_pair(currency=currency)
+    api_response = api_instance.list_flash_swap_currency_pair(currency=currency, page=page, limit=limit)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -105,6 +107,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency** | **str**| Retrieve data of the specified currency | [optional] 
+ **page** | **int**| Page number | [optional] [default to 1]
+ **limit** | **int**| Maximum response items.  Default: 100, minimum: 1, Maximum: 1000 | [optional] [default to 1000]
 
 ### Return type
 

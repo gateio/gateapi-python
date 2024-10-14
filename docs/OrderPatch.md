@@ -4,6 +4,8 @@ Spot order details
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**currency_pair** | **str** | Currency pair | [optional] 
+**account** | **str** | 指定查询账户。 | [optional] 
 **amount** | **str** | New order amount. &#x60;amount&#x60; and &#x60;price&#x60; must specify one of them | [optional] 
 **price** | **str** | New order price. &#x60;amount&#x60; and &#x60;Price&#x60; must specify one of them\&quot; | [optional] 
 **amend_text** | **str** | Custom info during amending order | [optional] 

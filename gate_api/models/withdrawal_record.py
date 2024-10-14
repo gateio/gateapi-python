@@ -35,6 +35,7 @@ class WithdrawalRecord(object):
     openapi_types = {
         'id': 'str',
         'txid': 'str',
+        'block_number': 'str',
         'withdraw_order_id': 'str',
         'timestamp': 'str',
         'amount': 'str',
@@ -49,6 +50,7 @@ class WithdrawalRecord(object):
     attribute_map = {
         'id': 'id',
         'txid': 'txid',
+        'block_number': 'block_number',
         'withdraw_order_id': 'withdraw_order_id',
         'timestamp': 'timestamp',
         'amount': 'amount',
@@ -64,6 +66,7 @@ class WithdrawalRecord(object):
         self,
         id=None,
         txid=None,
+        block_number=None,
         withdraw_order_id=None,
         timestamp=None,
         amount=None,
@@ -75,7 +78,7 @@ class WithdrawalRecord(object):
         chain=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """WithdrawalRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +86,7 @@ class WithdrawalRecord(object):
 
         self._id = None
         self._txid = None
+        self._block_number = None
         self._withdraw_order_id = None
         self._timestamp = None
         self._amount = None
@@ -98,6 +102,8 @@ class WithdrawalRecord(object):
             self.id = id
         if txid is not None:
             self.txid = txid
+        if block_number is not None:
+            self.block_number = block_number
         if withdraw_order_id is not None:
             self.withdraw_order_id = withdraw_order_id
         if timestamp is not None:
@@ -159,6 +165,29 @@ class WithdrawalRecord(object):
         """
 
         self._txid = txid
+
+    @property
+    def block_number(self):
+        """Gets the block_number of this WithdrawalRecord.  # noqa: E501
+
+        区块编号  # noqa: E501
+
+        :return: The block_number of this WithdrawalRecord.  # noqa: E501
+        :rtype: str
+        """
+        return self._block_number
+
+    @block_number.setter
+    def block_number(self, block_number):
+        """Sets the block_number of this WithdrawalRecord.
+
+        区块编号  # noqa: E501
+
+        :param block_number: The block_number of this WithdrawalRecord.  # noqa: E501
+        :type: str
+        """
+
+        self._block_number = block_number
 
     @property
     def withdraw_order_id(self):
@@ -329,7 +358,7 @@ class WithdrawalRecord(object):
     def status(self):
         """Gets the status of this WithdrawalRecord.  # noqa: E501
 
-        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: pending manual approval - BCODE: GateCode operation - EXTPEND: pending confirm after sending - FAIL: pending confirm when fail - INVALID: invalid order - VERIFY: verifying - PROCES: processing - PEND: pending - DMOVE: required manual approval - SPLITPEND: the order is automatically split due to large amount  # noqa: E501
+        交易状态  - DONE: 完成 (block_number > 0 才算真的上链完成) - CANCEL: 已取消 - REQUEST: 请求中 - MANUAL: 待人工审核 - BCODE: 充值码操作 - EXTPEND: 已经发送等待确认 - FAIL: 链上失败等待确认 - INVALID: 无效订单 - VERIFY: 验证中 - PROCES: 处理中 - PEND: 处理中 - DMOVE: 待人工审核 - SPLITPEND: cny提现大于5w,自动分单  # noqa: E501
 
         :return: The status of this WithdrawalRecord.  # noqa: E501
         :rtype: str
@@ -340,7 +369,7 @@ class WithdrawalRecord(object):
     def status(self, status):
         """Sets the status of this WithdrawalRecord.
 
-        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: pending manual approval - BCODE: GateCode operation - EXTPEND: pending confirm after sending - FAIL: pending confirm when fail - INVALID: invalid order - VERIFY: verifying - PROCES: processing - PEND: pending - DMOVE: required manual approval - SPLITPEND: the order is automatically split due to large amount  # noqa: E501
+        交易状态  - DONE: 完成 (block_number > 0 才算真的上链完成) - CANCEL: 已取消 - REQUEST: 请求中 - MANUAL: 待人工审核 - BCODE: 充值码操作 - EXTPEND: 已经发送等待确认 - FAIL: 链上失败等待确认 - INVALID: 无效订单 - VERIFY: 验证中 - PROCES: 处理中 - PEND: 处理中 - DMOVE: 待人工审核 - SPLITPEND: cny提现大于5w,自动分单  # noqa: E501
 
         :param status: The status of this WithdrawalRecord.  # noqa: E501
         :type: str

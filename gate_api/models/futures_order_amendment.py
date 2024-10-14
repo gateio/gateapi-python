@@ -32,12 +32,14 @@ class FuturesOrderAmendment(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'size': 'int', 'price': 'str', 'amend_text': 'str'}
+    openapi_types = {'size': 'int', 'price': 'str', 'amend_text': 'str', 'biz_info': 'str', 'bbo': 'str'}
 
-    attribute_map = {'size': 'size', 'price': 'price', 'amend_text': 'amend_text'}
+    attribute_map = {'size': 'size', 'price': 'price', 'amend_text': 'amend_text', 'biz_info': 'biz_info', 'bbo': 'bbo'}
 
-    def __init__(self, size=None, price=None, amend_text=None, local_vars_configuration=None):  # noqa: E501
-        # type: (int, str, str, Configuration) -> None
+    def __init__(
+        self, size=None, price=None, amend_text=None, biz_info=None, bbo=None, local_vars_configuration=None
+    ):  # noqa: E501
+        # type: (int, str, str, str, str, Configuration) -> None
         """FuturesOrderAmendment - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -46,6 +48,8 @@ class FuturesOrderAmendment(object):
         self._size = None
         self._price = None
         self._amend_text = None
+        self._biz_info = None
+        self._bbo = None
         self.discriminator = None
 
         if size is not None:
@@ -54,6 +58,10 @@ class FuturesOrderAmendment(object):
             self.price = price
         if amend_text is not None:
             self.amend_text = amend_text
+        if biz_info is not None:
+            self.biz_info = biz_info
+        if bbo is not None:
+            self.bbo = bbo
 
     @property
     def size(self):
@@ -123,6 +131,52 @@ class FuturesOrderAmendment(object):
         """
 
         self._amend_text = amend_text
+
+    @property
+    def biz_info(self):
+        """Gets the biz_info of this FuturesOrderAmendment.  # noqa: E501
+
+        Users can annotate this modification with information.  # noqa: E501
+
+        :return: The biz_info of this FuturesOrderAmendment.  # noqa: E501
+        :rtype: str
+        """
+        return self._biz_info
+
+    @biz_info.setter
+    def biz_info(self, biz_info):
+        """Sets the biz_info of this FuturesOrderAmendment.
+
+        Users can annotate this modification with information.  # noqa: E501
+
+        :param biz_info: The biz_info of this FuturesOrderAmendment.  # noqa: E501
+        :type: str
+        """
+
+        self._biz_info = biz_info
+
+    @property
+    def bbo(self):
+        """Gets the bbo of this FuturesOrderAmendment.  # noqa: E501
+
+        Users are able to modify the offer price manually.  # noqa: E501
+
+        :return: The bbo of this FuturesOrderAmendment.  # noqa: E501
+        :rtype: str
+        """
+        return self._bbo
+
+    @bbo.setter
+    def bbo(self, bbo):
+        """Sets the bbo of this FuturesOrderAmendment.
+
+        Users are able to modify the offer price manually.  # noqa: E501
+
+        :param bbo: The bbo of this FuturesOrderAmendment.  # noqa: E501
+        :type: str
+        """
+
+        self._bbo = bbo
 
     def to_dict(self):
         """Returns the model properties as a dict"""

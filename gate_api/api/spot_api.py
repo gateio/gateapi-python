@@ -657,7 +657,7 @@ class SpotApi(object):
     def list_trades(self, currency_pair, **kwargs):  # noqa: E501
         """Retrieve market trades  # noqa: E501
 
-        You can use `from` and `to` to query by time range, or use `last_id` by scrolling page. The default behavior is by time range.  Scrolling query using `last_id` is not recommended any more. If `last_id` is specified, time range query parameters will be ignored.  # noqa: E501
+        You can use `from` and `to` to query by time range, or use `last_id` by scrolling page. The default behavior is by time range, The query range is the last 30 days.  Scrolling query using `last_id` is not recommended any more. If `last_id` is specified, time range query parameters will be ignored.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_trades(currency_pair, async_req=True)
@@ -688,7 +688,7 @@ class SpotApi(object):
     def list_trades_with_http_info(self, currency_pair, **kwargs):  # noqa: E501
         """Retrieve market trades  # noqa: E501
 
-        You can use `from` and `to` to query by time range, or use `last_id` by scrolling page. The default behavior is by time range.  Scrolling query using `last_id` is not recommended any more. If `last_id` is specified, time range query parameters will be ignored.  # noqa: E501
+        You can use `from` and `to` to query by time range, or use `last_id` by scrolling page. The default behavior is by time range, The query range is the last 30 days.  Scrolling query using `last_id` is not recommended any more. If `last_id` is specified, time range query parameters will be ignored.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_trades_with_http_info(currency_pair, async_req=True)
@@ -1982,19 +1982,19 @@ class SpotApi(object):
             collection_formats=collection_formats,
         )
 
-    def cancel_orders(self, currency_pair, **kwargs):  # noqa: E501
+    def cancel_orders(self, **kwargs):  # noqa: E501
         """Cancel all `open` orders in specified currency pair  # noqa: E501
 
-        If `account` is not set, all open orders, including spot, portfolio, margin and cross margin ones, will be cancelled.  You can set `account` to cancel only orders within the specified account  # noqa: E501
+        If `account` is not set, all open orders, including spot, portfolio, margin and cross margin ones, will be cancelled. If `currency_pair` is not specified, all pending orders for trading pairs will be cancelled. You can set `account` to cancel only orders within the specified account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cancel_orders(currency_pair, async_req=True)
+        >>> thread = api.cancel_orders(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Currency pair (required)
+        :param str currency_pair: Currency pair
         :param str side: All bids or asks. Both included if not specified
-        :param str account: Specify account type  - classic account：Default to all account types being included   - portfolio margin account：`cross_margin` only
+        :param str account: Specify account type:  - Classic account: Includes all if not specified - Unified account: Specify `unified` - Unified account (legacy): Can only specify `cross_margin`
         :param str action_mode: Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -2003,26 +2003,26 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: list[gate_api.Order]
+        :rtype: list[gate_api.OrderCancel]
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.cancel_orders_with_http_info(currency_pair, **kwargs)  # noqa: E501
+        return self.cancel_orders_with_http_info(**kwargs)  # noqa: E501
 
-    def cancel_orders_with_http_info(self, currency_pair, **kwargs):  # noqa: E501
+    def cancel_orders_with_http_info(self, **kwargs):  # noqa: E501
         """Cancel all `open` orders in specified currency pair  # noqa: E501
 
-        If `account` is not set, all open orders, including spot, portfolio, margin and cross margin ones, will be cancelled.  You can set `account` to cancel only orders within the specified account  # noqa: E501
+        If `account` is not set, all open orders, including spot, portfolio, margin and cross margin ones, will be cancelled. If `currency_pair` is not specified, all pending orders for trading pairs will be cancelled. You can set `account` to cancel only orders within the specified account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.cancel_orders_with_http_info(currency_pair, async_req=True)
+        >>> thread = api.cancel_orders_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Currency pair (required)
+        :param str currency_pair: Currency pair
         :param str side: All bids or asks. Both included if not specified
-        :param str account: Specify account type  - classic account：Default to all account types being included   - portfolio margin account：`cross_margin` only
+        :param str account: Specify account type:  - Classic account: Includes all if not specified - Unified account: Specify `unified` - Unified account (legacy): Can only specify `cross_margin`
         :param str action_mode: Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default)
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -2033,7 +2033,7 @@ class SpotApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: tuple(list[gate_api.Order], status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(list[gate_api.OrderCancel], status_code(int), headers(HTTPHeaderDict))
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2048,13 +2048,6 @@ class SpotApi(object):
                 raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_orders" % k)
             local_var_params[k] = v
         del local_var_params['kwargs']
-        # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and (
-            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency_pair` when calling `cancel_orders`"
-            )  # noqa: E501
 
         collection_formats = {}
 
@@ -2091,7 +2084,7 @@ class SpotApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Order]',  # noqa: E501
+            response_type='list[OrderCancel]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -2222,7 +2215,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted. (required)
-        :param str currency_pair: Currency pair (required)
+        :param str currency_pair: Specify the transaction pair to query. If you are querying pending order records, this field is required. If you are querying traded records, this field can be left blank. (required)
         :param str account: Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -2249,7 +2242,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted. (required)
-        :param str currency_pair: Currency pair (required)
+        :param str currency_pair: Specify the transaction pair to query. If you are querying pending order records, this field is required. If you are querying traded records, this field can be left blank. (required)
         :param str account: Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -2451,19 +2444,19 @@ class SpotApi(object):
             collection_formats=collection_formats,
         )
 
-    def amend_order(self, order_id, currency_pair, order_patch, **kwargs):  # noqa: E501
+    def amend_order(self, order_id, order_patch, **kwargs):  # noqa: E501
         """Amend an order  # noqa: E501
 
-        By default, the orders of spot, portfolio and margin account are updated.  If you need to modify orders of the `cross-margin` account, you must specify account as `cross_margin`.  For portfolio margin account, only `cross_margin` account is supported.  Currently, only supports modification of `price` or `amount` fields.  Regarding rate limiting: modify order and create order sharing rate limiting rules. Regarding matching priority: Only reducing the quantity without modifying the priority of matching, altering the price or increasing the quantity will adjust the priority to the new price at the end Note: If the modified amount is less than the fill amount, the order will be cancelled.  # noqa: E501
+        By default, the orders of spot, portfolio and margin account are updated.  If you need to modify orders of the `cross-margin` account, you must specify account as `cross_margin`.  For portfolio margin account, only `cross_margin` account is supported.  Currently, both request body and query support currency_pair and account parameter passing, but request body has higher priority  Currently, only supports modification of `price` or `amount` fields.  Regarding rate limiting: modify order and create order sharing rate limiting rules. Regarding matching priority: Only reducing the quantity without modifying the priority of matching, altering the price or increasing the quantity will adjust the priority to the new price at the end Note: If the modified amount is less than the fill amount, the order will be cancelled.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.amend_order(order_id, currency_pair, order_patch, async_req=True)
+        >>> thread = api.amend_order(order_id, order_patch, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted. (required)
-        :param str currency_pair: Currency pair (required)
         :param OrderPatch order_patch: (required)
+        :param str currency_pair: Currency pair
         :param str account: Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -2477,21 +2470,21 @@ class SpotApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.amend_order_with_http_info(order_id, currency_pair, order_patch, **kwargs)  # noqa: E501
+        return self.amend_order_with_http_info(order_id, order_patch, **kwargs)  # noqa: E501
 
-    def amend_order_with_http_info(self, order_id, currency_pair, order_patch, **kwargs):  # noqa: E501
+    def amend_order_with_http_info(self, order_id, order_patch, **kwargs):  # noqa: E501
         """Amend an order  # noqa: E501
 
-        By default, the orders of spot, portfolio and margin account are updated.  If you need to modify orders of the `cross-margin` account, you must specify account as `cross_margin`.  For portfolio margin account, only `cross_margin` account is supported.  Currently, only supports modification of `price` or `amount` fields.  Regarding rate limiting: modify order and create order sharing rate limiting rules. Regarding matching priority: Only reducing the quantity without modifying the priority of matching, altering the price or increasing the quantity will adjust the priority to the new price at the end Note: If the modified amount is less than the fill amount, the order will be cancelled.  # noqa: E501
+        By default, the orders of spot, portfolio and margin account are updated.  If you need to modify orders of the `cross-margin` account, you must specify account as `cross_margin`.  For portfolio margin account, only `cross_margin` account is supported.  Currently, both request body and query support currency_pair and account parameter passing, but request body has higher priority  Currently, only supports modification of `price` or `amount` fields.  Regarding rate limiting: modify order and create order sharing rate limiting rules. Regarding matching priority: Only reducing the quantity without modifying the priority of matching, altering the price or increasing the quantity will adjust the priority to the new price at the end Note: If the modified amount is less than the fill amount, the order will be cancelled.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.amend_order_with_http_info(order_id, currency_pair, order_patch, async_req=True)
+        >>> thread = api.amend_order_with_http_info(order_id, order_patch, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 1 hour after the end of the order.  After that, only order ID is accepted. (required)
-        :param str currency_pair: Currency pair (required)
         :param OrderPatch order_patch: (required)
+        :param str currency_pair: Currency pair
         :param str account: Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -2509,7 +2502,7 @@ class SpotApi(object):
 
         local_var_params = locals()
 
-        all_params = ['order_id', 'currency_pair', 'order_patch', 'account']
+        all_params = ['order_id', 'order_patch', 'currency_pair', 'account']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -2522,13 +2515,6 @@ class SpotApi(object):
             'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
         ):  # noqa: E501
             raise ApiValueError("Missing the required parameter `order_id` when calling `amend_order`")  # noqa: E501
-        # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and (
-            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency_pair` when calling `amend_order`"
-            )  # noqa: E501
         # verify the required parameter 'order_patch' is set
         if self.api_client.client_side_validation and (
             'order_patch' not in local_var_params or local_var_params['order_patch'] is None  # noqa: E501
@@ -2595,7 +2581,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency_pair: Retrieve results with specified currency pair
-        :param int limit: Maximum number of records to be returned in a single list
+        :param int limit: Maximum number of records to be returned in a single list.  Default: 100, Minimum: 1, Maximum: 1000
         :param int page: Page number
         :param str order_id: Filter trades with specified order ID. `currency_pair` is also required if this field is present
         :param str account: Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only
@@ -2626,7 +2612,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency_pair: Retrieve results with specified currency pair
-        :param int limit: Maximum number of records to be returned in a single list
+        :param int limit: Maximum number of records to be returned in a single list.  Default: 100, Minimum: 1, Maximum: 1000
         :param int page: Page number
         :param str order_id: Filter trades with specified order ID. `currency_pair` is also required if this field is present
         :param str account: Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only

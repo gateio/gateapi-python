@@ -27,7 +27,11 @@ Method | HTTP request | Description
 [**cancel_options_orders**](OptionsApi.md#cancel_options_orders) | **DELETE** /options/orders | Cancel all &#x60;open&#x60; orders matched
 [**get_options_order**](OptionsApi.md#get_options_order) | **GET** /options/orders/{order_id} | Get a single order
 [**cancel_options_order**](OptionsApi.md#cancel_options_order) | **DELETE** /options/orders/{order_id} | Cancel a single order
+[**countdown_cancel_all_options**](OptionsApi.md#countdown_cancel_all_options) | **POST** /options/countdown_cancel_all | Countdown cancel orders
 [**list_my_options_trades**](OptionsApi.md#list_my_options_trades) | **GET** /options/my_trades | List personal trading history
+[**get_options_mmp**](OptionsApi.md#get_options_mmp) | **GET** /options/mmp | MMP Query
+[**set_options_mmp**](OptionsApi.md#set_options_mmp) | **POST** /options/mmp | MMP Settings
+[**reset_options_mmp**](OptionsApi.md#reset_options_mmp) | **POST** /options/mmp/reset | MMP Reset
 
 
 # **list_options_underlyings**
@@ -1539,6 +1543,75 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **countdown_cancel_all_options**
+> TriggerTime countdown_cancel_all_options(countdown_cancel_all_options_task)
+
+Countdown cancel orders
+
+Option order heartbeat detection, when the `timeout` time set by the user is reached, if the existing countdown is not canceled or a new countdown is set, the related `option pending order` will be automatically canceled.  This interface can be called repeatedly to set a new countdown or cancel the countdown.  Usage example: Repeat this interface at intervals of 30 seconds, with each countdown `timeout` set to 30 (seconds).  If this interface is not called again within 30 seconds, all pending orders on the `underlying` `contract` you specified will be automatically cancelled. If `underlying` `contract` is not specified, all pending orders of the user will be automatically cancelled  If `timeout` is set to 0 within 30 seconds, the countdown timer will expire and the automatic order cancellation function will be cancelled.
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.OptionsApi(api_client)
+countdown_cancel_all_options_task = gate_api.CountdownCancelAllOptionsTask() # CountdownCancelAllOptionsTask | 
+
+try:
+    # Countdown cancel orders
+    api_response = api_instance.countdown_cancel_all_options(countdown_cancel_all_options_task)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling OptionsApi->countdown_cancel_all_options: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **countdown_cancel_all_options_task** | [**CountdownCancelAllOptionsTask**](CountdownCancelAllOptionsTask.md)|  | 
+
+### Return type
+
+[**TriggerTime**](TriggerTime.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Set countdown successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **list_my_options_trades**
 > list[OptionsMyTrade] list_my_options_trades(underlying, contract=contract, limit=limit, offset=offset, _from=_from, to=to)
 
@@ -1613,6 +1686,207 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_options_mmp**
+> list[OptionsMMP] get_options_mmp(underlying=underlying)
+
+MMP Query
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.OptionsApi(api_client)
+underlying = 'BTC_USDT' # str | Underlying (optional)
+
+try:
+    # MMP Query
+    api_response = api_instance.get_options_mmp(underlying=underlying)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling OptionsApi->get_options_mmp: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **underlying** | **str**| Underlying | [optional] 
+
+### Return type
+
+[**list[OptionsMMP]**](OptionsMMP.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_options_mmp**
+> OptionsMMP set_options_mmp(options_mmp)
+
+MMP Settings
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.OptionsApi(api_client)
+options_mmp = gate_api.OptionsMMP() # OptionsMMP | 
+
+try:
+    # MMP Settings
+    api_response = api_instance.set_options_mmp(options_mmp)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling OptionsApi->set_options_mmp: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **options_mmp** | [**OptionsMMP**](OptionsMMP.md)|  | 
+
+### Return type
+
+[**OptionsMMP**](OptionsMMP.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | MMP Information |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **reset_options_mmp**
+> OptionsMMP reset_options_mmp(options_mmp_reset)
+
+MMP Reset
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.OptionsApi(api_client)
+options_mmp_reset = gate_api.OptionsMMPReset() # OptionsMMPReset | 
+
+try:
+    # MMP Reset
+    api_response = api_instance.reset_options_mmp(options_mmp_reset)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling OptionsApi->reset_options_mmp: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **options_mmp_reset** | [**OptionsMMPReset**](OptionsMMPReset.md)|  | 
+
+### Return type
+
+[**OptionsMMP**](OptionsMMP.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | MMP Information |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -53,7 +53,9 @@ class FuturesTicker(object):
         'basis_rate': 'str',
         'basis_value': 'str',
         'lowest_ask': 'str',
+        'lowest_size': 'str',
         'highest_bid': 'str',
+        'highest_size': 'str',
     }
 
     attribute_map = {
@@ -77,7 +79,9 @@ class FuturesTicker(object):
         'basis_rate': 'basis_rate',
         'basis_value': 'basis_value',
         'lowest_ask': 'lowest_ask',
+        'lowest_size': 'lowest_size',
         'highest_bid': 'highest_bid',
+        'highest_size': 'highest_size',
     }
 
     def __init__(
@@ -102,10 +106,12 @@ class FuturesTicker(object):
         basis_rate=None,
         basis_value=None,
         lowest_ask=None,
+        lowest_size=None,
         highest_bid=None,
+        highest_size=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """FuturesTicker - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -131,7 +137,9 @@ class FuturesTicker(object):
         self._basis_rate = None
         self._basis_value = None
         self._lowest_ask = None
+        self._lowest_size = None
         self._highest_bid = None
+        self._highest_size = None
         self.discriminator = None
 
         if contract is not None:
@@ -174,8 +182,12 @@ class FuturesTicker(object):
             self.basis_value = basis_value
         if lowest_ask is not None:
             self.lowest_ask = lowest_ask
+        if lowest_size is not None:
+            self.lowest_size = lowest_size
         if highest_bid is not None:
             self.highest_bid = highest_bid
+        if highest_size is not None:
+            self.highest_size = highest_size
 
     @property
     def contract(self):
@@ -638,6 +650,29 @@ class FuturesTicker(object):
         self._lowest_ask = lowest_ask
 
     @property
+    def lowest_size(self):
+        """Gets the lowest_size of this FuturesTicker.  # noqa: E501
+
+        The latest seller's lowest price order quantity  # noqa: E501
+
+        :return: The lowest_size of this FuturesTicker.  # noqa: E501
+        :rtype: str
+        """
+        return self._lowest_size
+
+    @lowest_size.setter
+    def lowest_size(self, lowest_size):
+        """Sets the lowest_size of this FuturesTicker.
+
+        The latest seller's lowest price order quantity  # noqa: E501
+
+        :param lowest_size: The lowest_size of this FuturesTicker.  # noqa: E501
+        :type: str
+        """
+
+        self._lowest_size = lowest_size
+
+    @property
     def highest_bid(self):
         """Gets the highest_bid of this FuturesTicker.  # noqa: E501
 
@@ -659,6 +694,29 @@ class FuturesTicker(object):
         """
 
         self._highest_bid = highest_bid
+
+    @property
+    def highest_size(self):
+        """Gets the highest_size of this FuturesTicker.  # noqa: E501
+
+        The latest buyer's highest price order volume  # noqa: E501
+
+        :return: The highest_size of this FuturesTicker.  # noqa: E501
+        :rtype: str
+        """
+        return self._highest_size
+
+    @highest_size.setter
+    def highest_size(self, highest_size):
+        """Sets the highest_size of this FuturesTicker.
+
+        The latest buyer's highest price order volume  # noqa: E501
+
+        :param highest_size: The highest_size of this FuturesTicker.  # noqa: E501
+        :type: str
+        """
+
+        self._highest_size = highest_size
 
     def to_dict(self):
         """Returns the model properties as a dict"""

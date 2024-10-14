@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **trade_size** | **int** | Historical accumulated trade size | [optional] 
 **position_size** | **int** | Current total long position size | [optional] 
 **config_change_time** | **float** | Last changed time of configuration | [optional] 
-**in_delisting** | **bool** | Contract is delisting | [optional] 
+**in_delisting** | **bool** | &#x60;in_delisting&#x3D;true&#x60; And when position_size&gt;0, it means the contract is in the offline transition period &#x60;in_delisting&#x3D;true&#x60; And when position_size&#x3D;0, it means the contract is offline | [optional] 
 **orders_limit** | **int** | Maximum number of open orders | [optional] 
 **enable_bonus** | **bool** | Whether bouns is enabled | [optional] 
 **enable_credit** | **bool** | Whether portfolio margin account is enabled | [optional] 

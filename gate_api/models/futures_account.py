@@ -45,6 +45,7 @@ class FuturesAccount(object):
         'position_initial_margin': 'str',
         'maintenance_margin': 'str',
         'bonus': 'str',
+        'enable_evolved_classic': 'bool',
         'history': 'FuturesAccountHistory',
     }
 
@@ -61,6 +62,7 @@ class FuturesAccount(object):
         'position_initial_margin': 'position_initial_margin',
         'maintenance_margin': 'maintenance_margin',
         'bonus': 'bonus',
+        'enable_evolved_classic': 'enable_evolved_classic',
         'history': 'history',
     }
 
@@ -78,10 +80,11 @@ class FuturesAccount(object):
         position_initial_margin=None,
         maintenance_margin=None,
         bonus=None,
+        enable_evolved_classic=None,
         history=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, bool, bool, str, str, str, FuturesAccountHistory, Configuration) -> None
+        # type: (str, str, str, str, str, str, str, bool, bool, str, str, str, bool, FuturesAccountHistory, Configuration) -> None
         """FuturesAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -99,6 +102,7 @@ class FuturesAccount(object):
         self._position_initial_margin = None
         self._maintenance_margin = None
         self._bonus = None
+        self._enable_evolved_classic = None
         self._history = None
         self.discriminator = None
 
@@ -126,6 +130,8 @@ class FuturesAccount(object):
             self.maintenance_margin = maintenance_margin
         if bonus is not None:
             self.bonus = bonus
+        if enable_evolved_classic is not None:
+            self.enable_evolved_classic = enable_evolved_classic
         if history is not None:
             self.history = history
 
@@ -404,6 +410,29 @@ class FuturesAccount(object):
         """
 
         self._bonus = bonus
+
+    @property
+    def enable_evolved_classic(self):
+        """Gets the enable_evolved_classic of this FuturesAccount.  # noqa: E501
+
+        Classic account margin mode, true - enable new mode, false - revert to old mode.  # noqa: E501
+
+        :return: The enable_evolved_classic of this FuturesAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_evolved_classic
+
+    @enable_evolved_classic.setter
+    def enable_evolved_classic(self, enable_evolved_classic):
+        """Sets the enable_evolved_classic of this FuturesAccount.
+
+        Classic account margin mode, true - enable new mode, false - revert to old mode.  # noqa: E501
+
+        :param enable_evolved_classic: The enable_evolved_classic of this FuturesAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_evolved_classic = enable_evolved_classic
 
     @property
     def history(self):

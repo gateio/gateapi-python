@@ -1083,7 +1083,7 @@ class Order(object):
     def finish_as(self):
         """Gets the finish_as of this Order.  # noqa: E501
 
-        How the order was finished.  - open: processing - filled: filled totally - cancelled: manually cancelled - ioc: time in force is `IOC`, finish immediately - stp: cancelled because self trade prevention   # noqa: E501
+        Order completion statuses include:  - open: Awaiting processing - filled: Fully filled - cancelled: Cancelled by user - liquidate_cancelled: Cancelled due to liquidation - small: Order quantity too small - depth_not_enough: Cancelled due to insufficient market depth - trader_not_enough: Cancelled due to insufficient counterparty - ioc: Not immediately filled because tif is set to ioc - poc: Not met the order strategy because tif is set to poc - fok: Not fully filled immediately because tif is set to fok - stp: Cancelled due to self-trade prevention - unknown: Unknown  # noqa: E501
 
         :return: The finish_as of this Order.  # noqa: E501
         :rtype: str
@@ -1094,12 +1094,25 @@ class Order(object):
     def finish_as(self, finish_as):
         """Sets the finish_as of this Order.
 
-        How the order was finished.  - open: processing - filled: filled totally - cancelled: manually cancelled - ioc: time in force is `IOC`, finish immediately - stp: cancelled because self trade prevention   # noqa: E501
+        Order completion statuses include:  - open: Awaiting processing - filled: Fully filled - cancelled: Cancelled by user - liquidate_cancelled: Cancelled due to liquidation - small: Order quantity too small - depth_not_enough: Cancelled due to insufficient market depth - trader_not_enough: Cancelled due to insufficient counterparty - ioc: Not immediately filled because tif is set to ioc - poc: Not met the order strategy because tif is set to poc - fok: Not fully filled immediately because tif is set to fok - stp: Cancelled due to self-trade prevention - unknown: Unknown  # noqa: E501
 
         :param finish_as: The finish_as of this Order.  # noqa: E501
         :type: str
         """
-        allowed_values = ["open", "filled", "cancelled", "ioc", "stp"]  # noqa: E501
+        allowed_values = [
+            "open",
+            "filled",
+            "cancelled",
+            "liquidate_cancelled",
+            "depth_not_enough",
+            "trader_not_enough",
+            "small",
+            "ioc",
+            "poc",
+            "fok",
+            "stp",
+            "unknown",
+        ]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and finish_as not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `finish_as` ({0}), must be one of {1}".format(  # noqa: E501

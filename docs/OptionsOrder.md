@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **user** | **int** | User ID | [optional] [readonly] 
 **create_time** | **float** | Creation time of order | [optional] [readonly] 
 **finish_time** | **float** | Order finished time. Not returned if order is open | [optional] [readonly] 
-**finish_as** | **str** | How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is &#x60;IOC&#x60;, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while &#x60;reduce-only&#x60; set- position_closed: cancelled because of position close  | [optional] [readonly] 
+**finish_as** | **str** | 结束方式，包括：  - filled: 完全成交 - cancelled: 用户撤销 - liquidated: 强制平仓撤销 - ioc: 未立即完全成交，因为tif设置为ioc - auto_deleveraged: 自动减仓撤销 - reduce_only: 增持仓位撤销，因为设置reduce_only或平仓 - position_closed: 因为仓位平掉了，所以挂单被撤掉 - reduce_out: 只减仓被排除的不容易成交的挂单 - mmp_cancelled: MMP撤销 | [optional] [readonly] 
 **status** | **str** | Order status  - &#x60;open&#x60;: waiting to be traded - &#x60;finished&#x60;: finished | [optional] [readonly] 
 **contract** | **str** | Contract name | 
 **size** | **int** | Order size. Specify positive number to make a bid, and negative number to ask | 
@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **reduce_only** | **bool** | Set as &#x60;true&#x60; to be reduce-only order | [optional] [default to False]
 **is_reduce_only** | **bool** | Is the order reduce-only | [optional] [readonly] 
 **is_liq** | **bool** | Is the order for liquidation | [optional] [readonly] 
+**mmp** | **bool** | 设置为 true 的时候，为MMP委托 | [optional] [default to False]
+**is_mmp** | **bool** | 是否为MMP委托。对应请求中的&#x60;mmp&#x60;。 | [optional] [readonly] 
 **tif** | **str** | Time in force  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled, taker only - poc: PendingOrCancelled, makes a post-only order that always enjoys a maker fee | [optional] [default to 'gtc']
 **left** | **int** | Size left to be traded | [optional] [readonly] 
 **fill_price** | **str** | Fill price of the order | [optional] [readonly] 

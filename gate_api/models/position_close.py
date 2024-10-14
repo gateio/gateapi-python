@@ -42,6 +42,7 @@ class PositionClose(object):
         'pnl_fee': 'str',
         'text': 'str',
         'max_size': 'str',
+        'accum_size': 'str',
         'first_open_time': 'int',
         'long_price': 'str',
         'short_price': 'str',
@@ -57,6 +58,7 @@ class PositionClose(object):
         'pnl_fee': 'pnl_fee',
         'text': 'text',
         'max_size': 'max_size',
+        'accum_size': 'accum_size',
         'first_open_time': 'first_open_time',
         'long_price': 'long_price',
         'short_price': 'short_price',
@@ -73,12 +75,13 @@ class PositionClose(object):
         pnl_fee=None,
         text=None,
         max_size=None,
+        accum_size=None,
         first_open_time=None,
         long_price=None,
         short_price=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (float, str, str, str, str, str, str, str, str, int, str, str, Configuration) -> None
+        # type: (float, str, str, str, str, str, str, str, str, str, int, str, str, Configuration) -> None
         """PositionClose - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +96,7 @@ class PositionClose(object):
         self._pnl_fee = None
         self._text = None
         self._max_size = None
+        self._accum_size = None
         self._first_open_time = None
         self._long_price = None
         self._short_price = None
@@ -116,6 +120,8 @@ class PositionClose(object):
             self.text = text
         if max_size is not None:
             self.max_size = max_size
+        if accum_size is not None:
+            self.accum_size = accum_size
         if first_open_time is not None:
             self.first_open_time = first_open_time
         if long_price is not None:
@@ -334,6 +340,29 @@ class PositionClose(object):
         """
 
         self._max_size = max_size
+
+    @property
+    def accum_size(self):
+        """Gets the accum_size of this PositionClose.  # noqa: E501
+
+        Cumulative closed position volume  # noqa: E501
+
+        :return: The accum_size of this PositionClose.  # noqa: E501
+        :rtype: str
+        """
+        return self._accum_size
+
+    @accum_size.setter
+    def accum_size(self, accum_size):
+        """Sets the accum_size of this PositionClose.
+
+        Cumulative closed position volume  # noqa: E501
+
+        :param accum_size: The accum_size of this PositionClose.  # noqa: E501
+        :type: str
+        """
+
+        self._accum_size = accum_size
 
     @property
     def first_open_time(self):

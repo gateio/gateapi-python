@@ -32,12 +32,14 @@ class SpotAccount(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'currency': 'str', 'available': 'str', 'locked': 'str'}
+    openapi_types = {'currency': 'str', 'available': 'str', 'locked': 'str', 'update_id': 'int'}
 
-    attribute_map = {'currency': 'currency', 'available': 'available', 'locked': 'locked'}
+    attribute_map = {'currency': 'currency', 'available': 'available', 'locked': 'locked', 'update_id': 'update_id'}
 
-    def __init__(self, currency=None, available=None, locked=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, str, Configuration) -> None
+    def __init__(
+        self, currency=None, available=None, locked=None, update_id=None, local_vars_configuration=None
+    ):  # noqa: E501
+        # type: (str, str, str, int, Configuration) -> None
         """SpotAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -46,6 +48,7 @@ class SpotAccount(object):
         self._currency = None
         self._available = None
         self._locked = None
+        self._update_id = None
         self.discriminator = None
 
         if currency is not None:
@@ -54,6 +57,8 @@ class SpotAccount(object):
             self.available = available
         if locked is not None:
             self.locked = locked
+        if update_id is not None:
+            self.update_id = update_id
 
     @property
     def currency(self):
@@ -123,6 +128,29 @@ class SpotAccount(object):
         """
 
         self._locked = locked
+
+    @property
+    def update_id(self):
+        """Gets the update_id of this SpotAccount.  # noqa: E501
+
+        Version number  # noqa: E501
+
+        :return: The update_id of this SpotAccount.  # noqa: E501
+        :rtype: int
+        """
+        return self._update_id
+
+    @update_id.setter
+    def update_id(self, update_id):
+        """Sets the update_id of this SpotAccount.
+
+        Version number  # noqa: E501
+
+        :param update_id: The update_id of this SpotAccount.  # noqa: E501
+        :type: int
+        """
+
+        self._update_id = update_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

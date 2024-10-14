@@ -139,6 +139,8 @@ class FlashSwapApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency: Retrieve data of the specified currency
+        :param int page: Page number
+        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 1000
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -164,6 +166,8 @@ class FlashSwapApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency: Retrieve data of the specified currency
+        :param int page: Page number
+        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 1000
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -180,7 +184,7 @@ class FlashSwapApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
+        all_params = ['currency', 'page', 'limit']
         all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
 
         for k, v in six.iteritems(local_var_params['kwargs']):
@@ -191,6 +195,24 @@ class FlashSwapApi(object):
             local_var_params[k] = v
         del local_var_params['kwargs']
 
+        if (
+            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `page` when calling `list_flash_swap_currency_pair`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_flash_swap_currency_pair`, must be a value less than or equal to `1000`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `limit` when calling `list_flash_swap_currency_pair`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -198,6 +220,10 @@ class FlashSwapApi(object):
         query_params = []
         if 'currency' in local_var_params and local_var_params['currency'] is not None:  # noqa: E501
             query_params.append(('currency', local_var_params['currency']))  # noqa: E501
+        if 'page' in local_var_params and local_var_params['page'] is not None:  # noqa: E501
+            query_params.append(('page', local_var_params['page']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
 
         header_params = {}
 
