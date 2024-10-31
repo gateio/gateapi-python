@@ -1810,7 +1810,7 @@ class WalletApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: gate_api.SmallBalance
+        :rtype: list[gate_api.SmallBalance]
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1835,7 +1835,7 @@ class WalletApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: tuple(gate_api.SmallBalance, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(list[gate_api.SmallBalance], status_code(int), headers(HTTPHeaderDict))
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1878,7 +1878,7 @@ class WalletApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SmallBalance',  # noqa: E501
+            response_type='list[SmallBalance]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -2013,7 +2013,7 @@ class WalletApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: gate_api.SmallBalanceHistory
+        :rtype: list[gate_api.SmallBalanceHistory]
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2041,7 +2041,7 @@ class WalletApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: tuple(gate_api.SmallBalanceHistory, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(list[gate_api.SmallBalanceHistory], status_code(int), headers(HTTPHeaderDict))
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2110,7 +2110,7 @@ class WalletApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SmallBalanceHistory',  # noqa: E501
+            response_type='list[SmallBalanceHistory]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

@@ -241,6 +241,8 @@ from gate_api.models.unified_balance import UnifiedBalance
 from gate_api.models.unified_borrowable import UnifiedBorrowable
 from gate_api.models.unified_discount import UnifiedDiscount
 from gate_api.models.unified_discount_tiers import UnifiedDiscountTiers
+from gate_api.models.unified_leverage_config import UnifiedLeverageConfig
+from gate_api.models.unified_leverage_setting import UnifiedLeverageSetting
 from gate_api.models.unified_loan import UnifiedLoan
 from gate_api.models.unified_loan_record import UnifiedLoanRecord
 from gate_api.models.unified_margin_tiers import UnifiedMarginTiers

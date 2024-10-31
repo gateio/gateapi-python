@@ -32,19 +32,26 @@ class MarginTiers(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'tier': 'str', 'margin_rate': 'str', 'lower_limit': 'str', 'upper_limit': 'str'}
+    openapi_types = {'tier': 'str', 'margin_rate': 'str', 'lower_limit': 'str', 'upper_limit': 'str', 'leverage': 'str'}
 
     attribute_map = {
         'tier': 'tier',
         'margin_rate': 'margin_rate',
         'lower_limit': 'lower_limit',
         'upper_limit': 'upper_limit',
+        'leverage': 'leverage',
     }
 
     def __init__(
-        self, tier=None, margin_rate=None, lower_limit=None, upper_limit=None, local_vars_configuration=None
+        self,
+        tier=None,
+        margin_rate=None,
+        lower_limit=None,
+        upper_limit=None,
+        leverage=None,
+        local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (str, str, str, str, Configuration) -> None
+        # type: (str, str, str, str, str, Configuration) -> None
         """MarginTiers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +61,7 @@ class MarginTiers(object):
         self._margin_rate = None
         self._lower_limit = None
         self._upper_limit = None
+        self._leverage = None
         self.discriminator = None
 
         if tier is not None:
@@ -64,6 +72,8 @@ class MarginTiers(object):
             self.lower_limit = lower_limit
         if upper_limit is not None:
             self.upper_limit = upper_limit
+        if leverage is not None:
+            self.leverage = leverage
 
     @property
     def tier(self):
@@ -156,6 +166,29 @@ class MarginTiers(object):
         """
 
         self._upper_limit = upper_limit
+
+    @property
+    def leverage(self):
+        """Gets the leverage of this MarginTiers.  # noqa: E501
+
+        Position leverage  # noqa: E501
+
+        :return: The leverage of this MarginTiers.  # noqa: E501
+        :rtype: str
+        """
+        return self._leverage
+
+    @leverage.setter
+    def leverage(self, leverage):
+        """Sets the leverage of this MarginTiers.
+
+        Position leverage  # noqa: E501
+
+        :param leverage: The leverage of this MarginTiers.  # noqa: E501
+        :type: str
+        """
+
+        self._leverage = leverage
 
     def to_dict(self):
         """Returns the model properties as a dict"""

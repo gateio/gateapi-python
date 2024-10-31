@@ -1138,7 +1138,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_small_balance**
-> SmallBalance list_small_balance()
+> list[SmallBalance] list_small_balance()
 
 List small balance
 
@@ -1182,7 +1182,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**SmallBalance**](SmallBalance.md)
+[**list[SmallBalance]**](SmallBalance.md)
 
 ### Authorization
 
@@ -1267,7 +1267,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_small_balance_history**
-> SmallBalanceHistory list_small_balance_history(currency=currency, page=page, limit=limit)
+> list[SmallBalanceHistory] list_small_balance_history(currency=currency, page=page, limit=limit)
 
 List small balance history
 
@@ -1319,7 +1319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SmallBalanceHistory**](SmallBalanceHistory.md)
+[**list[SmallBalanceHistory]**](SmallBalanceHistory.md)
 
 ### Authorization
 

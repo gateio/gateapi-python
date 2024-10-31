@@ -40,6 +40,7 @@ class FuturesAccountBook(object):
         'text': 'str',
         'contract': 'str',
         'trade_id': 'str',
+        'id': 'str',
     }
 
     attribute_map = {
@@ -50,6 +51,7 @@ class FuturesAccountBook(object):
         'text': 'text',
         'contract': 'contract',
         'trade_id': 'trade_id',
+        'id': 'id',
     }
 
     def __init__(
@@ -61,9 +63,10 @@ class FuturesAccountBook(object):
         text=None,
         contract=None,
         trade_id=None,
+        id=None,
         local_vars_configuration=None,
     ):  # noqa: E501
-        # type: (float, str, str, str, str, str, str, Configuration) -> None
+        # type: (float, str, str, str, str, str, str, str, Configuration) -> None
         """FuturesAccountBook - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +79,7 @@ class FuturesAccountBook(object):
         self._text = None
         self._contract = None
         self._trade_id = None
+        self._id = None
         self.discriminator = None
 
         if time is not None:
@@ -92,6 +96,8 @@ class FuturesAccountBook(object):
             self.contract = contract
         if trade_id is not None:
             self.trade_id = trade_id
+        if id is not None:
+            self.id = id
 
     @property
     def time(self):
@@ -268,6 +274,29 @@ class FuturesAccountBook(object):
         """
 
         self._trade_id = trade_id
+
+    @property
+    def id(self):
+        """Gets the id of this FuturesAccountBook.  # noqa: E501
+
+        账户变更记录 id  # noqa: E501
+
+        :return: The id of this FuturesAccountBook.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this FuturesAccountBook.
+
+        账户变更记录 id  # noqa: E501
+
+        :param id: The id of this FuturesAccountBook.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     def to_dict(self):
         """Returns the model properties as a dict"""
