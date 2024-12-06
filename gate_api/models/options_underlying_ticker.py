@@ -32,9 +32,17 @@ class OptionsUnderlyingTicker(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'trade_put': 'int', 'trade_call': 'int', 'index_price': 'str'}
+    openapi_types = {
+        'trade_put': 'int',
+        'trade_call': 'int',
+        'index_price': 'str'
+    }
 
-    attribute_map = {'trade_put': 'trade_put', 'trade_call': 'trade_call', 'index_price': 'index_price'}
+    attribute_map = {
+        'trade_put': 'trade_put',
+        'trade_call': 'trade_call',
+        'index_price': 'index_price'
+    }
 
     def __init__(self, trade_put=None, trade_call=None, index_price=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, int, str, Configuration) -> None
@@ -131,16 +139,18 @@ class OptionsUnderlyingTicker(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

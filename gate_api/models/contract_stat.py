@@ -45,7 +45,7 @@ class ContractStat(object):
         'open_interest': 'int',
         'open_interest_usd': 'float',
         'top_lsr_account': 'float',
-        'top_lsr_size': 'float',
+        'top_lsr_size': 'float'
     }
 
     attribute_map = {
@@ -61,26 +61,10 @@ class ContractStat(object):
         'open_interest': 'open_interest',
         'open_interest_usd': 'open_interest_usd',
         'top_lsr_account': 'top_lsr_account',
-        'top_lsr_size': 'top_lsr_size',
+        'top_lsr_size': 'top_lsr_size'
     }
 
-    def __init__(
-        self,
-        time=None,
-        lsr_taker=None,
-        lsr_account=None,
-        long_liq_size=None,
-        long_liq_amount=None,
-        long_liq_usd=None,
-        short_liq_size=None,
-        short_liq_amount=None,
-        short_liq_usd=None,
-        open_interest=None,
-        open_interest_usd=None,
-        top_lsr_account=None,
-        top_lsr_size=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, time=None, lsr_taker=None, lsr_account=None, long_liq_size=None, long_liq_amount=None, long_liq_usd=None, short_liq_size=None, short_liq_amount=None, short_liq_usd=None, open_interest=None, open_interest_usd=None, top_lsr_account=None, top_lsr_size=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, float, float, int, float, float, int, float, float, int, float, float, float, Configuration) -> None
         """ContractStat - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -435,16 +419,18 @@ class ContractStat(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

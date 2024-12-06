@@ -18,7 +18,10 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
-from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
+from gate_api.exceptions import (  # noqa: F401
+    ApiTypeError,
+    ApiValueError
+)
 
 
 class SubAccountApi(object):
@@ -83,12 +86,24 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['type']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'type'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_sub_accounts" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_sub_accounts" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -107,14 +122,14 @@ class SubAccountApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sub_accounts',
-            'GET',
+            '/sub_accounts', 'GET',
             path_params,
             query_params,
             header_params,
@@ -127,8 +142,7 @@ class SubAccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def create_sub_accounts(self, sub_account, **kwargs):  # noqa: E501
         """Create a new sub-account  # noqa: E501
@@ -180,21 +194,30 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['sub_account']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'sub_account'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_sub_accounts" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_sub_accounts" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'sub_account' is set
-        if self.api_client.client_side_validation and (
-            'sub_account' not in local_var_params or local_var_params['sub_account'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `sub_account` when calling `create_sub_accounts`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('sub_account' not in local_var_params or  # noqa: E501
+                                                        local_var_params['sub_account'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `sub_account` when calling `create_sub_accounts`")  # noqa: E501
 
         collection_formats = {}
 
@@ -211,19 +234,18 @@ class SubAccountApi(object):
         if 'sub_account' in local_var_params:
             body_params = local_var_params['sub_account']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sub_accounts',
-            'POST',
+            '/sub_accounts', 'POST',
             path_params,
             query_params,
             header_params,
@@ -236,8 +258,7 @@ class SubAccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_sub_account(self, user_id, **kwargs):  # noqa: E501
         """Get the sub-account  # noqa: E501
@@ -289,18 +310,29 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['user_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'user_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_sub_account" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_sub_account" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'user_id' is set
-        if self.api_client.client_side_validation and (
-            'user_id' not in local_var_params or local_var_params['user_id'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('user_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['user_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `user_id` when calling `get_sub_account`")  # noqa: E501
 
         collection_formats = {}
@@ -318,14 +350,14 @@ class SubAccountApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sub_accounts/{user_id}',
-            'GET',
+            '/sub_accounts/{user_id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -338,8 +370,7 @@ class SubAccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_sub_account_keys(self, user_id, **kwargs):  # noqa: E501
         """List all API Key of the sub-account  # noqa: E501
@@ -391,21 +422,30 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['user_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'user_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_sub_account_keys" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_sub_account_keys" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'user_id' is set
-        if self.api_client.client_side_validation and (
-            'user_id' not in local_var_params or local_var_params['user_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `user_id` when calling `list_sub_account_keys`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('user_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['user_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `list_sub_account_keys`")  # noqa: E501
 
         collection_formats = {}
 
@@ -422,14 +462,14 @@ class SubAccountApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sub_accounts/{user_id}/keys',
-            'GET',
+            '/sub_accounts/{user_id}/keys', 'GET',
             path_params,
             query_params,
             header_params,
@@ -442,8 +482,7 @@ class SubAccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def create_sub_account_keys(self, user_id, sub_account_key, **kwargs):  # noqa: E501
         """Create API Key of the sub-account  # noqa: E501
@@ -497,28 +536,35 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['user_id', 'sub_account_key']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'user_id',
+            'sub_account_key'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_sub_account_keys" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_sub_account_keys" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'user_id' is set
-        if self.api_client.client_side_validation and (
-            'user_id' not in local_var_params or local_var_params['user_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `user_id` when calling `create_sub_account_keys`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('user_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['user_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `create_sub_account_keys`")  # noqa: E501
         # verify the required parameter 'sub_account_key' is set
-        if self.api_client.client_side_validation and (
-            'sub_account_key' not in local_var_params or local_var_params['sub_account_key'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `sub_account_key` when calling `create_sub_account_keys`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('sub_account_key' not in local_var_params or  # noqa: E501
+                                                        local_var_params['sub_account_key'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `sub_account_key` when calling `create_sub_account_keys`")  # noqa: E501
 
         collection_formats = {}
 
@@ -537,19 +583,18 @@ class SubAccountApi(object):
         if 'sub_account_key' in local_var_params:
             body_params = local_var_params['sub_account_key']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sub_accounts/{user_id}/keys',
-            'POST',
+            '/sub_accounts/{user_id}/keys', 'POST',
             path_params,
             query_params,
             header_params,
@@ -562,8 +607,7 @@ class SubAccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_sub_account_key(self, user_id, key, **kwargs):  # noqa: E501
         """Get the API Key of the sub-account  # noqa: E501
@@ -617,25 +661,34 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['user_id', 'key']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'user_id',
+            'key'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_sub_account_key" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_sub_account_key" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'user_id' is set
-        if self.api_client.client_side_validation and (
-            'user_id' not in local_var_params or local_var_params['user_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `user_id` when calling `get_sub_account_key`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('user_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['user_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `get_sub_account_key`")  # noqa: E501
         # verify the required parameter 'key' is set
-        if self.api_client.client_side_validation and (
-            'key' not in local_var_params or local_var_params['key'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('key' not in local_var_params or  # noqa: E501
+                                                        local_var_params['key'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `key` when calling `get_sub_account_key`")  # noqa: E501
 
         collection_formats = {}
@@ -655,14 +708,14 @@ class SubAccountApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sub_accounts/{user_id}/keys/{key}',
-            'GET',
+            '/sub_accounts/{user_id}/keys/{key}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -675,8 +728,7 @@ class SubAccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def update_sub_account_keys(self, user_id, key, sub_account_key, **kwargs):  # noqa: E501
         """Update API key of the sub-account  # noqa: E501
@@ -732,35 +784,40 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['user_id', 'key', 'sub_account_key']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'user_id',
+            'key',
+            'sub_account_key'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method update_sub_account_keys" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_sub_account_keys" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'user_id' is set
-        if self.api_client.client_side_validation and (
-            'user_id' not in local_var_params or local_var_params['user_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `user_id` when calling `update_sub_account_keys`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('user_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['user_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `update_sub_account_keys`")  # noqa: E501
         # verify the required parameter 'key' is set
-        if self.api_client.client_side_validation and (
-            'key' not in local_var_params or local_var_params['key'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `key` when calling `update_sub_account_keys`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('key' not in local_var_params or  # noqa: E501
+                                                        local_var_params['key'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `key` when calling `update_sub_account_keys`")  # noqa: E501
         # verify the required parameter 'sub_account_key' is set
-        if self.api_client.client_side_validation and (
-            'sub_account_key' not in local_var_params or local_var_params['sub_account_key'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `sub_account_key` when calling `update_sub_account_keys`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('sub_account_key' not in local_var_params or  # noqa: E501
+                                                        local_var_params['sub_account_key'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `sub_account_key` when calling `update_sub_account_keys`")  # noqa: E501
 
         collection_formats = {}
 
@@ -782,15 +839,13 @@ class SubAccountApi(object):
             body_params = local_var_params['sub_account_key']
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sub_accounts/{user_id}/keys/{key}',
-            'PUT',
+            '/sub_accounts/{user_id}/keys/{key}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -803,8 +858,7 @@ class SubAccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def delete_sub_account_keys(self, user_id, key, **kwargs):  # noqa: E501
         """Delete API key of the sub-account  # noqa: E501
@@ -858,28 +912,35 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['user_id', 'key']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'user_id',
+            'key'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method delete_sub_account_keys" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_sub_account_keys" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'user_id' is set
-        if self.api_client.client_side_validation and (
-            'user_id' not in local_var_params or local_var_params['user_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `user_id` when calling `delete_sub_account_keys`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('user_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['user_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `delete_sub_account_keys`")  # noqa: E501
         # verify the required parameter 'key' is set
-        if self.api_client.client_side_validation and (
-            'key' not in local_var_params or local_var_params['key'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `key` when calling `delete_sub_account_keys`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('key' not in local_var_params or  # noqa: E501
+                                                        local_var_params['key'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `key` when calling `delete_sub_account_keys`")  # noqa: E501
 
         collection_formats = {}
 
@@ -901,8 +962,7 @@ class SubAccountApi(object):
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sub_accounts/{user_id}/keys/{key}',
-            'DELETE',
+            '/sub_accounts/{user_id}/keys/{key}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -915,8 +975,7 @@ class SubAccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def lock_sub_account(self, user_id, **kwargs):  # noqa: E501
         """Lock the sub-account  # noqa: E501
@@ -968,21 +1027,30 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['user_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'user_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method lock_sub_account" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method lock_sub_account" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'user_id' is set
-        if self.api_client.client_side_validation and (
-            'user_id' not in local_var_params or local_var_params['user_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `user_id` when calling `lock_sub_account`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('user_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['user_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `lock_sub_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1002,8 +1070,7 @@ class SubAccountApi(object):
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sub_accounts/{user_id}/lock',
-            'POST',
+            '/sub_accounts/{user_id}/lock', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1016,8 +1083,7 @@ class SubAccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def unlock_sub_account(self, user_id, **kwargs):  # noqa: E501
         """Unlock the sub-account  # noqa: E501
@@ -1069,21 +1135,30 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['user_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'user_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method unlock_sub_account" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method unlock_sub_account" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'user_id' is set
-        if self.api_client.client_side_validation and (
-            'user_id' not in local_var_params or local_var_params['user_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `user_id` when calling `unlock_sub_account`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('user_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['user_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `unlock_sub_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1103,8 +1178,7 @@ class SubAccountApi(object):
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sub_accounts/{user_id}/unlock',
-            'POST',
+            '/sub_accounts/{user_id}/unlock', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1117,8 +1191,7 @@ class SubAccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_unified_mode(self, **kwargs):  # noqa: E501
         """Get sub-account mode  # noqa: E501
@@ -1170,12 +1243,23 @@ class SubAccountApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_unified_mode" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_unified_mode" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -1192,14 +1276,14 @@ class SubAccountApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/sub_accounts/unified_mode',
-            'GET',
+            '/sub_accounts/unified_mode', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1212,5 +1296,4 @@ class SubAccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)

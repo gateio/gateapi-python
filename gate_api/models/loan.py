@@ -50,7 +50,7 @@ class Loan(object):
         'unpaid_interest': 'str',
         'fee_rate': 'str',
         'orig_id': 'str',
-        'text': 'str',
+        'text': 'str'
     }
 
     attribute_map = {
@@ -71,31 +71,10 @@ class Loan(object):
         'unpaid_interest': 'unpaid_interest',
         'fee_rate': 'fee_rate',
         'orig_id': 'orig_id',
-        'text': 'text',
+        'text': 'text'
     }
 
-    def __init__(
-        self,
-        id=None,
-        create_time=None,
-        expire_time=None,
-        status=None,
-        side=None,
-        currency=None,
-        rate=None,
-        amount=None,
-        days=None,
-        auto_renew=False,
-        currency_pair=None,
-        left=None,
-        repaid=None,
-        paid_interest=None,
-        unpaid_interest=None,
-        fee_rate=None,
-        orig_id=None,
-        text=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, id=None, create_time=None, expire_time=None, status=None, side=None, currency=None, rate=None, amount=None, days=None, auto_renew=False, currency_pair=None, left=None, repaid=None, paid_interest=None, unpaid_interest=None, fee_rate=None, orig_id=None, text=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, str, str, str, int, bool, str, str, str, str, str, str, str, str, Configuration) -> None
         """Loan - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -248,7 +227,8 @@ class Loan(object):
         allowed_values = ["open", "loaned", "finished", "auto_repaid"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}".format(status, allowed_values)  # noqa: E501
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
             )
 
         self._status = status
@@ -278,7 +258,8 @@ class Loan(object):
         allowed_values = ["lend", "borrow"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and side not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `side` ({0}), must be one of {1}".format(side, allowed_values)  # noqa: E501
+                "Invalid value for `side` ({0}), must be one of {1}"  # noqa: E501
+                .format(side, allowed_values)
             )
 
         self._side = side
@@ -593,16 +574,18 @@ class Loan(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

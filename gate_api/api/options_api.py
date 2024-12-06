@@ -18,7 +18,10 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
-from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
+from gate_api.exceptions import (  # noqa: F401
+    ApiTypeError,
+    ApiValueError
+)
 
 
 class OptionsApi(object):
@@ -81,12 +84,23 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_options_underlyings" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_underlyings" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -103,14 +117,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/underlyings',
-            'GET',
+            '/options/underlyings', 'GET',
             path_params,
             query_params,
             header_params,
@@ -123,8 +137,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_expirations(self, underlying, **kwargs):  # noqa: E501
         """List all expiration times  # noqa: E501
@@ -176,21 +189,30 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['underlying']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'underlying'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_options_expirations" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_expirations" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'underlying' is set
-        if self.api_client.client_side_validation and (
-            'underlying' not in local_var_params or local_var_params['underlying'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `underlying` when calling `list_options_expirations`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('underlying' not in local_var_params or  # noqa: E501
+                                                        local_var_params['underlying'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `underlying` when calling `list_options_expirations`")  # noqa: E501
 
         collection_formats = {}
 
@@ -207,14 +229,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/expirations',
-            'GET',
+            '/options/expirations', 'GET',
             path_params,
             query_params,
             header_params,
@@ -227,8 +249,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_contracts(self, underlying, **kwargs):  # noqa: E501
         """List all the contracts with specified underlying and expiration time  # noqa: E501
@@ -282,21 +303,31 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['underlying', 'expiration']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'underlying',
+            'expiration'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_options_contracts" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_contracts" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'underlying' is set
-        if self.api_client.client_side_validation and (
-            'underlying' not in local_var_params or local_var_params['underlying'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `underlying` when calling `list_options_contracts`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('underlying' not in local_var_params or  # noqa: E501
+                                                        local_var_params['underlying'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `underlying` when calling `list_options_contracts`")  # noqa: E501
 
         collection_formats = {}
 
@@ -315,14 +346,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/contracts',
-            'GET',
+            '/options/contracts', 'GET',
             path_params,
             query_params,
             header_params,
@@ -335,8 +366,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_options_contract(self, contract, **kwargs):  # noqa: E501
         """Query specified contract detail  # noqa: E501
@@ -388,21 +418,30 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['contract']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'contract'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_options_contract" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_options_contract" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `get_options_contract`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `get_options_contract`")  # noqa: E501
 
         collection_formats = {}
 
@@ -419,14 +458,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/contracts/{contract}',
-            'GET',
+            '/options/contracts/{contract}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -439,8 +478,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_settlements(self, underlying, **kwargs):  # noqa: E501
         """List settlement history  # noqa: E501
@@ -500,40 +538,41 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['underlying', 'limit', 'offset', '_from', 'to']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'underlying',
+            'limit',
+            'offset',
+            '_from',
+            'to'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_options_settlements" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_settlements" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'underlying' is set
-        if self.api_client.client_side_validation and (
-            'underlying' not in local_var_params or local_var_params['underlying'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `underlying` when calling `list_options_settlements`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('underlying' not in local_var_params or  # noqa: E501
+                                                        local_var_params['underlying'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `underlying` when calling `list_options_settlements`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_settlements`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_settlements`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_options_settlements`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_settlements`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_settlements`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_options_settlements`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -557,14 +596,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/settlements',
-            'GET',
+            '/options/settlements', 'GET',
             path_params,
             query_params,
             header_params,
@@ -577,8 +616,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_options_settlement(self, contract, underlying, at, **kwargs):  # noqa: E501
         """Get specified contract's settlement  # noqa: E501
@@ -634,35 +672,40 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['contract', 'underlying', 'at']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'contract',
+            'underlying',
+            'at'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_options_settlement" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_options_settlement" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `get_options_settlement`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `get_options_settlement`")  # noqa: E501
         # verify the required parameter 'underlying' is set
-        if self.api_client.client_side_validation and (
-            'underlying' not in local_var_params or local_var_params['underlying'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `underlying` when calling `get_options_settlement`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('underlying' not in local_var_params or  # noqa: E501
+                                                        local_var_params['underlying'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `underlying` when calling `get_options_settlement`")  # noqa: E501
         # verify the required parameter 'at' is set
-        if self.api_client.client_side_validation and (
-            'at' not in local_var_params or local_var_params['at'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `at` when calling `get_options_settlement`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('at' not in local_var_params or  # noqa: E501
+                                                        local_var_params['at'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `at` when calling `get_options_settlement`")  # noqa: E501
 
         collection_formats = {}
 
@@ -683,14 +726,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/settlements/{contract}',
-            'GET',
+            '/options/settlements/{contract}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -703,8 +746,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_my_options_settlements(self, underlying, **kwargs):  # noqa: E501
         """List my options settlements  # noqa: E501
@@ -766,42 +808,42 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['underlying', 'contract', 'limit', 'offset', '_from', 'to']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'underlying',
+            'contract',
+            'limit',
+            'offset',
+            '_from',
+            'to'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_my_options_settlements" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_my_options_settlements" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'underlying' is set
-        if self.api_client.client_side_validation and (
-            'underlying' not in local_var_params or local_var_params['underlying'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `underlying` when calling `list_my_options_settlements`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('underlying' not in local_var_params or  # noqa: E501
+                                                        local_var_params['underlying'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `underlying` when calling `list_my_options_settlements`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_my_options_settlements`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_my_options_settlements`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_my_options_settlements`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_my_options_settlements`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_my_options_settlements`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_my_options_settlements`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -827,14 +869,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/my_settlements',
-            'GET',
+            '/options/my_settlements', 'GET',
             path_params,
             query_params,
             header_params,
@@ -847,8 +889,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_order_book(self, contract, **kwargs):  # noqa: E501
         """Options order book  # noqa: E501
@@ -908,34 +949,38 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['contract', 'interval', 'limit', 'with_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'contract',
+            'interval',
+            'limit',
+            'with_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_options_order_book" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_order_book" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `list_options_order_book`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `list_options_order_book`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 50
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_order_book`, must be a value less than or equal to `50`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_order_book`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 50:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_order_book`, must be a value less than or equal to `50`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_order_book`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -957,14 +1002,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/order_book',
-            'GET',
+            '/options/order_book', 'GET',
             path_params,
             query_params,
             header_params,
@@ -977,8 +1022,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_tickers(self, underlying, **kwargs):  # noqa: E501
         """List tickers of options contracts  # noqa: E501
@@ -1030,21 +1074,30 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['underlying']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'underlying'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_options_tickers" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_tickers" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'underlying' is set
-        if self.api_client.client_side_validation and (
-            'underlying' not in local_var_params or local_var_params['underlying'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `underlying` when calling `list_options_tickers`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('underlying' not in local_var_params or  # noqa: E501
+                                                        local_var_params['underlying'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `underlying` when calling `list_options_tickers`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1061,14 +1114,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/tickers',
-            'GET',
+            '/options/tickers', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1081,8 +1134,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_underlying_tickers(self, underlying, **kwargs):  # noqa: E501
         """Get underlying ticker  # noqa: E501
@@ -1134,23 +1186,30 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['underlying']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'underlying'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_options_underlying_tickers" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_underlying_tickers" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'underlying' is set
-        if self.api_client.client_side_validation and (
-            'underlying' not in local_var_params or local_var_params['underlying'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `underlying` when calling `list_options_underlying_tickers`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('underlying' not in local_var_params or  # noqa: E501
+                                                        local_var_params['underlying'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `underlying` when calling `list_options_underlying_tickers`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1167,14 +1226,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/underlying/tickers/{underlying}',
-            'GET',
+            '/options/underlying/tickers/{underlying}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1187,8 +1246,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_candlesticks(self, contract, **kwargs):  # noqa: E501
         """Get options candlesticks  # noqa: E501
@@ -1248,34 +1306,39 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['contract', 'limit', '_from', 'to', 'interval']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'contract',
+            'limit',
+            '_from',
+            'to',
+            'interval'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_options_candlesticks" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_candlesticks" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `list_options_candlesticks`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `list_options_candlesticks`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_candlesticks`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_candlesticks`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_candlesticks`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_candlesticks`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1299,14 +1362,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/candlesticks',
-            'GET',
+            '/options/candlesticks', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1319,8 +1382,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_underlying_candlesticks(self, underlying, **kwargs):  # noqa: E501
         """Mark price candlesticks of an underlying  # noqa: E501
@@ -1380,36 +1442,39 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['underlying', 'limit', '_from', 'to', 'interval']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'underlying',
+            'limit',
+            '_from',
+            'to',
+            'interval'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_options_underlying_candlesticks" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_underlying_candlesticks" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'underlying' is set
-        if self.api_client.client_side_validation and (
-            'underlying' not in local_var_params or local_var_params['underlying'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `underlying` when calling `list_options_underlying_candlesticks`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('underlying' not in local_var_params or  # noqa: E501
+                                                        local_var_params['underlying'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `underlying` when calling `list_options_underlying_candlesticks`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_underlying_candlesticks`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_underlying_candlesticks`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_underlying_candlesticks`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_underlying_candlesticks`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1433,14 +1498,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/underlying/candlesticks',
-            'GET',
+            '/options/underlying/candlesticks', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1453,8 +1518,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_trades(self, **kwargs):  # noqa: E501
         """Options trade history  # noqa: E501
@@ -1516,33 +1580,38 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['contract', 'type', 'limit', 'offset', '_from', 'to']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'contract',
+            'type',
+            'limit',
+            'offset',
+            '_from',
+            'to'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_options_trades" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_trades" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_trades`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_trades`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_options_trades`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_trades`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_trades`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_options_trades`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1568,14 +1637,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/trades',
-            'GET',
+            '/options/trades', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1588,8 +1657,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_account(self, **kwargs):  # noqa: E501
         """List options account  # noqa: E501
@@ -1639,12 +1707,23 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_options_account" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_account" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -1661,14 +1740,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/accounts',
-            'GET',
+            '/options/accounts', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1681,8 +1760,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_account_book(self, **kwargs):  # noqa: E501
         """List account changing history  # noqa: E501
@@ -1697,7 +1775,7 @@ class OptionsApi(object):
         :param int offset: List offset, starting from 0
         :param int _from: Start timestamp
         :param int to: End timestamp
-        :param str type: Changing Type: - dnw: Deposit & Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - set: settlement PNL
+        :param str type: Changing Type: - dnw: Deposit & Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - set: settlement PNL 
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1725,7 +1803,7 @@ class OptionsApi(object):
         :param int offset: List offset, starting from 0
         :param int _from: Start timestamp
         :param int to: End timestamp
-        :param str type: Changing Type: - dnw: Deposit & Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - set: settlement PNL
+        :param str type: Changing Type: - dnw: Deposit & Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - set: settlement PNL 
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1742,33 +1820,37 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['limit', 'offset', '_from', 'to', 'type']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'limit',
+            'offset',
+            '_from',
+            'to',
+            'type'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_options_account_book" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_account_book" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_account_book`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_account_book`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_options_account_book`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_account_book`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_account_book`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_options_account_book`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1792,14 +1874,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/account_book',
-            'GET',
+            '/options/account_book', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1812,8 +1894,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_positions(self, **kwargs):  # noqa: E501
         """List user's positions of specified underlying  # noqa: E501
@@ -1865,12 +1946,24 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['underlying']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'underlying'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_options_positions" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_positions" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -1889,14 +1982,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/positions',
-            'GET',
+            '/options/positions', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1909,8 +2002,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_options_position(self, contract, **kwargs):  # noqa: E501
         """Get specified contract position  # noqa: E501
@@ -1962,21 +2054,30 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['contract']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'contract'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_options_position" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_options_position" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `get_options_position`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `get_options_position`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1993,14 +2094,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/positions/{contract}',
-            'GET',
+            '/options/positions/{contract}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2013,8 +2114,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_position_close(self, underlying, **kwargs):  # noqa: E501
         """List user's liquidation history of specified underlying  # noqa: E501
@@ -2068,23 +2168,31 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['underlying', 'contract']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'underlying',
+            'contract'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_options_position_close" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_position_close" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'underlying' is set
-        if self.api_client.client_side_validation and (
-            'underlying' not in local_var_params or local_var_params['underlying'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `underlying` when calling `list_options_position_close`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('underlying' not in local_var_params or  # noqa: E501
+                                                        local_var_params['underlying'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `underlying` when calling `list_options_position_close`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2103,14 +2211,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/position_close',
-            'GET',
+            '/options/position_close', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2123,8 +2231,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_options_orders(self, status, **kwargs):  # noqa: E501
         """List options orders  # noqa: E501
@@ -2188,40 +2295,43 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['status', 'contract', 'underlying', 'limit', 'offset', '_from', 'to']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'status',
+            'contract',
+            'underlying',
+            'limit',
+            'offset',
+            '_from',
+            'to'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_options_orders" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_options_orders" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'status' is set
-        if self.api_client.client_side_validation and (
-            'status' not in local_var_params or local_var_params['status'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `status` when calling `list_options_orders`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('status' not in local_var_params or  # noqa: E501
+                                                        local_var_params['status'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `status` when calling `list_options_orders`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_orders`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_options_orders`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_options_orders`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_orders`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_options_orders`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_options_orders`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2249,14 +2359,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/orders',
-            'GET',
+            '/options/orders', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2269,8 +2379,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def create_options_order(self, options_order, **kwargs):  # noqa: E501
         """Create an options order  # noqa: E501
@@ -2322,21 +2431,30 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['options_order']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'options_order'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_options_order" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_options_order" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'options_order' is set
-        if self.api_client.client_side_validation and (
-            'options_order' not in local_var_params or local_var_params['options_order'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `options_order` when calling `create_options_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('options_order' not in local_var_params or  # noqa: E501
+                                                        local_var_params['options_order'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `options_order` when calling `create_options_order`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2353,19 +2471,18 @@ class OptionsApi(object):
         if 'options_order' in local_var_params:
             body_params = local_var_params['options_order']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/orders',
-            'POST',
+            '/options/orders', 'POST',
             path_params,
             query_params,
             header_params,
@@ -2378,8 +2495,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def cancel_options_orders(self, **kwargs):  # noqa: E501
         """Cancel all `open` orders matched  # noqa: E501
@@ -2435,12 +2551,26 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['contract', 'underlying', 'side']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'contract',
+            'underlying',
+            'side'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_options_orders" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_options_orders" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -2463,14 +2593,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/orders',
-            'DELETE',
+            '/options/orders', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -2483,8 +2613,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_options_order(self, order_id, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
@@ -2536,21 +2665,30 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['order_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'order_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_options_order" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_options_order" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and (
-            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `order_id` when calling `get_options_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['order_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `order_id` when calling `get_options_order`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2567,14 +2705,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/orders/{order_id}',
-            'GET',
+            '/options/orders/{order_id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2587,8 +2725,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def cancel_options_order(self, order_id, **kwargs):  # noqa: E501
         """Cancel a single order  # noqa: E501
@@ -2640,21 +2777,30 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['order_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'order_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_options_order" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_options_order" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and (
-            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `order_id` when calling `cancel_options_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['order_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `order_id` when calling `cancel_options_order`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2671,14 +2817,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/orders/{order_id}',
-            'DELETE',
+            '/options/orders/{order_id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -2691,8 +2837,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def countdown_cancel_all_options(self, countdown_cancel_all_options_task, **kwargs):  # noqa: E501
         """Countdown cancel orders  # noqa: E501
@@ -2717,9 +2862,7 @@ class OptionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.countdown_cancel_all_options_with_http_info(
-            countdown_cancel_all_options_task, **kwargs
-        )  # noqa: E501
+        return self.countdown_cancel_all_options_with_http_info(countdown_cancel_all_options_task, **kwargs)  # noqa: E501
 
     def countdown_cancel_all_options_with_http_info(self, countdown_cancel_all_options_task, **kwargs):  # noqa: E501
         """Countdown cancel orders  # noqa: E501
@@ -2748,24 +2891,30 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['countdown_cancel_all_options_task']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'countdown_cancel_all_options_task'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method countdown_cancel_all_options" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method countdown_cancel_all_options" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'countdown_cancel_all_options_task' is set
-        if self.api_client.client_side_validation and (
-            'countdown_cancel_all_options_task' not in local_var_params
-            or local_var_params['countdown_cancel_all_options_task'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `countdown_cancel_all_options_task` when calling `countdown_cancel_all_options`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('countdown_cancel_all_options_task' not in local_var_params or  # noqa: E501
+                                                        local_var_params['countdown_cancel_all_options_task'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `countdown_cancel_all_options_task` when calling `countdown_cancel_all_options`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2782,19 +2931,18 @@ class OptionsApi(object):
         if 'countdown_cancel_all_options_task' in local_var_params:
             body_params = local_var_params['countdown_cancel_all_options_task']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/countdown_cancel_all',
-            'POST',
+            '/options/countdown_cancel_all', 'POST',
             path_params,
             query_params,
             header_params,
@@ -2807,8 +2955,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_my_options_trades(self, underlying, **kwargs):  # noqa: E501
         """List personal trading history  # noqa: E501
@@ -2870,40 +3017,42 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['underlying', 'contract', 'limit', 'offset', '_from', 'to']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'underlying',
+            'contract',
+            'limit',
+            'offset',
+            '_from',
+            'to'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_my_options_trades" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_my_options_trades" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'underlying' is set
-        if self.api_client.client_side_validation and (
-            'underlying' not in local_var_params or local_var_params['underlying'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `underlying` when calling `list_my_options_trades`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('underlying' not in local_var_params or  # noqa: E501
+                                                        local_var_params['underlying'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `underlying` when calling `list_my_options_trades`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_my_options_trades`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_my_options_trades`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_my_options_trades`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_my_options_trades`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_my_options_trades`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_my_options_trades`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2929,14 +3078,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/my_trades',
-            'GET',
+            '/options/my_trades', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2949,8 +3098,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_options_mmp(self, **kwargs):  # noqa: E501
         """MMP Query  # noqa: E501
@@ -3002,12 +3150,24 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['underlying']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'underlying'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_options_mmp" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_options_mmp" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -3026,14 +3186,14 @@ class OptionsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/mmp',
-            'GET',
+            '/options/mmp', 'GET',
             path_params,
             query_params,
             header_params,
@@ -3046,8 +3206,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def set_options_mmp(self, options_mmp, **kwargs):  # noqa: E501
         """MMP Settings  # noqa: E501
@@ -3099,21 +3258,30 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['options_mmp']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'options_mmp'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method set_options_mmp" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_options_mmp" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'options_mmp' is set
-        if self.api_client.client_side_validation and (
-            'options_mmp' not in local_var_params or local_var_params['options_mmp'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `options_mmp` when calling `set_options_mmp`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('options_mmp' not in local_var_params or  # noqa: E501
+                                                        local_var_params['options_mmp'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `options_mmp` when calling `set_options_mmp`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3130,19 +3298,18 @@ class OptionsApi(object):
         if 'options_mmp' in local_var_params:
             body_params = local_var_params['options_mmp']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/mmp',
-            'POST',
+            '/options/mmp', 'POST',
             path_params,
             query_params,
             header_params,
@@ -3155,8 +3322,7 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def reset_options_mmp(self, options_mmp_reset, **kwargs):  # noqa: E501
         """MMP Reset  # noqa: E501
@@ -3208,21 +3374,30 @@ class OptionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['options_mmp_reset']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'options_mmp_reset'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method reset_options_mmp" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method reset_options_mmp" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'options_mmp_reset' is set
-        if self.api_client.client_side_validation and (
-            'options_mmp_reset' not in local_var_params or local_var_params['options_mmp_reset'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `options_mmp_reset` when calling `reset_options_mmp`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('options_mmp_reset' not in local_var_params or  # noqa: E501
+                                                        local_var_params['options_mmp_reset'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `options_mmp_reset` when calling `reset_options_mmp`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3239,19 +3414,18 @@ class OptionsApi(object):
         if 'options_mmp_reset' in local_var_params:
             body_params = local_var_params['options_mmp_reset']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/options/mmp/reset',
-            'POST',
+            '/options/mmp/reset', 'POST',
             path_params,
             query_params,
             header_params,
@@ -3264,5 +3438,4 @@ class OptionsApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)

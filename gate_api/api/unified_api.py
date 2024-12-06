@@ -18,7 +18,10 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
-from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
+from gate_api.exceptions import (  # noqa: F401
+    ApiTypeError,
+    ApiValueError
+)
 
 
 class UnifiedApi(object):
@@ -85,12 +88,24 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_unified_accounts" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_unified_accounts" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -109,14 +124,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/accounts',
-            'GET',
+            '/unified/accounts', 'GET',
             path_params,
             query_params,
             header_params,
@@ -129,8 +144,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_unified_account_mode(self, **kwargs):  # noqa: E501
         """Inquire about unified account mode (deprecated)  # noqa: E501
@@ -182,12 +196,23 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_unified_account_mode" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_unified_account_mode" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -204,14 +229,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/account_mode',
-            'GET',
+            '/unified/account_mode', 'GET',
             path_params,
             query_params,
             header_params,
@@ -224,8 +249,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def set_unified_account_mode(self, unified_mode, **kwargs):  # noqa: E501
         """Set unified account mode (deprecated)  # noqa: E501
@@ -277,21 +301,30 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['unified_mode']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'unified_mode'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method set_unified_account_mode" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_unified_account_mode" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'unified_mode' is set
-        if self.api_client.client_side_validation and (
-            'unified_mode' not in local_var_params or local_var_params['unified_mode'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `unified_mode` when calling `set_unified_account_mode`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('unified_mode' not in local_var_params or  # noqa: E501
+                                                        local_var_params['unified_mode'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `unified_mode` when calling `set_unified_account_mode`")  # noqa: E501
 
         collection_formats = {}
 
@@ -308,19 +341,18 @@ class UnifiedApi(object):
         if 'unified_mode' in local_var_params:
             body_params = local_var_params['unified_mode']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/account_mode',
-            'POST',
+            '/unified/account_mode', 'POST',
             path_params,
             query_params,
             header_params,
@@ -333,8 +365,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_unified_borrowable(self, currency, **kwargs):  # noqa: E501
         """Query about the maximum borrowing for the unified account  # noqa: E501
@@ -386,21 +417,30 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_unified_borrowable" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_unified_borrowable" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `get_unified_borrowable`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `get_unified_borrowable`")  # noqa: E501
 
         collection_formats = {}
 
@@ -417,14 +457,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/borrowable',
-            'GET',
+            '/unified/borrowable', 'GET',
             path_params,
             query_params,
             header_params,
@@ -437,8 +477,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_unified_transferable(self, currency, **kwargs):  # noqa: E501
         """Query about the maximum transferable for the unified account  # noqa: E501
@@ -490,21 +529,30 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_unified_transferable" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_unified_transferable" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `get_unified_transferable`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `get_unified_transferable`")  # noqa: E501
 
         collection_formats = {}
 
@@ -521,14 +569,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/transferable',
-            'GET',
+            '/unified/transferable', 'GET',
             path_params,
             query_params,
             header_params,
@@ -541,8 +589,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_unified_loans(self, **kwargs):  # noqa: E501
         """List loans  # noqa: E501
@@ -600,33 +647,36 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', 'page', 'limit', 'type']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            'page',
+            'limit',
+            'type'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_unified_loans" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_unified_loans" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_unified_loans`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_unified_loans`, must be a value less than or equal to `100`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_unified_loans`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_unified_loans`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_unified_loans`, must be a value less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_unified_loans`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -648,14 +698,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/loans',
-            'GET',
+            '/unified/loans', 'GET',
             path_params,
             query_params,
             header_params,
@@ -668,8 +718,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def create_unified_loan(self, unified_loan, **kwargs):  # noqa: E501
         """Borrow or repay  # noqa: E501
@@ -723,21 +772,30 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['unified_loan']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'unified_loan'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_unified_loan" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_unified_loan" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'unified_loan' is set
-        if self.api_client.client_side_validation and (
-            'unified_loan' not in local_var_params or local_var_params['unified_loan'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `unified_loan` when calling `create_unified_loan`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('unified_loan' not in local_var_params or  # noqa: E501
+                                                        local_var_params['unified_loan'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `unified_loan` when calling `create_unified_loan`")  # noqa: E501
 
         collection_formats = {}
 
@@ -755,15 +813,13 @@ class UnifiedApi(object):
             body_params = local_var_params['unified_loan']
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/loans',
-            'POST',
+            '/unified/loans', 'POST',
             path_params,
             query_params,
             header_params,
@@ -776,8 +832,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_unified_loan_records(self, **kwargs):  # noqa: E501
         """Get load records  # noqa: E501
@@ -835,33 +890,36 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['type', 'currency', 'page', 'limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'type',
+            'currency',
+            'page',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_unified_loan_records" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_unified_loan_records" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_unified_loan_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_unified_loan_records`, must be a value less than or equal to `100`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_unified_loan_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_unified_loan_records`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_unified_loan_records`, must be a value less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_unified_loan_records`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -883,14 +941,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/loan_records',
-            'GET',
+            '/unified/loan_records', 'GET',
             path_params,
             query_params,
             header_params,
@@ -903,8 +961,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_unified_loan_interest_records(self, **kwargs):  # noqa: E501
         """List interest records  # noqa: E501
@@ -966,35 +1023,38 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', 'page', 'limit', '_from', 'to', 'type']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            'page',
+            'limit',
+            '_from',
+            'to',
+            'type'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_unified_loan_interest_records" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_unified_loan_interest_records" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_unified_loan_interest_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_unified_loan_interest_records`, must be a value less than or equal to `100`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_unified_loan_interest_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_unified_loan_interest_records`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_unified_loan_interest_records`, must be a value less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_unified_loan_interest_records`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1020,14 +1080,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/interest_records',
-            'GET',
+            '/unified/interest_records', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1040,8 +1100,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_unified_risk_units(self, **kwargs):  # noqa: E501
         """Retrieve user risk unit details, only valid in portfolio margin mode  # noqa: E501
@@ -1091,12 +1150,23 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_unified_risk_units" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_unified_risk_units" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -1113,14 +1183,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/risk_units',
-            'GET',
+            '/unified/risk_units', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1133,8 +1203,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_unified_mode(self, **kwargs):  # noqa: E501
         """Query mode of the unified account  # noqa: E501
@@ -1186,12 +1255,23 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_unified_mode" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_unified_mode" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -1208,14 +1288,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/unified_mode',
-            'GET',
+            '/unified/unified_mode', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1228,8 +1308,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def set_unified_mode(self, unified_mode_set, **kwargs):  # noqa: E501
         """Set mode of the unified account  # noqa: E501
@@ -1283,21 +1362,30 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['unified_mode_set']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'unified_mode_set'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method set_unified_mode" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_unified_mode" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'unified_mode_set' is set
-        if self.api_client.client_side_validation and (
-            'unified_mode_set' not in local_var_params or local_var_params['unified_mode_set'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `unified_mode_set` when calling `set_unified_mode`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('unified_mode_set' not in local_var_params or  # noqa: E501
+                                                        local_var_params['unified_mode_set'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `unified_mode_set` when calling `set_unified_mode`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1315,15 +1403,13 @@ class UnifiedApi(object):
             body_params = local_var_params['unified_mode_set']
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/unified_mode',
-            'PUT',
+            '/unified/unified_mode', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -1336,8 +1422,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_unified_estimate_rate(self, currencies, **kwargs):  # noqa: E501
         """Get unified estimate rate  # noqa: E501
@@ -1391,34 +1476,37 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currencies']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currencies'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_unified_estimate_rate" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_unified_estimate_rate" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currencies' is set
-        if self.api_client.client_side_validation and (
-            'currencies' not in local_var_params or local_var_params['currencies'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currencies` when calling `get_unified_estimate_rate`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currencies' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currencies'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currencies` when calling `get_unified_estimate_rate`")  # noqa: E501
 
-        if self.api_client.client_side_validation and (
-            'currencies' in local_var_params and len(local_var_params['currencies']) > 10  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `currencies` when calling `get_unified_estimate_rate`, number of items must be less than or equal to `10`"
-            )  # noqa: E501
-        if self.api_client.client_side_validation and (
-            'currencies' in local_var_params and len(local_var_params['currencies']) < 1  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `currencies` when calling `get_unified_estimate_rate`, number of items must be greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currencies' in local_var_params and  # noqa: E501
+                                                        len(local_var_params['currencies']) > 10):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `currencies` when calling `get_unified_estimate_rate`, number of items must be less than or equal to `10`")  # noqa: E501
+        if self.api_client.client_side_validation and ('currencies' in local_var_params and  # noqa: E501
+                                                        len(local_var_params['currencies']) < 1):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `currencies` when calling `get_unified_estimate_rate`, number of items must be greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1435,14 +1523,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/estimate_rate',
-            'GET',
+            '/unified/estimate_rate', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1455,8 +1543,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_currency_discount_tiers(self, **kwargs):  # noqa: E501
         """List currency discount tiers  # noqa: E501
@@ -1506,13 +1593,22 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_currency_discount_tiers" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_currency_discount_tiers" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
@@ -1530,14 +1626,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/currency_discount_tiers',
-            'GET',
+            '/unified/currency_discount_tiers', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1550,8 +1646,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_loan_margin_tiers(self, **kwargs):  # noqa: E501
         """List loan margin tiers  # noqa: E501
@@ -1601,12 +1696,23 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_loan_margin_tiers" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_loan_margin_tiers" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -1623,14 +1729,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/loan_margin_tiers',
-            'GET',
+            '/unified/loan_margin_tiers', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1643,8 +1749,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def calculate_portfolio_margin(self, unified_portfolio_input, **kwargs):  # noqa: E501
         """Portfolio margin calculator  # noqa: E501
@@ -1698,24 +1803,30 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['unified_portfolio_input']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'unified_portfolio_input'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method calculate_portfolio_margin" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method calculate_portfolio_margin" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'unified_portfolio_input' is set
-        if self.api_client.client_side_validation and (
-            'unified_portfolio_input' not in local_var_params
-            or local_var_params['unified_portfolio_input'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `unified_portfolio_input` when calling `calculate_portfolio_margin`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('unified_portfolio_input' not in local_var_params or  # noqa: E501
+                                                        local_var_params['unified_portfolio_input'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `unified_portfolio_input` when calling `calculate_portfolio_margin`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1732,19 +1843,18 @@ class UnifiedApi(object):
         if 'unified_portfolio_input' in local_var_params:
             body_params = local_var_params['unified_portfolio_input']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/portfolio_calculator',
-            'POST',
+            '/unified/portfolio_calculator', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1757,8 +1867,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_user_leverage_currency_config(self, currency, **kwargs):  # noqa: E501
         """The maximum and minimum leverage multiples that users can set for a currency type are:  # noqa: E501
@@ -1810,23 +1919,30 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method get_user_leverage_currency_config" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_user_leverage_currency_config" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `get_user_leverage_currency_config`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `get_user_leverage_currency_config`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1843,14 +1959,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/leverage/user_currency_config',
-            'GET',
+            '/unified/leverage/user_currency_config', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1863,8 +1979,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_user_leverage_currency_setting(self, **kwargs):  # noqa: E501
         """Get the user's currency leverage. If currency is not passed, query all currencies.  # noqa: E501
@@ -1916,13 +2031,23 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method get_user_leverage_currency_setting" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_user_leverage_currency_setting" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
@@ -1942,14 +2067,14 @@ class UnifiedApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/leverage/user_currency_setting',
-            'GET',
+            '/unified/leverage/user_currency_setting', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1962,8 +2087,7 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def set_user_leverage_currency_setting(self, **kwargs):  # noqa: E501
         """Set the currency leverage ratio  # noqa: E501
@@ -2015,13 +2139,23 @@ class UnifiedApi(object):
 
         local_var_params = locals()
 
-        all_params = ['unified_leverage_setting']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'unified_leverage_setting'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method set_user_leverage_currency_setting" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_user_leverage_currency_setting" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
@@ -2042,15 +2176,13 @@ class UnifiedApi(object):
             body_params = local_var_params['unified_leverage_setting']
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/unified/leverage/user_currency_setting',
-            'POST',
+            '/unified/leverage/user_currency_setting', 'POST',
             path_params,
             query_params,
             header_params,
@@ -2063,5 +2195,4 @@ class UnifiedApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)

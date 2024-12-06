@@ -18,7 +18,10 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
-from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
+from gate_api.exceptions import (  # noqa: F401
+    ApiTypeError,
+    ApiValueError
+)
 
 
 class WalletApi(object):
@@ -83,21 +86,30 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_currency_chains" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_currency_chains" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `list_currency_chains`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `list_currency_chains`")  # noqa: E501
 
         collection_formats = {}
 
@@ -114,14 +126,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/currency_chains',
-            'GET',
+            '/wallet/currency_chains', 'GET',
             path_params,
             query_params,
             header_params,
@@ -134,8 +146,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_deposit_address(self, currency, **kwargs):  # noqa: E501
         """Generate currency deposit address  # noqa: E501
@@ -187,21 +198,30 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_deposit_address" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_deposit_address" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `get_deposit_address`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `get_deposit_address`")  # noqa: E501
 
         collection_formats = {}
 
@@ -218,14 +238,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/deposit_address',
-            'GET',
+            '/wallet/deposit_address', 'GET',
             path_params,
             query_params,
             header_params,
@@ -238,8 +258,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_withdrawals(self, **kwargs):  # noqa: E501
         """Retrieve withdrawal records  # noqa: E501
@@ -301,33 +320,37 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', '_from', 'to', 'limit', 'offset']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            '_from',
+            'to',
+            'limit',
+            'offset'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_withdrawals" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_withdrawals" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_withdrawals`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_withdrawals`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_withdrawals`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_withdrawals`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_withdrawals`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_withdrawals`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -351,14 +374,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/withdrawals',
-            'GET',
+            '/wallet/withdrawals', 'GET',
             path_params,
             query_params,
             header_params,
@@ -371,8 +394,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_deposits(self, **kwargs):  # noqa: E501
         """Retrieve deposit records  # noqa: E501
@@ -434,33 +456,37 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', '_from', 'to', 'limit', 'offset']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            '_from',
+            'to',
+            'limit',
+            'offset'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_deposits" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_deposits" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 500
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_deposits`, must be a value less than or equal to `500`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_deposits`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_deposits`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 500:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_deposits`, must be a value less than or equal to `500`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_deposits`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_deposits`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -484,14 +510,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/deposits',
-            'GET',
+            '/wallet/deposits', 'GET',
             path_params,
             query_params,
             header_params,
@@ -504,8 +530,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def transfer(self, transfer, **kwargs):  # noqa: E501
         """Transfer between trading accounts  # noqa: E501
@@ -559,18 +584,29 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['transfer']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'transfer'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method transfer" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method transfer" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'transfer' is set
-        if self.api_client.client_side_validation and (
-            'transfer' not in local_var_params or local_var_params['transfer'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('transfer' not in local_var_params or  # noqa: E501
+                                                        local_var_params['transfer'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `transfer` when calling `transfer`")  # noqa: E501
 
         collection_formats = {}
@@ -588,19 +624,18 @@ class WalletApi(object):
         if 'transfer' in local_var_params:
             body_params = local_var_params['transfer']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/transfers',
-            'POST',
+            '/wallet/transfers', 'POST',
             path_params,
             query_params,
             header_params,
@@ -613,8 +648,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_sub_account_transfers(self, **kwargs):  # noqa: E501
         """Retrieve transfer records between main and sub accounts  # noqa: E501
@@ -676,35 +710,37 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['sub_uid', '_from', 'to', 'limit', 'offset']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'sub_uid',
+            '_from',
+            'to',
+            'limit',
+            'offset'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_sub_account_transfers" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_sub_account_transfers" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_sub_account_transfers`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_sub_account_transfers`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_sub_account_transfers`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_sub_account_transfers`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_sub_account_transfers`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_sub_account_transfers`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -728,14 +764,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/sub_account_transfers',
-            'GET',
+            '/wallet/sub_account_transfers', 'GET',
             path_params,
             query_params,
             header_params,
@@ -748,8 +784,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def transfer_with_sub_account(self, sub_account_transfer, **kwargs):  # noqa: E501
         """Transfer between main and sub accounts  # noqa: E501
@@ -803,22 +838,30 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['sub_account_transfer']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'sub_account_transfer'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method transfer_with_sub_account" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method transfer_with_sub_account" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'sub_account_transfer' is set
-        if self.api_client.client_side_validation and (
-            'sub_account_transfer' not in local_var_params
-            or local_var_params['sub_account_transfer'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `sub_account_transfer` when calling `transfer_with_sub_account`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('sub_account_transfer' not in local_var_params or  # noqa: E501
+                                                        local_var_params['sub_account_transfer'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `sub_account_transfer` when calling `transfer_with_sub_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -835,19 +878,18 @@ class WalletApi(object):
         if 'sub_account_transfer' in local_var_params:
             body_params = local_var_params['sub_account_transfer']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/sub_account_transfers',
-            'POST',
+            '/wallet/sub_account_transfers', 'POST',
             path_params,
             query_params,
             header_params,
@@ -860,8 +902,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def sub_account_to_sub_account(self, sub_account_to_sub_account, **kwargs):  # noqa: E501
         """Sub-account transfers to sub-account  # noqa: E501
@@ -915,24 +956,30 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['sub_account_to_sub_account']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'sub_account_to_sub_account'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method sub_account_to_sub_account" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method sub_account_to_sub_account" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'sub_account_to_sub_account' is set
-        if self.api_client.client_side_validation and (
-            'sub_account_to_sub_account' not in local_var_params
-            or local_var_params['sub_account_to_sub_account'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `sub_account_to_sub_account` when calling `sub_account_to_sub_account`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('sub_account_to_sub_account' not in local_var_params or  # noqa: E501
+                                                        local_var_params['sub_account_to_sub_account'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `sub_account_to_sub_account` when calling `sub_account_to_sub_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -949,19 +996,18 @@ class WalletApi(object):
         if 'sub_account_to_sub_account' in local_var_params:
             body_params = local_var_params['sub_account_to_sub_account']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/sub_account_to_sub_account',
-            'POST',
+            '/wallet/sub_account_to_sub_account', 'POST',
             path_params,
             query_params,
             header_params,
@@ -974,8 +1020,122 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
+            collection_formats=collection_formats)
+
+    def get_transfer_order_status(self, **kwargs):  # noqa: E501
+        """Transfer status query  # noqa: E501
+
+        Support querying transfer status based on user-defined client_order_id or tx_id returned by the transfer interface  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_transfer_order_status(async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str client_order_id: The custom ID provided by the customer serves as a safeguard against duplicate transfers. It can be a combination of letters (case-sensitive), numbers, hyphens '-', and underscores '_', with a length ranging from 1 to 64 characters.
+        :param str tx_id: The transfer operation number and client_order_id cannot be empty at the same time
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: gate_api.InlineResponse200
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_transfer_order_status_with_http_info(**kwargs)  # noqa: E501
+
+    def get_transfer_order_status_with_http_info(self, **kwargs):  # noqa: E501
+        """Transfer status query  # noqa: E501
+
+        Support querying transfer status based on user-defined client_order_id or tx_id returned by the transfer interface  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_transfer_order_status_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str client_order_id: The custom ID provided by the customer serves as a safeguard against duplicate transfers. It can be a combination of letters (case-sensitive), numbers, hyphens '-', and underscores '_', with a length ranging from 1 to 64 characters.
+        :param str tx_id: The transfer operation number and client_order_id cannot be empty at the same time
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(gate_api.InlineResponse200, status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'client_order_id',
+            'tx_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
         )
+
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_transfer_order_status" % k
+                )
+            local_var_params[k] = v
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'client_order_id' in local_var_params and local_var_params['client_order_id'] is not None:  # noqa: E501
+            query_params.append(('client_order_id', local_var_params['client_order_id']))  # noqa: E501
+        if 'tx_id' in local_var_params and local_var_params['tx_id'] is not None:  # noqa: E501
+            query_params.append(('tx_id', local_var_params['tx_id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiv4']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/wallet/order_status', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
 
     def list_withdraw_status(self, **kwargs):  # noqa: E501
         """Retrieve withdrawal status  # noqa: E501
@@ -1027,12 +1187,24 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_withdraw_status" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_withdraw_status" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -1051,14 +1223,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/withdraw_status',
-            'GET',
+            '/wallet/withdraw_status', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1071,8 +1243,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_sub_account_balances(self, **kwargs):  # noqa: E501
         """Retrieve sub account balances  # noqa: E501
@@ -1124,12 +1295,24 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['sub_uid']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'sub_uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_sub_account_balances" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_sub_account_balances" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -1148,14 +1331,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/sub_account_balances',
-            'GET',
+            '/wallet/sub_account_balances', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1168,8 +1351,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_sub_account_margin_balances(self, **kwargs):  # noqa: E501
         """Query sub accounts' margin balances  # noqa: E501
@@ -1221,13 +1403,23 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['sub_uid']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'sub_uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_sub_account_margin_balances" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_sub_account_margin_balances" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
@@ -1247,14 +1439,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/sub_account_margin_balances',
-            'GET',
+            '/wallet/sub_account_margin_balances', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1267,8 +1459,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_sub_account_futures_balances(self, **kwargs):  # noqa: E501
         """Query sub accounts' futures account balances  # noqa: E501
@@ -1322,13 +1513,24 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['sub_uid', 'settle']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'sub_uid',
+            'settle'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_sub_account_futures_balances" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_sub_account_futures_balances" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
@@ -1350,14 +1552,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/sub_account_futures_balances',
-            'GET',
+            '/wallet/sub_account_futures_balances', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1370,8 +1572,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_sub_account_cross_margin_balances(self, **kwargs):  # noqa: E501
         """Query subaccount's cross_margin account info  # noqa: E501
@@ -1423,13 +1624,23 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['sub_uid']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'sub_uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_sub_account_cross_margin_balances" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_sub_account_cross_margin_balances" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
@@ -1449,14 +1660,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/sub_account_cross_margin_balances',
-            'GET',
+            '/wallet/sub_account_cross_margin_balances', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1469,8 +1680,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_saved_address(self, currency, **kwargs):  # noqa: E501
         """Query saved address  # noqa: E501
@@ -1528,28 +1738,36 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', 'chain', 'limit', 'page']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            'chain',
+            'limit',
+            'page'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_saved_address" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_saved_address" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `list_saved_address`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `list_saved_address`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_saved_address`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_saved_address`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1571,14 +1789,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/saved_address',
-            'GET',
+            '/wallet/saved_address', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1591,8 +1809,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_trade_fee(self, **kwargs):  # noqa: E501
         """Retrieve personal trading fee  # noqa: E501
@@ -1646,12 +1863,25 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair', 'settle']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency_pair',
+            'settle'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_trade_fee" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_trade_fee" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -1672,14 +1902,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/fee',
-            'GET',
+            '/wallet/fee', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1692,8 +1922,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_total_balance(self, **kwargs):  # noqa: E501
         """Retrieve user's total balances  # noqa: E501
@@ -1747,12 +1976,24 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_total_balance" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_total_balance" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -1771,14 +2012,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/total_balance',
-            'GET',
+            '/wallet/total_balance', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1791,8 +2032,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_small_balance(self, **kwargs):  # noqa: E501
         """List small balance  # noqa: E501
@@ -1842,12 +2082,23 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_small_balance" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_small_balance" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -1864,14 +2115,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/small_balance',
-            'GET',
+            '/wallet/small_balance', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1884,8 +2135,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def convert_small_balance(self, convert_small_balance, **kwargs):  # noqa: E501
         """Convert small balance  # noqa: E501
@@ -1937,22 +2187,30 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['convert_small_balance']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'convert_small_balance'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method convert_small_balance" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method convert_small_balance" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'convert_small_balance' is set
-        if self.api_client.client_side_validation and (
-            'convert_small_balance' not in local_var_params
-            or local_var_params['convert_small_balance'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `convert_small_balance` when calling `convert_small_balance`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('convert_small_balance' not in local_var_params or  # noqa: E501
+                                                        local_var_params['convert_small_balance'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `convert_small_balance` when calling `convert_small_balance`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1970,15 +2228,13 @@ class WalletApi(object):
             body_params = local_var_params['convert_small_balance']
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/small_balance',
-            'POST',
+            '/wallet/small_balance', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1991,8 +2247,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_small_balance_history(self, **kwargs):  # noqa: E501
         """List small balance history  # noqa: E501
@@ -2048,35 +2303,35 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', 'page', 'limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            'page',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_small_balance_history" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_small_balance_history" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_small_balance_history`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_small_balance_history`, must be a value less than or equal to `100`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_small_balance_history`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_small_balance_history`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_small_balance_history`, must be a value less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_small_balance_history`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2096,14 +2351,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/small_balance_history',
-            'GET',
+            '/wallet/small_balance_history', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2116,8 +2371,7 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_push_orders(self, **kwargs):  # noqa: E501
         """Retrieve the UID transfer history  # noqa: E501
@@ -2177,27 +2431,35 @@ class WalletApi(object):
 
         local_var_params = locals()
 
-        all_params = ['id', '_from', 'to', 'limit', 'offset']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'id',
+            '_from',
+            'to',
+            'limit',
+            'offset'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_push_orders" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_push_orders" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_push_orders`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_push_orders`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_push_orders`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_push_orders`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2221,14 +2483,14 @@ class WalletApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/wallet/push',
-            'GET',
+            '/wallet/push', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2241,5 +2503,4 @@ class WalletApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)

@@ -48,7 +48,7 @@ class Trade(object):
         'gt_fee': 'str',
         'amend_text': 'str',
         'sequence_id': 'str',
-        'text': 'str',
+        'text': 'str'
     }
 
     attribute_map = {
@@ -67,29 +67,10 @@ class Trade(object):
         'gt_fee': 'gt_fee',
         'amend_text': 'amend_text',
         'sequence_id': 'sequence_id',
-        'text': 'text',
+        'text': 'text'
     }
 
-    def __init__(
-        self,
-        id=None,
-        create_time=None,
-        create_time_ms=None,
-        currency_pair=None,
-        side=None,
-        role=None,
-        amount=None,
-        price=None,
-        order_id=None,
-        fee=None,
-        fee_currency=None,
-        point_fee=None,
-        gt_fee=None,
-        amend_text=None,
-        sequence_id=None,
-        text=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, id=None, create_time=None, create_time_ms=None, currency_pair=None, side=None, role=None, amount=None, price=None, order_id=None, fee=None, fee_currency=None, point_fee=None, gt_fee=None, amend_text=None, sequence_id=None, text=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """Trade - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -262,7 +243,8 @@ class Trade(object):
         allowed_values = ["buy", "sell"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and side not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `side` ({0}), must be one of {1}".format(side, allowed_values)  # noqa: E501
+                "Invalid value for `side` ({0}), must be one of {1}"  # noqa: E501
+                .format(side, allowed_values)
             )
 
         self._side = side
@@ -290,7 +272,8 @@ class Trade(object):
         allowed_values = ["taker", "maker"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and role not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `role` ({0}), must be one of {1}".format(role, allowed_values)  # noqa: E501
+                "Invalid value for `role` ({0}), must be one of {1}"  # noqa: E501
+                .format(role, allowed_values)
             )
 
         self._role = role
@@ -532,16 +515,18 @@ class Trade(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

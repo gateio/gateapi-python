@@ -38,7 +38,7 @@ class Transfer(object):
         'to': 'str',
         'amount': 'str',
         'currency_pair': 'str',
-        'settle': 'str',
+        'settle': 'str'
     }
 
     attribute_map = {
@@ -47,19 +47,10 @@ class Transfer(object):
         'to': 'to',
         'amount': 'amount',
         'currency_pair': 'currency_pair',
-        'settle': 'settle',
+        'settle': 'settle'
     }
 
-    def __init__(
-        self,
-        currency=None,
-        _from=None,
-        to=None,
-        amount=None,
-        currency_pair=None,
-        settle=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, currency=None, _from=None, to=None, amount=None, currency_pair=None, settle=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, str, Configuration) -> None
         """Transfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -133,7 +124,8 @@ class Transfer(object):
         allowed_values = ["spot", "margin", "futures", "delivery", "options"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and _from not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `_from` ({0}), must be one of {1}".format(_from, allowed_values)  # noqa: E501
+                "Invalid value for `_from` ({0}), must be one of {1}"  # noqa: E501
+                .format(_from, allowed_values)
             )
 
         self.__from = _from
@@ -163,7 +155,8 @@ class Transfer(object):
         allowed_values = ["spot", "margin", "futures", "delivery", "options"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and to not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `to` ({0}), must be one of {1}".format(to, allowed_values)  # noqa: E501
+                "Invalid value for `to` ({0}), must be one of {1}"  # noqa: E501
+                .format(to, allowed_values)
             )
 
         self._to = to
@@ -246,16 +239,18 @@ class Transfer(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

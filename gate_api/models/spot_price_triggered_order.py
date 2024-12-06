@@ -42,7 +42,7 @@ class SpotPriceTriggeredOrder(object):
         'ftime': 'int',
         'fired_order_id': 'int',
         'status': 'str',
-        'reason': 'str',
+        'reason': 'str'
     }
 
     attribute_map = {
@@ -55,23 +55,10 @@ class SpotPriceTriggeredOrder(object):
         'ftime': 'ftime',
         'fired_order_id': 'fired_order_id',
         'status': 'status',
-        'reason': 'reason',
+        'reason': 'reason'
     }
 
-    def __init__(
-        self,
-        trigger=None,
-        put=None,
-        id=None,
-        user=None,
-        market=None,
-        ctime=None,
-        ftime=None,
-        fired_order_id=None,
-        status=None,
-        reason=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, trigger=None, put=None, id=None, user=None, market=None, ctime=None, ftime=None, fired_order_id=None, status=None, reason=None, local_vars_configuration=None):  # noqa: E501
         # type: (SpotPriceTrigger, SpotPricePutOrder, int, int, str, int, int, int, str, str, Configuration) -> None
         """SpotPriceTriggeredOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -347,16 +334,18 @@ class SpotPriceTriggeredOrder(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

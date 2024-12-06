@@ -68,7 +68,7 @@ class Order(object):
         'stp_id': 'int',
         'stp_act': 'str',
         'finish_as': 'str',
-        'action_mode': 'str',
+        'action_mode': 'str'
     }
 
     attribute_map = {
@@ -107,49 +107,10 @@ class Order(object):
         'stp_id': 'stp_id',
         'stp_act': 'stp_act',
         'finish_as': 'finish_as',
-        'action_mode': 'action_mode',
+        'action_mode': 'action_mode'
     }
 
-    def __init__(
-        self,
-        id=None,
-        text=None,
-        amend_text=None,
-        create_time=None,
-        update_time=None,
-        create_time_ms=None,
-        update_time_ms=None,
-        status=None,
-        currency_pair=None,
-        type='limit',
-        account='spot',
-        side=None,
-        amount=None,
-        price=None,
-        time_in_force='gtc',
-        iceberg=None,
-        auto_borrow=None,
-        auto_repay=None,
-        left=None,
-        filled_amount=None,
-        fill_price=None,
-        filled_total=None,
-        avg_deal_price=None,
-        fee=None,
-        fee_currency=None,
-        point_fee=None,
-        gt_fee=None,
-        gt_maker_fee=None,
-        gt_taker_fee=None,
-        gt_discount=None,
-        rebated_fee=None,
-        rebated_fee_currency=None,
-        stp_id=None,
-        stp_act=None,
-        finish_as=None,
-        action_mode=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, id=None, text=None, amend_text=None, create_time=None, update_time=None, create_time_ms=None, update_time_ms=None, status=None, currency_pair=None, type='limit', account='spot', side=None, amount=None, price=None, time_in_force='gtc', iceberg=None, auto_borrow=None, auto_repay=None, left=None, filled_amount=None, fill_price=None, filled_total=None, avg_deal_price=None, fee=None, fee_currency=None, point_fee=None, gt_fee=None, gt_maker_fee=None, gt_taker_fee=None, gt_discount=None, rebated_fee=None, rebated_fee_currency=None, stp_id=None, stp_act=None, finish_as=None, action_mode=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, bool, bool, str, str, str, str, str, str, str, str, str, str, str, bool, str, str, int, str, str, str, Configuration) -> None
         """Order - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -448,7 +409,8 @@ class Order(object):
         allowed_values = ["open", "closed", "cancelled"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}".format(status, allowed_values)  # noqa: E501
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
             )
 
         self._status = status
@@ -501,7 +463,8 @@ class Order(object):
         allowed_values = ["limit", "market"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}".format(type, allowed_values)  # noqa: E501
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
             )
 
         self._type = type
@@ -554,7 +517,8 @@ class Order(object):
         allowed_values = ["buy", "sell"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and side not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `side` ({0}), must be one of {1}".format(side, allowed_values)  # noqa: E501
+                "Invalid value for `side` ({0}), must be one of {1}"  # noqa: E501
+                .format(side, allowed_values)
             )
 
         self._side = side
@@ -630,9 +594,8 @@ class Order(object):
         allowed_values = ["gtc", "ioc", "poc", "fok"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and time_in_force not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `time_in_force` ({0}), must be one of {1}".format(  # noqa: E501
-                    time_in_force, allowed_values
-                )
+                "Invalid value for `time_in_force` ({0}), must be one of {1}"  # noqa: E501
+                .format(time_in_force, allowed_values)
             )
 
         self._time_in_force = time_in_force
@@ -1074,7 +1037,8 @@ class Order(object):
         allowed_values = ["cn", "co", "cb", "-"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and stp_act not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `stp_act` ({0}), must be one of {1}".format(stp_act, allowed_values)  # noqa: E501
+                "Invalid value for `stp_act` ({0}), must be one of {1}"  # noqa: E501
+                .format(stp_act, allowed_values)
             )
 
         self._stp_act = stp_act
@@ -1099,25 +1063,11 @@ class Order(object):
         :param finish_as: The finish_as of this Order.  # noqa: E501
         :type: str
         """
-        allowed_values = [
-            "open",
-            "filled",
-            "cancelled",
-            "liquidate_cancelled",
-            "depth_not_enough",
-            "trader_not_enough",
-            "small",
-            "ioc",
-            "poc",
-            "fok",
-            "stp",
-            "unknown",
-        ]  # noqa: E501
+        allowed_values = ["open", "filled", "cancelled", "liquidate_cancelled", "depth_not_enough", "trader_not_enough", "small", "ioc", "poc", "fok", "stp", "unknown"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and finish_as not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `finish_as` ({0}), must be one of {1}".format(  # noqa: E501
-                    finish_as, allowed_values
-                )
+                "Invalid value for `finish_as` ({0}), must be one of {1}"  # noqa: E501
+                .format(finish_as, allowed_values)
             )
 
         self._finish_as = finish_as
@@ -1152,16 +1102,18 @@ class Order(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

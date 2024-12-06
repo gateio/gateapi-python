@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **mark_price_round** | **str** | Minimum mark price increment | [optional] 
 **order_size_min** | **int** | Minimum order size the contract allowed | [optional] 
 **order_size_max** | **int** | Maximum order size the contract allowed | [optional] 
-**order_price_deviate** | **str** | deviation between order price and current index price. If price of an order is denoted as order_price, it must meet the following condition:      abs(order_price - mark_price) &lt;&#x3D; mark_price * order_price_deviate | [optional] 
+**order_price_deviate** | **str** | The positive and negative offset allowed between the order price and the current mark price, that is, the order price &#x60;order_price&#x60; must meet the following conditions:   order_price is within the range of mark_price +/- order_price_deviate * underlying_price  and does not distinguish between buy and sell orders | [optional] 
 **ref_discount_rate** | **str** | Referral fee rate discount | [optional] 
 **ref_rebate_rate** | **str** | Referrer commission rate | [optional] 
 **orderbook_id** | **int** | Current orderbook ID | [optional] 

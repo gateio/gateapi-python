@@ -32,9 +32,15 @@ class SubAccountKeyPerms(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'name': 'str', 'read_only': 'bool'}
+    openapi_types = {
+        'name': 'str',
+        'read_only': 'bool'
+    }
 
-    attribute_map = {'name': 'name', 'read_only': 'read_only'}
+    attribute_map = {
+        'name': 'name',
+        'read_only': 'read_only'
+    }
 
     def __init__(self, name=None, read_only=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, bool, Configuration) -> None
@@ -56,7 +62,7 @@ class SubAccountKeyPerms(object):
     def name(self):
         """Gets the name of this SubAccountKeyPerms.  # noqa: E501
 
-        Permission name (all permissions will be removed if no value is passed)  - wallet: wallet - spot: spot/margin - futures: perpetual contract - delivery: delivery - earn: earn - custody: custody - options: options - account: Account - unified: unified - loan: Loan - margin: margin - unified: unified - copy: copy - pilot：pilot  # noqa: E501
+        Permission function name (no value will be cleared) - wallet: wallet - spot: spot/leverage - futures: perpetual contract - delivery: delivery contract - earn: financial management - custody: custody - options: options - account: account information - loan: loan - margin: leverage - unified: unified account - copy: copy  # noqa: E501
 
         :return: The name of this SubAccountKeyPerms.  # noqa: E501
         :rtype: str
@@ -67,7 +73,7 @@ class SubAccountKeyPerms(object):
     def name(self, name):
         """Sets the name of this SubAccountKeyPerms.
 
-        Permission name (all permissions will be removed if no value is passed)  - wallet: wallet - spot: spot/margin - futures: perpetual contract - delivery: delivery - earn: earn - custody: custody - options: options - account: Account - unified: unified - loan: Loan - margin: margin - unified: unified - copy: copy - pilot：pilot  # noqa: E501
+        Permission function name (no value will be cleared) - wallet: wallet - spot: spot/leverage - futures: perpetual contract - delivery: delivery contract - earn: financial management - custody: custody - options: options - account: account information - loan: loan - margin: leverage - unified: unified account - copy: copy  # noqa: E501
 
         :param name: The name of this SubAccountKeyPerms.  # noqa: E501
         :type: str
@@ -105,16 +111,18 @@ class SubAccountKeyPerms(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

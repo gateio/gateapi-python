@@ -32,13 +32,21 @@ class FutureCancelOrderResult(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'id': 'str', 'user_id': 'int', 'succeeded': 'bool', 'message': 'str'}
+    openapi_types = {
+        'id': 'str',
+        'user_id': 'int',
+        'succeeded': 'bool',
+        'message': 'str'
+    }
 
-    attribute_map = {'id': 'id', 'user_id': 'user_id', 'succeeded': 'succeeded', 'message': 'message'}
+    attribute_map = {
+        'id': 'id',
+        'user_id': 'user_id',
+        'succeeded': 'succeeded',
+        'message': 'message'
+    }
 
-    def __init__(
-        self, id=None, user_id=None, succeeded=None, message=None, local_vars_configuration=None
-    ):  # noqa: E501
+    def __init__(self, id=None, user_id=None, succeeded=None, message=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, int, bool, str, Configuration) -> None
         """FutureCancelOrderResult - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -159,16 +167,18 @@ class FutureCancelOrderResult(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

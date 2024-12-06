@@ -43,7 +43,7 @@ class UnifiedBalance(object):
         'total_liab': 'str',
         'spot_in_use': 'str',
         'funding': 'str',
-        'funding_version': 'str',
+        'funding_version': 'str'
     }
 
     attribute_map = {
@@ -57,24 +57,10 @@ class UnifiedBalance(object):
         'total_liab': 'total_liab',
         'spot_in_use': 'spot_in_use',
         'funding': 'funding',
-        'funding_version': 'funding_version',
+        'funding_version': 'funding_version'
     }
 
-    def __init__(
-        self,
-        available=None,
-        freeze=None,
-        borrowed=None,
-        negative_liab=None,
-        futures_pos_liab=None,
-        equity=None,
-        total_freeze=None,
-        total_liab=None,
-        spot_in_use=None,
-        funding=None,
-        funding_version=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, available=None, freeze=None, borrowed=None, negative_liab=None, futures_pos_liab=None, equity=None, total_freeze=None, total_liab=None, spot_in_use=None, funding=None, funding_version=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """UnifiedBalance - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -213,7 +199,7 @@ class UnifiedBalance(object):
     def futures_pos_liab(self):
         """Gets the futures_pos_liab of this UnifiedBalance.  # noqa: E501
 
-        Borrowing to Open Positions in Futures  # noqa: E501
+        Contract opening position borrowing currency (abandoned, to be offline field)  # noqa: E501
 
         :return: The futures_pos_liab of this UnifiedBalance.  # noqa: E501
         :rtype: str
@@ -224,7 +210,7 @@ class UnifiedBalance(object):
     def futures_pos_liab(self, futures_pos_liab):
         """Sets the futures_pos_liab of this UnifiedBalance.
 
-        Borrowing to Open Positions in Futures  # noqa: E501
+        Contract opening position borrowing currency (abandoned, to be offline field)  # noqa: E501
 
         :param futures_pos_liab: The futures_pos_liab of this UnifiedBalance.  # noqa: E501
         :type: str
@@ -259,7 +245,7 @@ class UnifiedBalance(object):
     def total_freeze(self):
         """Gets the total_freeze of this UnifiedBalance.  # noqa: E501
 
-        Total freeze  # noqa: E501
+        Total occupancy (discarded, to be offline field)  # noqa: E501
 
         :return: The total_freeze of this UnifiedBalance.  # noqa: E501
         :rtype: str
@@ -270,7 +256,7 @@ class UnifiedBalance(object):
     def total_freeze(self, total_freeze):
         """Sets the total_freeze of this UnifiedBalance.
 
-        Total freeze  # noqa: E501
+        Total occupancy (discarded, to be offline field)  # noqa: E501
 
         :param total_freeze: The total_freeze of this UnifiedBalance.  # noqa: E501
         :type: str
@@ -377,16 +363,18 @@ class UnifiedBalance(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

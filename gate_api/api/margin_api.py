@@ -18,7 +18,10 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
-from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
+from gate_api.exceptions import (  # noqa: F401
+    ApiTypeError,
+    ApiValueError
+)
 
 
 class MarginApi(object):
@@ -83,12 +86,24 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency_pair'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_margin_accounts" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_margin_accounts" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -107,14 +122,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/accounts',
-            'GET',
+            '/margin/accounts', 'GET',
             path_params,
             query_params,
             header_params,
@@ -127,8 +142,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_margin_account_book(self, **kwargs):  # noqa: E501
         """List margin account balance change history  # noqa: E501
@@ -194,33 +208,39 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', 'currency_pair', 'type', '_from', 'to', 'page', 'limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            'currency_pair',
+            'type',
+            '_from',
+            'to',
+            'page',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_margin_account_book" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_margin_account_book" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_margin_account_book`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 500
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_margin_account_book`, must be a value less than or equal to `500`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_margin_account_book`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_margin_account_book`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 500:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_margin_account_book`, must be a value less than or equal to `500`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_margin_account_book`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -248,14 +268,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/account_book',
-            'GET',
+            '/margin/account_book', 'GET',
             path_params,
             query_params,
             header_params,
@@ -268,8 +288,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_funding_accounts(self, **kwargs):  # noqa: E501
         """Funding account list  # noqa: E501
@@ -321,12 +340,24 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_funding_accounts" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_funding_accounts" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -345,14 +376,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/funding_accounts',
-            'GET',
+            '/margin/funding_accounts', 'GET',
             path_params,
             query_params,
             header_params,
@@ -365,8 +396,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_auto_repay_status(self, **kwargs):  # noqa: E501
         """Retrieve user auto repayment setting  # noqa: E501
@@ -416,12 +446,23 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_auto_repay_status" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_auto_repay_status" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -438,14 +479,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/auto_repay',
-            'GET',
+            '/margin/auto_repay', 'GET',
             path_params,
             query_params,
             header_params,
@@ -458,8 +499,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def set_auto_repay(self, status, **kwargs):  # noqa: E501
         """Update user's auto repayment setting  # noqa: E501
@@ -511,18 +551,29 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['status']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'status'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method set_auto_repay" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_auto_repay" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'status' is set
-        if self.api_client.client_side_validation and (
-            'status' not in local_var_params or local_var_params['status'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('status' not in local_var_params or  # noqa: E501
+                                                        local_var_params['status'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `status` when calling `set_auto_repay`")  # noqa: E501
 
         collection_formats = {}
@@ -540,14 +591,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/auto_repay',
-            'POST',
+            '/margin/auto_repay', 'POST',
             path_params,
             query_params,
             header_params,
@@ -560,8 +611,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_margin_transferable(self, currency, **kwargs):  # noqa: E501
         """Get the max transferable amount for a specific margin currency  # noqa: E501
@@ -615,21 +665,31 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', 'currency_pair']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            'currency_pair'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_margin_transferable" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_margin_transferable" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `get_margin_transferable`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `get_margin_transferable`")  # noqa: E501
 
         collection_formats = {}
 
@@ -648,14 +708,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/transferable',
-            'GET',
+            '/margin/transferable', 'GET',
             path_params,
             query_params,
             header_params,
@@ -668,8 +728,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_margin_currency_pairs(self, **kwargs):  # noqa: E501
         """List all supported currency pairs supported in margin trading(Deprecated)  # noqa: E501
@@ -719,13 +778,22 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_margin_currency_pairs" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_margin_currency_pairs" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
@@ -743,14 +811,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/currency_pairs',
-            'GET',
+            '/margin/currency_pairs', 'GET',
             path_params,
             query_params,
             header_params,
@@ -763,8 +831,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_margin_currency_pair(self, currency_pair, **kwargs):  # noqa: E501
         """Query one single margin currency pair(Deprecated)  # noqa: E501
@@ -816,21 +883,30 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency_pair'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_margin_currency_pair" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_margin_currency_pair" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and (
-            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency_pair` when calling `get_margin_currency_pair`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency_pair' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency_pair'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency_pair` when calling `get_margin_currency_pair`")  # noqa: E501
 
         collection_formats = {}
 
@@ -847,14 +923,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/currency_pairs/{currency_pair}',
-            'GET',
+            '/margin/currency_pairs/{currency_pair}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -867,8 +943,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_funding_book(self, currency, **kwargs):  # noqa: E501
         """Order book of lending loans(Deprecated)  # noqa: E501
@@ -920,21 +995,30 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_funding_book" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_funding_book" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `list_funding_book`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `list_funding_book`")  # noqa: E501
 
         collection_formats = {}
 
@@ -951,14 +1035,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/funding_book',
-            'GET',
+            '/margin/funding_book', 'GET',
             path_params,
             query_params,
             header_params,
@@ -971,8 +1055,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_loans(self, status, side, **kwargs):  # noqa: E501
         """List all loans(Deprecated)  # noqa: E501
@@ -1038,43 +1121,48 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['status', 'side', 'currency', 'currency_pair', 'sort_by', 'reverse_sort', 'page', 'limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'status',
+            'side',
+            'currency',
+            'currency_pair',
+            'sort_by',
+            'reverse_sort',
+            'page',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_loans" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_loans" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'status' is set
-        if self.api_client.client_side_validation and (
-            'status' not in local_var_params or local_var_params['status'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('status' not in local_var_params or  # noqa: E501
+                                                        local_var_params['status'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `status` when calling `list_loans`")  # noqa: E501
         # verify the required parameter 'side' is set
-        if self.api_client.client_side_validation and (
-            'side' not in local_var_params or local_var_params['side'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('side' not in local_var_params or  # noqa: E501
+                                                        local_var_params['side'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `side` when calling `list_loans`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_loans`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_loans`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_loans`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_loans`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_loans`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_loans`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1104,14 +1192,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/loans',
-            'GET',
+            '/margin/loans', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1124,8 +1212,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def create_loan(self, loan, **kwargs):  # noqa: E501
         """Lend or borrow(Deprecated)  # noqa: E501
@@ -1177,18 +1264,29 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['loan']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'loan'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_loan" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_loan" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan' is set
-        if self.api_client.client_side_validation and (
-            'loan' not in local_var_params or local_var_params['loan'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('loan' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `loan` when calling `create_loan`")  # noqa: E501
 
         collection_formats = {}
@@ -1206,19 +1304,18 @@ class MarginApi(object):
         if 'loan' in local_var_params:
             body_params = local_var_params['loan']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/loans',
-            'POST',
+            '/margin/loans', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1231,8 +1328,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def merge_loans(self, currency, ids, **kwargs):  # noqa: E501
         """Merge multiple lending loans(Deprecated)  # noqa: E501
@@ -1286,23 +1382,34 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', 'ids']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            'ids'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method merge_loans" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method merge_loans" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `currency` when calling `merge_loans`")  # noqa: E501
         # verify the required parameter 'ids' is set
-        if self.api_client.client_side_validation and (
-            'ids' not in local_var_params or local_var_params['ids'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('ids' not in local_var_params or  # noqa: E501
+                                                        local_var_params['ids'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `ids` when calling `merge_loans`")  # noqa: E501
 
         collection_formats = {}
@@ -1322,14 +1429,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/merged_loans',
-            'POST',
+            '/margin/merged_loans', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1342,8 +1449,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_loan(self, loan_id, side, **kwargs):  # noqa: E501
         """Retrieve one single loan detail(Deprecated)  # noqa: E501
@@ -1397,23 +1503,34 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['loan_id', 'side']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'loan_id',
+            'side'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_loan" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_loan" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
-        if self.api_client.client_side_validation and (
-            'loan_id' not in local_var_params or local_var_params['loan_id'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `loan_id` when calling `get_loan`")  # noqa: E501
         # verify the required parameter 'side' is set
-        if self.api_client.client_side_validation and (
-            'side' not in local_var_params or local_var_params['side'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('side' not in local_var_params or  # noqa: E501
+                                                        local_var_params['side'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `side` when calling `get_loan`")  # noqa: E501
 
         collection_formats = {}
@@ -1433,14 +1550,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/loans/{loan_id}',
-            'GET',
+            '/margin/loans/{loan_id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1453,8 +1570,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def cancel_loan(self, loan_id, currency, **kwargs):  # noqa: E501
         """Cancel lending loan(Deprecated)  # noqa: E501
@@ -1510,23 +1626,34 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['loan_id', 'currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'loan_id',
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_loan" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_loan" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
-        if self.api_client.client_side_validation and (
-            'loan_id' not in local_var_params or local_var_params['loan_id'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `loan_id` when calling `cancel_loan`")  # noqa: E501
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `currency` when calling `cancel_loan`")  # noqa: E501
 
         collection_formats = {}
@@ -1546,14 +1673,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/loans/{loan_id}',
-            'DELETE',
+            '/margin/loans/{loan_id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1566,8 +1693,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def update_loan(self, loan_id, loan_patch, **kwargs):  # noqa: E501
         """Modify a loan(Deprecated)  # noqa: E501
@@ -1623,23 +1749,34 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['loan_id', 'loan_patch']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'loan_id',
+            'loan_patch'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method update_loan" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_loan" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
-        if self.api_client.client_side_validation and (
-            'loan_id' not in local_var_params or local_var_params['loan_id'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `loan_id` when calling `update_loan`")  # noqa: E501
         # verify the required parameter 'loan_patch' is set
-        if self.api_client.client_side_validation and (
-            'loan_patch' not in local_var_params or local_var_params['loan_patch'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_patch' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_patch'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `loan_patch` when calling `update_loan`")  # noqa: E501
 
         collection_formats = {}
@@ -1659,19 +1796,18 @@ class MarginApi(object):
         if 'loan_patch' in local_var_params:
             body_params = local_var_params['loan_patch']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/loans/{loan_id}',
-            'PATCH',
+            '/margin/loans/{loan_id}', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -1684,8 +1820,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_loan_repayments(self, loan_id, **kwargs):  # noqa: E501
         """List loan repayment records(Deprecated)  # noqa: E501
@@ -1737,21 +1872,30 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['loan_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'loan_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_loan_repayments" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_loan_repayments" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
-        if self.api_client.client_side_validation and (
-            'loan_id' not in local_var_params or local_var_params['loan_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `loan_id` when calling `list_loan_repayments`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_id` when calling `list_loan_repayments`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1768,14 +1912,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/loans/{loan_id}/repayment',
-            'GET',
+            '/margin/loans/{loan_id}/repayment', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1788,8 +1932,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def repay_loan(self, loan_id, repay_request, **kwargs):  # noqa: E501
         """Repay a loan(Deprecated)  # noqa: E501
@@ -1843,26 +1986,35 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['loan_id', 'repay_request']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'loan_id',
+            'repay_request'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method repay_loan" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method repay_loan" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
-        if self.api_client.client_side_validation and (
-            'loan_id' not in local_var_params or local_var_params['loan_id'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `loan_id` when calling `repay_loan`")  # noqa: E501
         # verify the required parameter 'repay_request' is set
-        if self.api_client.client_side_validation and (
-            'repay_request' not in local_var_params or local_var_params['repay_request'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `repay_request` when calling `repay_loan`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('repay_request' not in local_var_params or  # noqa: E501
+                                                        local_var_params['repay_request'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `repay_request` when calling `repay_loan`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1881,19 +2033,18 @@ class MarginApi(object):
         if 'repay_request' in local_var_params:
             body_params = local_var_params['repay_request']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/loans/{loan_id}/repayment',
-            'POST',
+            '/margin/loans/{loan_id}/repayment', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1906,8 +2057,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_loan_records(self, loan_id, **kwargs):  # noqa: E501
         """List repayment records of a specific loan(Deprecated)  # noqa: E501
@@ -1965,40 +2115,40 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['loan_id', 'status', 'page', 'limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'loan_id',
+            'status',
+            'page',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_loan_records" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_loan_records" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
-        if self.api_client.client_side_validation and (
-            'loan_id' not in local_var_params or local_var_params['loan_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `loan_id` when calling `list_loan_records`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_id` when calling `list_loan_records`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_loan_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_loan_records`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_loan_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_loan_records`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_loan_records`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_loan_records`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2020,14 +2170,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/loan_records',
-            'GET',
+            '/margin/loan_records', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2040,8 +2190,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_loan_record(self, loan_record_id, loan_id, **kwargs):  # noqa: E501
         """Get one single loan record(Deprecated)  # noqa: E501
@@ -2095,25 +2244,34 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['loan_record_id', 'loan_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'loan_record_id',
+            'loan_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_loan_record" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_loan_record" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_record_id' is set
-        if self.api_client.client_side_validation and (
-            'loan_record_id' not in local_var_params or local_var_params['loan_record_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `loan_record_id` when calling `get_loan_record`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_record_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_record_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_record_id` when calling `get_loan_record`")  # noqa: E501
         # verify the required parameter 'loan_id' is set
-        if self.api_client.client_side_validation and (
-            'loan_id' not in local_var_params or local_var_params['loan_id'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `loan_id` when calling `get_loan_record`")  # noqa: E501
 
         collection_formats = {}
@@ -2133,14 +2291,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/loan_records/{loan_record_id}',
-            'GET',
+            '/margin/loan_records/{loan_record_id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2153,8 +2311,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def update_loan_record(self, loan_record_id, loan_patch, **kwargs):  # noqa: E501
         """Modify a loan record(Deprecated)  # noqa: E501
@@ -2210,28 +2367,35 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['loan_record_id', 'loan_patch']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'loan_record_id',
+            'loan_patch'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method update_loan_record" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_loan_record" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_record_id' is set
-        if self.api_client.client_side_validation and (
-            'loan_record_id' not in local_var_params or local_var_params['loan_record_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `loan_record_id` when calling `update_loan_record`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_record_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_record_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_record_id` when calling `update_loan_record`")  # noqa: E501
         # verify the required parameter 'loan_patch' is set
-        if self.api_client.client_side_validation and (
-            'loan_patch' not in local_var_params or local_var_params['loan_patch'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `loan_patch` when calling `update_loan_record`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_patch' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_patch'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_patch` when calling `update_loan_record`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2250,19 +2414,18 @@ class MarginApi(object):
         if 'loan_patch' in local_var_params:
             body_params = local_var_params['loan_patch']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/loan_records/{loan_record_id}',
-            'PATCH',
+            '/margin/loan_records/{loan_record_id}', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -2275,8 +2438,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_margin_borrowable(self, currency, **kwargs):  # noqa: E501
         """Get the max borrowable amount for a specific margin currency(Deprecated)  # noqa: E501
@@ -2330,21 +2492,31 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', 'currency_pair']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            'currency_pair'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_margin_borrowable" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_margin_borrowable" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `get_margin_borrowable`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `get_margin_borrowable`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2363,14 +2535,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/borrowable',
-            'GET',
+            '/margin/borrowable', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2383,8 +2555,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_cross_margin_currencies(self, **kwargs):  # noqa: E501
         """Currencies supported by cross margin.  # noqa: E501
@@ -2434,13 +2605,22 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_cross_margin_currencies" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_cross_margin_currencies" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
@@ -2458,14 +2638,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/cross/currencies',
-            'GET',
+            '/margin/cross/currencies', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2478,8 +2658,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_cross_margin_currency(self, currency, **kwargs):  # noqa: E501
         """Retrieve detail of one single currency supported by cross margin  # noqa: E501
@@ -2531,21 +2710,30 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_cross_margin_currency" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_cross_margin_currency" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `get_cross_margin_currency`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `get_cross_margin_currency`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2562,14 +2750,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/cross/currencies/{currency}',
-            'GET',
+            '/margin/cross/currencies/{currency}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2582,8 +2770,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_cross_margin_account(self, **kwargs):  # noqa: E501
         """Retrieve cross margin account  # noqa: E501
@@ -2633,12 +2820,23 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_cross_margin_account" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_cross_margin_account" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -2655,14 +2853,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/cross/accounts',
-            'GET',
+            '/margin/cross/accounts', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2675,8 +2873,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_cross_margin_account_book(self, **kwargs):  # noqa: E501
         """Retrieve cross margin account change history  # noqa: E501
@@ -2740,35 +2937,38 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', '_from', 'to', 'page', 'limit', 'type']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            '_from',
+            'to',
+            'page',
+            'limit',
+            'type'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_cross_margin_account_book" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_cross_margin_account_book" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_cross_margin_account_book`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_cross_margin_account_book`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_cross_margin_account_book`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_cross_margin_account_book`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_cross_margin_account_book`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_cross_margin_account_book`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2794,14 +2994,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/cross/account_book',
-            'GET',
+            '/margin/cross/account_book', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2814,8 +3014,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_cross_margin_loans(self, status, **kwargs):  # noqa: E501
         """List cross margin borrow history  # noqa: E501
@@ -2877,40 +3076,41 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['status', 'currency', 'limit', 'offset', 'reverse']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'status',
+            'currency',
+            'limit',
+            'offset',
+            'reverse'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_cross_margin_loans" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_cross_margin_loans" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'status' is set
-        if self.api_client.client_side_validation and (
-            'status' not in local_var_params or local_var_params['status'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `status` when calling `list_cross_margin_loans`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('status' not in local_var_params or  # noqa: E501
+                                                        local_var_params['status'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `status` when calling `list_cross_margin_loans`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_cross_margin_loans`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_cross_margin_loans`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_cross_margin_loans`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_cross_margin_loans`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_cross_margin_loans`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_cross_margin_loans`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2934,14 +3134,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/cross/loans',
-            'GET',
+            '/margin/cross/loans', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2954,8 +3154,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def create_cross_margin_loan(self, cross_margin_loan, **kwargs):  # noqa: E501
         """Create a cross margin borrow loan  # noqa: E501
@@ -3009,21 +3208,30 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cross_margin_loan']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'cross_margin_loan'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_cross_margin_loan" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_cross_margin_loan" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'cross_margin_loan' is set
-        if self.api_client.client_side_validation and (
-            'cross_margin_loan' not in local_var_params or local_var_params['cross_margin_loan'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `cross_margin_loan` when calling `create_cross_margin_loan`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('cross_margin_loan' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cross_margin_loan'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `cross_margin_loan` when calling `create_cross_margin_loan`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3040,19 +3248,18 @@ class MarginApi(object):
         if 'cross_margin_loan' in local_var_params:
             body_params = local_var_params['cross_margin_loan']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/cross/loans',
-            'POST',
+            '/margin/cross/loans', 'POST',
             path_params,
             query_params,
             header_params,
@@ -3065,8 +3272,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_cross_margin_loan(self, loan_id, **kwargs):  # noqa: E501
         """Retrieve single borrow loan detail  # noqa: E501
@@ -3118,21 +3324,30 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['loan_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'loan_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_cross_margin_loan" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_cross_margin_loan" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'loan_id' is set
-        if self.api_client.client_side_validation and (
-            'loan_id' not in local_var_params or local_var_params['loan_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `loan_id` when calling `get_cross_margin_loan`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('loan_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['loan_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `loan_id` when calling `get_cross_margin_loan`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3149,14 +3364,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/cross/loans/{loan_id}',
-            'GET',
+            '/margin/cross/loans/{loan_id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -3169,8 +3384,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_cross_margin_repayments(self, **kwargs):  # noqa: E501
         """Retrieve cross margin repayments  # noqa: E501
@@ -3232,35 +3446,37 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', 'loan_id', 'limit', 'offset', 'reverse']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            'loan_id',
+            'limit',
+            'offset',
+            'reverse'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_cross_margin_repayments" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_cross_margin_repayments" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_cross_margin_repayments`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_cross_margin_repayments`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_cross_margin_repayments`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_cross_margin_repayments`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_cross_margin_repayments`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_cross_margin_repayments`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -3284,14 +3500,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/cross/repayments',
-            'GET',
+            '/margin/cross/repayments', 'GET',
             path_params,
             query_params,
             header_params,
@@ -3304,8 +3520,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def repay_cross_margin_loan(self, cross_margin_repay_request, **kwargs):  # noqa: E501
         """Cross margin repayments  # noqa: E501
@@ -3359,22 +3574,30 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cross_margin_repay_request']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'cross_margin_repay_request'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method repay_cross_margin_loan" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method repay_cross_margin_loan" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'cross_margin_repay_request' is set
-        if self.api_client.client_side_validation and (
-            'cross_margin_repay_request' not in local_var_params
-            or local_var_params['cross_margin_repay_request'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `cross_margin_repay_request` when calling `repay_cross_margin_loan`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('cross_margin_repay_request' not in local_var_params or  # noqa: E501
+                                                        local_var_params['cross_margin_repay_request'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `cross_margin_repay_request` when calling `repay_cross_margin_loan`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3391,19 +3614,18 @@ class MarginApi(object):
         if 'cross_margin_repay_request' in local_var_params:
             body_params = local_var_params['cross_margin_repay_request']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/cross/repayments',
-            'POST',
+            '/margin/cross/repayments', 'POST',
             path_params,
             query_params,
             header_params,
@@ -3416,8 +3638,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_cross_margin_interest_records(self, **kwargs):  # noqa: E501
         """Interest records for the cross margin account  # noqa: E501
@@ -3477,35 +3698,37 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', 'page', 'limit', '_from', 'to']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            'page',
+            'limit',
+            '_from',
+            'to'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method get_cross_margin_interest_records" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_cross_margin_interest_records" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `get_cross_margin_interest_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `get_cross_margin_interest_records`, must be a value less than or equal to `100`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `get_cross_margin_interest_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `get_cross_margin_interest_records`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_cross_margin_interest_records`, must be a value less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_cross_margin_interest_records`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -3529,14 +3752,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/cross/interest_records',
-            'GET',
+            '/margin/cross/interest_records', 'GET',
             path_params,
             query_params,
             header_params,
@@ -3549,8 +3772,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_cross_margin_transferable(self, currency, **kwargs):  # noqa: E501
         """Get the max transferable amount for a specific cross margin currency  # noqa: E501
@@ -3602,23 +3824,30 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method get_cross_margin_transferable" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_cross_margin_transferable" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `get_cross_margin_transferable`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `get_cross_margin_transferable`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3635,14 +3864,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/cross/transferable',
-            'GET',
+            '/margin/cross/transferable', 'GET',
             path_params,
             query_params,
             header_params,
@@ -3655,8 +3884,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_cross_margin_estimate_rate(self, currencies, **kwargs):  # noqa: E501
         """Estimated interest rates  # noqa: E501
@@ -3710,36 +3938,37 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currencies']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currencies'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method get_cross_margin_estimate_rate" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_cross_margin_estimate_rate" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currencies' is set
-        if self.api_client.client_side_validation and (
-            'currencies' not in local_var_params or local_var_params['currencies'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currencies` when calling `get_cross_margin_estimate_rate`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currencies' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currencies'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currencies` when calling `get_cross_margin_estimate_rate`")  # noqa: E501
 
-        if self.api_client.client_side_validation and (
-            'currencies' in local_var_params and len(local_var_params['currencies']) > 10  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `currencies` when calling `get_cross_margin_estimate_rate`, number of items must be less than or equal to `10`"
-            )  # noqa: E501
-        if self.api_client.client_side_validation and (
-            'currencies' in local_var_params and len(local_var_params['currencies']) < 1  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `currencies` when calling `get_cross_margin_estimate_rate`, number of items must be greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currencies' in local_var_params and  # noqa: E501
+                                                        len(local_var_params['currencies']) > 10):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `currencies` when calling `get_cross_margin_estimate_rate`, number of items must be less than or equal to `10`")  # noqa: E501
+        if self.api_client.client_side_validation and ('currencies' in local_var_params and  # noqa: E501
+                                                        len(local_var_params['currencies']) < 1):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `currencies` when calling `get_cross_margin_estimate_rate`, number of items must be greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -3756,14 +3985,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/cross/estimate_rate',
-            'GET',
+            '/margin/cross/estimate_rate', 'GET',
             path_params,
             query_params,
             header_params,
@@ -3776,8 +4005,7 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_cross_margin_borrowable(self, currency, **kwargs):  # noqa: E501
         """Get the max borrowable amount for a specific cross margin currency  # noqa: E501
@@ -3829,23 +4057,30 @@ class MarginApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method get_cross_margin_borrowable" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_cross_margin_borrowable" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `get_cross_margin_borrowable`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `get_cross_margin_borrowable`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3862,14 +4097,14 @@ class MarginApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/cross/borrowable',
-            'GET',
+            '/margin/cross/borrowable', 'GET',
             path_params,
             query_params,
             header_params,
@@ -3882,5 +4117,4 @@ class MarginApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)

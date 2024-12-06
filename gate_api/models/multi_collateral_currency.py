@@ -32,9 +32,15 @@ class MultiCollateralCurrency(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'loan_currencies': 'list[MultiLoanItem]', 'collateral_currencies': 'list[MultiCollateralItem]'}
+    openapi_types = {
+        'loan_currencies': 'list[MultiLoanItem]',
+        'collateral_currencies': 'list[MultiCollateralItem]'
+    }
 
-    attribute_map = {'loan_currencies': 'loan_currencies', 'collateral_currencies': 'collateral_currencies'}
+    attribute_map = {
+        'loan_currencies': 'loan_currencies',
+        'collateral_currencies': 'collateral_currencies'
+    }
 
     def __init__(self, loan_currencies=None, collateral_currencies=None, local_vars_configuration=None):  # noqa: E501
         # type: (list[MultiLoanItem], list[MultiCollateralItem], Configuration) -> None
@@ -105,16 +111,18 @@ class MultiCollateralCurrency(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

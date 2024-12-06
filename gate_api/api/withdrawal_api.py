@@ -18,7 +18,10 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
-from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
+from gate_api.exceptions import (  # noqa: F401
+    ApiTypeError,
+    ApiValueError
+)
 
 
 class WithdrawalApi(object):
@@ -85,18 +88,29 @@ class WithdrawalApi(object):
 
         local_var_params = locals()
 
-        all_params = ['ledger_record']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'ledger_record'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method withdraw" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method withdraw" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'ledger_record' is set
-        if self.api_client.client_side_validation and (
-            'ledger_record' not in local_var_params or local_var_params['ledger_record'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('ledger_record' not in local_var_params or  # noqa: E501
+                                                        local_var_params['ledger_record'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `ledger_record` when calling `withdraw`")  # noqa: E501
 
         collection_formats = {}
@@ -114,19 +128,18 @@ class WithdrawalApi(object):
         if 'ledger_record' in local_var_params:
             body_params = local_var_params['ledger_record']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/withdrawals',
-            'POST',
+            '/withdrawals', 'POST',
             path_params,
             query_params,
             header_params,
@@ -139,8 +152,7 @@ class WithdrawalApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def withdraw_push_order(self, uid_push_withdrawal, **kwargs):  # noqa: E501
         """UID transfer  # noqa: E501
@@ -194,22 +206,30 @@ class WithdrawalApi(object):
 
         local_var_params = locals()
 
-        all_params = ['uid_push_withdrawal']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'uid_push_withdrawal'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method withdraw_push_order" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method withdraw_push_order" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'uid_push_withdrawal' is set
-        if self.api_client.client_side_validation and (
-            'uid_push_withdrawal' not in local_var_params
-            or local_var_params['uid_push_withdrawal'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `uid_push_withdrawal` when calling `withdraw_push_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('uid_push_withdrawal' not in local_var_params or  # noqa: E501
+                                                        local_var_params['uid_push_withdrawal'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `uid_push_withdrawal` when calling `withdraw_push_order`")  # noqa: E501
 
         collection_formats = {}
 
@@ -226,19 +246,18 @@ class WithdrawalApi(object):
         if 'uid_push_withdrawal' in local_var_params:
             body_params = local_var_params['uid_push_withdrawal']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/withdrawals/push',
-            'POST',
+            '/withdrawals/push', 'POST',
             path_params,
             query_params,
             header_params,
@@ -251,8 +270,7 @@ class WithdrawalApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def cancel_withdrawal(self, withdrawal_id, **kwargs):  # noqa: E501
         """Cancel withdrawal with specified ID  # noqa: E501
@@ -304,21 +322,30 @@ class WithdrawalApi(object):
 
         local_var_params = locals()
 
-        all_params = ['withdrawal_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'withdrawal_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_withdrawal" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_withdrawal" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'withdrawal_id' is set
-        if self.api_client.client_side_validation and (
-            'withdrawal_id' not in local_var_params or local_var_params['withdrawal_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `withdrawal_id` when calling `cancel_withdrawal`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('withdrawal_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['withdrawal_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `withdrawal_id` when calling `cancel_withdrawal`")  # noqa: E501
 
         collection_formats = {}
 
@@ -335,14 +362,14 @@ class WithdrawalApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/withdrawals/{withdrawal_id}',
-            'DELETE',
+            '/withdrawals/{withdrawal_id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -355,5 +382,4 @@ class WithdrawalApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)

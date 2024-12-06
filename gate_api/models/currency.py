@@ -40,7 +40,7 @@ class Currency(object):
         'deposit_disabled': 'bool',
         'trade_disabled': 'bool',
         'fixed_rate': 'str',
-        'chain': 'str',
+        'chain': 'str'
     }
 
     attribute_map = {
@@ -51,21 +51,10 @@ class Currency(object):
         'deposit_disabled': 'deposit_disabled',
         'trade_disabled': 'trade_disabled',
         'fixed_rate': 'fixed_rate',
-        'chain': 'chain',
+        'chain': 'chain'
     }
 
-    def __init__(
-        self,
-        currency=None,
-        delisted=None,
-        withdraw_disabled=None,
-        withdraw_delayed=None,
-        deposit_disabled=None,
-        trade_disabled=None,
-        fixed_rate=None,
-        chain=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, currency=None, delisted=None, withdraw_disabled=None, withdraw_delayed=None, deposit_disabled=None, trade_disabled=None, fixed_rate=None, chain=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, bool, bool, bool, bool, bool, str, str, Configuration) -> None
         """Currency - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -290,16 +279,18 @@ class Currency(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

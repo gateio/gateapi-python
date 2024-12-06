@@ -1364,7 +1364,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
-risk_limit = '10' # str | New position risk limit
+risk_limit = '1000000' # str | New Risk Limit Value
 
 try:
     # Update position risk limit
@@ -1382,7 +1382,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
- **risk_limit** | **str**| New position risk limit | 
+ **risk_limit** | **str**| New Risk Limit Value | 
 
 ### Return type
 
@@ -1721,7 +1721,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
-risk_limit = '10' # str | New position risk limit
+risk_limit = '1000000' # str | New Risk Limit Value
 
 try:
     # Update position risk limit in dual mode
@@ -1739,7 +1739,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
- **risk_limit** | **str**| New position risk limit | 
+ **risk_limit** | **str**| New Risk Limit Value | 
 
 ### Return type
 
@@ -1841,7 +1841,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_futures_order**
-> FuturesOrder create_futures_order(settle, futures_order)
+> FuturesOrder create_futures_order(settle, futures_order, x_gate_exptime=x_gate_exptime)
 
 Create a futures order
 
@@ -1873,10 +1873,11 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 futures_order = gate_api.FuturesOrder() # FuturesOrder | 
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
     # Create a futures order
-    api_response = api_instance.create_futures_order(settle, futures_order)
+    api_response = api_instance.create_futures_order(settle, futures_order, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1890,6 +1891,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **futures_order** | [**FuturesOrder**](FuturesOrder.md)|  | 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
 
@@ -1912,7 +1914,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_futures_orders**
-> list[FuturesOrder] cancel_futures_orders(settle, contract, side=side)
+> list[FuturesOrder] cancel_futures_orders(settle, contract, x_gate_exptime=x_gate_exptime, side=side)
 
 Cancel all `open` orders matched
 
@@ -1944,11 +1946,12 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 side = 'ask' # str | All bids or asks. Both included if not specified (optional)
 
 try:
     # Cancel all `open` orders matched
-    api_response = api_instance.cancel_futures_orders(settle, contract, side=side)
+    api_response = api_instance.cancel_futures_orders(settle, contract, x_gate_exptime=x_gate_exptime, side=side)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1962,6 +1965,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
  **side** | **str**| All bids or asks. Both included if not specified | [optional] 
 
 ### Return type
@@ -2062,7 +2066,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_batch_futures_order**
-> list[BatchFuturesOrder] create_batch_futures_order(settle, futures_order)
+> list[BatchFuturesOrder] create_batch_futures_order(settle, futures_order, x_gate_exptime=x_gate_exptime)
 
 Create a batch of futures orders
 
@@ -2094,10 +2098,11 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 futures_order = [gate_api.FuturesOrder()] # list[FuturesOrder] | 
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
     # Create a batch of futures orders
-    api_response = api_instance.create_batch_futures_order(settle, futures_order)
+    api_response = api_instance.create_batch_futures_order(settle, futures_order, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -2111,6 +2116,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **futures_order** | [**list[FuturesOrder]**](FuturesOrder.md)|  | 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
 
@@ -2204,7 +2210,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amend_futures_order**
-> FuturesOrder amend_futures_order(settle, order_id, futures_order_amendment)
+> FuturesOrder amend_futures_order(settle, order_id, futures_order_amendment, x_gate_exptime=x_gate_exptime)
 
 Amend an order
 
@@ -2235,10 +2241,11 @@ api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 60 seconds after the end of the order.  After that, only order ID is accepted.
 futures_order_amendment = gate_api.FuturesOrderAmendment() # FuturesOrderAmendment | 
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
     # Amend an order
-    api_response = api_instance.amend_futures_order(settle, order_id, futures_order_amendment)
+    api_response = api_instance.amend_futures_order(settle, order_id, futures_order_amendment, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -2253,6 +2260,7 @@ Name | Type | Description  | Notes
  **settle** | **str**| Settle currency | 
  **order_id** | **str**| Order ID returned, or user custom ID(i.e., &#x60;text&#x60; field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 60 seconds after the end of the order.  After that, only order ID is accepted. | 
  **futures_order_amendment** | [**FuturesOrderAmendment**](FuturesOrderAmendment.md)|  | 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
 
@@ -2275,7 +2283,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_futures_order**
-> FuturesOrder cancel_futures_order(settle, order_id)
+> FuturesOrder cancel_futures_order(settle, order_id, x_gate_exptime=x_gate_exptime)
 
 Cancel a single order
 
@@ -2305,10 +2313,11 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 60 seconds after the end of the order.  After that, only order ID is accepted.
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
     # Cancel a single order
-    api_response = api_instance.cancel_futures_order(settle, order_id)
+    api_response = api_instance.cancel_futures_order(settle, order_id, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -2322,6 +2331,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **order_id** | **str**| Order ID returned, or user custom ID(i.e., &#x60;text&#x60; field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 60 seconds after the end of the order.  After that, only order ID is accepted. | 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
 
@@ -2869,7 +2879,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_batch_future_orders**
-> list[FutureCancelOrderResult] cancel_batch_future_orders(settle, request_body)
+> list[FutureCancelOrderResult] cancel_batch_future_orders(settle, request_body, x_gate_exptime=x_gate_exptime)
 
 Cancel a batch of orders with an ID list
 
@@ -2901,10 +2911,11 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 request_body = ['request_body_example'] # list[str] | 
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
     # Cancel a batch of orders with an ID list
-    api_response = api_instance.cancel_batch_future_orders(settle, request_body)
+    api_response = api_instance.cancel_batch_future_orders(settle, request_body, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -2918,6 +2929,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **request_body** | [**list[str]**](str.md)|  | 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
 
@@ -2940,7 +2952,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amend_batch_future_orders**
-> list[BatchFuturesOrder] amend_batch_future_orders(settle, batch_amend_order_req)
+> list[BatchFuturesOrder] amend_batch_future_orders(settle, batch_amend_order_req, x_gate_exptime=x_gate_exptime)
 
 Batch modify orders with specified IDs
 
@@ -2972,10 +2984,11 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
 batch_amend_order_req = [gate_api.BatchAmendOrderReq()] # list[BatchAmendOrderReq] | 
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
     # Batch modify orders with specified IDs
-    api_response = api_instance.amend_batch_future_orders(settle, batch_amend_order_req)
+    api_response = api_instance.amend_batch_future_orders(settle, batch_amend_order_req, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -2989,6 +3002,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **batch_amend_order_req** | [**list[BatchAmendOrderReq]**](BatchAmendOrderReq.md)|  | 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
 

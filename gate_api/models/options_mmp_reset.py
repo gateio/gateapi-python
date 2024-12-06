@@ -39,7 +39,7 @@ class OptionsMMPReset(object):
         'qty_limit': 'str',
         'delta_limit': 'str',
         'trigger_time_ms': 'int',
-        'frozen_until_ms': 'int',
+        'frozen_until_ms': 'int'
     }
 
     attribute_map = {
@@ -49,20 +49,10 @@ class OptionsMMPReset(object):
         'qty_limit': 'qty_limit',
         'delta_limit': 'delta_limit',
         'trigger_time_ms': 'trigger_time_ms',
-        'frozen_until_ms': 'frozen_until_ms',
+        'frozen_until_ms': 'frozen_until_ms'
     }
 
-    def __init__(
-        self,
-        underlying=None,
-        window=None,
-        frozen_period=None,
-        qty_limit=None,
-        delta_limit=None,
-        trigger_time_ms=None,
-        frozen_until_ms=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, underlying=None, window=None, frozen_period=None, qty_limit=None, delta_limit=None, trigger_time_ms=None, frozen_until_ms=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, int, int, str, str, int, int, Configuration) -> None
         """OptionsMMPReset - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -262,16 +252,18 @@ class OptionsMMPReset(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

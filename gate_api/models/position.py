@@ -62,7 +62,8 @@ class Position(object):
         'mode': 'str',
         'cross_leverage_limit': 'str',
         'update_time': 'int',
-        'open_time': 'int',
+        'update_id': 'int',
+        'open_time': 'int'
     }
 
     attribute_map = {
@@ -95,44 +96,12 @@ class Position(object):
         'mode': 'mode',
         'cross_leverage_limit': 'cross_leverage_limit',
         'update_time': 'update_time',
-        'open_time': 'open_time',
+        'update_id': 'update_id',
+        'open_time': 'open_time'
     }
 
-    def __init__(
-        self,
-        user=None,
-        contract=None,
-        size=None,
-        leverage=None,
-        risk_limit=None,
-        leverage_max=None,
-        maintenance_rate=None,
-        value=None,
-        margin=None,
-        entry_price=None,
-        liq_price=None,
-        mark_price=None,
-        initial_margin=None,
-        maintenance_margin=None,
-        unrealised_pnl=None,
-        realised_pnl=None,
-        pnl_pnl=None,
-        pnl_fund=None,
-        pnl_fee=None,
-        history_pnl=None,
-        last_close_pnl=None,
-        realised_point=None,
-        history_point=None,
-        adl_ranking=None,
-        pending_orders=None,
-        close_order=None,
-        mode=None,
-        cross_leverage_limit=None,
-        update_time=None,
-        open_time=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
-        # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, PositionCloseOrder, str, str, int, int, Configuration) -> None
+    def __init__(self, user=None, contract=None, size=None, leverage=None, risk_limit=None, leverage_max=None, maintenance_rate=None, value=None, margin=None, entry_price=None, liq_price=None, mark_price=None, initial_margin=None, maintenance_margin=None, unrealised_pnl=None, realised_pnl=None, pnl_pnl=None, pnl_fund=None, pnl_fee=None, history_pnl=None, last_close_pnl=None, realised_point=None, history_point=None, adl_ranking=None, pending_orders=None, close_order=None, mode=None, cross_leverage_limit=None, update_time=None, update_id=None, open_time=None, local_vars_configuration=None):  # noqa: E501
+        # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, PositionCloseOrder, str, str, int, int, int, Configuration) -> None
         """Position - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -167,6 +136,7 @@ class Position(object):
         self._mode = None
         self._cross_leverage_limit = None
         self._update_time = None
+        self._update_id = None
         self._open_time = None
         self.discriminator = None
 
@@ -227,6 +197,8 @@ class Position(object):
             self.cross_leverage_limit = cross_leverage_limit
         if update_time is not None:
             self.update_time = update_time
+        if update_id is not None:
+            self.update_id = update_id
         if open_time is not None:
             self.open_time = open_time
 
@@ -849,7 +821,8 @@ class Position(object):
         allowed_values = ["single", "dual_long", "dual_short"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and mode not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `mode` ({0}), must be one of {1}".format(mode, allowed_values)  # noqa: E501
+                "Invalid value for `mode` ({0}), must be one of {1}"  # noqa: E501
+                .format(mode, allowed_values)
             )
 
         self._mode = mode
@@ -901,6 +874,29 @@ class Position(object):
         self._update_time = update_time
 
     @property
+    def update_id(self):
+        """Gets the update_id of this Position.  # noqa: E501
+
+        Update id. Each time the position is updated, the value will be +1.  # noqa: E501
+
+        :return: The update_id of this Position.  # noqa: E501
+        :rtype: int
+        """
+        return self._update_id
+
+    @update_id.setter
+    def update_id(self, update_id):
+        """Sets the update_id of this Position.
+
+        Update id. Each time the position is updated, the value will be +1.  # noqa: E501
+
+        :param update_id: The update_id of this Position.  # noqa: E501
+        :type: int
+        """
+
+        self._update_id = update_id
+
+    @property
     def open_time(self):
         """Gets the open_time of this Position.  # noqa: E501
 
@@ -930,16 +926,18 @@ class Position(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

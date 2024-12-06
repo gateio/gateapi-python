@@ -18,7 +18,10 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
-from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
+from gate_api.exceptions import (  # noqa: F401
+    ApiTypeError,
+    ApiValueError
+)
 
 
 class FuturesApi(object):
@@ -87,40 +90,39 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'limit', 'offset']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'limit',
+            'offset'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_contracts" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_futures_contracts" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_futures_contracts`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_futures_contracts`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_contracts`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_contracts`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_futures_contracts`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_contracts`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_contracts`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_futures_contracts`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -140,14 +142,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/contracts',
-            'GET',
+            '/futures/{settle}/contracts', 'GET',
             path_params,
             query_params,
             header_params,
@@ -160,8 +162,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_futures_contract(self, settle, contract, **kwargs):  # noqa: E501
         """Get a single contract  # noqa: E501
@@ -215,28 +216,35 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_futures_contract" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_futures_contract" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `get_futures_contract`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `get_futures_contract`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `get_futures_contract`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `get_futures_contract`")  # noqa: E501
 
         collection_formats = {}
 
@@ -255,14 +263,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/contracts/{contract}',
-            'GET',
+            '/futures/{settle}/contracts/{contract}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -275,8 +283,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_futures_order_book(self, settle, contract, **kwargs):  # noqa: E501
         """Futures order book  # noqa: E501
@@ -338,41 +345,43 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'interval', 'limit', 'with_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'interval',
+            'limit',
+            'with_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_order_book" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_futures_order_book" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_futures_order_book`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_futures_order_book`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `list_futures_order_book`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `list_futures_order_book`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 50
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_order_book`, must be a value less than or equal to `50`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_order_book`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 50:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_order_book`, must be a value less than or equal to `50`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_order_book`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -396,14 +405,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/order_book',
-            'GET',
+            '/futures/{settle}/order_book', 'GET',
             path_params,
             query_params,
             header_params,
@@ -416,8 +425,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_futures_trades(self, settle, contract, **kwargs):  # noqa: E501
         """Futures trading history  # noqa: E501
@@ -433,7 +441,7 @@ class FuturesApi(object):
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param str last_id: Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. Use `from` and `to` instead to limit time range
-        :param int _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned.
+        :param int _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned. 
         :param int to: Specify end time in Unix seconds, default to current time
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -463,7 +471,7 @@ class FuturesApi(object):
         :param int limit: Maximum number of records to be returned in a single list
         :param int offset: List offset, starting from 0
         :param str last_id: Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. Use `from` and `to` instead to limit time range
-        :param int _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned.
+        :param int _from: Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned. 
         :param int to: Specify end time in Unix seconds, default to current time
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -481,47 +489,47 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'limit', 'offset', 'last_id', '_from', 'to']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'limit',
+            'offset',
+            'last_id',
+            '_from',
+            'to'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_trades" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_futures_trades" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_futures_trades`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_futures_trades`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `list_futures_trades`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `list_futures_trades`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_trades`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_trades`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_futures_trades`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_trades`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_trades`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_futures_trades`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -549,14 +557,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/trades',
-            'GET',
+            '/futures/{settle}/trades', 'GET',
             path_params,
             query_params,
             header_params,
@@ -569,8 +577,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_futures_candlesticks(self, settle, contract, **kwargs):  # noqa: E501
         """Get futures candlesticks  # noqa: E501
@@ -634,35 +641,42 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', '_from', 'to', 'limit', 'interval']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            '_from',
+            'to',
+            'limit',
+            'interval'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_candlesticks" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_futures_candlesticks" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_futures_candlesticks`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_futures_candlesticks`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `list_futures_candlesticks`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `list_futures_candlesticks`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 2000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_candlesticks`, must be a value less than or equal to `2000`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 2000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_candlesticks`, must be a value less than or equal to `2000`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -688,14 +702,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/candlesticks',
-            'GET',
+            '/futures/{settle}/candlesticks', 'GET',
             path_params,
             query_params,
             header_params,
@@ -708,8 +722,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_futures_premium_index(self, settle, contract, **kwargs):  # noqa: E501
         """Premium Index K-Line  # noqa: E501
@@ -773,37 +786,42 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', '_from', 'to', 'limit', 'interval']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            '_from',
+            'to',
+            'limit',
+            'interval'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_futures_premium_index" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_futures_premium_index" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_futures_premium_index`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_futures_premium_index`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `list_futures_premium_index`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `list_futures_premium_index`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 2000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_premium_index`, must be a value less than or equal to `2000`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 2000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_premium_index`, must be a value less than or equal to `2000`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -829,14 +847,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/premium_index',
-            'GET',
+            '/futures/{settle}/premium_index', 'GET',
             path_params,
             query_params,
             header_params,
@@ -849,8 +867,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_futures_tickers(self, settle, **kwargs):  # noqa: E501
         """List futures tickers  # noqa: E501
@@ -904,21 +921,31 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_tickers" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_futures_tickers" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_futures_tickers`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_futures_tickers`")  # noqa: E501
 
         collection_formats = {}
 
@@ -937,14 +964,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/tickers',
-            'GET',
+            '/futures/{settle}/tickers', 'GET',
             path_params,
             query_params,
             header_params,
@@ -957,8 +984,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_futures_funding_rate_history(self, settle, contract, **kwargs):  # noqa: E501
         """Funding rate history  # noqa: E501
@@ -1018,43 +1044,43 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'limit', '_from', 'to']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'limit',
+            '_from',
+            'to'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_futures_funding_rate_history" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_futures_funding_rate_history" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_futures_funding_rate_history`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_futures_funding_rate_history`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `list_futures_funding_rate_history`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `list_futures_funding_rate_history`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_funding_rate_history`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_funding_rate_history`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_funding_rate_history`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_funding_rate_history`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1078,14 +1104,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/funding_rate',
-            'GET',
+            '/futures/{settle}/funding_rate', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1098,8 +1124,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_futures_insurance_ledger(self, settle, **kwargs):  # noqa: E501
         """Futures insurance balance history  # noqa: E501
@@ -1153,36 +1178,36 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_futures_insurance_ledger" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_futures_insurance_ledger" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_futures_insurance_ledger`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_futures_insurance_ledger`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_insurance_ledger`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_insurance_ledger`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_insurance_ledger`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_insurance_ledger`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1200,14 +1225,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/insurance',
-            'GET',
+            '/futures/{settle}/insurance', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1220,8 +1245,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_contract_stats(self, settle, contract, **kwargs):  # noqa: E501
         """Futures stats  # noqa: E501
@@ -1281,41 +1305,43 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', '_from', 'interval', 'limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            '_from',
+            'interval',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_contract_stats" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_contract_stats" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_contract_stats`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_contract_stats`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `list_contract_stats`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `list_contract_stats`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_contract_stats`, must be a value less than or equal to `100`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_contract_stats`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_contract_stats`, must be a value less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_contract_stats`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1339,14 +1365,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/contract_stats',
-            'GET',
+            '/futures/{settle}/contract_stats', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1359,8 +1385,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_index_constituents(self, settle, index, **kwargs):  # noqa: E501
         """Get index constituents  # noqa: E501
@@ -1414,28 +1439,35 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'index']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'index'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_index_constituents" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_index_constituents" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `get_index_constituents`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `get_index_constituents`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if self.api_client.client_side_validation and (
-            'index' not in local_var_params or local_var_params['index'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `index` when calling `get_index_constituents`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('index' not in local_var_params or  # noqa: E501
+                                                        local_var_params['index'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `index` when calling `get_index_constituents`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1454,14 +1486,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/index_constituents/{index}',
-            'GET',
+            '/futures/{settle}/index_constituents/{index}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1474,8 +1506,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_liquidated_orders(self, settle, **kwargs):  # noqa: E501
         """Retrieve liquidation history  # noqa: E501
@@ -1537,34 +1568,39 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', '_from', 'to', 'limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            '_from',
+            'to',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_liquidated_orders" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_liquidated_orders" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_liquidated_orders`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_liquidated_orders`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_liquidated_orders`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_liquidated_orders`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_liquidated_orders`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_liquidated_orders`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1588,14 +1624,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/liq_orders',
-            'GET',
+            '/futures/{settle}/liq_orders', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1608,8 +1644,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_futures_risk_limit_tiers(self, settle, **kwargs):  # noqa: E501
         """List risk limit tiers  # noqa: E501
@@ -1669,42 +1704,40 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'limit', 'offset']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'limit',
+            'offset'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_futures_risk_limit_tiers" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_futures_risk_limit_tiers" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_futures_risk_limit_tiers`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_futures_risk_limit_tiers`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_risk_limit_tiers`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_risk_limit_tiers`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_futures_risk_limit_tiers`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_risk_limit_tiers`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_risk_limit_tiers`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_futures_risk_limit_tiers`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1726,14 +1759,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/risk_limit_tiers',
-            'GET',
+            '/futures/{settle}/risk_limit_tiers', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1746,8 +1779,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_futures_accounts(self, settle, **kwargs):  # noqa: E501
         """Query futures account  # noqa: E501
@@ -1799,21 +1831,30 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_accounts" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_futures_accounts" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_futures_accounts`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_futures_accounts`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1830,14 +1871,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/accounts',
-            'GET',
+            '/futures/{settle}/accounts', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1850,8 +1891,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_futures_account_book(self, settle, **kwargs):  # noqa: E501
         """Query account book  # noqa: E501
@@ -1917,40 +1957,43 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'limit', 'offset', '_from', 'to', 'type']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'limit',
+            'offset',
+            '_from',
+            'to',
+            'type'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_account_book" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_futures_account_book" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_futures_account_book`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_futures_account_book`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_account_book`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_account_book`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_futures_account_book`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_account_book`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_account_book`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_futures_account_book`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1978,14 +2021,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/account_book',
-            'GET',
+            '/futures/{settle}/account_book', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1998,8 +2041,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_positions(self, settle, **kwargs):  # noqa: E501
         """List all positions of a user  # noqa: E501
@@ -2057,38 +2099,40 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'holding', 'limit', 'offset']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'holding',
+            'limit',
+            'offset'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_positions" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_positions" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `settle` when calling `list_positions`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_positions`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_positions`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_positions`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_positions`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_positions`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_positions`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2110,14 +2154,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/positions',
-            'GET',
+            '/futures/{settle}/positions', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2130,8 +2174,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_position(self, settle, contract, **kwargs):  # noqa: E501
         """Get single position  # noqa: E501
@@ -2185,23 +2228,34 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_position" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_position" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `settle` when calling `get_position`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `contract` when calling `get_position`")  # noqa: E501
 
         collection_formats = {}
@@ -2221,14 +2275,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/positions/{contract}',
-            'GET',
+            '/futures/{settle}/positions/{contract}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2241,8 +2295,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def update_position_margin(self, settle, contract, change, **kwargs):  # noqa: E501
         """Update position margin  # noqa: E501
@@ -2298,35 +2351,40 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'change']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'change'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method update_position_margin" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_position_margin" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `update_position_margin`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `update_position_margin`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `update_position_margin`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `update_position_margin`")  # noqa: E501
         # verify the required parameter 'change' is set
-        if self.api_client.client_side_validation and (
-            'change' not in local_var_params or local_var_params['change'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `change` when calling `update_position_margin`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('change' not in local_var_params or  # noqa: E501
+                                                        local_var_params['change'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `change` when calling `update_position_margin`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2347,14 +2405,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/positions/{contract}/margin',
-            'POST',
+            '/futures/{settle}/positions/{contract}/margin', 'POST',
             path_params,
             query_params,
             header_params,
@@ -2367,8 +2425,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def update_position_leverage(self, settle, contract, leverage, **kwargs):  # noqa: E501
         """Update position leverage  # noqa: E501
@@ -2426,35 +2483,41 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'leverage', 'cross_leverage_limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'leverage',
+            'cross_leverage_limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method update_position_leverage" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_position_leverage" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `update_position_leverage`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `update_position_leverage`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `update_position_leverage`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `update_position_leverage`")  # noqa: E501
         # verify the required parameter 'leverage' is set
-        if self.api_client.client_side_validation and (
-            'leverage' not in local_var_params or local_var_params['leverage'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `leverage` when calling `update_position_leverage`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('leverage' not in local_var_params or  # noqa: E501
+                                                        local_var_params['leverage'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `leverage` when calling `update_position_leverage`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2467,9 +2530,7 @@ class FuturesApi(object):
         query_params = []
         if 'leverage' in local_var_params and local_var_params['leverage'] is not None:  # noqa: E501
             query_params.append(('leverage', local_var_params['leverage']))  # noqa: E501
-        if (
-            'cross_leverage_limit' in local_var_params and local_var_params['cross_leverage_limit'] is not None
-        ):  # noqa: E501
+        if 'cross_leverage_limit' in local_var_params and local_var_params['cross_leverage_limit'] is not None:  # noqa: E501
             query_params.append(('cross_leverage_limit', local_var_params['cross_leverage_limit']))  # noqa: E501
 
         header_params = {}
@@ -2479,14 +2540,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/positions/{contract}/leverage',
-            'POST',
+            '/futures/{settle}/positions/{contract}/leverage', 'POST',
             path_params,
             query_params,
             header_params,
@@ -2499,8 +2560,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def update_position_risk_limit(self, settle, contract, risk_limit, **kwargs):  # noqa: E501
         """Update position risk limit  # noqa: E501
@@ -2513,7 +2573,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param str risk_limit: New position risk limit (required)
+        :param str risk_limit: New Risk Limit Value (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2539,7 +2599,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param str risk_limit: New position risk limit (required)
+        :param str risk_limit: New Risk Limit Value (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2556,37 +2616,40 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'risk_limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'risk_limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method update_position_risk_limit" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_position_risk_limit" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `update_position_risk_limit`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `update_position_risk_limit`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `update_position_risk_limit`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `update_position_risk_limit`")  # noqa: E501
         # verify the required parameter 'risk_limit' is set
-        if self.api_client.client_side_validation and (
-            'risk_limit' not in local_var_params or local_var_params['risk_limit'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `risk_limit` when calling `update_position_risk_limit`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('risk_limit' not in local_var_params or  # noqa: E501
+                                                        local_var_params['risk_limit'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `risk_limit` when calling `update_position_risk_limit`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2607,14 +2670,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/positions/{contract}/risk_limit',
-            'POST',
+            '/futures/{settle}/positions/{contract}/risk_limit', 'POST',
             path_params,
             query_params,
             header_params,
@@ -2627,8 +2690,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def set_dual_mode(self, settle, dual_mode, **kwargs):  # noqa: E501
         """Enable or disable dual mode  # noqa: E501
@@ -2684,23 +2746,34 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'dual_mode']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'dual_mode'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method set_dual_mode" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_dual_mode" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `settle` when calling `set_dual_mode`")  # noqa: E501
         # verify the required parameter 'dual_mode' is set
-        if self.api_client.client_side_validation and (
-            'dual_mode' not in local_var_params or local_var_params['dual_mode'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('dual_mode' not in local_var_params or  # noqa: E501
+                                                        local_var_params['dual_mode'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `dual_mode` when calling `set_dual_mode`")  # noqa: E501
 
         collection_formats = {}
@@ -2720,14 +2793,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/dual_mode',
-            'POST',
+            '/futures/{settle}/dual_mode', 'POST',
             path_params,
             query_params,
             header_params,
@@ -2740,8 +2813,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_dual_mode_position(self, settle, contract, **kwargs):  # noqa: E501
         """Retrieve position detail in dual mode  # noqa: E501
@@ -2795,28 +2867,35 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_dual_mode_position" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_dual_mode_position" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `get_dual_mode_position`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `get_dual_mode_position`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `get_dual_mode_position`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `get_dual_mode_position`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2835,14 +2914,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/dual_comp/positions/{contract}',
-            'GET',
+            '/futures/{settle}/dual_comp/positions/{contract}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2855,8 +2934,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def update_dual_mode_position_margin(self, settle, contract, change, dual_side, **kwargs):  # noqa: E501
         """Update position margin in dual mode  # noqa: E501
@@ -2883,13 +2961,9 @@ class FuturesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_dual_mode_position_margin_with_http_info(
-            settle, contract, change, dual_side, **kwargs
-        )  # noqa: E501
+        return self.update_dual_mode_position_margin_with_http_info(settle, contract, change, dual_side, **kwargs)  # noqa: E501
 
-    def update_dual_mode_position_margin_with_http_info(
-        self, settle, contract, change, dual_side, **kwargs
-    ):  # noqa: E501
+    def update_dual_mode_position_margin_with_http_info(self, settle, contract, change, dual_side, **kwargs):  # noqa: E501
         """Update position margin in dual mode  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2918,44 +2992,45 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'change', 'dual_side']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'change',
+            'dual_side'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method update_dual_mode_position_margin" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_dual_mode_position_margin" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `update_dual_mode_position_margin`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `update_dual_mode_position_margin`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `update_dual_mode_position_margin`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `update_dual_mode_position_margin`")  # noqa: E501
         # verify the required parameter 'change' is set
-        if self.api_client.client_side_validation and (
-            'change' not in local_var_params or local_var_params['change'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `change` when calling `update_dual_mode_position_margin`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('change' not in local_var_params or  # noqa: E501
+                                                        local_var_params['change'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `change` when calling `update_dual_mode_position_margin`")  # noqa: E501
         # verify the required parameter 'dual_side' is set
-        if self.api_client.client_side_validation and (
-            'dual_side' not in local_var_params or local_var_params['dual_side'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `dual_side` when calling `update_dual_mode_position_margin`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('dual_side' not in local_var_params or  # noqa: E501
+                                                        local_var_params['dual_side'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `dual_side` when calling `update_dual_mode_position_margin`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2978,14 +3053,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/dual_comp/positions/{contract}/margin',
-            'POST',
+            '/futures/{settle}/dual_comp/positions/{contract}/margin', 'POST',
             path_params,
             query_params,
             header_params,
@@ -2998,8 +3073,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def update_dual_mode_position_leverage(self, settle, contract, leverage, **kwargs):  # noqa: E501
         """Update position leverage in dual mode  # noqa: E501
@@ -3026,9 +3100,7 @@ class FuturesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_dual_mode_position_leverage_with_http_info(
-            settle, contract, leverage, **kwargs
-        )  # noqa: E501
+        return self.update_dual_mode_position_leverage_with_http_info(settle, contract, leverage, **kwargs)  # noqa: E501
 
     def update_dual_mode_position_leverage_with_http_info(self, settle, contract, leverage, **kwargs):  # noqa: E501
         """Update position leverage in dual mode  # noqa: E501
@@ -3059,37 +3131,41 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'leverage', 'cross_leverage_limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'leverage',
+            'cross_leverage_limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method update_dual_mode_position_leverage" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_dual_mode_position_leverage" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `update_dual_mode_position_leverage`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `update_dual_mode_position_leverage`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `update_dual_mode_position_leverage`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `update_dual_mode_position_leverage`")  # noqa: E501
         # verify the required parameter 'leverage' is set
-        if self.api_client.client_side_validation and (
-            'leverage' not in local_var_params or local_var_params['leverage'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `leverage` when calling `update_dual_mode_position_leverage`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('leverage' not in local_var_params or  # noqa: E501
+                                                        local_var_params['leverage'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `leverage` when calling `update_dual_mode_position_leverage`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3102,9 +3178,7 @@ class FuturesApi(object):
         query_params = []
         if 'leverage' in local_var_params and local_var_params['leverage'] is not None:  # noqa: E501
             query_params.append(('leverage', local_var_params['leverage']))  # noqa: E501
-        if (
-            'cross_leverage_limit' in local_var_params and local_var_params['cross_leverage_limit'] is not None
-        ):  # noqa: E501
+        if 'cross_leverage_limit' in local_var_params and local_var_params['cross_leverage_limit'] is not None:  # noqa: E501
             query_params.append(('cross_leverage_limit', local_var_params['cross_leverage_limit']))  # noqa: E501
 
         header_params = {}
@@ -3114,14 +3188,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/dual_comp/positions/{contract}/leverage',
-            'POST',
+            '/futures/{settle}/dual_comp/positions/{contract}/leverage', 'POST',
             path_params,
             query_params,
             header_params,
@@ -3134,8 +3208,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def update_dual_mode_position_risk_limit(self, settle, contract, risk_limit, **kwargs):  # noqa: E501
         """Update position risk limit in dual mode  # noqa: E501
@@ -3148,7 +3221,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param str risk_limit: New position risk limit (required)
+        :param str risk_limit: New Risk Limit Value (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -3161,9 +3234,7 @@ class FuturesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_dual_mode_position_risk_limit_with_http_info(
-            settle, contract, risk_limit, **kwargs
-        )  # noqa: E501
+        return self.update_dual_mode_position_risk_limit_with_http_info(settle, contract, risk_limit, **kwargs)  # noqa: E501
 
     def update_dual_mode_position_risk_limit_with_http_info(self, settle, contract, risk_limit, **kwargs):  # noqa: E501
         """Update position risk limit in dual mode  # noqa: E501
@@ -3176,7 +3247,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param str risk_limit: New position risk limit (required)
+        :param str risk_limit: New Risk Limit Value (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -3193,37 +3264,40 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'risk_limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'risk_limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method update_dual_mode_position_risk_limit" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_dual_mode_position_risk_limit" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `update_dual_mode_position_risk_limit`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `update_dual_mode_position_risk_limit`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `update_dual_mode_position_risk_limit`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `update_dual_mode_position_risk_limit`")  # noqa: E501
         # verify the required parameter 'risk_limit' is set
-        if self.api_client.client_side_validation and (
-            'risk_limit' not in local_var_params or local_var_params['risk_limit'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `risk_limit` when calling `update_dual_mode_position_risk_limit`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('risk_limit' not in local_var_params or  # noqa: E501
+                                                        local_var_params['risk_limit'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `risk_limit` when calling `update_dual_mode_position_risk_limit`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3244,14 +3318,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/dual_comp/positions/{contract}/risk_limit',
-            'POST',
+            '/futures/{settle}/dual_comp/positions/{contract}/risk_limit', 'POST',
             path_params,
             query_params,
             header_params,
@@ -3264,8 +3338,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_futures_orders(self, settle, status, **kwargs):  # noqa: E501
         """List futures orders  # noqa: E501
@@ -3329,47 +3402,46 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'status', 'contract', 'limit', 'offset', 'last_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'status',
+            'contract',
+            'limit',
+            'offset',
+            'last_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_futures_orders" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_futures_orders" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_futures_orders`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_futures_orders`")  # noqa: E501
         # verify the required parameter 'status' is set
-        if self.api_client.client_side_validation and (
-            'status' not in local_var_params or local_var_params['status'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `status` when calling `list_futures_orders`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('status' not in local_var_params or  # noqa: E501
+                                                        local_var_params['status'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `status` when calling `list_futures_orders`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_orders`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_futures_orders`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_futures_orders`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_orders`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_futures_orders`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_futures_orders`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -3395,14 +3467,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/orders',
-            'GET',
+            '/futures/{settle}/orders', 'GET',
             path_params,
             query_params,
             header_params,
@@ -3415,8 +3487,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def create_futures_order(self, settle, futures_order, **kwargs):  # noqa: E501
         """Create a futures order  # noqa: E501
@@ -3430,6 +3501,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param FuturesOrder futures_order: (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -3456,6 +3528,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param FuturesOrder futures_order: (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -3472,28 +3545,36 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'futures_order']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'futures_order',
+            'x_gate_exptime'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_futures_order" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_futures_order" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `create_futures_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `create_futures_order`")  # noqa: E501
         # verify the required parameter 'futures_order' is set
-        if self.api_client.client_side_validation and (
-            'futures_order' not in local_var_params or local_var_params['futures_order'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `futures_order` when calling `create_futures_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('futures_order' not in local_var_params or  # noqa: E501
+                                                        local_var_params['futures_order'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `futures_order` when calling `create_futures_order`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3504,6 +3585,8 @@ class FuturesApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_gate_exptime' in local_var_params:
+            header_params['x-gate-exptime'] = local_var_params['x_gate_exptime']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -3512,19 +3595,18 @@ class FuturesApi(object):
         if 'futures_order' in local_var_params:
             body_params = local_var_params['futures_order']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/orders',
-            'POST',
+            '/futures/{settle}/orders', 'POST',
             path_params,
             query_params,
             header_params,
@@ -3537,8 +3619,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def cancel_futures_orders(self, settle, contract, **kwargs):  # noqa: E501
         """Cancel all `open` orders matched  # noqa: E501
@@ -3552,6 +3633,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param str side: All bids or asks. Both included if not specified
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -3579,6 +3661,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param str side: All bids or asks. Both included if not specified
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -3596,28 +3679,37 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'side']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'x_gate_exptime',
+            'side'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_futures_orders" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_futures_orders" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `cancel_futures_orders`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `cancel_futures_orders`")  # noqa: E501
         # verify the required parameter 'contract' is set
-        if self.api_client.client_side_validation and (
-            'contract' not in local_var_params or local_var_params['contract'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `contract` when calling `cancel_futures_orders`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('contract' not in local_var_params or  # noqa: E501
+                                                        local_var_params['contract'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `contract` when calling `cancel_futures_orders`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3632,20 +3724,22 @@ class FuturesApi(object):
             query_params.append(('side', local_var_params['side']))  # noqa: E501
 
         header_params = {}
+        if 'x_gate_exptime' in local_var_params:
+            header_params['x-gate-exptime'] = local_var_params['x_gate_exptime']  # noqa: E501
 
         form_params = []
         local_var_files = {}
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/orders',
-            'DELETE',
+            '/futures/{settle}/orders', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -3658,8 +3752,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_orders_with_time_range(self, settle, **kwargs):  # noqa: E501
         """List Futures Orders By Time Range  # noqa: E501
@@ -3721,42 +3814,42 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', '_from', 'to', 'limit', 'offset']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            '_from',
+            'to',
+            'limit',
+            'offset'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method get_orders_with_time_range" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_orders_with_time_range" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `get_orders_with_time_range`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `get_orders_with_time_range`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `get_orders_with_time_range`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `get_orders_with_time_range`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `get_orders_with_time_range`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_orders_with_time_range`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_orders_with_time_range`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `get_orders_with_time_range`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -3782,14 +3875,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/orders_timerange',
-            'GET',
+            '/futures/{settle}/orders_timerange', 'GET',
             path_params,
             query_params,
             header_params,
@@ -3802,8 +3895,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def create_batch_futures_order(self, settle, futures_order, **kwargs):  # noqa: E501
         """Create a batch of futures orders  # noqa: E501
@@ -3817,6 +3909,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param list[FuturesOrder] futures_order: (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -3843,6 +3936,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param list[FuturesOrder] futures_order: (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -3859,30 +3953,36 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'futures_order']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'futures_order',
+            'x_gate_exptime'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method create_batch_futures_order" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_batch_futures_order" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `create_batch_futures_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `create_batch_futures_order`")  # noqa: E501
         # verify the required parameter 'futures_order' is set
-        if self.api_client.client_side_validation and (
-            'futures_order' not in local_var_params or local_var_params['futures_order'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `futures_order` when calling `create_batch_futures_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('futures_order' not in local_var_params or  # noqa: E501
+                                                        local_var_params['futures_order'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `futures_order` when calling `create_batch_futures_order`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3893,6 +3993,8 @@ class FuturesApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_gate_exptime' in local_var_params:
+            header_params['x-gate-exptime'] = local_var_params['x_gate_exptime']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -3901,19 +4003,18 @@ class FuturesApi(object):
         if 'futures_order' in local_var_params:
             body_params = local_var_params['futures_order']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/batch_orders',
-            'POST',
+            '/futures/{settle}/batch_orders', 'POST',
             path_params,
             query_params,
             header_params,
@@ -3926,8 +4027,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_futures_order(self, settle, order_id, **kwargs):  # noqa: E501
         """Get a single order  # noqa: E501
@@ -3983,28 +4083,35 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'order_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'order_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_futures_order" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_futures_order" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `get_futures_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `get_futures_order`")  # noqa: E501
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and (
-            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `order_id` when calling `get_futures_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['order_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `order_id` when calling `get_futures_order`")  # noqa: E501
 
         collection_formats = {}
 
@@ -4023,14 +4130,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/orders/{order_id}',
-            'GET',
+            '/futures/{settle}/orders/{order_id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -4043,8 +4150,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def amend_futures_order(self, settle, order_id, futures_order_amendment, **kwargs):  # noqa: E501
         """Amend an order  # noqa: E501
@@ -4058,6 +4164,7 @@ class FuturesApi(object):
         :param str settle: Settle currency (required)
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 60 seconds after the end of the order.  After that, only order ID is accepted. (required)
         :param FuturesOrderAmendment futures_order_amendment: (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -4070,9 +4177,7 @@ class FuturesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.amend_futures_order_with_http_info(
-            settle, order_id, futures_order_amendment, **kwargs
-        )  # noqa: E501
+        return self.amend_futures_order_with_http_info(settle, order_id, futures_order_amendment, **kwargs)  # noqa: E501
 
     def amend_futures_order_with_http_info(self, settle, order_id, futures_order_amendment, **kwargs):  # noqa: E501
         """Amend an order  # noqa: E501
@@ -4086,6 +4191,7 @@ class FuturesApi(object):
         :param str settle: Settle currency (required)
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 60 seconds after the end of the order.  After that, only order ID is accepted. (required)
         :param FuturesOrderAmendment futures_order_amendment: (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -4102,36 +4208,41 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'order_id', 'futures_order_amendment']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'order_id',
+            'futures_order_amendment',
+            'x_gate_exptime'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method amend_futures_order" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method amend_futures_order" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `amend_futures_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `amend_futures_order`")  # noqa: E501
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and (
-            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `order_id` when calling `amend_futures_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['order_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `order_id` when calling `amend_futures_order`")  # noqa: E501
         # verify the required parameter 'futures_order_amendment' is set
-        if self.api_client.client_side_validation and (
-            'futures_order_amendment' not in local_var_params
-            or local_var_params['futures_order_amendment'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `futures_order_amendment` when calling `amend_futures_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('futures_order_amendment' not in local_var_params or  # noqa: E501
+                                                        local_var_params['futures_order_amendment'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `futures_order_amendment` when calling `amend_futures_order`")  # noqa: E501
 
         collection_formats = {}
 
@@ -4144,6 +4255,8 @@ class FuturesApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_gate_exptime' in local_var_params:
+            header_params['x-gate-exptime'] = local_var_params['x_gate_exptime']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -4152,19 +4265,18 @@ class FuturesApi(object):
         if 'futures_order_amendment' in local_var_params:
             body_params = local_var_params['futures_order_amendment']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/orders/{order_id}',
-            'PUT',
+            '/futures/{settle}/orders/{order_id}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -4177,8 +4289,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def cancel_futures_order(self, settle, order_id, **kwargs):  # noqa: E501
         """Cancel a single order  # noqa: E501
@@ -4191,6 +4302,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 60 seconds after the end of the order.  After that, only order ID is accepted. (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -4216,6 +4328,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 60 seconds after the end of the order.  After that, only order ID is accepted. (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -4232,28 +4345,36 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'order_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'order_id',
+            'x_gate_exptime'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method cancel_futures_order" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_futures_order" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `cancel_futures_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `cancel_futures_order`")  # noqa: E501
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and (
-            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `order_id` when calling `cancel_futures_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['order_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `order_id` when calling `cancel_futures_order`")  # noqa: E501
 
         collection_formats = {}
 
@@ -4266,20 +4387,22 @@ class FuturesApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_gate_exptime' in local_var_params:
+            header_params['x-gate-exptime'] = local_var_params['x_gate_exptime']  # noqa: E501
 
         form_params = []
         local_var_files = {}
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/orders/{order_id}',
-            'DELETE',
+            '/futures/{settle}/orders/{order_id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -4292,8 +4415,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_my_trades(self, settle, **kwargs):  # noqa: E501
         """List personal trading history  # noqa: E501
@@ -4357,38 +4479,42 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'order', 'limit', 'offset', 'last_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'order',
+            'limit',
+            'offset',
+            'last_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_my_trades" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_my_trades" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `settle` when calling `get_my_trades`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `get_my_trades`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `get_my_trades`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `get_my_trades`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_my_trades`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_my_trades`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `get_my_trades`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -4414,14 +4540,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/my_trades',
-            'GET',
+            '/futures/{settle}/my_trades', 'GET',
             path_params,
             query_params,
             header_params,
@@ -4434,8 +4560,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_my_trades_with_time_range(self, settle, **kwargs):  # noqa: E501
         """List personal trading history by time range  # noqa: E501
@@ -4499,42 +4624,43 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', '_from', 'to', 'limit', 'offset', 'role']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            '_from',
+            'to',
+            'limit',
+            'offset',
+            'role'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method get_my_trades_with_time_range" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_my_trades_with_time_range" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `get_my_trades_with_time_range`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `get_my_trades_with_time_range`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `get_my_trades_with_time_range`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `get_my_trades_with_time_range`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `get_my_trades_with_time_range`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_my_trades_with_time_range`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_my_trades_with_time_range`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `get_my_trades_with_time_range`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -4562,14 +4688,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/my_trades_timerange',
-            'GET',
+            '/futures/{settle}/my_trades_timerange', 'GET',
             path_params,
             query_params,
             header_params,
@@ -4582,8 +4708,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_position_close(self, settle, **kwargs):  # noqa: E501
         """List position close history  # noqa: E501
@@ -4649,40 +4774,44 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'limit', 'offset', '_from', 'to', 'side', 'pnl']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'limit',
+            'offset',
+            '_from',
+            'to',
+            'side',
+            'pnl'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_position_close" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_position_close" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_position_close`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_position_close`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_position_close`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_position_close`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_position_close`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_position_close`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_position_close`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_position_close`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -4712,14 +4841,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/position_close',
-            'GET',
+            '/futures/{settle}/position_close', 'GET',
             path_params,
             query_params,
             header_params,
@@ -4732,8 +4861,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_liquidates(self, settle, **kwargs):  # noqa: E501
         """List liquidation history  # noqa: E501
@@ -4791,32 +4919,38 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'limit', 'at']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'limit',
+            'at'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_liquidates" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_liquidates" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `settle` when calling `list_liquidates`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_liquidates`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_liquidates`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_liquidates`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_liquidates`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -4838,14 +4972,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/liquidates',
-            'GET',
+            '/futures/{settle}/liquidates', 'GET',
             path_params,
             query_params,
             header_params,
@@ -4858,8 +4992,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_auto_deleverages(self, settle, **kwargs):  # noqa: E501
         """List Auto-Deleveraging History  # noqa: E501
@@ -4917,34 +5050,38 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract', 'limit', 'at']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract',
+            'limit',
+            'at'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_auto_deleverages" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_auto_deleverages" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_auto_deleverages`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_auto_deleverages`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_auto_deleverages`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_auto_deleverages`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_auto_deleverages`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_auto_deleverages`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -4966,14 +5103,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/auto_deleverages',
-            'GET',
+            '/futures/{settle}/auto_deleverages', 'GET',
             path_params,
             query_params,
             header_params,
@@ -4986,8 +5123,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def countdown_cancel_all_futures(self, settle, countdown_cancel_all_futures_task, **kwargs):  # noqa: E501
         """Countdown cancel orders  # noqa: E501
@@ -5013,13 +5149,9 @@ class FuturesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.countdown_cancel_all_futures_with_http_info(
-            settle, countdown_cancel_all_futures_task, **kwargs
-        )  # noqa: E501
+        return self.countdown_cancel_all_futures_with_http_info(settle, countdown_cancel_all_futures_task, **kwargs)  # noqa: E501
 
-    def countdown_cancel_all_futures_with_http_info(
-        self, settle, countdown_cancel_all_futures_task, **kwargs
-    ):  # noqa: E501
+    def countdown_cancel_all_futures_with_http_info(self, settle, countdown_cancel_all_futures_task, **kwargs):  # noqa: E501
         """Countdown cancel orders  # noqa: E501
 
         When the timeout set by the user is reached, if there is no cancel or set a new countdown, the related pending orders will be automatically cancelled.  This endpoint can be called repeatedly to set a new countdown or cancel the countdown. For example, call this endpoint at 30s intervals, each countdown`timeout` is set to 30s. If this endpoint is not called again within 30 seconds, all pending orders on the specified `market` will be automatically cancelled, if no `market` is specified, all market pending orders will be cancelled. If the `timeout` is set to 0 within 30 seconds, the countdown timer will expire and the cacnel function will be cancelled.  # noqa: E501
@@ -5047,31 +5179,35 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'countdown_cancel_all_futures_task']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'countdown_cancel_all_futures_task'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method countdown_cancel_all_futures" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method countdown_cancel_all_futures" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `countdown_cancel_all_futures`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `countdown_cancel_all_futures`")  # noqa: E501
         # verify the required parameter 'countdown_cancel_all_futures_task' is set
-        if self.api_client.client_side_validation and (
-            'countdown_cancel_all_futures_task' not in local_var_params
-            or local_var_params['countdown_cancel_all_futures_task'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `countdown_cancel_all_futures_task` when calling `countdown_cancel_all_futures`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('countdown_cancel_all_futures_task' not in local_var_params or  # noqa: E501
+                                                        local_var_params['countdown_cancel_all_futures_task'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `countdown_cancel_all_futures_task` when calling `countdown_cancel_all_futures`")  # noqa: E501
 
         collection_formats = {}
 
@@ -5090,19 +5226,18 @@ class FuturesApi(object):
         if 'countdown_cancel_all_futures_task' in local_var_params:
             body_params = local_var_params['countdown_cancel_all_futures_task']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/countdown_cancel_all',
-            'POST',
+            '/futures/{settle}/countdown_cancel_all', 'POST',
             path_params,
             query_params,
             header_params,
@@ -5115,8 +5250,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_futures_fee(self, settle, **kwargs):  # noqa: E501
         """Query user trading fee rates  # noqa: E501
@@ -5170,18 +5304,30 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_futures_fee" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_futures_fee" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `settle` when calling `get_futures_fee`")  # noqa: E501
 
         collection_formats = {}
@@ -5201,14 +5347,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/fee',
-            'GET',
+            '/futures/{settle}/fee', 'GET',
             path_params,
             query_params,
             header_params,
@@ -5221,8 +5367,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def cancel_batch_future_orders(self, settle, request_body, **kwargs):  # noqa: E501
         """Cancel a batch of orders with an ID list  # noqa: E501
@@ -5236,6 +5381,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param list[str] request_body: (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -5262,6 +5408,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param list[str] request_body: (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -5278,30 +5425,36 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'request_body']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'request_body',
+            'x_gate_exptime'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method cancel_batch_future_orders" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_batch_future_orders" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `cancel_batch_future_orders`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `cancel_batch_future_orders`")  # noqa: E501
         # verify the required parameter 'request_body' is set
-        if self.api_client.client_side_validation and (
-            'request_body' not in local_var_params or local_var_params['request_body'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `request_body` when calling `cancel_batch_future_orders`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('request_body' not in local_var_params or  # noqa: E501
+                                                        local_var_params['request_body'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `request_body` when calling `cancel_batch_future_orders`")  # noqa: E501
 
         collection_formats = {}
 
@@ -5312,6 +5465,8 @@ class FuturesApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_gate_exptime' in local_var_params:
+            header_params['x-gate-exptime'] = local_var_params['x_gate_exptime']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -5320,19 +5475,18 @@ class FuturesApi(object):
         if 'request_body' in local_var_params:
             body_params = local_var_params['request_body']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/batch_cancel_orders',
-            'POST',
+            '/futures/{settle}/batch_cancel_orders', 'POST',
             path_params,
             query_params,
             header_params,
@@ -5345,8 +5499,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def amend_batch_future_orders(self, settle, batch_amend_order_req, **kwargs):  # noqa: E501
         """Batch modify orders with specified IDs  # noqa: E501
@@ -5360,6 +5513,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param list[BatchAmendOrderReq] batch_amend_order_req: (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -5386,6 +5540,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param list[BatchAmendOrderReq] batch_amend_order_req: (required)
+        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -5402,29 +5557,36 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'batch_amend_order_req']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'batch_amend_order_req',
+            'x_gate_exptime'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method amend_batch_future_orders" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method amend_batch_future_orders" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `amend_batch_future_orders`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `amend_batch_future_orders`")  # noqa: E501
         # verify the required parameter 'batch_amend_order_req' is set
-        if self.api_client.client_side_validation and (
-            'batch_amend_order_req' not in local_var_params
-            or local_var_params['batch_amend_order_req'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `batch_amend_order_req` when calling `amend_batch_future_orders`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('batch_amend_order_req' not in local_var_params or  # noqa: E501
+                                                        local_var_params['batch_amend_order_req'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `batch_amend_order_req` when calling `amend_batch_future_orders`")  # noqa: E501
 
         collection_formats = {}
 
@@ -5435,6 +5597,8 @@ class FuturesApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_gate_exptime' in local_var_params:
+            header_params['x-gate-exptime'] = local_var_params['x_gate_exptime']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -5443,19 +5607,18 @@ class FuturesApi(object):
         if 'batch_amend_order_req' in local_var_params:
             body_params = local_var_params['batch_amend_order_req']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/batch_amend_orders',
-            'POST',
+            '/futures/{settle}/batch_amend_orders', 'POST',
             path_params,
             query_params,
             header_params,
@@ -5468,8 +5631,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_price_triggered_orders(self, settle, status, **kwargs):  # noqa: E501
         """List all auto orders  # noqa: E501
@@ -5529,49 +5691,45 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'status', 'contract', 'limit', 'offset']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'status',
+            'contract',
+            'limit',
+            'offset'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_price_triggered_orders" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_price_triggered_orders" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `list_price_triggered_orders`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `list_price_triggered_orders`")  # noqa: E501
         # verify the required parameter 'status' is set
-        if self.api_client.client_side_validation and (
-            'status' not in local_var_params or local_var_params['status'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `status` when calling `list_price_triggered_orders`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('status' not in local_var_params or  # noqa: E501
+                                                        local_var_params['status'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `status` when calling `list_price_triggered_orders`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_price_triggered_orders`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_price_triggered_orders`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `offset` when calling `list_price_triggered_orders`, must be a value greater than or equal to `0`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_price_triggered_orders`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_price_triggered_orders`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_price_triggered_orders`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -5595,14 +5753,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/price_orders',
-            'GET',
+            '/futures/{settle}/price_orders', 'GET',
             path_params,
             query_params,
             header_params,
@@ -5615,8 +5773,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def create_price_triggered_order(self, settle, futures_price_triggered_order, **kwargs):  # noqa: E501
         """Create a price-triggered order  # noqa: E501
@@ -5641,13 +5798,9 @@ class FuturesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.create_price_triggered_order_with_http_info(
-            settle, futures_price_triggered_order, **kwargs
-        )  # noqa: E501
+        return self.create_price_triggered_order_with_http_info(settle, futures_price_triggered_order, **kwargs)  # noqa: E501
 
-    def create_price_triggered_order_with_http_info(
-        self, settle, futures_price_triggered_order, **kwargs
-    ):  # noqa: E501
+    def create_price_triggered_order_with_http_info(self, settle, futures_price_triggered_order, **kwargs):  # noqa: E501
         """Create a price-triggered order  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -5674,31 +5827,35 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'futures_price_triggered_order']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'futures_price_triggered_order'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method create_price_triggered_order" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_price_triggered_order" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `create_price_triggered_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `create_price_triggered_order`")  # noqa: E501
         # verify the required parameter 'futures_price_triggered_order' is set
-        if self.api_client.client_side_validation and (
-            'futures_price_triggered_order' not in local_var_params
-            or local_var_params['futures_price_triggered_order'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `futures_price_triggered_order` when calling `create_price_triggered_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('futures_price_triggered_order' not in local_var_params or  # noqa: E501
+                                                        local_var_params['futures_price_triggered_order'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `futures_price_triggered_order` when calling `create_price_triggered_order`")  # noqa: E501
 
         collection_formats = {}
 
@@ -5717,19 +5874,18 @@ class FuturesApi(object):
         if 'futures_price_triggered_order' in local_var_params:
             body_params = local_var_params['futures_price_triggered_order']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/price_orders',
-            'POST',
+            '/futures/{settle}/price_orders', 'POST',
             path_params,
             query_params,
             header_params,
@@ -5742,8 +5898,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def cancel_price_triggered_order_list(self, settle, **kwargs):  # noqa: E501
         """Cancel all open orders  # noqa: E501
@@ -5797,23 +5952,31 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'contract']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'contract'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method cancel_price_triggered_order_list" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_price_triggered_order_list" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `cancel_price_triggered_order_list`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `cancel_price_triggered_order_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -5832,14 +5995,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/price_orders',
-            'DELETE',
+            '/futures/{settle}/price_orders', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -5852,8 +6015,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_price_triggered_order(self, settle, order_id, **kwargs):  # noqa: E501
         """Get a price-triggered order  # noqa: E501
@@ -5907,28 +6069,35 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'order_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'order_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_price_triggered_order" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_price_triggered_order" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `get_price_triggered_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `get_price_triggered_order`")  # noqa: E501
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and (
-            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `order_id` when calling `get_price_triggered_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['order_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `order_id` when calling `get_price_triggered_order`")  # noqa: E501
 
         collection_formats = {}
 
@@ -5947,14 +6116,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/price_orders/{order_id}',
-            'GET',
+            '/futures/{settle}/price_orders/{order_id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -5967,8 +6136,7 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def cancel_price_triggered_order(self, settle, order_id, **kwargs):  # noqa: E501
         """cancel a price-triggered order  # noqa: E501
@@ -6022,30 +6190,35 @@ class FuturesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['settle', 'order_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'settle',
+            'order_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method cancel_price_triggered_order" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_price_triggered_order" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'settle' is set
-        if self.api_client.client_side_validation and (
-            'settle' not in local_var_params or local_var_params['settle'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `settle` when calling `cancel_price_triggered_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `cancel_price_triggered_order`")  # noqa: E501
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and (
-            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `order_id` when calling `cancel_price_triggered_order`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['order_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `order_id` when calling `cancel_price_triggered_order`")  # noqa: E501
 
         collection_formats = {}
 
@@ -6064,14 +6237,14 @@ class FuturesApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/futures/{settle}/price_orders/{order_id}',
-            'DELETE',
+            '/futures/{settle}/price_orders/{order_id}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -6084,5 +6257,4 @@ class FuturesApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)

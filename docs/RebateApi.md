@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **partner_transaction_history**
-> list[PartnerTransactionHistory] partner_transaction_history(currency_pair=currency_pair, user_id=user_id, _from=_from, to=to, limit=limit, offset=offset)
+> PartnerTransactionHistory partner_transaction_history(currency_pair=currency_pair, user_id=user_id, _from=_from, to=to, limit=limit, offset=offset)
 
 Partner obtains transaction records of recommended users
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PartnerTransactionHistory]**](PartnerTransactionHistory.md)
+[**PartnerTransactionHistory**](PartnerTransactionHistory.md)
 
 ### Authorization
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **partner_commissions_history**
-> list[PartnerCommissionHistory] partner_commissions_history(currency=currency, user_id=user_id, _from=_from, to=to, limit=limit, offset=offset)
+> PartnerCommissionHistory partner_commissions_history(currency=currency, user_id=user_id, _from=_from, to=to, limit=limit, offset=offset)
 
 Partner obtains commission records of recommended users
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PartnerCommissionHistory]**](PartnerCommissionHistory.md)
+[**PartnerCommissionHistory**](PartnerCommissionHistory.md)
 
 ### Authorization
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **partner_sub_list**
-> list[PartnerSubList] partner_sub_list(user_id=user_id, limit=limit, offset=offset)
+> PartnerSubList partner_sub_list(user_id=user_id, limit=limit, offset=offset)
 
 Partner subordinate list
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PartnerSubList]**](PartnerSubList.md)
+[**PartnerSubList**](PartnerSubList.md)
 
 ### Authorization
 

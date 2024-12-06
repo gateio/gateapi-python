@@ -32,14 +32,20 @@ class CancelBatchOrder(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'currency_pair': 'str', 'id': 'str', 'account': 'str', 'action_mode': 'str'}
+    openapi_types = {
+        'currency_pair': 'str',
+        'id': 'str',
+        'action_mode': 'str'
+    }
 
-    attribute_map = {'currency_pair': 'currency_pair', 'id': 'id', 'account': 'account', 'action_mode': 'action_mode'}
+    attribute_map = {
+        'currency_pair': 'currency_pair',
+        'id': 'id',
+        'action_mode': 'action_mode'
+    }
 
-    def __init__(
-        self, currency_pair=None, id=None, account=None, action_mode=None, local_vars_configuration=None
-    ):  # noqa: E501
-        # type: (str, str, str, str, Configuration) -> None
+    def __init__(self, currency_pair=None, id=None, action_mode=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, Configuration) -> None
         """CancelBatchOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -47,14 +53,11 @@ class CancelBatchOrder(object):
 
         self._currency_pair = None
         self._id = None
-        self._account = None
         self._action_mode = None
         self.discriminator = None
 
         self.currency_pair = currency_pair
         self.id = id
-        if account is not None:
-            self.account = account
         if action_mode is not None:
             self.action_mode = action_mode
 
@@ -109,29 +112,6 @@ class CancelBatchOrder(object):
         self._id = id
 
     @property
-    def account(self):
-        """Gets the account of this CancelBatchOrder.  # noqa: E501
-
-        If cancelled order is cross margin order or is portfolio margin account's API key, this field must be set and can only be `cross_margin`If cancelled order is cross margin order, this field must be set and can only be `cross_margin`  # noqa: E501
-
-        :return: The account of this CancelBatchOrder.  # noqa: E501
-        :rtype: str
-        """
-        return self._account
-
-    @account.setter
-    def account(self, account):
-        """Sets the account of this CancelBatchOrder.
-
-        If cancelled order is cross margin order or is portfolio margin account's API key, this field must be set and can only be `cross_margin`If cancelled order is cross margin order, this field must be set and can only be `cross_margin`  # noqa: E501
-
-        :param account: The account of this CancelBatchOrder.  # noqa: E501
-        :type: str
-        """
-
-        self._account = account
-
-    @property
     def action_mode(self):
         """Gets the action_mode of this CancelBatchOrder.  # noqa: E501
 
@@ -161,16 +141,18 @@ class CancelBatchOrder(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

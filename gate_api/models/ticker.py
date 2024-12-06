@@ -36,7 +36,9 @@ class Ticker(object):
         'currency_pair': 'str',
         'last': 'str',
         'lowest_ask': 'str',
+        'lowest_size': 'str',
         'highest_bid': 'str',
+        'highest_size': 'str',
         'change_percentage': 'str',
         'change_utc0': 'str',
         'change_utc8': 'str',
@@ -47,14 +49,16 @@ class Ticker(object):
         'etf_net_value': 'str',
         'etf_pre_net_value': 'str',
         'etf_pre_timestamp': 'int',
-        'etf_leverage': 'str',
+        'etf_leverage': 'str'
     }
 
     attribute_map = {
         'currency_pair': 'currency_pair',
         'last': 'last',
         'lowest_ask': 'lowest_ask',
+        'lowest_size': 'lowest_size',
         'highest_bid': 'highest_bid',
+        'highest_size': 'highest_size',
         'change_percentage': 'change_percentage',
         'change_utc0': 'change_utc0',
         'change_utc8': 'change_utc8',
@@ -65,29 +69,11 @@ class Ticker(object):
         'etf_net_value': 'etf_net_value',
         'etf_pre_net_value': 'etf_pre_net_value',
         'etf_pre_timestamp': 'etf_pre_timestamp',
-        'etf_leverage': 'etf_leverage',
+        'etf_leverage': 'etf_leverage'
     }
 
-    def __init__(
-        self,
-        currency_pair=None,
-        last=None,
-        lowest_ask=None,
-        highest_bid=None,
-        change_percentage=None,
-        change_utc0=None,
-        change_utc8=None,
-        base_volume=None,
-        quote_volume=None,
-        high_24h=None,
-        low_24h=None,
-        etf_net_value=None,
-        etf_pre_net_value=None,
-        etf_pre_timestamp=None,
-        etf_leverage=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, int, str, Configuration) -> None
+    def __init__(self, currency_pair=None, last=None, lowest_ask=None, lowest_size=None, highest_bid=None, highest_size=None, change_percentage=None, change_utc0=None, change_utc8=None, base_volume=None, quote_volume=None, high_24h=None, low_24h=None, etf_net_value=None, etf_pre_net_value=None, etf_pre_timestamp=None, etf_leverage=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, str, Configuration) -> None
         """Ticker - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,7 +82,9 @@ class Ticker(object):
         self._currency_pair = None
         self._last = None
         self._lowest_ask = None
+        self._lowest_size = None
         self._highest_bid = None
+        self._highest_size = None
         self._change_percentage = None
         self._change_utc0 = None
         self._change_utc8 = None
@@ -116,8 +104,12 @@ class Ticker(object):
             self.last = last
         if lowest_ask is not None:
             self.lowest_ask = lowest_ask
+        if lowest_size is not None:
+            self.lowest_size = lowest_size
         if highest_bid is not None:
             self.highest_bid = highest_bid
+        if highest_size is not None:
+            self.highest_size = highest_size
         if change_percentage is not None:
             self.change_percentage = change_percentage
         if change_utc0 is not None:
@@ -208,6 +200,29 @@ class Ticker(object):
         self._lowest_ask = lowest_ask
 
     @property
+    def lowest_size(self):
+        """Gets the lowest_size of this Ticker.  # noqa: E501
+
+        The latest seller's lowest price quantity; does not exist for batch query; exists for single query, and is empty if there is no data  # noqa: E501
+
+        :return: The lowest_size of this Ticker.  # noqa: E501
+        :rtype: str
+        """
+        return self._lowest_size
+
+    @lowest_size.setter
+    def lowest_size(self, lowest_size):
+        """Sets the lowest_size of this Ticker.
+
+        The latest seller's lowest price quantity; does not exist for batch query; exists for single query, and is empty if there is no data  # noqa: E501
+
+        :param lowest_size: The lowest_size of this Ticker.  # noqa: E501
+        :type: str
+        """
+
+        self._lowest_size = lowest_size
+
+    @property
     def highest_bid(self):
         """Gets the highest_bid of this Ticker.  # noqa: E501
 
@@ -229,6 +244,29 @@ class Ticker(object):
         """
 
         self._highest_bid = highest_bid
+
+    @property
+    def highest_size(self):
+        """Gets the highest_size of this Ticker.  # noqa: E501
+
+        The latest buyer's highest price quantity; does not exist for batch query; exists for single query, and is empty if there is no data  # noqa: E501
+
+        :return: The highest_size of this Ticker.  # noqa: E501
+        :rtype: str
+        """
+        return self._highest_size
+
+    @highest_size.setter
+    def highest_size(self, highest_size):
+        """Sets the highest_size of this Ticker.
+
+        The latest buyer's highest price quantity; does not exist for batch query; exists for single query, and is empty if there is no data  # noqa: E501
+
+        :param highest_size: The highest_size of this Ticker.  # noqa: E501
+        :type: str
+        """
+
+        self._highest_size = highest_size
 
     @property
     def change_percentage(self):
@@ -490,16 +528,18 @@ class Ticker(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

@@ -42,7 +42,7 @@ class FuturesAutoDeleverage(object):
         'entry_price': 'str',
         'fill_price': 'str',
         'trade_size': 'int',
-        'position_size': 'int',
+        'position_size': 'int'
     }
 
     attribute_map = {
@@ -55,23 +55,10 @@ class FuturesAutoDeleverage(object):
         'entry_price': 'entry_price',
         'fill_price': 'fill_price',
         'trade_size': 'trade_size',
-        'position_size': 'position_size',
+        'position_size': 'position_size'
     }
 
-    def __init__(
-        self,
-        time=None,
-        user=None,
-        order_id=None,
-        contract=None,
-        leverage=None,
-        cross_leverage_limit=None,
-        entry_price=None,
-        fill_price=None,
-        trade_size=None,
-        position_size=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, time=None, user=None, order_id=None, contract=None, leverage=None, cross_leverage_limit=None, entry_price=None, fill_price=None, trade_size=None, position_size=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, int, int, str, str, str, str, str, int, int, Configuration) -> None
         """FuturesAutoDeleverage - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -348,16 +335,18 @@ class FuturesAutoDeleverage(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

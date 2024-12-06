@@ -42,7 +42,7 @@ class CollateralRecord(object):
         'after_collateral': 'str',
         'before_ltv': 'str',
         'after_ltv': 'str',
-        'operate_time': 'int',
+        'operate_time': 'int'
     }
 
     attribute_map = {
@@ -55,23 +55,10 @@ class CollateralRecord(object):
         'after_collateral': 'after_collateral',
         'before_ltv': 'before_ltv',
         'after_ltv': 'after_ltv',
-        'operate_time': 'operate_time',
+        'operate_time': 'operate_time'
     }
 
-    def __init__(
-        self,
-        order_id=None,
-        record_id=None,
-        borrow_currency=None,
-        borrow_amount=None,
-        collateral_currency=None,
-        before_collateral=None,
-        after_collateral=None,
-        before_ltv=None,
-        after_ltv=None,
-        operate_time=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, order_id=None, record_id=None, borrow_currency=None, borrow_amount=None, collateral_currency=None, before_collateral=None, after_collateral=None, before_ltv=None, after_ltv=None, operate_time=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, int, str, str, str, str, str, str, str, int, Configuration) -> None
         """CollateralRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -348,16 +335,18 @@ class CollateralRecord(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

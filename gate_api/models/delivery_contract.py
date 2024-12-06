@@ -70,7 +70,7 @@ class DeliveryContract(object):
         'position_size': 'int',
         'config_change_time': 'float',
         'in_delisting': 'bool',
-        'orders_limit': 'int',
+        'orders_limit': 'int'
     }
 
     attribute_map = {
@@ -111,51 +111,10 @@ class DeliveryContract(object):
         'position_size': 'position_size',
         'config_change_time': 'config_change_time',
         'in_delisting': 'in_delisting',
-        'orders_limit': 'orders_limit',
+        'orders_limit': 'orders_limit'
     }
 
-    def __init__(
-        self,
-        name=None,
-        underlying=None,
-        cycle=None,
-        type=None,
-        quanto_multiplier=None,
-        leverage_min=None,
-        leverage_max=None,
-        maintenance_rate=None,
-        mark_type=None,
-        mark_price=None,
-        index_price=None,
-        last_price=None,
-        maker_fee_rate=None,
-        taker_fee_rate=None,
-        order_price_round=None,
-        mark_price_round=None,
-        basis_rate=None,
-        basis_value=None,
-        basis_impact_value=None,
-        settle_price=None,
-        settle_price_interval=None,
-        settle_price_duration=None,
-        expire_time=None,
-        risk_limit_base=None,
-        risk_limit_step=None,
-        risk_limit_max=None,
-        order_size_min=None,
-        order_size_max=None,
-        order_price_deviate=None,
-        ref_discount_rate=None,
-        ref_rebate_rate=None,
-        orderbook_id=None,
-        trade_id=None,
-        trade_size=None,
-        position_size=None,
-        config_change_time=None,
-        in_delisting=None,
-        orders_limit=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, name=None, underlying=None, cycle=None, type=None, quanto_multiplier=None, leverage_min=None, leverage_max=None, maintenance_rate=None, mark_type=None, mark_price=None, index_price=None, last_price=None, maker_fee_rate=None, taker_fee_rate=None, order_price_round=None, mark_price_round=None, basis_rate=None, basis_value=None, basis_impact_value=None, settle_price=None, settle_price_interval=None, settle_price_duration=None, expire_time=None, risk_limit_base=None, risk_limit_step=None, risk_limit_max=None, order_size_min=None, order_size_max=None, order_price_deviate=None, ref_discount_rate=None, ref_rebate_rate=None, orderbook_id=None, trade_id=None, trade_size=None, position_size=None, config_change_time=None, in_delisting=None, orders_limit=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, int, str, str, str, int, int, str, str, str, int, int, int, int, float, bool, int, Configuration) -> None
         """DeliveryContract - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -348,7 +307,8 @@ class DeliveryContract(object):
         allowed_values = ["WEEKLY", "BI-WEEKLY", "QUARTERLY", "BI-QUARTERLY"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and cycle not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `cycle` ({0}), must be one of {1}".format(cycle, allowed_values)  # noqa: E501
+                "Invalid value for `cycle` ({0}), must be one of {1}"  # noqa: E501
+                .format(cycle, allowed_values)
             )
 
         self._cycle = cycle
@@ -376,7 +336,8 @@ class DeliveryContract(object):
         allowed_values = ["inverse", "direct"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}".format(type, allowed_values)  # noqa: E501
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
             )
 
         self._type = type
@@ -496,9 +457,8 @@ class DeliveryContract(object):
         allowed_values = ["internal", "index"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and mark_type not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `mark_type` ({0}), must be one of {1}".format(  # noqa: E501
-                    mark_type, allowed_values
-                )
+                "Invalid value for `mark_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(mark_type, allowed_values)
             )
 
         self._mark_type = mark_type
@@ -1177,16 +1137,18 @@ class DeliveryContract(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

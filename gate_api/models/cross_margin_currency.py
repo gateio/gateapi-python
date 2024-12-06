@@ -42,7 +42,7 @@ class CrossMarginCurrency(object):
         'total_max_borrow_amount': 'str',
         'price': 'str',
         'loanable': 'bool',
-        'status': 'int',
+        'status': 'int'
     }
 
     attribute_map = {
@@ -55,23 +55,10 @@ class CrossMarginCurrency(object):
         'total_max_borrow_amount': 'total_max_borrow_amount',
         'price': 'price',
         'loanable': 'loanable',
-        'status': 'status',
+        'status': 'status'
     }
 
-    def __init__(
-        self,
-        name=None,
-        rate=None,
-        prec=None,
-        discount=None,
-        min_borrow_amount=None,
-        user_max_borrow_amount=None,
-        total_max_borrow_amount=None,
-        price=None,
-        loanable=None,
-        status=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, name=None, rate=None, prec=None, discount=None, min_borrow_amount=None, user_max_borrow_amount=None, total_max_borrow_amount=None, price=None, loanable=None, status=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, str, str, str, bool, int, Configuration) -> None
         """CrossMarginCurrency - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -348,16 +335,18 @@ class CrossMarginCurrency(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

@@ -49,7 +49,7 @@ class CrossMarginAccount(object):
         'total_available_margin': 'str',
         'portfolio_margin_total': 'str',
         'portfolio_margin_total_liab': 'str',
-        'portfolio_margin_total_equity': 'str',
+        'portfolio_margin_total_equity': 'str'
     }
 
     attribute_map = {
@@ -69,30 +69,10 @@ class CrossMarginAccount(object):
         'total_available_margin': 'total_available_margin',
         'portfolio_margin_total': 'portfolio_margin_total',
         'portfolio_margin_total_liab': 'portfolio_margin_total_liab',
-        'portfolio_margin_total_equity': 'portfolio_margin_total_equity',
+        'portfolio_margin_total_equity': 'portfolio_margin_total_equity'
     }
 
-    def __init__(
-        self,
-        user_id=None,
-        refresh_time=None,
-        locked=None,
-        balances=None,
-        total=None,
-        borrowed=None,
-        interest=None,
-        risk=None,
-        total_initial_margin=None,
-        total_margin_balance=None,
-        total_maintenance_margin=None,
-        total_initial_margin_rate=None,
-        total_maintenance_margin_rate=None,
-        total_available_margin=None,
-        portfolio_margin_total=None,
-        portfolio_margin_total_liab=None,
-        portfolio_margin_total_equity=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, user_id=None, refresh_time=None, locked=None, balances=None, total=None, borrowed=None, interest=None, risk=None, total_initial_margin=None, total_margin_balance=None, total_maintenance_margin=None, total_initial_margin_rate=None, total_maintenance_margin_rate=None, total_available_margin=None, portfolio_margin_total=None, portfolio_margin_total_liab=None, portfolio_margin_total_equity=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, int, bool, dict(str, CrossMarginBalance), str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """CrossMarginAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -549,16 +529,18 @@ class CrossMarginAccount(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

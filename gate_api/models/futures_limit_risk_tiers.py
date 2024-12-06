@@ -38,7 +38,7 @@ class FuturesLimitRiskTiers(object):
         'initial_rate': 'str',
         'maintenance_rate': 'str',
         'leverage_max': 'str',
-        'contract': 'str',
+        'contract': 'str'
     }
 
     attribute_map = {
@@ -47,19 +47,10 @@ class FuturesLimitRiskTiers(object):
         'initial_rate': 'initial_rate',
         'maintenance_rate': 'maintenance_rate',
         'leverage_max': 'leverage_max',
-        'contract': 'contract',
+        'contract': 'contract'
     }
 
-    def __init__(
-        self,
-        tier=None,
-        risk_limit=None,
-        initial_rate=None,
-        maintenance_rate=None,
-        leverage_max=None,
-        contract=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, tier=None, risk_limit=None, initial_rate=None, maintenance_rate=None, leverage_max=None, contract=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, str, str, str, str, str, Configuration) -> None
         """FuturesLimitRiskTiers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -232,16 +223,18 @@ class FuturesLimitRiskTiers(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

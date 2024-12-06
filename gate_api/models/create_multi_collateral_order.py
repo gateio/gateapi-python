@@ -41,7 +41,7 @@ class CreateMultiCollateralOrder(object):
         'auto_repay': 'bool',
         'borrow_currency': 'str',
         'borrow_amount': 'str',
-        'collateral_currencies': 'list[CollateralCurrency]',
+        'collateral_currencies': 'list[CollateralCurrency]'
     }
 
     attribute_map = {
@@ -53,22 +53,10 @@ class CreateMultiCollateralOrder(object):
         'auto_repay': 'auto_repay',
         'borrow_currency': 'borrow_currency',
         'borrow_amount': 'borrow_amount',
-        'collateral_currencies': 'collateral_currencies',
+        'collateral_currencies': 'collateral_currencies'
     }
 
-    def __init__(
-        self,
-        order_id=None,
-        order_type=None,
-        fixed_type=None,
-        fixed_rate=None,
-        auto_renew=None,
-        auto_repay=None,
-        borrow_currency=None,
-        borrow_amount=None,
-        collateral_currencies=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, order_id=None, order_type=None, fixed_type=None, fixed_rate=None, auto_renew=None, auto_repay=None, borrow_currency=None, borrow_amount=None, collateral_currencies=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, bool, bool, str, str, list[CollateralCurrency], Configuration) -> None
         """CreateMultiCollateralOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -321,16 +309,18 @@ class CreateMultiCollateralOrder(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

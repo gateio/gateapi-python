@@ -42,7 +42,7 @@ class CrossMarginLoan(object):
         'status': 'int',
         'repaid': 'str',
         'repaid_interest': 'str',
-        'unpaid_interest': 'str',
+        'unpaid_interest': 'str'
     }
 
     attribute_map = {
@@ -55,23 +55,10 @@ class CrossMarginLoan(object):
         'status': 'status',
         'repaid': 'repaid',
         'repaid_interest': 'repaid_interest',
-        'unpaid_interest': 'unpaid_interest',
+        'unpaid_interest': 'unpaid_interest'
     }
 
-    def __init__(
-        self,
-        id=None,
-        create_time=None,
-        update_time=None,
-        currency=None,
-        amount=None,
-        text=None,
-        status=None,
-        repaid=None,
-        repaid_interest=None,
-        unpaid_interest=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, id=None, create_time=None, update_time=None, currency=None, amount=None, text=None, status=None, repaid=None, repaid_interest=None, unpaid_interest=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, int, int, str, str, str, int, str, str, str, Configuration) -> None
         """CrossMarginLoan - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -274,7 +261,8 @@ class CrossMarginLoan(object):
         allowed_values = [1, 2, 3]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}".format(status, allowed_values)  # noqa: E501
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
             )
 
         self._status = status
@@ -355,16 +343,18 @@ class CrossMarginLoan(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

@@ -38,7 +38,7 @@ class AgencyCommission(object):
         'group_name': 'str',
         'commission_amount': 'str',
         'commission_asset': 'str',
-        'source': 'str',
+        'source': 'str'
     }
 
     attribute_map = {
@@ -47,19 +47,10 @@ class AgencyCommission(object):
         'group_name': 'group_name',
         'commission_amount': 'commission_amount',
         'commission_asset': 'commission_asset',
-        'source': 'source',
+        'source': 'source'
     }
 
-    def __init__(
-        self,
-        commission_time=None,
-        user_id=None,
-        group_name=None,
-        commission_amount=None,
-        commission_asset=None,
-        source=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, commission_time=None, user_id=None, group_name=None, commission_amount=None, commission_asset=None, source=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, int, str, str, str, str, Configuration) -> None
         """AgencyCommission - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -232,16 +223,18 @@ class AgencyCommission(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

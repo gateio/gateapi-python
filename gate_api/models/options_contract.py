@@ -57,7 +57,7 @@ class OptionsContract(object):
         'trade_id': 'int',
         'trade_size': 'int',
         'position_size': 'int',
-        'orders_limit': 'int',
+        'orders_limit': 'int'
     }
 
     attribute_map = {
@@ -85,38 +85,10 @@ class OptionsContract(object):
         'trade_id': 'trade_id',
         'trade_size': 'trade_size',
         'position_size': 'position_size',
-        'orders_limit': 'orders_limit',
+        'orders_limit': 'orders_limit'
     }
 
-    def __init__(
-        self,
-        name=None,
-        tag=None,
-        create_time=None,
-        expiration_time=None,
-        is_call=None,
-        multiplier=None,
-        underlying=None,
-        underlying_price=None,
-        last_price=None,
-        mark_price=None,
-        index_price=None,
-        maker_fee_rate=None,
-        taker_fee_rate=None,
-        order_price_round=None,
-        mark_price_round=None,
-        order_size_min=None,
-        order_size_max=None,
-        order_price_deviate=None,
-        ref_discount_rate=None,
-        ref_rebate_rate=None,
-        orderbook_id=None,
-        trade_id=None,
-        trade_size=None,
-        position_size=None,
-        orders_limit=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, name=None, tag=None, create_time=None, expiration_time=None, is_call=None, multiplier=None, underlying=None, underlying_price=None, last_price=None, mark_price=None, index_price=None, maker_fee_rate=None, taker_fee_rate=None, order_price_round=None, mark_price_round=None, order_size_min=None, order_size_max=None, order_price_deviate=None, ref_discount_rate=None, ref_rebate_rate=None, orderbook_id=None, trade_id=None, trade_size=None, position_size=None, orders_limit=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, float, float, bool, str, str, str, str, str, str, str, str, str, str, int, int, str, str, str, int, int, int, int, int, Configuration) -> None
         """OptionsContract - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -596,7 +568,7 @@ class OptionsContract(object):
     def order_price_deviate(self):
         """Gets the order_price_deviate of this OptionsContract.  # noqa: E501
 
-        deviation between order price and current index price. If price of an order is denoted as order_price, it must meet the following condition:      abs(order_price - mark_price) <= mark_price * order_price_deviate  # noqa: E501
+        The positive and negative offset allowed between the order price and the current mark price, that is, the order price `order_price` must meet the following conditions:   order_price is within the range of mark_price +/- order_price_deviate * underlying_price  and does not distinguish between buy and sell orders  # noqa: E501
 
         :return: The order_price_deviate of this OptionsContract.  # noqa: E501
         :rtype: str
@@ -607,7 +579,7 @@ class OptionsContract(object):
     def order_price_deviate(self, order_price_deviate):
         """Sets the order_price_deviate of this OptionsContract.
 
-        deviation between order price and current index price. If price of an order is denoted as order_price, it must meet the following condition:      abs(order_price - mark_price) <= mark_price * order_price_deviate  # noqa: E501
+        The positive and negative offset allowed between the order price and the current mark price, that is, the order price `order_price` must meet the following conditions:   order_price is within the range of mark_price +/- order_price_deviate * underlying_price  and does not distinguish between buy and sell orders  # noqa: E501
 
         :param order_price_deviate: The order_price_deviate of this OptionsContract.  # noqa: E501
         :type: str
@@ -783,16 +755,18 @@ class OptionsContract(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

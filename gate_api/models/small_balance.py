@@ -36,24 +36,17 @@ class SmallBalance(object):
         'currency': 'str',
         'available_balance': 'str',
         'estimated_as_btc': 'str',
-        'convertible_to_gt': 'str',
+        'convertible_to_gt': 'str'
     }
 
     attribute_map = {
         'currency': 'currency',
         'available_balance': 'available_balance',
         'estimated_as_btc': 'estimated_as_btc',
-        'convertible_to_gt': 'convertible_to_gt',
+        'convertible_to_gt': 'convertible_to_gt'
     }
 
-    def __init__(
-        self,
-        currency=None,
-        available_balance=None,
-        estimated_as_btc=None,
-        convertible_to_gt=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, currency=None, available_balance=None, estimated_as_btc=None, convertible_to_gt=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, Configuration) -> None
         """SmallBalance - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -174,16 +167,18 @@ class SmallBalance(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

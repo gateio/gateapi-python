@@ -814,7 +814,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_batch_orders**
-> list[BatchOrder] create_batch_orders(order)
+> list[BatchOrder] create_batch_orders(order, x_gate_exptime=x_gate_exptime)
 
 Create a batch of orders
 
@@ -845,10 +845,11 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 order = [gate_api.Order()] # list[Order] | 
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
     # Create a batch of orders
-    api_response = api_instance.create_batch_orders(order)
+    api_response = api_instance.create_batch_orders(order, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -861,6 +862,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order** | [**list[Order]**](Order.md)|  | 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
 
@@ -1108,7 +1110,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_order**
-> Order create_order(order)
+> Order create_order(order, x_gate_exptime=x_gate_exptime)
 
 Create an order
 
@@ -1139,10 +1141,11 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 order = gate_api.Order() # Order | 
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
     # Create an order
-    api_response = api_instance.create_order(order)
+    api_response = api_instance.create_order(order, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1155,6 +1158,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order** | [**Order**](Order.md)|  | 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
 
@@ -1177,7 +1181,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_orders**
-> list[OrderCancel] cancel_orders(currency_pair=currency_pair, side=side, account=account, action_mode=action_mode)
+> list[OrderCancel] cancel_orders(currency_pair=currency_pair, side=side, account=account, action_mode=action_mode, x_gate_exptime=x_gate_exptime)
 
 Cancel all `open` orders in specified currency pair
 
@@ -1211,10 +1215,11 @@ currency_pair = 'BTC_USDT' # str | Currency pair (optional)
 side = 'sell' # str | All bids or asks. Both included if not specified (optional)
 account = 'spot' # str | Specify account type:  - Classic account: Includes all if not specified - Unified account: Specify `unified` - Unified account (legacy): Can only specify `cross_margin` (optional)
 action_mode = 'ACK' # str | Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) (optional)
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
     # Cancel all `open` orders in specified currency pair
-    api_response = api_instance.cancel_orders(currency_pair=currency_pair, side=side, account=account, action_mode=action_mode)
+    api_response = api_instance.cancel_orders(currency_pair=currency_pair, side=side, account=account, action_mode=action_mode, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1230,6 +1235,7 @@ Name | Type | Description  | Notes
  **side** | **str**| All bids or asks. Both included if not specified | [optional] 
  **account** | **str**| Specify account type:  - Classic account: Includes all if not specified - Unified account: Specify &#x60;unified&#x60; - Unified account (legacy): Can only specify &#x60;cross_margin&#x60; | [optional] 
  **action_mode** | **str**| Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) | [optional] 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
 
@@ -1252,7 +1258,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_batch_orders**
-> list[CancelOrderResult] cancel_batch_orders(cancel_batch_order)
+> list[CancelOrderResult] cancel_batch_orders(cancel_batch_order, x_gate_exptime=x_gate_exptime)
 
 Cancel a batch of orders with an ID list
 
@@ -1283,10 +1289,11 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 cancel_batch_order = [gate_api.CancelBatchOrder()] # list[CancelBatchOrder] | 
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
     # Cancel a batch of orders with an ID list
-    api_response = api_instance.cancel_batch_orders(cancel_batch_order)
+    api_response = api_instance.cancel_batch_orders(cancel_batch_order, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1299,6 +1306,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cancel_batch_order** | [**list[CancelBatchOrder]**](CancelBatchOrder.md)|  | 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
 
@@ -1394,7 +1402,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_order**
-> Order cancel_order(order_id, currency_pair, account=account, action_mode=action_mode)
+> Order cancel_order(order_id, currency_pair, account=account, action_mode=action_mode, x_gate_exptime=x_gate_exptime)
 
 Cancel a single order
 
@@ -1428,10 +1436,11 @@ order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` fie
 currency_pair = 'BTC_USDT' # str | Currency pair
 account = 'cross_margin' # str | Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only (optional)
 action_mode = 'ACK' # str | Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) (optional)
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
     # Cancel a single order
-    api_response = api_instance.cancel_order(order_id, currency_pair, account=account, action_mode=action_mode)
+    api_response = api_instance.cancel_order(order_id, currency_pair, account=account, action_mode=action_mode, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1447,6 +1456,7 @@ Name | Type | Description  | Notes
  **currency_pair** | **str**| Currency pair | 
  **account** | **str**| Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account.  Portfolio margin account must set to &#x60;cross_margin&#x60; only | [optional] 
  **action_mode** | **str**| Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default) | [optional] 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
 
@@ -1469,7 +1479,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amend_order**
-> Order amend_order(order_id, order_patch, currency_pair=currency_pair, account=account)
+> Order amend_order(order_id, order_patch, currency_pair=currency_pair, account=account, x_gate_exptime=x_gate_exptime)
 
 Amend an order
 
@@ -1503,10 +1513,11 @@ order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` fie
 order_patch = gate_api.OrderPatch() # OrderPatch | 
 currency_pair = 'BTC_USDT' # str | Currency pair (optional)
 account = 'cross_margin' # str | Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to `cross_margin` to operate against margin account.  Portfolio margin account must set to `cross_margin` only (optional)
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
     # Amend an order
-    api_response = api_instance.amend_order(order_id, order_patch, currency_pair=currency_pair, account=account)
+    api_response = api_instance.amend_order(order_id, order_patch, currency_pair=currency_pair, account=account, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1522,6 +1533,7 @@ Name | Type | Description  | Notes
  **order_patch** | [**OrderPatch**](OrderPatch.md)|  | 
  **currency_pair** | **str**| Currency pair | [optional] 
  **account** | **str**| Specify operation account. Default to spot ,portfolio and margin account if not specified. Set to &#x60;cross_margin&#x60; to operate against margin account.  Portfolio margin account must set to &#x60;cross_margin&#x60; only | [optional] 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
 
@@ -1748,7 +1760,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amend_batch_orders**
-> list[BatchOrder] amend_batch_orders(batch_amend_item)
+> list[BatchOrder] amend_batch_orders(batch_amend_item, x_gate_exptime=x_gate_exptime)
 
 Batch modification of orders
 
@@ -1779,10 +1791,11 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SpotApi(api_client)
 batch_amend_item = [gate_api.BatchAmendItem()] # list[BatchAmendItem] | 
+x_gate_exptime = 1689560679123 # int | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
     # Batch modification of orders
-    api_response = api_instance.amend_batch_orders(batch_amend_item)
+    api_response = api_instance.amend_batch_orders(batch_amend_item, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1795,6 +1808,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **batch_amend_item** | [**list[BatchAmendItem]**](BatchAmendItem.md)|  | 
+ **x_gate_exptime** | **int**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
 ### Return type
 

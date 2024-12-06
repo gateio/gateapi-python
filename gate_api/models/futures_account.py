@@ -46,7 +46,15 @@ class FuturesAccount(object):
         'maintenance_margin': 'str',
         'bonus': 'str',
         'enable_evolved_classic': 'bool',
-        'history': 'FuturesAccountHistory',
+        'cross_order_margin': 'str',
+        'cross_initial_margin': 'str',
+        'cross_maintenance_margin': 'str',
+        'cross_unrealised_pnl': 'str',
+        'cross_available': 'str',
+        'isolated_position_margin': 'str',
+        'enable_new_dual_mode': 'bool',
+        'margin_mode': 'int',
+        'history': 'FuturesAccountHistory'
     }
 
     attribute_map = {
@@ -63,28 +71,19 @@ class FuturesAccount(object):
         'maintenance_margin': 'maintenance_margin',
         'bonus': 'bonus',
         'enable_evolved_classic': 'enable_evolved_classic',
-        'history': 'history',
+        'cross_order_margin': 'cross_order_margin',
+        'cross_initial_margin': 'cross_initial_margin',
+        'cross_maintenance_margin': 'cross_maintenance_margin',
+        'cross_unrealised_pnl': 'cross_unrealised_pnl',
+        'cross_available': 'cross_available',
+        'isolated_position_margin': 'isolated_position_margin',
+        'enable_new_dual_mode': 'enable_new_dual_mode',
+        'margin_mode': 'margin_mode',
+        'history': 'history'
     }
 
-    def __init__(
-        self,
-        total=None,
-        unrealised_pnl=None,
-        position_margin=None,
-        order_margin=None,
-        available=None,
-        point=None,
-        currency=None,
-        in_dual_mode=None,
-        enable_credit=None,
-        position_initial_margin=None,
-        maintenance_margin=None,
-        bonus=None,
-        enable_evolved_classic=None,
-        history=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, bool, bool, str, str, str, bool, FuturesAccountHistory, Configuration) -> None
+    def __init__(self, total=None, unrealised_pnl=None, position_margin=None, order_margin=None, available=None, point=None, currency=None, in_dual_mode=None, enable_credit=None, position_initial_margin=None, maintenance_margin=None, bonus=None, enable_evolved_classic=None, cross_order_margin=None, cross_initial_margin=None, cross_maintenance_margin=None, cross_unrealised_pnl=None, cross_available=None, isolated_position_margin=None, enable_new_dual_mode=None, margin_mode=None, history=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, str, str, str, str, bool, bool, str, str, str, bool, str, str, str, str, str, str, bool, int, FuturesAccountHistory, Configuration) -> None
         """FuturesAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -103,6 +102,14 @@ class FuturesAccount(object):
         self._maintenance_margin = None
         self._bonus = None
         self._enable_evolved_classic = None
+        self._cross_order_margin = None
+        self._cross_initial_margin = None
+        self._cross_maintenance_margin = None
+        self._cross_unrealised_pnl = None
+        self._cross_available = None
+        self._isolated_position_margin = None
+        self._enable_new_dual_mode = None
+        self._margin_mode = None
         self._history = None
         self.discriminator = None
 
@@ -132,6 +139,22 @@ class FuturesAccount(object):
             self.bonus = bonus
         if enable_evolved_classic is not None:
             self.enable_evolved_classic = enable_evolved_classic
+        if cross_order_margin is not None:
+            self.cross_order_margin = cross_order_margin
+        if cross_initial_margin is not None:
+            self.cross_initial_margin = cross_initial_margin
+        if cross_maintenance_margin is not None:
+            self.cross_maintenance_margin = cross_maintenance_margin
+        if cross_unrealised_pnl is not None:
+            self.cross_unrealised_pnl = cross_unrealised_pnl
+        if cross_available is not None:
+            self.cross_available = cross_available
+        if isolated_position_margin is not None:
+            self.isolated_position_margin = isolated_position_margin
+        if enable_new_dual_mode is not None:
+            self.enable_new_dual_mode = enable_new_dual_mode
+        if margin_mode is not None:
+            self.margin_mode = margin_mode
         if history is not None:
             self.history = history
 
@@ -369,7 +392,7 @@ class FuturesAccount(object):
     def maintenance_margin(self):
         """Gets the maintenance_margin of this FuturesAccount.  # noqa: E501
 
-        Maintenance margin position, applicable to the portfolio margin account model  # noqa: E501
+        The maintenance deposit occupied by the position is suitable for the new classic account margin model and unified account model  # noqa: E501
 
         :return: The maintenance_margin of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -380,7 +403,7 @@ class FuturesAccount(object):
     def maintenance_margin(self, maintenance_margin):
         """Sets the maintenance_margin of this FuturesAccount.
 
-        Maintenance margin position, applicable to the portfolio margin account model  # noqa: E501
+        The maintenance deposit occupied by the position is suitable for the new classic account margin model and unified account model  # noqa: E501
 
         :param maintenance_margin: The maintenance_margin of this FuturesAccount.  # noqa: E501
         :type: str
@@ -415,7 +438,7 @@ class FuturesAccount(object):
     def enable_evolved_classic(self):
         """Gets the enable_evolved_classic of this FuturesAccount.  # noqa: E501
 
-        Classic account margin mode, true - enable new mode, false - revert to old mode.  # noqa: E501
+        Classic account margin mode, true-new mode, false-old mode  # noqa: E501
 
         :return: The enable_evolved_classic of this FuturesAccount.  # noqa: E501
         :rtype: bool
@@ -426,13 +449,197 @@ class FuturesAccount(object):
     def enable_evolved_classic(self, enable_evolved_classic):
         """Sets the enable_evolved_classic of this FuturesAccount.
 
-        Classic account margin mode, true - enable new mode, false - revert to old mode.  # noqa: E501
+        Classic account margin mode, true-new mode, false-old mode  # noqa: E501
 
         :param enable_evolved_classic: The enable_evolved_classic of this FuturesAccount.  # noqa: E501
         :type: bool
         """
 
         self._enable_evolved_classic = enable_evolved_classic
+
+    @property
+    def cross_order_margin(self):
+        """Gets the cross_order_margin of this FuturesAccount.  # noqa: E501
+
+        Full -warehouse hanging order deposit, suitable for the new classic account margin model  # noqa: E501
+
+        :return: The cross_order_margin of this FuturesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._cross_order_margin
+
+    @cross_order_margin.setter
+    def cross_order_margin(self, cross_order_margin):
+        """Sets the cross_order_margin of this FuturesAccount.
+
+        Full -warehouse hanging order deposit, suitable for the new classic account margin model  # noqa: E501
+
+        :param cross_order_margin: The cross_order_margin of this FuturesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._cross_order_margin = cross_order_margin
+
+    @property
+    def cross_initial_margin(self):
+        """Gets the cross_initial_margin of this FuturesAccount.  # noqa: E501
+
+        The initial security deposit of the full warehouse is suitable for the new classic account margin model  # noqa: E501
+
+        :return: The cross_initial_margin of this FuturesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._cross_initial_margin
+
+    @cross_initial_margin.setter
+    def cross_initial_margin(self, cross_initial_margin):
+        """Sets the cross_initial_margin of this FuturesAccount.
+
+        The initial security deposit of the full warehouse is suitable for the new classic account margin model  # noqa: E501
+
+        :param cross_initial_margin: The cross_initial_margin of this FuturesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._cross_initial_margin = cross_initial_margin
+
+    @property
+    def cross_maintenance_margin(self):
+        """Gets the cross_maintenance_margin of this FuturesAccount.  # noqa: E501
+
+        Maintain deposit in full warehouse, suitable for new classic account margin models  # noqa: E501
+
+        :return: The cross_maintenance_margin of this FuturesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._cross_maintenance_margin
+
+    @cross_maintenance_margin.setter
+    def cross_maintenance_margin(self, cross_maintenance_margin):
+        """Sets the cross_maintenance_margin of this FuturesAccount.
+
+        Maintain deposit in full warehouse, suitable for new classic account margin models  # noqa: E501
+
+        :param cross_maintenance_margin: The cross_maintenance_margin of this FuturesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._cross_maintenance_margin = cross_maintenance_margin
+
+    @property
+    def cross_unrealised_pnl(self):
+        """Gets the cross_unrealised_pnl of this FuturesAccount.  # noqa: E501
+
+        The full warehouse does not achieve profit and loss, suitable for the new classic account margin model  # noqa: E501
+
+        :return: The cross_unrealised_pnl of this FuturesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._cross_unrealised_pnl
+
+    @cross_unrealised_pnl.setter
+    def cross_unrealised_pnl(self, cross_unrealised_pnl):
+        """Sets the cross_unrealised_pnl of this FuturesAccount.
+
+        The full warehouse does not achieve profit and loss, suitable for the new classic account margin model  # noqa: E501
+
+        :param cross_unrealised_pnl: The cross_unrealised_pnl of this FuturesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._cross_unrealised_pnl = cross_unrealised_pnl
+
+    @property
+    def cross_available(self):
+        """Gets the cross_available of this FuturesAccount.  # noqa: E501
+
+        Full warehouse available amount, suitable for the new classic account margin model  # noqa: E501
+
+        :return: The cross_available of this FuturesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._cross_available
+
+    @cross_available.setter
+    def cross_available(self, cross_available):
+        """Sets the cross_available of this FuturesAccount.
+
+        Full warehouse available amount, suitable for the new classic account margin model  # noqa: E501
+
+        :param cross_available: The cross_available of this FuturesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._cross_available = cross_available
+
+    @property
+    def isolated_position_margin(self):
+        """Gets the isolated_position_margin of this FuturesAccount.  # noqa: E501
+
+        Ware -position margin, suitable for the new classic account margin model  # noqa: E501
+
+        :return: The isolated_position_margin of this FuturesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._isolated_position_margin
+
+    @isolated_position_margin.setter
+    def isolated_position_margin(self, isolated_position_margin):
+        """Sets the isolated_position_margin of this FuturesAccount.
+
+        Ware -position margin, suitable for the new classic account margin model  # noqa: E501
+
+        :param isolated_position_margin: The isolated_position_margin of this FuturesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._isolated_position_margin = isolated_position_margin
+
+    @property
+    def enable_new_dual_mode(self):
+        """Gets the enable_new_dual_mode of this FuturesAccount.  # noqa: E501
+
+        Whether to open a new two-way position mode  # noqa: E501
+
+        :return: The enable_new_dual_mode of this FuturesAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_new_dual_mode
+
+    @enable_new_dual_mode.setter
+    def enable_new_dual_mode(self, enable_new_dual_mode):
+        """Sets the enable_new_dual_mode of this FuturesAccount.
+
+        Whether to open a new two-way position mode  # noqa: E501
+
+        :param enable_new_dual_mode: The enable_new_dual_mode of this FuturesAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_new_dual_mode = enable_new_dual_mode
+
+    @property
+    def margin_mode(self):
+        """Gets the margin_mode of this FuturesAccount.  # noqa: E501
+
+        Margin mode, 0-classic margin mode, 1-cross-currency margin mode, 2-combined margin mode  # noqa: E501
+
+        :return: The margin_mode of this FuturesAccount.  # noqa: E501
+        :rtype: int
+        """
+        return self._margin_mode
+
+    @margin_mode.setter
+    def margin_mode(self, margin_mode):
+        """Sets the margin_mode of this FuturesAccount.
+
+        Margin mode, 0-classic margin mode, 1-cross-currency margin mode, 2-combined margin mode  # noqa: E501
+
+        :param margin_mode: The margin_mode of this FuturesAccount.  # noqa: E501
+        :type: int
+        """
+
+        self._margin_mode = margin_mode
 
     @property
     def history(self):
@@ -462,16 +669,18 @@ class FuturesAccount(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

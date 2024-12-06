@@ -40,6 +40,7 @@ from gate_api.models.collateral_align import CollateralAlign
 from gate_api.models.collateral_currency import CollateralCurrency
 from gate_api.models.collateral_currency_info import CollateralCurrencyInfo
 from gate_api.models.collateral_currency_res import CollateralCurrencyRes
+from gate_api.models.collateral_current_rate import CollateralCurrentRate
 from gate_api.models.collateral_fix_rate import CollateralFixRate
 from gate_api.models.collateral_loan_currency import CollateralLoanCurrency
 from gate_api.models.collateral_ltv import CollateralLtv
@@ -109,6 +110,7 @@ from gate_api.models.futures_trade import FuturesTrade
 from gate_api.models.index_constituent import IndexConstituent
 from gate_api.models.inline_object import InlineObject
 from gate_api.models.inline_response200 import InlineResponse200
+from gate_api.models.inline_response2001 import InlineResponse2001
 from gate_api.models.insurance_record import InsuranceRecord
 from gate_api.models.ledger_record import LedgerRecord
 from gate_api.models.liquidate_order import LiquidateOrder

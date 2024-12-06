@@ -40,7 +40,7 @@ class OptionsMyTrade(object):
         'size': 'int',
         'price': 'str',
         'underlying_price': 'str',
-        'role': 'str',
+        'role': 'str'
     }
 
     attribute_map = {
@@ -51,21 +51,10 @@ class OptionsMyTrade(object):
         'size': 'size',
         'price': 'price',
         'underlying_price': 'underlying_price',
-        'role': 'role',
+        'role': 'role'
     }
 
-    def __init__(
-        self,
-        id=None,
-        create_time=None,
-        contract=None,
-        order_id=None,
-        size=None,
-        price=None,
-        underlying_price=None,
-        role=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, id=None, create_time=None, contract=None, order_id=None, size=None, price=None, underlying_price=None, role=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, float, str, int, int, str, str, str, Configuration) -> None
         """OptionsMyTrade - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -283,7 +272,8 @@ class OptionsMyTrade(object):
         allowed_values = ["taker", "maker"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and role not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `role` ({0}), must be one of {1}".format(role, allowed_values)  # noqa: E501
+                "Invalid value for `role` ({0}), must be one of {1}"  # noqa: E501
+                .format(role, allowed_values)
             )
 
         self._role = role
@@ -295,16 +285,18 @@ class OptionsMyTrade(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

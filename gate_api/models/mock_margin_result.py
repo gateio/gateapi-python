@@ -39,7 +39,7 @@ class MockMarginResult(object):
         'mr1': 'str',
         'mr2': 'str',
         'mr3': 'str',
-        'mr4': 'str',
+        'mr4': 'str'
     }
 
     attribute_map = {
@@ -49,20 +49,10 @@ class MockMarginResult(object):
         'mr1': 'mr1',
         'mr2': 'mr2',
         'mr3': 'mr3',
-        'mr4': 'mr4',
+        'mr4': 'mr4'
     }
 
-    def __init__(
-        self,
-        type=None,
-        profit_loss_ranges=None,
-        max_loss=None,
-        mr1=None,
-        mr2=None,
-        mr3=None,
-        mr4=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, type=None, profit_loss_ranges=None, max_loss=None, mr1=None, mr2=None, mr3=None, mr4=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, list[ProfitLossRange], ProfitLossRange, str, str, str, str, Configuration) -> None
         """MockMarginResult - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -261,16 +251,18 @@ class MockMarginResult(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

@@ -39,7 +39,7 @@ class UnifiedLeverageConfig(object):
         'debit': 'str',
         'available_margin': 'str',
         'borrowable': 'str',
-        'except_leverage_borrowable': 'str',
+        'except_leverage_borrowable': 'str'
     }
 
     attribute_map = {
@@ -49,20 +49,10 @@ class UnifiedLeverageConfig(object):
         'debit': 'debit',
         'available_margin': 'available_margin',
         'borrowable': 'borrowable',
-        'except_leverage_borrowable': 'except_leverage_borrowable',
+        'except_leverage_borrowable': 'except_leverage_borrowable'
     }
 
-    def __init__(
-        self,
-        current_leverage=None,
-        min_leverage=None,
-        max_leverage=None,
-        debit=None,
-        available_margin=None,
-        borrowable=None,
-        except_leverage_borrowable=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, current_leverage=None, min_leverage=None, max_leverage=None, debit=None, available_margin=None, borrowable=None, except_leverage_borrowable=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, str, str, Configuration) -> None
         """UnifiedLeverageConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -261,16 +251,18 @@ class UnifiedLeverageConfig(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

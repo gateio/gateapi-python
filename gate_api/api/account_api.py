@@ -18,7 +18,10 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
-from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
+from gate_api.exceptions import (  # noqa: F401
+    ApiTypeError,
+    ApiValueError
+)
 
 
 class AccountApi(object):
@@ -81,12 +84,23 @@ class AccountApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_account_detail" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_account_detail" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -103,14 +117,14 @@ class AccountApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/account/detail',
-            'GET',
+            '/account/detail', 'GET',
             path_params,
             query_params,
             header_params,
@@ -123,8 +137,7 @@ class AccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_account_rate_limit(self, **kwargs):  # noqa: E501
         """Get user transaction rate limit information  # noqa: E501
@@ -174,12 +187,23 @@ class AccountApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_account_rate_limit" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_account_rate_limit" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -196,14 +220,14 @@ class AccountApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/account/rate_limit',
-            'GET',
+            '/account/rate_limit', 'GET',
             path_params,
             query_params,
             header_params,
@@ -216,8 +240,7 @@ class AccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_stp_groups(self, **kwargs):  # noqa: E501
         """List STP Groups  # noqa: E501
@@ -271,12 +294,24 @@ class AccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['name']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'name'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_stp_groups" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_stp_groups" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -295,14 +330,14 @@ class AccountApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/account/stp_groups',
-            'GET',
+            '/account/stp_groups', 'GET',
             path_params,
             query_params,
             header_params,
@@ -315,8 +350,7 @@ class AccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def create_stp_group(self, stp_group, **kwargs):  # noqa: E501
         """Create STP Group  # noqa: E501
@@ -370,21 +404,30 @@ class AccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['stp_group']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'stp_group'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_stp_group" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_stp_group" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'stp_group' is set
-        if self.api_client.client_side_validation and (
-            'stp_group' not in local_var_params or local_var_params['stp_group'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `stp_group` when calling `create_stp_group`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('stp_group' not in local_var_params or  # noqa: E501
+                                                        local_var_params['stp_group'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `stp_group` when calling `create_stp_group`")  # noqa: E501
 
         collection_formats = {}
 
@@ -401,19 +444,18 @@ class AccountApi(object):
         if 'stp_group' in local_var_params:
             body_params = local_var_params['stp_group']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/account/stp_groups',
-            'POST',
+            '/account/stp_groups', 'POST',
             path_params,
             query_params,
             header_params,
@@ -426,8 +468,7 @@ class AccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_stp_groups_users(self, stp_id, **kwargs):  # noqa: E501
         """List users of the STP group  # noqa: E501
@@ -481,21 +522,30 @@ class AccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['stp_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'stp_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_stp_groups_users" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_stp_groups_users" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'stp_id' is set
-        if self.api_client.client_side_validation and (
-            'stp_id' not in local_var_params or local_var_params['stp_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `stp_id` when calling `list_stp_groups_users`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('stp_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['stp_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `stp_id` when calling `list_stp_groups_users`")  # noqa: E501
 
         collection_formats = {}
 
@@ -512,14 +562,14 @@ class AccountApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/account/stp_groups/{stp_id}/users',
-            'GET',
+            '/account/stp_groups/{stp_id}/users', 'GET',
             path_params,
             query_params,
             header_params,
@@ -532,8 +582,7 @@ class AccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def add_stp_group_users(self, stp_id, request_body, **kwargs):  # noqa: E501
         """Add users to the STP group  # noqa: E501
@@ -589,28 +638,35 @@ class AccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['stp_id', 'request_body']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'stp_id',
+            'request_body'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method add_stp_group_users" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_stp_group_users" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'stp_id' is set
-        if self.api_client.client_side_validation and (
-            'stp_id' not in local_var_params or local_var_params['stp_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `stp_id` when calling `add_stp_group_users`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('stp_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['stp_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `stp_id` when calling `add_stp_group_users`")  # noqa: E501
         # verify the required parameter 'request_body' is set
-        if self.api_client.client_side_validation and (
-            'request_body' not in local_var_params or local_var_params['request_body'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `request_body` when calling `add_stp_group_users`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('request_body' not in local_var_params or  # noqa: E501
+                                                        local_var_params['request_body'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `request_body` when calling `add_stp_group_users`")  # noqa: E501
 
         collection_formats = {}
 
@@ -629,19 +685,18 @@ class AccountApi(object):
         if 'request_body' in local_var_params:
             body_params = local_var_params['request_body']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/account/stp_groups/{stp_id}/users',
-            'POST',
+            '/account/stp_groups/{stp_id}/users', 'POST',
             path_params,
             query_params,
             header_params,
@@ -654,8 +709,7 @@ class AccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def delete_stp_group_users(self, stp_id, user_id, **kwargs):  # noqa: E501
         """Delete the user in the STP group  # noqa: E501
@@ -711,28 +765,35 @@ class AccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['stp_id', 'user_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'stp_id',
+            'user_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method delete_stp_group_users" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_stp_group_users" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'stp_id' is set
-        if self.api_client.client_side_validation and (
-            'stp_id' not in local_var_params or local_var_params['stp_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `stp_id` when calling `delete_stp_group_users`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('stp_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['stp_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `stp_id` when calling `delete_stp_group_users`")  # noqa: E501
         # verify the required parameter 'user_id' is set
-        if self.api_client.client_side_validation and (
-            'user_id' not in local_var_params or local_var_params['user_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `user_id` when calling `delete_stp_group_users`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('user_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['user_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `user_id` when calling `delete_stp_group_users`")  # noqa: E501
 
         collection_formats = {}
 
@@ -751,14 +812,14 @@ class AccountApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/account/stp_groups/{stp_id}/users',
-            'DELETE',
+            '/account/stp_groups/{stp_id}/users', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -771,8 +832,7 @@ class AccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_debit_fee(self, **kwargs):  # noqa: E501
         """Query GT deduction configuration.  # noqa: E501
@@ -791,7 +851,7 @@ class AccountApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: gate_api.InlineResponse200
+        :rtype: gate_api.InlineResponse2001
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -817,19 +877,30 @@ class AccountApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: tuple(gate_api.InlineResponse200, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(gate_api.InlineResponse2001, status_code(int), headers(HTTPHeaderDict))
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_debit_fee" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_debit_fee" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -846,28 +917,27 @@ class AccountApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/account/debit_fee',
-            'GET',
+            '/account/debit_fee', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse200',  # noqa: E501
+            response_type='InlineResponse2001',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def set_debit_fee(self, inline_object, **kwargs):  # noqa: E501
         """Set GT deduction.  # noqa: E501
@@ -921,21 +991,30 @@ class AccountApi(object):
 
         local_var_params = locals()
 
-        all_params = ['inline_object']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'inline_object'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method set_debit_fee" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_debit_fee" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'inline_object' is set
-        if self.api_client.client_side_validation and (
-            'inline_object' not in local_var_params or local_var_params['inline_object'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `inline_object` when calling `set_debit_fee`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('inline_object' not in local_var_params or  # noqa: E501
+                                                        local_var_params['inline_object'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `inline_object` when calling `set_debit_fee`")  # noqa: E501
 
         collection_formats = {}
 
@@ -953,15 +1032,13 @@ class AccountApi(object):
             body_params = local_var_params['inline_object']
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/account/debit_fee',
-            'POST',
+            '/account/debit_fee', 'POST',
             path_params,
             query_params,
             header_params,
@@ -974,5 +1051,4 @@ class AccountApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)

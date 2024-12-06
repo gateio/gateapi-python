@@ -39,7 +39,7 @@ class SpotPricePutOrder(object):
         'amount': 'str',
         'account': 'str',
         'time_in_force': 'str',
-        'text': 'str',
+        'text': 'str'
     }
 
     attribute_map = {
@@ -49,20 +49,10 @@ class SpotPricePutOrder(object):
         'amount': 'amount',
         'account': 'account',
         'time_in_force': 'time_in_force',
-        'text': 'text',
+        'text': 'text'
     }
 
-    def __init__(
-        self,
-        type='limit',
-        side=None,
-        price=None,
-        amount=None,
-        account='normal',
-        time_in_force='gtc',
-        text=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, type='limit', side=None, price=None, amount=None, account='normal', time_in_force='gtc', text=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, str, str, Configuration) -> None
         """SpotPricePutOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -112,7 +102,8 @@ class SpotPricePutOrder(object):
         allowed_values = ["limit", "market"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}".format(type, allowed_values)  # noqa: E501
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
             )
 
         self._type = type
@@ -142,7 +133,8 @@ class SpotPricePutOrder(object):
         allowed_values = ["buy", "sell"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and side not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `side` ({0}), must be one of {1}".format(side, allowed_values)  # noqa: E501
+                "Invalid value for `side` ({0}), must be one of {1}"  # noqa: E501
+                .format(side, allowed_values)
             )
 
         self._side = side
@@ -222,7 +214,8 @@ class SpotPricePutOrder(object):
         allowed_values = ["normal", "margin", "cross_margin"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and account not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `account` ({0}), must be one of {1}".format(account, allowed_values)  # noqa: E501
+                "Invalid value for `account` ({0}), must be one of {1}"  # noqa: E501
+                .format(account, allowed_values)
             )
 
         self._account = account
@@ -250,9 +243,8 @@ class SpotPricePutOrder(object):
         allowed_values = ["gtc", "ioc"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and time_in_force not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `time_in_force` ({0}), must be one of {1}".format(  # noqa: E501
-                    time_in_force, allowed_values
-                )
+                "Invalid value for `time_in_force` ({0}), must be one of {1}"  # noqa: E501
+                .format(time_in_force, allowed_values)
             )
 
         self._time_in_force = time_in_force
@@ -287,16 +279,18 @@ class SpotPricePutOrder(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

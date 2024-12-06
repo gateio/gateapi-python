@@ -44,7 +44,7 @@ class StructuredGetProjectList(object):
         'watch_market': 'str',
         'start_time': 'int',
         'end_time': 'int',
-        'status': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
@@ -59,25 +59,10 @@ class StructuredGetProjectList(object):
         'watch_market': 'watch_market',
         'start_time': 'start_time',
         'end_time': 'end_time',
-        'status': 'status',
+        'status': 'status'
     }
 
-    def __init__(
-        self,
-        id=None,
-        type=None,
-        name_en=None,
-        investment_coin=None,
-        investment_period=None,
-        min_annual_rate=None,
-        mid_annual_rate=None,
-        max_annual_rate=None,
-        watch_market=None,
-        start_time=None,
-        end_time=None,
-        status=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, id=None, type=None, name_en=None, investment_coin=None, investment_period=None, min_annual_rate=None, mid_annual_rate=None, max_annual_rate=None, watch_market=None, start_time=None, end_time=None, status=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, str, str, str, str, str, str, str, str, int, int, str, Configuration) -> None
         """StructuredGetProjectList - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -406,16 +391,18 @@ class StructuredGetProjectList(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

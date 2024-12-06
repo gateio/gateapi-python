@@ -38,7 +38,7 @@ class AccountDetail(object):
         'user_id': 'int',
         'tier': 'int',
         'key': 'AccountDetailKey',
-        'copy_trading_role': 'int',
+        'copy_trading_role': 'int'
     }
 
     attribute_map = {
@@ -47,19 +47,10 @@ class AccountDetail(object):
         'user_id': 'user_id',
         'tier': 'tier',
         'key': 'key',
-        'copy_trading_role': 'copy_trading_role',
+        'copy_trading_role': 'copy_trading_role'
     }
 
-    def __init__(
-        self,
-        ip_whitelist=None,
-        currency_pairs=None,
-        user_id=None,
-        tier=None,
-        key=None,
-        copy_trading_role=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, ip_whitelist=None, currency_pairs=None, user_id=None, tier=None, key=None, copy_trading_role=None, local_vars_configuration=None):  # noqa: E501
         # type: (list[str], list[str], int, int, AccountDetailKey, int, Configuration) -> None
         """AccountDetail - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -230,16 +221,18 @@ class AccountDetail(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

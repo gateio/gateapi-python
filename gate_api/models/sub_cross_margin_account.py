@@ -48,7 +48,7 @@ class SubCrossMarginAccount(object):
         'total_maintenance_margin': 'str',
         'total_initial_margin_rate': 'str',
         'total_maintenance_margin_rate': 'str',
-        'total_available_margin': 'str',
+        'total_available_margin': 'str'
     }
 
     attribute_map = {
@@ -67,29 +67,10 @@ class SubCrossMarginAccount(object):
         'total_maintenance_margin': 'total_maintenance_margin',
         'total_initial_margin_rate': 'total_initial_margin_rate',
         'total_maintenance_margin_rate': 'total_maintenance_margin_rate',
-        'total_available_margin': 'total_available_margin',
+        'total_available_margin': 'total_available_margin'
     }
 
-    def __init__(
-        self,
-        user_id=None,
-        locked=None,
-        balances=None,
-        total=None,
-        borrowed=None,
-        borrowed_net=None,
-        net=None,
-        leverage=None,
-        interest=None,
-        risk=None,
-        total_initial_margin=None,
-        total_margin_balance=None,
-        total_maintenance_margin=None,
-        total_initial_margin_rate=None,
-        total_maintenance_margin_rate=None,
-        total_available_margin=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, user_id=None, locked=None, balances=None, total=None, borrowed=None, borrowed_net=None, net=None, leverage=None, interest=None, risk=None, total_initial_margin=None, total_margin_balance=None, total_maintenance_margin=None, total_initial_margin_rate=None, total_maintenance_margin_rate=None, total_available_margin=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, bool, dict(str, CrossMarginBalance1), str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """SubCrossMarginAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -520,16 +501,18 @@ class SubCrossMarginAccount(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

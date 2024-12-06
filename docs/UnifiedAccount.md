@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **refresh_time** | **int** | Time of the most recent refresh | [optional] 
 **locked** | **bool** | Whether account is locked | [optional] 
 **balances** | [**dict(str, UnifiedBalance)**](UnifiedBalance.md) |  | [optional] 
-**total** | **str** | The total asset value in USD, calculated as the sum of the product of &#x60;(available + freeze) * price&#x60; for all currencies. | [optional] 
+**total** | **str** | Total account assets converted to USD, i.e. the sum of &#x60;(available + freeze) * price&#x60;  in all currencies (deprecated, to be deprecated, replaced by unified_account_total) | [optional] 
 **borrowed** | **str** | The total borrowed amount in USD, calculated as the sum of the product of &#x60;borrowed * price&#x60; for all currencies (excluding points cards). | [optional] 
 **total_initial_margin** | **str** | Total initial margin | [optional] 
 **total_margin_balance** | **str** | Total margin balance | [optional] 

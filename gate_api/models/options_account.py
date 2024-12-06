@@ -51,7 +51,7 @@ class OptionsAccount(object):
         'point': 'str',
         'currency': 'str',
         'orders_limit': 'int',
-        'position_notional_limit': 'int',
+        'position_notional_limit': 'int'
     }
 
     attribute_map = {
@@ -73,32 +73,10 @@ class OptionsAccount(object):
         'point': 'point',
         'currency': 'currency',
         'orders_limit': 'orders_limit',
-        'position_notional_limit': 'position_notional_limit',
+        'position_notional_limit': 'position_notional_limit'
     }
 
-    def __init__(
-        self,
-        user=None,
-        total=None,
-        position_value=None,
-        equity=None,
-        short_enabled=None,
-        mmp_enabled=None,
-        liq_triggered=None,
-        margin_mode=None,
-        unrealised_pnl=None,
-        init_margin=None,
-        maint_margin=None,
-        order_margin=None,
-        ask_order_margin=None,
-        bid_order_margin=None,
-        available=None,
-        point=None,
-        currency=None,
-        orders_limit=None,
-        position_notional_limit=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, user=None, total=None, position_value=None, equity=None, short_enabled=None, mmp_enabled=None, liq_triggered=None, margin_mode=None, unrealised_pnl=None, init_margin=None, maint_margin=None, order_margin=None, ask_order_margin=None, bid_order_margin=None, available=None, point=None, currency=None, orders_limit=None, position_notional_limit=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, str, str, str, bool, bool, bool, int, str, str, str, str, str, str, str, str, str, int, int, Configuration) -> None
         """OptionsAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -349,9 +327,8 @@ class OptionsAccount(object):
         allowed_values = [0, 1, 2]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and margin_mode not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `margin_mode` ({0}), must be one of {1}".format(  # noqa: E501
-                    margin_mode, allowed_values
-                )
+                "Invalid value for `margin_mode` ({0}), must be one of {1}"  # noqa: E501
+                .format(margin_mode, allowed_values)
             )
 
         self._margin_mode = margin_mode
@@ -616,16 +593,18 @@ class OptionsAccount(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

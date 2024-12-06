@@ -39,7 +39,7 @@ class UnifiedPortfolioInput(object):
         'futures_orders': 'list[MockFuturesOrder]',
         'options_positions': 'list[MockOptionsPosition]',
         'options_orders': 'list[MockOptionsOrder]',
-        'spot_hedge': 'bool',
+        'spot_hedge': 'bool'
     }
 
     attribute_map = {
@@ -49,20 +49,10 @@ class UnifiedPortfolioInput(object):
         'futures_orders': 'futures_orders',
         'options_positions': 'options_positions',
         'options_orders': 'options_orders',
-        'spot_hedge': 'spot_hedge',
+        'spot_hedge': 'spot_hedge'
     }
 
-    def __init__(
-        self,
-        spot_balances=None,
-        spot_orders=None,
-        futures_positions=None,
-        futures_orders=None,
-        options_positions=None,
-        options_orders=None,
-        spot_hedge=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, spot_balances=None, spot_orders=None, futures_positions=None, futures_orders=None, options_positions=None, options_orders=None, spot_hedge=None, local_vars_configuration=None):  # noqa: E501
         # type: (list[MockSpotBalance], list[MockSpotOrder], list[MockFuturesPosition], list[MockFuturesOrder], list[MockOptionsPosition], list[MockOptionsOrder], bool, Configuration) -> None
         """UnifiedPortfolioInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -261,16 +251,18 @@ class UnifiedPortfolioInput(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

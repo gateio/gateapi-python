@@ -32,12 +32,22 @@ class PlaceDualInvestmentOrder(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'plan_id': 'str', 'copies': 'str', 'is_max': 'int'}
+    openapi_types = {
+        'plan_id': 'str',
+        'copies': 'str',
+        'is_max': 'int',
+        'amount': 'str'
+    }
 
-    attribute_map = {'plan_id': 'plan_id', 'copies': 'copies', 'is_max': 'is_max'}
+    attribute_map = {
+        'plan_id': 'plan_id',
+        'copies': 'copies',
+        'is_max': 'is_max',
+        'amount': 'amount'
+    }
 
-    def __init__(self, plan_id=None, copies=None, is_max=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, int, Configuration) -> None
+    def __init__(self, plan_id=None, copies=None, is_max=None, amount=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, int, str, Configuration) -> None
         """PlaceDualInvestmentOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -46,12 +56,15 @@ class PlaceDualInvestmentOrder(object):
         self._plan_id = None
         self._copies = None
         self._is_max = None
+        self._amount = None
         self.discriminator = None
 
         self.plan_id = plan_id
-        self.copies = copies
+        if copies is not None:
+            self.copies = copies
         if is_max is not None:
             self.is_max = is_max
+        self.amount = amount
 
     @property
     def plan_id(self):
@@ -82,7 +95,7 @@ class PlaceDualInvestmentOrder(object):
     def copies(self):
         """Gets the copies of this PlaceDualInvestmentOrder.  # noqa: E501
 
-        Copies  # noqa: E501
+        The number of copies is mutually exclusive with the amount field and will be deprecated soon. It is recommended to use the amount parameter.  # noqa: E501
 
         :return: The copies of this PlaceDualInvestmentOrder.  # noqa: E501
         :rtype: str
@@ -93,13 +106,11 @@ class PlaceDualInvestmentOrder(object):
     def copies(self, copies):
         """Sets the copies of this PlaceDualInvestmentOrder.
 
-        Copies  # noqa: E501
+        The number of copies is mutually exclusive with the amount field and will be deprecated soon. It is recommended to use the amount parameter.  # noqa: E501
 
         :param copies: The copies of this PlaceDualInvestmentOrder.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and copies is None:  # noqa: E501
-            raise ValueError("Invalid value for `copies`, must not be `None`")  # noqa: E501
 
         self._copies = copies
 
@@ -107,7 +118,7 @@ class PlaceDualInvestmentOrder(object):
     def is_max(self):
         """Gets the is_max of this PlaceDualInvestmentOrder.  # noqa: E501
 
-        Is it the maximum subscription?  # noqa: E501
+        Whether to purchase at the maximum. Mutually exclusive with the amount field. Will be deprecated soon. It is recommended to use the amount parameter.  # noqa: E501
 
         :return: The is_max of this PlaceDualInvestmentOrder.  # noqa: E501
         :rtype: int
@@ -118,13 +129,38 @@ class PlaceDualInvestmentOrder(object):
     def is_max(self, is_max):
         """Sets the is_max of this PlaceDualInvestmentOrder.
 
-        Is it the maximum subscription?  # noqa: E501
+        Whether to purchase at the maximum. Mutually exclusive with the amount field. Will be deprecated soon. It is recommended to use the amount parameter.  # noqa: E501
 
         :param is_max: The is_max of this PlaceDualInvestmentOrder.  # noqa: E501
         :type: int
         """
 
         self._is_max = is_max
+
+    @property
+    def amount(self):
+        """Gets the amount of this PlaceDualInvestmentOrder.  # noqa: E501
+
+        Subscription amount, mutually exclusive with the copies field  # noqa: E501
+
+        :return: The amount of this PlaceDualInvestmentOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._amount
+
+    @amount.setter
+    def amount(self, amount):
+        """Sets the amount of this PlaceDualInvestmentOrder.
+
+        Subscription amount, mutually exclusive with the copies field  # noqa: E501
+
+        :param amount: The amount of this PlaceDualInvestmentOrder.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and amount is None:  # noqa: E501
+            raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501
+
+        self._amount = amount
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -133,16 +169,18 @@ class PlaceDualInvestmentOrder(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

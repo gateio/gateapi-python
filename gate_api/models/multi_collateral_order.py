@@ -46,7 +46,7 @@ class MultiCollateralOrder(object):
         'total_left_repay_usdt': 'str',
         'total_left_collateral_usdt': 'str',
         'borrow_currencies': 'list[BorrowCurrencyInfo]',
-        'collateral_currencies': 'list[CollateralCurrencyInfo]',
+        'collateral_currencies': 'list[CollateralCurrencyInfo]'
     }
 
     attribute_map = {
@@ -63,27 +63,10 @@ class MultiCollateralOrder(object):
         'total_left_repay_usdt': 'total_left_repay_usdt',
         'total_left_collateral_usdt': 'total_left_collateral_usdt',
         'borrow_currencies': 'borrow_currencies',
-        'collateral_currencies': 'collateral_currencies',
+        'collateral_currencies': 'collateral_currencies'
     }
 
-    def __init__(
-        self,
-        order_id=None,
-        order_type=None,
-        fixed_type=None,
-        fixed_rate=None,
-        expire_time=None,
-        auto_renew=None,
-        auto_repay=None,
-        current_ltv=None,
-        status=None,
-        borrow_time=None,
-        total_left_repay_usdt=None,
-        total_left_collateral_usdt=None,
-        borrow_currencies=None,
-        collateral_currencies=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, order_id=None, order_type=None, fixed_type=None, fixed_rate=None, expire_time=None, auto_renew=None, auto_repay=None, current_ltv=None, status=None, borrow_time=None, total_left_repay_usdt=None, total_left_collateral_usdt=None, borrow_currencies=None, collateral_currencies=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, int, bool, bool, str, str, int, str, str, list[BorrowCurrencyInfo], list[CollateralCurrencyInfo], Configuration) -> None
         """MultiCollateralOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -464,16 +447,18 @@ class MultiCollateralOrder(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

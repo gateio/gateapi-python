@@ -32,9 +32,17 @@ class SubUserMode(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'user_id': 'int', 'is_unified': 'bool', 'mode': 'str'}
+    openapi_types = {
+        'user_id': 'int',
+        'is_unified': 'bool',
+        'mode': 'str'
+    }
 
-    attribute_map = {'user_id': 'user_id', 'is_unified': 'is_unified', 'mode': 'mode'}
+    attribute_map = {
+        'user_id': 'user_id',
+        'is_unified': 'is_unified',
+        'mode': 'mode'
+    }
 
     def __init__(self, user_id=None, is_unified=None, mode=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, bool, str, Configuration) -> None
@@ -131,16 +139,18 @@ class SubUserMode(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

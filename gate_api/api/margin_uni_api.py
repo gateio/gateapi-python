@@ -18,7 +18,10 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
-from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
+from gate_api.exceptions import (  # noqa: F401
+    ApiTypeError,
+    ApiValueError
+)
 
 
 class MarginUniApi(object):
@@ -81,12 +84,23 @@ class MarginUniApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_uni_currency_pairs" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_uni_currency_pairs" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -103,14 +117,14 @@ class MarginUniApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/uni/currency_pairs',
-            'GET',
+            '/margin/uni/currency_pairs', 'GET',
             path_params,
             query_params,
             header_params,
@@ -123,8 +137,7 @@ class MarginUniApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_uni_currency_pair(self, currency_pair, **kwargs):  # noqa: E501
         """Get detail of lending market  # noqa: E501
@@ -176,21 +189,30 @@ class MarginUniApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency_pair'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_uni_currency_pair" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_uni_currency_pair" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and (
-            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency_pair` when calling `get_uni_currency_pair`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency_pair' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency_pair'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency_pair` when calling `get_uni_currency_pair`")  # noqa: E501
 
         collection_formats = {}
 
@@ -207,14 +229,14 @@ class MarginUniApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/uni/currency_pairs/{currency_pair}',
-            'GET',
+            '/margin/uni/currency_pairs/{currency_pair}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -227,8 +249,7 @@ class MarginUniApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_margin_uni_estimate_rate(self, currencies, **kwargs):  # noqa: E501
         """Estimate interest Rate  # noqa: E501
@@ -282,36 +303,37 @@ class MarginUniApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currencies']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currencies'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method get_margin_uni_estimate_rate" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_margin_uni_estimate_rate" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currencies' is set
-        if self.api_client.client_side_validation and (
-            'currencies' not in local_var_params or local_var_params['currencies'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currencies` when calling `get_margin_uni_estimate_rate`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currencies' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currencies'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currencies` when calling `get_margin_uni_estimate_rate`")  # noqa: E501
 
-        if self.api_client.client_side_validation and (
-            'currencies' in local_var_params and len(local_var_params['currencies']) > 10  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `currencies` when calling `get_margin_uni_estimate_rate`, number of items must be less than or equal to `10`"
-            )  # noqa: E501
-        if self.api_client.client_side_validation and (
-            'currencies' in local_var_params and len(local_var_params['currencies']) < 1  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `currencies` when calling `get_margin_uni_estimate_rate`, number of items must be greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currencies' in local_var_params and  # noqa: E501
+                                                        len(local_var_params['currencies']) > 10):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `currencies` when calling `get_margin_uni_estimate_rate`, number of items must be less than or equal to `10`")  # noqa: E501
+        if self.api_client.client_side_validation and ('currencies' in local_var_params and  # noqa: E501
+                                                        len(local_var_params['currencies']) < 1):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `currencies` when calling `get_margin_uni_estimate_rate`, number of items must be greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -328,14 +350,14 @@ class MarginUniApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/uni/estimate_rate',
-            'GET',
+            '/margin/uni/estimate_rate', 'GET',
             path_params,
             query_params,
             header_params,
@@ -348,8 +370,7 @@ class MarginUniApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_uni_loans(self, **kwargs):  # noqa: E501
         """List loans  # noqa: E501
@@ -407,33 +428,36 @@ class MarginUniApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair', 'currency', 'page', 'limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency_pair',
+            'currency',
+            'page',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_uni_loans" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_uni_loans" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_uni_loans`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_uni_loans`, must be a value less than or equal to `100`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_uni_loans`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_uni_loans`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_uni_loans`, must be a value less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_uni_loans`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -455,14 +479,14 @@ class MarginUniApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/uni/loans',
-            'GET',
+            '/margin/uni/loans', 'GET',
             path_params,
             query_params,
             header_params,
@@ -475,8 +499,7 @@ class MarginUniApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def create_uni_loan(self, create_uni_loan, **kwargs):  # noqa: E501
         """Borrow or repay  # noqa: E501
@@ -528,21 +551,30 @@ class MarginUniApi(object):
 
         local_var_params = locals()
 
-        all_params = ['create_uni_loan']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'create_uni_loan'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_uni_loan" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_uni_loan" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'create_uni_loan' is set
-        if self.api_client.client_side_validation and (
-            'create_uni_loan' not in local_var_params or local_var_params['create_uni_loan'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `create_uni_loan` when calling `create_uni_loan`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('create_uni_loan' not in local_var_params or  # noqa: E501
+                                                        local_var_params['create_uni_loan'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `create_uni_loan` when calling `create_uni_loan`")  # noqa: E501
 
         collection_formats = {}
 
@@ -560,15 +592,13 @@ class MarginUniApi(object):
             body_params = local_var_params['create_uni_loan']
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/uni/loans',
-            'POST',
+            '/margin/uni/loans', 'POST',
             path_params,
             query_params,
             header_params,
@@ -581,8 +611,7 @@ class MarginUniApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_uni_loan_records(self, **kwargs):  # noqa: E501
         """Get load records  # noqa: E501
@@ -642,33 +671,37 @@ class MarginUniApi(object):
 
         local_var_params = locals()
 
-        all_params = ['type', 'currency', 'currency_pair', 'page', 'limit']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'type',
+            'currency',
+            'currency_pair',
+            'page',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_uni_loan_records" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_uni_loan_records" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_uni_loan_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_uni_loan_records`, must be a value less than or equal to `100`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_uni_loan_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_uni_loan_records`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_uni_loan_records`, must be a value less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_uni_loan_records`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -692,14 +725,14 @@ class MarginUniApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/uni/loan_records',
-            'GET',
+            '/margin/uni/loan_records', 'GET',
             path_params,
             query_params,
             header_params,
@@ -712,8 +745,7 @@ class MarginUniApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_uni_loan_interest_records(self, **kwargs):  # noqa: E501
         """List interest records  # noqa: E501
@@ -775,35 +807,38 @@ class MarginUniApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency_pair', 'currency', 'page', 'limit', '_from', 'to']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency_pair',
+            'currency',
+            'page',
+            'limit',
+            '_from',
+            'to'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_uni_loan_interest_records" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_uni_loan_interest_records" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_uni_loan_interest_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_uni_loan_interest_records`, must be a value less than or equal to `1000`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_uni_loan_interest_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_uni_loan_interest_records`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_uni_loan_interest_records`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_uni_loan_interest_records`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -829,14 +864,14 @@ class MarginUniApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/uni/interest_records',
-            'GET',
+            '/margin/uni/interest_records', 'GET',
             path_params,
             query_params,
             header_params,
@@ -849,8 +884,7 @@ class MarginUniApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_uni_borrowable(self, currency, currency_pair, **kwargs):  # noqa: E501
         """Get maximum borrowable  # noqa: E501
@@ -904,28 +938,35 @@ class MarginUniApi(object):
 
         local_var_params = locals()
 
-        all_params = ['currency', 'currency_pair']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'currency',
+            'currency_pair'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_uni_borrowable" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_uni_borrowable" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `get_uni_borrowable`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `get_uni_borrowable`")  # noqa: E501
         # verify the required parameter 'currency_pair' is set
-        if self.api_client.client_side_validation and (
-            'currency_pair' not in local_var_params or local_var_params['currency_pair'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency_pair` when calling `get_uni_borrowable`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency_pair' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency_pair'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency_pair` when calling `get_uni_borrowable`")  # noqa: E501
 
         collection_formats = {}
 
@@ -944,14 +985,14 @@ class MarginUniApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/margin/uni/borrowable',
-            'GET',
+            '/margin/uni/borrowable', 'GET',
             path_params,
             query_params,
             header_params,
@@ -964,5 +1005,4 @@ class MarginUniApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)

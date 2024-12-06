@@ -48,7 +48,7 @@ class OptionsPosition(object):
         'delta': 'str',
         'gamma': 'str',
         'vega': 'str',
-        'theta': 'str',
+        'theta': 'str'
     }
 
     attribute_map = {
@@ -67,29 +67,10 @@ class OptionsPosition(object):
         'delta': 'delta',
         'gamma': 'gamma',
         'vega': 'vega',
-        'theta': 'theta',
+        'theta': 'theta'
     }
 
-    def __init__(
-        self,
-        user=None,
-        underlying=None,
-        underlying_price=None,
-        contract=None,
-        size=None,
-        entry_price=None,
-        mark_price=None,
-        mark_iv=None,
-        realised_pnl=None,
-        unrealised_pnl=None,
-        pending_orders=None,
-        close_order=None,
-        delta=None,
-        gamma=None,
-        vega=None,
-        theta=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, user=None, underlying=None, underlying_price=None, contract=None, size=None, entry_price=None, mark_price=None, mark_iv=None, realised_pnl=None, unrealised_pnl=None, pending_orders=None, close_order=None, delta=None, gamma=None, vega=None, theta=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, str, str, str, int, str, str, str, str, str, int, OptionsPositionCloseOrder, str, str, str, str, Configuration) -> None
         """OptionsPosition - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -519,16 +500,18 @@ class OptionsPosition(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

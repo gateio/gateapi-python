@@ -36,24 +36,17 @@ class UnifiedPortfolioOutput(object):
         'maintain_margin_total': 'str',
         'initial_margin_total': 'str',
         'calculate_time': 'int',
-        'risk_unit': 'list[MockRiskUnit]',
+        'risk_unit': 'list[MockRiskUnit]'
     }
 
     attribute_map = {
         'maintain_margin_total': 'maintain_margin_total',
         'initial_margin_total': 'initial_margin_total',
         'calculate_time': 'calculate_time',
-        'risk_unit': 'risk_unit',
+        'risk_unit': 'risk_unit'
     }
 
-    def __init__(
-        self,
-        maintain_margin_total=None,
-        initial_margin_total=None,
-        calculate_time=None,
-        risk_unit=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, maintain_margin_total=None, initial_margin_total=None, calculate_time=None, risk_unit=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, int, list[MockRiskUnit], Configuration) -> None
         """UnifiedPortfolioOutput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -174,16 +167,18 @@ class UnifiedPortfolioOutput(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

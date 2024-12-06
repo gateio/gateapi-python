@@ -45,7 +45,7 @@ class PositionClose(object):
         'accum_size': 'str',
         'first_open_time': 'int',
         'long_price': 'str',
-        'short_price': 'str',
+        'short_price': 'str'
     }
 
     attribute_map = {
@@ -61,26 +61,10 @@ class PositionClose(object):
         'accum_size': 'accum_size',
         'first_open_time': 'first_open_time',
         'long_price': 'long_price',
-        'short_price': 'short_price',
+        'short_price': 'short_price'
     }
 
-    def __init__(
-        self,
-        time=None,
-        contract=None,
-        side=None,
-        pnl=None,
-        pnl_pnl=None,
-        pnl_fund=None,
-        pnl_fee=None,
-        text=None,
-        max_size=None,
-        accum_size=None,
-        first_open_time=None,
-        long_price=None,
-        short_price=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, time=None, contract=None, side=None, pnl=None, pnl_pnl=None, pnl_fund=None, pnl_fee=None, text=None, max_size=None, accum_size=None, first_open_time=None, long_price=None, short_price=None, local_vars_configuration=None):  # noqa: E501
         # type: (float, str, str, str, str, str, str, str, str, str, int, str, str, Configuration) -> None
         """PositionClose - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -198,7 +182,8 @@ class PositionClose(object):
         allowed_values = ["long", "short"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and side not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `side` ({0}), must be one of {1}".format(side, allowed_values)  # noqa: E501
+                "Invalid value for `side` ({0}), must be one of {1}"  # noqa: E501
+                .format(side, allowed_values)
             )
 
         self._side = side
@@ -440,16 +425,18 @@ class PositionClose(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

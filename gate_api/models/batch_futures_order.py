@@ -60,7 +60,7 @@ class BatchFuturesOrder(object):
         'refu': 'int',
         'auto_size': 'str',
         'stp_act': 'str',
-        'stp_id': 'int',
+        'stp_id': 'int'
     }
 
     attribute_map = {
@@ -91,41 +91,10 @@ class BatchFuturesOrder(object):
         'refu': 'refu',
         'auto_size': 'auto_size',
         'stp_act': 'stp_act',
-        'stp_id': 'stp_id',
+        'stp_id': 'stp_id'
     }
 
-    def __init__(
-        self,
-        succeeded=None,
-        label=None,
-        detail=None,
-        id=None,
-        user=None,
-        create_time=None,
-        finish_time=None,
-        finish_as=None,
-        status=None,
-        contract=None,
-        size=None,
-        iceberg=None,
-        price=None,
-        close=False,
-        is_close=None,
-        reduce_only=False,
-        is_reduce_only=None,
-        is_liq=None,
-        tif='gtc',
-        left=None,
-        fill_price=None,
-        text=None,
-        tkfr=None,
-        mkfr=None,
-        refu=None,
-        auto_size=None,
-        stp_act=None,
-        stp_id=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, succeeded=None, label=None, detail=None, id=None, user=None, create_time=None, finish_time=None, finish_as=None, status=None, contract=None, size=None, iceberg=None, price=None, close=False, is_close=None, reduce_only=False, is_reduce_only=None, is_liq=None, tif='gtc', left=None, fill_price=None, text=None, tkfr=None, mkfr=None, refu=None, auto_size=None, stp_act=None, stp_id=None, local_vars_configuration=None):  # noqa: E501
         # type: (bool, str, str, int, int, float, float, str, str, str, int, int, str, bool, bool, bool, bool, bool, str, int, str, str, str, str, int, str, str, int, Configuration) -> None
         """BatchFuturesOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -400,22 +369,11 @@ class BatchFuturesOrder(object):
         :param finish_as: The finish_as of this BatchFuturesOrder.  # noqa: E501
         :type: str
         """
-        allowed_values = [
-            "filled",
-            "cancelled",
-            "liquidated",
-            "ioc",
-            "auto_deleveraged",
-            "reduce_only",
-            "position_closed",
-            "reduce_out",
-            "stp",
-        ]  # noqa: E501
+        allowed_values = ["filled", "cancelled", "liquidated", "ioc", "auto_deleveraged", "reduce_only", "position_closed", "reduce_out", "stp"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and finish_as not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `finish_as` ({0}), must be one of {1}".format(  # noqa: E501
-                    finish_as, allowed_values
-                )
+                "Invalid value for `finish_as` ({0}), must be one of {1}"  # noqa: E501
+                .format(finish_as, allowed_values)
             )
 
         self._finish_as = finish_as
@@ -443,7 +401,8 @@ class BatchFuturesOrder(object):
         allowed_values = ["open", "finished"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}".format(status, allowed_values)  # noqa: E501
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
             )
 
         self._status = status
@@ -678,7 +637,8 @@ class BatchFuturesOrder(object):
         allowed_values = ["gtc", "ioc", "poc", "fok"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and tif not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `tif` ({0}), must be one of {1}".format(tif, allowed_values)  # noqa: E501
+                "Invalid value for `tif` ({0}), must be one of {1}"  # noqa: E501
+                .format(tif, allowed_values)
             )
 
         self._tif = tif
@@ -844,9 +804,8 @@ class BatchFuturesOrder(object):
         allowed_values = ["close_long", "close_short"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and auto_size not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `auto_size` ({0}), must be one of {1}".format(  # noqa: E501
-                    auto_size, allowed_values
-                )
+                "Invalid value for `auto_size` ({0}), must be one of {1}"  # noqa: E501
+                .format(auto_size, allowed_values)
             )
 
         self._auto_size = auto_size
@@ -874,7 +833,8 @@ class BatchFuturesOrder(object):
         allowed_values = ["co", "cn", "cb", "-"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and stp_act not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `stp_act` ({0}), must be one of {1}".format(stp_act, allowed_values)  # noqa: E501
+                "Invalid value for `stp_act` ({0}), must be one of {1}"  # noqa: E501
+                .format(stp_act, allowed_values)
             )
 
         self._stp_act = stp_act
@@ -909,16 +869,18 @@ class BatchFuturesOrder(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

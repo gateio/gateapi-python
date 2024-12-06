@@ -48,7 +48,7 @@ class DualGetOrders(object):
         'settlement_currency': 'str',
         'apy_display': 'str',
         'apy_settlement': 'str',
-        'delivery_time': 'int',
+        'delivery_time': 'int'
     }
 
     attribute_map = {
@@ -67,29 +67,10 @@ class DualGetOrders(object):
         'settlement_currency': 'settlement_currency',
         'apy_display': 'apy_display',
         'apy_settlement': 'apy_settlement',
-        'delivery_time': 'delivery_time',
+        'delivery_time': 'delivery_time'
     }
 
-    def __init__(
-        self,
-        id=None,
-        plan_id=None,
-        copies=None,
-        invest_amount=None,
-        settlement_amount=None,
-        create_time=None,
-        complete_time=None,
-        status=None,
-        invest_currency=None,
-        exercise_currency=None,
-        exercise_price=None,
-        settlement_price=None,
-        settlement_currency=None,
-        apy_display=None,
-        apy_settlement=None,
-        delivery_time=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, id=None, plan_id=None, copies=None, invest_amount=None, settlement_amount=None, create_time=None, complete_time=None, status=None, invest_currency=None, exercise_currency=None, exercise_price=None, settlement_price=None, settlement_currency=None, apy_display=None, apy_settlement=None, delivery_time=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, int, str, str, str, int, int, str, str, str, str, str, str, str, str, int, Configuration) -> None
         """DualGetOrders - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -522,16 +503,18 @@ class DualGetOrders(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

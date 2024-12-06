@@ -39,7 +39,7 @@ class UserLtvInfo(object):
         'alert_ltv': 'str',
         'liquidate_ltv': 'str',
         'min_borrow_amount': 'str',
-        'left_borrowable_amount': 'str',
+        'left_borrowable_amount': 'str'
     }
 
     attribute_map = {
@@ -49,20 +49,10 @@ class UserLtvInfo(object):
         'alert_ltv': 'alert_ltv',
         'liquidate_ltv': 'liquidate_ltv',
         'min_borrow_amount': 'min_borrow_amount',
-        'left_borrowable_amount': 'left_borrowable_amount',
+        'left_borrowable_amount': 'left_borrowable_amount'
     }
 
-    def __init__(
-        self,
-        collateral_currency=None,
-        borrow_currency=None,
-        init_ltv=None,
-        alert_ltv=None,
-        liquidate_ltv=None,
-        min_borrow_amount=None,
-        left_borrowable_amount=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, collateral_currency=None, borrow_currency=None, init_ltv=None, alert_ltv=None, liquidate_ltv=None, min_borrow_amount=None, left_borrowable_amount=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, str, str, Configuration) -> None
         """UserLtvInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -261,16 +251,18 @@ class UserLtvInfo(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

@@ -18,7 +18,10 @@ import re  # noqa: F401
 import six
 
 from gate_api.api_client import ApiClient
-from gate_api.exceptions import ApiTypeError, ApiValueError  # noqa: F401
+from gate_api.exceptions import (  # noqa: F401
+    ApiTypeError,
+    ApiValueError
+)
 
 
 class MultiCollateralLoanApi(object):
@@ -89,35 +92,36 @@ class MultiCollateralLoanApi(object):
 
         local_var_params = locals()
 
-        all_params = ['page', 'limit', 'sort', 'order_type']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'page',
+            'limit',
+            'sort',
+            'order_type'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_multi_collateral_orders" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_multi_collateral_orders" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_multi_collateral_orders`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_multi_collateral_orders`, must be a value less than or equal to `100`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_multi_collateral_orders`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_multi_collateral_orders`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_multi_collateral_orders`, must be a value less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_multi_collateral_orders`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -139,14 +143,14 @@ class MultiCollateralLoanApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/loan/multi_collateral/orders',
-            'GET',
+            '/loan/multi_collateral/orders', 'GET',
             path_params,
             query_params,
             header_params,
@@ -159,8 +163,7 @@ class MultiCollateralLoanApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def create_multi_collateral(self, create_multi_collateral_order, **kwargs):  # noqa: E501
         """Create Multi-Collateral Order  # noqa: E501
@@ -212,22 +215,30 @@ class MultiCollateralLoanApi(object):
 
         local_var_params = locals()
 
-        all_params = ['create_multi_collateral_order']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'create_multi_collateral_order'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method create_multi_collateral" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_multi_collateral" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'create_multi_collateral_order' is set
-        if self.api_client.client_side_validation and (
-            'create_multi_collateral_order' not in local_var_params
-            or local_var_params['create_multi_collateral_order'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `create_multi_collateral_order` when calling `create_multi_collateral`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('create_multi_collateral_order' not in local_var_params or  # noqa: E501
+                                                        local_var_params['create_multi_collateral_order'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `create_multi_collateral_order` when calling `create_multi_collateral`")  # noqa: E501
 
         collection_formats = {}
 
@@ -244,19 +255,18 @@ class MultiCollateralLoanApi(object):
         if 'create_multi_collateral_order' in local_var_params:
             body_params = local_var_params['create_multi_collateral_order']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/loan/multi_collateral/orders',
-            'POST',
+            '/loan/multi_collateral/orders', 'POST',
             path_params,
             query_params,
             header_params,
@@ -269,8 +279,7 @@ class MultiCollateralLoanApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_multi_collateral_order_detail(self, order_id, **kwargs):  # noqa: E501
         """Get Multi-Collateral Order Detail  # noqa: E501
@@ -322,23 +331,30 @@ class MultiCollateralLoanApi(object):
 
         local_var_params = locals()
 
-        all_params = ['order_id']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'order_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method get_multi_collateral_order_detail" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_multi_collateral_order_detail" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'order_id' is set
-        if self.api_client.client_side_validation and (
-            'order_id' not in local_var_params or local_var_params['order_id'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `order_id` when calling `get_multi_collateral_order_detail`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('order_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['order_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `order_id` when calling `get_multi_collateral_order_detail`")  # noqa: E501
 
         collection_formats = {}
 
@@ -355,14 +371,14 @@ class MultiCollateralLoanApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/loan/multi_collateral/orders/{order_id}',
-            'GET',
+            '/loan/multi_collateral/orders/{order_id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -375,8 +391,7 @@ class MultiCollateralLoanApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_multi_repay_records(self, type, **kwargs):  # noqa: E501
         """List Multi-Collateral Repay Records  # noqa: E501
@@ -438,40 +453,42 @@ class MultiCollateralLoanApi(object):
 
         local_var_params = locals()
 
-        all_params = ['type', 'borrow_currency', 'page', 'limit', '_from', 'to']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'type',
+            'borrow_currency',
+            'page',
+            'limit',
+            '_from',
+            'to'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_multi_repay_records" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_multi_repay_records" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'type' is set
-        if self.api_client.client_side_validation and (
-            'type' not in local_var_params or local_var_params['type'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `type` when calling `list_multi_repay_records`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('type' not in local_var_params or  # noqa: E501
+                                                        local_var_params['type'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `type` when calling `list_multi_repay_records`")  # noqa: E501
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_multi_repay_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_multi_repay_records`, must be a value less than or equal to `100`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_multi_repay_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_multi_repay_records`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_multi_repay_records`, must be a value less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_multi_repay_records`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -497,14 +514,14 @@ class MultiCollateralLoanApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/loan/multi_collateral/repay',
-            'GET',
+            '/loan/multi_collateral/repay', 'GET',
             path_params,
             query_params,
             header_params,
@@ -517,8 +534,7 @@ class MultiCollateralLoanApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def repay_multi_collateral_loan(self, repay_multi_loan, **kwargs):  # noqa: E501
         """Repay Multi-Collateral Loan  # noqa: E501
@@ -570,23 +586,30 @@ class MultiCollateralLoanApi(object):
 
         local_var_params = locals()
 
-        all_params = ['repay_multi_loan']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'repay_multi_loan'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method repay_multi_collateral_loan" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method repay_multi_collateral_loan" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'repay_multi_loan' is set
-        if self.api_client.client_side_validation and (
-            'repay_multi_loan' not in local_var_params or local_var_params['repay_multi_loan'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `repay_multi_loan` when calling `repay_multi_collateral_loan`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('repay_multi_loan' not in local_var_params or  # noqa: E501
+                                                        local_var_params['repay_multi_loan'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `repay_multi_loan` when calling `repay_multi_collateral_loan`")  # noqa: E501
 
         collection_formats = {}
 
@@ -603,19 +626,18 @@ class MultiCollateralLoanApi(object):
         if 'repay_multi_loan' in local_var_params:
             body_params = local_var_params['repay_multi_loan']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/loan/multi_collateral/repay',
-            'POST',
+            '/loan/multi_collateral/repay', 'POST',
             path_params,
             query_params,
             header_params,
@@ -628,8 +650,7 @@ class MultiCollateralLoanApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_multi_collateral_records(self, **kwargs):  # noqa: E501
         """Query collateral adjustment records  # noqa: E501
@@ -689,35 +710,37 @@ class MultiCollateralLoanApi(object):
 
         local_var_params = locals()
 
-        all_params = ['page', 'limit', '_from', 'to', 'collateral_currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'page',
+            'limit',
+            '_from',
+            'to',
+            'collateral_currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_multi_collateral_records" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_multi_collateral_records" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
-        if (
-            self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `page` when calling `list_multi_collateral_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_multi_collateral_records`, must be a value less than or equal to `100`"
-            )  # noqa: E501
-        if (
-            self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Invalid value for parameter `limit` when calling `list_multi_collateral_records`, must be a value greater than or equal to `1`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `list_multi_collateral_records`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 100:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_multi_collateral_records`, must be a value less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_multi_collateral_records`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -731,9 +754,7 @@ class MultiCollateralLoanApi(object):
             query_params.append(('from', local_var_params['_from']))  # noqa: E501
         if 'to' in local_var_params and local_var_params['to'] is not None:  # noqa: E501
             query_params.append(('to', local_var_params['to']))  # noqa: E501
-        if (
-            'collateral_currency' in local_var_params and local_var_params['collateral_currency'] is not None
-        ):  # noqa: E501
+        if 'collateral_currency' in local_var_params and local_var_params['collateral_currency'] is not None:  # noqa: E501
             query_params.append(('collateral_currency', local_var_params['collateral_currency']))  # noqa: E501
 
         header_params = {}
@@ -743,14 +764,14 @@ class MultiCollateralLoanApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/loan/multi_collateral/mortgage',
-            'GET',
+            '/loan/multi_collateral/mortgage', 'GET',
             path_params,
             query_params,
             header_params,
@@ -763,8 +784,7 @@ class MultiCollateralLoanApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def operate_multi_collateral(self, collateral_adjust, **kwargs):  # noqa: E501
         """Operate Multi-Collateral  # noqa: E501
@@ -816,21 +836,30 @@ class MultiCollateralLoanApi(object):
 
         local_var_params = locals()
 
-        all_params = ['collateral_adjust']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'collateral_adjust'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method operate_multi_collateral" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method operate_multi_collateral" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'collateral_adjust' is set
-        if self.api_client.client_side_validation and (
-            'collateral_adjust' not in local_var_params or local_var_params['collateral_adjust'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `collateral_adjust` when calling `operate_multi_collateral`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('collateral_adjust' not in local_var_params or  # noqa: E501
+                                                        local_var_params['collateral_adjust'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `collateral_adjust` when calling `operate_multi_collateral`")  # noqa: E501
 
         collection_formats = {}
 
@@ -847,19 +876,18 @@ class MultiCollateralLoanApi(object):
         if 'collateral_adjust' in local_var_params:
             body_params = local_var_params['collateral_adjust']
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json']
-        )  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/loan/multi_collateral/mortgage',
-            'POST',
+            '/loan/multi_collateral/mortgage', 'POST',
             path_params,
             query_params,
             header_params,
@@ -872,8 +900,7 @@ class MultiCollateralLoanApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_user_currency_quota(self, type, currency, **kwargs):  # noqa: E501
         """List User Currency Quota  # noqa: E501
@@ -927,28 +954,35 @@ class MultiCollateralLoanApi(object):
 
         local_var_params = locals()
 
-        all_params = ['type', 'currency']
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+            'type',
+            'currency'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method list_user_currency_quota" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_user_currency_quota" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
         # verify the required parameter 'type' is set
-        if self.api_client.client_side_validation and (
-            'type' not in local_var_params or local_var_params['type'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `type` when calling `list_user_currency_quota`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('type' not in local_var_params or  # noqa: E501
+                                                        local_var_params['type'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `type` when calling `list_user_currency_quota`")  # noqa: E501
         # verify the required parameter 'currency' is set
-        if self.api_client.client_side_validation and (
-            'currency' not in local_var_params or local_var_params['currency'] is None  # noqa: E501
-        ):  # noqa: E501
-            raise ApiValueError(
-                "Missing the required parameter `currency` when calling `list_user_currency_quota`"
-            )  # noqa: E501
+        if self.api_client.client_side_validation and ('currency' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currency'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currency` when calling `list_user_currency_quota`")  # noqa: E501
 
         collection_formats = {}
 
@@ -967,14 +1001,14 @@ class MultiCollateralLoanApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apiv4']  # noqa: E501
 
         return self.api_client.call_api(
-            '/loan/multi_collateral/currency_quota',
-            'GET',
+            '/loan/multi_collateral/currency_quota', 'GET',
             path_params,
             query_params,
             header_params,
@@ -987,8 +1021,7 @@ class MultiCollateralLoanApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def list_multi_collateral_currencies(self, **kwargs):  # noqa: E501
         """Query supported borrowing and collateral currencies in Multi-Collateral   # noqa: E501
@@ -1038,13 +1071,22 @@ class MultiCollateralLoanApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method list_multi_collateral_currencies" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_multi_collateral_currencies" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
@@ -1062,14 +1104,14 @@ class MultiCollateralLoanApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/loan/multi_collateral/currencies',
-            'GET',
+            '/loan/multi_collateral/currencies', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1082,8 +1124,7 @@ class MultiCollateralLoanApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_multi_collateral_ltv(self, **kwargs):  # noqa: E501
         """Get Multi-Collateral ratio  # noqa: E501
@@ -1135,12 +1176,23 @@ class MultiCollateralLoanApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s'" " to method get_multi_collateral_ltv" % k)
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_multi_collateral_ltv" % k
+                )
             local_var_params[k] = v
         del local_var_params['kwargs']
 
@@ -1157,14 +1209,14 @@ class MultiCollateralLoanApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/loan/multi_collateral/ltv',
-            'GET',
+            '/loan/multi_collateral/ltv', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1177,8 +1229,7 @@ class MultiCollateralLoanApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
-        )
+            collection_formats=collection_formats)
 
     def get_multi_collateral_fix_rate(self, **kwargs):  # noqa: E501
         """Query fixed interest rates for the currency for 7 days and 30 days  # noqa: E501
@@ -1228,13 +1279,22 @@ class MultiCollateralLoanApi(object):
 
         local_var_params = locals()
 
-        all_params = []
-        all_params.extend(['async_req', '_return_http_data_only', '_preload_content', '_request_timeout'])
+        all_params = [
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for k, v in six.iteritems(local_var_params['kwargs']):
             if k not in all_params:
                 raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'" " to method get_multi_collateral_fix_rate" % k
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_multi_collateral_fix_rate" % k
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
@@ -1252,14 +1312,14 @@ class MultiCollateralLoanApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(['application/json'])  # noqa: E501
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/loan/multi_collateral/fixed_rate',
-            'GET',
+            '/loan/multi_collateral/fixed_rate', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1272,5 +1332,130 @@ class MultiCollateralLoanApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats,
+            collection_formats=collection_formats)
+
+    def get_multi_collateral_current_rate(self, currencies, **kwargs):  # noqa: E501
+        """Query the current interest rate of the currency  # noqa: E501
+
+        Query the current interest rate of the currency in the last hour. The current interest rate is updated every hour.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_multi_collateral_current_rate(currencies, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param list[str] currencies: Specify the currency name to query the array. The array is separated by commas and has a maximum of 100 items. (required)
+        :param str vip_level: VIP level, defaults to 0 if not transferred
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: list[gate_api.CollateralCurrentRate]
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_multi_collateral_current_rate_with_http_info(currencies, **kwargs)  # noqa: E501
+
+    def get_multi_collateral_current_rate_with_http_info(self, currencies, **kwargs):  # noqa: E501
+        """Query the current interest rate of the currency  # noqa: E501
+
+        Query the current interest rate of the currency in the last hour. The current interest rate is updated every hour.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_multi_collateral_current_rate_with_http_info(currencies, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param list[str] currencies: Specify the currency name to query the array. The array is separated by commas and has a maximum of 100 items. (required)
+        :param str vip_level: VIP level, defaults to 0 if not transferred
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(list[gate_api.CollateralCurrentRate], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'currencies',
+            'vip_level'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
         )
+
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_multi_collateral_current_rate" % k
+                )
+            local_var_params[k] = v
+        del local_var_params['kwargs']
+        # verify the required parameter 'currencies' is set
+        if self.api_client.client_side_validation and ('currencies' not in local_var_params or  # noqa: E501
+                                                        local_var_params['currencies'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `currencies` when calling `get_multi_collateral_current_rate`")  # noqa: E501
+
+        if self.api_client.client_side_validation and ('currencies' in local_var_params and  # noqa: E501
+                                                        len(local_var_params['currencies']) > 100):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `currencies` when calling `get_multi_collateral_current_rate`, number of items must be less than or equal to `100`")  # noqa: E501
+        if self.api_client.client_side_validation and ('currencies' in local_var_params and  # noqa: E501
+                                                        len(local_var_params['currencies']) < 1):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `currencies` when calling `get_multi_collateral_current_rate`, number of items must be greater than or equal to `1`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'currencies' in local_var_params and local_var_params['currencies'] is not None:  # noqa: E501
+            query_params.append(('currencies', local_var_params['currencies']))  # noqa: E501
+            collection_formats['currencies'] = 'multi'  # noqa: E501
+        if 'vip_level' in local_var_params and local_var_params['vip_level'] is not None:  # noqa: E501
+            query_params.append(('vip_level', local_var_params['vip_level']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/loan/multi_collateral/current_rate', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[CollateralCurrentRate]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)

@@ -37,7 +37,7 @@ class UniCurrency(object):
         'min_lend_amount': 'str',
         'max_lend_amount': 'str',
         'max_rate': 'str',
-        'min_rate': 'str',
+        'min_rate': 'str'
     }
 
     attribute_map = {
@@ -45,18 +45,10 @@ class UniCurrency(object):
         'min_lend_amount': 'min_lend_amount',
         'max_lend_amount': 'max_lend_amount',
         'max_rate': 'max_rate',
-        'min_rate': 'min_rate',
+        'min_rate': 'min_rate'
     }
 
-    def __init__(
-        self,
-        currency=None,
-        min_lend_amount=None,
-        max_lend_amount=None,
-        max_rate=None,
-        min_rate=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, currency=None, min_lend_amount=None, max_lend_amount=None, max_rate=None, min_rate=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, Configuration) -> None
         """UniCurrency - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -203,16 +195,18 @@ class UniCurrency(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

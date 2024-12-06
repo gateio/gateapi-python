@@ -44,7 +44,7 @@ class WithdrawalRecord(object):
         'address': 'str',
         'memo': 'str',
         'status': 'str',
-        'chain': 'str',
+        'chain': 'str'
     }
 
     attribute_map = {
@@ -59,25 +59,10 @@ class WithdrawalRecord(object):
         'address': 'address',
         'memo': 'memo',
         'status': 'status',
-        'chain': 'chain',
+        'chain': 'chain'
     }
 
-    def __init__(
-        self,
-        id=None,
-        txid=None,
-        block_number=None,
-        withdraw_order_id=None,
-        timestamp=None,
-        amount=None,
-        fee=None,
-        currency=None,
-        address=None,
-        memo=None,
-        status=None,
-        chain=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, id=None, txid=None, block_number=None, withdraw_order_id=None, timestamp=None, amount=None, fee=None, currency=None, address=None, memo=None, status=None, chain=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """WithdrawalRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -374,24 +359,11 @@ class WithdrawalRecord(object):
         :param status: The status of this WithdrawalRecord.  # noqa: E501
         :type: str
         """
-        allowed_values = [
-            "DONE",
-            "CANCEL",
-            "REQUEST",
-            "MANUAL",
-            "BCODE",
-            "EXTPEND",
-            "FAIL",
-            "INVALID",
-            "VERIFY",
-            "PROCES",
-            "PEND",
-            "DMOVE",
-            "SPLITPEND",
-        ]  # noqa: E501
+        allowed_values = ["DONE", "CANCEL", "REQUEST", "MANUAL", "BCODE", "EXTPEND", "FAIL", "INVALID", "VERIFY", "PROCES", "PEND", "DMOVE", "SPLITPEND"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}".format(status, allowed_values)  # noqa: E501
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
             )
 
         self._status = status
@@ -428,16 +400,18 @@ class WithdrawalRecord(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

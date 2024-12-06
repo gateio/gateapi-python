@@ -44,7 +44,7 @@ class WithdrawStatus(object):
         'withdraw_day_limit_remain': 'str',
         'withdraw_eachtime_limit': 'str',
         'withdraw_fix_on_chains': 'dict(str, str)',
-        'withdraw_percent_on_chains': 'dict(str, str)',
+        'withdraw_percent_on_chains': 'dict(str, str)'
     }
 
     attribute_map = {
@@ -59,25 +59,10 @@ class WithdrawStatus(object):
         'withdraw_day_limit_remain': 'withdraw_day_limit_remain',
         'withdraw_eachtime_limit': 'withdraw_eachtime_limit',
         'withdraw_fix_on_chains': 'withdraw_fix_on_chains',
-        'withdraw_percent_on_chains': 'withdraw_percent_on_chains',
+        'withdraw_percent_on_chains': 'withdraw_percent_on_chains'
     }
 
-    def __init__(
-        self,
-        currency=None,
-        name=None,
-        name_cn=None,
-        deposit=None,
-        withdraw_percent=None,
-        withdraw_fix=None,
-        withdraw_day_limit=None,
-        withdraw_amount_mini=None,
-        withdraw_day_limit_remain=None,
-        withdraw_eachtime_limit=None,
-        withdraw_fix_on_chains=None,
-        withdraw_percent_on_chains=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, currency=None, name=None, name_cn=None, deposit=None, withdraw_percent=None, withdraw_fix=None, withdraw_day_limit=None, withdraw_amount_mini=None, withdraw_day_limit_remain=None, withdraw_eachtime_limit=None, withdraw_fix_on_chains=None, withdraw_percent_on_chains=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, str, str, str, str, str, dict(str, str), dict(str, str), Configuration) -> None
         """WithdrawStatus - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -406,16 +391,18 @@ class WithdrawStatus(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

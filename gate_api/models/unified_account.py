@@ -51,7 +51,7 @@ class UnifiedAccount(object):
         'leverage': 'str',
         'spot_order_loss': 'str',
         'spot_hedge': 'bool',
-        'use_funding': 'bool',
+        'use_funding': 'bool'
     }
 
     attribute_map = {
@@ -73,32 +73,10 @@ class UnifiedAccount(object):
         'leverage': 'leverage',
         'spot_order_loss': 'spot_order_loss',
         'spot_hedge': 'spot_hedge',
-        'use_funding': 'use_funding',
+        'use_funding': 'use_funding'
     }
 
-    def __init__(
-        self,
-        user_id=None,
-        refresh_time=None,
-        locked=None,
-        balances=None,
-        total=None,
-        borrowed=None,
-        total_initial_margin=None,
-        total_margin_balance=None,
-        total_maintenance_margin=None,
-        total_initial_margin_rate=None,
-        total_maintenance_margin_rate=None,
-        total_available_margin=None,
-        unified_account_total=None,
-        unified_account_total_liab=None,
-        unified_account_total_equity=None,
-        leverage=None,
-        spot_order_loss=None,
-        spot_hedge=None,
-        use_funding=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, user_id=None, refresh_time=None, locked=None, balances=None, total=None, borrowed=None, total_initial_margin=None, total_margin_balance=None, total_maintenance_margin=None, total_initial_margin_rate=None, total_maintenance_margin_rate=None, total_available_margin=None, unified_account_total=None, unified_account_total_liab=None, unified_account_total_equity=None, leverage=None, spot_order_loss=None, spot_hedge=None, use_funding=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, int, bool, dict(str, UnifiedBalance), str, str, str, str, str, str, str, str, str, str, str, str, str, bool, bool, Configuration) -> None
         """UnifiedAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -259,7 +237,7 @@ class UnifiedAccount(object):
     def total(self):
         """Gets the total of this UnifiedAccount.  # noqa: E501
 
-        The total asset value in USD, calculated as the sum of the product of `(available + freeze) * price` for all currencies.  # noqa: E501
+        Total account assets converted to USD, i.e. the sum of `(available + freeze) * price`  in all currencies (deprecated, to be deprecated, replaced by unified_account_total)  # noqa: E501
 
         :return: The total of this UnifiedAccount.  # noqa: E501
         :rtype: str
@@ -270,7 +248,7 @@ class UnifiedAccount(object):
     def total(self, total):
         """Sets the total of this UnifiedAccount.
 
-        The total asset value in USD, calculated as the sum of the product of `(available + freeze) * price` for all currencies.  # noqa: E501
+        Total account assets converted to USD, i.e. the sum of `(available + freeze) * price`  in all currencies (deprecated, to be deprecated, replaced by unified_account_total)  # noqa: E501
 
         :param total: The total of this UnifiedAccount.  # noqa: E501
         :type: str
@@ -607,16 +585,18 @@ class UnifiedAccount(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

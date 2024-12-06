@@ -32,19 +32,23 @@ class FuturesPriceTrigger(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'strategy_type': 'int', 'price_type': 'int', 'price': 'str', 'rule': 'int', 'expiration': 'int'}
+    openapi_types = {
+        'strategy_type': 'int',
+        'price_type': 'int',
+        'price': 'str',
+        'rule': 'int',
+        'expiration': 'int'
+    }
 
     attribute_map = {
         'strategy_type': 'strategy_type',
         'price_type': 'price_type',
         'price': 'price',
         'rule': 'rule',
-        'expiration': 'expiration',
+        'expiration': 'expiration'
     }
 
-    def __init__(
-        self, strategy_type=None, price_type=None, price=None, rule=None, expiration=None, local_vars_configuration=None
-    ):  # noqa: E501
+    def __init__(self, strategy_type=None, price_type=None, price=None, rule=None, expiration=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, int, str, int, int, Configuration) -> None
         """FuturesPriceTrigger - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -92,9 +96,8 @@ class FuturesPriceTrigger(object):
         allowed_values = [0, 1]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and strategy_type not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `strategy_type` ({0}), must be one of {1}".format(  # noqa: E501
-                    strategy_type, allowed_values
-                )
+                "Invalid value for `strategy_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(strategy_type, allowed_values)
             )
 
         self._strategy_type = strategy_type
@@ -122,9 +125,8 @@ class FuturesPriceTrigger(object):
         allowed_values = [0, 1, 2]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and price_type not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `price_type` ({0}), must be one of {1}".format(  # noqa: E501
-                    price_type, allowed_values
-                )
+                "Invalid value for `price_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(price_type, allowed_values)
             )
 
         self._price_type = price_type
@@ -175,7 +177,8 @@ class FuturesPriceTrigger(object):
         allowed_values = [1, 2]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and rule not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `rule` ({0}), must be one of {1}".format(rule, allowed_values)  # noqa: E501
+                "Invalid value for `rule` ({0}), must be one of {1}"  # noqa: E501
+                .format(rule, allowed_values)
             )
 
         self._rule = rule
@@ -210,16 +213,18 @@ class FuturesPriceTrigger(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

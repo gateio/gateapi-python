@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**list_multi_collateral_currencies**](MultiCollateralLoanApi.md#list_multi_collateral_currencies) | **GET** /loan/multi_collateral/currencies | Query supported borrowing and collateral currencies in Multi-Collateral 
 [**get_multi_collateral_ltv**](MultiCollateralLoanApi.md#get_multi_collateral_ltv) | **GET** /loan/multi_collateral/ltv | Get Multi-Collateral ratio
 [**get_multi_collateral_fix_rate**](MultiCollateralLoanApi.md#get_multi_collateral_fix_rate) | **GET** /loan/multi_collateral/fixed_rate | Query fixed interest rates for the currency for 7 days and 30 days
+[**get_multi_collateral_current_rate**](MultiCollateralLoanApi.md#get_multi_collateral_current_rate) | **GET** /loan/multi_collateral/current_rate | Query the current interest rate of the currency
 
 
 # **list_multi_collateral_orders**
@@ -726,6 +727,68 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**list[CollateralFixRate]**](CollateralFixRate.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_multi_collateral_current_rate**
+> list[CollateralCurrentRate] get_multi_collateral_current_rate(currencies, vip_level=vip_level)
+
+Query the current interest rate of the currency
+
+Query the current interest rate of the currency in the last hour. The current interest rate is updated every hour.
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.MultiCollateralLoanApi(api_client)
+currencies = ['[\"BTC\",\"GT\"]'] # list[str] | Specify the currency name to query the array. The array is separated by commas and has a maximum of 100 items.
+vip_level = '0' # str | VIP level, defaults to 0 if not transferred (optional) (default to '0')
+
+try:
+    # Query the current interest rate of the currency
+    api_response = api_instance.get_multi_collateral_current_rate(currencies, vip_level=vip_level)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling MultiCollateralLoanApi->get_multi_collateral_current_rate: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencies** | [**list[str]**](str.md)| Specify the currency name to query the array. The array is separated by commas and has a maximum of 100 items. | 
+ **vip_level** | **str**| VIP level, defaults to 0 if not transferred | [optional] [default to &#39;0&#39;]
+
+### Return type
+
+[**list[CollateralCurrentRate]**](CollateralCurrentRate.md)
 
 ### Authorization
 

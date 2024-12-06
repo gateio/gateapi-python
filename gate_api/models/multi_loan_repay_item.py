@@ -32,9 +32,17 @@ class MultiLoanRepayItem(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'currency': 'str', 'amount': 'str', 'repaid_all': 'bool'}
+    openapi_types = {
+        'currency': 'str',
+        'amount': 'str',
+        'repaid_all': 'bool'
+    }
 
-    attribute_map = {'currency': 'currency', 'amount': 'amount', 'repaid_all': 'repaid_all'}
+    attribute_map = {
+        'currency': 'currency',
+        'amount': 'amount',
+        'repaid_all': 'repaid_all'
+    }
 
     def __init__(self, currency=None, amount=None, repaid_all=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, bool, Configuration) -> None
@@ -131,16 +139,18 @@ class MultiLoanRepayItem(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

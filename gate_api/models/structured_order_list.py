@@ -39,7 +39,7 @@ class StructuredOrderList(object):
         'amount': 'str',
         'status': 'str',
         'income': 'str',
-        'create_time': 'int',
+        'create_time': 'int'
     }
 
     attribute_map = {
@@ -49,20 +49,10 @@ class StructuredOrderList(object):
         'amount': 'amount',
         'status': 'status',
         'income': 'income',
-        'create_time': 'create_time',
+        'create_time': 'create_time'
     }
 
-    def __init__(
-        self,
-        id=None,
-        pid=None,
-        lock_coin=None,
-        amount=None,
-        status=None,
-        income=None,
-        create_time=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, id=None, pid=None, lock_coin=None, amount=None, status=None, income=None, create_time=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, str, str, str, str, str, int, Configuration) -> None
         """StructuredOrderList - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -261,16 +251,18 @@ class StructuredOrderList(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

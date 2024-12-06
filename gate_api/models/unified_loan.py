@@ -32,19 +32,23 @@ class UnifiedLoan(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {'currency': 'str', 'type': 'str', 'amount': 'str', 'repaid_all': 'bool', 'text': 'str'}
+    openapi_types = {
+        'currency': 'str',
+        'type': 'str',
+        'amount': 'str',
+        'repaid_all': 'bool',
+        'text': 'str'
+    }
 
     attribute_map = {
         'currency': 'currency',
         'type': 'type',
         'amount': 'amount',
         'repaid_all': 'repaid_all',
-        'text': 'text',
+        'text': 'text'
     }
 
-    def __init__(
-        self, currency=None, type=None, amount=None, repaid_all=None, text=None, local_vars_configuration=None
-    ):  # noqa: E501
+    def __init__(self, currency=None, type=None, amount=None, repaid_all=None, text=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, bool, str, Configuration) -> None
         """UnifiedLoan - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -116,7 +120,8 @@ class UnifiedLoan(object):
         allowed_values = ["borrow", "repay"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}".format(type, allowed_values)  # noqa: E501
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
             )
 
         self._type = type
@@ -199,16 +204,18 @@ class UnifiedLoan(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

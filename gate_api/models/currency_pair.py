@@ -45,7 +45,7 @@ class CurrencyPair(object):
         'precision': 'int',
         'trade_status': 'str',
         'sell_start': 'int',
-        'buy_start': 'int',
+        'buy_start': 'int'
     }
 
     attribute_map = {
@@ -61,26 +61,10 @@ class CurrencyPair(object):
         'precision': 'precision',
         'trade_status': 'trade_status',
         'sell_start': 'sell_start',
-        'buy_start': 'buy_start',
+        'buy_start': 'buy_start'
     }
 
-    def __init__(
-        self,
-        id=None,
-        base=None,
-        quote=None,
-        fee=None,
-        min_base_amount=None,
-        min_quote_amount=None,
-        max_base_amount=None,
-        max_quote_amount=None,
-        amount_precision=None,
-        precision=None,
-        trade_status=None,
-        sell_start=None,
-        buy_start=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, id=None, base=None, quote=None, fee=None, min_base_amount=None, min_quote_amount=None, max_base_amount=None, max_quote_amount=None, amount_precision=None, precision=None, trade_status=None, sell_start=None, buy_start=None, local_vars_configuration=None):  # noqa: E501
         # type: (str, str, str, str, str, str, str, str, int, int, str, int, int, Configuration) -> None
         """CurrencyPair - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -382,9 +366,8 @@ class CurrencyPair(object):
         allowed_values = ["untradable", "buyable", "sellable", "tradable"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and trade_status not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `trade_status` ({0}), must be one of {1}".format(  # noqa: E501
-                    trade_status, allowed_values
-                )
+                "Invalid value for `trade_status` ({0}), must be one of {1}"  # noqa: E501
+                .format(trade_status, allowed_values)
             )
 
         self._trade_status = trade_status
@@ -442,16 +425,18 @@ class CurrencyPair(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 

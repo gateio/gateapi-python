@@ -42,7 +42,7 @@ class SpotFee(object):
         'loan_fee': 'str',
         'point_type': 'str',
         'currency_pair': 'str',
-        'debit_fee': 'int',
+        'debit_fee': 'int'
     }
 
     attribute_map = {
@@ -55,23 +55,10 @@ class SpotFee(object):
         'loan_fee': 'loan_fee',
         'point_type': 'point_type',
         'currency_pair': 'currency_pair',
-        'debit_fee': 'debit_fee',
+        'debit_fee': 'debit_fee'
     }
 
-    def __init__(
-        self,
-        user_id=None,
-        taker_fee=None,
-        maker_fee=None,
-        gt_discount=None,
-        gt_taker_fee=None,
-        gt_maker_fee=None,
-        loan_fee=None,
-        point_type=None,
-        currency_pair=None,
-        debit_fee=None,
-        local_vars_configuration=None,
-    ):  # noqa: E501
+    def __init__(self, user_id=None, taker_fee=None, maker_fee=None, gt_discount=None, gt_taker_fee=None, gt_maker_fee=None, loan_fee=None, point_type=None, currency_pair=None, debit_fee=None, local_vars_configuration=None):  # noqa: E501
         # type: (int, str, str, bool, str, str, str, str, str, int, Configuration) -> None
         """SpotFee - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
@@ -348,16 +335,18 @@ class SpotFee(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value))
+                result[attr] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(
-                    map(
-                        lambda item: (item[0], item[1].to_dict()) if hasattr(item[1], "to_dict") else item,
-                        value.items(),
-                    )
-                )
+                result[attr] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
             else:
                 result[attr] = value
 
