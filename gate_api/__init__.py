@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.86.0"
+__version__ = "4.87.0"
 
 # import apis into sdk package
 from gate_api.api.earn_uni_api import EarnUniApi
@@ -273,6 +273,8 @@ from gate_api.models.unified_balance import UnifiedBalance
 from gate_api.models.unified_borrowable import UnifiedBorrowable
 from gate_api.models.unified_discount import UnifiedDiscount
 from gate_api.models.unified_discount_tiers import UnifiedDiscountTiers
+from gate_api.models.unified_history_loan_rate import UnifiedHistoryLoanRate
+from gate_api.models.unified_history_loan_rate_rates import UnifiedHistoryLoanRateRates
 from gate_api.models.unified_leverage_config import UnifiedLeverageConfig
 from gate_api.models.unified_leverage_setting import UnifiedLeverageSetting
 from gate_api.models.unified_loan import UnifiedLoan
