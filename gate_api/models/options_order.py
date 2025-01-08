@@ -267,7 +267,7 @@ class OptionsOrder(object):
     def finish_as(self):
         """Gets the finish_as of this OptionsOrder.  # noqa: E501
 
-        结束方式，包括：  - filled: 完全成交 - cancelled: 用户撤销 - liquidated: 强制平仓撤销 - ioc: 未立即完全成交，因为tif设置为ioc - auto_deleveraged: 自动减仓撤销 - reduce_only: 增持仓位撤销，因为设置reduce_only或平仓 - position_closed: 因为仓位平掉了，所以挂单被撤掉 - reduce_out: 只减仓被排除的不容易成交的挂单 - mmp_cancelled: MMP撤销  # noqa: E501
+        Ending method, including:  - filled: fully completed - canceled: user canceled - liquidated: forced liquidation cancellation - ioc: Not fully filled immediately because tif is set to ioc - auto_deleveraged: automatic deleveraging cancel - reduce_only: Increased position is cancelled, because reduce_only is set or the position is closed - position_closed: Because the position was closed, the pending order was canceled - reduce_out: Only reduce the excluded pending orders that are not easy to be filled - mmp_cancelled: MMP canceled  # noqa: E501
 
         :return: The finish_as of this OptionsOrder.  # noqa: E501
         :rtype: str
@@ -278,7 +278,7 @@ class OptionsOrder(object):
     def finish_as(self, finish_as):
         """Sets the finish_as of this OptionsOrder.
 
-        结束方式，包括：  - filled: 完全成交 - cancelled: 用户撤销 - liquidated: 强制平仓撤销 - ioc: 未立即完全成交，因为tif设置为ioc - auto_deleveraged: 自动减仓撤销 - reduce_only: 增持仓位撤销，因为设置reduce_only或平仓 - position_closed: 因为仓位平掉了，所以挂单被撤掉 - reduce_out: 只减仓被排除的不容易成交的挂单 - mmp_cancelled: MMP撤销  # noqa: E501
+        Ending method, including:  - filled: fully completed - canceled: user canceled - liquidated: forced liquidation cancellation - ioc: Not fully filled immediately because tif is set to ioc - auto_deleveraged: automatic deleveraging cancel - reduce_only: Increased position is cancelled, because reduce_only is set or the position is closed - position_closed: Because the position was closed, the pending order was canceled - reduce_out: Only reduce the excluded pending orders that are not easy to be filled - mmp_cancelled: MMP canceled  # noqa: E501
 
         :param finish_as: The finish_as of this OptionsOrder.  # noqa: E501
         :type: str
@@ -536,7 +536,7 @@ class OptionsOrder(object):
     def mmp(self):
         """Gets the mmp of this OptionsOrder.  # noqa: E501
 
-        设置为 true 的时候，为MMP委托  # noqa: E501
+        When set to true, delegate to MMP  # noqa: E501
 
         :return: The mmp of this OptionsOrder.  # noqa: E501
         :rtype: bool
@@ -547,7 +547,7 @@ class OptionsOrder(object):
     def mmp(self, mmp):
         """Sets the mmp of this OptionsOrder.
 
-        设置为 true 的时候，为MMP委托  # noqa: E501
+        When set to true, delegate to MMP  # noqa: E501
 
         :param mmp: The mmp of this OptionsOrder.  # noqa: E501
         :type: bool
@@ -559,7 +559,7 @@ class OptionsOrder(object):
     def is_mmp(self):
         """Gets the is_mmp of this OptionsOrder.  # noqa: E501
 
-        是否为MMP委托。对应请求中的`mmp`。  # noqa: E501
+        Whether it is MMP delegation. Corresponds to `mmp` in the request.  # noqa: E501
 
         :return: The is_mmp of this OptionsOrder.  # noqa: E501
         :rtype: bool
@@ -570,7 +570,7 @@ class OptionsOrder(object):
     def is_mmp(self, is_mmp):
         """Sets the is_mmp of this OptionsOrder.
 
-        是否为MMP委托。对应请求中的`mmp`。  # noqa: E501
+        Whether it is MMP delegation. Corresponds to `mmp` in the request.  # noqa: E501
 
         :param is_mmp: The is_mmp of this OptionsOrder.  # noqa: E501
         :type: bool

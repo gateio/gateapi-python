@@ -105,7 +105,7 @@ class OrderPatch(object):
     def account(self):
         """Gets the account of this OrderPatch.  # noqa: E501
 
-        指定查询账户。  # noqa: E501
+        Specify query account.  # noqa: E501
 
         :return: The account of this OrderPatch.  # noqa: E501
         :rtype: str
@@ -116,7 +116,7 @@ class OrderPatch(object):
     def account(self, account):
         """Sets the account of this OrderPatch.
 
-        指定查询账户。  # noqa: E501
+        Specify query account.  # noqa: E501
 
         :param account: The account of this OrderPatch.  # noqa: E501
         :type: str

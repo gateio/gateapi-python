@@ -76,14 +76,12 @@ from gate_api.models.deposit_address import DepositAddress
 from gate_api.models.dual_get_orders import DualGetOrders
 from gate_api.models.dual_get_plans import DualGetPlans
 from gate_api.models.eth2_swap import Eth2Swap
-from gate_api.models.flash_swap_currency import FlashSwapCurrency
 from gate_api.models.flash_swap_currency_pair import FlashSwapCurrencyPair
 from gate_api.models.flash_swap_order import FlashSwapOrder
 from gate_api.models.flash_swap_order_preview import FlashSwapOrderPreview
 from gate_api.models.flash_swap_order_request import FlashSwapOrderRequest
 from gate_api.models.flash_swap_preview_request import FlashSwapPreviewRequest
 from gate_api.models.funding_account import FundingAccount
-from gate_api.models.funding_book_item import FundingBookItem
 from gate_api.models.funding_rate_record import FundingRateRecord
 from gate_api.models.future_cancel_order_result import FutureCancelOrderResult
 from gate_api.models.futures_account import FuturesAccount
@@ -114,14 +112,9 @@ from gate_api.models.inline_response2001 import InlineResponse2001
 from gate_api.models.insurance_record import InsuranceRecord
 from gate_api.models.ledger_record import LedgerRecord
 from gate_api.models.liquidate_order import LiquidateOrder
-from gate_api.models.loan import Loan
-from gate_api.models.loan_patch import LoanPatch
-from gate_api.models.loan_record import LoanRecord
 from gate_api.models.margin_account import MarginAccount
 from gate_api.models.margin_account_book import MarginAccountBook
 from gate_api.models.margin_account_currency import MarginAccountCurrency
-from gate_api.models.margin_borrowable import MarginBorrowable
-from gate_api.models.margin_currency_pair import MarginCurrencyPair
 from gate_api.models.margin_tiers import MarginTiers
 from gate_api.models.margin_transferable import MarginTransferable
 from gate_api.models.max_uni_borrowable import MaxUniBorrowable
@@ -186,9 +179,7 @@ from gate_api.models.repay_record_currency import RepayRecordCurrency
 from gate_api.models.repay_record_left_interest import RepayRecordLeftInterest
 from gate_api.models.repay_record_repaid_currency import RepayRecordRepaidCurrency
 from gate_api.models.repay_record_total_interest import RepayRecordTotalInterest
-from gate_api.models.repay_request import RepayRequest
 from gate_api.models.repay_resp import RepayResp
-from gate_api.models.repayment import Repayment
 from gate_api.models.risk_units import RiskUnits
 from gate_api.models.saved_address import SavedAddress
 from gate_api.models.small_balance import SmallBalance
@@ -251,7 +242,6 @@ from gate_api.models.unified_leverage_setting import UnifiedLeverageSetting
 from gate_api.models.unified_loan import UnifiedLoan
 from gate_api.models.unified_loan_record import UnifiedLoanRecord
 from gate_api.models.unified_margin_tiers import UnifiedMarginTiers
-from gate_api.models.unified_mode import UnifiedMode
 from gate_api.models.unified_mode_set import UnifiedModeSet
 from gate_api.models.unified_portfolio_input import UnifiedPortfolioInput
 from gate_api.models.unified_portfolio_output import UnifiedPortfolioOutput

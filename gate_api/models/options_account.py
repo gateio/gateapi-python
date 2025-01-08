@@ -170,7 +170,7 @@ class OptionsAccount(object):
     def total(self):
         """Gets the total of this OptionsAccount.  # noqa: E501
 
-        账户余额  # noqa: E501
+        Account balance  # noqa: E501
 
         :return: The total of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -181,7 +181,7 @@ class OptionsAccount(object):
     def total(self, total):
         """Sets the total of this OptionsAccount.
 
-        账户余额  # noqa: E501
+        Account balance  # noqa: E501
 
         :param total: The total of this OptionsAccount.  # noqa: E501
         :type: str
@@ -193,7 +193,7 @@ class OptionsAccount(object):
     def position_value(self):
         """Gets the position_value of this OptionsAccount.  # noqa: E501
 
-        仓位价值，做多仓位价值为正，做空仓位价值为负  # noqa: E501
+        Position value, long position value is positive, short position value is negative  # noqa: E501
 
         :return: The position_value of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -204,7 +204,7 @@ class OptionsAccount(object):
     def position_value(self, position_value):
         """Sets the position_value of this OptionsAccount.
 
-        仓位价值，做多仓位价值为正，做空仓位价值为负  # noqa: E501
+        Position value, long position value is positive, short position value is negative  # noqa: E501
 
         :param position_value: The position_value of this OptionsAccount.  # noqa: E501
         :type: str
@@ -216,7 +216,7 @@ class OptionsAccount(object):
     def equity(self):
         """Gets the equity of this OptionsAccount.  # noqa: E501
 
-        账户权益，账户余额与仓位价值的和  # noqa: E501
+        Account equity, the sum of account balance and position value  # noqa: E501
 
         :return: The equity of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -227,7 +227,7 @@ class OptionsAccount(object):
     def equity(self, equity):
         """Sets the equity of this OptionsAccount.
 
-        账户权益，账户余额与仓位价值的和  # noqa: E501
+        Account equity, the sum of account balance and position value  # noqa: E501
 
         :param equity: The equity of this OptionsAccount.  # noqa: E501
         :type: str
@@ -262,7 +262,7 @@ class OptionsAccount(object):
     def mmp_enabled(self):
         """Gets the mmp_enabled of this OptionsAccount.  # noqa: E501
 
-        是否启用MMP  # noqa: E501
+        Whether to enable MMP  # noqa: E501
 
         :return: The mmp_enabled of this OptionsAccount.  # noqa: E501
         :rtype: bool
@@ -273,7 +273,7 @@ class OptionsAccount(object):
     def mmp_enabled(self, mmp_enabled):
         """Sets the mmp_enabled of this OptionsAccount.
 
-        是否启用MMP  # noqa: E501
+        Whether to enable MMP  # noqa: E501
 
         :param mmp_enabled: The mmp_enabled of this OptionsAccount.  # noqa: E501
         :type: bool
@@ -285,7 +285,7 @@ class OptionsAccount(object):
     def liq_triggered(self):
         """Gets the liq_triggered of this OptionsAccount.  # noqa: E501
 
-        是否触发仓位强平  # noqa: E501
+        Whether to trigger position liquidation  # noqa: E501
 
         :return: The liq_triggered of this OptionsAccount.  # noqa: E501
         :rtype: bool
@@ -296,7 +296,7 @@ class OptionsAccount(object):
     def liq_triggered(self, liq_triggered):
         """Sets the liq_triggered of this OptionsAccount.
 
-        是否触发仓位强平  # noqa: E501
+        Whether to trigger position liquidation  # noqa: E501
 
         :param liq_triggered: The liq_triggered of this OptionsAccount.  # noqa: E501
         :type: bool
@@ -429,7 +429,7 @@ class OptionsAccount(object):
     def ask_order_margin(self):
         """Gets the ask_order_margin of this OptionsAccount.  # noqa: E501
 
-        未完成卖单的保证金  # noqa: E501
+        Margin for outstanding sell orders  # noqa: E501
 
         :return: The ask_order_margin of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -440,7 +440,7 @@ class OptionsAccount(object):
     def ask_order_margin(self, ask_order_margin):
         """Sets the ask_order_margin of this OptionsAccount.
 
-        未完成卖单的保证金  # noqa: E501
+        Margin for outstanding sell orders  # noqa: E501
 
         :param ask_order_margin: The ask_order_margin of this OptionsAccount.  # noqa: E501
         :type: str
@@ -452,7 +452,7 @@ class OptionsAccount(object):
     def bid_order_margin(self):
         """Gets the bid_order_margin of this OptionsAccount.  # noqa: E501
 
-        未完成买单的保证金  # noqa: E501
+        Margin for outstanding buy orders  # noqa: E501
 
         :return: The bid_order_margin of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -463,7 +463,7 @@ class OptionsAccount(object):
     def bid_order_margin(self, bid_order_margin):
         """Sets the bid_order_margin of this OptionsAccount.
 
-        未完成买单的保证金  # noqa: E501
+        Margin for outstanding buy orders  # noqa: E501
 
         :param bid_order_margin: The bid_order_margin of this OptionsAccount.  # noqa: E501
         :type: str
@@ -544,7 +544,7 @@ class OptionsAccount(object):
     def orders_limit(self):
         """Gets the orders_limit of this OptionsAccount.  # noqa: E501
 
-        未完成订单数量上限  # noqa: E501
+        Maximum number of outstanding orders  # noqa: E501
 
         :return: The orders_limit of this OptionsAccount.  # noqa: E501
         :rtype: int
@@ -555,7 +555,7 @@ class OptionsAccount(object):
     def orders_limit(self, orders_limit):
         """Sets the orders_limit of this OptionsAccount.
 
-        未完成订单数量上限  # noqa: E501
+        Maximum number of outstanding orders  # noqa: E501
 
         :param orders_limit: The orders_limit of this OptionsAccount.  # noqa: E501
         :type: int
@@ -567,7 +567,7 @@ class OptionsAccount(object):
     def position_notional_limit(self):
         """Gets the position_notional_limit of this OptionsAccount.  # noqa: E501
 
-        名义价值上限，包含仓位以及未完成订单的名义价值  # noqa: E501
+        Notional value upper limit, including the nominal value of positions and outstanding orders  # noqa: E501
 
         :return: The position_notional_limit of this OptionsAccount.  # noqa: E501
         :rtype: int
@@ -578,7 +578,7 @@ class OptionsAccount(object):
     def position_notional_limit(self, position_notional_limit):
         """Sets the position_notional_limit of this OptionsAccount.
 
-        名义价值上限，包含仓位以及未完成订单的名义价值  # noqa: E501
+        Notional value upper limit, including the nominal value of positions and outstanding orders  # noqa: E501
 
         :param position_notional_limit: The position_notional_limit of this OptionsAccount.  # noqa: E501
         :type: int

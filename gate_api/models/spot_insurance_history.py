@@ -90,7 +90,7 @@ class SpotInsuranceHistory(object):
     def balance(self):
         """Gets the balance of this SpotInsuranceHistory.  # noqa: E501
 
-        余额  # noqa: E501
+        balance  # noqa: E501
 
         :return: The balance of this SpotInsuranceHistory.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class SpotInsuranceHistory(object):
     def balance(self, balance):
         """Sets the balance of this SpotInsuranceHistory.
 
-        余额  # noqa: E501
+        balance  # noqa: E501
 
         :param balance: The balance of this SpotInsuranceHistory.  # noqa: E501
         :type: str

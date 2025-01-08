@@ -4,67 +4,12 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_flash_swap_currencies**](FlashSwapApi.md#list_flash_swap_currencies) | **GET** /flash_swap/currencies | List All Supported Currencies In Flash Swap (deprecated)
 [**list_flash_swap_currency_pair**](FlashSwapApi.md#list_flash_swap_currency_pair) | **GET** /flash_swap/currency_pairs | List All Supported Currency Pairs In Flash Swap
 [**list_flash_swap_orders**](FlashSwapApi.md#list_flash_swap_orders) | **GET** /flash_swap/orders | List all flash swap orders
 [**create_flash_swap_order**](FlashSwapApi.md#create_flash_swap_order) | **POST** /flash_swap/orders | Create a flash swap order
 [**get_flash_swap_order**](FlashSwapApi.md#get_flash_swap_order) | **GET** /flash_swap/orders/{order_id} | Get a single flash swap order&#39;s detail
 [**preview_flash_swap_order**](FlashSwapApi.md#preview_flash_swap_order) | **POST** /flash_swap/orders/preview | Initiate a flash swap order preview
 
-
-# **list_flash_swap_currencies**
-> list[FlashSwapCurrency] list_flash_swap_currencies()
-
-List All Supported Currencies In Flash Swap (deprecated)
-
-### Example
-
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException, GateApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.FlashSwapApi(api_client)
-
-try:
-    # List All Supported Currencies In Flash Swap (deprecated)
-    api_response = api_instance.list_flash_swap_currencies()
-    print(api_response)
-except GateApiException as ex:
-    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
-except ApiException as e:
-    print("Exception when calling FlashSwapApi->list_flash_swap_currencies: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**list[FlashSwapCurrency]**](FlashSwapCurrency.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_flash_swap_currency_pair**
 > list[FlashSwapCurrencyPair] list_flash_swap_currency_pair(currency=currency, page=page, limit=limit)
