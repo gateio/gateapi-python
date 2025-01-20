@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**list_currency_discount_tiers**](UnifiedApi.md#list_currency_discount_tiers) | **GET** /unified/currency_discount_tiers | List currency discount tiers
 [**list_loan_margin_tiers**](UnifiedApi.md#list_loan_margin_tiers) | **GET** /unified/loan_margin_tiers | List loan margin tiers
 [**calculate_portfolio_margin**](UnifiedApi.md#calculate_portfolio_margin) | **POST** /unified/portfolio_calculator | Portfolio margin calculator
-[**get_user_leverage_currency_config**](UnifiedApi.md#get_user_leverage_currency_config) | **GET** /unified/leverage/user_currency_config | The maximum and minimum leverage multiples that users can set for a currency type are:
+[**get_user_leverage_currency_config**](UnifiedApi.md#get_user_leverage_currency_config) | **GET** /unified/leverage/user_currency_config | Minimum currency leverage that can be set
 [**get_user_leverage_currency_setting**](UnifiedApi.md#get_user_leverage_currency_setting) | **GET** /unified/leverage/user_currency_setting | Get the user&#39;s currency leverage. If currency is not passed, query all currencies.
 [**set_user_leverage_currency_setting**](UnifiedApi.md#set_user_leverage_currency_setting) | **POST** /unified/leverage/user_currency_setting | Set the loan currency leverage
 [**get_history_loan_rate**](UnifiedApi.md#get_history_loan_rate) | **GET** /unified/history_loan_rate | get historical lending rates
@@ -954,7 +954,7 @@ No authorization required
 # **get_user_leverage_currency_config**
 > UnifiedLeverageConfig get_user_leverage_currency_config(currency)
 
-The maximum and minimum leverage multiples that users can set for a currency type are:
+Minimum currency leverage that can be set
 
 ### Example
 
@@ -983,7 +983,7 @@ api_instance = gate_api.UnifiedApi(api_client)
 currency = 'BTC' # str | Currency
 
 try:
-    # The maximum and minimum leverage multiples that users can set for a currency type are:
+    # Minimum currency leverage that can be set
     api_response = api_instance.get_user_leverage_currency_config(currency)
     print(api_response)
 except GateApiException as ex:

@@ -225,7 +225,7 @@ class UnifiedLeverageConfig(object):
     def except_leverage_borrowable(self):
         """Gets the except_leverage_borrowable of this UnifiedLeverageConfig.  # noqa: E501
 
-        The maximum amount of margin that can be borrowed and the maximum amount of Yubibao that can be borrowed, whichever is smaller  # noqa: E501
+        The maximum amount of margin that can be borrowed and the maximum amount of Uniloan that can be borrowed, whichever is smaller  # noqa: E501
 
         :return: The except_leverage_borrowable of this UnifiedLeverageConfig.  # noqa: E501
         :rtype: str
@@ -236,7 +236,7 @@ class UnifiedLeverageConfig(object):
     def except_leverage_borrowable(self, except_leverage_borrowable):
         """Sets the except_leverage_borrowable of this UnifiedLeverageConfig.
 
-        The maximum amount of margin that can be borrowed and the maximum amount of Yubibao that can be borrowed, whichever is smaller  # noqa: E501
+        The maximum amount of margin that can be borrowed and the maximum amount of Uniloan that can be borrowed, whichever is smaller  # noqa: E501
 
         :param except_leverage_borrowable: The except_leverage_borrowable of this UnifiedLeverageConfig.  # noqa: E501
         :type: str

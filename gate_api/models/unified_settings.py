@@ -118,7 +118,7 @@ class UnifiedSettings(object):
     def use_funding(self):
         """Gets the use_funding of this UnifiedSettings.  # noqa: E501
 
-        When the mode is set to combined margin mode, will funds be used as margin  # noqa: E501
+        switch, when the mode is cross-currency margin mode, whether to use Uniloan financial funds as margin  # noqa: E501
 
         :return: The use_funding of this UnifiedSettings.  # noqa: E501
         :rtype: bool
@@ -129,7 +129,7 @@ class UnifiedSettings(object):
     def use_funding(self, use_funding):
         """Sets the use_funding of this UnifiedSettings.
 
-        When the mode is set to combined margin mode, will funds be used as margin  # noqa: E501
+        switch, when the mode is cross-currency margin mode, whether to use Uniloan financial funds as margin  # noqa: E501
 
         :param use_funding: The use_funding of this UnifiedSettings.  # noqa: E501
         :type: bool

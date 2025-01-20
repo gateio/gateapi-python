@@ -45,7 +45,8 @@ class CurrencyPair(object):
         'precision': 'int',
         'trade_status': 'str',
         'sell_start': 'int',
-        'buy_start': 'int'
+        'buy_start': 'int',
+        'type': 'str'
     }
 
     attribute_map = {
@@ -61,11 +62,12 @@ class CurrencyPair(object):
         'precision': 'precision',
         'trade_status': 'trade_status',
         'sell_start': 'sell_start',
-        'buy_start': 'buy_start'
+        'buy_start': 'buy_start',
+        'type': 'type'
     }
 
-    def __init__(self, id=None, base=None, quote=None, fee=None, min_base_amount=None, min_quote_amount=None, max_base_amount=None, max_quote_amount=None, amount_precision=None, precision=None, trade_status=None, sell_start=None, buy_start=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, int, int, str, int, int, Configuration) -> None
+    def __init__(self, id=None, base=None, quote=None, fee=None, min_base_amount=None, min_quote_amount=None, max_base_amount=None, max_quote_amount=None, amount_precision=None, precision=None, trade_status=None, sell_start=None, buy_start=None, type=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, str, str, str, str, str, int, int, str, int, int, str, Configuration) -> None
         """CurrencyPair - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +86,7 @@ class CurrencyPair(object):
         self._trade_status = None
         self._sell_start = None
         self._buy_start = None
+        self._type = None
         self.discriminator = None
 
         if id is not None:
@@ -112,6 +115,8 @@ class CurrencyPair(object):
             self.sell_start = sell_start
         if buy_start is not None:
             self.buy_start = buy_start
+        if type is not None:
+            self.type = type
 
     @property
     def id(self):
@@ -417,6 +422,29 @@ class CurrencyPair(object):
         """
 
         self._buy_start = buy_start
+
+    @property
+    def type(self):
+        """Gets the type of this CurrencyPair.  # noqa: E501
+
+        Trading pair type, normal: normal, premarket: pre-market  # noqa: E501
+
+        :return: The type of this CurrencyPair.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this CurrencyPair.
+
+        Trading pair type, normal: normal, premarket: pre-market  # noqa: E501
+
+        :param type: The type of this CurrencyPair.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

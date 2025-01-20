@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**rebate_broker_commission_history**](RebateApi.md#rebate_broker_commission_history) | **GET** /rebate/broker/commission_history | The broker obtains the user&#39;s commission rebate records
 [**rebate_broker_transaction_history**](RebateApi.md#rebate_broker_transaction_history) | **GET** /rebate/broker/transaction_history | The broker obtains the user&#39;s trading history
 [**rebate_user_info**](RebateApi.md#rebate_user_info) | **GET** /rebate/user/info | User retrieves rebate information
+[**user_sub_relation**](RebateApi.md#user_sub_relation) | **GET** /rebate/user/sub_relation | User-subordinate relationship
 
 
 # **agency_transaction_history**
@@ -617,6 +618,75 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_sub_relation**
+> UserSubRelation user_sub_relation(user_id_list)
+
+User-subordinate relationship
+
+Query whether the specified user is in the system
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.RebateApi(api_client)
+user_id_list = '1, 2, 3' # str | Query the user's ID list, split by,, if there are more than 100, take 100
+
+try:
+    # User-subordinate relationship
+    api_response = api_instance.user_sub_relation(user_id_list)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling RebateApi->user_sub_relation: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id_list** | **str**| Query the user&#39;s ID list, split by,, if there are more than 100, take 100 | 
+
+### Return type
+
+[**UserSubRelation**](UserSubRelation.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

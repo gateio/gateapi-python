@@ -1410,7 +1410,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_push_orders**
-> list[UidPushOrder] list_push_orders(id=id, _from=_from, to=to, limit=limit, offset=offset)
+> list[UidPushOrder] list_push_orders(id=id, _from=_from, to=to, limit=limit, offset=offset, transaction_type=transaction_type)
 
 Retrieve the UID transfer history
 
@@ -1443,10 +1443,11 @@ _from = 56 # int | The start time of the query record. If not specified, it defa
 to = 56 # int | The end time of the query record. If not specified, the default is the current time, which is a Unix timestamp in seconds. (optional)
 limit = 100 # int | The maximum number of items returned in the list, the default value is 100 (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
+transaction_type = 'withdraw' # str | The list returns the order type `withdraw`, `deposit`, the default is `withdraw`. (optional) (default to 'withdraw')
 
 try:
     # Retrieve the UID transfer history
-    api_response = api_instance.list_push_orders(id=id, _from=_from, to=to, limit=limit, offset=offset)
+    api_response = api_instance.list_push_orders(id=id, _from=_from, to=to, limit=limit, offset=offset, transaction_type=transaction_type)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1463,6 +1464,7 @@ Name | Type | Description  | Notes
  **to** | **int**| The end time of the query record. If not specified, the default is the current time, which is a Unix timestamp in seconds. | [optional] 
  **limit** | **int**| The maximum number of items returned in the list, the default value is 100 | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
+ **transaction_type** | **str**| The list returns the order type &#x60;withdraw&#x60;, &#x60;deposit&#x60;, the default is &#x60;withdraw&#x60;. | [optional] [default to &#39;withdraw&#39;]
 
 ### Return type
 

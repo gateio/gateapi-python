@@ -2387,6 +2387,7 @@ class WalletApi(object):
         :param int to: The end time of the query record. If not specified, the default is the current time, which is a Unix timestamp in seconds.
         :param int limit: The maximum number of items returned in the list, the default value is 100
         :param int offset: List offset, starting from 0
+        :param str transaction_type: The list returns the order type `withdraw`, `deposit`, the default is `withdraw`.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2415,6 +2416,7 @@ class WalletApi(object):
         :param int to: The end time of the query record. If not specified, the default is the current time, which is a Unix timestamp in seconds.
         :param int limit: The maximum number of items returned in the list, the default value is 100
         :param int offset: List offset, starting from 0
+        :param str transaction_type: The list returns the order type `withdraw`, `deposit`, the default is `withdraw`.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2436,7 +2438,8 @@ class WalletApi(object):
             '_from',
             'to',
             'limit',
-            'offset'
+            'offset',
+            'transaction_type'
         ]
         all_params.extend(
             [
@@ -2475,6 +2478,8 @@ class WalletApi(object):
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
         if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
             query_params.append(('offset', local_var_params['offset']))  # noqa: E501
+        if 'transaction_type' in local_var_params and local_var_params['transaction_type'] is not None:  # noqa: E501
+            query_params.append(('transaction_type', local_var_params['transaction_type']))  # noqa: E501
 
         header_params = {}
 

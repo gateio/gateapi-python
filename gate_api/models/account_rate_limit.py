@@ -72,7 +72,7 @@ class AccountRateLimit(object):
     def tier(self):
         """Gets the tier of this AccountRateLimit.  # noqa: E501
 
-        Frequency limit level (For detailed frequency limit rules, see [Transaction ratio frequency limit](#成交比率限频))  # noqa: E501
+        Frequency limit level (For detailed frequency limit rules, see [Transaction ratio frequency limit](#rate-limit-based-on-fill-ratio))  # noqa: E501
 
         :return: The tier of this AccountRateLimit.  # noqa: E501
         :rtype: str
@@ -83,7 +83,7 @@ class AccountRateLimit(object):
     def tier(self, tier):
         """Sets the tier of this AccountRateLimit.
 
-        Frequency limit level (For detailed frequency limit rules, see [Transaction ratio frequency limit](#成交比率限频))  # noqa: E501
+        Frequency limit level (For detailed frequency limit rules, see [Transaction ratio frequency limit](#rate-limit-based-on-fill-ratio))  # noqa: E501
 
         :param tier: The tier of this AccountRateLimit.  # noqa: E501
         :type: str

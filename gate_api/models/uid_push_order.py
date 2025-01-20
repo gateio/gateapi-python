@@ -40,7 +40,8 @@ class UidPushOrder(object):
         'amount': 'str',
         'create_time': 'int',
         'status': 'str',
-        'message': 'str'
+        'message': 'str',
+        'transaction_type': 'str'
     }
 
     attribute_map = {
@@ -51,11 +52,12 @@ class UidPushOrder(object):
         'amount': 'amount',
         'create_time': 'create_time',
         'status': 'status',
-        'message': 'message'
+        'message': 'message',
+        'transaction_type': 'transaction_type'
     }
 
-    def __init__(self, id=None, push_uid=None, receive_uid=None, currency=None, amount=None, create_time=None, status=None, message=None, local_vars_configuration=None):  # noqa: E501
-        # type: (int, int, int, str, str, int, str, str, Configuration) -> None
+    def __init__(self, id=None, push_uid=None, receive_uid=None, currency=None, amount=None, create_time=None, status=None, message=None, transaction_type=None, local_vars_configuration=None):  # noqa: E501
+        # type: (int, int, int, str, str, int, str, str, str, Configuration) -> None
         """UidPushOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class UidPushOrder(object):
         self._create_time = None
         self._status = None
         self._message = None
+        self._transaction_type = None
         self.discriminator = None
 
         if id is not None:
@@ -87,6 +90,8 @@ class UidPushOrder(object):
             self.status = status
         if message is not None:
             self.message = message
+        if transaction_type is not None:
+            self.transaction_type = transaction_type
 
     @property
     def id(self):
@@ -271,6 +276,29 @@ class UidPushOrder(object):
         """
 
         self._message = message
+
+    @property
+    def transaction_type(self):
+        """Gets the transaction_type of this UidPushOrder.  # noqa: E501
+
+        Order Type  # noqa: E501
+
+        :return: The transaction_type of this UidPushOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._transaction_type
+
+    @transaction_type.setter
+    def transaction_type(self, transaction_type):
+        """Sets the transaction_type of this UidPushOrder.
+
+        Order Type  # noqa: E501
+
+        :param transaction_type: The transaction_type of this UidPushOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._transaction_type = transaction_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -354,7 +354,7 @@ class UnifiedBalance(object):
     def funding(self):
         """Gets the funding of this UnifiedBalance.  # noqa: E501
 
-        Yubibao financial management amount, effective when Yubibao financial management is turned on as a unified account margin switch  # noqa: E501
+        Uniloan financial management amount, effective when Uniloan financial management is turned on as a unified account margin switch  # noqa: E501
 
         :return: The funding of this UnifiedBalance.  # noqa: E501
         :rtype: str
@@ -365,7 +365,7 @@ class UnifiedBalance(object):
     def funding(self, funding):
         """Sets the funding of this UnifiedBalance.
 
-        Yubibao financial management amount, effective when Yubibao financial management is turned on as a unified account margin switch  # noqa: E501
+        Uniloan financial management amount, effective when Uniloan financial management is turned on as a unified account margin switch  # noqa: E501
 
         :param funding: The funding of this UnifiedBalance.  # noqa: E501
         :type: str

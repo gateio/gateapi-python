@@ -249,6 +249,8 @@ from gate_api.models.unified_risk_units import UnifiedRiskUnits
 from gate_api.models.unified_settings import UnifiedSettings
 from gate_api.models.unified_transferable import UnifiedTransferable
 from gate_api.models.user_ltv_info import UserLtvInfo
+from gate_api.models.user_sub import UserSub
+from gate_api.models.user_sub_relation import UserSubRelation
 from gate_api.models.user_total_amount import UserTotalAmount
 from gate_api.models.withdraw_status import WithdrawStatus
 from gate_api.models.withdrawal_record import WithdrawalRecord

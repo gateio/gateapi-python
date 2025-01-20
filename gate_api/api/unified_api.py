@@ -1649,7 +1649,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def get_user_leverage_currency_config(self, currency, **kwargs):  # noqa: E501
-        """The maximum and minimum leverage multiples that users can set for a currency type are:  # noqa: E501
+        """Minimum currency leverage that can be set  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1673,7 +1673,7 @@ class UnifiedApi(object):
         return self.get_user_leverage_currency_config_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_user_leverage_currency_config_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """The maximum and minimum leverage multiples that users can set for a currency type are:  # noqa: E501
+        """Minimum currency leverage that can be set  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

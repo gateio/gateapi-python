@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "4.89.0"
+__version__ = "4.90.0"
 
 # import apis into sdk package
 from gate_api.api.earn_uni_api import EarnUniApi
@@ -279,6 +279,8 @@ from gate_api.models.unified_risk_units import UnifiedRiskUnits
 from gate_api.models.unified_settings import UnifiedSettings
 from gate_api.models.unified_transferable import UnifiedTransferable
 from gate_api.models.user_ltv_info import UserLtvInfo
+from gate_api.models.user_sub import UserSub
+from gate_api.models.user_sub_relation import UserSubRelation
 from gate_api.models.user_total_amount import UserTotalAmount
 from gate_api.models.withdraw_status import WithdrawStatus
 from gate_api.models.withdrawal_record import WithdrawalRecord

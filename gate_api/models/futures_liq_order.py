@@ -36,6 +36,7 @@ class FuturesLiqOrder(object):
         'time': 'int',
         'contract': 'str',
         'size': 'int',
+        'order_size': 'int',
         'order_price': 'str',
         'fill_price': 'str',
         'left': 'int'
@@ -45,13 +46,14 @@ class FuturesLiqOrder(object):
         'time': 'time',
         'contract': 'contract',
         'size': 'size',
+        'order_size': 'order_size',
         'order_price': 'order_price',
         'fill_price': 'fill_price',
         'left': 'left'
     }
 
-    def __init__(self, time=None, contract=None, size=None, order_price=None, fill_price=None, left=None, local_vars_configuration=None):  # noqa: E501
-        # type: (int, str, int, str, str, int, Configuration) -> None
+    def __init__(self, time=None, contract=None, size=None, order_size=None, order_price=None, fill_price=None, left=None, local_vars_configuration=None):  # noqa: E501
+        # type: (int, str, int, int, str, str, int, Configuration) -> None
         """FuturesLiqOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class FuturesLiqOrder(object):
         self._time = None
         self._contract = None
         self._size = None
+        self._order_size = None
         self._order_price = None
         self._fill_price = None
         self._left = None
@@ -71,6 +74,8 @@ class FuturesLiqOrder(object):
             self.contract = contract
         if size is not None:
             self.size = size
+        if order_size is not None:
+            self.order_size = order_size
         if order_price is not None:
             self.order_price = order_price
         if fill_price is not None:
@@ -146,6 +151,29 @@ class FuturesLiqOrder(object):
         """
 
         self._size = size
+
+    @property
+    def order_size(self):
+        """Gets the order_size of this FuturesLiqOrder.  # noqa: E501
+
+        Number of forced liquidation orders  # noqa: E501
+
+        :return: The order_size of this FuturesLiqOrder.  # noqa: E501
+        :rtype: int
+        """
+        return self._order_size
+
+    @order_size.setter
+    def order_size(self, order_size):
+        """Sets the order_size of this FuturesLiqOrder.
+
+        Number of forced liquidation orders  # noqa: E501
+
+        :param order_size: The order_size of this FuturesLiqOrder.  # noqa: E501
+        :type: int
+        """
+
+        self._order_size = order_size
 
     @property
     def order_price(self):
