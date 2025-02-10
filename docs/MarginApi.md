@@ -10,19 +10,19 @@ Method | HTTP request | Description
 [**get_auto_repay_status**](MarginApi.md#get_auto_repay_status) | **GET** /margin/auto_repay | Retrieve user auto repayment setting
 [**set_auto_repay**](MarginApi.md#set_auto_repay) | **POST** /margin/auto_repay | Update user&#39;s auto repayment setting
 [**get_margin_transferable**](MarginApi.md#get_margin_transferable) | **GET** /margin/transferable | Get the max transferable amount for a specific margin currency
-[**list_cross_margin_currencies**](MarginApi.md#list_cross_margin_currencies) | **GET** /margin/cross/currencies | Currencies supported by cross margin.
-[**get_cross_margin_currency**](MarginApi.md#get_cross_margin_currency) | **GET** /margin/cross/currencies/{currency} | Retrieve detail of one single currency supported by cross margin
-[**get_cross_margin_account**](MarginApi.md#get_cross_margin_account) | **GET** /margin/cross/accounts | Retrieve cross margin account
-[**list_cross_margin_account_book**](MarginApi.md#list_cross_margin_account_book) | **GET** /margin/cross/account_book | Retrieve cross margin account change history
-[**list_cross_margin_loans**](MarginApi.md#list_cross_margin_loans) | **GET** /margin/cross/loans | List cross margin borrow history
-[**create_cross_margin_loan**](MarginApi.md#create_cross_margin_loan) | **POST** /margin/cross/loans | Create a cross margin borrow loan
-[**get_cross_margin_loan**](MarginApi.md#get_cross_margin_loan) | **GET** /margin/cross/loans/{loan_id} | Retrieve single borrow loan detail
-[**list_cross_margin_repayments**](MarginApi.md#list_cross_margin_repayments) | **GET** /margin/cross/repayments | Retrieve cross margin repayments
-[**repay_cross_margin_loan**](MarginApi.md#repay_cross_margin_loan) | **POST** /margin/cross/repayments | Cross margin repayments
-[**get_cross_margin_interest_records**](MarginApi.md#get_cross_margin_interest_records) | **GET** /margin/cross/interest_records | Interest records for the cross margin account
-[**get_cross_margin_transferable**](MarginApi.md#get_cross_margin_transferable) | **GET** /margin/cross/transferable | Get the max transferable amount for a specific cross margin currency
-[**get_cross_margin_estimate_rate**](MarginApi.md#get_cross_margin_estimate_rate) | **GET** /margin/cross/estimate_rate | Estimated interest rates
-[**get_cross_margin_borrowable**](MarginApi.md#get_cross_margin_borrowable) | **GET** /margin/cross/borrowable | Get the max borrowable amount for a specific cross margin currency
+[**list_cross_margin_currencies**](MarginApi.md#list_cross_margin_currencies) | **GET** /margin/cross/currencies | Currencies supported by cross margin.(deprecated)
+[**get_cross_margin_currency**](MarginApi.md#get_cross_margin_currency) | **GET** /margin/cross/currencies/{currency} | Retrieve detail of one single currency supported by cross margin. (deprecated)
+[**get_cross_margin_account**](MarginApi.md#get_cross_margin_account) | **GET** /margin/cross/accounts | Retrieve cross margin account. (deprecated)
+[**list_cross_margin_account_book**](MarginApi.md#list_cross_margin_account_book) | **GET** /margin/cross/account_book | Retrieve cross margin account change history. (deprecated)
+[**list_cross_margin_loans**](MarginApi.md#list_cross_margin_loans) | **GET** /margin/cross/loans | List cross margin borrow history. (deprecated)
+[**create_cross_margin_loan**](MarginApi.md#create_cross_margin_loan) | **POST** /margin/cross/loans | Create a cross margin borrow loan. (deprecated)
+[**get_cross_margin_loan**](MarginApi.md#get_cross_margin_loan) | **GET** /margin/cross/loans/{loan_id} | Retrieve single borrow loan detail. (deprecated)
+[**list_cross_margin_repayments**](MarginApi.md#list_cross_margin_repayments) | **GET** /margin/cross/repayments | Retrieve cross margin repayments. (deprecated)
+[**repay_cross_margin_loan**](MarginApi.md#repay_cross_margin_loan) | **POST** /margin/cross/repayments | Cross margin repayments. (deprecated)
+[**get_cross_margin_interest_records**](MarginApi.md#get_cross_margin_interest_records) | **GET** /margin/cross/interest_records | Interest records for the cross margin account. (deprecated)
+[**get_cross_margin_transferable**](MarginApi.md#get_cross_margin_transferable) | **GET** /margin/cross/transferable | Get the max transferable amount for a specific cross margin currency. (deprecated)
+[**get_cross_margin_estimate_rate**](MarginApi.md#get_cross_margin_estimate_rate) | **GET** /margin/cross/estimate_rate | Estimated interest rates. (deprecated)
+[**get_cross_margin_borrowable**](MarginApi.md#get_cross_margin_borrowable) | **GET** /margin/cross/borrowable | Get the max borrowable amount for a specific cross margin currency. (deprecated)
 
 
 # **list_margin_accounts**
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 # **list_cross_margin_currencies**
 > list[CrossMarginCurrency] list_cross_margin_currencies()
 
-Currencies supported by cross margin.
+Currencies supported by cross margin.(deprecated)
 
 ### Example
 
@@ -461,7 +461,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.MarginApi(api_client)
 
 try:
-    # Currencies supported by cross margin.
+    # Currencies supported by cross margin.(deprecated)
     api_response = api_instance.list_cross_margin_currencies()
     print(api_response)
 except GateApiException as ex:
@@ -496,7 +496,7 @@ No authorization required
 # **get_cross_margin_currency**
 > CrossMarginCurrency get_cross_margin_currency(currency)
 
-Retrieve detail of one single currency supported by cross margin
+Retrieve detail of one single currency supported by cross margin. (deprecated)
 
 ### Example
 
@@ -516,7 +516,7 @@ api_instance = gate_api.MarginApi(api_client)
 currency = 'BTC' # str | Currency name
 
 try:
-    # Retrieve detail of one single currency supported by cross margin
+    # Retrieve detail of one single currency supported by cross margin. (deprecated)
     api_response = api_instance.get_cross_margin_currency(currency)
     print(api_response)
 except GateApiException as ex:
@@ -554,7 +554,7 @@ No authorization required
 # **get_cross_margin_account**
 > CrossMarginAccount get_cross_margin_account()
 
-Retrieve cross margin account
+Retrieve cross margin account. (deprecated)
 
 ### Example
 
@@ -582,7 +582,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.MarginApi(api_client)
 
 try:
-    # Retrieve cross margin account
+    # Retrieve cross margin account. (deprecated)
     api_response = api_instance.get_cross_margin_account()
     print(api_response)
 except GateApiException as ex:
@@ -617,7 +617,7 @@ This endpoint does not need any parameter.
 # **list_cross_margin_account_book**
 > list[CrossMarginAccountBook] list_cross_margin_account_book(currency=currency, _from=_from, to=to, page=page, limit=limit, type=type)
 
-Retrieve cross margin account change history
+Retrieve cross margin account change history. (deprecated)
 
 The record query time range is not allowed to exceed 30 days.  When using the limit&page paging function to retrieve data, the maximum number of pages is 100,000, that is, (limit page - 1) <= 100000.
 
@@ -653,7 +653,7 @@ limit = 100 # int | Maximum number of records to be returned in a single list (o
 type = 'borrow' # str | Only retrieve changes of the specified type. All types will be returned if not specified. (optional)
 
 try:
-    # Retrieve cross margin account change history
+    # Retrieve cross margin account change history. (deprecated)
     api_response = api_instance.list_cross_margin_account_book(currency=currency, _from=_from, to=to, page=page, limit=limit, type=type)
     print(api_response)
 except GateApiException as ex:
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 # **list_cross_margin_loans**
 > list[CrossMarginLoan] list_cross_margin_loans(status, currency=currency, limit=limit, offset=offset, reverse=reverse)
 
-List cross margin borrow history
+List cross margin borrow history. (deprecated)
 
 Sort by creation time in descending order by default. Set `reverse=false` to return ascending results.
 
@@ -731,7 +731,7 @@ offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 reverse = True # bool | Whether to sort in descending order, which is the default. Set `reverse=false` to return ascending results (optional) (default to True)
 
 try:
-    # List cross margin borrow history
+    # List cross margin borrow history. (deprecated)
     api_response = api_instance.list_cross_margin_loans(status, currency=currency, limit=limit, offset=offset, reverse=reverse)
     print(api_response)
 except GateApiException as ex:
@@ -773,7 +773,7 @@ Name | Type | Description  | Notes
 # **create_cross_margin_loan**
 > CrossMarginLoan create_cross_margin_loan(cross_margin_loan)
 
-Create a cross margin borrow loan
+Create a cross margin borrow loan. (deprecated)
 
 Borrow amount cannot be less than currency minimum borrow amount
 
@@ -804,7 +804,7 @@ api_instance = gate_api.MarginApi(api_client)
 cross_margin_loan = gate_api.CrossMarginLoan() # CrossMarginLoan | 
 
 try:
-    # Create a cross margin borrow loan
+    # Create a cross margin borrow loan. (deprecated)
     api_response = api_instance.create_cross_margin_loan(cross_margin_loan)
     print(api_response)
 except GateApiException as ex:
@@ -842,7 +842,7 @@ Name | Type | Description  | Notes
 # **get_cross_margin_loan**
 > CrossMarginLoan get_cross_margin_loan(loan_id)
 
-Retrieve single borrow loan detail
+Retrieve single borrow loan detail. (deprecated)
 
 ### Example
 
@@ -871,7 +871,7 @@ api_instance = gate_api.MarginApi(api_client)
 loan_id = '12345' # str | Borrow loan ID
 
 try:
-    # Retrieve single borrow loan detail
+    # Retrieve single borrow loan detail. (deprecated)
     api_response = api_instance.get_cross_margin_loan(loan_id)
     print(api_response)
 except GateApiException as ex:
@@ -909,7 +909,7 @@ Name | Type | Description  | Notes
 # **list_cross_margin_repayments**
 > list[CrossMarginRepayment] list_cross_margin_repayments(currency=currency, loan_id=loan_id, limit=limit, offset=offset, reverse=reverse)
 
-Retrieve cross margin repayments
+Retrieve cross margin repayments. (deprecated)
 
 Sort by creation time in descending order by default. Set `reverse=false` to return ascending results.
 
@@ -944,7 +944,7 @@ offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 reverse = True # bool | Whether to sort in descending order, which is the default. Set `reverse=false` to return ascending results (optional) (default to True)
 
 try:
-    # Retrieve cross margin repayments
+    # Retrieve cross margin repayments. (deprecated)
     api_response = api_instance.list_cross_margin_repayments(currency=currency, loan_id=loan_id, limit=limit, offset=offset, reverse=reverse)
     print(api_response)
 except GateApiException as ex:
@@ -986,7 +986,7 @@ Name | Type | Description  | Notes
 # **repay_cross_margin_loan**
 > list[CrossMarginLoan] repay_cross_margin_loan(cross_margin_repay_request)
 
-Cross margin repayments
+Cross margin repayments. (deprecated)
 
 When the liquidity of the currency is insufficient and the transaction risk is high, the currency will be disabled, and funds cannot be transferred.When the available balance of cross-margin is insufficient, the balance of the spot account can be used for repayment. Please ensure that the balance of the spot account is sufficient, and system uses cross-margin account for repayment first
 
@@ -1017,7 +1017,7 @@ api_instance = gate_api.MarginApi(api_client)
 cross_margin_repay_request = gate_api.CrossMarginRepayRequest() # CrossMarginRepayRequest | 
 
 try:
-    # Cross margin repayments
+    # Cross margin repayments. (deprecated)
     api_response = api_instance.repay_cross_margin_loan(cross_margin_repay_request)
     print(api_response)
 except GateApiException as ex:
@@ -1055,7 +1055,7 @@ Name | Type | Description  | Notes
 # **get_cross_margin_interest_records**
 > list[UniLoanInterestRecord] get_cross_margin_interest_records(currency=currency, page=page, limit=limit, _from=_from, to=to)
 
-Interest records for the cross margin account
+Interest records for the cross margin account. (deprecated)
 
 ### Example
 
@@ -1088,7 +1088,7 @@ _from = 1547706332 # int | Start timestamp (optional)
 to = 1547706332 # int | End timestamp (optional)
 
 try:
-    # Interest records for the cross margin account
+    # Interest records for the cross margin account. (deprecated)
     api_response = api_instance.get_cross_margin_interest_records(currency=currency, page=page, limit=limit, _from=_from, to=to)
     print(api_response)
 except GateApiException as ex:
@@ -1130,7 +1130,7 @@ Name | Type | Description  | Notes
 # **get_cross_margin_transferable**
 > CrossMarginTransferable get_cross_margin_transferable(currency)
 
-Get the max transferable amount for a specific cross margin currency
+Get the max transferable amount for a specific cross margin currency. (deprecated)
 
 ### Example
 
@@ -1159,7 +1159,7 @@ api_instance = gate_api.MarginApi(api_client)
 currency = 'BTC' # str | Retrieve data of the specified currency
 
 try:
-    # Get the max transferable amount for a specific cross margin currency
+    # Get the max transferable amount for a specific cross margin currency. (deprecated)
     api_response = api_instance.get_cross_margin_transferable(currency)
     print(api_response)
 except GateApiException as ex:
@@ -1197,7 +1197,7 @@ Name | Type | Description  | Notes
 # **get_cross_margin_estimate_rate**
 > dict(str, str) get_cross_margin_estimate_rate(currencies)
 
-Estimated interest rates
+Estimated interest rates. (deprecated)
 
 Please note that the interest rates are subject to change based on the borrowing and lending demand, and therefore, the provided rates may not be entirely accurate.
 
@@ -1228,7 +1228,7 @@ api_instance = gate_api.MarginApi(api_client)
 currencies = ['[\"BTC\",\"GT\"]'] # list[str] | An array of up to 10 specifying the currency name
 
 try:
-    # Estimated interest rates
+    # Estimated interest rates. (deprecated)
     api_response = api_instance.get_cross_margin_estimate_rate(currencies)
     print(api_response)
 except GateApiException as ex:
@@ -1266,7 +1266,7 @@ Name | Type | Description  | Notes
 # **get_cross_margin_borrowable**
 > UnifiedBorrowable get_cross_margin_borrowable(currency)
 
-Get the max borrowable amount for a specific cross margin currency
+Get the max borrowable amount for a specific cross margin currency. (deprecated)
 
 ### Example
 
@@ -1295,7 +1295,7 @@ api_instance = gate_api.MarginApi(api_client)
 currency = 'BTC' # str | Retrieve data of the specified currency
 
 try:
-    # Get the max borrowable amount for a specific cross margin currency
+    # Get the max borrowable amount for a specific cross margin currency. (deprecated)
     api_response = api_instance.get_cross_margin_borrowable(currency)
     print(api_response)
 except GateApiException as ex:

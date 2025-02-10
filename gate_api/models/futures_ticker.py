@@ -489,7 +489,7 @@ class FuturesTicker(object):
     def funding_rate_indicative(self):
         """Gets the funding_rate_indicative of this FuturesTicker.  # noqa: E501
 
-        Indicative Funding rate in next period  # noqa: E501
+        Indicative Funding rate in next period. (deprecated. use `funding_rate`)  # noqa: E501
 
         :return: The funding_rate_indicative of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -500,7 +500,7 @@ class FuturesTicker(object):
     def funding_rate_indicative(self, funding_rate_indicative):
         """Sets the funding_rate_indicative of this FuturesTicker.
 
-        Indicative Funding rate in next period  # noqa: E501
+        Indicative Funding rate in next period. (deprecated. use `funding_rate`)  # noqa: E501
 
         :param funding_rate_indicative: The funding_rate_indicative of this FuturesTicker.  # noqa: E501
         :type: str

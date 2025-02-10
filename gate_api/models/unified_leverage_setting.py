@@ -53,10 +53,8 @@ class UnifiedLeverageSetting(object):
         self._leverage = None
         self.discriminator = None
 
-        if currency is not None:
-            self.currency = currency
-        if leverage is not None:
-            self.leverage = leverage
+        self.currency = currency
+        self.leverage = leverage
 
     @property
     def currency(self):
@@ -78,6 +76,8 @@ class UnifiedLeverageSetting(object):
         :param currency: The currency of this UnifiedLeverageSetting.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and currency is None:  # noqa: E501
+            raise ValueError("Invalid value for `currency`, must not be `None`")  # noqa: E501
 
         self._currency = currency
 
@@ -101,6 +101,8 @@ class UnifiedLeverageSetting(object):
         :param leverage: The leverage of this UnifiedLeverageSetting.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and leverage is None:  # noqa: E501
+            raise ValueError("Invalid value for `leverage`, must not be `None`")  # noqa: E501
 
         self._leverage = leverage
 

@@ -851,7 +851,7 @@ class AccountApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: gate_api.InlineResponse2001
+        :rtype: gate_api.DebitFee
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -877,7 +877,7 @@ class AccountApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: tuple(gate_api.InlineResponse2001, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(gate_api.DebitFee, status_code(int), headers(HTTPHeaderDict))
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -931,7 +931,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse2001',  # noqa: E501
+            response_type='DebitFee',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -939,17 +939,17 @@ class AccountApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def set_debit_fee(self, inline_object, **kwargs):  # noqa: E501
+    def set_debit_fee(self, debit_fee, **kwargs):  # noqa: E501
         """Set GT deduction.  # noqa: E501
 
         Enable or disable GT deduction for the current account.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_debit_fee(inline_object, async_req=True)
+        >>> thread = api.set_debit_fee(debit_fee, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param InlineObject inline_object: (required)
+        :param DebitFee debit_fee: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -962,19 +962,19 @@ class AccountApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.set_debit_fee_with_http_info(inline_object, **kwargs)  # noqa: E501
+        return self.set_debit_fee_with_http_info(debit_fee, **kwargs)  # noqa: E501
 
-    def set_debit_fee_with_http_info(self, inline_object, **kwargs):  # noqa: E501
+    def set_debit_fee_with_http_info(self, debit_fee, **kwargs):  # noqa: E501
         """Set GT deduction.  # noqa: E501
 
         Enable or disable GT deduction for the current account.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_debit_fee_with_http_info(inline_object, async_req=True)
+        >>> thread = api.set_debit_fee_with_http_info(debit_fee, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param InlineObject inline_object: (required)
+        :param DebitFee debit_fee: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -992,7 +992,7 @@ class AccountApi(object):
         local_var_params = locals()
 
         all_params = [
-            'inline_object'
+            'debit_fee'
         ]
         all_params.extend(
             [
@@ -1011,10 +1011,10 @@ class AccountApi(object):
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
-        # verify the required parameter 'inline_object' is set
-        if self.api_client.client_side_validation and ('inline_object' not in local_var_params or  # noqa: E501
-                                                        local_var_params['inline_object'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `inline_object` when calling `set_debit_fee`")  # noqa: E501
+        # verify the required parameter 'debit_fee' is set
+        if self.api_client.client_side_validation and ('debit_fee' not in local_var_params or  # noqa: E501
+                                                        local_var_params['debit_fee'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `debit_fee` when calling `set_debit_fee`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1028,8 +1028,8 @@ class AccountApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'inline_object' in local_var_params:
-            body_params = local_var_params['inline_object']
+        if 'debit_fee' in local_var_params:
+            body_params = local_var_params['debit_fee']
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501

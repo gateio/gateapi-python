@@ -1,4 +1,4 @@
-# InlineResponse200
+# TransferOrderStatus
 
 ## Properties
 Name | Type | Description | Notes

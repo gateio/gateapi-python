@@ -69,6 +69,7 @@ from gate_api.models.currency import Currency
 from gate_api.models.currency_chain import CurrencyChain
 from gate_api.models.currency_pair import CurrencyPair
 from gate_api.models.currency_quota import CurrencyQuota
+from gate_api.models.debit_fee import DebitFee
 from gate_api.models.delivery_candlestick import DeliveryCandlestick
 from gate_api.models.delivery_contract import DeliveryContract
 from gate_api.models.delivery_settlement import DeliverySettlement
@@ -106,9 +107,6 @@ from gate_api.models.futures_price_triggered_order import FuturesPriceTriggeredO
 from gate_api.models.futures_ticker import FuturesTicker
 from gate_api.models.futures_trade import FuturesTrade
 from gate_api.models.index_constituent import IndexConstituent
-from gate_api.models.inline_object import InlineObject
-from gate_api.models.inline_response200 import InlineResponse200
-from gate_api.models.inline_response2001 import InlineResponse2001
 from gate_api.models.insurance_record import InsuranceRecord
 from gate_api.models.ledger_record import LedgerRecord
 from gate_api.models.liquidate_order import LiquidateOrder
@@ -214,6 +212,7 @@ from gate_api.models.trade import Trade
 from gate_api.models.trade_fee import TradeFee
 from gate_api.models.transaction_id import TransactionID
 from gate_api.models.transfer import Transfer
+from gate_api.models.transfer_order_status import TransferOrderStatus
 from gate_api.models.trigger_order_response import TriggerOrderResponse
 from gate_api.models.trigger_time import TriggerTime
 from gate_api.models.uid_push_order import UidPushOrder

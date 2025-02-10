@@ -731,7 +731,7 @@ class MarginApi(object):
             collection_formats=collection_formats)
 
     def list_cross_margin_currencies(self, **kwargs):  # noqa: E501
-        """Currencies supported by cross margin.  # noqa: E501
+        """Currencies supported by cross margin.(deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -754,7 +754,7 @@ class MarginApi(object):
         return self.list_cross_margin_currencies_with_http_info(**kwargs)  # noqa: E501
 
     def list_cross_margin_currencies_with_http_info(self, **kwargs):  # noqa: E501
-        """Currencies supported by cross margin.  # noqa: E501
+        """Currencies supported by cross margin.(deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -834,7 +834,7 @@ class MarginApi(object):
             collection_formats=collection_formats)
 
     def get_cross_margin_currency(self, currency, **kwargs):  # noqa: E501
-        """Retrieve detail of one single currency supported by cross margin  # noqa: E501
+        """Retrieve detail of one single currency supported by cross margin. (deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -858,7 +858,7 @@ class MarginApi(object):
         return self.get_cross_margin_currency_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_cross_margin_currency_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """Retrieve detail of one single currency supported by cross margin  # noqa: E501
+        """Retrieve detail of one single currency supported by cross margin. (deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -946,7 +946,7 @@ class MarginApi(object):
             collection_formats=collection_formats)
 
     def get_cross_margin_account(self, **kwargs):  # noqa: E501
-        """Retrieve cross margin account  # noqa: E501
+        """Retrieve cross margin account. (deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -969,7 +969,7 @@ class MarginApi(object):
         return self.get_cross_margin_account_with_http_info(**kwargs)  # noqa: E501
 
     def get_cross_margin_account_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve cross margin account  # noqa: E501
+        """Retrieve cross margin account. (deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1049,7 +1049,7 @@ class MarginApi(object):
             collection_formats=collection_formats)
 
     def list_cross_margin_account_book(self, **kwargs):  # noqa: E501
-        """Retrieve cross margin account change history  # noqa: E501
+        """Retrieve cross margin account change history. (deprecated)  # noqa: E501
 
         The record query time range is not allowed to exceed 30 days.  When using the limit&page paging function to retrieve data, the maximum number of pages is 100,000, that is, (limit page - 1) <= 100000.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1079,7 +1079,7 @@ class MarginApi(object):
         return self.list_cross_margin_account_book_with_http_info(**kwargs)  # noqa: E501
 
     def list_cross_margin_account_book_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve cross margin account change history  # noqa: E501
+        """Retrieve cross margin account change history. (deprecated)  # noqa: E501
 
         The record query time range is not allowed to exceed 30 days.  When using the limit&page paging function to retrieve data, the maximum number of pages is 100,000, that is, (limit page - 1) <= 100000.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1190,7 +1190,7 @@ class MarginApi(object):
             collection_formats=collection_formats)
 
     def list_cross_margin_loans(self, status, **kwargs):  # noqa: E501
-        """List cross margin borrow history  # noqa: E501
+        """List cross margin borrow history. (deprecated)  # noqa: E501
 
         Sort by creation time in descending order by default. Set `reverse=false` to return ascending results.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1219,7 +1219,7 @@ class MarginApi(object):
         return self.list_cross_margin_loans_with_http_info(status, **kwargs)  # noqa: E501
 
     def list_cross_margin_loans_with_http_info(self, status, **kwargs):  # noqa: E501
-        """List cross margin borrow history  # noqa: E501
+        """List cross margin borrow history. (deprecated)  # noqa: E501
 
         Sort by creation time in descending order by default. Set `reverse=false` to return ascending results.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1330,7 +1330,7 @@ class MarginApi(object):
             collection_formats=collection_formats)
 
     def create_cross_margin_loan(self, cross_margin_loan, **kwargs):  # noqa: E501
-        """Create a cross margin borrow loan  # noqa: E501
+        """Create a cross margin borrow loan. (deprecated)  # noqa: E501
 
         Borrow amount cannot be less than currency minimum borrow amount  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1355,7 +1355,7 @@ class MarginApi(object):
         return self.create_cross_margin_loan_with_http_info(cross_margin_loan, **kwargs)  # noqa: E501
 
     def create_cross_margin_loan_with_http_info(self, cross_margin_loan, **kwargs):  # noqa: E501
-        """Create a cross margin borrow loan  # noqa: E501
+        """Create a cross margin borrow loan. (deprecated)  # noqa: E501
 
         Borrow amount cannot be less than currency minimum borrow amount  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1448,7 +1448,7 @@ class MarginApi(object):
             collection_formats=collection_formats)
 
     def get_cross_margin_loan(self, loan_id, **kwargs):  # noqa: E501
-        """Retrieve single borrow loan detail  # noqa: E501
+        """Retrieve single borrow loan detail. (deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1472,7 +1472,7 @@ class MarginApi(object):
         return self.get_cross_margin_loan_with_http_info(loan_id, **kwargs)  # noqa: E501
 
     def get_cross_margin_loan_with_http_info(self, loan_id, **kwargs):  # noqa: E501
-        """Retrieve single borrow loan detail  # noqa: E501
+        """Retrieve single borrow loan detail. (deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1560,7 +1560,7 @@ class MarginApi(object):
             collection_formats=collection_formats)
 
     def list_cross_margin_repayments(self, **kwargs):  # noqa: E501
-        """Retrieve cross margin repayments  # noqa: E501
+        """Retrieve cross margin repayments. (deprecated)  # noqa: E501
 
         Sort by creation time in descending order by default. Set `reverse=false` to return ascending results.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1589,7 +1589,7 @@ class MarginApi(object):
         return self.list_cross_margin_repayments_with_http_info(**kwargs)  # noqa: E501
 
     def list_cross_margin_repayments_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve cross margin repayments  # noqa: E501
+        """Retrieve cross margin repayments. (deprecated)  # noqa: E501
 
         Sort by creation time in descending order by default. Set `reverse=false` to return ascending results.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1696,7 +1696,7 @@ class MarginApi(object):
             collection_formats=collection_formats)
 
     def repay_cross_margin_loan(self, cross_margin_repay_request, **kwargs):  # noqa: E501
-        """Cross margin repayments  # noqa: E501
+        """Cross margin repayments. (deprecated)  # noqa: E501
 
         When the liquidity of the currency is insufficient and the transaction risk is high, the currency will be disabled, and funds cannot be transferred.When the available balance of cross-margin is insufficient, the balance of the spot account can be used for repayment. Please ensure that the balance of the spot account is sufficient, and system uses cross-margin account for repayment first  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1721,7 +1721,7 @@ class MarginApi(object):
         return self.repay_cross_margin_loan_with_http_info(cross_margin_repay_request, **kwargs)  # noqa: E501
 
     def repay_cross_margin_loan_with_http_info(self, cross_margin_repay_request, **kwargs):  # noqa: E501
-        """Cross margin repayments  # noqa: E501
+        """Cross margin repayments. (deprecated)  # noqa: E501
 
         When the liquidity of the currency is insufficient and the transaction risk is high, the currency will be disabled, and funds cannot be transferred.When the available balance of cross-margin is insufficient, the balance of the spot account can be used for repayment. Please ensure that the balance of the spot account is sufficient, and system uses cross-margin account for repayment first  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1814,7 +1814,7 @@ class MarginApi(object):
             collection_formats=collection_formats)
 
     def get_cross_margin_interest_records(self, **kwargs):  # noqa: E501
-        """Interest records for the cross margin account  # noqa: E501
+        """Interest records for the cross margin account. (deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1842,7 +1842,7 @@ class MarginApi(object):
         return self.get_cross_margin_interest_records_with_http_info(**kwargs)  # noqa: E501
 
     def get_cross_margin_interest_records_with_http_info(self, **kwargs):  # noqa: E501
-        """Interest records for the cross margin account  # noqa: E501
+        """Interest records for the cross margin account. (deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1948,7 +1948,7 @@ class MarginApi(object):
             collection_formats=collection_formats)
 
     def get_cross_margin_transferable(self, currency, **kwargs):  # noqa: E501
-        """Get the max transferable amount for a specific cross margin currency  # noqa: E501
+        """Get the max transferable amount for a specific cross margin currency. (deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1972,7 +1972,7 @@ class MarginApi(object):
         return self.get_cross_margin_transferable_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_cross_margin_transferable_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """Get the max transferable amount for a specific cross margin currency  # noqa: E501
+        """Get the max transferable amount for a specific cross margin currency. (deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2060,7 +2060,7 @@ class MarginApi(object):
             collection_formats=collection_formats)
 
     def get_cross_margin_estimate_rate(self, currencies, **kwargs):  # noqa: E501
-        """Estimated interest rates  # noqa: E501
+        """Estimated interest rates. (deprecated)  # noqa: E501
 
         Please note that the interest rates are subject to change based on the borrowing and lending demand, and therefore, the provided rates may not be entirely accurate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2085,7 +2085,7 @@ class MarginApi(object):
         return self.get_cross_margin_estimate_rate_with_http_info(currencies, **kwargs)  # noqa: E501
 
     def get_cross_margin_estimate_rate_with_http_info(self, currencies, **kwargs):  # noqa: E501
-        """Estimated interest rates  # noqa: E501
+        """Estimated interest rates. (deprecated)  # noqa: E501
 
         Please note that the interest rates are subject to change based on the borrowing and lending demand, and therefore, the provided rates may not be entirely accurate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2181,7 +2181,7 @@ class MarginApi(object):
             collection_formats=collection_formats)
 
     def get_cross_margin_borrowable(self, currency, **kwargs):  # noqa: E501
-        """Get the max borrowable amount for a specific cross margin currency  # noqa: E501
+        """Get the max borrowable amount for a specific cross margin currency. (deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2205,7 +2205,7 @@ class MarginApi(object):
         return self.get_cross_margin_borrowable_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_cross_margin_borrowable_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """Get the max borrowable amount for a specific cross margin currency  # noqa: E501
+        """Get the max borrowable amount for a specific cross margin currency. (deprecated)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

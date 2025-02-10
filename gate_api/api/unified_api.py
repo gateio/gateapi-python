@@ -882,8 +882,9 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def get_unified_risk_units(self, **kwargs):  # noqa: E501
-        """Retrieve user risk unit details, only valid in portfolio margin mode  # noqa: E501
+        """Get user risk unit details  # noqa: E501
 
+        Retrieve user risk unit details, only valid in portfolio margin mode  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_unified_risk_units(async_req=True)
@@ -905,8 +906,9 @@ class UnifiedApi(object):
         return self.get_unified_risk_units_with_http_info(**kwargs)  # noqa: E501
 
     def get_unified_risk_units_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve user risk unit details, only valid in portfolio margin mode  # noqa: E501
+        """Get user risk unit details  # noqa: E501
 
+        Retrieve user risk unit details, only valid in portfolio margin mode  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_unified_risk_units_with_http_info(async_req=True)
@@ -1092,7 +1094,7 @@ class UnifiedApi(object):
     def set_unified_mode(self, unified_mode_set, **kwargs):  # noqa: E501
         """Set mode of the unified account  # noqa: E501
 
-        Switching each account mode only requires passing the parameters of the corresponding account mode, and supports turning on or off the configuration switch in the corresponding account mode when switching the account mode  - When opening the classic account mode, mode=classic ```  PUT /unified/unified_mode  {  \"mode\": \"classic\"  } ``` - Open the cross-currency margin mode, mode=multi_currency ```  PUT /unified/unified_mode  {  \"mode\": \"multi_currency\",  \"settings\": {  \"usdt_futures\": true  }  } ``` - When the portfolio margin mode is enabled, mode=portfolio ```  PUT /unified/unified_mode  {  \"mode\": \"portfolio\",  \"settings\": {  \"spot_hedge\": true  }  } ``` - When the portfolio margin mode is enabled, mode=single_currency ```  PUT /unified/unified_mode  {  \"mode\": \"single_currency\"  } ```  # noqa: E501
+        Switching each account mode only requires passing the parameters of the corresponding account mode, and supports turning on or off the configuration switch in the corresponding account mode when switching the account mode  - When opening the classic account mode, mode=classic ```  PUT /unified/unified_mode  {  \"mode\": \"classic\"  } ``` - Open the cross-currency margin mode, mode=multi_currency ```  PUT /unified/unified_mode  {  \"mode\": \"multi_currency\",  \"settings\": {  \"usdt_futures\": true  }  } ``` - When the portfolio margin mode is enabled, mode=portfolio ```  PUT /unified/unified_mode  {  \"mode\": \"portfolio\",  \"settings\": {  \"spot_hedge\": true  }  } ``` - When opening a single currency margin mode, mode=single_currency ```  PUT /unified/unified_mode  {  \"mode\": \"single_currency\"  } ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.set_unified_mode(unified_mode_set, async_req=True)
@@ -1117,7 +1119,7 @@ class UnifiedApi(object):
     def set_unified_mode_with_http_info(self, unified_mode_set, **kwargs):  # noqa: E501
         """Set mode of the unified account  # noqa: E501
 
-        Switching each account mode only requires passing the parameters of the corresponding account mode, and supports turning on or off the configuration switch in the corresponding account mode when switching the account mode  - When opening the classic account mode, mode=classic ```  PUT /unified/unified_mode  {  \"mode\": \"classic\"  } ``` - Open the cross-currency margin mode, mode=multi_currency ```  PUT /unified/unified_mode  {  \"mode\": \"multi_currency\",  \"settings\": {  \"usdt_futures\": true  }  } ``` - When the portfolio margin mode is enabled, mode=portfolio ```  PUT /unified/unified_mode  {  \"mode\": \"portfolio\",  \"settings\": {  \"spot_hedge\": true  }  } ``` - When the portfolio margin mode is enabled, mode=single_currency ```  PUT /unified/unified_mode  {  \"mode\": \"single_currency\"  } ```  # noqa: E501
+        Switching each account mode only requires passing the parameters of the corresponding account mode, and supports turning on or off the configuration switch in the corresponding account mode when switching the account mode  - When opening the classic account mode, mode=classic ```  PUT /unified/unified_mode  {  \"mode\": \"classic\"  } ``` - Open the cross-currency margin mode, mode=multi_currency ```  PUT /unified/unified_mode  {  \"mode\": \"multi_currency\",  \"settings\": {  \"usdt_futures\": true  }  } ``` - When the portfolio margin mode is enabled, mode=portfolio ```  PUT /unified/unified_mode  {  \"mode\": \"portfolio\",  \"settings\": {  \"spot_hedge\": true  }  } ``` - When opening a single currency margin mode, mode=single_currency ```  PUT /unified/unified_mode  {  \"mode\": \"single_currency\"  } ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.set_unified_mode_with_http_info(unified_mode_set, async_req=True)
@@ -1761,8 +1763,9 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def get_user_leverage_currency_setting(self, **kwargs):  # noqa: E501
-        """Get the user's currency leverage. If currency is not passed, query all currencies.  # noqa: E501
+        """Get the leverage multiple of the user currency  # noqa: E501
 
+        Get the user's currency leverage. If currency is not passed, query all currencies.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_user_leverage_currency_setting(async_req=True)
@@ -1785,8 +1788,9 @@ class UnifiedApi(object):
         return self.get_user_leverage_currency_setting_with_http_info(**kwargs)  # noqa: E501
 
     def get_user_leverage_currency_setting_with_http_info(self, **kwargs):  # noqa: E501
-        """Get the user's currency leverage. If currency is not passed, query all currencies.  # noqa: E501
+        """Get the leverage multiple of the user currency  # noqa: E501
 
+        Get the user's currency leverage. If currency is not passed, query all currencies.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_user_leverage_currency_setting_with_http_info(async_req=True)
@@ -1868,16 +1872,16 @@ class UnifiedApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def set_user_leverage_currency_setting(self, **kwargs):  # noqa: E501
+    def set_user_leverage_currency_setting(self, unified_leverage_setting, **kwargs):  # noqa: E501
         """Set the loan currency leverage  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_user_leverage_currency_setting(async_req=True)
+        >>> thread = api.set_user_leverage_currency_setting(unified_leverage_setting, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param UnifiedLeverageSetting unified_leverage_setting:
+        :param UnifiedLeverageSetting unified_leverage_setting: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1890,18 +1894,18 @@ class UnifiedApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.set_user_leverage_currency_setting_with_http_info(**kwargs)  # noqa: E501
+        return self.set_user_leverage_currency_setting_with_http_info(unified_leverage_setting, **kwargs)  # noqa: E501
 
-    def set_user_leverage_currency_setting_with_http_info(self, **kwargs):  # noqa: E501
+    def set_user_leverage_currency_setting_with_http_info(self, unified_leverage_setting, **kwargs):  # noqa: E501
         """Set the loan currency leverage  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_user_leverage_currency_setting_with_http_info(async_req=True)
+        >>> thread = api.set_user_leverage_currency_setting_with_http_info(unified_leverage_setting, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param UnifiedLeverageSetting unified_leverage_setting:
+        :param UnifiedLeverageSetting unified_leverage_setting: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1938,6 +1942,10 @@ class UnifiedApi(object):
                 )
             local_var_params[k] = v
         del local_var_params['kwargs']
+        # verify the required parameter 'unified_leverage_setting' is set
+        if self.api_client.client_side_validation and ('unified_leverage_setting' not in local_var_params or  # noqa: E501
+                                                        local_var_params['unified_leverage_setting'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `unified_leverage_setting` when calling `set_user_leverage_currency_setting`")  # noqa: E501
 
         collection_formats = {}
 

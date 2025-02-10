@@ -591,7 +591,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transfer_order_status**
-> InlineResponse200 get_transfer_order_status(client_order_id=client_order_id, tx_id=tx_id)
+> TransferOrderStatus get_transfer_order_status(client_order_id=client_order_id, tx_id=tx_id)
 
 Transfer status query
 
@@ -643,7 +643,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**TransferOrderStatus**](TransferOrderStatus.md)
 
 ### Authorization
 

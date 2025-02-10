@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_debit_fee**
-> InlineResponse2001 get_debit_fee()
+> DebitFee get_debit_fee()
 
 Query GT deduction configuration.
 
@@ -537,7 +537,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**DebitFee**](DebitFee.md)
 
 ### Authorization
 
@@ -556,7 +556,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_debit_fee**
-> set_debit_fee(inline_object)
+> set_debit_fee(debit_fee)
 
 Set GT deduction.
 
@@ -586,11 +586,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.AccountApi(api_client)
-inline_object = gate_api.InlineObject() # InlineObject | 
+debit_fee = gate_api.DebitFee() # DebitFee | 
 
 try:
     # Set GT deduction.
-    api_instance.set_debit_fee(inline_object)
+    api_instance.set_debit_fee(debit_fee)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
@@ -601,7 +601,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object** | [**InlineObject**](InlineObject.md)|  | 
+ **debit_fee** | [**DebitFee**](DebitFee.md)|  | 
 
 ### Return type
 
