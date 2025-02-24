@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **list_unified_accounts**
-> UnifiedAccount list_unified_accounts(currency=currency)
+> UnifiedAccount list_unified_accounts(currency=currency, sub_uid=sub_uid)
 
 Get unified account information
 
@@ -56,10 +56,11 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.UnifiedApi(api_client)
 currency = 'BTC' # str | Retrieve data of the specified currency (optional)
+sub_uid = '10001' # str | Sub account user ID (optional)
 
 try:
     # Get unified account information
-    api_response = api_instance.list_unified_accounts(currency=currency)
+    api_response = api_instance.list_unified_accounts(currency=currency, sub_uid=sub_uid)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -72,6 +73,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **currency** | **str**| Retrieve data of the specified currency | [optional] 
+ **sub_uid** | **str**| Sub account user ID | [optional] 
 
 ### Return type
 

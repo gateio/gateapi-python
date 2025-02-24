@@ -225,7 +225,7 @@ class CancelOrderResult(object):
     def account(self):
         """Gets the account of this CancelOrderResult.  # noqa: E501
 
-        Empty by default. If cancelled order is cross margin order, this field is set to `cross_margin`  # noqa: E501
+        Default is empty (deprecated)  # noqa: E501
 
         :return: The account of this CancelOrderResult.  # noqa: E501
         :rtype: str
@@ -236,7 +236,7 @@ class CancelOrderResult(object):
     def account(self, account):
         """Sets the account of this CancelOrderResult.
 
-        Empty by default. If cancelled order is cross margin order, this field is set to `cross_margin`  # noqa: E501
+        Default is empty (deprecated)  # noqa: E501
 
         :param account: The account of this CancelOrderResult.  # noqa: E501
         :type: str

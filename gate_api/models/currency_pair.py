@@ -35,7 +35,9 @@ class CurrencyPair(object):
     openapi_types = {
         'id': 'str',
         'base': 'str',
+        'base_name': 'str',
         'quote': 'str',
+        'quote_name': 'str',
         'fee': 'str',
         'min_base_amount': 'str',
         'min_quote_amount': 'str',
@@ -52,7 +54,9 @@ class CurrencyPair(object):
     attribute_map = {
         'id': 'id',
         'base': 'base',
+        'base_name': 'base_name',
         'quote': 'quote',
+        'quote_name': 'quote_name',
         'fee': 'fee',
         'min_base_amount': 'min_base_amount',
         'min_quote_amount': 'min_quote_amount',
@@ -66,8 +70,8 @@ class CurrencyPair(object):
         'type': 'type'
     }
 
-    def __init__(self, id=None, base=None, quote=None, fee=None, min_base_amount=None, min_quote_amount=None, max_base_amount=None, max_quote_amount=None, amount_precision=None, precision=None, trade_status=None, sell_start=None, buy_start=None, type=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, int, int, str, int, int, str, Configuration) -> None
+    def __init__(self, id=None, base=None, base_name=None, quote=None, quote_name=None, fee=None, min_base_amount=None, min_quote_amount=None, max_base_amount=None, max_quote_amount=None, amount_precision=None, precision=None, trade_status=None, sell_start=None, buy_start=None, type=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, str, str, str, str, str, str, str, int, int, str, int, int, str, Configuration) -> None
         """CurrencyPair - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,7 +79,9 @@ class CurrencyPair(object):
 
         self._id = None
         self._base = None
+        self._base_name = None
         self._quote = None
+        self._quote_name = None
         self._fee = None
         self._min_base_amount = None
         self._min_quote_amount = None
@@ -93,8 +99,12 @@ class CurrencyPair(object):
             self.id = id
         if base is not None:
             self.base = base
+        if base_name is not None:
+            self.base_name = base_name
         if quote is not None:
             self.quote = quote
+        if quote_name is not None:
+            self.quote_name = quote_name
         if fee is not None:
             self.fee = fee
         if min_base_amount is not None:
@@ -165,6 +175,29 @@ class CurrencyPair(object):
         self._base = base
 
     @property
+    def base_name(self):
+        """Gets the base_name of this CurrencyPair.  # noqa: E501
+
+        Transaction currency name  # noqa: E501
+
+        :return: The base_name of this CurrencyPair.  # noqa: E501
+        :rtype: str
+        """
+        return self._base_name
+
+    @base_name.setter
+    def base_name(self, base_name):
+        """Sets the base_name of this CurrencyPair.
+
+        Transaction currency name  # noqa: E501
+
+        :param base_name: The base_name of this CurrencyPair.  # noqa: E501
+        :type: str
+        """
+
+        self._base_name = base_name
+
+    @property
     def quote(self):
         """Gets the quote of this CurrencyPair.  # noqa: E501
 
@@ -186,6 +219,29 @@ class CurrencyPair(object):
         """
 
         self._quote = quote
+
+    @property
+    def quote_name(self):
+        """Gets the quote_name of this CurrencyPair.  # noqa: E501
+
+        Name of the denominated currency  # noqa: E501
+
+        :return: The quote_name of this CurrencyPair.  # noqa: E501
+        :rtype: str
+        """
+        return self._quote_name
+
+    @quote_name.setter
+    def quote_name(self, quote_name):
+        """Sets the quote_name of this CurrencyPair.
+
+        Name of the denominated currency  # noqa: E501
+
+        :param quote_name: The quote_name of this CurrencyPair.  # noqa: E501
+        :type: str
+        """
+
+        self._quote_name = quote_name
 
     @property
     def fee(self):

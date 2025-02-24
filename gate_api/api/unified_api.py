@@ -47,6 +47,7 @@ class UnifiedApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency: Retrieve data of the specified currency
+        :param str sub_uid: Sub account user ID
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -72,6 +73,7 @@ class UnifiedApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str currency: Retrieve data of the specified currency
+        :param str sub_uid: Sub account user ID
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -89,7 +91,8 @@ class UnifiedApi(object):
         local_var_params = locals()
 
         all_params = [
-            'currency'
+            'currency',
+            'sub_uid'
         ]
         all_params.extend(
             [
@@ -116,6 +119,8 @@ class UnifiedApi(object):
         query_params = []
         if 'currency' in local_var_params and local_var_params['currency'] is not None:  # noqa: E501
             query_params.append(('currency', local_var_params['currency']))  # noqa: E501
+        if 'sub_uid' in local_var_params and local_var_params['sub_uid'] is not None:  # noqa: E501
+            query_params.append(('sub_uid', local_var_params['sub_uid']))  # noqa: E501
 
         header_params = {}
 

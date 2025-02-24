@@ -39,6 +39,8 @@ class SpotPricePutOrder(object):
         'amount': 'str',
         'account': 'str',
         'time_in_force': 'str',
+        'auto_borrow': 'bool',
+        'auto_repay': 'bool',
         'text': 'str'
     }
 
@@ -49,11 +51,13 @@ class SpotPricePutOrder(object):
         'amount': 'amount',
         'account': 'account',
         'time_in_force': 'time_in_force',
+        'auto_borrow': 'auto_borrow',
+        'auto_repay': 'auto_repay',
         'text': 'text'
     }
 
-    def __init__(self, type='limit', side=None, price=None, amount=None, account='normal', time_in_force='gtc', text=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, Configuration) -> None
+    def __init__(self, type='limit', side=None, price=None, amount=None, account='normal', time_in_force='gtc', auto_borrow=False, auto_repay=False, text=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, str, str, str, bool, bool, str, Configuration) -> None
         """SpotPricePutOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +69,8 @@ class SpotPricePutOrder(object):
         self._amount = None
         self._account = None
         self._time_in_force = None
+        self._auto_borrow = None
+        self._auto_repay = None
         self._text = None
         self.discriminator = None
 
@@ -76,6 +82,10 @@ class SpotPricePutOrder(object):
         self.account = account
         if time_in_force is not None:
             self.time_in_force = time_in_force
+        if auto_borrow is not None:
+            self.auto_borrow = auto_borrow
+        if auto_repay is not None:
+            self.auto_repay = auto_repay
         if text is not None:
             self.text = text
 
@@ -193,7 +203,7 @@ class SpotPricePutOrder(object):
     def account(self):
         """Gets the account of this SpotPricePutOrder.  # noqa: E501
 
-        Trading account type.  Portfolio margin account must set to `cross_margin`  - normal: spot trading - margin: margin trading - cross_margin: cross_margin trading   # noqa: E501
+        Trading account type.  Portfolio margin account must set to `unified`  - normal: spot trading - margin: margin trading - unified: unified trading   # noqa: E501
 
         :return: The account of this SpotPricePutOrder.  # noqa: E501
         :rtype: str
@@ -204,14 +214,14 @@ class SpotPricePutOrder(object):
     def account(self, account):
         """Sets the account of this SpotPricePutOrder.
 
-        Trading account type.  Portfolio margin account must set to `cross_margin`  - normal: spot trading - margin: margin trading - cross_margin: cross_margin trading   # noqa: E501
+        Trading account type.  Portfolio margin account must set to `unified`  - normal: spot trading - margin: margin trading - unified: unified trading   # noqa: E501
 
         :param account: The account of this SpotPricePutOrder.  # noqa: E501
         :type: str
         """
         if self.local_vars_configuration.client_side_validation and account is None:  # noqa: E501
             raise ValueError("Invalid value for `account`, must not be `None`")  # noqa: E501
-        allowed_values = ["normal", "margin", "cross_margin"]  # noqa: E501
+        allowed_values = ["normal", "margin", "unified"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and account not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `account` ({0}), must be one of {1}"  # noqa: E501
@@ -248,6 +258,52 @@ class SpotPricePutOrder(object):
             )
 
         self._time_in_force = time_in_force
+
+    @property
+    def auto_borrow(self):
+        """Gets the auto_borrow of this SpotPricePutOrder.  # noqa: E501
+
+        Whether to borrow coins automatically  # noqa: E501
+
+        :return: The auto_borrow of this SpotPricePutOrder.  # noqa: E501
+        :rtype: bool
+        """
+        return self._auto_borrow
+
+    @auto_borrow.setter
+    def auto_borrow(self, auto_borrow):
+        """Sets the auto_borrow of this SpotPricePutOrder.
+
+        Whether to borrow coins automatically  # noqa: E501
+
+        :param auto_borrow: The auto_borrow of this SpotPricePutOrder.  # noqa: E501
+        :type: bool
+        """
+
+        self._auto_borrow = auto_borrow
+
+    @property
+    def auto_repay(self):
+        """Gets the auto_repay of this SpotPricePutOrder.  # noqa: E501
+
+        Whether to repay the loan automatically  # noqa: E501
+
+        :return: The auto_repay of this SpotPricePutOrder.  # noqa: E501
+        :rtype: bool
+        """
+        return self._auto_repay
+
+    @auto_repay.setter
+    def auto_repay(self, auto_repay):
+        """Sets the auto_repay of this SpotPricePutOrder.
+
+        Whether to repay the loan automatically  # noqa: E501
+
+        :param auto_repay: The auto_repay of this SpotPricePutOrder.  # noqa: E501
+        :type: bool
+        """
+
+        self._auto_repay = auto_repay
 
     @property
     def text(self):

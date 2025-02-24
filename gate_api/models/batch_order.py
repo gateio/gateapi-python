@@ -571,7 +571,7 @@ class BatchOrder(object):
     def account(self):
         """Gets the account of this BatchOrder.  # noqa: E501
 
-        Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account, unified - unified account  # noqa: E501
+        Account type, spot - spot account, margin - leveraged account, unified - unified account  # noqa: E501
 
         :return: The account of this BatchOrder.  # noqa: E501
         :rtype: str
@@ -582,7 +582,7 @@ class BatchOrder(object):
     def account(self, account):
         """Sets the account of this BatchOrder.
 
-        Account type. spot - use spot account; margin - use margin account; cross_margin - use cross margin account, unified - unified account  # noqa: E501
+        Account type, spot - spot account, margin - leveraged account, unified - unified account  # noqa: E501
 
         :param account: The account of this BatchOrder.  # noqa: E501
         :type: str

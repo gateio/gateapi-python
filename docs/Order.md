@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **status** | **str** | Order status  - &#x60;open&#x60;: to be filled - &#x60;closed&#x60;: filled - &#x60;cancelled&#x60;: cancelled | [optional] [readonly] 
 **currency_pair** | **str** | Currency pair | 
 **type** | **str** | Order Type    - limit : Limit Order - market : Market Order | [optional] [default to 'limit']
-**account** | **str** | Account types， spot - spot account, margin - margin account, unified - unified account, cross_margin - cross margin account.  Portfolio margin accounts can only be set to &#x60;cross_margin&#x60; | [optional] [default to 'spot']
+**account** | **str** | Account type, spot - spot account, margin - leveraged account, unified - unified account | [optional] [default to 'spot']
 **side** | **str** | Order side | 
 **amount** | **str** | When &#x60;type&#x60; is limit, it refers to base currency.  For instance, &#x60;BTC_USDT&#x60; means &#x60;BTC&#x60;  When &#x60;type&#x60; is &#x60;market&#x60;, it refers to different currency according to &#x60;side&#x60;  - &#x60;side&#x60; : &#x60;buy&#x60; means quote currency, &#x60;BTC_USDT&#x60; means &#x60;USDT&#x60; - &#x60;side&#x60; : &#x60;sell&#x60; means base currency，&#x60;BTC_USDT&#x60; means &#x60;BTC&#x60;  | 
 **price** | **str** | Price can&#39;t be empty when &#x60;type&#x60;&#x3D; &#x60;limit&#x60; | [optional] 

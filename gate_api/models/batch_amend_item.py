@@ -135,7 +135,7 @@ class BatchAmendItem(object):
     def account(self):
         """Gets the account of this BatchAmendItem.  # noqa: E501
 
-        Default to spot, portfolio, and margin accounts if not specified. Use 'cross_margin' to query cross margin accounts. Only 'cross_margin' can be specified for portfolio margin accounts.  # noqa: E501
+        Default spot, unified account and warehouse-by-store leverage account.  # noqa: E501
 
         :return: The account of this BatchAmendItem.  # noqa: E501
         :rtype: str
@@ -146,7 +146,7 @@ class BatchAmendItem(object):
     def account(self, account):
         """Sets the account of this BatchAmendItem.
 
-        Default to spot, portfolio, and margin accounts if not specified. Use 'cross_margin' to query cross margin accounts. Only 'cross_margin' can be specified for portfolio margin accounts.  # noqa: E501
+        Default spot, unified account and warehouse-by-store leverage account.  # noqa: E501
 
         :param account: The account of this BatchAmendItem.  # noqa: E501
         :type: str

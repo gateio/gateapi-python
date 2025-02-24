@@ -34,6 +34,7 @@ class Currency(object):
     """
     openapi_types = {
         'currency': 'str',
+        'name': 'str',
         'delisted': 'bool',
         'withdraw_disabled': 'bool',
         'withdraw_delayed': 'bool',
@@ -45,6 +46,7 @@ class Currency(object):
 
     attribute_map = {
         'currency': 'currency',
+        'name': 'name',
         'delisted': 'delisted',
         'withdraw_disabled': 'withdraw_disabled',
         'withdraw_delayed': 'withdraw_delayed',
@@ -54,14 +56,15 @@ class Currency(object):
         'chain': 'chain'
     }
 
-    def __init__(self, currency=None, delisted=None, withdraw_disabled=None, withdraw_delayed=None, deposit_disabled=None, trade_disabled=None, fixed_rate=None, chain=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, bool, bool, bool, bool, bool, str, str, Configuration) -> None
+    def __init__(self, currency=None, name=None, delisted=None, withdraw_disabled=None, withdraw_delayed=None, deposit_disabled=None, trade_disabled=None, fixed_rate=None, chain=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, bool, bool, bool, bool, bool, str, str, Configuration) -> None
         """Currency - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._currency = None
+        self._name = None
         self._delisted = None
         self._withdraw_disabled = None
         self._withdraw_delayed = None
@@ -73,6 +76,8 @@ class Currency(object):
 
         if currency is not None:
             self.currency = currency
+        if name is not None:
+            self.name = name
         if delisted is not None:
             self.delisted = delisted
         if withdraw_disabled is not None:
@@ -92,7 +97,7 @@ class Currency(object):
     def currency(self):
         """Gets the currency of this Currency.  # noqa: E501
 
-        Currency name  # noqa: E501
+        Currency symbol  # noqa: E501
 
         :return: The currency of this Currency.  # noqa: E501
         :rtype: str
@@ -103,13 +108,36 @@ class Currency(object):
     def currency(self, currency):
         """Sets the currency of this Currency.
 
-        Currency name  # noqa: E501
+        Currency symbol  # noqa: E501
 
         :param currency: The currency of this Currency.  # noqa: E501
         :type: str
         """
 
         self._currency = currency
+
+    @property
+    def name(self):
+        """Gets the name of this Currency.  # noqa: E501
+
+        Currency name  # noqa: E501
+
+        :return: The name of this Currency.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Currency.
+
+        Currency name  # noqa: E501
+
+        :param name: The name of this Currency.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def delisted(self):
