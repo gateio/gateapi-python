@@ -41,7 +41,8 @@ class Currency(object):
         'deposit_disabled': 'bool',
         'trade_disabled': 'bool',
         'fixed_rate': 'str',
-        'chain': 'str'
+        'chain': 'str',
+        'chains': 'list[SpotCurrencyChain]'
     }
 
     attribute_map = {
@@ -53,11 +54,12 @@ class Currency(object):
         'deposit_disabled': 'deposit_disabled',
         'trade_disabled': 'trade_disabled',
         'fixed_rate': 'fixed_rate',
-        'chain': 'chain'
+        'chain': 'chain',
+        'chains': 'chains'
     }
 
-    def __init__(self, currency=None, name=None, delisted=None, withdraw_disabled=None, withdraw_delayed=None, deposit_disabled=None, trade_disabled=None, fixed_rate=None, chain=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, bool, bool, bool, bool, bool, str, str, Configuration) -> None
+    def __init__(self, currency=None, name=None, delisted=None, withdraw_disabled=None, withdraw_delayed=None, deposit_disabled=None, trade_disabled=None, fixed_rate=None, chain=None, chains=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, bool, bool, bool, bool, bool, str, str, list[SpotCurrencyChain], Configuration) -> None
         """Currency - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class Currency(object):
         self._trade_disabled = None
         self._fixed_rate = None
         self._chain = None
+        self._chains = None
         self.discriminator = None
 
         if currency is not None:
@@ -92,6 +95,8 @@ class Currency(object):
             self.fixed_rate = fixed_rate
         if chain is not None:
             self.chain = chain
+        if chains is not None:
+            self.chains = chains
 
     @property
     def currency(self):
@@ -166,7 +171,7 @@ class Currency(object):
     def withdraw_disabled(self):
         """Gets the withdraw_disabled of this Currency.  # noqa: E501
 
-        Whether currency's withdrawal is disabled  # noqa: E501
+        Whether currency's withdrawal is disabled (deprecated)  # noqa: E501
 
         :return: The withdraw_disabled of this Currency.  # noqa: E501
         :rtype: bool
@@ -177,7 +182,7 @@ class Currency(object):
     def withdraw_disabled(self, withdraw_disabled):
         """Sets the withdraw_disabled of this Currency.
 
-        Whether currency's withdrawal is disabled  # noqa: E501
+        Whether currency's withdrawal is disabled (deprecated)  # noqa: E501
 
         :param withdraw_disabled: The withdraw_disabled of this Currency.  # noqa: E501
         :type: bool
@@ -189,7 +194,7 @@ class Currency(object):
     def withdraw_delayed(self):
         """Gets the withdraw_delayed of this Currency.  # noqa: E501
 
-        Whether currency's withdrawal is delayed  # noqa: E501
+        Whether currency's withdrawal is delayed (deprecated)  # noqa: E501
 
         :return: The withdraw_delayed of this Currency.  # noqa: E501
         :rtype: bool
@@ -200,7 +205,7 @@ class Currency(object):
     def withdraw_delayed(self, withdraw_delayed):
         """Sets the withdraw_delayed of this Currency.
 
-        Whether currency's withdrawal is delayed  # noqa: E501
+        Whether currency's withdrawal is delayed (deprecated)  # noqa: E501
 
         :param withdraw_delayed: The withdraw_delayed of this Currency.  # noqa: E501
         :type: bool
@@ -212,7 +217,7 @@ class Currency(object):
     def deposit_disabled(self):
         """Gets the deposit_disabled of this Currency.  # noqa: E501
 
-        Whether currency's deposit is disabled  # noqa: E501
+        Whether currency's deposit is disabled (deprecated)  # noqa: E501
 
         :return: The deposit_disabled of this Currency.  # noqa: E501
         :rtype: bool
@@ -223,7 +228,7 @@ class Currency(object):
     def deposit_disabled(self, deposit_disabled):
         """Sets the deposit_disabled of this Currency.
 
-        Whether currency's deposit is disabled  # noqa: E501
+        Whether currency's deposit is disabled (deprecated)  # noqa: E501
 
         :param deposit_disabled: The deposit_disabled of this Currency.  # noqa: E501
         :type: bool
@@ -281,7 +286,7 @@ class Currency(object):
     def chain(self):
         """Gets the chain of this Currency.  # noqa: E501
 
-        Chain of currency  # noqa: E501
+        The main chain corresponding to the coin  # noqa: E501
 
         :return: The chain of this Currency.  # noqa: E501
         :rtype: str
@@ -292,13 +297,36 @@ class Currency(object):
     def chain(self, chain):
         """Sets the chain of this Currency.
 
-        Chain of currency  # noqa: E501
+        The main chain corresponding to the coin  # noqa: E501
 
         :param chain: The chain of this Currency.  # noqa: E501
         :type: str
         """
 
         self._chain = chain
+
+    @property
+    def chains(self):
+        """Gets the chains of this Currency.  # noqa: E501
+
+        All links corresponding to coins  # noqa: E501
+
+        :return: The chains of this Currency.  # noqa: E501
+        :rtype: list[SpotCurrencyChain]
+        """
+        return self._chains
+
+    @chains.setter
+    def chains(self, chains):
+        """Sets the chains of this Currency.
+
+        All links corresponding to coins  # noqa: E501
+
+        :param chains: The chains of this Currency.  # noqa: E501
+        :type: list[SpotCurrencyChain]
+        """
+
+        self._chains = chains
 
     def to_dict(self):
         """Returns the model properties as a dict"""

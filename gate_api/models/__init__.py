@@ -184,6 +184,7 @@ from gate_api.models.small_balance import SmallBalance
 from gate_api.models.small_balance_history import SmallBalanceHistory
 from gate_api.models.spot_account import SpotAccount
 from gate_api.models.spot_account_book import SpotAccountBook
+from gate_api.models.spot_currency_chain import SpotCurrencyChain
 from gate_api.models.spot_fee import SpotFee
 from gate_api.models.spot_insurance_history import SpotInsuranceHistory
 from gate_api.models.spot_price_put_order import SpotPricePutOrder
