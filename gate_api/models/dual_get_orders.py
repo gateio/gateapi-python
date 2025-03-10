@@ -48,7 +48,8 @@ class DualGetOrders(object):
         'settlement_currency': 'str',
         'apy_display': 'str',
         'apy_settlement': 'str',
-        'delivery_time': 'int'
+        'delivery_time': 'int',
+        'text': 'str'
     }
 
     attribute_map = {
@@ -67,11 +68,12 @@ class DualGetOrders(object):
         'settlement_currency': 'settlement_currency',
         'apy_display': 'apy_display',
         'apy_settlement': 'apy_settlement',
-        'delivery_time': 'delivery_time'
+        'delivery_time': 'delivery_time',
+        'text': 'text'
     }
 
-    def __init__(self, id=None, plan_id=None, copies=None, invest_amount=None, settlement_amount=None, create_time=None, complete_time=None, status=None, invest_currency=None, exercise_currency=None, exercise_price=None, settlement_price=None, settlement_currency=None, apy_display=None, apy_settlement=None, delivery_time=None, local_vars_configuration=None):  # noqa: E501
-        # type: (int, int, str, str, str, int, int, str, str, str, str, str, str, str, str, int, Configuration) -> None
+    def __init__(self, id=None, plan_id=None, copies=None, invest_amount=None, settlement_amount=None, create_time=None, complete_time=None, status=None, invest_currency=None, exercise_currency=None, exercise_price=None, settlement_price=None, settlement_currency=None, apy_display=None, apy_settlement=None, delivery_time=None, text=None, local_vars_configuration=None):  # noqa: E501
+        # type: (int, int, str, str, str, int, int, str, str, str, str, str, str, str, str, int, str, Configuration) -> None
         """DualGetOrders - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +95,7 @@ class DualGetOrders(object):
         self._apy_display = None
         self._apy_settlement = None
         self._delivery_time = None
+        self._text = None
         self.discriminator = None
 
         if id is not None:
@@ -127,6 +130,8 @@ class DualGetOrders(object):
             self.apy_settlement = apy_settlement
         if delivery_time is not None:
             self.delivery_time = delivery_time
+        if text is not None:
+            self.text = text
 
     @property
     def id(self):
@@ -495,6 +500,29 @@ class DualGetOrders(object):
         """
 
         self._delivery_time = delivery_time
+
+    @property
+    def text(self):
+        """Gets the text of this DualGetOrders.  # noqa: E501
+
+        Custom order information  # noqa: E501
+
+        :return: The text of this DualGetOrders.  # noqa: E501
+        :rtype: str
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """Sets the text of this DualGetOrders.
+
+        Custom order information  # noqa: E501
+
+        :param text: The text of this DualGetOrders.  # noqa: E501
+        :type: str
+        """
+
+        self._text = text
 
     def to_dict(self):
         """Returns the model properties as a dict"""

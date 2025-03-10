@@ -5,6 +5,7 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**swap_eth2**](EarnApi.md#swap_eth2) | **POST** /earn/staking/eth2/swap | ETH2 swap
+[**rate_list_eth2**](EarnApi.md#rate_list_eth2) | **GET** /earn/staking/eth2/rate_records | ETH2 historical rate of return query
 [**list_dual_investment_plans**](EarnApi.md#list_dual_investment_plans) | **GET** /earn/dual/investment_plan | Dual Investment product list
 [**list_dual_orders**](EarnApi.md#list_dual_orders) | **GET** /earn/dual/orders | Dual Investment order list
 [**place_dual_order**](EarnApi.md#place_dual_order) | **POST** /earn/dual/orders | Place Dual Investment order
@@ -79,64 +80,12 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_dual_investment_plans**
-> list[DualGetPlans] list_dual_investment_plans()
+# **rate_list_eth2**
+> list[Eth2RateList] rate_list_eth2()
 
-Dual Investment product list
+ETH2 historical rate of return query
 
-### Example
-
-```python
-from __future__ import print_function
-import gate_api
-from gate_api.exceptions import ApiException, GateApiException
-# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
-# See configuration.py for a list of all supported configuration parameters.
-configuration = gate_api.Configuration(
-    host = "https://api.gateio.ws/api/v4"
-)
-
-api_client = gate_api.ApiClient(configuration)
-# Create an instance of the API class
-api_instance = gate_api.EarnApi(api_client)
-
-try:
-    # Dual Investment product list
-    api_response = api_instance.list_dual_investment_plans()
-    print(api_response)
-except GateApiException as ex:
-    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
-except ApiException as e:
-    print("Exception when calling EarnApi->list_dual_investment_plans: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**list[DualGetPlans]**](DualGetPlans.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_dual_orders**
-> list[DualGetOrders] list_dual_orders()
-
-Dual Investment order list
+Check the ETH earnings rate record for the last 31 days
 
 ### Example
 
@@ -164,8 +113,133 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.EarnApi(api_client)
 
 try:
+    # ETH2 historical rate of return query
+    api_response = api_instance.rate_list_eth2()
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling EarnApi->rate_list_eth2: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**list[Eth2RateList]**](Eth2RateList.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_dual_investment_plans**
+> list[DualGetPlans] list_dual_investment_plans(plan_id=plan_id)
+
+Dual Investment product list
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.EarnApi(api_client)
+plan_id = 1 # int | Financial project id (optional)
+
+try:
+    # Dual Investment product list
+    api_response = api_instance.list_dual_investment_plans(plan_id=plan_id)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling EarnApi->list_dual_investment_plans: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **plan_id** | **int**| Financial project id | [optional] 
+
+### Return type
+
+[**list[DualGetPlans]**](DualGetPlans.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_dual_orders**
+> list[DualGetOrders] list_dual_orders(_from=_from, to=to, page=page, limit=limit)
+
+Dual Investment order list
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.EarnApi(api_client)
+_from = 1740727000 # int | Start checkout time (optional)
+to = 1740729000 # int | End settlement time (optional)
+page = 1 # int | Page number (optional) (default to 1)
+limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+
+try:
     # Dual Investment order list
-    api_response = api_instance.list_dual_orders()
+    api_response = api_instance.list_dual_orders(_from=_from, to=to, page=page, limit=limit)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -174,7 +248,13 @@ except ApiException as e:
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **_from** | **int**| Start checkout time | [optional] 
+ **to** | **int**| End settlement time | [optional] 
+ **page** | **int**| Page number | [optional] [default to 1]
+ **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
 
 ### Return type
 

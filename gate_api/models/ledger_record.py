@@ -287,7 +287,7 @@ class LedgerRecord(object):
     def status(self):
         """Gets the status of this LedgerRecord.  # noqa: E501
 
-        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: pending manual approval - BCODE: GateCode operation - EXTPEND: pending confirm after sending - FAIL: pending confirm when fail - INVALID: invalid order - VERIFY: verifying - PROCES: processing - PEND: pending - DMOVE: required manual approval - SPLITPEND: the order is automatically split due to large amount  # noqa: E501
+        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: pending manual approval - BCODE: GateCode operation - EXTPEND: pending confirm after sending - FAIL: pending confirm when fail - INVALID: invalid order - VERIFY: verifying - PROCES: processing - PEND: pending - DMOVE: required manual approval  # noqa: E501
 
         :return: The status of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -298,17 +298,11 @@ class LedgerRecord(object):
     def status(self, status):
         """Sets the status of this LedgerRecord.
 
-        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: pending manual approval - BCODE: GateCode operation - EXTPEND: pending confirm after sending - FAIL: pending confirm when fail - INVALID: invalid order - VERIFY: verifying - PROCES: processing - PEND: pending - DMOVE: required manual approval - SPLITPEND: the order is automatically split due to large amount  # noqa: E501
+        Record status.  - DONE: done - CANCEL: cancelled - REQUEST: requesting - MANUAL: pending manual approval - BCODE: GateCode operation - EXTPEND: pending confirm after sending - FAIL: pending confirm when fail - INVALID: invalid order - VERIFY: verifying - PROCES: processing - PEND: pending - DMOVE: required manual approval  # noqa: E501
 
         :param status: The status of this LedgerRecord.  # noqa: E501
         :type: str
         """
-        allowed_values = ["DONE", "CANCEL", "REQUEST", "MANUAL", "BCODE", "EXTPEND", "FAIL", "INVALID", "VERIFY", "PROCES", "PEND", "DMOVE", "SPLITPEND"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
-                .format(status, allowed_values)
-            )
 
         self._status = status
 

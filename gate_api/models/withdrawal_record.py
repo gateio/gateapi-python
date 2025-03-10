@@ -343,7 +343,7 @@ class WithdrawalRecord(object):
     def status(self):
         """Gets the status of this WithdrawalRecord.  # noqa: E501
 
-        Transaction status  - DONE: Completed (block_number > 0 is considered to be truly completed) - CANCEL: Canceled - REQUEST: Requesting - MANUAL: Pending manual review - BCODE: Recharge code operation - EXTPEND: Sent awaiting confirmation - FAIL: Failure on the chain awaiting confirmation - INVALID: Invalid order - VERIFY: Verifying - PROCES: Processing - PEND: Processing - DMOVE: pending manual review - SPLITPEND: cny withdrawal is greater than 50,000, orders will be split automatically  # noqa: E501
+        Transaction status  - DONE: Completed (block_number > 0 is considered to be truly completed) - CANCEL: Canceled - REQUEST: Requesting - MANUAL: Pending manual review - BCODE: Recharge code operation - EXTPEND: Sent awaiting confirmation - FAIL: Failure on the chain awaiting confirmation - INVALID: Invalid order - VERIFY: Verifying - PROCES: Processing - PEND: Processing - DMOVE: pending manual review  # noqa: E501
 
         :return: The status of this WithdrawalRecord.  # noqa: E501
         :rtype: str
@@ -354,17 +354,11 @@ class WithdrawalRecord(object):
     def status(self, status):
         """Sets the status of this WithdrawalRecord.
 
-        Transaction status  - DONE: Completed (block_number > 0 is considered to be truly completed) - CANCEL: Canceled - REQUEST: Requesting - MANUAL: Pending manual review - BCODE: Recharge code operation - EXTPEND: Sent awaiting confirmation - FAIL: Failure on the chain awaiting confirmation - INVALID: Invalid order - VERIFY: Verifying - PROCES: Processing - PEND: Processing - DMOVE: pending manual review - SPLITPEND: cny withdrawal is greater than 50,000, orders will be split automatically  # noqa: E501
+        Transaction status  - DONE: Completed (block_number > 0 is considered to be truly completed) - CANCEL: Canceled - REQUEST: Requesting - MANUAL: Pending manual review - BCODE: Recharge code operation - EXTPEND: Sent awaiting confirmation - FAIL: Failure on the chain awaiting confirmation - INVALID: Invalid order - VERIFY: Verifying - PROCES: Processing - PEND: Processing - DMOVE: pending manual review  # noqa: E501
 
         :param status: The status of this WithdrawalRecord.  # noqa: E501
         :type: str
         """
-        allowed_values = ["DONE", "CANCEL", "REQUEST", "MANUAL", "BCODE", "EXTPEND", "FAIL", "INVALID", "VERIFY", "PROCES", "PEND", "DMOVE", "SPLITPEND"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
-                .format(status, allowed_values)
-            )
 
         self._status = status
 

@@ -469,7 +469,7 @@ class UnifiedBalance(object):
     def mm(self):
         """Gets the mm of this UnifiedBalance.  # noqa: E501
 
-        Full-position maintenance margin rate is valid in single-currency margin mode and is 0 in other modes such as cross-currency margin/combined margin mode  # noqa: E501
+        The full position maintains margin, which is valid in the single currency margin mode, and other cross-currency margin combination margin mode is 0.  # noqa: E501
 
         :return: The mm of this UnifiedBalance.  # noqa: E501
         :rtype: str
@@ -480,7 +480,7 @@ class UnifiedBalance(object):
     def mm(self, mm):
         """Sets the mm of this UnifiedBalance.
 
-        Full-position maintenance margin rate is valid in single-currency margin mode and is 0 in other modes such as cross-currency margin/combined margin mode  # noqa: E501
+        The full position maintains margin, which is valid in the single currency margin mode, and other cross-currency margin combination margin mode is 0.  # noqa: E501
 
         :param mm: The mm of this UnifiedBalance.  # noqa: E501
         :type: str

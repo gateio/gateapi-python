@@ -36,18 +36,20 @@ class PlaceDualInvestmentOrder(object):
         'plan_id': 'str',
         'copies': 'str',
         'is_max': 'int',
-        'amount': 'str'
+        'amount': 'str',
+        'text': 'str'
     }
 
     attribute_map = {
         'plan_id': 'plan_id',
         'copies': 'copies',
         'is_max': 'is_max',
-        'amount': 'amount'
+        'amount': 'amount',
+        'text': 'text'
     }
 
-    def __init__(self, plan_id=None, copies=None, is_max=None, amount=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, int, str, Configuration) -> None
+    def __init__(self, plan_id=None, copies=None, is_max=None, amount=None, text=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, int, str, str, Configuration) -> None
         """PlaceDualInvestmentOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class PlaceDualInvestmentOrder(object):
         self._copies = None
         self._is_max = None
         self._amount = None
+        self._text = None
         self.discriminator = None
 
         self.plan_id = plan_id
@@ -65,6 +68,8 @@ class PlaceDualInvestmentOrder(object):
         if is_max is not None:
             self.is_max = is_max
         self.amount = amount
+        if text is not None:
+            self.text = text
 
     @property
     def plan_id(self):
@@ -161,6 +166,29 @@ class PlaceDualInvestmentOrder(object):
             raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501
 
         self._amount = amount
+
+    @property
+    def text(self):
+        """Gets the text of this PlaceDualInvestmentOrder.  # noqa: E501
+
+        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 28 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)   # noqa: E501
+
+        :return: The text of this PlaceDualInvestmentOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """Sets the text of this PlaceDualInvestmentOrder.
+
+        User defined information. If not empty, must follow the rules below:  1. prefixed with `t-` 2. no longer than 28 bytes without `t-` prefix 3. can only include 0-9, A-Z, a-z, underscore(_), hyphen(-) or dot(.)   # noqa: E501
+
+        :param text: The text of this PlaceDualInvestmentOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._text = text
 
     def to_dict(self):
         """Returns the model properties as a dict"""

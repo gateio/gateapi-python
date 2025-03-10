@@ -76,6 +76,7 @@ from gate_api.models.delivery_settlement import DeliverySettlement
 from gate_api.models.deposit_address import DepositAddress
 from gate_api.models.dual_get_orders import DualGetOrders
 from gate_api.models.dual_get_plans import DualGetPlans
+from gate_api.models.eth2_rate_list import Eth2RateList
 from gate_api.models.eth2_swap import Eth2Swap
 from gate_api.models.flash_swap_currency_pair import FlashSwapCurrencyPair
 from gate_api.models.flash_swap_order import FlashSwapOrder
