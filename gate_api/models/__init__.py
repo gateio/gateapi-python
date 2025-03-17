@@ -234,6 +234,7 @@ from gate_api.models.uni_loan_record import UniLoanRecord
 from gate_api.models.unified_account import UnifiedAccount
 from gate_api.models.unified_balance import UnifiedBalance
 from gate_api.models.unified_borrowable import UnifiedBorrowable
+from gate_api.models.unified_currency import UnifiedCurrency
 from gate_api.models.unified_discount import UnifiedDiscount
 from gate_api.models.unified_discount_tiers import UnifiedDiscountTiers
 from gate_api.models.unified_history_loan_rate import UnifiedHistoryLoanRate

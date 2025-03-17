@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**get_user_leverage_currency_config**](UnifiedApi.md#get_user_leverage_currency_config) | **GET** /unified/leverage/user_currency_config | Minimum currency leverage that can be set
 [**get_user_leverage_currency_setting**](UnifiedApi.md#get_user_leverage_currency_setting) | **GET** /unified/leverage/user_currency_setting | Get the leverage multiple of the user currency
 [**set_user_leverage_currency_setting**](UnifiedApi.md#set_user_leverage_currency_setting) | **POST** /unified/leverage/user_currency_setting | Set the loan currency leverage
+[**list_unified_currencies**](UnifiedApi.md#list_unified_currencies) | **GET** /unified/currencies | List of loan currencies supported by unified account
 [**get_history_loan_rate**](UnifiedApi.md#get_history_loan_rate) | **GET** /unified/history_loan_rate | get historical lending rates
 
 
@@ -1154,6 +1155,64 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_unified_currencies**
+> list[UnifiedCurrency] list_unified_currencies(currency=currency)
+
+List of loan currencies supported by unified account
+
+### Example
+
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.UnifiedApi(api_client)
+currency = 'BTC' # str | Currency (optional)
+
+try:
+    # List of loan currencies supported by unified account
+    api_response = api_instance.list_unified_currencies(currency=currency)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling UnifiedApi->list_unified_currencies: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency** | **str**| Currency | [optional] 
+
+### Return type
+
+[**list[UnifiedCurrency]**](UnifiedCurrency.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
