@@ -46,9 +46,9 @@ Method | HTTP request | Description
 [**get_futures_fee**](FuturesApi.md#get_futures_fee) | **GET** /futures/{settle}/fee | Query user trading fee rates
 [**cancel_batch_future_orders**](FuturesApi.md#cancel_batch_future_orders) | **POST** /futures/{settle}/batch_cancel_orders | Cancel a batch of orders with an ID list
 [**amend_batch_future_orders**](FuturesApi.md#amend_batch_future_orders) | **POST** /futures/{settle}/batch_amend_orders | Batch modify orders with specified IDs
-[**list_price_triggered_orders**](FuturesApi.md#list_price_triggered_orders) | **GET** /futures/{settle}/price_orders | List all auto orders
+[**list_price_triggered_orders**](FuturesApi.md#list_price_triggered_orders) | **GET** /futures/{settle}/price_orders | List All Price-triggered Orders
 [**create_price_triggered_order**](FuturesApi.md#create_price_triggered_order) | **POST** /futures/{settle}/price_orders | Create a price-triggered order
-[**cancel_price_triggered_order_list**](FuturesApi.md#cancel_price_triggered_order_list) | **DELETE** /futures/{settle}/price_orders | Cancel all open orders
+[**cancel_price_triggered_order_list**](FuturesApi.md#cancel_price_triggered_order_list) | **DELETE** /futures/{settle}/price_orders | Cancel All Price-triggered Orders
 [**get_price_triggered_order**](FuturesApi.md#get_price_triggered_order) | **GET** /futures/{settle}/price_orders/{order_id} | Get a price-triggered order
 [**cancel_price_triggered_order**](FuturesApi.md#cancel_price_triggered_order) | **DELETE** /futures/{settle}/price_orders/{order_id} | cancel a price-triggered order
 
@@ -3027,7 +3027,7 @@ Name | Type | Description  | Notes
 # **list_price_triggered_orders**
 > list[FuturesPriceTriggeredOrder] list_price_triggered_orders(settle, status, contract=contract, limit=limit, offset=offset)
 
-List all auto orders
+List All Price-triggered Orders
 
 ### Example
 
@@ -3060,7 +3060,7 @@ limit = 100 # int | Maximum number of records to be returned in a single list (o
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
-    # List all auto orders
+    # List All Price-triggered Orders
     api_response = api_instance.list_price_triggered_orders(settle, status, contract=contract, limit=limit, offset=offset)
     print(api_response)
 except GateApiException as ex:
@@ -3171,7 +3171,7 @@ Name | Type | Description  | Notes
 # **cancel_price_triggered_order_list**
 > list[FuturesPriceTriggeredOrder] cancel_price_triggered_order_list(settle, contract=contract)
 
-Cancel all open orders
+Cancel All Price-triggered Orders
 
 ### Example
 
@@ -3201,7 +3201,7 @@ settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 
 try:
-    # Cancel all open orders
+    # Cancel All Price-triggered Orders
     api_response = api_instance.cancel_price_triggered_order_list(settle, contract=contract)
     print(api_response)
 except GateApiException as ex:

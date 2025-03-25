@@ -5634,7 +5634,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def list_price_triggered_orders(self, settle, status, **kwargs):  # noqa: E501
-        """List all auto orders  # noqa: E501
+        """List All Price-triggered Orders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -5662,7 +5662,7 @@ class FuturesApi(object):
         return self.list_price_triggered_orders_with_http_info(settle, status, **kwargs)  # noqa: E501
 
     def list_price_triggered_orders_with_http_info(self, settle, status, **kwargs):  # noqa: E501
-        """List all auto orders  # noqa: E501
+        """List All Price-triggered Orders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -5901,7 +5901,7 @@ class FuturesApi(object):
             collection_formats=collection_formats)
 
     def cancel_price_triggered_order_list(self, settle, **kwargs):  # noqa: E501
-        """Cancel all open orders  # noqa: E501
+        """Cancel All Price-triggered Orders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -5926,7 +5926,7 @@ class FuturesApi(object):
         return self.cancel_price_triggered_order_list_with_http_info(settle, **kwargs)  # noqa: E501
 
     def cancel_price_triggered_order_list_with_http_info(self, settle, **kwargs):  # noqa: E501
-        """Cancel all open orders  # noqa: E501
+        """Cancel All Price-triggered Orders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

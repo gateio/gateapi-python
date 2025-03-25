@@ -28,9 +28,9 @@ Method | HTTP request | Description
 [**list_delivery_liquidates**](DeliveryApi.md#list_delivery_liquidates) | **GET** /delivery/{settle}/liquidates | List liquidation history
 [**list_delivery_settlements**](DeliveryApi.md#list_delivery_settlements) | **GET** /delivery/{settle}/settlements | List settlement history
 [**list_delivery_risk_limit_tiers**](DeliveryApi.md#list_delivery_risk_limit_tiers) | **GET** /delivery/{settle}/risk_limit_tiers | List risk limit tiers
-[**list_price_triggered_delivery_orders**](DeliveryApi.md#list_price_triggered_delivery_orders) | **GET** /delivery/{settle}/price_orders | List all auto orders
+[**list_price_triggered_delivery_orders**](DeliveryApi.md#list_price_triggered_delivery_orders) | **GET** /delivery/{settle}/price_orders | List All Price-triggered Orders
 [**create_price_triggered_delivery_order**](DeliveryApi.md#create_price_triggered_delivery_order) | **POST** /delivery/{settle}/price_orders | Create a price-triggered order
-[**cancel_price_triggered_delivery_order_list**](DeliveryApi.md#cancel_price_triggered_delivery_order_list) | **DELETE** /delivery/{settle}/price_orders | Cancel all open orders
+[**cancel_price_triggered_delivery_order_list**](DeliveryApi.md#cancel_price_triggered_delivery_order_list) | **DELETE** /delivery/{settle}/price_orders | Cancel All Price-triggered Orders
 [**get_price_triggered_delivery_order**](DeliveryApi.md#get_price_triggered_delivery_order) | **GET** /delivery/{settle}/price_orders/{order_id} | Get a price-triggered order
 [**cancel_price_triggered_delivery_order**](DeliveryApi.md#cancel_price_triggered_delivery_order) | **DELETE** /delivery/{settle}/price_orders/{order_id} | cancel a price-triggered order
 
@@ -1700,7 +1700,7 @@ No authorization required
 # **list_price_triggered_delivery_orders**
 > list[FuturesPriceTriggeredOrder] list_price_triggered_delivery_orders(settle, status, contract=contract, limit=limit, offset=offset)
 
-List all auto orders
+List All Price-triggered Orders
 
 ### Example
 
@@ -1733,7 +1733,7 @@ limit = 100 # int | Maximum number of records to be returned in a single list (o
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
-    # List all auto orders
+    # List All Price-triggered Orders
     api_response = api_instance.list_price_triggered_delivery_orders(settle, status, contract=contract, limit=limit, offset=offset)
     print(api_response)
 except GateApiException as ex:
@@ -1844,7 +1844,7 @@ Name | Type | Description  | Notes
 # **cancel_price_triggered_delivery_order_list**
 > list[FuturesPriceTriggeredOrder] cancel_price_triggered_delivery_order_list(settle, contract)
 
-Cancel all open orders
+Cancel All Price-triggered Orders
 
 ### Example
 
@@ -1874,7 +1874,7 @@ settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT' # str | Futures contract
 
 try:
-    # Cancel all open orders
+    # Cancel All Price-triggered Orders
     api_response = api_instance.cancel_price_triggered_delivery_order_list(settle, contract)
     print(api_response)
 except GateApiException as ex:

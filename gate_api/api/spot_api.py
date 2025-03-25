@@ -3681,7 +3681,7 @@ class SpotApi(object):
             collection_formats=collection_formats)
 
     def cancel_spot_price_triggered_order_list(self, **kwargs):  # noqa: E501
-        """Cancel all open orders  # noqa: E501
+        """Cancel All Price-triggered Orders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -3706,7 +3706,7 @@ class SpotApi(object):
         return self.cancel_spot_price_triggered_order_list_with_http_info(**kwargs)  # noqa: E501
 
     def cancel_spot_price_triggered_order_list_with_http_info(self, **kwargs):  # noqa: E501
-        """Cancel all open orders  # noqa: E501
+        """Cancel All Price-triggered Orders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

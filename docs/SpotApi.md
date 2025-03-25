@@ -33,7 +33,7 @@ Method | HTTP request | Description
 [**get_spot_insurance_history**](SpotApi.md#get_spot_insurance_history) | **GET** /spot/insurance_history | Query spot insurance fund historical data
 [**list_spot_price_triggered_orders**](SpotApi.md#list_spot_price_triggered_orders) | **GET** /spot/price_orders | Retrieve running auto order list
 [**create_spot_price_triggered_order**](SpotApi.md#create_spot_price_triggered_order) | **POST** /spot/price_orders | Create a price-triggered order
-[**cancel_spot_price_triggered_order_list**](SpotApi.md#cancel_spot_price_triggered_order_list) | **DELETE** /spot/price_orders | Cancel all open orders
+[**cancel_spot_price_triggered_order_list**](SpotApi.md#cancel_spot_price_triggered_order_list) | **DELETE** /spot/price_orders | Cancel All Price-triggered Orders
 [**get_spot_price_triggered_order**](SpotApi.md#get_spot_price_triggered_order) | **GET** /spot/price_orders/{order_id} | Get a price-triggered order
 [**cancel_spot_price_triggered_order**](SpotApi.md#cancel_spot_price_triggered_order) | **DELETE** /spot/price_orders/{order_id} | cancel a price-triggered order
 
@@ -2044,7 +2044,7 @@ Name | Type | Description  | Notes
 # **cancel_spot_price_triggered_order_list**
 > list[SpotPriceTriggeredOrder] cancel_spot_price_triggered_order_list(market=market, account=account)
 
-Cancel all open orders
+Cancel All Price-triggered Orders
 
 ### Example
 
@@ -2074,7 +2074,7 @@ market = 'BTC_USDT' # str | Currency pair (optional)
 account = 'account_example' # str | Trading account type.  Portfolio margin account must set to `unified` (optional)
 
 try:
-    # Cancel all open orders
+    # Cancel All Price-triggered Orders
     api_response = api_instance.cancel_spot_price_triggered_order_list(market=market, account=account)
     print(api_response)
 except GateApiException as ex:

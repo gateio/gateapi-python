@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "6.94.0"
+__version__ = "6.94.2"
 
 # import apis into sdk package
 from gate_api.api.earn_uni_api import EarnUniApi
