@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**list_unified_accounts**](UnifiedApi.md#list_unified_accounts) | **GET** /unified/accounts | Get unified account information
 [**get_unified_borrowable**](UnifiedApi.md#get_unified_borrowable) | **GET** /unified/borrowable | Query about the maximum borrowing for the unified account
 [**get_unified_transferable**](UnifiedApi.md#get_unified_transferable) | **GET** /unified/transferable | Query about the maximum transferable for the unified account
+[**get_unified_transferables**](UnifiedApi.md#get_unified_transferables) | **GET** /unified/transferables | Batch query can be transferred out at most for unified accounts; each currency is the maximum value. After the user withdraws the currency, the amount of transferable currency will be changed.
 [**list_unified_loans**](UnifiedApi.md#list_unified_loans) | **GET** /unified/loans | List loans
 [**create_unified_loan**](UnifiedApi.md#create_unified_loan) | **POST** /unified/loans | Borrow or repay
 [**list_unified_loan_records**](UnifiedApi.md#list_unified_loan_records) | **GET** /unified/loan_records | Get load records
@@ -213,6 +214,73 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UnifiedTransferable**](UnifiedTransferable.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_unified_transferables**
+> list[TransferablesResult] get_unified_transferables(currencies)
+
+Batch query can be transferred out at most for unified accounts; each currency is the maximum value. After the user withdraws the currency, the amount of transferable currency will be changed.
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.UnifiedApi(api_client)
+currencies = 'BTC,ETH' # str | Specify the currency name to query in batches, and support up to 100 pass parameters at a time.
+
+try:
+    # Batch query can be transferred out at most for unified accounts; each currency is the maximum value. After the user withdraws the currency, the amount of transferable currency will be changed.
+    api_response = api_instance.get_unified_transferables(currencies)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling UnifiedApi->get_unified_transferables: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencies** | **str**| Specify the currency name to query in batches, and support up to 100 pass parameters at a time. | 
+
+### Return type
+
+[**list[TransferablesResult]**](TransferablesResult.md)
 
 ### Authorization
 

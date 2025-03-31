@@ -35,17 +35,19 @@ class CancelBatchOrder(object):
     openapi_types = {
         'currency_pair': 'str',
         'id': 'str',
+        'account': 'str',
         'action_mode': 'str'
     }
 
     attribute_map = {
         'currency_pair': 'currency_pair',
         'id': 'id',
+        'account': 'account',
         'action_mode': 'action_mode'
     }
 
-    def __init__(self, currency_pair=None, id=None, action_mode=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, str, Configuration) -> None
+    def __init__(self, currency_pair=None, id=None, account=None, action_mode=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, str, Configuration) -> None
         """CancelBatchOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,11 +55,14 @@ class CancelBatchOrder(object):
 
         self._currency_pair = None
         self._id = None
+        self._account = None
         self._action_mode = None
         self.discriminator = None
 
         self.currency_pair = currency_pair
         self.id = id
+        if account is not None:
+            self.account = account
         if action_mode is not None:
             self.action_mode = action_mode
 
@@ -110,6 +115,29 @@ class CancelBatchOrder(object):
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
+
+    @property
+    def account(self):
+        """Gets the account of this CancelBatchOrder.  # noqa: E501
+
+        If the canceled order is a unified account apikey, this field must be specified and set to `unified`  # noqa: E501
+
+        :return: The account of this CancelBatchOrder.  # noqa: E501
+        :rtype: str
+        """
+        return self._account
+
+    @account.setter
+    def account(self, account):
+        """Sets the account of this CancelBatchOrder.
+
+        If the canceled order is a unified account apikey, this field must be specified and set to `unified`  # noqa: E501
+
+        :param account: The account of this CancelBatchOrder.  # noqa: E501
+        :type: str
+        """
+
+        self._account = account
 
     @property
     def action_mode(self):

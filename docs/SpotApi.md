@@ -736,7 +736,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_spot_account_book**
-> list[SpotAccountBook] list_spot_account_book(currency=currency, _from=_from, to=to, page=page, limit=limit, type=type)
+> list[SpotAccountBook] list_spot_account_book(currency=currency, _from=_from, to=to, page=page, limit=limit, type=type, code=code)
 
 Query account book
 
@@ -772,10 +772,11 @@ to = 1635329650 # int | Time range ending, default to current time (optional)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 type = 'lend' # str | Only retrieve changes of the specified type. All types will be returned if not specified. (optional)
+code = 'code_example' # str | Specify account change code query, if not specified, all change types are included, and the priority is higher than `type` (optional)
 
 try:
     # Query account book
-    api_response = api_instance.list_spot_account_book(currency=currency, _from=_from, to=to, page=page, limit=limit, type=type)
+    api_response = api_instance.list_spot_account_book(currency=currency, _from=_from, to=to, page=page, limit=limit, type=type, code=code)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -793,6 +794,7 @@ Name | Type | Description  | Notes
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **type** | **str**| Only retrieve changes of the specified type. All types will be returned if not specified. | [optional] 
+ **code** | **str**| Specify account change code query, if not specified, all change types are included, and the priority is higher than &#x60;type&#x60; | [optional] 
 
 ### Return type
 

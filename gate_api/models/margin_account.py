@@ -34,40 +34,55 @@ class MarginAccount(object):
     """
     openapi_types = {
         'currency_pair': 'str',
+        'account_type': 'str',
+        'leverage': 'str',
         'locked': 'bool',
         'risk': 'str',
+        'mmr': 'str',
         'base': 'MarginAccountCurrency',
         'quote': 'MarginAccountCurrency'
     }
 
     attribute_map = {
         'currency_pair': 'currency_pair',
+        'account_type': 'account_type',
+        'leverage': 'leverage',
         'locked': 'locked',
         'risk': 'risk',
+        'mmr': 'mmr',
         'base': 'base',
         'quote': 'quote'
     }
 
-    def __init__(self, currency_pair=None, locked=None, risk=None, base=None, quote=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, bool, str, MarginAccountCurrency, MarginAccountCurrency, Configuration) -> None
+    def __init__(self, currency_pair=None, account_type=None, leverage=None, locked=None, risk=None, mmr=None, base=None, quote=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, bool, str, str, MarginAccountCurrency, MarginAccountCurrency, Configuration) -> None
         """MarginAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._currency_pair = None
+        self._account_type = None
+        self._leverage = None
         self._locked = None
         self._risk = None
+        self._mmr = None
         self._base = None
         self._quote = None
         self.discriminator = None
 
         if currency_pair is not None:
             self.currency_pair = currency_pair
+        if account_type is not None:
+            self.account_type = account_type
+        if leverage is not None:
+            self.leverage = leverage
         if locked is not None:
             self.locked = locked
         if risk is not None:
             self.risk = risk
+        if mmr is not None:
+            self.mmr = mmr
         if base is not None:
             self.base = base
         if quote is not None:
@@ -97,6 +112,52 @@ class MarginAccount(object):
         self._currency_pair = currency_pair
 
     @property
+    def account_type(self):
+        """Gets the account_type of this MarginAccount.  # noqa: E501
+
+        Account type, risk - risk rate account, mmr - maintenance margin rate account, inactive - market not activated  # noqa: E501
+
+        :return: The account_type of this MarginAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_type
+
+    @account_type.setter
+    def account_type(self, account_type):
+        """Sets the account_type of this MarginAccount.
+
+        Account type, risk - risk rate account, mmr - maintenance margin rate account, inactive - market not activated  # noqa: E501
+
+        :param account_type: The account_type of this MarginAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._account_type = account_type
+
+    @property
+    def leverage(self):
+        """Gets the leverage of this MarginAccount.  # noqa: E501
+
+        User current market leverage multiple  # noqa: E501
+
+        :return: The leverage of this MarginAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._leverage
+
+    @leverage.setter
+    def leverage(self, leverage):
+        """Sets the leverage of this MarginAccount.
+
+        User current market leverage multiple  # noqa: E501
+
+        :param leverage: The leverage of this MarginAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._leverage = leverage
+
+    @property
     def locked(self):
         """Gets the locked of this MarginAccount.  # noqa: E501
 
@@ -123,7 +184,7 @@ class MarginAccount(object):
     def risk(self):
         """Gets the risk of this MarginAccount.  # noqa: E501
 
-        Current risk rate of margin account  # noqa: E501
+        Leveraged Account Current Risk Rate (Returned when the Account is a Risk Rate Account)  # noqa: E501
 
         :return: The risk of this MarginAccount.  # noqa: E501
         :rtype: str
@@ -134,13 +195,36 @@ class MarginAccount(object):
     def risk(self, risk):
         """Sets the risk of this MarginAccount.
 
-        Current risk rate of margin account  # noqa: E501
+        Leveraged Account Current Risk Rate (Returned when the Account is a Risk Rate Account)  # noqa: E501
 
         :param risk: The risk of this MarginAccount.  # noqa: E501
         :type: str
         """
 
         self._risk = risk
+
+    @property
+    def mmr(self):
+        """Gets the mmr of this MarginAccount.  # noqa: E501
+
+        Leveraged Account Current Maintenance Margin Rate (returned when the Account is a Maintenance Margin Rate Account)  # noqa: E501
+
+        :return: The mmr of this MarginAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._mmr
+
+    @mmr.setter
+    def mmr(self, mmr):
+        """Sets the mmr of this MarginAccount.
+
+        Leveraged Account Current Maintenance Margin Rate (returned when the Account is a Maintenance Margin Rate Account)  # noqa: E501
+
+        :param mmr: The mmr of this MarginAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._mmr = mmr
 
     @property
     def base(self):

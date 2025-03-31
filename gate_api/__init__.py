@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "6.94.2"
+__version__ = "6.95.0"
 
 # import apis into sdk package
 from gate_api.api.earn_uni_api import EarnUniApi
@@ -144,6 +144,8 @@ from gate_api.models.liquidate_order import LiquidateOrder
 from gate_api.models.margin_account import MarginAccount
 from gate_api.models.margin_account_book import MarginAccountBook
 from gate_api.models.margin_account_currency import MarginAccountCurrency
+from gate_api.models.margin_leverage_tier import MarginLeverageTier
+from gate_api.models.margin_market_leverage import MarginMarketLeverage
 from gate_api.models.margin_tiers import MarginTiers
 from gate_api.models.margin_transferable import MarginTransferable
 from gate_api.models.max_uni_borrowable import MaxUniBorrowable
@@ -245,6 +247,7 @@ from gate_api.models.trade_fee import TradeFee
 from gate_api.models.transaction_id import TransactionID
 from gate_api.models.transfer import Transfer
 from gate_api.models.transfer_order_status import TransferOrderStatus
+from gate_api.models.transferables_result import TransferablesResult
 from gate_api.models.trigger_order_response import TriggerOrderResponse
 from gate_api.models.trigger_time import TriggerTime
 from gate_api.models.uid_push_order import UidPushOrder

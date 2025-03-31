@@ -1346,6 +1346,7 @@ class SpotApi(object):
         :param int page: Page number
         :param int limit: Maximum number of records to be returned in a single list
         :param str type: Only retrieve changes of the specified type. All types will be returned if not specified.
+        :param str code: Specify account change code query, if not specified, all change types are included, and the priority is higher than `type`
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1376,6 +1377,7 @@ class SpotApi(object):
         :param int page: Page number
         :param int limit: Maximum number of records to be returned in a single list
         :param str type: Only retrieve changes of the specified type. All types will be returned if not specified.
+        :param str code: Specify account change code query, if not specified, all change types are included, and the priority is higher than `type`
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1398,7 +1400,8 @@ class SpotApi(object):
             'to',
             'page',
             'limit',
-            'type'
+            'type',
+            'code'
         ]
         all_params.extend(
             [
@@ -1441,6 +1444,8 @@ class SpotApi(object):
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
         if 'type' in local_var_params and local_var_params['type'] is not None:  # noqa: E501
             query_params.append(('type', local_var_params['type']))  # noqa: E501
+        if 'code' in local_var_params and local_var_params['code'] is not None:  # noqa: E501
+            query_params.append(('code', local_var_params['code']))  # noqa: E501
 
         header_params = {}
 

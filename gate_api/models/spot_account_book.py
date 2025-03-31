@@ -39,6 +39,7 @@ class SpotAccountBook(object):
         'change': 'str',
         'balance': 'str',
         'type': 'str',
+        'code': 'str',
         'text': 'str'
     }
 
@@ -49,11 +50,12 @@ class SpotAccountBook(object):
         'change': 'change',
         'balance': 'balance',
         'type': 'type',
+        'code': 'code',
         'text': 'text'
     }
 
-    def __init__(self, id=None, time=None, currency=None, change=None, balance=None, type=None, text=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, int, str, str, str, str, str, Configuration) -> None
+    def __init__(self, id=None, time=None, currency=None, change=None, balance=None, type=None, code=None, text=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, int, str, str, str, str, str, str, Configuration) -> None
         """SpotAccountBook - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class SpotAccountBook(object):
         self._change = None
         self._balance = None
         self._type = None
+        self._code = None
         self._text = None
         self.discriminator = None
 
@@ -80,6 +83,8 @@ class SpotAccountBook(object):
             self.balance = balance
         if type is not None:
             self.type = type
+        if code is not None:
+            self.code = code
         if text is not None:
             self.text = text
 
@@ -220,6 +225,29 @@ class SpotAccountBook(object):
         """
 
         self._type = type
+
+    @property
+    def code(self):
+        """Gets the code of this SpotAccountBook.  # noqa: E501
+
+        Account change code, see [Asset Record Code] (Asset Record Code)  # noqa: E501
+
+        :return: The code of this SpotAccountBook.  # noqa: E501
+        :rtype: str
+        """
+        return self._code
+
+    @code.setter
+    def code(self, code):
+        """Sets the code of this SpotAccountBook.
+
+        Account change code, see [Asset Record Code] (Asset Record Code)  # noqa: E501
+
+        :param code: The code of this SpotAccountBook.  # noqa: E501
+        :type: str
+        """
+
+        self._code = code
 
     @property
     def text(self):
