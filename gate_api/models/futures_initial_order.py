@@ -125,7 +125,7 @@ class FuturesInitialOrder(object):
     def size(self):
         """Gets the size of this FuturesInitialOrder.  # noqa: E501
 
-        Order size. Positive size means to buy, while negative one means to sell. Set to 0 to close the position  # noqa: E501
+        Represents the number of contracts that need to be closed, full closing: size=0 Partial closing: plan-close-short-position size>0  Partial closing: plan-close-long-position size<0  # noqa: E501
 
         :return: The size of this FuturesInitialOrder.  # noqa: E501
         :rtype: int
@@ -136,7 +136,7 @@ class FuturesInitialOrder(object):
     def size(self, size):
         """Sets the size of this FuturesInitialOrder.
 
-        Order size. Positive size means to buy, while negative one means to sell. Set to 0 to close the position  # noqa: E501
+        Represents the number of contracts that need to be closed, full closing: size=0 Partial closing: plan-close-short-position size>0  Partial closing: plan-close-long-position size<0  # noqa: E501
 
         :param size: The size of this FuturesInitialOrder.  # noqa: E501
         :type: int
@@ -173,7 +173,7 @@ class FuturesInitialOrder(object):
     def close(self):
         """Gets the close of this FuturesInitialOrder.  # noqa: E501
 
-        Set to true if trying to close the position  # noqa: E501
+        When all positions are closed in a single position mode, it must be set to true to perform the closing operation When partially closed positions in single-store mode/double-store mode, you can not set close, or close=false  # noqa: E501
 
         :return: The close of this FuturesInitialOrder.  # noqa: E501
         :rtype: bool
@@ -184,7 +184,7 @@ class FuturesInitialOrder(object):
     def close(self, close):
         """Sets the close of this FuturesInitialOrder.
 
-        Set to true if trying to close the position  # noqa: E501
+        When all positions are closed in a single position mode, it must be set to true to perform the closing operation When partially closed positions in single-store mode/double-store mode, you can not set close, or close=false  # noqa: E501
 
         :param close: The close of this FuturesInitialOrder.  # noqa: E501
         :type: bool
@@ -196,7 +196,7 @@ class FuturesInitialOrder(object):
     def tif(self):
         """Gets the tif of this FuturesInitialOrder.  # noqa: E501
 
-        Time in force. If using market price, only `ioc` is supported.  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled  # noqa: E501
+        Time in force strategy, default is gtc, market order currently only supports ioc mode Market order currently only supports ioc mode  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled  # noqa: E501
 
         :return: The tif of this FuturesInitialOrder.  # noqa: E501
         :rtype: str
@@ -207,7 +207,7 @@ class FuturesInitialOrder(object):
     def tif(self, tif):
         """Sets the tif of this FuturesInitialOrder.
 
-        Time in force. If using market price, only `ioc` is supported.  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled  # noqa: E501
+        Time in force strategy, default is gtc, market order currently only supports ioc mode Market order currently only supports ioc mode  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled  # noqa: E501
 
         :param tif: The tif of this FuturesInitialOrder.  # noqa: E501
         :type: str
@@ -248,7 +248,7 @@ class FuturesInitialOrder(object):
     def reduce_only(self):
         """Gets the reduce_only of this FuturesInitialOrder.  # noqa: E501
 
-        Set to true to create a reduce-only order  # noqa: E501
+        When set to true, perform automatic position reduction operation. Set to true to ensure that the order will not open a new position, and is only used to close or reduce positions  # noqa: E501
 
         :return: The reduce_only of this FuturesInitialOrder.  # noqa: E501
         :rtype: bool
@@ -259,7 +259,7 @@ class FuturesInitialOrder(object):
     def reduce_only(self, reduce_only):
         """Sets the reduce_only of this FuturesInitialOrder.
 
-        Set to true to create a reduce-only order  # noqa: E501
+        When set to true, perform automatic position reduction operation. Set to true to ensure that the order will not open a new position, and is only used to close or reduce positions  # noqa: E501
 
         :param reduce_only: The reduce_only of this FuturesInitialOrder.  # noqa: E501
         :type: bool
@@ -271,7 +271,7 @@ class FuturesInitialOrder(object):
     def auto_size(self):
         """Gets the auto_size of this FuturesInitialOrder.  # noqa: E501
 
-        Set side to close dual-mode position. `close_long` closes the long side; while `close_short` the short one. Note `size` also needs to be set to 0  # noqa: E501
+        Do not set auto_size When the dual-position mode is closed all positions (size=0), auto_size, close_long, close_short, short When the double-storey mode partially closes the position (size ≠ 0), there is no need to set auto_size  # noqa: E501
 
         :return: The auto_size of this FuturesInitialOrder.  # noqa: E501
         :rtype: str
@@ -282,7 +282,7 @@ class FuturesInitialOrder(object):
     def auto_size(self, auto_size):
         """Sets the auto_size of this FuturesInitialOrder.
 
-        Set side to close dual-mode position. `close_long` closes the long side; while `close_short` the short one. Note `size` also needs to be set to 0  # noqa: E501
+        Do not set auto_size When the dual-position mode is closed all positions (size=0), auto_size, close_long, close_short, short When the double-storey mode partially closes the position (size ≠ 0), there is no need to set auto_size  # noqa: E501
 
         :param auto_size: The auto_size of this FuturesInitialOrder.  # noqa: E501
         :type: str

@@ -51,6 +51,9 @@ class FuturesAccount(object):
         'cross_maintenance_margin': 'str',
         'cross_unrealised_pnl': 'str',
         'cross_available': 'str',
+        'cross_margin_balance': 'str',
+        'cross_mmr': 'str',
+        'cross_imr': 'str',
         'isolated_position_margin': 'str',
         'enable_new_dual_mode': 'bool',
         'margin_mode': 'int',
@@ -76,14 +79,17 @@ class FuturesAccount(object):
         'cross_maintenance_margin': 'cross_maintenance_margin',
         'cross_unrealised_pnl': 'cross_unrealised_pnl',
         'cross_available': 'cross_available',
+        'cross_margin_balance': 'cross_margin_balance',
+        'cross_mmr': 'cross_mmr',
+        'cross_imr': 'cross_imr',
         'isolated_position_margin': 'isolated_position_margin',
         'enable_new_dual_mode': 'enable_new_dual_mode',
         'margin_mode': 'margin_mode',
         'history': 'history'
     }
 
-    def __init__(self, total=None, unrealised_pnl=None, position_margin=None, order_margin=None, available=None, point=None, currency=None, in_dual_mode=None, enable_credit=None, position_initial_margin=None, maintenance_margin=None, bonus=None, enable_evolved_classic=None, cross_order_margin=None, cross_initial_margin=None, cross_maintenance_margin=None, cross_unrealised_pnl=None, cross_available=None, isolated_position_margin=None, enable_new_dual_mode=None, margin_mode=None, history=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, bool, bool, str, str, str, bool, str, str, str, str, str, str, bool, int, FuturesAccountHistory, Configuration) -> None
+    def __init__(self, total=None, unrealised_pnl=None, position_margin=None, order_margin=None, available=None, point=None, currency=None, in_dual_mode=None, enable_credit=None, position_initial_margin=None, maintenance_margin=None, bonus=None, enable_evolved_classic=None, cross_order_margin=None, cross_initial_margin=None, cross_maintenance_margin=None, cross_unrealised_pnl=None, cross_available=None, cross_margin_balance=None, cross_mmr=None, cross_imr=None, isolated_position_margin=None, enable_new_dual_mode=None, margin_mode=None, history=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, str, str, str, str, bool, bool, str, str, str, bool, str, str, str, str, str, str, str, str, str, bool, int, FuturesAccountHistory, Configuration) -> None
         """FuturesAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -107,6 +113,9 @@ class FuturesAccount(object):
         self._cross_maintenance_margin = None
         self._cross_unrealised_pnl = None
         self._cross_available = None
+        self._cross_margin_balance = None
+        self._cross_mmr = None
+        self._cross_imr = None
         self._isolated_position_margin = None
         self._enable_new_dual_mode = None
         self._margin_mode = None
@@ -149,6 +158,12 @@ class FuturesAccount(object):
             self.cross_unrealised_pnl = cross_unrealised_pnl
         if cross_available is not None:
             self.cross_available = cross_available
+        if cross_margin_balance is not None:
+            self.cross_margin_balance = cross_margin_balance
+        if cross_mmr is not None:
+            self.cross_mmr = cross_mmr
+        if cross_imr is not None:
+            self.cross_imr = cross_imr
         if isolated_position_margin is not None:
             self.isolated_position_margin = isolated_position_margin
         if enable_new_dual_mode is not None:
@@ -571,6 +586,75 @@ class FuturesAccount(object):
         """
 
         self._cross_available = cross_available
+
+    @property
+    def cross_margin_balance(self):
+        """Gets the cross_margin_balance of this FuturesAccount.  # noqa: E501
+
+        Full margin balance, suitable for the new classic account margin model  # noqa: E501
+
+        :return: The cross_margin_balance of this FuturesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._cross_margin_balance
+
+    @cross_margin_balance.setter
+    def cross_margin_balance(self, cross_margin_balance):
+        """Sets the cross_margin_balance of this FuturesAccount.
+
+        Full margin balance, suitable for the new classic account margin model  # noqa: E501
+
+        :param cross_margin_balance: The cross_margin_balance of this FuturesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._cross_margin_balance = cross_margin_balance
+
+    @property
+    def cross_mmr(self):
+        """Gets the cross_mmr of this FuturesAccount.  # noqa: E501
+
+        Maintain margin ratio for the full position, suitable for the new classic account margin model  # noqa: E501
+
+        :return: The cross_mmr of this FuturesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._cross_mmr
+
+    @cross_mmr.setter
+    def cross_mmr(self, cross_mmr):
+        """Sets the cross_mmr of this FuturesAccount.
+
+        Maintain margin ratio for the full position, suitable for the new classic account margin model  # noqa: E501
+
+        :param cross_mmr: The cross_mmr of this FuturesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._cross_mmr = cross_mmr
+
+    @property
+    def cross_imr(self):
+        """Gets the cross_imr of this FuturesAccount.  # noqa: E501
+
+        The initial margin rate of the full position is suitable for the new classic account margin model  # noqa: E501
+
+        :return: The cross_imr of this FuturesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._cross_imr
+
+    @cross_imr.setter
+    def cross_imr(self, cross_imr):
+        """Sets the cross_imr of this FuturesAccount.
+
+        The initial margin rate of the full position is suitable for the new classic account margin model  # noqa: E501
+
+        :param cross_imr: The cross_imr of this FuturesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._cross_imr = cross_imr
 
     @property
     def isolated_position_margin(self):

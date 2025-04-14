@@ -634,7 +634,7 @@ class UnifiedApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: None
+        :rtype: gate_api.UnifiedLoanResult
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -661,7 +661,7 @@ class UnifiedApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :rtype: None
+        :rtype: tuple(gate_api.UnifiedLoanResult, status_code(int), headers(HTTPHeaderDict))
         :return: If the method is called asynchronously,
                  returns the request thread.
         """
@@ -707,6 +707,10 @@ class UnifiedApi(object):
         body_params = None
         if 'unified_loan' in local_var_params:
             body_params = local_var_params['unified_loan']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
@@ -722,7 +726,7 @@ class UnifiedApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='UnifiedLoanResult',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

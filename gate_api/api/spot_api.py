@@ -1487,7 +1487,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param list[Order] order: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1513,7 +1513,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param list[Order] order: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2013,7 +2013,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param Order order: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2039,7 +2039,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param Order order: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2139,7 +2139,7 @@ class SpotApi(object):
         :param str side: All bids or asks. Both included if not specified
         :param str account: Specify Account Type  - Classic Account: If not specified, all include  - Unified Account: Specify `unified`
         :param str action_mode: Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2168,7 +2168,7 @@ class SpotApi(object):
         :param str side: All bids or asks. Both included if not specified
         :param str account: Specify Account Type  - Classic Account: If not specified, all include  - Unified Account: Specify `unified`
         :param str action_mode: Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2266,7 +2266,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param list[CancelBatchOrder] cancel_batch_order: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2292,7 +2292,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param list[CancelBatchOrder] cancel_batch_order: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2520,7 +2520,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param str account: Specify query account.
         :param str action_mode: Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2549,7 +2549,7 @@ class SpotApi(object):
         :param str currency_pair: Currency pair (required)
         :param str account: Specify query account.
         :param str action_mode: Processing Mode  When placing an order, different fields are returned based on the action_mode  - ACK: Asynchronous mode, returns only key order fields - RESULT: No clearing information - FULL: Full mode (default)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2658,7 +2658,7 @@ class SpotApi(object):
         :param OrderPatch order_patch: (required)
         :param str currency_pair: Currency pair
         :param str account: Specify query account.
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2687,7 +2687,7 @@ class SpotApi(object):
         :param OrderPatch order_patch: (required)
         :param str currency_pair: Currency pair
         :param str account: Specify query account.
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -3164,7 +3164,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param list[BatchAmendItem] batch_amend_item: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -3190,7 +3190,7 @@ class SpotApi(object):
 
         :param bool async_req: execute request asynchronously
         :param list[BatchAmendItem] batch_amend_item: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

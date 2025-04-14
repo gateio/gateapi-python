@@ -3501,7 +3501,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param FuturesOrder futures_order: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -3528,7 +3528,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param FuturesOrder futures_order: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -3633,8 +3633,8 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
-        :param str side: All bids or asks. Both included if not specified
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str side: Specify all buy orders or all sell orders, if not specify them, both are included. Revoke all buy orders and revoke all sell orders and make ask
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -3661,8 +3661,8 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str contract: Futures contract (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
-        :param str side: All bids or asks. Both included if not specified
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str side: Specify all buy orders or all sell orders, if not specify them, both are included. Revoke all buy orders and revoke all sell orders and make ask
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -3909,7 +3909,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param list[FuturesOrder] futures_order: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -3936,7 +3936,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param list[FuturesOrder] futures_order: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -4164,7 +4164,7 @@ class FuturesApi(object):
         :param str settle: Settle currency (required)
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 60 seconds after the end of the order.  After that, only order ID is accepted. (required)
         :param FuturesOrderAmendment futures_order_amendment: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -4191,7 +4191,7 @@ class FuturesApi(object):
         :param str settle: Settle currency (required)
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 60 seconds after the end of the order.  After that, only order ID is accepted. (required)
         :param FuturesOrderAmendment futures_order_amendment: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -4302,7 +4302,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 60 seconds after the end of the order.  After that, only order ID is accepted. (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -4328,7 +4328,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param str order_id: Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook.  When the order is finished, it can be checked within 60 seconds after the end of the order.  After that, only order ID is accepted. (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -5381,7 +5381,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param list[str] request_body: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -5408,7 +5408,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param list[str] request_body: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -5513,7 +5513,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param list[BatchAmendOrderReq] batch_amend_order_req: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -5540,7 +5540,7 @@ class FuturesApi(object):
         :param bool async_req: execute request asynchronously
         :param str settle: Settle currency (required)
         :param list[BatchAmendOrderReq] batch_amend_order_req: (required)
-        :param int x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
+        :param str x_gate_exptime: Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

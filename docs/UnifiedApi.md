@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_unified_loan**
-> create_unified_loan(unified_loan)
+> UnifiedLoanResult create_unified_loan(unified_loan)
 
 Borrow or repay
 
@@ -406,7 +406,8 @@ unified_loan = gate_api.UnifiedLoan() # UnifiedLoan |
 
 try:
     # Borrow or repay
-    api_instance.create_unified_loan(unified_loan)
+    api_response = api_instance.create_unified_loan(unified_loan)
+    print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
@@ -421,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**UnifiedLoanResult**](UnifiedLoanResult.md)
 
 ### Authorization
 
@@ -430,12 +431,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Operated successfully |  -  |
+**200** | Operated successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
