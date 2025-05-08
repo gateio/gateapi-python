@@ -1215,7 +1215,7 @@ class EarnUniApi(object):
     def list_uni_chart(self, _from, to, asset, **kwargs):  # noqa: E501
         """UniLoan currency annualized trend chart  # noqa: E501
 
-        Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-05-08 09:22+0000 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <LL@li.org> Plural-Forms: nplurals=2; plural=(n != 1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0   # noqa: E501
+        Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-05-08 09:32+0000 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <LL@li.org> Plural-Forms: nplurals=2; plural=(n != 1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_uni_chart(_from, to, asset, async_req=True)
@@ -1242,7 +1242,7 @@ class EarnUniApi(object):
     def list_uni_chart_with_http_info(self, _from, to, asset, **kwargs):  # noqa: E501
         """UniLoan currency annualized trend chart  # noqa: E501
 
-        Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-05-08 09:22+0000 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <LL@li.org> Plural-Forms: nplurals=2; plural=(n != 1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0   # noqa: E501
+        Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-05-08 09:32+0000 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <LL@li.org> Plural-Forms: nplurals=2; plural=(n != 1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_uni_chart_with_http_info(_from, to, asset, async_req=True)
