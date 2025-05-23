@@ -360,7 +360,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_delivery_tickers**
-> list[FuturesTicker] list_delivery_tickers(settle, contract=contract)
+> list[DeliveryTicker] list_delivery_tickers(settle, contract=contract)
 
 List futures tickers
 
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[FuturesTicker]**](FuturesTicker.md)
+[**list[DeliveryTicker]**](DeliveryTicker.md)
 
 ### Authorization
 

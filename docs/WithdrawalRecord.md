@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **amount** | **str** | Currency amount | 
 **fee** | **str** | fee | [optional] [readonly] 
 **currency** | **str** | Currency name | 
+**address** | **str** | 提现地址 | [optional] 
 **fail_reason** | **str** | The reason for withdrawal failure is that there is a value when status &#x3D; CANCEL, and the rest of the state is empty | [optional] 
 **timestamp2** | **str** | The withdrawal end time, i.e.: withdrawal cancel time or withdrawal success time When status &#x3D; CANCEL, the corresponding cancel time When status &#x3D; DONE and block_number &gt; 0, it is the time to withdrawal success | [optional] 
 **memo** | **str** | Additional remarks with regards to the withdrawal | [optional] 
