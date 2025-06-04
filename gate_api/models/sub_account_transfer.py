@@ -33,86 +33,112 @@ class SubAccountTransfer(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'currency': 'str',
-        'sub_account': 'str',
-        'direction': 'str',
-        'amount': 'str',
-        'uid': 'str',
-        'client_order_id': 'str',
         'timest': 'str',
+        'uid': 'str',
+        'sub_account': 'str',
+        'sub_account_type': 'str',
+        'currency': 'str',
+        'amount': 'str',
+        'direction': 'str',
         'source': 'str',
-        'sub_account_type': 'str'
+        'client_order_id': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
-        'currency': 'currency',
-        'sub_account': 'sub_account',
-        'direction': 'direction',
-        'amount': 'amount',
-        'uid': 'uid',
-        'client_order_id': 'client_order_id',
         'timest': 'timest',
+        'uid': 'uid',
+        'sub_account': 'sub_account',
+        'sub_account_type': 'sub_account_type',
+        'currency': 'currency',
+        'amount': 'amount',
+        'direction': 'direction',
         'source': 'source',
-        'sub_account_type': 'sub_account_type'
+        'client_order_id': 'client_order_id',
+        'status': 'status'
     }
 
-    def __init__(self, currency=None, sub_account=None, direction=None, amount=None, uid=None, client_order_id=None, timest=None, source=None, sub_account_type='spot', local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, Configuration) -> None
+    def __init__(self, timest=None, uid=None, sub_account=None, sub_account_type='spot', currency=None, amount=None, direction=None, source=None, client_order_id=None, status=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, str, str, str, str, str, str, str, Configuration) -> None
         """SubAccountTransfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._currency = None
-        self._sub_account = None
-        self._direction = None
-        self._amount = None
-        self._uid = None
-        self._client_order_id = None
         self._timest = None
-        self._source = None
+        self._uid = None
+        self._sub_account = None
         self._sub_account_type = None
+        self._currency = None
+        self._amount = None
+        self._direction = None
+        self._source = None
+        self._client_order_id = None
+        self._status = None
         self.discriminator = None
 
-        self.currency = currency
-        self.sub_account = sub_account
-        self.direction = direction
-        self.amount = amount
-        if uid is not None:
-            self.uid = uid
-        if client_order_id is not None:
-            self.client_order_id = client_order_id
         if timest is not None:
             self.timest = timest
-        if source is not None:
-            self.source = source
+        if uid is not None:
+            self.uid = uid
+        self.sub_account = sub_account
         if sub_account_type is not None:
             self.sub_account_type = sub_account_type
+        self.currency = currency
+        self.amount = amount
+        self.direction = direction
+        if source is not None:
+            self.source = source
+        if client_order_id is not None:
+            self.client_order_id = client_order_id
+        if status is not None:
+            self.status = status
 
     @property
-    def currency(self):
-        """Gets the currency of this SubAccountTransfer.  # noqa: E501
+    def timest(self):
+        """Gets the timest of this SubAccountTransfer.  # noqa: E501
 
-        Transfer currency name  # noqa: E501
+        Transfer timestamp  # noqa: E501
 
-        :return: The currency of this SubAccountTransfer.  # noqa: E501
+        :return: The timest of this SubAccountTransfer.  # noqa: E501
         :rtype: str
         """
-        return self._currency
+        return self._timest
 
-    @currency.setter
-    def currency(self, currency):
-        """Sets the currency of this SubAccountTransfer.
+    @timest.setter
+    def timest(self, timest):
+        """Sets the timest of this SubAccountTransfer.
 
-        Transfer currency name  # noqa: E501
+        Transfer timestamp  # noqa: E501
 
-        :param currency: The currency of this SubAccountTransfer.  # noqa: E501
+        :param timest: The timest of this SubAccountTransfer.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and currency is None:  # noqa: E501
-            raise ValueError("Invalid value for `currency`, must not be `None`")  # noqa: E501
 
-        self._currency = currency
+        self._timest = timest
+
+    @property
+    def uid(self):
+        """Gets the uid of this SubAccountTransfer.  # noqa: E501
+
+        Main account user ID  # noqa: E501
+
+        :return: The uid of this SubAccountTransfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._uid
+
+    @uid.setter
+    def uid(self, uid):
+        """Sets the uid of this SubAccountTransfer.
+
+        Main account user ID  # noqa: E501
+
+        :param uid: The uid of this SubAccountTransfer.  # noqa: E501
+        :type: str
+        """
+
+        self._uid = uid
 
     @property
     def sub_account(self):
@@ -140,29 +166,52 @@ class SubAccountTransfer(object):
         self._sub_account = sub_account
 
     @property
-    def direction(self):
-        """Gets the direction of this SubAccountTransfer.  # noqa: E501
+    def sub_account_type(self):
+        """Gets the sub_account_type of this SubAccountTransfer.  # noqa: E501
 
-        Transfer direction. to - transfer into sub account; from - transfer out from sub account  # noqa: E501
+        Target sub user's account. `spot` - spot account, `futures` - perpetual contract account, `delivery` - delivery account  # noqa: E501
 
-        :return: The direction of this SubAccountTransfer.  # noqa: E501
+        :return: The sub_account_type of this SubAccountTransfer.  # noqa: E501
         :rtype: str
         """
-        return self._direction
+        return self._sub_account_type
 
-    @direction.setter
-    def direction(self, direction):
-        """Sets the direction of this SubAccountTransfer.
+    @sub_account_type.setter
+    def sub_account_type(self, sub_account_type):
+        """Sets the sub_account_type of this SubAccountTransfer.
 
-        Transfer direction. to - transfer into sub account; from - transfer out from sub account  # noqa: E501
+        Target sub user's account. `spot` - spot account, `futures` - perpetual contract account, `delivery` - delivery account  # noqa: E501
 
-        :param direction: The direction of this SubAccountTransfer.  # noqa: E501
+        :param sub_account_type: The sub_account_type of this SubAccountTransfer.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and direction is None:  # noqa: E501
-            raise ValueError("Invalid value for `direction`, must not be `None`")  # noqa: E501
 
-        self._direction = direction
+        self._sub_account_type = sub_account_type
+
+    @property
+    def currency(self):
+        """Gets the currency of this SubAccountTransfer.  # noqa: E501
+
+        Transfer currency name  # noqa: E501
+
+        :return: The currency of this SubAccountTransfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency
+
+    @currency.setter
+    def currency(self, currency):
+        """Sets the currency of this SubAccountTransfer.
+
+        Transfer currency name  # noqa: E501
+
+        :param currency: The currency of this SubAccountTransfer.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and currency is None:  # noqa: E501
+            raise ValueError("Invalid value for `currency`, must not be `None`")  # noqa: E501
+
+        self._currency = currency
 
     @property
     def amount(self):
@@ -190,73 +239,29 @@ class SubAccountTransfer(object):
         self._amount = amount
 
     @property
-    def uid(self):
-        """Gets the uid of this SubAccountTransfer.  # noqa: E501
+    def direction(self):
+        """Gets the direction of this SubAccountTransfer.  # noqa: E501
 
-        Main account user ID  # noqa: E501
+        Transfer direction. to - transfer into sub account; from - transfer out from sub account  # noqa: E501
 
-        :return: The uid of this SubAccountTransfer.  # noqa: E501
+        :return: The direction of this SubAccountTransfer.  # noqa: E501
         :rtype: str
         """
-        return self._uid
+        return self._direction
 
-    @uid.setter
-    def uid(self, uid):
-        """Sets the uid of this SubAccountTransfer.
+    @direction.setter
+    def direction(self, direction):
+        """Sets the direction of this SubAccountTransfer.
 
-        Main account user ID  # noqa: E501
+        Transfer direction. to - transfer into sub account; from - transfer out from sub account  # noqa: E501
 
-        :param uid: The uid of this SubAccountTransfer.  # noqa: E501
+        :param direction: The direction of this SubAccountTransfer.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and direction is None:  # noqa: E501
+            raise ValueError("Invalid value for `direction`, must not be `None`")  # noqa: E501
 
-        self._uid = uid
-
-    @property
-    def client_order_id(self):
-        """Gets the client_order_id of this SubAccountTransfer.  # noqa: E501
-
-        The custom ID provided by the customer serves as a safeguard against duplicate transfers. It can be a combination of letters (case-sensitive), numbers, hyphens '-', and underscores '_', with a length ranging from 1 to 64 characters.  # noqa: E501
-
-        :return: The client_order_id of this SubAccountTransfer.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_order_id
-
-    @client_order_id.setter
-    def client_order_id(self, client_order_id):
-        """Sets the client_order_id of this SubAccountTransfer.
-
-        The custom ID provided by the customer serves as a safeguard against duplicate transfers. It can be a combination of letters (case-sensitive), numbers, hyphens '-', and underscores '_', with a length ranging from 1 to 64 characters.  # noqa: E501
-
-        :param client_order_id: The client_order_id of this SubAccountTransfer.  # noqa: E501
-        :type: str
-        """
-
-        self._client_order_id = client_order_id
-
-    @property
-    def timest(self):
-        """Gets the timest of this SubAccountTransfer.  # noqa: E501
-
-        Transfer timestamp  # noqa: E501
-
-        :return: The timest of this SubAccountTransfer.  # noqa: E501
-        :rtype: str
-        """
-        return self._timest
-
-    @timest.setter
-    def timest(self, timest):
-        """Sets the timest of this SubAccountTransfer.
-
-        Transfer timestamp  # noqa: E501
-
-        :param timest: The timest of this SubAccountTransfer.  # noqa: E501
-        :type: str
-        """
-
-        self._timest = timest
+        self._direction = direction
 
     @property
     def source(self):
@@ -282,27 +287,50 @@ class SubAccountTransfer(object):
         self._source = source
 
     @property
-    def sub_account_type(self):
-        """Gets the sub_account_type of this SubAccountTransfer.  # noqa: E501
+    def client_order_id(self):
+        """Gets the client_order_id of this SubAccountTransfer.  # noqa: E501
 
-        Target sub user's account. `spot` - spot account, `futures` - perpetual contract account, `delivery` - delivery account  # noqa: E501
+        The custom ID provided by the customer serves as a safeguard against duplicate transfers. It can be a combination of letters (case-sensitive), numbers, hyphens '-', and underscores '_', with a length ranging from 1 to 64 characters.  # noqa: E501
 
-        :return: The sub_account_type of this SubAccountTransfer.  # noqa: E501
+        :return: The client_order_id of this SubAccountTransfer.  # noqa: E501
         :rtype: str
         """
-        return self._sub_account_type
+        return self._client_order_id
 
-    @sub_account_type.setter
-    def sub_account_type(self, sub_account_type):
-        """Sets the sub_account_type of this SubAccountTransfer.
+    @client_order_id.setter
+    def client_order_id(self, client_order_id):
+        """Sets the client_order_id of this SubAccountTransfer.
 
-        Target sub user's account. `spot` - spot account, `futures` - perpetual contract account, `delivery` - delivery account  # noqa: E501
+        The custom ID provided by the customer serves as a safeguard against duplicate transfers. It can be a combination of letters (case-sensitive), numbers, hyphens '-', and underscores '_', with a length ranging from 1 to 64 characters.  # noqa: E501
 
-        :param sub_account_type: The sub_account_type of this SubAccountTransfer.  # noqa: E501
+        :param client_order_id: The client_order_id of this SubAccountTransfer.  # noqa: E501
         :type: str
         """
 
-        self._sub_account_type = sub_account_type
+        self._client_order_id = client_order_id
+
+    @property
+    def status(self):
+        """Gets the status of this SubAccountTransfer.  # noqa: E501
+
+        Sub-account transfer record status, currently only success  # noqa: E501
+
+        :return: The status of this SubAccountTransfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this SubAccountTransfer.
+
+        Sub-account transfer record status, currently only success  # noqa: E501
+
+        :param status: The status of this SubAccountTransfer.  # noqa: E501
+        :type: str
+        """
+
+        self._status = status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

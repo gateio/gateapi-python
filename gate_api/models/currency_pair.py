@@ -48,7 +48,9 @@ class CurrencyPair(object):
         'trade_status': 'str',
         'sell_start': 'int',
         'buy_start': 'int',
-        'type': 'str'
+        'delisting_time': 'int',
+        'type': 'str',
+        'trade_url': 'str'
     }
 
     attribute_map = {
@@ -67,11 +69,13 @@ class CurrencyPair(object):
         'trade_status': 'trade_status',
         'sell_start': 'sell_start',
         'buy_start': 'buy_start',
-        'type': 'type'
+        'delisting_time': 'delisting_time',
+        'type': 'type',
+        'trade_url': 'trade_url'
     }
 
-    def __init__(self, id=None, base=None, base_name=None, quote=None, quote_name=None, fee=None, min_base_amount=None, min_quote_amount=None, max_base_amount=None, max_quote_amount=None, amount_precision=None, precision=None, trade_status=None, sell_start=None, buy_start=None, type=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, int, int, str, int, int, str, Configuration) -> None
+    def __init__(self, id=None, base=None, base_name=None, quote=None, quote_name=None, fee=None, min_base_amount=None, min_quote_amount=None, max_base_amount=None, max_quote_amount=None, amount_precision=None, precision=None, trade_status=None, sell_start=None, buy_start=None, delisting_time=None, type=None, trade_url=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, str, str, str, str, str, str, str, int, int, str, int, int, int, str, str, Configuration) -> None
         """CurrencyPair - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,7 +96,9 @@ class CurrencyPair(object):
         self._trade_status = None
         self._sell_start = None
         self._buy_start = None
+        self._delisting_time = None
         self._type = None
+        self._trade_url = None
         self.discriminator = None
 
         if id is not None:
@@ -125,8 +131,12 @@ class CurrencyPair(object):
             self.sell_start = sell_start
         if buy_start is not None:
             self.buy_start = buy_start
+        if delisting_time is not None:
+            self.delisting_time = delisting_time
         if type is not None:
             self.type = type
+        if trade_url is not None:
+            self.trade_url = trade_url
 
     @property
     def id(self):
@@ -480,6 +490,29 @@ class CurrencyPair(object):
         self._buy_start = buy_start
 
     @property
+    def delisting_time(self):
+        """Gets the delisting_time of this CurrencyPair.  # noqa: E501
+
+        Expected time to remove the shelves, Unix timestamp in seconds  # noqa: E501
+
+        :return: The delisting_time of this CurrencyPair.  # noqa: E501
+        :rtype: int
+        """
+        return self._delisting_time
+
+    @delisting_time.setter
+    def delisting_time(self, delisting_time):
+        """Sets the delisting_time of this CurrencyPair.
+
+        Expected time to remove the shelves, Unix timestamp in seconds  # noqa: E501
+
+        :param delisting_time: The delisting_time of this CurrencyPair.  # noqa: E501
+        :type: int
+        """
+
+        self._delisting_time = delisting_time
+
+    @property
     def type(self):
         """Gets the type of this CurrencyPair.  # noqa: E501
 
@@ -501,6 +534,29 @@ class CurrencyPair(object):
         """
 
         self._type = type
+
+    @property
+    def trade_url(self):
+        """Gets the trade_url of this CurrencyPair.  # noqa: E501
+
+        Transaction link  # noqa: E501
+
+        :return: The trade_url of this CurrencyPair.  # noqa: E501
+        :rtype: str
+        """
+        return self._trade_url
+
+    @trade_url.setter
+    def trade_url(self, trade_url):
+        """Sets the trade_url of this CurrencyPair.
+
+        Transaction link  # noqa: E501
+
+        :param trade_url: The trade_url of this CurrencyPair.  # noqa: E501
+        :type: str
+        """
+
+        self._trade_url = trade_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

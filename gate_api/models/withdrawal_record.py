@@ -307,7 +307,7 @@ class WithdrawalRecord(object):
     def address(self):
         """Gets the address of this WithdrawalRecord.  # noqa: E501
 
-        提现地址  # noqa: E501
+        Withdrawal address  # noqa: E501
 
         :return: The address of this WithdrawalRecord.  # noqa: E501
         :rtype: str
@@ -318,7 +318,7 @@ class WithdrawalRecord(object):
     def address(self, address):
         """Sets the address of this WithdrawalRecord.
 
-        提现地址  # noqa: E501
+        Withdrawal address  # noqa: E501
 
         :param address: The address of this WithdrawalRecord.  # noqa: E501
         :type: str
