@@ -1,4 +1,4 @@
-# InlineObject
+# FuturesPositionCrossMode
 
 ## Properties
 Name | Type | Description | Notes

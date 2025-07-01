@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_sub_account_keys**
-> list[SubAccountKey] create_sub_account_keys(user_id, sub_account_key)
+> SubAccountKey create_sub_account_keys(user_id, sub_account_key)
 
 Create API Key of the sub-account
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[SubAccountKey]**](SubAccountKey.md)
+[**SubAccountKey**](SubAccountKey.md)
 
 ### Authorization
 

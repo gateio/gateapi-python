@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user_id** | **str** | User ID | [optional] [readonly] 
+**user_id** | **int** | User ID | [optional] [readonly] 
 **mode** | **int** | Mode: 1 - classic 2 - portfolio account | [optional] 
 **name** | **str** | API key name | [optional] 
 **perms** | [**list[SubAccountKeyPerms]**](SubAccountKeyPerms.md) |  | [optional] 

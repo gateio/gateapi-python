@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_sub_account_transfers**
-> list[SubAccountTransfer] list_sub_account_transfers(sub_uid=sub_uid, _from=_from, to=to, limit=limit, offset=offset)
+> list[SubAccountTransferRecordItem] list_sub_account_transfers(sub_uid=sub_uid, _from=_from, to=to, limit=limit, offset=offset)
 
 Retrieve transfer records between main and sub accounts
 
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[SubAccountTransfer]**](SubAccountTransfer.md)
+[**list[SubAccountTransferRecordItem]**](SubAccountTransferRecordItem.md)
 
 ### Authorization
 

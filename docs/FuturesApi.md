@@ -1335,7 +1335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_position_cross_mode**
-> Position update_position_cross_mode(settle, inline_object)
+> Position update_position_cross_mode(settle, futures_position_cross_mode)
 
 Switch to the full position-by-store mode
 
@@ -1364,11 +1364,11 @@ api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency
-inline_object = gate_api.InlineObject() # InlineObject | 
+futures_position_cross_mode = gate_api.FuturesPositionCrossMode() # FuturesPositionCrossMode | 
 
 try:
     # Switch to the full position-by-store mode
-    api_response = api_instance.update_position_cross_mode(settle, inline_object)
+    api_response = api_instance.update_position_cross_mode(settle, futures_position_cross_mode)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -1381,7 +1381,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
- **inline_object** | [**InlineObject**](InlineObject.md)|  | 
+ **futures_position_cross_mode** | [**FuturesPositionCrossMode**](FuturesPositionCrossMode.md)|  | 
 
 ### Return type
 

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **rebate_fee** | **str** | The income from rebates, converted to USDT | [optional] 
 **source** | **str** | Rebate Type: Spot、Futures、Options | [optional] 
 **currency_pair** | **str** | Currency pair | [optional] 
+**sub_broker_info** | [**BrokerCommissionSubBrokerInfo**](BrokerCommissionSubBrokerInfo.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
