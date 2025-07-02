@@ -15,11 +15,9 @@ from __future__ import absolute_import
 
 # import models into model package
 from gate_api.models.account_balance import AccountBalance
-from gate_api.models.account_book_response import AccountBookResponse
 from gate_api.models.account_detail import AccountDetail
 from gate_api.models.account_detail_key import AccountDetailKey
 from gate_api.models.account_rate_limit import AccountRateLimit
-from gate_api.models.accounts_response import AccountsResponse
 from gate_api.models.agency_commission import AgencyCommission
 from gate_api.models.agency_commission_history import AgencyCommissionHistory
 from gate_api.models.agency_transaction import AgencyTransaction
@@ -63,7 +61,6 @@ from gate_api.models.cross_margin_balance import CrossMarginBalance
 from gate_api.models.cross_margin_loan import CrossMarginLoan
 from gate_api.models.cross_margin_repayment import CrossMarginRepayment
 from gate_api.models.currency import Currency
-from gate_api.models.currency2 import Currency2
 from gate_api.models.currency_chain import CurrencyChain
 from gate_api.models.currency_pair import CurrencyPair
 from gate_api.models.currency_quota import CurrencyQuota
@@ -165,21 +162,16 @@ from gate_api.models.order_book import OrderBook
 from gate_api.models.order_cancel import OrderCancel
 from gate_api.models.order_patch import OrderPatch
 from gate_api.models.order_resp import OrderResp
-from gate_api.models.order_response import OrderResponse
 from gate_api.models.partner_commission_history import PartnerCommissionHistory
 from gate_api.models.partner_sub import PartnerSub
 from gate_api.models.partner_sub_list import PartnerSubList
 from gate_api.models.partner_transaction_history import PartnerTransactionHistory
 from gate_api.models.patch_uni_lend import PatchUniLend
 from gate_api.models.place_dual_investment_order import PlaceDualInvestmentOrder
-from gate_api.models.place_order_request import PlaceOrderRequest
-from gate_api.models.place_order_response import PlaceOrderResponse
 from gate_api.models.position import Position
 from gate_api.models.position_close import PositionClose
 from gate_api.models.position_close_order import PositionCloseOrder
 from gate_api.models.profit_loss_range import ProfitLossRange
-from gate_api.models.quote_request import QuoteRequest
-from gate_api.models.quote_response import QuoteResponse
 from gate_api.models.rebate_user_info import RebateUserInfo
 from gate_api.models.repay_currency_res import RepayCurrencyRes
 from gate_api.models.repay_loan import RepayLoan
@@ -222,7 +214,6 @@ from gate_api.models.sub_user_mode import SubUserMode
 from gate_api.models.swap_coin import SwapCoin
 from gate_api.models.system_time import SystemTime
 from gate_api.models.ticker import Ticker
-from gate_api.models.ticker2 import Ticker2
 from gate_api.models.total_balance import TotalBalance
 from gate_api.models.trade import Trade
 from gate_api.models.trade_fee import TradeFee
@@ -249,6 +240,8 @@ from gate_api.models.unified_account import UnifiedAccount
 from gate_api.models.unified_balance import UnifiedBalance
 from gate_api.models.unified_borrowable import UnifiedBorrowable
 from gate_api.models.unified_borrowable1 import UnifiedBorrowable1
+from gate_api.models.unified_collateral_req import UnifiedCollateralReq
+from gate_api.models.unified_collateral_res import UnifiedCollateralRes
 from gate_api.models.unified_currency import UnifiedCurrency
 from gate_api.models.unified_discount import UnifiedDiscount
 from gate_api.models.unified_discount_tiers import UnifiedDiscountTiers

@@ -51,7 +51,8 @@ class UnifiedBalance(object):
         'imr': 'str',
         'mmr': 'str',
         'margin_balance': 'str',
-        'available_margin': 'str'
+        'available_margin': 'str',
+        'enabled_collateral': 'bool'
     }
 
     attribute_map = {
@@ -73,11 +74,12 @@ class UnifiedBalance(object):
         'imr': 'imr',
         'mmr': 'mmr',
         'margin_balance': 'margin_balance',
-        'available_margin': 'available_margin'
+        'available_margin': 'available_margin',
+        'enabled_collateral': 'enabled_collateral'
     }
 
-    def __init__(self, available=None, freeze=None, borrowed=None, negative_liab=None, futures_pos_liab=None, equity=None, total_freeze=None, total_liab=None, spot_in_use=None, funding=None, funding_version=None, cross_balance=None, iso_balance=None, im=None, mm=None, imr=None, mmr=None, margin_balance=None, available_margin=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, Configuration) -> None
+    def __init__(self, available=None, freeze=None, borrowed=None, negative_liab=None, futures_pos_liab=None, equity=None, total_freeze=None, total_liab=None, spot_in_use=None, funding=None, funding_version=None, cross_balance=None, iso_balance=None, im=None, mm=None, imr=None, mmr=None, margin_balance=None, available_margin=None, enabled_collateral=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, bool, Configuration) -> None
         """UnifiedBalance - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -102,6 +104,7 @@ class UnifiedBalance(object):
         self._mmr = None
         self._margin_balance = None
         self._available_margin = None
+        self._enabled_collateral = None
         self.discriminator = None
 
         if available is not None:
@@ -142,6 +145,8 @@ class UnifiedBalance(object):
             self.margin_balance = margin_balance
         if available_margin is not None:
             self.available_margin = available_margin
+        if enabled_collateral is not None:
+            self.enabled_collateral = enabled_collateral
 
     @property
     def available(self):
@@ -579,6 +584,29 @@ class UnifiedBalance(object):
         """
 
         self._available_margin = available_margin
+
+    @property
+    def enabled_collateral(self):
+        """Gets the enabled_collateral of this UnifiedBalance.  # noqa: E501
+
+        币种开启作为保证金，true - 启用，false - 未启用  # noqa: E501
+
+        :return: The enabled_collateral of this UnifiedBalance.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enabled_collateral
+
+    @enabled_collateral.setter
+    def enabled_collateral(self, enabled_collateral):
+        """Sets the enabled_collateral of this UnifiedBalance.
+
+        币种开启作为保证金，true - 启用，false - 未启用  # noqa: E501
+
+        :param enabled_collateral: The enabled_collateral of this UnifiedBalance.  # noqa: E501
+        :type: bool
+        """
+
+        self._enabled_collateral = enabled_collateral
 
     def to_dict(self):
         """Returns the model properties as a dict"""

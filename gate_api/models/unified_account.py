@@ -51,7 +51,8 @@ class UnifiedAccount(object):
         'leverage': 'str',
         'spot_order_loss': 'str',
         'spot_hedge': 'bool',
-        'use_funding': 'bool'
+        'use_funding': 'bool',
+        'is_all_collateral': 'bool'
     }
 
     attribute_map = {
@@ -73,11 +74,12 @@ class UnifiedAccount(object):
         'leverage': 'leverage',
         'spot_order_loss': 'spot_order_loss',
         'spot_hedge': 'spot_hedge',
-        'use_funding': 'use_funding'
+        'use_funding': 'use_funding',
+        'is_all_collateral': 'is_all_collateral'
     }
 
-    def __init__(self, user_id=None, refresh_time=None, locked=None, balances=None, total=None, borrowed=None, total_initial_margin=None, total_margin_balance=None, total_maintenance_margin=None, total_initial_margin_rate=None, total_maintenance_margin_rate=None, total_available_margin=None, unified_account_total=None, unified_account_total_liab=None, unified_account_total_equity=None, leverage=None, spot_order_loss=None, spot_hedge=None, use_funding=None, local_vars_configuration=None):  # noqa: E501
-        # type: (int, int, bool, dict(str, UnifiedBalance), str, str, str, str, str, str, str, str, str, str, str, str, str, bool, bool, Configuration) -> None
+    def __init__(self, user_id=None, refresh_time=None, locked=None, balances=None, total=None, borrowed=None, total_initial_margin=None, total_margin_balance=None, total_maintenance_margin=None, total_initial_margin_rate=None, total_maintenance_margin_rate=None, total_available_margin=None, unified_account_total=None, unified_account_total_liab=None, unified_account_total_equity=None, leverage=None, spot_order_loss=None, spot_hedge=None, use_funding=None, is_all_collateral=None, local_vars_configuration=None):  # noqa: E501
+        # type: (int, int, bool, dict(str, UnifiedBalance), str, str, str, str, str, str, str, str, str, str, str, str, str, bool, bool, bool, Configuration) -> None
         """UnifiedAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -102,6 +104,7 @@ class UnifiedAccount(object):
         self._spot_order_loss = None
         self._spot_hedge = None
         self._use_funding = None
+        self._is_all_collateral = None
         self.discriminator = None
 
         if user_id is not None:
@@ -142,6 +145,8 @@ class UnifiedAccount(object):
             self.spot_hedge = spot_hedge
         if use_funding is not None:
             self.use_funding = use_funding
+        if is_all_collateral is not None:
+            self.is_all_collateral = is_all_collateral
 
     @property
     def user_id(self):
@@ -577,6 +582,29 @@ class UnifiedAccount(object):
         """
 
         self._use_funding = use_funding
+
+    @property
+    def is_all_collateral(self):
+        """Gets the is_all_collateral of this UnifiedAccount.  # noqa: E501
+
+        是否所有币种均作为保证金，true - 所有币种作为保证金，false - 否  # noqa: E501
+
+        :return: The is_all_collateral of this UnifiedAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_all_collateral
+
+    @is_all_collateral.setter
+    def is_all_collateral(self, is_all_collateral):
+        """Sets the is_all_collateral of this UnifiedAccount.
+
+        是否所有币种均作为保证金，true - 所有币种作为保证金，false - 否  # noqa: E501
+
+        :param is_all_collateral: The is_all_collateral of this UnifiedAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_all_collateral = is_all_collateral
 
     def to_dict(self):
         """Returns the model properties as a dict"""

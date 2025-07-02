@@ -36,20 +36,18 @@ class SpotAccount(object):
         'currency': 'str',
         'available': 'str',
         'locked': 'str',
-        'update_id': 'int',
-        'refresh_time': 'int'
+        'update_id': 'int'
     }
 
     attribute_map = {
         'currency': 'currency',
         'available': 'available',
         'locked': 'locked',
-        'update_id': 'update_id',
-        'refresh_time': 'refresh_time'
+        'update_id': 'update_id'
     }
 
-    def __init__(self, currency=None, available=None, locked=None, update_id=None, refresh_time=None, local_vars_configuration=None):  # noqa: E501
-        # type: (str, str, str, int, int, Configuration) -> None
+    def __init__(self, currency=None, available=None, locked=None, update_id=None, local_vars_configuration=None):  # noqa: E501
+        # type: (str, str, str, int, Configuration) -> None
         """SpotAccount - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,7 +57,6 @@ class SpotAccount(object):
         self._available = None
         self._locked = None
         self._update_id = None
-        self._refresh_time = None
         self.discriminator = None
 
         if currency is not None:
@@ -70,8 +67,6 @@ class SpotAccount(object):
             self.locked = locked
         if update_id is not None:
             self.update_id = update_id
-        if refresh_time is not None:
-            self.refresh_time = refresh_time
 
     @property
     def currency(self):
@@ -164,29 +159,6 @@ class SpotAccount(object):
         """
 
         self._update_id = update_id
-
-    @property
-    def refresh_time(self):
-        """Gets the refresh_time of this SpotAccount.  # noqa: E501
-
-        Asset Refresh Time (ms)  # noqa: E501
-
-        :return: The refresh_time of this SpotAccount.  # noqa: E501
-        :rtype: int
-        """
-        return self._refresh_time
-
-    @refresh_time.setter
-    def refresh_time(self, refresh_time):
-        """Sets the refresh_time of this SpotAccount.
-
-        Asset Refresh Time (ms)  # noqa: E501
-
-        :param refresh_time: The refresh_time of this SpotAccount.  # noqa: E501
-        :type: int
-        """
-
-        self._refresh_time = refresh_time
 
     def to_dict(self):
         """Returns the model properties as a dict"""

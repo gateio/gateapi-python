@@ -8,7 +8,6 @@ from gate_api.api.margin_uni_api import MarginUniApi
 from gate_api.api.sub_account_api import SubAccountApi
 from gate_api.api.unified_api import UnifiedApi
 from gate_api.api.account_api import AccountApi
-from gate_api.api.alpha_api import AlphaApi
 from gate_api.api.collateral_loan_api import CollateralLoanApi
 from gate_api.api.delivery_api import DeliveryApi
 from gate_api.api.earn_api import EarnApi
