@@ -179,7 +179,7 @@ settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT_20200814' # str | Futures contract
 interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
 limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
-with_id = False # bool | Whether the order book update ID will be returned. This ID increases by 1 on every order book update (optional) (default to False)
+with_id = False # bool | Whether to return depth update ID. This ID increments by 1 each time. (optional) (default to False)
 
 try:
     # Futures order book
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
  **contract** | **str**| Futures contract | 
  **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
  **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
- **with_id** | **bool**| Whether the order book update ID will be returned. This ID increases by 1 on every order book update | [optional] [default to False]
+ **with_id** | **bool**| Whether to return depth update ID. This ID increments by 1 each time. | [optional] [default to False]
 
 ### Return type
 
@@ -217,7 +217,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Order book retrieved |  -  |
+**200** | Depth query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -244,7 +244,7 @@ api_instance = gate_api.DeliveryApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT_20200814' # str | Futures contract
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
-last_id = '12345' # str | Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. Use `from` and `to` instead to limit time range (optional)
+last_id = '12345' # str | 以上个列表的最后一条记录的 ID 作为下个列表的起点。 该字段不再继续支持，新的请求请使用 `from` 和 `to` 字段来限定时间范围 (optional)
 _from = 1546905600 # int | Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned.  (optional)
 to = 1546935600 # int | Specify end time in Unix seconds, default to current time (optional)
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
- **last_id** | **str**| Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. Use &#x60;from&#x60; and &#x60;to&#x60; instead to limit time range | [optional] 
+ **last_id** | **str**| 以上个列表的最后一条记录的 ID 作为下个列表的起点。 该字段不再继续支持，新的请求请使用 &#x60;from&#x60; 和 &#x60;to&#x60; 字段来限定时间范围 | [optional] 
  **_from** | **int**| Specify starting time in Unix seconds. If not specified, &#x60;to&#x60; and &#x60;limit&#x60; will be used to limit response items. If items between &#x60;from&#x60; and &#x60;to&#x60; are more than &#x60;limit&#x60;, only &#x60;limit&#x60; number will be returned.  | [optional] 
  **to** | **int**| Specify end time in Unix seconds, default to current time | [optional] 
 
@@ -314,9 +314,9 @@ api_instance = gate_api.DeliveryApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT_20200814' # str | Futures contract
 _from = 1546905600 # int | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
-to = 1546935600 # int | End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time (optional)
+to = 1546935600 # int | Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second  (optional)
 limit = 100 # int | Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
-interval = '5m' # str | Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0 (optional) (default to '5m')
+interval = '5m' # str | Time interval between data points, note that 1w represents a natural week, 7d time is aligned with Unix initial timeweek  (optional) (default to '5m')
 
 try:
     # Get futures candlesticks
@@ -335,9 +335,9 @@ Name | Type | Description  | Notes
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
  **_from** | **int**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
- **to** | **int**| End time of candlesticks, formatted in Unix timestamp in seconds. Default to current time | [optional] 
+ **to** | **int**| Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second  | [optional] 
  **limit** | **int**| Maximum recent data points to return. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
- **interval** | **str**| Interval time between data points. Note that &#x60;1w&#x60; means natual week(Mon-Sun), while &#x60;7d&#x60; means every 7d since unix 0 | [optional] [default to &#39;5m&#39;]
+ **interval** | **str**| Time interval between data points, note that 1w represents a natural week, 7d time is aligned with Unix initial timeweek  | [optional] [default to &#39;5m&#39;]
 
 ### Return type
 
@@ -577,8 +577,8 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.DeliveryApi(api_client)
 settle = 'usdt' # str | Settle currency
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
-_from = 1547706332 # int | Start timestamp (optional)
-to = 1547706332 # int | End timestamp (optional)
+_from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
+to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 type = 'dnw' # str | Changing Type: - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate (optional)
 
 try:
@@ -597,8 +597,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
- **_from** | **int**| Start timestamp | [optional] 
- **to** | **int**| End timestamp | [optional] 
+ **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
  **type** | **str**| Changing Type: - dnw: Deposit &amp; Withdraw - pnl: Profit &amp; Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: POINT Deposit &amp; Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate | [optional] 
 
 ### Return type
@@ -788,7 +788,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.DeliveryApi(api_client)
 settle = 'usdt' # str | Settle currency
 contract = 'BTC_USDT_20200814' # str | Futures contract
-change = '0.01' # str | Margin change. Use positive number to increase margin, negative number otherwise.
+change = '0.01' # str | Margin change amount, positive number increases, negative number 
 
 try:
     # Update position margin
@@ -806,7 +806,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **settle** | **str**| Settle currency | 
  **contract** | **str**| Futures contract | 
- **change** | **str**| Margin change. Use positive number to increase margin, negative number otherwise. | 
+ **change** | **str**| Margin change amount, positive number increases, negative number  | 
 
 ### Return type
 
@@ -1006,7 +1006,7 @@ status = 'open' # str | Only list the orders with this status
 contract = 'BTC_USDT_20200814' # str | Futures contract (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
-last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
+last_id = '12345' # str | Specify the currency name to query in batches, and support up to 100 pass parameters at a time. (optional)
 count_total = 0 # int | Whether to return total number matched. Default to 0(no return) (optional) (default to 0)
 
 try:
@@ -1028,7 +1028,7 @@ Name | Type | Description  | Notes
  **contract** | **str**| Futures contract | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
- **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
+ **last_id** | **str**| Specify the currency name to query in batches, and support up to 100 pass parameters at a time. | [optional] 
  **count_total** | **int**| Whether to return total number matched. Default to 0(no return) | [optional] [default to 0]
 
 ### Return type
@@ -1369,7 +1369,7 @@ contract = 'BTC_USDT_20200814' # str | Futures contract (optional)
 order = 12345 # int | Futures order ID, return related data only if specified (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
-last_id = '12345' # str | Specify list staring point using the `id` of last record in previous list-query results (optional)
+last_id = '12345' # str | Specify the currency name to query in batches, and support up to 100 pass parameters at a time. (optional)
 count_total = 0 # int | Whether to return total number matched. Default to 0(no return) (optional) (default to 0)
 
 try:
@@ -1391,7 +1391,7 @@ Name | Type | Description  | Notes
  **order** | **int**| Futures order ID, return related data only if specified | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
- **last_id** | **str**| Specify list staring point using the &#x60;id&#x60; of last record in previous list-query results | [optional] 
+ **last_id** | **str**| Specify the currency name to query in batches, and support up to 100 pass parameters at a time. | [optional] 
  **count_total** | **int**| Whether to return total number matched. Default to 0(no return) | [optional] [default to 0]
 
 ### Return type

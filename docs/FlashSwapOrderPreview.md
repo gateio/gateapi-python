@@ -5,9 +5,9 @@ Initiate a flash swap order preview
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **preview_id** | **str** | Preview result ID | [optional] 
-**sell_currency** | **str** | Currency to sell which can be retrieved from supported currency list API &#x60;GET /flash_swap/currencies&#x60; | [optional] 
+**sell_currency** | **str** | Name of the sold asset,  Refer to the interface Query the list of currencies supported for flash swap GET /flash_swap/currenciesto obtain | [optional] 
 **sell_amount** | **str** | Amount to sell | [optional] 
-**buy_currency** | **str** | Currency to buy which can be retrieved from supported currency list API &#x60;GET /flash_swap/currencies&#x60; | [optional] 
+**buy_currency** | **str** | Name of the purchased asset,  Refer to the interface Query the list of currencies supported for flash swap GET /flash_swap/currenciesto obtain | [optional] 
 **buy_amount** | **str** | Amount to buy | [optional] 
 **price** | **str** | Price | [optional] 
 

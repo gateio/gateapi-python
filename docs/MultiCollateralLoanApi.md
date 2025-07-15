@@ -49,8 +49,8 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.MultiCollateralLoanApi(api_client)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 10 # int | Maximum number of records to be returned in a single list (optional) (default to 10)
-sort = 'ltv_asc' # str | Sort types: time_desc - default sorting by creation time in descending order, ltv_asc - ascending order of ltv, ltv_desc - descending order of ltv. (optional)
-order_type = 'current' # str | Order type, current - query current orders, fixed - query fixed orders. If not specified, default to querying current orders (optional)
+sort = 'ltv_asc' # str | Query the current interest rate of the currency in the previous hour (optional)
+order_type = 'current' # str | Order type: current - Query current orders, fixed - Query fixed orders, defaults to current orders if not specified (optional)
 
 try:
     # List Multi-Collateral Orders
@@ -68,8 +68,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 10]
- **sort** | **str**| Sort types: time_desc - default sorting by creation time in descending order, ltv_asc - ascending order of ltv, ltv_desc - descending order of ltv. | [optional] 
- **order_type** | **str**| Order type, current - query current orders, fixed - query fixed orders. If not specified, default to querying current orders | [optional] 
+ **sort** | **str**| Query the current interest rate of the currency in the previous hour | [optional] 
+ **order_type** | **str**| Order type: current - Query current orders, fixed - Query fixed orders, defaults to current orders if not specified | [optional] 
 
 ### Return type
 
@@ -540,8 +540,8 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MultiCollateralLoanApi(api_client)
-type = 'collateral' # str | Currency types: collateral - collateral currency, borrow - borrowing currency.
-currency = 'BTC' # str | When specifying collateral currencies, you can use commas to separate multiple currencies; for borrowing currencies, only one currency can be provided.
+type = 'collateral' # str | Currency type: collateral - Collateral currency, borrow - Borrowing 
+currency = 'BTC' # str | When it is a collateral currency, multiple currencies can be passed separated by commas;when it is a borrowing currency, only one currenc
 
 try:
     # List User Currency Quota
@@ -557,8 +557,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **str**| Currency types: collateral - collateral currency, borrow - borrowing currency. | 
- **currency** | **str**| When specifying collateral currencies, you can use commas to separate multiple currencies; for borrowing currencies, only one currency can be provided. | 
+ **type** | **str**| Currency type: collateral - Collateral currency, borrow - Borrowing  | 
+ **currency** | **str**| When it is a collateral currency, multiple currencies can be passed separated by commas;when it is a borrowing currency, only one currenc | 
 
 ### Return type
 
@@ -749,7 +749,7 @@ No authorization required
 
 Query the current interest rate of the currency
 
-Query the current interest rate of the currency in the last hour. The current interest rate is updated every hour.
+Query the current interest rate of the currency in the previous hour.
 
 ### Example
 
@@ -766,7 +766,7 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MultiCollateralLoanApi(api_client)
-currencies = ['[\"BTC\",\"GT\"]'] # list[str] | Specify the currency name to query the array. The array is separated by commas and has a maximum of 100 items.
+currencies = ['[\"BTC\",\"GT\"]'] # list[str] | Specify currency name query array, separated by commas, maximum 100items.
 vip_level = '0' # str | VIP level, defaults to 0 if not transferred (optional) (default to '0')
 
 try:
@@ -783,7 +783,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencies** | [**list[str]**](str.md)| Specify the currency name to query the array. The array is separated by commas and has a maximum of 100 items. | 
+ **currencies** | [**list[str]**](str.md)| Specify currency name query array, separated by commas, maximum 100items. | 
  **vip_level** | **str**| VIP level, defaults to 0 if not transferred | [optional] [default to &#39;0&#39;]
 
 ### Return type

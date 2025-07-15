@@ -442,8 +442,8 @@ currency_pair = 'BTC_USDT' # str | Currency pair (optional)
 currency = 'BTC' # str | Retrieve data of the specified currency (optional)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
-_from = 1547706332 # int | Start timestamp (optional)
-to = 1547706332 # int | End timestamp (optional)
+_from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
+to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 
 try:
     # List interest records
@@ -463,8 +463,8 @@ Name | Type | Description  | Notes
  **currency** | **str**| Retrieve data of the specified currency | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
- **_from** | **int**| Start timestamp | [optional] 
- **to** | **int**| End timestamp | [optional] 
+ **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
 
 ### Return type
 

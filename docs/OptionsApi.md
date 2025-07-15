@@ -287,8 +287,8 @@ api_instance = gate_api.OptionsApi(api_client)
 underlying = 'BTC_USDT' # str | Underlying (Obtained by listing underlying endpoint)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
-_from = 1547706332 # int | Start timestamp (optional)
-to = 1547706332 # int | End timestamp (optional)
+_from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
+to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 
 try:
     # List settlement history
@@ -307,8 +307,8 @@ Name | Type | Description  | Notes
  **underlying** | **str**| Underlying (Obtained by listing underlying endpoint) | 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
- **_from** | **int**| Start timestamp | [optional] 
- **to** | **int**| End timestamp | [optional] 
+ **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
 
 ### Return type
 
@@ -425,8 +425,8 @@ underlying = 'BTC_USDT' # str | Underlying (Obtained by listing underlying endpo
 contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
-_from = 1547706332 # int | Start timestamp (optional)
-to = 1547706332 # int | End timestamp (optional)
+_from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
+to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 
 try:
     # List my options settlements
@@ -446,8 +446,8 @@ Name | Type | Description  | Notes
  **contract** | **str**| Options contract name | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
- **_from** | **int**| Start timestamp | [optional] 
- **to** | **int**| End timestamp | [optional] 
+ **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
 
 ### Return type
 
@@ -494,7 +494,7 @@ api_instance = gate_api.OptionsApi(api_client)
 contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name
 interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0 (optional) (default to '0')
 limit = 10 # int | Maximum number of order depth data in asks or bids (optional) (default to 10)
-with_id = False # bool | Whether the order book update ID will be returned. This ID increases by 1 on every order book update (optional) (default to False)
+with_id = False # bool | Whether to return depth update ID. This ID increments by 1 each time. (optional) (default to False)
 
 try:
     # Options order book
@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
  **contract** | **str**| Options contract name | 
  **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0 | [optional] [default to &#39;0&#39;]
  **limit** | **int**| Maximum number of order depth data in asks or bids | [optional] [default to 10]
- **with_id** | **bool**| Whether the order book update ID will be returned. This ID increases by 1 on every order book update | [optional] [default to False]
+ **with_id** | **bool**| Whether to return depth update ID. This ID increments by 1 each time. | [optional] [default to False]
 
 ### Return type
 
@@ -531,7 +531,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Order book retrieved |  -  |
+**200** | Depth query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -673,8 +673,8 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.OptionsApi(api_client)
 contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
-_from = 1547706332 # int | Start timestamp (optional)
-to = 1547706332 # int | End timestamp (optional)
+_from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
+to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 interval = '5m' # str | Interval time between data points (optional) (default to '5m')
 
 try:
@@ -693,8 +693,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contract** | **str**| Options contract name | 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
- **_from** | **int**| Start timestamp | [optional] 
- **to** | **int**| End timestamp | [optional] 
+ **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
  **interval** | **str**| Interval time between data points | [optional] [default to &#39;5m&#39;]
 
 ### Return type
@@ -739,8 +739,8 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.OptionsApi(api_client)
 underlying = 'BTC_USDT' # str | Underlying (Obtained by listing underlying endpoint)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
-_from = 1547706332 # int | Start timestamp (optional)
-to = 1547706332 # int | End timestamp (optional)
+_from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
+to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 interval = '5m' # str | Interval time between data points (optional) (default to '5m')
 
 try:
@@ -759,8 +759,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **underlying** | **str**| Underlying (Obtained by listing underlying endpoint) | 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
- **_from** | **int**| Start timestamp | [optional] 
- **to** | **int**| End timestamp | [optional] 
+ **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
  **interval** | **str**| Interval time between data points | [optional] [default to &#39;5m&#39;]
 
 ### Return type
@@ -807,8 +807,8 @@ contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name (optional)
 type = '1546935600' # str | `C` is call, while `P` is put (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
-_from = 1547706332 # int | Start timestamp (optional)
-to = 1547706332 # int | End timestamp (optional)
+_from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
+to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 
 try:
     # Options trade history
@@ -828,8 +828,8 @@ Name | Type | Description  | Notes
  **type** | **str**| &#x60;C&#x60; is call, while &#x60;P&#x60; is put | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
- **_from** | **int**| Start timestamp | [optional] 
- **to** | **int**| End timestamp | [optional] 
+ **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
 
 ### Return type
 
@@ -945,8 +945,8 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.OptionsApi(api_client)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
-_from = 1547706332 # int | Start timestamp (optional)
-to = 1547706332 # int | End timestamp (optional)
+_from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
+to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 type = 'dnw' # str | Changing Type: - dnw: Deposit & Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - set: settlement PNL  (optional)
 
 try:
@@ -965,8 +965,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
- **_from** | **int**| Start timestamp | [optional] 
- **to** | **int**| End timestamp | [optional] 
+ **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
  **type** | **str**| Changing Type: - dnw: Deposit &amp; Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - set: settlement PNL  | [optional] 
 
 ### Return type
@@ -1226,8 +1226,8 @@ contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name (optional)
 underlying = 'BTC_USDT' # str | Underlying (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
-_from = 1547706332 # int | Start timestamp (optional)
-to = 1547706332 # int | End timestamp (optional)
+_from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
+to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 
 try:
     # List options orders
@@ -1248,8 +1248,8 @@ Name | Type | Description  | Notes
  **underlying** | **str**| Underlying | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
- **_from** | **int**| Start timestamp | [optional] 
- **to** | **int**| End timestamp | [optional] 
+ **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
 
 ### Return type
 
@@ -1645,8 +1645,8 @@ underlying = 'BTC_USDT' # str | Underlying (Obtained by listing underlying endpo
 contract = 'BTC_USDT-20210916-5000-C' # str | Options contract name (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
-_from = 1547706332 # int | Start timestamp (optional)
-to = 1547706332 # int | End timestamp (optional)
+_from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
+to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 
 try:
     # List personal trading history
@@ -1666,8 +1666,8 @@ Name | Type | Description  | Notes
  **contract** | **str**| Options contract name | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
  **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
- **_from** | **int**| Start timestamp | [optional] 
- **to** | **int**| End timestamp | [optional] 
+ **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
 
 ### Return type
 

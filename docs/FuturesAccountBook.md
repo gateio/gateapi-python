@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **text** | **str** | Comment | [optional] 
 **contract** | **str** | Futures contract, the field is only available for data after 2023-10-30. | [optional] 
 **trade_id** | **str** | trade id | [optional] 
-**id** | **str** | 账户变更记录 id | [optional] 
+**id** | **str** | Account change record ID | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

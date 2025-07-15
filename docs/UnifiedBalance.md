@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **mmr** | **str** | Full-position maintenance margin rate is valid in single-currency margin mode and is 0 in other modes such as cross-currency margin/combined margin mode | [optional] 
 **margin_balance** | **str** | Full margin balance is valid in single currency margin mode and is 0 in other modes such as cross currency margin/combined margin mode | [optional] 
 **available_margin** | **str** | Full margin available for full position is valid in single currency margin mode, and is 0 in other modes such as cross-currency margin/combined margin mode | [optional] 
-**enabled_collateral** | **bool** | 币种开启作为保证金，true - 启用，false - 未启用 | [optional] 
+**enabled_collateral** | **bool** | Currency enabled as margin: true - Enabled, false - Disabled | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**list_structured_products**](EarnApi.md#list_structured_products) | **GET** /earn/structured/products | Structured Product List
 [**list_structured_orders**](EarnApi.md#list_structured_orders) | **GET** /earn/structured/orders | Structured Product Order List
 [**place_structured_order**](EarnApi.md#place_structured_order) | **POST** /earn/structured/orders | Place Structured Product Order
-[**find_coin**](EarnApi.md#find_coin) | **GET** /earn/staking/coins | 链上赚币币种
+[**find_coin**](EarnApi.md#find_coin) | **GET** /earn/staking/coins | Staking Coins
 [**swap_staking_coin**](EarnApi.md#swap_staking_coin) | **POST** /earn/staking/swap | On-chain Token Swap for Earned Coins
 
 
@@ -364,8 +364,8 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.EarnApi(api_client)
-status = 'in_process' # str | Status (default: all)  `in_process`-processing  `will_begin`-unstarted  `wait_settlement`-unsettled  `done`-finish
-type = 'BullishSharkFin' # str | Product Type (default all)  `SharkFin2.0`-SharkFin  `BullishSharkFin`-BullishSharkFin  `BearishSharkFin`-BearishSharkFin `DoubleNoTouch`-DoubleNoTouch `RangeAccrual`-RangeAccrual `SnowBall`-SnowBall (optional)
+status = 'in_process' # str | Status (Default empty to query all)  `in_process`-In progress `will_begin`-Not started `wait_settlement`-Pending settlement `done`-Completed 
+type = 'BullishSharkFin' # str | Product Type (Default empty to query all)  `SharkFin2.0`-Shark Fin `BullishSharkFin`-Bullish Treasure `BearishSharkFin`-Bearish Treasure `DoubleNoTouch`-Volatility Treasure `RangeAccrual`-Range Smart Yield `SnowBall`-Snowball  (optional)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 
@@ -383,8 +383,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **str**| Status (default: all)  &#x60;in_process&#x60;-processing  &#x60;will_begin&#x60;-unstarted  &#x60;wait_settlement&#x60;-unsettled  &#x60;done&#x60;-finish | 
- **type** | **str**| Product Type (default all)  &#x60;SharkFin2.0&#x60;-SharkFin  &#x60;BullishSharkFin&#x60;-BullishSharkFin  &#x60;BearishSharkFin&#x60;-BearishSharkFin &#x60;DoubleNoTouch&#x60;-DoubleNoTouch &#x60;RangeAccrual&#x60;-RangeAccrual &#x60;SnowBall&#x60;-SnowBall | [optional] 
+ **status** | **str**| Status (Default empty to query all)  &#x60;in_process&#x60;-In progress &#x60;will_begin&#x60;-Not started &#x60;wait_settlement&#x60;-Pending settlement &#x60;done&#x60;-Completed  | 
+ **type** | **str**| Product Type (Default empty to query all)  &#x60;SharkFin2.0&#x60;-Shark Fin &#x60;BullishSharkFin&#x60;-Bullish Treasure &#x60;BearishSharkFin&#x60;-Bearish Treasure &#x60;DoubleNoTouch&#x60;-Volatility Treasure &#x60;RangeAccrual&#x60;-Range Smart Yield &#x60;SnowBall&#x60;-Snowball  | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
 
@@ -437,8 +437,8 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.EarnApi(api_client)
-_from = 1547706332 # int | Start timestamp (optional)
-to = 1547706332 # int | End timestamp (optional)
+_from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
+to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 page = 1 # int | Page number (optional) (default to 1)
 limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
 
@@ -456,8 +456,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_from** | **int**| Start timestamp | [optional] 
- **to** | **int**| End timestamp | [optional] 
+ **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
  **page** | **int**| Page number | [optional] [default to 1]
  **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
 
@@ -550,7 +550,7 @@ void (empty response body)
 # **find_coin**
 > list[str] find_coin(find_coin)
 
-链上赚币币种
+Staking Coins
 
 ### Example
 
@@ -579,7 +579,7 @@ api_instance = gate_api.EarnApi(api_client)
 find_coin = gate_api.FindCoin() # FindCoin | 
 
 try:
-    # 链上赚币币种
+    # Staking Coins
     api_response = api_instance.find_coin(find_coin)
     print(api_response)
 except GateApiException as ex:
@@ -615,7 +615,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **swap_staking_coin**
-> swap_staking_coin(swap_coin)
+> SwapCoinStruct swap_staking_coin(swap_coin)
 
 On-chain Token Swap for Earned Coins
 
@@ -647,7 +647,8 @@ swap_coin = gate_api.SwapCoin() # SwapCoin |
 
 try:
     # On-chain Token Swap for Earned Coins
-    api_instance.swap_staking_coin(swap_coin)
+    api_response = api_instance.swap_staking_coin(swap_coin)
+    print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
 except ApiException as e:
@@ -662,7 +663,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**SwapCoinStruct**](SwapCoinStruct.md)
 
 ### Authorization
 
@@ -671,7 +672,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
