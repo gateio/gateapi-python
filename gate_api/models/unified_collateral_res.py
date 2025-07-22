@@ -57,7 +57,7 @@ class UnifiedCollateralRes(object):
     def is_success(self):
         """Gets the is_success of this UnifiedCollateralRes.  # noqa: E501
 
-        Whether the setting was successful  # noqa: E501
+        Whether the setting was successful.  # noqa: E501
 
         :return: The is_success of this UnifiedCollateralRes.  # noqa: E501
         :rtype: bool
@@ -68,7 +68,7 @@ class UnifiedCollateralRes(object):
     def is_success(self, is_success):
         """Sets the is_success of this UnifiedCollateralRes.
 
-        Whether the setting was successful  # noqa: E501
+        Whether the setting was successful.  # noqa: E501
 
         :param is_success: The is_success of this UnifiedCollateralRes.  # noqa: E501
         :type: bool

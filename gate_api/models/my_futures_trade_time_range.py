@@ -107,7 +107,7 @@ class MyFuturesTradeTimeRange(object):
     def trade_id(self):
         """Gets the trade_id of this MyFuturesTradeTimeRange.  # noqa: E501
 
-        Trade ID  # noqa: E501
+        Trade ID.  # noqa: E501
 
         :return: The trade_id of this MyFuturesTradeTimeRange.  # noqa: E501
         :rtype: str
@@ -118,7 +118,7 @@ class MyFuturesTradeTimeRange(object):
     def trade_id(self, trade_id):
         """Sets the trade_id of this MyFuturesTradeTimeRange.
 
-        Trade ID  # noqa: E501
+        Trade ID.  # noqa: E501
 
         :param trade_id: The trade_id of this MyFuturesTradeTimeRange.  # noqa: E501
         :type: str
@@ -130,7 +130,7 @@ class MyFuturesTradeTimeRange(object):
     def create_time(self):
         """Gets the create_time of this MyFuturesTradeTimeRange.  # noqa: E501
 
-        Trading time  # noqa: E501
+        Trading time.  # noqa: E501
 
         :return: The create_time of this MyFuturesTradeTimeRange.  # noqa: E501
         :rtype: float
@@ -141,7 +141,7 @@ class MyFuturesTradeTimeRange(object):
     def create_time(self, create_time):
         """Sets the create_time of this MyFuturesTradeTimeRange.
 
-        Trading time  # noqa: E501
+        Trading time.  # noqa: E501
 
         :param create_time: The create_time of this MyFuturesTradeTimeRange.  # noqa: E501
         :type: float
@@ -153,7 +153,7 @@ class MyFuturesTradeTimeRange(object):
     def contract(self):
         """Gets the contract of this MyFuturesTradeTimeRange.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :return: The contract of this MyFuturesTradeTimeRange.  # noqa: E501
         :rtype: str
@@ -164,7 +164,7 @@ class MyFuturesTradeTimeRange(object):
     def contract(self, contract):
         """Sets the contract of this MyFuturesTradeTimeRange.
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :param contract: The contract of this MyFuturesTradeTimeRange.  # noqa: E501
         :type: str
@@ -176,7 +176,7 @@ class MyFuturesTradeTimeRange(object):
     def order_id(self):
         """Gets the order_id of this MyFuturesTradeTimeRange.  # noqa: E501
 
-        Order ID related  # noqa: E501
+        Order ID related.  # noqa: E501
 
         :return: The order_id of this MyFuturesTradeTimeRange.  # noqa: E501
         :rtype: str
@@ -187,7 +187,7 @@ class MyFuturesTradeTimeRange(object):
     def order_id(self, order_id):
         """Sets the order_id of this MyFuturesTradeTimeRange.
 
-        Order ID related  # noqa: E501
+        Order ID related.  # noqa: E501
 
         :param order_id: The order_id of this MyFuturesTradeTimeRange.  # noqa: E501
         :type: str
@@ -199,7 +199,7 @@ class MyFuturesTradeTimeRange(object):
     def size(self):
         """Gets the size of this MyFuturesTradeTimeRange.  # noqa: E501
 
-        Trading size  # noqa: E501
+        Trading size.  # noqa: E501
 
         :return: The size of this MyFuturesTradeTimeRange.  # noqa: E501
         :rtype: int
@@ -210,7 +210,7 @@ class MyFuturesTradeTimeRange(object):
     def size(self, size):
         """Sets the size of this MyFuturesTradeTimeRange.
 
-        Trading size  # noqa: E501
+        Trading size.  # noqa: E501
 
         :param size: The size of this MyFuturesTradeTimeRange.  # noqa: E501
         :type: int
@@ -222,7 +222,7 @@ class MyFuturesTradeTimeRange(object):
     def close_size(self):
         """Gets the close_size of this MyFuturesTradeTimeRange.  # noqa: E501
 
-        Number of closed positions:  close_size=0 && size＞0       Open long position close_size=0 && size＜0       Open short position close_size>0 && size>0 && size <= close_size Close short postion close_size>0 && size>0 && size > close_size Close short position and open long position close_size<0 && size<0 && size >= close_size Close long postion close_size<0 && size<0 && size < close_size Close long position and open short position  # noqa: E501
+        Number of closed positions:  close_size=0 && size＞0 Open long position close_size=0 && size＜0 Open short position close_size>0 && size>0 && size <= close_size Close > close_size Close short position and open long position close_size<0 && size<0 && size >= close_size Close long postion close_size<0 && size<0 && size < close_size Close long position and open short position  # noqa: E501
 
         :return: The close_size of this MyFuturesTradeTimeRange.  # noqa: E501
         :rtype: int
@@ -233,7 +233,7 @@ class MyFuturesTradeTimeRange(object):
     def close_size(self, close_size):
         """Sets the close_size of this MyFuturesTradeTimeRange.
 
-        Number of closed positions:  close_size=0 && size＞0       Open long position close_size=0 && size＜0       Open short position close_size>0 && size>0 && size <= close_size Close short postion close_size>0 && size>0 && size > close_size Close short position and open long position close_size<0 && size<0 && size >= close_size Close long postion close_size<0 && size<0 && size < close_size Close long position and open short position  # noqa: E501
+        Number of closed positions:  close_size=0 && size＞0 Open long position close_size=0 && size＜0 Open short position close_size>0 && size>0 && size <= close_size Close > close_size Close short position and open long position close_size<0 && size<0 && size >= close_size Close long postion close_size<0 && size<0 && size < close_size Close long position and open short position  # noqa: E501
 
         :param close_size: The close_size of this MyFuturesTradeTimeRange.  # noqa: E501
         :type: int
@@ -245,7 +245,7 @@ class MyFuturesTradeTimeRange(object):
     def price(self):
         """Gets the price of this MyFuturesTradeTimeRange.  # noqa: E501
 
-        Trading price  # noqa: E501
+        Trading price.  # noqa: E501
 
         :return: The price of this MyFuturesTradeTimeRange.  # noqa: E501
         :rtype: str
@@ -256,7 +256,7 @@ class MyFuturesTradeTimeRange(object):
     def price(self, price):
         """Sets the price of this MyFuturesTradeTimeRange.
 
-        Trading price  # noqa: E501
+        Trading price.  # noqa: E501
 
         :param price: The price of this MyFuturesTradeTimeRange.  # noqa: E501
         :type: str
@@ -268,7 +268,7 @@ class MyFuturesTradeTimeRange(object):
     def role(self):
         """Gets the role of this MyFuturesTradeTimeRange.  # noqa: E501
 
-        Trade role. Available values are `taker` and `maker`  # noqa: E501
+        Trade role. Available values are `taker` and `maker`.  # noqa: E501
 
         :return: The role of this MyFuturesTradeTimeRange.  # noqa: E501
         :rtype: str
@@ -279,7 +279,7 @@ class MyFuturesTradeTimeRange(object):
     def role(self, role):
         """Sets the role of this MyFuturesTradeTimeRange.
 
-        Trade role. Available values are `taker` and `maker`  # noqa: E501
+        Trade role. Available values are `taker` and `maker`.  # noqa: E501
 
         :param role: The role of this MyFuturesTradeTimeRange.  # noqa: E501
         :type: str
@@ -297,7 +297,7 @@ class MyFuturesTradeTimeRange(object):
     def text(self):
         """Gets the text of this MyFuturesTradeTimeRange.  # noqa: E501
 
-        User defined information  # noqa: E501
+        User defined information.  # noqa: E501
 
         :return: The text of this MyFuturesTradeTimeRange.  # noqa: E501
         :rtype: str
@@ -308,7 +308,7 @@ class MyFuturesTradeTimeRange(object):
     def text(self, text):
         """Sets the text of this MyFuturesTradeTimeRange.
 
-        User defined information  # noqa: E501
+        User defined information.  # noqa: E501
 
         :param text: The text of this MyFuturesTradeTimeRange.  # noqa: E501
         :type: str
@@ -320,7 +320,7 @@ class MyFuturesTradeTimeRange(object):
     def fee(self):
         """Gets the fee of this MyFuturesTradeTimeRange.  # noqa: E501
 
-        Fee deducted  # noqa: E501
+        Fee deducted.  # noqa: E501
 
         :return: The fee of this MyFuturesTradeTimeRange.  # noqa: E501
         :rtype: str
@@ -331,7 +331,7 @@ class MyFuturesTradeTimeRange(object):
     def fee(self, fee):
         """Sets the fee of this MyFuturesTradeTimeRange.
 
-        Fee deducted  # noqa: E501
+        Fee deducted.  # noqa: E501
 
         :param fee: The fee of this MyFuturesTradeTimeRange.  # noqa: E501
         :type: str
@@ -343,7 +343,7 @@ class MyFuturesTradeTimeRange(object):
     def point_fee(self):
         """Gets the point_fee of this MyFuturesTradeTimeRange.  # noqa: E501
 
-        Points used to deduct fee  # noqa: E501
+        Points used to deduct fee.  # noqa: E501
 
         :return: The point_fee of this MyFuturesTradeTimeRange.  # noqa: E501
         :rtype: str
@@ -354,7 +354,7 @@ class MyFuturesTradeTimeRange(object):
     def point_fee(self, point_fee):
         """Sets the point_fee of this MyFuturesTradeTimeRange.
 
-        Points used to deduct fee  # noqa: E501
+        Points used to deduct fee.  # noqa: E501
 
         :param point_fee: The point_fee of this MyFuturesTradeTimeRange.  # noqa: E501
         :type: str

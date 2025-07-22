@@ -67,7 +67,7 @@ class OptionsPositionCloseOrder(object):
     def id(self):
         """Gets the id of this OptionsPositionCloseOrder.  # noqa: E501
 
-        Close order ID  # noqa: E501
+        Close order ID.  # noqa: E501
 
         :return: The id of this OptionsPositionCloseOrder.  # noqa: E501
         :rtype: int
@@ -78,7 +78,7 @@ class OptionsPositionCloseOrder(object):
     def id(self, id):
         """Sets the id of this OptionsPositionCloseOrder.
 
-        Close order ID  # noqa: E501
+        Close order ID.  # noqa: E501
 
         :param id: The id of this OptionsPositionCloseOrder.  # noqa: E501
         :type: int
@@ -90,7 +90,7 @@ class OptionsPositionCloseOrder(object):
     def price(self):
         """Gets the price of this OptionsPositionCloseOrder.  # noqa: E501
 
-        Close order price （quote currency)  # noqa: E501
+        Close order price （quote currency).  # noqa: E501
 
         :return: The price of this OptionsPositionCloseOrder.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class OptionsPositionCloseOrder(object):
     def price(self, price):
         """Sets the price of this OptionsPositionCloseOrder.
 
-        Close order price （quote currency)  # noqa: E501
+        Close order price （quote currency).  # noqa: E501
 
         :param price: The price of this OptionsPositionCloseOrder.  # noqa: E501
         :type: str
@@ -113,7 +113,7 @@ class OptionsPositionCloseOrder(object):
     def is_liq(self):
         """Gets the is_liq of this OptionsPositionCloseOrder.  # noqa: E501
 
-        Is the close order from liquidation  # noqa: E501
+        Is the close order from liquidation.  # noqa: E501
 
         :return: The is_liq of this OptionsPositionCloseOrder.  # noqa: E501
         :rtype: bool
@@ -124,7 +124,7 @@ class OptionsPositionCloseOrder(object):
     def is_liq(self, is_liq):
         """Sets the is_liq of this OptionsPositionCloseOrder.
 
-        Is the close order from liquidation  # noqa: E501
+        Is the close order from liquidation.  # noqa: E501
 
         :param is_liq: The is_liq of this OptionsPositionCloseOrder.  # noqa: E501
         :type: bool

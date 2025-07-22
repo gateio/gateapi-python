@@ -92,7 +92,7 @@ class RiskUnits(object):
     def symbol(self):
         """Gets the symbol of this RiskUnits.  # noqa: E501
 
-        Risk unit flag  # noqa: E501
+        Risk unit flag.  # noqa: E501
 
         :return: The symbol of this RiskUnits.  # noqa: E501
         :rtype: str
@@ -103,7 +103,7 @@ class RiskUnits(object):
     def symbol(self, symbol):
         """Sets the symbol of this RiskUnits.
 
-        Risk unit flag  # noqa: E501
+        Risk unit flag.  # noqa: E501
 
         :param symbol: The symbol of this RiskUnits.  # noqa: E501
         :type: str
@@ -115,7 +115,7 @@ class RiskUnits(object):
     def spot_in_use(self):
         """Gets the spot_in_use of this RiskUnits.  # noqa: E501
 
-        Spot hedging utilization  # noqa: E501
+        Spot hedging utilization.  # noqa: E501
 
         :return: The spot_in_use of this RiskUnits.  # noqa: E501
         :rtype: str
@@ -126,7 +126,7 @@ class RiskUnits(object):
     def spot_in_use(self, spot_in_use):
         """Sets the spot_in_use of this RiskUnits.
 
-        Spot hedging utilization  # noqa: E501
+        Spot hedging utilization.  # noqa: E501
 
         :param spot_in_use: The spot_in_use of this RiskUnits.  # noqa: E501
         :type: str
@@ -138,7 +138,7 @@ class RiskUnits(object):
     def maintain_margin(self):
         """Gets the maintain_margin of this RiskUnits.  # noqa: E501
 
-        Maintenance margin for risk unit  # noqa: E501
+        Maintenance margin for risk unit.  # noqa: E501
 
         :return: The maintain_margin of this RiskUnits.  # noqa: E501
         :rtype: str
@@ -149,7 +149,7 @@ class RiskUnits(object):
     def maintain_margin(self, maintain_margin):
         """Sets the maintain_margin of this RiskUnits.
 
-        Maintenance margin for risk unit  # noqa: E501
+        Maintenance margin for risk unit.  # noqa: E501
 
         :param maintain_margin: The maintain_margin of this RiskUnits.  # noqa: E501
         :type: str
@@ -161,7 +161,7 @@ class RiskUnits(object):
     def initial_margin(self):
         """Gets the initial_margin of this RiskUnits.  # noqa: E501
 
-        Initial margin for risk unit  # noqa: E501
+        Initial margin for risk unit.  # noqa: E501
 
         :return: The initial_margin of this RiskUnits.  # noqa: E501
         :rtype: str
@@ -172,7 +172,7 @@ class RiskUnits(object):
     def initial_margin(self, initial_margin):
         """Sets the initial_margin of this RiskUnits.
 
-        Initial margin for risk unit  # noqa: E501
+        Initial margin for risk unit.  # noqa: E501
 
         :param initial_margin: The initial_margin of this RiskUnits.  # noqa: E501
         :type: str
@@ -184,7 +184,7 @@ class RiskUnits(object):
     def delta(self):
         """Gets the delta of this RiskUnits.  # noqa: E501
 
-        Total Delta of risk unit  # noqa: E501
+        Total Delta of risk unit.  # noqa: E501
 
         :return: The delta of this RiskUnits.  # noqa: E501
         :rtype: str
@@ -195,7 +195,7 @@ class RiskUnits(object):
     def delta(self, delta):
         """Sets the delta of this RiskUnits.
 
-        Total Delta of risk unit  # noqa: E501
+        Total Delta of risk unit.  # noqa: E501
 
         :param delta: The delta of this RiskUnits.  # noqa: E501
         :type: str
@@ -207,7 +207,7 @@ class RiskUnits(object):
     def gamma(self):
         """Gets the gamma of this RiskUnits.  # noqa: E501
 
-        Total Gamma of risk unit  # noqa: E501
+        Total Gamma of risk unit.  # noqa: E501
 
         :return: The gamma of this RiskUnits.  # noqa: E501
         :rtype: str
@@ -218,7 +218,7 @@ class RiskUnits(object):
     def gamma(self, gamma):
         """Sets the gamma of this RiskUnits.
 
-        Total Gamma of risk unit  # noqa: E501
+        Total Gamma of risk unit.  # noqa: E501
 
         :param gamma: The gamma of this RiskUnits.  # noqa: E501
         :type: str
@@ -230,7 +230,7 @@ class RiskUnits(object):
     def theta(self):
         """Gets the theta of this RiskUnits.  # noqa: E501
 
-        Total Theta of risk unit  # noqa: E501
+        Total Theta of risk unit.  # noqa: E501
 
         :return: The theta of this RiskUnits.  # noqa: E501
         :rtype: str
@@ -241,7 +241,7 @@ class RiskUnits(object):
     def theta(self, theta):
         """Sets the theta of this RiskUnits.
 
-        Total Theta of risk unit  # noqa: E501
+        Total Theta of risk unit.  # noqa: E501
 
         :param theta: The theta of this RiskUnits.  # noqa: E501
         :type: str
@@ -253,7 +253,7 @@ class RiskUnits(object):
     def vega(self):
         """Gets the vega of this RiskUnits.  # noqa: E501
 
-        Total Vega of risk unit  # noqa: E501
+        Total Vega of risk unit.  # noqa: E501
 
         :return: The vega of this RiskUnits.  # noqa: E501
         :rtype: str
@@ -264,7 +264,7 @@ class RiskUnits(object):
     def vega(self, vega):
         """Sets the vega of this RiskUnits.
 
-        Total Vega of risk unit  # noqa: E501
+        Total Vega of risk unit.  # noqa: E501
 
         :param vega: The vega of this RiskUnits.  # noqa: E501
         :type: str

@@ -62,7 +62,7 @@ class MultiCollateralCurrency(object):
     def loan_currencies(self):
         """Gets the loan_currencies of this MultiCollateralCurrency.  # noqa: E501
 
-        List of supported borrowing currencies  # noqa: E501
+        List of supported borrowing currencies.  # noqa: E501
 
         :return: The loan_currencies of this MultiCollateralCurrency.  # noqa: E501
         :rtype: list[MultiLoanItem]
@@ -73,7 +73,7 @@ class MultiCollateralCurrency(object):
     def loan_currencies(self, loan_currencies):
         """Sets the loan_currencies of this MultiCollateralCurrency.
 
-        List of supported borrowing currencies  # noqa: E501
+        List of supported borrowing currencies.  # noqa: E501
 
         :param loan_currencies: The loan_currencies of this MultiCollateralCurrency.  # noqa: E501
         :type: list[MultiLoanItem]
@@ -85,7 +85,7 @@ class MultiCollateralCurrency(object):
     def collateral_currencies(self):
         """Gets the collateral_currencies of this MultiCollateralCurrency.  # noqa: E501
 
-        List of supported collateral currencies  # noqa: E501
+        List of supported collateral currencies.  # noqa: E501
 
         :return: The collateral_currencies of this MultiCollateralCurrency.  # noqa: E501
         :rtype: list[MultiCollateralItem]
@@ -96,7 +96,7 @@ class MultiCollateralCurrency(object):
     def collateral_currencies(self, collateral_currencies):
         """Sets the collateral_currencies of this MultiCollateralCurrency.
 
-        List of supported collateral currencies  # noqa: E501
+        List of supported collateral currencies.  # noqa: E501
 
         :param collateral_currencies: The collateral_currencies of this MultiCollateralCurrency.  # noqa: E501
         :type: list[MultiCollateralItem]

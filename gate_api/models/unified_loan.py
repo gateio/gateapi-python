@@ -74,7 +74,7 @@ class UnifiedLoan(object):
     def currency(self):
         """Gets the currency of this UnifiedLoan.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this UnifiedLoan.  # noqa: E501
         :rtype: str
@@ -85,7 +85,7 @@ class UnifiedLoan(object):
     def currency(self, currency):
         """Sets the currency of this UnifiedLoan.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this UnifiedLoan.  # noqa: E501
         :type: str
@@ -99,7 +99,7 @@ class UnifiedLoan(object):
     def type(self):
         """Gets the type of this UnifiedLoan.  # noqa: E501
 
-        type: borrow - borrow, repay - repay  # noqa: E501
+        type: borrow - borrow, repay - repay.  # noqa: E501
 
         :return: The type of this UnifiedLoan.  # noqa: E501
         :rtype: str
@@ -110,7 +110,7 @@ class UnifiedLoan(object):
     def type(self, type):
         """Sets the type of this UnifiedLoan.
 
-        type: borrow - borrow, repay - repay  # noqa: E501
+        type: borrow - borrow, repay - repay.  # noqa: E501
 
         :param type: The type of this UnifiedLoan.  # noqa: E501
         :type: str
@@ -130,7 +130,7 @@ class UnifiedLoan(object):
     def amount(self):
         """Gets the amount of this UnifiedLoan.  # noqa: E501
 
-        The amount of lending or repaying  # noqa: E501
+        The amount of lending or repaying.  # noqa: E501
 
         :return: The amount of this UnifiedLoan.  # noqa: E501
         :rtype: str
@@ -141,7 +141,7 @@ class UnifiedLoan(object):
     def amount(self, amount):
         """Sets the amount of this UnifiedLoan.
 
-        The amount of lending or repaying  # noqa: E501
+        The amount of lending or repaying.  # noqa: E501
 
         :param amount: The amount of this UnifiedLoan.  # noqa: E501
         :type: str
@@ -178,7 +178,7 @@ class UnifiedLoan(object):
     def text(self):
         """Gets the text of this UnifiedLoan.  # noqa: E501
 
-        User defined custom ID  # noqa: E501
+        User defined custom ID.  # noqa: E501
 
         :return: The text of this UnifiedLoan.  # noqa: E501
         :rtype: str
@@ -189,7 +189,7 @@ class UnifiedLoan(object):
     def text(self, text):
         """Sets the text of this UnifiedLoan.
 
-        User defined custom ID  # noqa: E501
+        User defined custom ID.  # noqa: E501
 
         :param text: The text of this UnifiedLoan.  # noqa: E501
         :type: str

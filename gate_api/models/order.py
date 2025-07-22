@@ -229,7 +229,7 @@ class Order(object):
     def id(self):
         """Gets the id of this Order.  # noqa: E501
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :return: The id of this Order.  # noqa: E501
         :rtype: str
@@ -240,7 +240,7 @@ class Order(object):
     def id(self, id):
         """Sets the id of this Order.
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :param id: The id of this Order.  # noqa: E501
         :type: str
@@ -275,7 +275,7 @@ class Order(object):
     def amend_text(self):
         """Gets the amend_text of this Order.  # noqa: E501
 
-        The custom data that the user remarked when amending the order  # noqa: E501
+        The custom data that the user remarked when amending the order.  # noqa: E501
 
         :return: The amend_text of this Order.  # noqa: E501
         :rtype: str
@@ -286,7 +286,7 @@ class Order(object):
     def amend_text(self, amend_text):
         """Sets the amend_text of this Order.
 
-        The custom data that the user remarked when amending the order  # noqa: E501
+        The custom data that the user remarked when amending the order.  # noqa: E501
 
         :param amend_text: The amend_text of this Order.  # noqa: E501
         :type: str
@@ -298,7 +298,7 @@ class Order(object):
     def create_time(self):
         """Gets the create_time of this Order.  # noqa: E501
 
-        Creation time of order  # noqa: E501
+        Creation time of order.  # noqa: E501
 
         :return: The create_time of this Order.  # noqa: E501
         :rtype: str
@@ -309,7 +309,7 @@ class Order(object):
     def create_time(self, create_time):
         """Sets the create_time of this Order.
 
-        Creation time of order  # noqa: E501
+        Creation time of order.  # noqa: E501
 
         :param create_time: The create_time of this Order.  # noqa: E501
         :type: str
@@ -321,7 +321,7 @@ class Order(object):
     def update_time(self):
         """Gets the update_time of this Order.  # noqa: E501
 
-        Last modification time of order  # noqa: E501
+        Last modification time of order.  # noqa: E501
 
         :return: The update_time of this Order.  # noqa: E501
         :rtype: str
@@ -332,7 +332,7 @@ class Order(object):
     def update_time(self, update_time):
         """Sets the update_time of this Order.
 
-        Last modification time of order  # noqa: E501
+        Last modification time of order.  # noqa: E501
 
         :param update_time: The update_time of this Order.  # noqa: E501
         :type: str
@@ -344,7 +344,7 @@ class Order(object):
     def create_time_ms(self):
         """Gets the create_time_ms of this Order.  # noqa: E501
 
-        Creation time of order (in milliseconds)  # noqa: E501
+        Creation time of order (in milliseconds).  # noqa: E501
 
         :return: The create_time_ms of this Order.  # noqa: E501
         :rtype: int
@@ -355,7 +355,7 @@ class Order(object):
     def create_time_ms(self, create_time_ms):
         """Sets the create_time_ms of this Order.
 
-        Creation time of order (in milliseconds)  # noqa: E501
+        Creation time of order (in milliseconds).  # noqa: E501
 
         :param create_time_ms: The create_time_ms of this Order.  # noqa: E501
         :type: int
@@ -367,7 +367,7 @@ class Order(object):
     def update_time_ms(self):
         """Gets the update_time_ms of this Order.  # noqa: E501
 
-        Last modification time of order (in milliseconds)  # noqa: E501
+        Last modification time of order (in milliseconds).  # noqa: E501
 
         :return: The update_time_ms of this Order.  # noqa: E501
         :rtype: int
@@ -378,7 +378,7 @@ class Order(object):
     def update_time_ms(self, update_time_ms):
         """Sets the update_time_ms of this Order.
 
-        Last modification time of order (in milliseconds)  # noqa: E501
+        Last modification time of order (in milliseconds).  # noqa: E501
 
         :param update_time_ms: The update_time_ms of this Order.  # noqa: E501
         :type: int
@@ -419,7 +419,7 @@ class Order(object):
     def currency_pair(self):
         """Gets the currency_pair of this Order.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this Order.  # noqa: E501
         :rtype: str
@@ -430,7 +430,7 @@ class Order(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this Order.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this Order.  # noqa: E501
         :type: str
@@ -496,7 +496,7 @@ class Order(object):
     def side(self):
         """Gets the side of this Order.  # noqa: E501
 
-        Buy or sell order  # noqa: E501
+        Buy or sell order.  # noqa: E501
 
         :return: The side of this Order.  # noqa: E501
         :rtype: str
@@ -507,7 +507,7 @@ class Order(object):
     def side(self, side):
         """Sets the side of this Order.
 
-        Buy or sell order  # noqa: E501
+        Buy or sell order.  # noqa: E501
 
         :param side: The side of this Order.  # noqa: E501
         :type: str
@@ -527,7 +527,7 @@ class Order(object):
     def amount(self):
         """Gets the amount of this Order.  # noqa: E501
 
-        When `type` is limit, it refers to base currency.  For instance, `BTC_USDT` means `BTC`  When `type` is `market`, it refers to different currency according to `side`  - `side` : `buy` means quote currency, `BTC_USDT` means `USDT` - `side` : `sell` means base currency，`BTC_USDT` means `BTC`   # noqa: E501
+        When `type` is limit, it refers to base currency. For instance, `BTC_USDT` means `BTC`  When different currency according to `side`  - `side` : `buy` means quote currency, `BTC_USDT` means `USDT` - `side` : `sell` means base currency，`BTC_USDT` means `BTC`   # noqa: E501
 
         :return: The amount of this Order.  # noqa: E501
         :rtype: str
@@ -538,7 +538,7 @@ class Order(object):
     def amount(self, amount):
         """Sets the amount of this Order.
 
-        When `type` is limit, it refers to base currency.  For instance, `BTC_USDT` means `BTC`  When `type` is `market`, it refers to different currency according to `side`  - `side` : `buy` means quote currency, `BTC_USDT` means `USDT` - `side` : `sell` means base currency，`BTC_USDT` means `BTC`   # noqa: E501
+        When `type` is limit, it refers to base currency. For instance, `BTC_USDT` means `BTC`  When different currency according to `side`  - `side` : `buy` means quote currency, `BTC_USDT` means `USDT` - `side` : `sell` means base currency，`BTC_USDT` means `BTC`   # noqa: E501
 
         :param amount: The amount of this Order.  # noqa: E501
         :type: str
@@ -552,7 +552,7 @@ class Order(object):
     def price(self):
         """Gets the price of this Order.  # noqa: E501
 
-        Price can't be empty when `type`= `limit`  # noqa: E501
+        Price can't be empty when `type`= `limit`.  # noqa: E501
 
         :return: The price of this Order.  # noqa: E501
         :rtype: str
@@ -563,7 +563,7 @@ class Order(object):
     def price(self, price):
         """Sets the price of this Order.
 
-        Price can't be empty when `type`= `limit`  # noqa: E501
+        Price can't be empty when `type`= `limit`.  # noqa: E501
 
         :param price: The price of this Order.  # noqa: E501
         :type: str
@@ -604,7 +604,7 @@ class Order(object):
     def iceberg(self):
         """Gets the iceberg of this Order.  # noqa: E501
 
-        Amount to display for the iceberg order. Null or 0 for normal orders.  Hiding all amount is not supported.  # noqa: E501
+        Amount to display for the iceberg order. Null or 0 for normal orders. Hiding all amount is not supported.  # noqa: E501
 
         :return: The iceberg of this Order.  # noqa: E501
         :rtype: str
@@ -615,7 +615,7 @@ class Order(object):
     def iceberg(self, iceberg):
         """Sets the iceberg of this Order.
 
-        Amount to display for the iceberg order. Null or 0 for normal orders.  Hiding all amount is not supported.  # noqa: E501
+        Amount to display for the iceberg order. Null or 0 for normal orders. Hiding all amount is not supported.  # noqa: E501
 
         :param iceberg: The iceberg of this Order.  # noqa: E501
         :type: str
@@ -673,7 +673,7 @@ class Order(object):
     def left(self):
         """Gets the left of this Order.  # noqa: E501
 
-        Amount left to fill  # noqa: E501
+        Amount left to fill.  # noqa: E501
 
         :return: The left of this Order.  # noqa: E501
         :rtype: str
@@ -684,7 +684,7 @@ class Order(object):
     def left(self, left):
         """Sets the left of this Order.
 
-        Amount left to fill  # noqa: E501
+        Amount left to fill.  # noqa: E501
 
         :param left: The left of this Order.  # noqa: E501
         :type: str
@@ -696,7 +696,7 @@ class Order(object):
     def filled_amount(self):
         """Gets the filled_amount of this Order.  # noqa: E501
 
-        Amount traded to fill   # noqa: E501
+        Amount traded to fill.  # noqa: E501
 
         :return: The filled_amount of this Order.  # noqa: E501
         :rtype: str
@@ -707,7 +707,7 @@ class Order(object):
     def filled_amount(self, filled_amount):
         """Sets the filled_amount of this Order.
 
-        Amount traded to fill   # noqa: E501
+        Amount traded to fill.  # noqa: E501
 
         :param filled_amount: The filled_amount of this Order.  # noqa: E501
         :type: str
@@ -719,7 +719,7 @@ class Order(object):
     def fill_price(self):
         """Gets the fill_price of this Order.  # noqa: E501
 
-        Total filled in quote currency. Deprecated in favor of `filled_total`  # noqa: E501
+        Total filled in quote currency. Deprecated in favor of `filled_total`.  # noqa: E501
 
         :return: The fill_price of this Order.  # noqa: E501
         :rtype: str
@@ -730,7 +730,7 @@ class Order(object):
     def fill_price(self, fill_price):
         """Sets the fill_price of this Order.
 
-        Total filled in quote currency. Deprecated in favor of `filled_total`  # noqa: E501
+        Total filled in quote currency. Deprecated in favor of `filled_total`.  # noqa: E501
 
         :param fill_price: The fill_price of this Order.  # noqa: E501
         :type: str
@@ -742,7 +742,7 @@ class Order(object):
     def filled_total(self):
         """Gets the filled_total of this Order.  # noqa: E501
 
-        Total filled in quote currency  # noqa: E501
+        Total filled in quote currency.  # noqa: E501
 
         :return: The filled_total of this Order.  # noqa: E501
         :rtype: str
@@ -753,7 +753,7 @@ class Order(object):
     def filled_total(self, filled_total):
         """Sets the filled_total of this Order.
 
-        Total filled in quote currency  # noqa: E501
+        Total filled in quote currency.  # noqa: E501
 
         :param filled_total: The filled_total of this Order.  # noqa: E501
         :type: str
@@ -765,7 +765,7 @@ class Order(object):
     def avg_deal_price(self):
         """Gets the avg_deal_price of this Order.  # noqa: E501
 
-        Average fill price  # noqa: E501
+        Average fill price.  # noqa: E501
 
         :return: The avg_deal_price of this Order.  # noqa: E501
         :rtype: str
@@ -776,7 +776,7 @@ class Order(object):
     def avg_deal_price(self, avg_deal_price):
         """Sets the avg_deal_price of this Order.
 
-        Average fill price  # noqa: E501
+        Average fill price.  # noqa: E501
 
         :param avg_deal_price: The avg_deal_price of this Order.  # noqa: E501
         :type: str
@@ -788,7 +788,7 @@ class Order(object):
     def fee(self):
         """Gets the fee of this Order.  # noqa: E501
 
-        Fee deducted  # noqa: E501
+        Fee deducted.  # noqa: E501
 
         :return: The fee of this Order.  # noqa: E501
         :rtype: str
@@ -799,7 +799,7 @@ class Order(object):
     def fee(self, fee):
         """Sets the fee of this Order.
 
-        Fee deducted  # noqa: E501
+        Fee deducted.  # noqa: E501
 
         :param fee: The fee of this Order.  # noqa: E501
         :type: str
@@ -811,7 +811,7 @@ class Order(object):
     def fee_currency(self):
         """Gets the fee_currency of this Order.  # noqa: E501
 
-        Fee currency unit  # noqa: E501
+        Fee currency unit.  # noqa: E501
 
         :return: The fee_currency of this Order.  # noqa: E501
         :rtype: str
@@ -822,7 +822,7 @@ class Order(object):
     def fee_currency(self, fee_currency):
         """Sets the fee_currency of this Order.
 
-        Fee currency unit  # noqa: E501
+        Fee currency unit.  # noqa: E501
 
         :param fee_currency: The fee_currency of this Order.  # noqa: E501
         :type: str
@@ -834,7 +834,7 @@ class Order(object):
     def point_fee(self):
         """Gets the point_fee of this Order.  # noqa: E501
 
-        Points used to deduct fee  # noqa: E501
+        Points used to deduct fee.  # noqa: E501
 
         :return: The point_fee of this Order.  # noqa: E501
         :rtype: str
@@ -845,7 +845,7 @@ class Order(object):
     def point_fee(self, point_fee):
         """Sets the point_fee of this Order.
 
-        Points used to deduct fee  # noqa: E501
+        Points used to deduct fee.  # noqa: E501
 
         :param point_fee: The point_fee of this Order.  # noqa: E501
         :type: str
@@ -857,7 +857,7 @@ class Order(object):
     def gt_fee(self):
         """Gets the gt_fee of this Order.  # noqa: E501
 
-        GT used to deduct fee  # noqa: E501
+        GT used to deduct fee.  # noqa: E501
 
         :return: The gt_fee of this Order.  # noqa: E501
         :rtype: str
@@ -868,7 +868,7 @@ class Order(object):
     def gt_fee(self, gt_fee):
         """Sets the gt_fee of this Order.
 
-        GT used to deduct fee  # noqa: E501
+        GT used to deduct fee.  # noqa: E501
 
         :param gt_fee: The gt_fee of this Order.  # noqa: E501
         :type: str
@@ -880,7 +880,7 @@ class Order(object):
     def gt_maker_fee(self):
         """Gets the gt_maker_fee of this Order.  # noqa: E501
 
-        GT used to deduct maker fee  # noqa: E501
+        GT used to deduct maker fee.  # noqa: E501
 
         :return: The gt_maker_fee of this Order.  # noqa: E501
         :rtype: str
@@ -891,7 +891,7 @@ class Order(object):
     def gt_maker_fee(self, gt_maker_fee):
         """Sets the gt_maker_fee of this Order.
 
-        GT used to deduct maker fee  # noqa: E501
+        GT used to deduct maker fee.  # noqa: E501
 
         :param gt_maker_fee: The gt_maker_fee of this Order.  # noqa: E501
         :type: str
@@ -903,7 +903,7 @@ class Order(object):
     def gt_taker_fee(self):
         """Gets the gt_taker_fee of this Order.  # noqa: E501
 
-        GT used to deduct taker fee  # noqa: E501
+        GT used to deduct taker fee.  # noqa: E501
 
         :return: The gt_taker_fee of this Order.  # noqa: E501
         :rtype: str
@@ -914,7 +914,7 @@ class Order(object):
     def gt_taker_fee(self, gt_taker_fee):
         """Sets the gt_taker_fee of this Order.
 
-        GT used to deduct taker fee  # noqa: E501
+        GT used to deduct taker fee.  # noqa: E501
 
         :param gt_taker_fee: The gt_taker_fee of this Order.  # noqa: E501
         :type: str
@@ -926,7 +926,7 @@ class Order(object):
     def gt_discount(self):
         """Gets the gt_discount of this Order.  # noqa: E501
 
-        Whether GT fee discount is used  # noqa: E501
+        Whether GT fee discount is used.  # noqa: E501
 
         :return: The gt_discount of this Order.  # noqa: E501
         :rtype: bool
@@ -937,7 +937,7 @@ class Order(object):
     def gt_discount(self, gt_discount):
         """Sets the gt_discount of this Order.
 
-        Whether GT fee discount is used  # noqa: E501
+        Whether GT fee discount is used.  # noqa: E501
 
         :param gt_discount: The gt_discount of this Order.  # noqa: E501
         :type: bool
@@ -949,7 +949,7 @@ class Order(object):
     def rebated_fee(self):
         """Gets the rebated_fee of this Order.  # noqa: E501
 
-        Rebated fee  # noqa: E501
+        Rebated fee.  # noqa: E501
 
         :return: The rebated_fee of this Order.  # noqa: E501
         :rtype: str
@@ -960,7 +960,7 @@ class Order(object):
     def rebated_fee(self, rebated_fee):
         """Sets the rebated_fee of this Order.
 
-        Rebated fee  # noqa: E501
+        Rebated fee.  # noqa: E501
 
         :param rebated_fee: The rebated_fee of this Order.  # noqa: E501
         :type: str
@@ -972,7 +972,7 @@ class Order(object):
     def rebated_fee_currency(self):
         """Gets the rebated_fee_currency of this Order.  # noqa: E501
 
-        Rebated fee currency unit  # noqa: E501
+        Rebated fee currency unit.  # noqa: E501
 
         :return: The rebated_fee_currency of this Order.  # noqa: E501
         :rtype: str
@@ -983,7 +983,7 @@ class Order(object):
     def rebated_fee_currency(self, rebated_fee_currency):
         """Sets the rebated_fee_currency of this Order.
 
-        Rebated fee currency unit  # noqa: E501
+        Rebated fee currency unit.  # noqa: E501
 
         :param rebated_fee_currency: The rebated_fee_currency of this Order.  # noqa: E501
         :type: str
@@ -1018,7 +1018,7 @@ class Order(object):
     def stp_act(self):
         """Gets the stp_act of this Order.  # noqa: E501
 
-        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, Cancel old orders and keep new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
+        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
 
         :return: The stp_act of this Order.  # noqa: E501
         :rtype: str
@@ -1029,7 +1029,7 @@ class Order(object):
     def stp_act(self, stp_act):
         """Sets the stp_act of this Order.
 
-        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, Cancel old orders and keep new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
+        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
 
         :param stp_act: The stp_act of this Order.  # noqa: E501
         :type: str
@@ -1047,7 +1047,7 @@ class Order(object):
     def finish_as(self):
         """Gets the finish_as of this Order.  # noqa: E501
 
-        Order completion statuses include:  - open: Awaiting processing - filled: Fully filled - cancelled: Cancelled by user - liquidate_cancelled: Cancelled due to liquidation - small: Order quantity too small - depth_not_enough: Cancelled due to insufficient market depth - trader_not_enough: Cancelled due to insufficient counterparty - ioc: Not immediately filled because tif is set to ioc - poc: Not met the order strategy because tif is set to poc - fok: Not fully filled immediately because tif is set to fok - stp: Cancelled due to self-trade prevention - unknown: Unknown  # noqa: E501
+        Order completion statuses include:  - open: Awaiting processing - filled: Fully filled - cancelled: Cancelled by user - liquidate_cancelled: Cancelled due to liquidation - small: Order quantity too small - depth_not_enough: Cancelled due to insufficient market depth - trader_not_enough: Cancelled due to insufficient counterparty - ioc: Not immediately filled because tif is set to ioc - poc: Not met the order poc - fok: Not fully filled immediately because tif is set to fok - stp: Cancelled due to self-trade prevention - unknown: Unknown  # noqa: E501
 
         :return: The finish_as of this Order.  # noqa: E501
         :rtype: str
@@ -1058,7 +1058,7 @@ class Order(object):
     def finish_as(self, finish_as):
         """Sets the finish_as of this Order.
 
-        Order completion statuses include:  - open: Awaiting processing - filled: Fully filled - cancelled: Cancelled by user - liquidate_cancelled: Cancelled due to liquidation - small: Order quantity too small - depth_not_enough: Cancelled due to insufficient market depth - trader_not_enough: Cancelled due to insufficient counterparty - ioc: Not immediately filled because tif is set to ioc - poc: Not met the order strategy because tif is set to poc - fok: Not fully filled immediately because tif is set to fok - stp: Cancelled due to self-trade prevention - unknown: Unknown  # noqa: E501
+        Order completion statuses include:  - open: Awaiting processing - filled: Fully filled - cancelled: Cancelled by user - liquidate_cancelled: Cancelled due to liquidation - small: Order quantity too small - depth_not_enough: Cancelled due to insufficient market depth - trader_not_enough: Cancelled due to insufficient counterparty - ioc: Not immediately filled because tif is set to ioc - poc: Not met the order poc - fok: Not fully filled immediately because tif is set to fok - stp: Cancelled due to self-trade prevention - unknown: Unknown  # noqa: E501
 
         :param finish_as: The finish_as of this Order.  # noqa: E501
         :type: str

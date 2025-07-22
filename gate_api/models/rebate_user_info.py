@@ -57,7 +57,7 @@ class RebateUserInfo(object):
     def invite_uid(self):
         """Gets the invite_uid of this RebateUserInfo.  # noqa: E501
 
-        My inviter's UID  # noqa: E501
+        My inviter's UID.  # noqa: E501
 
         :return: The invite_uid of this RebateUserInfo.  # noqa: E501
         :rtype: int
@@ -68,7 +68,7 @@ class RebateUserInfo(object):
     def invite_uid(self, invite_uid):
         """Sets the invite_uid of this RebateUserInfo.
 
-        My inviter's UID  # noqa: E501
+        My inviter's UID.  # noqa: E501
 
         :param invite_uid: The invite_uid of this RebateUserInfo.  # noqa: E501
         :type: int

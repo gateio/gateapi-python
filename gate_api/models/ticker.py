@@ -134,7 +134,7 @@ class Ticker(object):
     def currency_pair(self):
         """Gets the currency_pair of this Ticker.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this Ticker.  # noqa: E501
         :rtype: str
@@ -145,7 +145,7 @@ class Ticker(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this Ticker.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this Ticker.  # noqa: E501
         :type: str
@@ -157,7 +157,7 @@ class Ticker(object):
     def last(self):
         """Gets the last of this Ticker.  # noqa: E501
 
-        Last trading price  # noqa: E501
+        Last trading price.  # noqa: E501
 
         :return: The last of this Ticker.  # noqa: E501
         :rtype: str
@@ -168,7 +168,7 @@ class Ticker(object):
     def last(self, last):
         """Sets the last of this Ticker.
 
-        Last trading price  # noqa: E501
+        Last trading price.  # noqa: E501
 
         :param last: The last of this Ticker.  # noqa: E501
         :type: str
@@ -180,7 +180,7 @@ class Ticker(object):
     def lowest_ask(self):
         """Gets the lowest_ask of this Ticker.  # noqa: E501
 
-        Recent lowest ask  # noqa: E501
+        Recent lowest ask.  # noqa: E501
 
         :return: The lowest_ask of this Ticker.  # noqa: E501
         :rtype: str
@@ -191,7 +191,7 @@ class Ticker(object):
     def lowest_ask(self, lowest_ask):
         """Sets the lowest_ask of this Ticker.
 
-        Recent lowest ask  # noqa: E501
+        Recent lowest ask.  # noqa: E501
 
         :param lowest_ask: The lowest_ask of this Ticker.  # noqa: E501
         :type: str
@@ -226,7 +226,7 @@ class Ticker(object):
     def highest_bid(self):
         """Gets the highest_bid of this Ticker.  # noqa: E501
 
-        Recent highest bid  # noqa: E501
+        Recent highest bid.  # noqa: E501
 
         :return: The highest_bid of this Ticker.  # noqa: E501
         :rtype: str
@@ -237,7 +237,7 @@ class Ticker(object):
     def highest_bid(self, highest_bid):
         """Sets the highest_bid of this Ticker.
 
-        Recent highest bid  # noqa: E501
+        Recent highest bid.  # noqa: E501
 
         :param highest_bid: The highest_bid of this Ticker.  # noqa: E501
         :type: str
@@ -272,7 +272,7 @@ class Ticker(object):
     def change_percentage(self):
         """Gets the change_percentage of this Ticker.  # noqa: E501
 
-        Change percentage in the last 24h  # noqa: E501
+        Change percentage in the last 24h.  # noqa: E501
 
         :return: The change_percentage of this Ticker.  # noqa: E501
         :rtype: str
@@ -283,7 +283,7 @@ class Ticker(object):
     def change_percentage(self, change_percentage):
         """Sets the change_percentage of this Ticker.
 
-        Change percentage in the last 24h  # noqa: E501
+        Change percentage in the last 24h.  # noqa: E501
 
         :param change_percentage: The change_percentage of this Ticker.  # noqa: E501
         :type: str
@@ -295,7 +295,7 @@ class Ticker(object):
     def change_utc0(self):
         """Gets the change_utc0 of this Ticker.  # noqa: E501
 
-        utc0 timezone, the percentage change in the last 24 hours  # noqa: E501
+        utc0 timezone, the percentage change in the last 24 hours.  # noqa: E501
 
         :return: The change_utc0 of this Ticker.  # noqa: E501
         :rtype: str
@@ -306,7 +306,7 @@ class Ticker(object):
     def change_utc0(self, change_utc0):
         """Sets the change_utc0 of this Ticker.
 
-        utc0 timezone, the percentage change in the last 24 hours  # noqa: E501
+        utc0 timezone, the percentage change in the last 24 hours.  # noqa: E501
 
         :param change_utc0: The change_utc0 of this Ticker.  # noqa: E501
         :type: str
@@ -318,7 +318,7 @@ class Ticker(object):
     def change_utc8(self):
         """Gets the change_utc8 of this Ticker.  # noqa: E501
 
-        utc8 timezone, the percentage change in the last 24 hours  # noqa: E501
+        utc8 timezone, the percentage change in the last 24 hours.  # noqa: E501
 
         :return: The change_utc8 of this Ticker.  # noqa: E501
         :rtype: str
@@ -329,7 +329,7 @@ class Ticker(object):
     def change_utc8(self, change_utc8):
         """Sets the change_utc8 of this Ticker.
 
-        utc8 timezone, the percentage change in the last 24 hours  # noqa: E501
+        utc8 timezone, the percentage change in the last 24 hours.  # noqa: E501
 
         :param change_utc8: The change_utc8 of this Ticker.  # noqa: E501
         :type: str
@@ -341,7 +341,7 @@ class Ticker(object):
     def base_volume(self):
         """Gets the base_volume of this Ticker.  # noqa: E501
 
-        Base currency trade volume in the last 24h  # noqa: E501
+        Base currency trade volume in the last 24h.  # noqa: E501
 
         :return: The base_volume of this Ticker.  # noqa: E501
         :rtype: str
@@ -352,7 +352,7 @@ class Ticker(object):
     def base_volume(self, base_volume):
         """Sets the base_volume of this Ticker.
 
-        Base currency trade volume in the last 24h  # noqa: E501
+        Base currency trade volume in the last 24h.  # noqa: E501
 
         :param base_volume: The base_volume of this Ticker.  # noqa: E501
         :type: str
@@ -364,7 +364,7 @@ class Ticker(object):
     def quote_volume(self):
         """Gets the quote_volume of this Ticker.  # noqa: E501
 
-        Quote currency trade volume in the last 24h  # noqa: E501
+        Quote currency trade volume in the last 24h.  # noqa: E501
 
         :return: The quote_volume of this Ticker.  # noqa: E501
         :rtype: str
@@ -375,7 +375,7 @@ class Ticker(object):
     def quote_volume(self, quote_volume):
         """Sets the quote_volume of this Ticker.
 
-        Quote currency trade volume in the last 24h  # noqa: E501
+        Quote currency trade volume in the last 24h.  # noqa: E501
 
         :param quote_volume: The quote_volume of this Ticker.  # noqa: E501
         :type: str
@@ -387,7 +387,7 @@ class Ticker(object):
     def high_24h(self):
         """Gets the high_24h of this Ticker.  # noqa: E501
 
-        Highest price in 24h  # noqa: E501
+        Highest price in 24h.  # noqa: E501
 
         :return: The high_24h of this Ticker.  # noqa: E501
         :rtype: str
@@ -398,7 +398,7 @@ class Ticker(object):
     def high_24h(self, high_24h):
         """Sets the high_24h of this Ticker.
 
-        Highest price in 24h  # noqa: E501
+        Highest price in 24h.  # noqa: E501
 
         :param high_24h: The high_24h of this Ticker.  # noqa: E501
         :type: str
@@ -410,7 +410,7 @@ class Ticker(object):
     def low_24h(self):
         """Gets the low_24h of this Ticker.  # noqa: E501
 
-        Lowest price in 24h  # noqa: E501
+        Lowest price in 24h.  # noqa: E501
 
         :return: The low_24h of this Ticker.  # noqa: E501
         :rtype: str
@@ -421,7 +421,7 @@ class Ticker(object):
     def low_24h(self, low_24h):
         """Sets the low_24h of this Ticker.
 
-        Lowest price in 24h  # noqa: E501
+        Lowest price in 24h.  # noqa: E501
 
         :param low_24h: The low_24h of this Ticker.  # noqa: E501
         :type: str
@@ -433,7 +433,7 @@ class Ticker(object):
     def etf_net_value(self):
         """Gets the etf_net_value of this Ticker.  # noqa: E501
 
-        ETF net value  # noqa: E501
+        ETF net value.  # noqa: E501
 
         :return: The etf_net_value of this Ticker.  # noqa: E501
         :rtype: str
@@ -444,7 +444,7 @@ class Ticker(object):
     def etf_net_value(self, etf_net_value):
         """Sets the etf_net_value of this Ticker.
 
-        ETF net value  # noqa: E501
+        ETF net value.  # noqa: E501
 
         :param etf_net_value: The etf_net_value of this Ticker.  # noqa: E501
         :type: str
@@ -456,7 +456,7 @@ class Ticker(object):
     def etf_pre_net_value(self):
         """Gets the etf_pre_net_value of this Ticker.  # noqa: E501
 
-        ETF previous net value at re-balancing time  # noqa: E501
+        ETF previous net value at re-balancing time.  # noqa: E501
 
         :return: The etf_pre_net_value of this Ticker.  # noqa: E501
         :rtype: str
@@ -467,7 +467,7 @@ class Ticker(object):
     def etf_pre_net_value(self, etf_pre_net_value):
         """Sets the etf_pre_net_value of this Ticker.
 
-        ETF previous net value at re-balancing time  # noqa: E501
+        ETF previous net value at re-balancing time.  # noqa: E501
 
         :param etf_pre_net_value: The etf_pre_net_value of this Ticker.  # noqa: E501
         :type: str
@@ -479,7 +479,7 @@ class Ticker(object):
     def etf_pre_timestamp(self):
         """Gets the etf_pre_timestamp of this Ticker.  # noqa: E501
 
-        ETF previous re-balancing time  # noqa: E501
+        ETF previous re-balancing time.  # noqa: E501
 
         :return: The etf_pre_timestamp of this Ticker.  # noqa: E501
         :rtype: int
@@ -490,7 +490,7 @@ class Ticker(object):
     def etf_pre_timestamp(self, etf_pre_timestamp):
         """Sets the etf_pre_timestamp of this Ticker.
 
-        ETF previous re-balancing time  # noqa: E501
+        ETF previous re-balancing time.  # noqa: E501
 
         :param etf_pre_timestamp: The etf_pre_timestamp of this Ticker.  # noqa: E501
         :type: int
@@ -502,7 +502,7 @@ class Ticker(object):
     def etf_leverage(self):
         """Gets the etf_leverage of this Ticker.  # noqa: E501
 
-        ETF current leverage  # noqa: E501
+        ETF current leverage.  # noqa: E501
 
         :return: The etf_leverage of this Ticker.  # noqa: E501
         :rtype: str
@@ -513,7 +513,7 @@ class Ticker(object):
     def etf_leverage(self, etf_leverage):
         """Sets the etf_leverage of this Ticker.
 
-        ETF current leverage  # noqa: E501
+        ETF current leverage.  # noqa: E501
 
         :param etf_leverage: The etf_leverage of this Ticker.  # noqa: E501
         :type: str

@@ -110,7 +110,7 @@ class FlashSwapCurrencyPair(object):
     def sell_currency(self):
         """Gets the sell_currency of this FlashSwapCurrencyPair.  # noqa: E501
 
-        The currency to be sold  # noqa: E501
+        The currency to be sold.  # noqa: E501
 
         :return: The sell_currency of this FlashSwapCurrencyPair.  # noqa: E501
         :rtype: str
@@ -121,7 +121,7 @@ class FlashSwapCurrencyPair(object):
     def sell_currency(self, sell_currency):
         """Sets the sell_currency of this FlashSwapCurrencyPair.
 
-        The currency to be sold  # noqa: E501
+        The currency to be sold.  # noqa: E501
 
         :param sell_currency: The sell_currency of this FlashSwapCurrencyPair.  # noqa: E501
         :type: str
@@ -133,7 +133,7 @@ class FlashSwapCurrencyPair(object):
     def buy_currency(self):
         """Gets the buy_currency of this FlashSwapCurrencyPair.  # noqa: E501
 
-        The currency to be bought  # noqa: E501
+        The currency to be bought.  # noqa: E501
 
         :return: The buy_currency of this FlashSwapCurrencyPair.  # noqa: E501
         :rtype: str
@@ -144,7 +144,7 @@ class FlashSwapCurrencyPair(object):
     def buy_currency(self, buy_currency):
         """Sets the buy_currency of this FlashSwapCurrencyPair.
 
-        The currency to be bought  # noqa: E501
+        The currency to be bought.  # noqa: E501
 
         :param buy_currency: The buy_currency of this FlashSwapCurrencyPair.  # noqa: E501
         :type: str
@@ -156,7 +156,7 @@ class FlashSwapCurrencyPair(object):
     def sell_min_amount(self):
         """Gets the sell_min_amount of this FlashSwapCurrencyPair.  # noqa: E501
 
-        The minimum quantity required for selling  # noqa: E501
+        The minimum quantity required for selling.  # noqa: E501
 
         :return: The sell_min_amount of this FlashSwapCurrencyPair.  # noqa: E501
         :rtype: str
@@ -167,7 +167,7 @@ class FlashSwapCurrencyPair(object):
     def sell_min_amount(self, sell_min_amount):
         """Sets the sell_min_amount of this FlashSwapCurrencyPair.
 
-        The minimum quantity required for selling  # noqa: E501
+        The minimum quantity required for selling.  # noqa: E501
 
         :param sell_min_amount: The sell_min_amount of this FlashSwapCurrencyPair.  # noqa: E501
         :type: str
@@ -179,7 +179,7 @@ class FlashSwapCurrencyPair(object):
     def sell_max_amount(self):
         """Gets the sell_max_amount of this FlashSwapCurrencyPair.  # noqa: E501
 
-        The maximum quantity allowed for selling  # noqa: E501
+        The maximum quantity allowed for selling.  # noqa: E501
 
         :return: The sell_max_amount of this FlashSwapCurrencyPair.  # noqa: E501
         :rtype: str
@@ -190,7 +190,7 @@ class FlashSwapCurrencyPair(object):
     def sell_max_amount(self, sell_max_amount):
         """Sets the sell_max_amount of this FlashSwapCurrencyPair.
 
-        The maximum quantity allowed for selling  # noqa: E501
+        The maximum quantity allowed for selling.  # noqa: E501
 
         :param sell_max_amount: The sell_max_amount of this FlashSwapCurrencyPair.  # noqa: E501
         :type: str
@@ -202,7 +202,7 @@ class FlashSwapCurrencyPair(object):
     def buy_min_amount(self):
         """Gets the buy_min_amount of this FlashSwapCurrencyPair.  # noqa: E501
 
-        The minimum quantity required for buying  # noqa: E501
+        The minimum quantity required for buying.  # noqa: E501
 
         :return: The buy_min_amount of this FlashSwapCurrencyPair.  # noqa: E501
         :rtype: str
@@ -213,7 +213,7 @@ class FlashSwapCurrencyPair(object):
     def buy_min_amount(self, buy_min_amount):
         """Sets the buy_min_amount of this FlashSwapCurrencyPair.
 
-        The minimum quantity required for buying  # noqa: E501
+        The minimum quantity required for buying.  # noqa: E501
 
         :param buy_min_amount: The buy_min_amount of this FlashSwapCurrencyPair.  # noqa: E501
         :type: str
@@ -225,7 +225,7 @@ class FlashSwapCurrencyPair(object):
     def buy_max_amount(self):
         """Gets the buy_max_amount of this FlashSwapCurrencyPair.  # noqa: E501
 
-        The maximum quantity allowed for buying  # noqa: E501
+        The maximum quantity allowed for buying.  # noqa: E501
 
         :return: The buy_max_amount of this FlashSwapCurrencyPair.  # noqa: E501
         :rtype: str
@@ -236,7 +236,7 @@ class FlashSwapCurrencyPair(object):
     def buy_max_amount(self, buy_max_amount):
         """Sets the buy_max_amount of this FlashSwapCurrencyPair.
 
-        The maximum quantity allowed for buying  # noqa: E501
+        The maximum quantity allowed for buying.  # noqa: E501
 
         :param buy_max_amount: The buy_max_amount of this FlashSwapCurrencyPair.  # noqa: E501
         :type: str

@@ -92,7 +92,7 @@ class OptionsMyTrade(object):
     def id(self):
         """Gets the id of this OptionsMyTrade.  # noqa: E501
 
-        Trade ID  # noqa: E501
+        Trade ID.  # noqa: E501
 
         :return: The id of this OptionsMyTrade.  # noqa: E501
         :rtype: int
@@ -103,7 +103,7 @@ class OptionsMyTrade(object):
     def id(self, id):
         """Sets the id of this OptionsMyTrade.
 
-        Trade ID  # noqa: E501
+        Trade ID.  # noqa: E501
 
         :param id: The id of this OptionsMyTrade.  # noqa: E501
         :type: int
@@ -115,7 +115,7 @@ class OptionsMyTrade(object):
     def create_time(self):
         """Gets the create_time of this OptionsMyTrade.  # noqa: E501
 
-        Trading time  # noqa: E501
+        Trading time.  # noqa: E501
 
         :return: The create_time of this OptionsMyTrade.  # noqa: E501
         :rtype: float
@@ -126,7 +126,7 @@ class OptionsMyTrade(object):
     def create_time(self, create_time):
         """Sets the create_time of this OptionsMyTrade.
 
-        Trading time  # noqa: E501
+        Trading time.  # noqa: E501
 
         :param create_time: The create_time of this OptionsMyTrade.  # noqa: E501
         :type: float
@@ -138,7 +138,7 @@ class OptionsMyTrade(object):
     def contract(self):
         """Gets the contract of this OptionsMyTrade.  # noqa: E501
 
-        Options contract name  # noqa: E501
+        Options contract name.  # noqa: E501
 
         :return: The contract of this OptionsMyTrade.  # noqa: E501
         :rtype: str
@@ -149,7 +149,7 @@ class OptionsMyTrade(object):
     def contract(self, contract):
         """Sets the contract of this OptionsMyTrade.
 
-        Options contract name  # noqa: E501
+        Options contract name.  # noqa: E501
 
         :param contract: The contract of this OptionsMyTrade.  # noqa: E501
         :type: str
@@ -161,7 +161,7 @@ class OptionsMyTrade(object):
     def order_id(self):
         """Gets the order_id of this OptionsMyTrade.  # noqa: E501
 
-        Order ID related  # noqa: E501
+        Order ID related.  # noqa: E501
 
         :return: The order_id of this OptionsMyTrade.  # noqa: E501
         :rtype: int
@@ -172,7 +172,7 @@ class OptionsMyTrade(object):
     def order_id(self, order_id):
         """Sets the order_id of this OptionsMyTrade.
 
-        Order ID related  # noqa: E501
+        Order ID related.  # noqa: E501
 
         :param order_id: The order_id of this OptionsMyTrade.  # noqa: E501
         :type: int
@@ -184,7 +184,7 @@ class OptionsMyTrade(object):
     def size(self):
         """Gets the size of this OptionsMyTrade.  # noqa: E501
 
-        Trading size  # noqa: E501
+        Trading size.  # noqa: E501
 
         :return: The size of this OptionsMyTrade.  # noqa: E501
         :rtype: int
@@ -195,7 +195,7 @@ class OptionsMyTrade(object):
     def size(self, size):
         """Sets the size of this OptionsMyTrade.
 
-        Trading size  # noqa: E501
+        Trading size.  # noqa: E501
 
         :param size: The size of this OptionsMyTrade.  # noqa: E501
         :type: int
@@ -207,7 +207,7 @@ class OptionsMyTrade(object):
     def price(self):
         """Gets the price of this OptionsMyTrade.  # noqa: E501
 
-        Trading price (quote currency)  # noqa: E501
+        Trading price (quote currency).  # noqa: E501
 
         :return: The price of this OptionsMyTrade.  # noqa: E501
         :rtype: str
@@ -218,7 +218,7 @@ class OptionsMyTrade(object):
     def price(self, price):
         """Sets the price of this OptionsMyTrade.
 
-        Trading price (quote currency)  # noqa: E501
+        Trading price (quote currency).  # noqa: E501
 
         :param price: The price of this OptionsMyTrade.  # noqa: E501
         :type: str
@@ -230,7 +230,7 @@ class OptionsMyTrade(object):
     def underlying_price(self):
         """Gets the underlying_price of this OptionsMyTrade.  # noqa: E501
 
-        Underlying price (quote currency)  # noqa: E501
+        Underlying price (quote currency).  # noqa: E501
 
         :return: The underlying_price of this OptionsMyTrade.  # noqa: E501
         :rtype: str
@@ -241,7 +241,7 @@ class OptionsMyTrade(object):
     def underlying_price(self, underlying_price):
         """Sets the underlying_price of this OptionsMyTrade.
 
-        Underlying price (quote currency)  # noqa: E501
+        Underlying price (quote currency).  # noqa: E501
 
         :param underlying_price: The underlying_price of this OptionsMyTrade.  # noqa: E501
         :type: str
@@ -253,7 +253,7 @@ class OptionsMyTrade(object):
     def role(self):
         """Gets the role of this OptionsMyTrade.  # noqa: E501
 
-        Trade role. Available values are `taker` and `maker`  # noqa: E501
+        Trade role. Available values are `taker` and `maker`.  # noqa: E501
 
         :return: The role of this OptionsMyTrade.  # noqa: E501
         :rtype: str
@@ -264,7 +264,7 @@ class OptionsMyTrade(object):
     def role(self, role):
         """Sets the role of this OptionsMyTrade.
 
-        Trade role. Available values are `taker` and `maker`  # noqa: E501
+        Trade role. Available values are `taker` and `maker`.  # noqa: E501
 
         :param role: The role of this OptionsMyTrade.  # noqa: E501
         :type: str

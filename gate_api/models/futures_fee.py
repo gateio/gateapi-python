@@ -62,7 +62,7 @@ class FuturesFee(object):
     def taker_fee(self):
         """Gets the taker_fee of this FuturesFee.  # noqa: E501
 
-        Taker fee  # noqa: E501
+        Taker fee.  # noqa: E501
 
         :return: The taker_fee of this FuturesFee.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class FuturesFee(object):
     def taker_fee(self, taker_fee):
         """Sets the taker_fee of this FuturesFee.
 
-        Taker fee  # noqa: E501
+        Taker fee.  # noqa: E501
 
         :param taker_fee: The taker_fee of this FuturesFee.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class FuturesFee(object):
     def maker_fee(self):
         """Gets the maker_fee of this FuturesFee.  # noqa: E501
 
-        maker fee  # noqa: E501
+        maker fee.  # noqa: E501
 
         :return: The maker_fee of this FuturesFee.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class FuturesFee(object):
     def maker_fee(self, maker_fee):
         """Sets the maker_fee of this FuturesFee.
 
-        maker fee  # noqa: E501
+        maker fee.  # noqa: E501
 
         :param maker_fee: The maker_fee of this FuturesFee.  # noqa: E501
         :type: str

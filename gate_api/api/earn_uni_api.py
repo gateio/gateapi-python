@@ -37,7 +37,7 @@ class EarnUniApi(object):
         self.api_client = api_client
 
     def list_uni_currencies(self, **kwargs):  # noqa: E501
-        """List currencies for lending  # noqa: E501
+        """List currencies for lending.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -60,7 +60,7 @@ class EarnUniApi(object):
         return self.list_uni_currencies_with_http_info(**kwargs)  # noqa: E501
 
     def list_uni_currencies_with_http_info(self, **kwargs):  # noqa: E501
-        """List currencies for lending  # noqa: E501
+        """List currencies for lending.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -140,7 +140,7 @@ class EarnUniApi(object):
             collection_formats=collection_formats)
 
     def get_uni_currency(self, currency, **kwargs):  # noqa: E501
-        """Get currency detail for lending  # noqa: E501
+        """Get currency detail for lending.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -148,7 +148,7 @@ class EarnUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency (required)
+        :param str currency: Currency. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -164,7 +164,7 @@ class EarnUniApi(object):
         return self.get_uni_currency_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_uni_currency_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """Get currency detail for lending  # noqa: E501
+        """Get currency detail for lending.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -172,7 +172,7 @@ class EarnUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency (required)
+        :param str currency: Currency. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -252,7 +252,7 @@ class EarnUniApi(object):
             collection_formats=collection_formats)
 
     def list_user_uni_lends(self, **kwargs):  # noqa: E501
-        """List user's lending orders  # noqa: E501
+        """List user's lending orders.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -260,9 +260,9 @@ class EarnUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -278,7 +278,7 @@ class EarnUniApi(object):
         return self.list_user_uni_lends_with_http_info(**kwargs)  # noqa: E501
 
     def list_user_uni_lends_with_http_info(self, **kwargs):  # noqa: E501
-        """List user's lending orders  # noqa: E501
+        """List user's lending orders.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -286,9 +286,9 @@ class EarnUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -376,9 +376,9 @@ class EarnUniApi(object):
             collection_formats=collection_formats)
 
     def create_uni_lend(self, create_uni_lend, **kwargs):  # noqa: E501
-        """Lend or redeem  # noqa: E501
+        """Lend or redeem.  # noqa: E501
 
-        Lending: When lending, a minimum lending rate must be set. After successful lending is determined on an hourly basis, earnings will be calculated based on the determined rate.  Earnings for each hour will be settled at the top of the hour. If lending fails due to an excessively high interest rate, no interest will be earned for that hour.   If funds are redeemed before the hourly determination, no interest will be earned for that hour.   Priority: Under the same interest rate, wealth management products created or modified earlier will be prioritized for lending.  Redemption: For funds that failed to be lent, redemption will be credited immediately. For funds successfully lent, they are entitled to the earnings for that hour, and redemption will be credited in the next hourly interval.  Note: The two minutes before and after the hourly mark are the settlement period, during which lending and redemption are prohibited.   # noqa: E501
+        Lending: When lending, a minimum lending rate must be set. After successful lending is determined on an hourly basis, earnings will be calculated based on the determined rate.  Earnings for each hour will be settled at the top of the hour. If lending fails due to an excessively high interest rate, no interest will be earned for that hour.  If funds are redeemed before the hourly for that hour.  Priority: Under the same interest rate, wealth management products created or modified earlier will be prioritized for lending.  Redemption: For funds that failed to be lent, redemption will be credited immediately. For funds successfully lent, they are entitled to the earnings for that hour, and redemption will be credited in the next hourly interval.  Note: The two minutes before and after the hourly mark are the settlement period, during which lending and redemption are prohibited.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_uni_lend(create_uni_lend, async_req=True)
@@ -401,9 +401,9 @@ class EarnUniApi(object):
         return self.create_uni_lend_with_http_info(create_uni_lend, **kwargs)  # noqa: E501
 
     def create_uni_lend_with_http_info(self, create_uni_lend, **kwargs):  # noqa: E501
-        """Lend or redeem  # noqa: E501
+        """Lend or redeem.  # noqa: E501
 
-        Lending: When lending, a minimum lending rate must be set. After successful lending is determined on an hourly basis, earnings will be calculated based on the determined rate.  Earnings for each hour will be settled at the top of the hour. If lending fails due to an excessively high interest rate, no interest will be earned for that hour.   If funds are redeemed before the hourly determination, no interest will be earned for that hour.   Priority: Under the same interest rate, wealth management products created or modified earlier will be prioritized for lending.  Redemption: For funds that failed to be lent, redemption will be credited immediately. For funds successfully lent, they are entitled to the earnings for that hour, and redemption will be credited in the next hourly interval.  Note: The two minutes before and after the hourly mark are the settlement period, during which lending and redemption are prohibited.   # noqa: E501
+        Lending: When lending, a minimum lending rate must be set. After successful lending is determined on an hourly basis, earnings will be calculated based on the determined rate.  Earnings for each hour will be settled at the top of the hour. If lending fails due to an excessively high interest rate, no interest will be earned for that hour.  If funds are redeemed before the hourly for that hour.  Priority: Under the same interest rate, wealth management products created or modified earlier will be prioritized for lending.  Redemption: For funds that failed to be lent, redemption will be credited immediately. For funds successfully lent, they are entitled to the earnings for that hour, and redemption will be credited in the next hourly interval.  Note: The two minutes before and after the hourly mark are the settlement period, during which lending and redemption are prohibited.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_uni_lend_with_http_info(create_uni_lend, async_req=True)
@@ -490,9 +490,9 @@ class EarnUniApi(object):
             collection_formats=collection_formats)
 
     def change_uni_lend(self, patch_uni_lend, **kwargs):  # noqa: E501
-        """Amend lending order  # noqa: E501
+        """Amend lending order.  # noqa: E501
 
-        Currently only supports amending the minimum interest rate (hour)  # noqa: E501
+        Currently only supports amending the minimum interest rate (hour).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.change_uni_lend(patch_uni_lend, async_req=True)
@@ -515,9 +515,9 @@ class EarnUniApi(object):
         return self.change_uni_lend_with_http_info(patch_uni_lend, **kwargs)  # noqa: E501
 
     def change_uni_lend_with_http_info(self, patch_uni_lend, **kwargs):  # noqa: E501
-        """Amend lending order  # noqa: E501
+        """Amend lending order.  # noqa: E501
 
-        Currently only supports amending the minimum interest rate (hour)  # noqa: E501
+        Currently only supports amending the minimum interest rate (hour).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.change_uni_lend_with_http_info(patch_uni_lend, async_req=True)
@@ -604,7 +604,7 @@ class EarnUniApi(object):
             collection_formats=collection_formats)
 
     def list_uni_lend_records(self, **kwargs):  # noqa: E501
-        """List records of lending  # noqa: E501
+        """List records of lending.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -612,12 +612,12 @@ class EarnUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
-        :param str type: type: lend - lend, redeem - redeem
+        :param str type: type: lend - lend, redeem - redeem.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -633,7 +633,7 @@ class EarnUniApi(object):
         return self.list_uni_lend_records_with_http_info(**kwargs)  # noqa: E501
 
     def list_uni_lend_records_with_http_info(self, **kwargs):  # noqa: E501
-        """List records of lending  # noqa: E501
+        """List records of lending.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -641,12 +641,12 @@ class EarnUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
-        :param str type: type: lend - lend, redeem - redeem
+        :param str type: type: lend - lend, redeem - redeem.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -743,7 +743,7 @@ class EarnUniApi(object):
             collection_formats=collection_formats)
 
     def get_uni_interest(self, currency, **kwargs):  # noqa: E501
-        """Get the user's total interest income of specified currency  # noqa: E501
+        """Get the user's total interest income of specified currency.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -751,7 +751,7 @@ class EarnUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency (required)
+        :param str currency: Currency. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -767,7 +767,7 @@ class EarnUniApi(object):
         return self.get_uni_interest_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_uni_interest_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """Get the user's total interest income of specified currency  # noqa: E501
+        """Get the user's total interest income of specified currency.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -775,7 +775,7 @@ class EarnUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency (required)
+        :param str currency: Currency. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -855,7 +855,7 @@ class EarnUniApi(object):
             collection_formats=collection_formats)
 
     def list_uni_interest_records(self, **kwargs):  # noqa: E501
-        """List interest records  # noqa: E501
+        """List interest records.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -863,9 +863,9 @@ class EarnUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -883,7 +883,7 @@ class EarnUniApi(object):
         return self.list_uni_interest_records_with_http_info(**kwargs)  # noqa: E501
 
     def list_uni_interest_records_with_http_info(self, **kwargs):  # noqa: E501
-        """List interest records  # noqa: E501
+        """List interest records.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -891,9 +891,9 @@ class EarnUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _return_http_data_only: response data without head status code
@@ -989,7 +989,7 @@ class EarnUniApi(object):
             collection_formats=collection_formats)
 
     def get_uni_interest_status(self, currency, **kwargs):  # noqa: E501
-        """query currency interest compounding status  # noqa: E501
+        """query currency interest compounding status.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -997,7 +997,7 @@ class EarnUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency (required)
+        :param str currency: Currency. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1013,7 +1013,7 @@ class EarnUniApi(object):
         return self.get_uni_interest_status_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_uni_interest_status_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """query currency interest compounding status  # noqa: E501
+        """query currency interest compounding status.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1021,7 +1021,7 @@ class EarnUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency (required)
+        :param str currency: Currency. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1101,18 +1101,18 @@ class EarnUniApi(object):
             collection_formats=collection_formats)
 
     def list_uni_chart(self, _from, to, asset, **kwargs):  # noqa: E501
-        """UniLoan currency annualized trend chart  # noqa: E501
+        """UniLoan currency annualized trend chart.  # noqa: E501
 
-        Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-07-15 06:48+0000 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <L@li.org> Plural-Forms: nplurals=2; plural=(n !=1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0   # noqa: E501
+        Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-07-17 21:35+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <L@li.org> Plural-Forms: nplurals=2; plural=(n !=1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_uni_chart(_from, to, asset, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int _from: Start timestamp, unit s, maximum span of 30 days (required)
-        :param int to: End timestamp, unit s, maximum span of 30 days (required)
-        :param str asset: Currency name (required)
+        :param int _from: Start timestamp, unit s, maximum span of 30 days. (required)
+        :param int to: End timestamp, unit s, maximum span of 30 days. (required)
+        :param str asset: Currency name. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1128,18 +1128,18 @@ class EarnUniApi(object):
         return self.list_uni_chart_with_http_info(_from, to, asset, **kwargs)  # noqa: E501
 
     def list_uni_chart_with_http_info(self, _from, to, asset, **kwargs):  # noqa: E501
-        """UniLoan currency annualized trend chart  # noqa: E501
+        """UniLoan currency annualized trend chart.  # noqa: E501
 
-        Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-07-15 06:48+0000 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <L@li.org> Plural-Forms: nplurals=2; plural=(n !=1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0   # noqa: E501
+        Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-07-17 21:35+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <L@li.org> Plural-Forms: nplurals=2; plural=(n !=1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_uni_chart_with_http_info(_from, to, asset, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int _from: Start timestamp, unit s, maximum span of 30 days (required)
-        :param int to: End timestamp, unit s, maximum span of 30 days (required)
-        :param str asset: Currency name (required)
+        :param int _from: Start timestamp, unit s, maximum span of 30 days. (required)
+        :param int to: End timestamp, unit s, maximum span of 30 days. (required)
+        :param str asset: Currency name. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1233,9 +1233,9 @@ class EarnUniApi(object):
             collection_formats=collection_formats)
 
     def list_uni_rate(self, **kwargs):  # noqa: E501
-        """Currency estimate annualized interest rate  # noqa: E501
+        """Currency estimate annualized interest rate.  # noqa: E501
 
-        Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-07-15 06:48+0000 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <L@li.org> Plural-Forms: nplurals=2; plural=(n !=1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0   # noqa: E501
+        Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-07-17 21:35+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <L@li.org> Plural-Forms: nplurals=2; plural=(n !=1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_uni_rate(async_req=True)
@@ -1257,9 +1257,9 @@ class EarnUniApi(object):
         return self.list_uni_rate_with_http_info(**kwargs)  # noqa: E501
 
     def list_uni_rate_with_http_info(self, **kwargs):  # noqa: E501
-        """Currency estimate annualized interest rate  # noqa: E501
+        """Currency estimate annualized interest rate.  # noqa: E501
 
-        Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-07-15 06:48+0000 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <L@li.org> Plural-Forms: nplurals=2; plural=(n !=1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0   # noqa: E501
+        Project-Id-Version: GateApiTools 1.0.0 Report-Msgid-Bugs-To: EMAIL@ADDRESS POT-Creation-Date: 2025-07-17 21:35+0800 PO-Revision-Date: 2019-01-02 17:30+0800 Last-Translator: FULL NAME <EMAIL@ADDRESS> Language: en Language-Team: en <L@li.org> Plural-Forms: nplurals=2; plural=(n !=1) MIME-Version: 1.0 Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: 8bit Generated-By: Babel 2.8.0   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_uni_rate_with_http_info(async_req=True)

@@ -87,7 +87,7 @@ class FuturesLiqOrder(object):
     def time(self):
         """Gets the time of this FuturesLiqOrder.  # noqa: E501
 
-        Liquidation time  # noqa: E501
+        Liquidation time.  # noqa: E501
 
         :return: The time of this FuturesLiqOrder.  # noqa: E501
         :rtype: int
@@ -98,7 +98,7 @@ class FuturesLiqOrder(object):
     def time(self, time):
         """Sets the time of this FuturesLiqOrder.
 
-        Liquidation time  # noqa: E501
+        Liquidation time.  # noqa: E501
 
         :param time: The time of this FuturesLiqOrder.  # noqa: E501
         :type: int
@@ -110,7 +110,7 @@ class FuturesLiqOrder(object):
     def contract(self):
         """Gets the contract of this FuturesLiqOrder.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :return: The contract of this FuturesLiqOrder.  # noqa: E501
         :rtype: str
@@ -121,7 +121,7 @@ class FuturesLiqOrder(object):
     def contract(self, contract):
         """Sets the contract of this FuturesLiqOrder.
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :param contract: The contract of this FuturesLiqOrder.  # noqa: E501
         :type: str
@@ -133,7 +133,7 @@ class FuturesLiqOrder(object):
     def size(self):
         """Gets the size of this FuturesLiqOrder.  # noqa: E501
 
-        User position size  # noqa: E501
+        User position size.  # noqa: E501
 
         :return: The size of this FuturesLiqOrder.  # noqa: E501
         :rtype: int
@@ -144,7 +144,7 @@ class FuturesLiqOrder(object):
     def size(self, size):
         """Sets the size of this FuturesLiqOrder.
 
-        User position size  # noqa: E501
+        User position size.  # noqa: E501
 
         :param size: The size of this FuturesLiqOrder.  # noqa: E501
         :type: int
@@ -156,7 +156,7 @@ class FuturesLiqOrder(object):
     def order_size(self):
         """Gets the order_size of this FuturesLiqOrder.  # noqa: E501
 
-        Number of forced liquidation orders  # noqa: E501
+        Number of forced liquidation orders.  # noqa: E501
 
         :return: The order_size of this FuturesLiqOrder.  # noqa: E501
         :rtype: int
@@ -167,7 +167,7 @@ class FuturesLiqOrder(object):
     def order_size(self, order_size):
         """Sets the order_size of this FuturesLiqOrder.
 
-        Number of forced liquidation orders  # noqa: E501
+        Number of forced liquidation orders.  # noqa: E501
 
         :param order_size: The order_size of this FuturesLiqOrder.  # noqa: E501
         :type: int
@@ -179,7 +179,7 @@ class FuturesLiqOrder(object):
     def order_price(self):
         """Gets the order_price of this FuturesLiqOrder.  # noqa: E501
 
-        Liquidation order price  # noqa: E501
+        Liquidation order price.  # noqa: E501
 
         :return: The order_price of this FuturesLiqOrder.  # noqa: E501
         :rtype: str
@@ -190,7 +190,7 @@ class FuturesLiqOrder(object):
     def order_price(self, order_price):
         """Sets the order_price of this FuturesLiqOrder.
 
-        Liquidation order price  # noqa: E501
+        Liquidation order price.  # noqa: E501
 
         :param order_price: The order_price of this FuturesLiqOrder.  # noqa: E501
         :type: str
@@ -202,7 +202,7 @@ class FuturesLiqOrder(object):
     def fill_price(self):
         """Gets the fill_price of this FuturesLiqOrder.  # noqa: E501
 
-        Liquidation order average taker price  # noqa: E501
+        Liquidation order average taker price.  # noqa: E501
 
         :return: The fill_price of this FuturesLiqOrder.  # noqa: E501
         :rtype: str
@@ -213,7 +213,7 @@ class FuturesLiqOrder(object):
     def fill_price(self, fill_price):
         """Sets the fill_price of this FuturesLiqOrder.
 
-        Liquidation order average taker price  # noqa: E501
+        Liquidation order average taker price.  # noqa: E501
 
         :param fill_price: The fill_price of this FuturesLiqOrder.  # noqa: E501
         :type: str
@@ -225,7 +225,7 @@ class FuturesLiqOrder(object):
     def left(self):
         """Gets the left of this FuturesLiqOrder.  # noqa: E501
 
-        System liquidation order maker size  # noqa: E501
+        System liquidation order maker size.  # noqa: E501
 
         :return: The left of this FuturesLiqOrder.  # noqa: E501
         :rtype: int
@@ -236,7 +236,7 @@ class FuturesLiqOrder(object):
     def left(self, left):
         """Sets the left of this FuturesLiqOrder.
 
-        System liquidation order maker size  # noqa: E501
+        System liquidation order maker size.  # noqa: E501
 
         :param left: The left of this FuturesLiqOrder.  # noqa: E501
         :type: int

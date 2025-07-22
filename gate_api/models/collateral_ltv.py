@@ -67,7 +67,7 @@ class CollateralLtv(object):
     def init_ltv(self):
         """Gets the init_ltv of this CollateralLtv.  # noqa: E501
 
-        The initial collateralization rate  # noqa: E501
+        The initial collateralization rate.  # noqa: E501
 
         :return: The init_ltv of this CollateralLtv.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class CollateralLtv(object):
     def init_ltv(self, init_ltv):
         """Sets the init_ltv of this CollateralLtv.
 
-        The initial collateralization rate  # noqa: E501
+        The initial collateralization rate.  # noqa: E501
 
         :param init_ltv: The init_ltv of this CollateralLtv.  # noqa: E501
         :type: str
@@ -90,7 +90,7 @@ class CollateralLtv(object):
     def alert_ltv(self):
         """Gets the alert_ltv of this CollateralLtv.  # noqa: E501
 
-        Warning collateralization ratio  # noqa: E501
+        Warning collateralization ratio.  # noqa: E501
 
         :return: The alert_ltv of this CollateralLtv.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class CollateralLtv(object):
     def alert_ltv(self, alert_ltv):
         """Sets the alert_ltv of this CollateralLtv.
 
-        Warning collateralization ratio  # noqa: E501
+        Warning collateralization ratio.  # noqa: E501
 
         :param alert_ltv: The alert_ltv of this CollateralLtv.  # noqa: E501
         :type: str
@@ -113,7 +113,7 @@ class CollateralLtv(object):
     def liquidate_ltv(self):
         """Gets the liquidate_ltv of this CollateralLtv.  # noqa: E501
 
-        The liquidation collateralization rate  # noqa: E501
+        The liquidation collateralization rate.  # noqa: E501
 
         :return: The liquidate_ltv of this CollateralLtv.  # noqa: E501
         :rtype: str
@@ -124,7 +124,7 @@ class CollateralLtv(object):
     def liquidate_ltv(self, liquidate_ltv):
         """Sets the liquidate_ltv of this CollateralLtv.
 
-        The liquidation collateralization rate  # noqa: E501
+        The liquidation collateralization rate.  # noqa: E501
 
         :param liquidate_ltv: The liquidate_ltv of this CollateralLtv.  # noqa: E501
         :type: str

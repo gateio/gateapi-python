@@ -62,7 +62,7 @@ class PartnerSubList(object):
     def total(self):
         """Gets the total of this PartnerSubList.  # noqa: E501
 
-        Total  # noqa: E501
+        Total.  # noqa: E501
 
         :return: The total of this PartnerSubList.  # noqa: E501
         :rtype: int
@@ -73,7 +73,7 @@ class PartnerSubList(object):
     def total(self, total):
         """Sets the total of this PartnerSubList.
 
-        Total  # noqa: E501
+        Total.  # noqa: E501
 
         :param total: The total of this PartnerSubList.  # noqa: E501
         :type: int
@@ -85,7 +85,7 @@ class PartnerSubList(object):
     def list(self):
         """Gets the list of this PartnerSubList.  # noqa: E501
 
-        Subordinate list  # noqa: E501
+        Subordinate list.  # noqa: E501
 
         :return: The list of this PartnerSubList.  # noqa: E501
         :rtype: list[PartnerSub]
@@ -96,7 +96,7 @@ class PartnerSubList(object):
     def list(self, list):
         """Sets the list of this PartnerSubList.
 
-        Subordinate list  # noqa: E501
+        Subordinate list.  # noqa: E501
 
         :param list: The list of this PartnerSubList.  # noqa: E501
         :type: list[PartnerSub]

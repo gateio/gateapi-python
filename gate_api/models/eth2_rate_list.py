@@ -67,7 +67,7 @@ class Eth2RateList(object):
     def date_time(self):
         """Gets the date_time of this Eth2RateList.  # noqa: E501
 
-        Date and Time Stamp  # noqa: E501
+        Date and Time Stamp.  # noqa: E501
 
         :return: The date_time of this Eth2RateList.  # noqa: E501
         :rtype: int
@@ -78,7 +78,7 @@ class Eth2RateList(object):
     def date_time(self, date_time):
         """Sets the date_time of this Eth2RateList.
 
-        Date and Time Stamp  # noqa: E501
+        Date and Time Stamp.  # noqa: E501
 
         :param date_time: The date_time of this Eth2RateList.  # noqa: E501
         :type: int
@@ -90,7 +90,7 @@ class Eth2RateList(object):
     def date(self):
         """Gets the date of this Eth2RateList.  # noqa: E501
 
-        Date  # noqa: E501
+        Date.  # noqa: E501
 
         :return: The date of this Eth2RateList.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class Eth2RateList(object):
     def date(self, date):
         """Sets the date of this Eth2RateList.
 
-        Date  # noqa: E501
+        Date.  # noqa: E501
 
         :param date: The date of this Eth2RateList.  # noqa: E501
         :type: str
@@ -113,7 +113,7 @@ class Eth2RateList(object):
     def rate(self):
         """Gets the rate of this Eth2RateList.  # noqa: E501
 
-        percentage  # noqa: E501
+        percentage.  # noqa: E501
 
         :return: The rate of this Eth2RateList.  # noqa: E501
         :rtype: str
@@ -124,7 +124,7 @@ class Eth2RateList(object):
     def rate(self, rate):
         """Sets the rate of this Eth2RateList.
 
-        percentage  # noqa: E501
+        percentage.  # noqa: E501
 
         :param rate: The rate of this Eth2RateList.  # noqa: E501
         :type: str

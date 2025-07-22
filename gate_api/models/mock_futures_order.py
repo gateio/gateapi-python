@@ -114,7 +114,7 @@ class MockFuturesOrder(object):
     def left(self):
         """Gets the left of this MockFuturesOrder.  # noqa: E501
 
-        Unfilled contract quantity, involved in actual calculation  # noqa: E501
+        Unfilled contract quantity, involved in actual calculation.  # noqa: E501
 
         :return: The left of this MockFuturesOrder.  # noqa: E501
         :rtype: str
@@ -125,7 +125,7 @@ class MockFuturesOrder(object):
     def left(self, left):
         """Sets the left of this MockFuturesOrder.
 
-        Unfilled contract quantity, involved in actual calculation  # noqa: E501
+        Unfilled contract quantity, involved in actual calculation.  # noqa: E501
 
         :param left: The left of this MockFuturesOrder.  # noqa: E501
         :type: str

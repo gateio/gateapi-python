@@ -122,7 +122,7 @@ class MultiCollateralOrder(object):
     def order_id(self):
         """Gets the order_id of this MultiCollateralOrder.  # noqa: E501
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :return: The order_id of this MultiCollateralOrder.  # noqa: E501
         :rtype: str
@@ -133,7 +133,7 @@ class MultiCollateralOrder(object):
     def order_id(self, order_id):
         """Sets the order_id of this MultiCollateralOrder.
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :param order_id: The order_id of this MultiCollateralOrder.  # noqa: E501
         :type: str
@@ -145,7 +145,7 @@ class MultiCollateralOrder(object):
     def order_type(self):
         """Gets the order_type of this MultiCollateralOrder.  # noqa: E501
 
-        current - current, fixed - fixed  # noqa: E501
+        current - current, fixed - fixed.  # noqa: E501
 
         :return: The order_type of this MultiCollateralOrder.  # noqa: E501
         :rtype: str
@@ -156,7 +156,7 @@ class MultiCollateralOrder(object):
     def order_type(self, order_type):
         """Sets the order_type of this MultiCollateralOrder.
 
-        current - current, fixed - fixed  # noqa: E501
+        current - current, fixed - fixed.  # noqa: E501
 
         :param order_type: The order_type of this MultiCollateralOrder.  # noqa: E501
         :type: str
@@ -191,7 +191,7 @@ class MultiCollateralOrder(object):
     def fixed_rate(self):
         """Gets the fixed_rate of this MultiCollateralOrder.  # noqa: E501
 
-        Fixed interest rate  # noqa: E501
+        Fixed interest rate.  # noqa: E501
 
         :return: The fixed_rate of this MultiCollateralOrder.  # noqa: E501
         :rtype: str
@@ -202,7 +202,7 @@ class MultiCollateralOrder(object):
     def fixed_rate(self, fixed_rate):
         """Sets the fixed_rate of this MultiCollateralOrder.
 
-        Fixed interest rate  # noqa: E501
+        Fixed interest rate.  # noqa: E501
 
         :param fixed_rate: The fixed_rate of this MultiCollateralOrder.  # noqa: E501
         :type: str
@@ -237,7 +237,7 @@ class MultiCollateralOrder(object):
     def auto_renew(self):
         """Gets the auto_renew of this MultiCollateralOrder.  # noqa: E501
 
-        Fixed interest rate, automatic renewal  # noqa: E501
+        Fixed interest rate, automatic renewal.  # noqa: E501
 
         :return: The auto_renew of this MultiCollateralOrder.  # noqa: E501
         :rtype: bool
@@ -248,7 +248,7 @@ class MultiCollateralOrder(object):
     def auto_renew(self, auto_renew):
         """Sets the auto_renew of this MultiCollateralOrder.
 
-        Fixed interest rate, automatic renewal  # noqa: E501
+        Fixed interest rate, automatic renewal.  # noqa: E501
 
         :param auto_renew: The auto_renew of this MultiCollateralOrder.  # noqa: E501
         :type: bool
@@ -260,7 +260,7 @@ class MultiCollateralOrder(object):
     def auto_repay(self):
         """Gets the auto_repay of this MultiCollateralOrder.  # noqa: E501
 
-        Fixed interest rate, automatic repayment  # noqa: E501
+        Fixed interest rate, automatic repayment.  # noqa: E501
 
         :return: The auto_repay of this MultiCollateralOrder.  # noqa: E501
         :rtype: bool
@@ -271,7 +271,7 @@ class MultiCollateralOrder(object):
     def auto_repay(self, auto_repay):
         """Sets the auto_repay of this MultiCollateralOrder.
 
-        Fixed interest rate, automatic repayment  # noqa: E501
+        Fixed interest rate, automatic repayment.  # noqa: E501
 
         :param auto_repay: The auto_repay of this MultiCollateralOrder.  # noqa: E501
         :type: bool
@@ -283,7 +283,7 @@ class MultiCollateralOrder(object):
     def current_ltv(self):
         """Gets the current_ltv of this MultiCollateralOrder.  # noqa: E501
 
-        The current collateralization rate  # noqa: E501
+        The current collateralization rate.  # noqa: E501
 
         :return: The current_ltv of this MultiCollateralOrder.  # noqa: E501
         :rtype: str
@@ -294,7 +294,7 @@ class MultiCollateralOrder(object):
     def current_ltv(self, current_ltv):
         """Sets the current_ltv of this MultiCollateralOrder.
 
-        The current collateralization rate  # noqa: E501
+        The current collateralization rate.  # noqa: E501
 
         :param current_ltv: The current_ltv of this MultiCollateralOrder.  # noqa: E501
         :type: str
@@ -329,7 +329,7 @@ class MultiCollateralOrder(object):
     def borrow_time(self):
         """Gets the borrow_time of this MultiCollateralOrder.  # noqa: E501
 
-        Borrowing time, timestamp in seconds  # noqa: E501
+        Borrowing time, timestamp in seconds.  # noqa: E501
 
         :return: The borrow_time of this MultiCollateralOrder.  # noqa: E501
         :rtype: int
@@ -340,7 +340,7 @@ class MultiCollateralOrder(object):
     def borrow_time(self, borrow_time):
         """Sets the borrow_time of this MultiCollateralOrder.
 
-        Borrowing time, timestamp in seconds  # noqa: E501
+        Borrowing time, timestamp in seconds.  # noqa: E501
 
         :param borrow_time: The borrow_time of this MultiCollateralOrder.  # noqa: E501
         :type: int
@@ -352,7 +352,7 @@ class MultiCollateralOrder(object):
     def total_left_repay_usdt(self):
         """Gets the total_left_repay_usdt of this MultiCollateralOrder.  # noqa: E501
 
-        Value of Left repay amount converted in USDT  # noqa: E501
+        Value of Left repay amount converted in USDT.  # noqa: E501
 
         :return: The total_left_repay_usdt of this MultiCollateralOrder.  # noqa: E501
         :rtype: str
@@ -363,7 +363,7 @@ class MultiCollateralOrder(object):
     def total_left_repay_usdt(self, total_left_repay_usdt):
         """Sets the total_left_repay_usdt of this MultiCollateralOrder.
 
-        Value of Left repay amount converted in USDT  # noqa: E501
+        Value of Left repay amount converted in USDT.  # noqa: E501
 
         :param total_left_repay_usdt: The total_left_repay_usdt of this MultiCollateralOrder.  # noqa: E501
         :type: str
@@ -375,7 +375,7 @@ class MultiCollateralOrder(object):
     def total_left_collateral_usdt(self):
         """Gets the total_left_collateral_usdt of this MultiCollateralOrder.  # noqa: E501
 
-        Value of Collateral amount in USDT  # noqa: E501
+        Value of Collateral amount in USDT.  # noqa: E501
 
         :return: The total_left_collateral_usdt of this MultiCollateralOrder.  # noqa: E501
         :rtype: str
@@ -386,7 +386,7 @@ class MultiCollateralOrder(object):
     def total_left_collateral_usdt(self, total_left_collateral_usdt):
         """Sets the total_left_collateral_usdt of this MultiCollateralOrder.
 
-        Value of Collateral amount in USDT  # noqa: E501
+        Value of Collateral amount in USDT.  # noqa: E501
 
         :param total_left_collateral_usdt: The total_left_collateral_usdt of this MultiCollateralOrder.  # noqa: E501
         :type: str
@@ -398,7 +398,7 @@ class MultiCollateralOrder(object):
     def borrow_currencies(self):
         """Gets the borrow_currencies of this MultiCollateralOrder.  # noqa: E501
 
-        Borrowing Currency List  # noqa: E501
+        Borrowing Currency List.  # noqa: E501
 
         :return: The borrow_currencies of this MultiCollateralOrder.  # noqa: E501
         :rtype: list[BorrowCurrencyInfo]
@@ -409,7 +409,7 @@ class MultiCollateralOrder(object):
     def borrow_currencies(self, borrow_currencies):
         """Sets the borrow_currencies of this MultiCollateralOrder.
 
-        Borrowing Currency List  # noqa: E501
+        Borrowing Currency List.  # noqa: E501
 
         :param borrow_currencies: The borrow_currencies of this MultiCollateralOrder.  # noqa: E501
         :type: list[BorrowCurrencyInfo]
@@ -421,7 +421,7 @@ class MultiCollateralOrder(object):
     def collateral_currencies(self):
         """Gets the collateral_currencies of this MultiCollateralOrder.  # noqa: E501
 
-        Collateral Currency List  # noqa: E501
+        Collateral Currency List.  # noqa: E501
 
         :return: The collateral_currencies of this MultiCollateralOrder.  # noqa: E501
         :rtype: list[CollateralCurrencyInfo]
@@ -432,7 +432,7 @@ class MultiCollateralOrder(object):
     def collateral_currencies(self, collateral_currencies):
         """Sets the collateral_currencies of this MultiCollateralOrder.
 
-        Collateral Currency List  # noqa: E501
+        Collateral Currency List.  # noqa: E501
 
         :param collateral_currencies: The collateral_currencies of this MultiCollateralOrder.  # noqa: E501
         :type: list[CollateralCurrencyInfo]

@@ -77,7 +77,7 @@ class SmallBalanceHistory(object):
     def id(self):
         """Gets the id of this SmallBalanceHistory.  # noqa: E501
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :return: The id of this SmallBalanceHistory.  # noqa: E501
         :rtype: str
@@ -88,7 +88,7 @@ class SmallBalanceHistory(object):
     def id(self, id):
         """Sets the id of this SmallBalanceHistory.
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :param id: The id of this SmallBalanceHistory.  # noqa: E501
         :type: str
@@ -100,7 +100,7 @@ class SmallBalanceHistory(object):
     def currency(self):
         """Gets the currency of this SmallBalanceHistory.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this SmallBalanceHistory.  # noqa: E501
         :rtype: str
@@ -111,7 +111,7 @@ class SmallBalanceHistory(object):
     def currency(self, currency):
         """Sets the currency of this SmallBalanceHistory.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this SmallBalanceHistory.  # noqa: E501
         :type: str
@@ -123,7 +123,7 @@ class SmallBalanceHistory(object):
     def amount(self):
         """Gets the amount of this SmallBalanceHistory.  # noqa: E501
 
-        amount  # noqa: E501
+        amount.  # noqa: E501
 
         :return: The amount of this SmallBalanceHistory.  # noqa: E501
         :rtype: str
@@ -134,7 +134,7 @@ class SmallBalanceHistory(object):
     def amount(self, amount):
         """Sets the amount of this SmallBalanceHistory.
 
-        amount  # noqa: E501
+        amount.  # noqa: E501
 
         :param amount: The amount of this SmallBalanceHistory.  # noqa: E501
         :type: str
@@ -146,7 +146,7 @@ class SmallBalanceHistory(object):
     def gt_amount(self):
         """Gets the gt_amount of this SmallBalanceHistory.  # noqa: E501
 
-        GT amount  # noqa: E501
+        GT amount.  # noqa: E501
 
         :return: The gt_amount of this SmallBalanceHistory.  # noqa: E501
         :rtype: str
@@ -157,7 +157,7 @@ class SmallBalanceHistory(object):
     def gt_amount(self, gt_amount):
         """Sets the gt_amount of this SmallBalanceHistory.
 
-        GT amount  # noqa: E501
+        GT amount.  # noqa: E501
 
         :param gt_amount: The gt_amount of this SmallBalanceHistory.  # noqa: E501
         :type: str
@@ -169,7 +169,7 @@ class SmallBalanceHistory(object):
     def create_time(self):
         """Gets the create_time of this SmallBalanceHistory.  # noqa: E501
 
-        Exchange time (in seconds)  # noqa: E501
+        Exchange time (in seconds).  # noqa: E501
 
         :return: The create_time of this SmallBalanceHistory.  # noqa: E501
         :rtype: int
@@ -180,7 +180,7 @@ class SmallBalanceHistory(object):
     def create_time(self, create_time):
         """Sets the create_time of this SmallBalanceHistory.
 
-        Exchange time (in seconds)  # noqa: E501
+        Exchange time (in seconds).  # noqa: E501
 
         :param create_time: The create_time of this SmallBalanceHistory.  # noqa: E501
         :type: int

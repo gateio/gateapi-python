@@ -56,7 +56,7 @@ class DebitFee(object):
     def enabled(self):
         """Gets the enabled of this DebitFee.  # noqa: E501
 
-        Whether GT fee discount is used  # noqa: E501
+        Whether GT fee discount is used.  # noqa: E501
 
         :return: The enabled of this DebitFee.  # noqa: E501
         :rtype: bool
@@ -67,7 +67,7 @@ class DebitFee(object):
     def enabled(self, enabled):
         """Sets the enabled of this DebitFee.
 
-        Whether GT fee discount is used  # noqa: E501
+        Whether GT fee discount is used.  # noqa: E501
 
         :param enabled: The enabled of this DebitFee.  # noqa: E501
         :type: bool

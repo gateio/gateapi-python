@@ -64,7 +64,7 @@ class SpotPriceTrigger(object):
     def price(self):
         """Gets the price of this SpotPriceTrigger.  # noqa: E501
 
-        Trigger price  # noqa: E501
+        Trigger price.  # noqa: E501
 
         :return: The price of this SpotPriceTrigger.  # noqa: E501
         :rtype: str
@@ -75,7 +75,7 @@ class SpotPriceTrigger(object):
     def price(self, price):
         """Sets the price of this SpotPriceTrigger.
 
-        Trigger price  # noqa: E501
+        Trigger price.  # noqa: E501
 
         :param price: The price of this SpotPriceTrigger.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class SpotPriceTrigger(object):
     def rule(self):
         """Gets the rule of this SpotPriceTrigger.  # noqa: E501
 
-        Price trigger condition  - `>=`: triggered when market price larger than or equal to `price` field - `<=`: triggered when market price less than or equal to `price` field   # noqa: E501
+        Price trigger condition  - `>=`: triggered when market price larger than or equal to `price` field - `<=`: or equal to `price` field   # noqa: E501
 
         :return: The rule of this SpotPriceTrigger.  # noqa: E501
         :rtype: str
@@ -100,7 +100,7 @@ class SpotPriceTrigger(object):
     def rule(self, rule):
         """Sets the rule of this SpotPriceTrigger.
 
-        Price trigger condition  - `>=`: triggered when market price larger than or equal to `price` field - `<=`: triggered when market price less than or equal to `price` field   # noqa: E501
+        Price trigger condition  - `>=`: triggered when market price larger than or equal to `price` field - `<=`: or equal to `price` field   # noqa: E501
 
         :param rule: The rule of this SpotPriceTrigger.  # noqa: E501
         :type: str

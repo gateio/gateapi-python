@@ -82,7 +82,7 @@ class MultiCollateralRecordCurrency(object):
     def currency(self):
         """Gets the currency of this MultiCollateralRecordCurrency.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this MultiCollateralRecordCurrency.  # noqa: E501
         :rtype: str
@@ -93,7 +93,7 @@ class MultiCollateralRecordCurrency(object):
     def currency(self, currency):
         """Sets the currency of this MultiCollateralRecordCurrency.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this MultiCollateralRecordCurrency.  # noqa: E501
         :type: str
@@ -105,7 +105,7 @@ class MultiCollateralRecordCurrency(object):
     def index_price(self):
         """Gets the index_price of this MultiCollateralRecordCurrency.  # noqa: E501
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :return: The index_price of this MultiCollateralRecordCurrency.  # noqa: E501
         :rtype: str
@@ -116,7 +116,7 @@ class MultiCollateralRecordCurrency(object):
     def index_price(self, index_price):
         """Sets the index_price of this MultiCollateralRecordCurrency.
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :param index_price: The index_price of this MultiCollateralRecordCurrency.  # noqa: E501
         :type: str
@@ -128,7 +128,7 @@ class MultiCollateralRecordCurrency(object):
     def before_amount(self):
         """Gets the before_amount of this MultiCollateralRecordCurrency.  # noqa: E501
 
-        Amount before the operation  # noqa: E501
+        Amount before the operation.  # noqa: E501
 
         :return: The before_amount of this MultiCollateralRecordCurrency.  # noqa: E501
         :rtype: str
@@ -139,7 +139,7 @@ class MultiCollateralRecordCurrency(object):
     def before_amount(self, before_amount):
         """Sets the before_amount of this MultiCollateralRecordCurrency.
 
-        Amount before the operation  # noqa: E501
+        Amount before the operation.  # noqa: E501
 
         :param before_amount: The before_amount of this MultiCollateralRecordCurrency.  # noqa: E501
         :type: str

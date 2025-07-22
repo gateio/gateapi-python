@@ -62,7 +62,7 @@ class TransferOrderStatus(object):
     def tx_id(self):
         """Gets the tx_id of this TransferOrderStatus.  # noqa: E501
 
-        Order id  # noqa: E501
+        Order id.  # noqa: E501
 
         :return: The tx_id of this TransferOrderStatus.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class TransferOrderStatus(object):
     def tx_id(self, tx_id):
         """Sets the tx_id of this TransferOrderStatus.
 
-        Order id  # noqa: E501
+        Order id.  # noqa: E501
 
         :param tx_id: The tx_id of this TransferOrderStatus.  # noqa: E501
         :type: str

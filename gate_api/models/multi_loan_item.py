@@ -62,7 +62,7 @@ class MultiLoanItem(object):
     def currency(self):
         """Gets the currency of this MultiLoanItem.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this MultiLoanItem.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class MultiLoanItem(object):
     def currency(self, currency):
         """Sets the currency of this MultiLoanItem.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this MultiLoanItem.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class MultiLoanItem(object):
     def price(self):
         """Gets the price of this MultiLoanItem.  # noqa: E501
 
-        Latest price of the currency  # noqa: E501
+        Latest price of the currency.  # noqa: E501
 
         :return: The price of this MultiLoanItem.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class MultiLoanItem(object):
     def price(self, price):
         """Sets the price of this MultiLoanItem.
 
-        Latest price of the currency  # noqa: E501
+        Latest price of the currency.  # noqa: E501
 
         :param price: The price of this MultiLoanItem.  # noqa: E501
         :type: str

@@ -69,7 +69,7 @@ class CreateUniLend(object):
     def currency(self):
         """Gets the currency of this CreateUniLend.  # noqa: E501
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :return: The currency of this CreateUniLend.  # noqa: E501
         :rtype: str
@@ -80,7 +80,7 @@ class CreateUniLend(object):
     def currency(self, currency):
         """Sets the currency of this CreateUniLend.
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :param currency: The currency of this CreateUniLend.  # noqa: E501
         :type: str
@@ -94,7 +94,7 @@ class CreateUniLend(object):
     def amount(self):
         """Gets the amount of this CreateUniLend.  # noqa: E501
 
-        The amount of currency could be lent  # noqa: E501
+        The amount of currency could be lent.  # noqa: E501
 
         :return: The amount of this CreateUniLend.  # noqa: E501
         :rtype: str
@@ -105,7 +105,7 @@ class CreateUniLend(object):
     def amount(self, amount):
         """Sets the amount of this CreateUniLend.
 
-        The amount of currency could be lent  # noqa: E501
+        The amount of currency could be lent.  # noqa: E501
 
         :param amount: The amount of this CreateUniLend.  # noqa: E501
         :type: str
@@ -119,7 +119,7 @@ class CreateUniLend(object):
     def type(self):
         """Gets the type of this CreateUniLend.  # noqa: E501
 
-        type: lend - lend, redeem - redeem  # noqa: E501
+        type: lend - lend, redeem - redeem.  # noqa: E501
 
         :return: The type of this CreateUniLend.  # noqa: E501
         :rtype: str
@@ -130,7 +130,7 @@ class CreateUniLend(object):
     def type(self, type):
         """Sets the type of this CreateUniLend.
 
-        type: lend - lend, redeem - redeem  # noqa: E501
+        type: lend - lend, redeem - redeem.  # noqa: E501
 
         :param type: The type of this CreateUniLend.  # noqa: E501
         :type: str

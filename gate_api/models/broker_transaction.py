@@ -62,7 +62,7 @@ class BrokerTransaction(object):
     def total(self):
         """Gets the total of this BrokerTransaction.  # noqa: E501
 
-        Total  # noqa: E501
+        Total.  # noqa: E501
 
         :return: The total of this BrokerTransaction.  # noqa: E501
         :rtype: int
@@ -73,7 +73,7 @@ class BrokerTransaction(object):
     def total(self, total):
         """Sets the total of this BrokerTransaction.
 
-        Total  # noqa: E501
+        Total.  # noqa: E501
 
         :param total: The total of this BrokerTransaction.  # noqa: E501
         :type: int
@@ -85,7 +85,7 @@ class BrokerTransaction(object):
     def list(self):
         """Gets the list of this BrokerTransaction.  # noqa: E501
 
-        List of transaction history  # noqa: E501
+        List of transaction history.  # noqa: E501
 
         :return: The list of this BrokerTransaction.  # noqa: E501
         :rtype: list[BrokerTransaction1]
@@ -96,7 +96,7 @@ class BrokerTransaction(object):
     def list(self, list):
         """Sets the list of this BrokerTransaction.
 
-        List of transaction history  # noqa: E501
+        List of transaction history.  # noqa: E501
 
         :param list: The list of this BrokerTransaction.  # noqa: E501
         :type: list[BrokerTransaction1]

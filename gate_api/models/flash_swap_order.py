@@ -97,7 +97,7 @@ class FlashSwapOrder(object):
     def id(self):
         """Gets the id of this FlashSwapOrder.  # noqa: E501
 
-        Flash swap order ID  # noqa: E501
+        Flash swap order ID.  # noqa: E501
 
         :return: The id of this FlashSwapOrder.  # noqa: E501
         :rtype: int
@@ -108,7 +108,7 @@ class FlashSwapOrder(object):
     def id(self, id):
         """Sets the id of this FlashSwapOrder.
 
-        Flash swap order ID  # noqa: E501
+        Flash swap order ID.  # noqa: E501
 
         :param id: The id of this FlashSwapOrder.  # noqa: E501
         :type: int
@@ -120,7 +120,7 @@ class FlashSwapOrder(object):
     def create_time(self):
         """Gets the create_time of this FlashSwapOrder.  # noqa: E501
 
-        Creation time of order (in milliseconds)  # noqa: E501
+        Creation time of order (in milliseconds).  # noqa: E501
 
         :return: The create_time of this FlashSwapOrder.  # noqa: E501
         :rtype: int
@@ -131,7 +131,7 @@ class FlashSwapOrder(object):
     def create_time(self, create_time):
         """Sets the create_time of this FlashSwapOrder.
 
-        Creation time of order (in milliseconds)  # noqa: E501
+        Creation time of order (in milliseconds).  # noqa: E501
 
         :param create_time: The create_time of this FlashSwapOrder.  # noqa: E501
         :type: int
@@ -143,7 +143,7 @@ class FlashSwapOrder(object):
     def user_id(self):
         """Gets the user_id of this FlashSwapOrder.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user_id of this FlashSwapOrder.  # noqa: E501
         :rtype: int
@@ -154,7 +154,7 @@ class FlashSwapOrder(object):
     def user_id(self, user_id):
         """Sets the user_id of this FlashSwapOrder.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user_id: The user_id of this FlashSwapOrder.  # noqa: E501
         :type: int
@@ -166,7 +166,7 @@ class FlashSwapOrder(object):
     def sell_currency(self):
         """Gets the sell_currency of this FlashSwapOrder.  # noqa: E501
 
-        Currency to sell  # noqa: E501
+        Currency to sell.  # noqa: E501
 
         :return: The sell_currency of this FlashSwapOrder.  # noqa: E501
         :rtype: str
@@ -177,7 +177,7 @@ class FlashSwapOrder(object):
     def sell_currency(self, sell_currency):
         """Sets the sell_currency of this FlashSwapOrder.
 
-        Currency to sell  # noqa: E501
+        Currency to sell.  # noqa: E501
 
         :param sell_currency: The sell_currency of this FlashSwapOrder.  # noqa: E501
         :type: str
@@ -189,7 +189,7 @@ class FlashSwapOrder(object):
     def sell_amount(self):
         """Gets the sell_amount of this FlashSwapOrder.  # noqa: E501
 
-        Amount to sell  # noqa: E501
+        Amount to sell.  # noqa: E501
 
         :return: The sell_amount of this FlashSwapOrder.  # noqa: E501
         :rtype: str
@@ -200,7 +200,7 @@ class FlashSwapOrder(object):
     def sell_amount(self, sell_amount):
         """Sets the sell_amount of this FlashSwapOrder.
 
-        Amount to sell  # noqa: E501
+        Amount to sell.  # noqa: E501
 
         :param sell_amount: The sell_amount of this FlashSwapOrder.  # noqa: E501
         :type: str
@@ -212,7 +212,7 @@ class FlashSwapOrder(object):
     def buy_currency(self):
         """Gets the buy_currency of this FlashSwapOrder.  # noqa: E501
 
-        Currency to buy  # noqa: E501
+        Currency to buy.  # noqa: E501
 
         :return: The buy_currency of this FlashSwapOrder.  # noqa: E501
         :rtype: str
@@ -223,7 +223,7 @@ class FlashSwapOrder(object):
     def buy_currency(self, buy_currency):
         """Sets the buy_currency of this FlashSwapOrder.
 
-        Currency to buy  # noqa: E501
+        Currency to buy.  # noqa: E501
 
         :param buy_currency: The buy_currency of this FlashSwapOrder.  # noqa: E501
         :type: str
@@ -235,7 +235,7 @@ class FlashSwapOrder(object):
     def buy_amount(self):
         """Gets the buy_amount of this FlashSwapOrder.  # noqa: E501
 
-        Amount to buy  # noqa: E501
+        Amount to buy.  # noqa: E501
 
         :return: The buy_amount of this FlashSwapOrder.  # noqa: E501
         :rtype: str
@@ -246,7 +246,7 @@ class FlashSwapOrder(object):
     def buy_amount(self, buy_amount):
         """Sets the buy_amount of this FlashSwapOrder.
 
-        Amount to buy  # noqa: E501
+        Amount to buy.  # noqa: E501
 
         :param buy_amount: The buy_amount of this FlashSwapOrder.  # noqa: E501
         :type: str
@@ -258,7 +258,7 @@ class FlashSwapOrder(object):
     def price(self):
         """Gets the price of this FlashSwapOrder.  # noqa: E501
 
-        Price  # noqa: E501
+        Price.  # noqa: E501
 
         :return: The price of this FlashSwapOrder.  # noqa: E501
         :rtype: str
@@ -269,7 +269,7 @@ class FlashSwapOrder(object):
     def price(self, price):
         """Sets the price of this FlashSwapOrder.
 
-        Price  # noqa: E501
+        Price.  # noqa: E501
 
         :param price: The price of this FlashSwapOrder.  # noqa: E501
         :type: str

@@ -37,7 +37,7 @@ class SubAccountApi(object):
         self.api_client = api_client
 
     def list_sub_accounts(self, **kwargs):  # noqa: E501
-        """List sub-accounts  # noqa: E501
+        """List sub-accounts.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -61,7 +61,7 @@ class SubAccountApi(object):
         return self.list_sub_accounts_with_http_info(**kwargs)  # noqa: E501
 
     def list_sub_accounts_with_http_info(self, **kwargs):  # noqa: E501
-        """List sub-accounts  # noqa: E501
+        """List sub-accounts.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -145,7 +145,7 @@ class SubAccountApi(object):
             collection_formats=collection_formats)
 
     def create_sub_accounts(self, sub_account, **kwargs):  # noqa: E501
-        """Create a new sub-account  # noqa: E501
+        """Create a new sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -169,7 +169,7 @@ class SubAccountApi(object):
         return self.create_sub_accounts_with_http_info(sub_account, **kwargs)  # noqa: E501
 
     def create_sub_accounts_with_http_info(self, sub_account, **kwargs):  # noqa: E501
-        """Create a new sub-account  # noqa: E501
+        """Create a new sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -261,7 +261,7 @@ class SubAccountApi(object):
             collection_formats=collection_formats)
 
     def get_sub_account(self, user_id, **kwargs):  # noqa: E501
-        """Get the sub-account  # noqa: E501
+        """Get the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -269,7 +269,7 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: Sub-account user id (required)
+        :param int user_id: Sub-account user id. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -285,7 +285,7 @@ class SubAccountApi(object):
         return self.get_sub_account_with_http_info(user_id, **kwargs)  # noqa: E501
 
     def get_sub_account_with_http_info(self, user_id, **kwargs):  # noqa: E501
-        """Get the sub-account  # noqa: E501
+        """Get the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -293,7 +293,7 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: Sub-account user id (required)
+        :param int user_id: Sub-account user id. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -373,7 +373,7 @@ class SubAccountApi(object):
             collection_formats=collection_formats)
 
     def list_sub_account_keys(self, user_id, **kwargs):  # noqa: E501
-        """List all API Key of the sub-account  # noqa: E501
+        """List all API Key of the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -381,7 +381,7 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: Sub-account user id (required)
+        :param int user_id: Sub-account user id. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -397,7 +397,7 @@ class SubAccountApi(object):
         return self.list_sub_account_keys_with_http_info(user_id, **kwargs)  # noqa: E501
 
     def list_sub_account_keys_with_http_info(self, user_id, **kwargs):  # noqa: E501
-        """List all API Key of the sub-account  # noqa: E501
+        """List all API Key of the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -405,7 +405,7 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: Sub-account user id (required)
+        :param int user_id: Sub-account user id. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -485,7 +485,7 @@ class SubAccountApi(object):
             collection_formats=collection_formats)
 
     def create_sub_account_keys(self, user_id, sub_account_key, **kwargs):  # noqa: E501
-        """Create API Key of the sub-account  # noqa: E501
+        """Create API Key of the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -493,7 +493,7 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: Sub-account user id (required)
+        :param int user_id: Sub-account user id. (required)
         :param SubAccountKey sub_account_key: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -510,7 +510,7 @@ class SubAccountApi(object):
         return self.create_sub_account_keys_with_http_info(user_id, sub_account_key, **kwargs)  # noqa: E501
 
     def create_sub_account_keys_with_http_info(self, user_id, sub_account_key, **kwargs):  # noqa: E501
-        """Create API Key of the sub-account  # noqa: E501
+        """Create API Key of the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -518,7 +518,7 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: Sub-account user id (required)
+        :param int user_id: Sub-account user id. (required)
         :param SubAccountKey sub_account_key: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -610,7 +610,7 @@ class SubAccountApi(object):
             collection_formats=collection_formats)
 
     def get_sub_account_key(self, user_id, key, **kwargs):  # noqa: E501
-        """Get the API Key of the sub-account  # noqa: E501
+        """Get the API Key of the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -618,8 +618,8 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: Sub-account user id (required)
-        :param str key: The API Key of the sub-account (required)
+        :param int user_id: Sub-account user id. (required)
+        :param str key: The API Key of the sub-account. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -635,7 +635,7 @@ class SubAccountApi(object):
         return self.get_sub_account_key_with_http_info(user_id, key, **kwargs)  # noqa: E501
 
     def get_sub_account_key_with_http_info(self, user_id, key, **kwargs):  # noqa: E501
-        """Get the API Key of the sub-account  # noqa: E501
+        """Get the API Key of the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -643,8 +643,8 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: Sub-account user id (required)
-        :param str key: The API Key of the sub-account (required)
+        :param int user_id: Sub-account user id. (required)
+        :param str key: The API Key of the sub-account. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -731,7 +731,7 @@ class SubAccountApi(object):
             collection_formats=collection_formats)
 
     def update_sub_account_keys(self, user_id, key, sub_account_key, **kwargs):  # noqa: E501
-        """Update API key of the sub-account  # noqa: E501
+        """Update API key of the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -739,8 +739,8 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: Sub-account user id (required)
-        :param str key: The API Key of the sub-account (required)
+        :param int user_id: Sub-account user id. (required)
+        :param str key: The API Key of the sub-account. (required)
         :param SubAccountKey sub_account_key: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -757,7 +757,7 @@ class SubAccountApi(object):
         return self.update_sub_account_keys_with_http_info(user_id, key, sub_account_key, **kwargs)  # noqa: E501
 
     def update_sub_account_keys_with_http_info(self, user_id, key, sub_account_key, **kwargs):  # noqa: E501
-        """Update API key of the sub-account  # noqa: E501
+        """Update API key of the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -765,8 +765,8 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: Sub-account user id (required)
-        :param str key: The API Key of the sub-account (required)
+        :param int user_id: Sub-account user id. (required)
+        :param str key: The API Key of the sub-account. (required)
         :param SubAccountKey sub_account_key: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -861,7 +861,7 @@ class SubAccountApi(object):
             collection_formats=collection_formats)
 
     def delete_sub_account_keys(self, user_id, key, **kwargs):  # noqa: E501
-        """Delete API key of the sub-account  # noqa: E501
+        """Delete API key of the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -869,8 +869,8 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: Sub-account user id (required)
-        :param str key: The API Key of the sub-account (required)
+        :param int user_id: Sub-account user id. (required)
+        :param str key: The API Key of the sub-account. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -886,7 +886,7 @@ class SubAccountApi(object):
         return self.delete_sub_account_keys_with_http_info(user_id, key, **kwargs)  # noqa: E501
 
     def delete_sub_account_keys_with_http_info(self, user_id, key, **kwargs):  # noqa: E501
-        """Delete API key of the sub-account  # noqa: E501
+        """Delete API key of the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -894,8 +894,8 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: Sub-account user id (required)
-        :param str key: The API Key of the sub-account (required)
+        :param int user_id: Sub-account user id. (required)
+        :param str key: The API Key of the sub-account. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -978,7 +978,7 @@ class SubAccountApi(object):
             collection_formats=collection_formats)
 
     def lock_sub_account(self, user_id, **kwargs):  # noqa: E501
-        """Lock the sub-account  # noqa: E501
+        """Lock the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -986,7 +986,7 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: The user id of the sub-account (required)
+        :param int user_id: The user id of the sub-account. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1002,7 +1002,7 @@ class SubAccountApi(object):
         return self.lock_sub_account_with_http_info(user_id, **kwargs)  # noqa: E501
 
     def lock_sub_account_with_http_info(self, user_id, **kwargs):  # noqa: E501
-        """Lock the sub-account  # noqa: E501
+        """Lock the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1010,7 +1010,7 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: The user id of the sub-account (required)
+        :param int user_id: The user id of the sub-account. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1086,7 +1086,7 @@ class SubAccountApi(object):
             collection_formats=collection_formats)
 
     def unlock_sub_account(self, user_id, **kwargs):  # noqa: E501
-        """Unlock the sub-account  # noqa: E501
+        """Unlock the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1094,7 +1094,7 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: The user id of the sub-account (required)
+        :param int user_id: The user id of the sub-account. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1110,7 +1110,7 @@ class SubAccountApi(object):
         return self.unlock_sub_account_with_http_info(user_id, **kwargs)  # noqa: E501
 
     def unlock_sub_account_with_http_info(self, user_id, **kwargs):  # noqa: E501
-        """Unlock the sub-account  # noqa: E501
+        """Unlock the sub-account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1118,7 +1118,7 @@ class SubAccountApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: The user id of the sub-account (required)
+        :param int user_id: The user id of the sub-account. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1194,7 +1194,7 @@ class SubAccountApi(object):
             collection_formats=collection_formats)
 
     def list_unified_mode(self, **kwargs):  # noqa: E501
-        """Get sub-account mode  # noqa: E501
+        """Get sub-account mode.  # noqa: E501
 
         Unified account mode： - `classic`: Classic account mode - `multi_currency`: Multi-currency margin mode - `portfolio`: Portfolio margin mode  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1218,7 +1218,7 @@ class SubAccountApi(object):
         return self.list_unified_mode_with_http_info(**kwargs)  # noqa: E501
 
     def list_unified_mode_with_http_info(self, **kwargs):  # noqa: E501
-        """Get sub-account mode  # noqa: E501
+        """Get sub-account mode.  # noqa: E501
 
         Unified account mode： - `classic`: Classic account mode - `multi_currency`: Multi-currency margin mode - `portfolio`: Portfolio margin mode  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

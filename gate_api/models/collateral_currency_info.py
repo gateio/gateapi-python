@@ -72,7 +72,7 @@ class CollateralCurrencyInfo(object):
     def currency(self):
         """Gets the currency of this CollateralCurrencyInfo.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this CollateralCurrencyInfo.  # noqa: E501
         :rtype: str
@@ -83,7 +83,7 @@ class CollateralCurrencyInfo(object):
     def currency(self, currency):
         """Sets the currency of this CollateralCurrencyInfo.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this CollateralCurrencyInfo.  # noqa: E501
         :type: str
@@ -95,7 +95,7 @@ class CollateralCurrencyInfo(object):
     def index_price(self):
         """Gets the index_price of this CollateralCurrencyInfo.  # noqa: E501
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :return: The index_price of this CollateralCurrencyInfo.  # noqa: E501
         :rtype: str
@@ -106,7 +106,7 @@ class CollateralCurrencyInfo(object):
     def index_price(self, index_price):
         """Sets the index_price of this CollateralCurrencyInfo.
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :param index_price: The index_price of this CollateralCurrencyInfo.  # noqa: E501
         :type: str
@@ -118,7 +118,7 @@ class CollateralCurrencyInfo(object):
     def left_collateral(self):
         """Gets the left_collateral of this CollateralCurrencyInfo.  # noqa: E501
 
-        Left Collateral Amount  # noqa: E501
+        Left Collateral Amount.  # noqa: E501
 
         :return: The left_collateral of this CollateralCurrencyInfo.  # noqa: E501
         :rtype: str
@@ -129,7 +129,7 @@ class CollateralCurrencyInfo(object):
     def left_collateral(self, left_collateral):
         """Sets the left_collateral of this CollateralCurrencyInfo.
 
-        Left Collateral Amount  # noqa: E501
+        Left Collateral Amount.  # noqa: E501
 
         :param left_collateral: The left_collateral of this CollateralCurrencyInfo.  # noqa: E501
         :type: str
@@ -141,7 +141,7 @@ class CollateralCurrencyInfo(object):
     def left_collateral_usdt(self):
         """Gets the left_collateral_usdt of this CollateralCurrencyInfo.  # noqa: E501
 
-        Value of left collateral amount in USDT  # noqa: E501
+        Value of left collateral amount in USDT.  # noqa: E501
 
         :return: The left_collateral_usdt of this CollateralCurrencyInfo.  # noqa: E501
         :rtype: str
@@ -152,7 +152,7 @@ class CollateralCurrencyInfo(object):
     def left_collateral_usdt(self, left_collateral_usdt):
         """Sets the left_collateral_usdt of this CollateralCurrencyInfo.
 
-        Value of left collateral amount in USDT  # noqa: E501
+        Value of left collateral amount in USDT.  # noqa: E501
 
         :param left_collateral_usdt: The left_collateral_usdt of this CollateralCurrencyInfo.  # noqa: E501
         :type: str

@@ -85,7 +85,7 @@ class SubAccountKeyPerms(object):
     def read_only(self):
         """Gets the read_only of this SubAccountKeyPerms.  # noqa: E501
 
-        read only  # noqa: E501
+        read only.  # noqa: E501
 
         :return: The read_only of this SubAccountKeyPerms.  # noqa: E501
         :rtype: bool
@@ -96,7 +96,7 @@ class SubAccountKeyPerms(object):
     def read_only(self, read_only):
         """Sets the read_only of this SubAccountKeyPerms.
 
-        read only  # noqa: E501
+        read only.  # noqa: E501
 
         :param read_only: The read_only of this SubAccountKeyPerms.  # noqa: E501
         :type: bool

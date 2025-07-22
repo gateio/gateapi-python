@@ -67,7 +67,7 @@ class MarginLeverageTier(object):
     def upper_limit(self):
         """Gets the upper_limit of this MarginLeverageTier.  # noqa: E501
 
-        Maximum loan limit  # noqa: E501
+        Maximum loan limit.  # noqa: E501
 
         :return: The upper_limit of this MarginLeverageTier.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class MarginLeverageTier(object):
     def upper_limit(self, upper_limit):
         """Sets the upper_limit of this MarginLeverageTier.
 
-        Maximum loan limit  # noqa: E501
+        Maximum loan limit.  # noqa: E501
 
         :param upper_limit: The upper_limit of this MarginLeverageTier.  # noqa: E501
         :type: str
@@ -90,7 +90,7 @@ class MarginLeverageTier(object):
     def mmr(self):
         """Gets the mmr of this MarginLeverageTier.  # noqa: E501
 
-        Maintenance margin rate  # noqa: E501
+        Maintenance margin rate.  # noqa: E501
 
         :return: The mmr of this MarginLeverageTier.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class MarginLeverageTier(object):
     def mmr(self, mmr):
         """Sets the mmr of this MarginLeverageTier.
 
-        Maintenance margin rate  # noqa: E501
+        Maintenance margin rate.  # noqa: E501
 
         :param mmr: The mmr of this MarginLeverageTier.  # noqa: E501
         :type: str
@@ -113,7 +113,7 @@ class MarginLeverageTier(object):
     def leverage(self):
         """Gets the leverage of this MarginLeverageTier.  # noqa: E501
 
-        Maximum leverage multiple  # noqa: E501
+        Maximum leverage multiple.  # noqa: E501
 
         :return: The leverage of this MarginLeverageTier.  # noqa: E501
         :rtype: str
@@ -124,7 +124,7 @@ class MarginLeverageTier(object):
     def leverage(self, leverage):
         """Sets the leverage of this MarginLeverageTier.
 
-        Maximum leverage multiple  # noqa: E501
+        Maximum leverage multiple.  # noqa: E501
 
         :param leverage: The leverage of this MarginLeverageTier.  # noqa: E501
         :type: str

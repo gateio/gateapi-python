@@ -87,7 +87,7 @@ class UniLoanInterestRecord(object):
     def currency(self):
         """Gets the currency of this UniLoanInterestRecord.  # noqa: E501
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :return: The currency of this UniLoanInterestRecord.  # noqa: E501
         :rtype: str
@@ -98,7 +98,7 @@ class UniLoanInterestRecord(object):
     def currency(self, currency):
         """Sets the currency of this UniLoanInterestRecord.
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :param currency: The currency of this UniLoanInterestRecord.  # noqa: E501
         :type: str
@@ -110,7 +110,7 @@ class UniLoanInterestRecord(object):
     def currency_pair(self):
         """Gets the currency_pair of this UniLoanInterestRecord.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this UniLoanInterestRecord.  # noqa: E501
         :rtype: str
@@ -121,7 +121,7 @@ class UniLoanInterestRecord(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this UniLoanInterestRecord.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this UniLoanInterestRecord.  # noqa: E501
         :type: str
@@ -133,7 +133,7 @@ class UniLoanInterestRecord(object):
     def actual_rate(self):
         """Gets the actual_rate of this UniLoanInterestRecord.  # noqa: E501
 
-        Actual rate  # noqa: E501
+        Actual rate.  # noqa: E501
 
         :return: The actual_rate of this UniLoanInterestRecord.  # noqa: E501
         :rtype: str
@@ -144,7 +144,7 @@ class UniLoanInterestRecord(object):
     def actual_rate(self, actual_rate):
         """Sets the actual_rate of this UniLoanInterestRecord.
 
-        Actual rate  # noqa: E501
+        Actual rate.  # noqa: E501
 
         :param actual_rate: The actual_rate of this UniLoanInterestRecord.  # noqa: E501
         :type: str
@@ -156,7 +156,7 @@ class UniLoanInterestRecord(object):
     def interest(self):
         """Gets the interest of this UniLoanInterestRecord.  # noqa: E501
 
-        Interest  # noqa: E501
+        Interest.  # noqa: E501
 
         :return: The interest of this UniLoanInterestRecord.  # noqa: E501
         :rtype: str
@@ -167,7 +167,7 @@ class UniLoanInterestRecord(object):
     def interest(self, interest):
         """Sets the interest of this UniLoanInterestRecord.
 
-        Interest  # noqa: E501
+        Interest.  # noqa: E501
 
         :param interest: The interest of this UniLoanInterestRecord.  # noqa: E501
         :type: str
@@ -179,7 +179,7 @@ class UniLoanInterestRecord(object):
     def status(self):
         """Gets the status of this UniLoanInterestRecord.  # noqa: E501
 
-        Status: 0 - fail, 1 - success  # noqa: E501
+        Status: 0 - fail, 1 - success.  # noqa: E501
 
         :return: The status of this UniLoanInterestRecord.  # noqa: E501
         :rtype: int
@@ -190,7 +190,7 @@ class UniLoanInterestRecord(object):
     def status(self, status):
         """Sets the status of this UniLoanInterestRecord.
 
-        Status: 0 - fail, 1 - success  # noqa: E501
+        Status: 0 - fail, 1 - success.  # noqa: E501
 
         :param status: The status of this UniLoanInterestRecord.  # noqa: E501
         :type: int
@@ -202,7 +202,7 @@ class UniLoanInterestRecord(object):
     def type(self):
         """Gets the type of this UniLoanInterestRecord.  # noqa: E501
 
-        Type, platform - platform，margin - margin  # noqa: E501
+        Type, platform - platform，margin - margin.  # noqa: E501
 
         :return: The type of this UniLoanInterestRecord.  # noqa: E501
         :rtype: str
@@ -213,7 +213,7 @@ class UniLoanInterestRecord(object):
     def type(self, type):
         """Sets the type of this UniLoanInterestRecord.
 
-        Type, platform - platform，margin - margin  # noqa: E501
+        Type, platform - platform，margin - margin.  # noqa: E501
 
         :param type: The type of this UniLoanInterestRecord.  # noqa: E501
         :type: str
@@ -225,7 +225,7 @@ class UniLoanInterestRecord(object):
     def create_time(self):
         """Gets the create_time of this UniLoanInterestRecord.  # noqa: E501
 
-        Created time  # noqa: E501
+        Created time.  # noqa: E501
 
         :return: The create_time of this UniLoanInterestRecord.  # noqa: E501
         :rtype: int
@@ -236,7 +236,7 @@ class UniLoanInterestRecord(object):
     def create_time(self, create_time):
         """Sets the create_time of this UniLoanInterestRecord.
 
-        Created time  # noqa: E501
+        Created time.  # noqa: E501
 
         :param create_time: The create_time of this UniLoanInterestRecord.  # noqa: E501
         :type: int

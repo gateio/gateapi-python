@@ -87,7 +87,7 @@ class UnifiedLeverageConfig(object):
     def current_leverage(self):
         """Gets the current_leverage of this UnifiedLeverageConfig.  # noqa: E501
 
-        Current leverage ratio  # noqa: E501
+        Current leverage ratio.  # noqa: E501
 
         :return: The current_leverage of this UnifiedLeverageConfig.  # noqa: E501
         :rtype: str
@@ -98,7 +98,7 @@ class UnifiedLeverageConfig(object):
     def current_leverage(self, current_leverage):
         """Sets the current_leverage of this UnifiedLeverageConfig.
 
-        Current leverage ratio  # noqa: E501
+        Current leverage ratio.  # noqa: E501
 
         :param current_leverage: The current_leverage of this UnifiedLeverageConfig.  # noqa: E501
         :type: str
@@ -110,7 +110,7 @@ class UnifiedLeverageConfig(object):
     def min_leverage(self):
         """Gets the min_leverage of this UnifiedLeverageConfig.  # noqa: E501
 
-        Minimum adjustable leverage ratio  # noqa: E501
+        Minimum adjustable leverage ratio.  # noqa: E501
 
         :return: The min_leverage of this UnifiedLeverageConfig.  # noqa: E501
         :rtype: str
@@ -121,7 +121,7 @@ class UnifiedLeverageConfig(object):
     def min_leverage(self, min_leverage):
         """Sets the min_leverage of this UnifiedLeverageConfig.
 
-        Minimum adjustable leverage ratio  # noqa: E501
+        Minimum adjustable leverage ratio.  # noqa: E501
 
         :param min_leverage: The min_leverage of this UnifiedLeverageConfig.  # noqa: E501
         :type: str
@@ -133,7 +133,7 @@ class UnifiedLeverageConfig(object):
     def max_leverage(self):
         """Gets the max_leverage of this UnifiedLeverageConfig.  # noqa: E501
 
-        Maximum adjustable leverage ratio  # noqa: E501
+        Maximum adjustable leverage ratio.  # noqa: E501
 
         :return: The max_leverage of this UnifiedLeverageConfig.  # noqa: E501
         :rtype: str
@@ -144,7 +144,7 @@ class UnifiedLeverageConfig(object):
     def max_leverage(self, max_leverage):
         """Sets the max_leverage of this UnifiedLeverageConfig.
 
-        Maximum adjustable leverage ratio  # noqa: E501
+        Maximum adjustable leverage ratio.  # noqa: E501
 
         :param max_leverage: The max_leverage of this UnifiedLeverageConfig.  # noqa: E501
         :type: str
@@ -156,7 +156,7 @@ class UnifiedLeverageConfig(object):
     def debit(self):
         """Gets the debit of this UnifiedLeverageConfig.  # noqa: E501
 
-        Current liabilities  # noqa: E501
+        Current liabilities.  # noqa: E501
 
         :return: The debit of this UnifiedLeverageConfig.  # noqa: E501
         :rtype: str
@@ -167,7 +167,7 @@ class UnifiedLeverageConfig(object):
     def debit(self, debit):
         """Sets the debit of this UnifiedLeverageConfig.
 
-        Current liabilities  # noqa: E501
+        Current liabilities.  # noqa: E501
 
         :param debit: The debit of this UnifiedLeverageConfig.  # noqa: E501
         :type: str
@@ -179,7 +179,7 @@ class UnifiedLeverageConfig(object):
     def available_margin(self):
         """Gets the available_margin of this UnifiedLeverageConfig.  # noqa: E501
 
-        Available Margin  # noqa: E501
+        Available Margin.  # noqa: E501
 
         :return: The available_margin of this UnifiedLeverageConfig.  # noqa: E501
         :rtype: str
@@ -190,7 +190,7 @@ class UnifiedLeverageConfig(object):
     def available_margin(self, available_margin):
         """Sets the available_margin of this UnifiedLeverageConfig.
 
-        Available Margin  # noqa: E501
+        Available Margin.  # noqa: E501
 
         :param available_margin: The available_margin of this UnifiedLeverageConfig.  # noqa: E501
         :type: str
@@ -202,7 +202,7 @@ class UnifiedLeverageConfig(object):
     def borrowable(self):
         """Gets the borrowable of this UnifiedLeverageConfig.  # noqa: E501
 
-        The current leverage you can choose is  # noqa: E501
+        The current leverage you can choose is.  # noqa: E501
 
         :return: The borrowable of this UnifiedLeverageConfig.  # noqa: E501
         :rtype: str
@@ -213,7 +213,7 @@ class UnifiedLeverageConfig(object):
     def borrowable(self, borrowable):
         """Sets the borrowable of this UnifiedLeverageConfig.
 
-        The current leverage you can choose is  # noqa: E501
+        The current leverage you can choose is.  # noqa: E501
 
         :param borrowable: The borrowable of this UnifiedLeverageConfig.  # noqa: E501
         :type: str
@@ -225,7 +225,7 @@ class UnifiedLeverageConfig(object):
     def except_leverage_borrowable(self):
         """Gets the except_leverage_borrowable of this UnifiedLeverageConfig.  # noqa: E501
 
-        The maximum amount of margin that can be borrowed and the maximum amount of Uniloan that can be borrowed, whichever is smaller  # noqa: E501
+        The maximum amount of margin that can be borrowed and the be borrowed, whichever is smaller  # noqa: E501
 
         :return: The except_leverage_borrowable of this UnifiedLeverageConfig.  # noqa: E501
         :rtype: str
@@ -236,7 +236,7 @@ class UnifiedLeverageConfig(object):
     def except_leverage_borrowable(self, except_leverage_borrowable):
         """Sets the except_leverage_borrowable of this UnifiedLeverageConfig.
 
-        The maximum amount of margin that can be borrowed and the maximum amount of Uniloan that can be borrowed, whichever is smaller  # noqa: E501
+        The maximum amount of margin that can be borrowed and the be borrowed, whichever is smaller  # noqa: E501
 
         :param except_leverage_borrowable: The except_leverage_borrowable of this UnifiedLeverageConfig.  # noqa: E501
         :type: str

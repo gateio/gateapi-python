@@ -67,7 +67,7 @@ class SubUserMode(object):
     def user_id(self):
         """Gets the user_id of this SubUserMode.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user_id of this SubUserMode.  # noqa: E501
         :rtype: int
@@ -78,7 +78,7 @@ class SubUserMode(object):
     def user_id(self, user_id):
         """Sets the user_id of this SubUserMode.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user_id: The user_id of this SubUserMode.  # noqa: E501
         :type: int
@@ -90,7 +90,7 @@ class SubUserMode(object):
     def is_unified(self):
         """Gets the is_unified of this SubUserMode.  # noqa: E501
 
-        Is it a unified account?  # noqa: E501
+        Is it a unified account?.  # noqa: E501
 
         :return: The is_unified of this SubUserMode.  # noqa: E501
         :rtype: bool
@@ -101,7 +101,7 @@ class SubUserMode(object):
     def is_unified(self, is_unified):
         """Sets the is_unified of this SubUserMode.
 
-        Is it a unified account?  # noqa: E501
+        Is it a unified account?.  # noqa: E501
 
         :param is_unified: The is_unified of this SubUserMode.  # noqa: E501
         :type: bool

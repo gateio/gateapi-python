@@ -72,7 +72,7 @@ class RepayRecordTotalInterest(object):
     def currency(self):
         """Gets the currency of this RepayRecordTotalInterest.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this RepayRecordTotalInterest.  # noqa: E501
         :rtype: str
@@ -83,7 +83,7 @@ class RepayRecordTotalInterest(object):
     def currency(self, currency):
         """Sets the currency of this RepayRecordTotalInterest.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this RepayRecordTotalInterest.  # noqa: E501
         :type: str
@@ -95,7 +95,7 @@ class RepayRecordTotalInterest(object):
     def index_price(self):
         """Gets the index_price of this RepayRecordTotalInterest.  # noqa: E501
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :return: The index_price of this RepayRecordTotalInterest.  # noqa: E501
         :rtype: str
@@ -106,7 +106,7 @@ class RepayRecordTotalInterest(object):
     def index_price(self, index_price):
         """Sets the index_price of this RepayRecordTotalInterest.
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :param index_price: The index_price of this RepayRecordTotalInterest.  # noqa: E501
         :type: str
@@ -118,7 +118,7 @@ class RepayRecordTotalInterest(object):
     def amount(self):
         """Gets the amount of this RepayRecordTotalInterest.  # noqa: E501
 
-        Interest Amount  # noqa: E501
+        Interest Amount.  # noqa: E501
 
         :return: The amount of this RepayRecordTotalInterest.  # noqa: E501
         :rtype: str
@@ -129,7 +129,7 @@ class RepayRecordTotalInterest(object):
     def amount(self, amount):
         """Sets the amount of this RepayRecordTotalInterest.
 
-        Interest Amount  # noqa: E501
+        Interest Amount.  # noqa: E501
 
         :param amount: The amount of this RepayRecordTotalInterest.  # noqa: E501
         :type: str
@@ -141,7 +141,7 @@ class RepayRecordTotalInterest(object):
     def amount_usdt(self):
         """Gets the amount_usdt of this RepayRecordTotalInterest.  # noqa: E501
 
-        Interest amount converted to USDT  # noqa: E501
+        Interest amount converted to USDT.  # noqa: E501
 
         :return: The amount_usdt of this RepayRecordTotalInterest.  # noqa: E501
         :rtype: str
@@ -152,7 +152,7 @@ class RepayRecordTotalInterest(object):
     def amount_usdt(self, amount_usdt):
         """Sets the amount_usdt of this RepayRecordTotalInterest.
 
-        Interest amount converted to USDT  # noqa: E501
+        Interest amount converted to USDT.  # noqa: E501
 
         :param amount_usdt: The amount_usdt of this RepayRecordTotalInterest.  # noqa: E501
         :type: str

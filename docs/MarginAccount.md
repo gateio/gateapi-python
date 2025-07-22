@@ -4,12 +4,12 @@ Margin account detail. `base` refers to base currency, while `quotes to quote cu
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currency_pair** | **str** | Currency pair | [optional] 
-**account_type** | **str** | Account type, risk - risk rate account, mmr - maintenance margin rate account, inactive - market not activated | [optional] 
-**leverage** | **str** | User current market leverage multiple | [optional] 
-**locked** | **bool** | Whether account is locked | [optional] 
+**currency_pair** | **str** | Currency pair. | [optional] 
+**account_type** | **str** | Account type, risk - risk rate account, mmr - maintenance margin market not activated | [optional] 
+**leverage** | **str** | User current market leverage multiple. | [optional] 
+**locked** | **bool** | Whether account is locked. | [optional] 
 **risk** | **str** | Leveraged Account Current Risk Rate (Returned when the Account is a Risk Rate Account) | [optional] 
-**mmr** | **str** | Leveraged Account Current Maintenance Margin Rate (returned when the Account is a Maintenance Margin Rate Account) | [optional] 
+**mmr** | **str** | Leveraged Account Current Maintenance Margin Rate (returned when the Account is Account) | [optional] 
 **base** | [**MarginAccountCurrency**](MarginAccountCurrency.md) |  | [optional] 
 **quote** | [**MarginAccountCurrency**](MarginAccountCurrency.md) |  | [optional] 
 

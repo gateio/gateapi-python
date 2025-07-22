@@ -1,6 +1,6 @@
 # TotalBalance
 
-User's balance in all accounts
+User's balance in all accounts.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

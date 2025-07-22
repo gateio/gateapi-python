@@ -82,7 +82,7 @@ class RepayCurrencyRes(object):
     def succeeded(self):
         """Gets the succeeded of this RepayCurrencyRes.  # noqa: E501
 
-        Has the repayment been successful  # noqa: E501
+        Has the repayment been successful.  # noqa: E501
 
         :return: The succeeded of this RepayCurrencyRes.  # noqa: E501
         :rtype: bool
@@ -93,7 +93,7 @@ class RepayCurrencyRes(object):
     def succeeded(self, succeeded):
         """Sets the succeeded of this RepayCurrencyRes.
 
-        Has the repayment been successful  # noqa: E501
+        Has the repayment been successful.  # noqa: E501
 
         :param succeeded: The succeeded of this RepayCurrencyRes.  # noqa: E501
         :type: bool
@@ -151,7 +151,7 @@ class RepayCurrencyRes(object):
     def currency(self):
         """Gets the currency of this RepayCurrencyRes.  # noqa: E501
 
-        Repayment currency  # noqa: E501
+        Repayment currency.  # noqa: E501
 
         :return: The currency of this RepayCurrencyRes.  # noqa: E501
         :rtype: str
@@ -162,7 +162,7 @@ class RepayCurrencyRes(object):
     def currency(self, currency):
         """Sets the currency of this RepayCurrencyRes.
 
-        Repayment currency  # noqa: E501
+        Repayment currency.  # noqa: E501
 
         :param currency: The currency of this RepayCurrencyRes.  # noqa: E501
         :type: str
@@ -174,7 +174,7 @@ class RepayCurrencyRes(object):
     def repaid_principal(self):
         """Gets the repaid_principal of this RepayCurrencyRes.  # noqa: E501
 
-        Principal  # noqa: E501
+        Principal.  # noqa: E501
 
         :return: The repaid_principal of this RepayCurrencyRes.  # noqa: E501
         :rtype: str
@@ -185,7 +185,7 @@ class RepayCurrencyRes(object):
     def repaid_principal(self, repaid_principal):
         """Sets the repaid_principal of this RepayCurrencyRes.
 
-        Principal  # noqa: E501
+        Principal.  # noqa: E501
 
         :param repaid_principal: The repaid_principal of this RepayCurrencyRes.  # noqa: E501
         :type: str
@@ -197,7 +197,7 @@ class RepayCurrencyRes(object):
     def repaid_interest(self):
         """Gets the repaid_interest of this RepayCurrencyRes.  # noqa: E501
 
-        Principal  # noqa: E501
+        Principal.  # noqa: E501
 
         :return: The repaid_interest of this RepayCurrencyRes.  # noqa: E501
         :rtype: str
@@ -208,7 +208,7 @@ class RepayCurrencyRes(object):
     def repaid_interest(self, repaid_interest):
         """Sets the repaid_interest of this RepayCurrencyRes.
 
-        Principal  # noqa: E501
+        Principal.  # noqa: E501
 
         :param repaid_interest: The repaid_interest of this RepayCurrencyRes.  # noqa: E501
         :type: str

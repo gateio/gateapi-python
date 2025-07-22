@@ -97,7 +97,7 @@ class MockRiskUnit(object):
     def symbol(self):
         """Gets the symbol of this MockRiskUnit.  # noqa: E501
 
-        Risk unit name  # noqa: E501
+        Risk unit name.  # noqa: E501
 
         :return: The symbol of this MockRiskUnit.  # noqa: E501
         :rtype: str
@@ -108,7 +108,7 @@ class MockRiskUnit(object):
     def symbol(self, symbol):
         """Sets the symbol of this MockRiskUnit.
 
-        Risk unit name  # noqa: E501
+        Risk unit name.  # noqa: E501
 
         :param symbol: The symbol of this MockRiskUnit.  # noqa: E501
         :type: str
@@ -120,7 +120,7 @@ class MockRiskUnit(object):
     def spot_in_use(self):
         """Gets the spot_in_use of this MockRiskUnit.  # noqa: E501
 
-        Spot usage  # noqa: E501
+        Spot usage.  # noqa: E501
 
         :return: The spot_in_use of this MockRiskUnit.  # noqa: E501
         :rtype: str
@@ -131,7 +131,7 @@ class MockRiskUnit(object):
     def spot_in_use(self, spot_in_use):
         """Sets the spot_in_use of this MockRiskUnit.
 
-        Spot usage  # noqa: E501
+        Spot usage.  # noqa: E501
 
         :param spot_in_use: The spot_in_use of this MockRiskUnit.  # noqa: E501
         :type: str
@@ -143,7 +143,7 @@ class MockRiskUnit(object):
     def maintain_margin(self):
         """Gets the maintain_margin of this MockRiskUnit.  # noqa: E501
 
-        Maintenance margin  # noqa: E501
+        Maintenance margin.  # noqa: E501
 
         :return: The maintain_margin of this MockRiskUnit.  # noqa: E501
         :rtype: str
@@ -154,7 +154,7 @@ class MockRiskUnit(object):
     def maintain_margin(self, maintain_margin):
         """Sets the maintain_margin of this MockRiskUnit.
 
-        Maintenance margin  # noqa: E501
+        Maintenance margin.  # noqa: E501
 
         :param maintain_margin: The maintain_margin of this MockRiskUnit.  # noqa: E501
         :type: str
@@ -166,7 +166,7 @@ class MockRiskUnit(object):
     def initial_margin(self):
         """Gets the initial_margin of this MockRiskUnit.  # noqa: E501
 
-        Initial margin  # noqa: E501
+        Initial margin.  # noqa: E501
 
         :return: The initial_margin of this MockRiskUnit.  # noqa: E501
         :rtype: str
@@ -177,7 +177,7 @@ class MockRiskUnit(object):
     def initial_margin(self, initial_margin):
         """Sets the initial_margin of this MockRiskUnit.
 
-        Initial margin  # noqa: E501
+        Initial margin.  # noqa: E501
 
         :param initial_margin: The initial_margin of this MockRiskUnit.  # noqa: E501
         :type: str
@@ -189,7 +189,7 @@ class MockRiskUnit(object):
     def margin_result(self):
         """Gets the margin_result of this MockRiskUnit.  # noqa: E501
 
-        Margin result  # noqa: E501
+        Margin result.  # noqa: E501
 
         :return: The margin_result of this MockRiskUnit.  # noqa: E501
         :rtype: list[MockMarginResult]
@@ -200,7 +200,7 @@ class MockRiskUnit(object):
     def margin_result(self, margin_result):
         """Sets the margin_result of this MockRiskUnit.
 
-        Margin result  # noqa: E501
+        Margin result.  # noqa: E501
 
         :param margin_result: The margin_result of this MockRiskUnit.  # noqa: E501
         :type: list[MockMarginResult]
@@ -212,7 +212,7 @@ class MockRiskUnit(object):
     def delta(self):
         """Gets the delta of this MockRiskUnit.  # noqa: E501
 
-        Total Delta of risk unit  # noqa: E501
+        Total Delta of risk unit.  # noqa: E501
 
         :return: The delta of this MockRiskUnit.  # noqa: E501
         :rtype: str
@@ -223,7 +223,7 @@ class MockRiskUnit(object):
     def delta(self, delta):
         """Sets the delta of this MockRiskUnit.
 
-        Total Delta of risk unit  # noqa: E501
+        Total Delta of risk unit.  # noqa: E501
 
         :param delta: The delta of this MockRiskUnit.  # noqa: E501
         :type: str
@@ -235,7 +235,7 @@ class MockRiskUnit(object):
     def gamma(self):
         """Gets the gamma of this MockRiskUnit.  # noqa: E501
 
-        Total Gamma of risk unit  # noqa: E501
+        Total Gamma of risk unit.  # noqa: E501
 
         :return: The gamma of this MockRiskUnit.  # noqa: E501
         :rtype: str
@@ -246,7 +246,7 @@ class MockRiskUnit(object):
     def gamma(self, gamma):
         """Sets the gamma of this MockRiskUnit.
 
-        Total Gamma of risk unit  # noqa: E501
+        Total Gamma of risk unit.  # noqa: E501
 
         :param gamma: The gamma of this MockRiskUnit.  # noqa: E501
         :type: str
@@ -258,7 +258,7 @@ class MockRiskUnit(object):
     def theta(self):
         """Gets the theta of this MockRiskUnit.  # noqa: E501
 
-        Total Theta of risk unit  # noqa: E501
+        Total Theta of risk unit.  # noqa: E501
 
         :return: The theta of this MockRiskUnit.  # noqa: E501
         :rtype: str
@@ -269,7 +269,7 @@ class MockRiskUnit(object):
     def theta(self, theta):
         """Sets the theta of this MockRiskUnit.
 
-        Total Theta of risk unit  # noqa: E501
+        Total Theta of risk unit.  # noqa: E501
 
         :param theta: The theta of this MockRiskUnit.  # noqa: E501
         :type: str
@@ -281,7 +281,7 @@ class MockRiskUnit(object):
     def vega(self):
         """Gets the vega of this MockRiskUnit.  # noqa: E501
 
-        Total Vega of risk unit  # noqa: E501
+        Total Vega of risk unit.  # noqa: E501
 
         :return: The vega of this MockRiskUnit.  # noqa: E501
         :rtype: str
@@ -292,7 +292,7 @@ class MockRiskUnit(object):
     def vega(self, vega):
         """Sets the vega of this MockRiskUnit.
 
-        Total Vega of risk unit  # noqa: E501
+        Total Vega of risk unit.  # noqa: E501
 
         :param vega: The vega of this MockRiskUnit.  # noqa: E501
         :type: str

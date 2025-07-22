@@ -72,7 +72,7 @@ class FlashSwapOrderRequest(object):
     def preview_id(self):
         """Gets the preview_id of this FlashSwapOrderRequest.  # noqa: E501
 
-        Preview result ID  # noqa: E501
+        Preview result ID.  # noqa: E501
 
         :return: The preview_id of this FlashSwapOrderRequest.  # noqa: E501
         :rtype: str
@@ -83,7 +83,7 @@ class FlashSwapOrderRequest(object):
     def preview_id(self, preview_id):
         """Sets the preview_id of this FlashSwapOrderRequest.
 
-        Preview result ID  # noqa: E501
+        Preview result ID.  # noqa: E501
 
         :param preview_id: The preview_id of this FlashSwapOrderRequest.  # noqa: E501
         :type: str
@@ -122,7 +122,7 @@ class FlashSwapOrderRequest(object):
     def sell_amount(self):
         """Gets the sell_amount of this FlashSwapOrderRequest.  # noqa: E501
 
-        Amount to sell (based on the preview result)  # noqa: E501
+        Amount to sell (based on the preview result).  # noqa: E501
 
         :return: The sell_amount of this FlashSwapOrderRequest.  # noqa: E501
         :rtype: str
@@ -133,7 +133,7 @@ class FlashSwapOrderRequest(object):
     def sell_amount(self, sell_amount):
         """Sets the sell_amount of this FlashSwapOrderRequest.
 
-        Amount to sell (based on the preview result)  # noqa: E501
+        Amount to sell (based on the preview result).  # noqa: E501
 
         :param sell_amount: The sell_amount of this FlashSwapOrderRequest.  # noqa: E501
         :type: str
@@ -172,7 +172,7 @@ class FlashSwapOrderRequest(object):
     def buy_amount(self):
         """Gets the buy_amount of this FlashSwapOrderRequest.  # noqa: E501
 
-        Amount to buy (based on the preview result)  # noqa: E501
+        Amount to buy (based on the preview result).  # noqa: E501
 
         :return: The buy_amount of this FlashSwapOrderRequest.  # noqa: E501
         :rtype: str
@@ -183,7 +183,7 @@ class FlashSwapOrderRequest(object):
     def buy_amount(self, buy_amount):
         """Sets the buy_amount of this FlashSwapOrderRequest.
 
-        Amount to buy (based on the preview result)  # noqa: E501
+        Amount to buy (based on the preview result).  # noqa: E501
 
         :param buy_amount: The buy_amount of this FlashSwapOrderRequest.  # noqa: E501
         :type: str

@@ -60,7 +60,7 @@ class RepayMultiLoan(object):
     def order_id(self):
         """Gets the order_id of this RepayMultiLoan.  # noqa: E501
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :return: The order_id of this RepayMultiLoan.  # noqa: E501
         :rtype: int
@@ -71,7 +71,7 @@ class RepayMultiLoan(object):
     def order_id(self, order_id):
         """Sets the order_id of this RepayMultiLoan.
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :param order_id: The order_id of this RepayMultiLoan.  # noqa: E501
         :type: int
@@ -85,7 +85,7 @@ class RepayMultiLoan(object):
     def repay_items(self):
         """Gets the repay_items of this RepayMultiLoan.  # noqa: E501
 
-        Repay Currency Item  # noqa: E501
+        Repay Currency Item.  # noqa: E501
 
         :return: The repay_items of this RepayMultiLoan.  # noqa: E501
         :rtype: list[MultiLoanRepayItem]
@@ -96,7 +96,7 @@ class RepayMultiLoan(object):
     def repay_items(self, repay_items):
         """Sets the repay_items of this RepayMultiLoan.
 
-        Repay Currency Item  # noqa: E501
+        Repay Currency Item.  # noqa: E501
 
         :param repay_items: The repay_items of this RepayMultiLoan.  # noqa: E501
         :type: list[MultiLoanRepayItem]

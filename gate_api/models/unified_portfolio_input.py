@@ -87,7 +87,7 @@ class UnifiedPortfolioInput(object):
     def spot_balances(self):
         """Gets the spot_balances of this UnifiedPortfolioInput.  # noqa: E501
 
-        Spot  # noqa: E501
+        Spot.  # noqa: E501
 
         :return: The spot_balances of this UnifiedPortfolioInput.  # noqa: E501
         :rtype: list[MockSpotBalance]
@@ -98,7 +98,7 @@ class UnifiedPortfolioInput(object):
     def spot_balances(self, spot_balances):
         """Sets the spot_balances of this UnifiedPortfolioInput.
 
-        Spot  # noqa: E501
+        Spot.  # noqa: E501
 
         :param spot_balances: The spot_balances of this UnifiedPortfolioInput.  # noqa: E501
         :type: list[MockSpotBalance]
@@ -110,7 +110,7 @@ class UnifiedPortfolioInput(object):
     def spot_orders(self):
         """Gets the spot_orders of this UnifiedPortfolioInput.  # noqa: E501
 
-        Spot orders  # noqa: E501
+        Spot orders.  # noqa: E501
 
         :return: The spot_orders of this UnifiedPortfolioInput.  # noqa: E501
         :rtype: list[MockSpotOrder]
@@ -121,7 +121,7 @@ class UnifiedPortfolioInput(object):
     def spot_orders(self, spot_orders):
         """Sets the spot_orders of this UnifiedPortfolioInput.
 
-        Spot orders  # noqa: E501
+        Spot orders.  # noqa: E501
 
         :param spot_orders: The spot_orders of this UnifiedPortfolioInput.  # noqa: E501
         :type: list[MockSpotOrder]
@@ -133,7 +133,7 @@ class UnifiedPortfolioInput(object):
     def futures_positions(self):
         """Gets the futures_positions of this UnifiedPortfolioInput.  # noqa: E501
 
-        Futures positions  # noqa: E501
+        Futures positions.  # noqa: E501
 
         :return: The futures_positions of this UnifiedPortfolioInput.  # noqa: E501
         :rtype: list[MockFuturesPosition]
@@ -144,7 +144,7 @@ class UnifiedPortfolioInput(object):
     def futures_positions(self, futures_positions):
         """Sets the futures_positions of this UnifiedPortfolioInput.
 
-        Futures positions  # noqa: E501
+        Futures positions.  # noqa: E501
 
         :param futures_positions: The futures_positions of this UnifiedPortfolioInput.  # noqa: E501
         :type: list[MockFuturesPosition]
@@ -156,7 +156,7 @@ class UnifiedPortfolioInput(object):
     def futures_orders(self):
         """Gets the futures_orders of this UnifiedPortfolioInput.  # noqa: E501
 
-        Futures order  # noqa: E501
+        Futures order.  # noqa: E501
 
         :return: The futures_orders of this UnifiedPortfolioInput.  # noqa: E501
         :rtype: list[MockFuturesOrder]
@@ -167,7 +167,7 @@ class UnifiedPortfolioInput(object):
     def futures_orders(self, futures_orders):
         """Sets the futures_orders of this UnifiedPortfolioInput.
 
-        Futures order  # noqa: E501
+        Futures order.  # noqa: E501
 
         :param futures_orders: The futures_orders of this UnifiedPortfolioInput.  # noqa: E501
         :type: list[MockFuturesOrder]
@@ -179,7 +179,7 @@ class UnifiedPortfolioInput(object):
     def options_positions(self):
         """Gets the options_positions of this UnifiedPortfolioInput.  # noqa: E501
 
-        Options positions  # noqa: E501
+        Options positions.  # noqa: E501
 
         :return: The options_positions of this UnifiedPortfolioInput.  # noqa: E501
         :rtype: list[MockOptionsPosition]
@@ -190,7 +190,7 @@ class UnifiedPortfolioInput(object):
     def options_positions(self, options_positions):
         """Sets the options_positions of this UnifiedPortfolioInput.
 
-        Options positions  # noqa: E501
+        Options positions.  # noqa: E501
 
         :param options_positions: The options_positions of this UnifiedPortfolioInput.  # noqa: E501
         :type: list[MockOptionsPosition]
@@ -202,7 +202,7 @@ class UnifiedPortfolioInput(object):
     def options_orders(self):
         """Gets the options_orders of this UnifiedPortfolioInput.  # noqa: E501
 
-        Option orders  # noqa: E501
+        Option orders.  # noqa: E501
 
         :return: The options_orders of this UnifiedPortfolioInput.  # noqa: E501
         :rtype: list[MockOptionsOrder]
@@ -213,7 +213,7 @@ class UnifiedPortfolioInput(object):
     def options_orders(self, options_orders):
         """Sets the options_orders of this UnifiedPortfolioInput.
 
-        Option orders  # noqa: E501
+        Option orders.  # noqa: E501
 
         :param options_orders: The options_orders of this UnifiedPortfolioInput.  # noqa: E501
         :type: list[MockOptionsOrder]

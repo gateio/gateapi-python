@@ -62,7 +62,7 @@ class CollateralCurrentRate(object):
     def currency(self):
         """Gets the currency of this CollateralCurrentRate.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this CollateralCurrentRate.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class CollateralCurrentRate(object):
     def currency(self, currency):
         """Sets the currency of this CollateralCurrentRate.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this CollateralCurrentRate.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class CollateralCurrentRate(object):
     def current_rate(self):
         """Gets the current_rate of this CollateralCurrentRate.  # noqa: E501
 
-        Currency current interest rate  # noqa: E501
+        Currency current interest rate.  # noqa: E501
 
         :return: The current_rate of this CollateralCurrentRate.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class CollateralCurrentRate(object):
     def current_rate(self, current_rate):
         """Sets the current_rate of this CollateralCurrentRate.
 
-        Currency current interest rate  # noqa: E501
+        Currency current interest rate.  # noqa: E501
 
         :param current_rate: The current_rate of this CollateralCurrentRate.  # noqa: E501
         :type: str

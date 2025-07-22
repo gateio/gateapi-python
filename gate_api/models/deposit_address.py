@@ -65,7 +65,7 @@ class DepositAddress(object):
     def currency(self):
         """Gets the currency of this DepositAddress.  # noqa: E501
 
-        Currency detail  # noqa: E501
+        Currency detail.  # noqa: E501
 
         :return: The currency of this DepositAddress.  # noqa: E501
         :rtype: str
@@ -76,7 +76,7 @@ class DepositAddress(object):
     def currency(self, currency):
         """Sets the currency of this DepositAddress.
 
-        Currency detail  # noqa: E501
+        Currency detail.  # noqa: E501
 
         :param currency: The currency of this DepositAddress.  # noqa: E501
         :type: str
@@ -90,7 +90,7 @@ class DepositAddress(object):
     def address(self):
         """Gets the address of this DepositAddress.  # noqa: E501
 
-        Deposit address  # noqa: E501
+        Deposit address.  # noqa: E501
 
         :return: The address of this DepositAddress.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class DepositAddress(object):
     def address(self, address):
         """Sets the address of this DepositAddress.
 
-        Deposit address  # noqa: E501
+        Deposit address.  # noqa: E501
 
         :param address: The address of this DepositAddress.  # noqa: E501
         :type: str

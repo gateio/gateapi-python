@@ -37,7 +37,7 @@ class CollateralLoanApi(object):
         self.api_client = api_client
 
     def list_collateral_loan_orders(self, **kwargs):  # noqa: E501
-        """List Orders  # noqa: E501
+        """List Orders.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -45,10 +45,10 @@ class CollateralLoanApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int page: Page number
-        :param int limit: Maximum number of records to be returned in a single list
-        :param str collateral_currency: Collateral
-        :param str borrow_currency: Borrowed currency
+        :param int page: Page number.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param str collateral_currency: Collateral.
+        :param str borrow_currency: Borrowed currency.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -64,7 +64,7 @@ class CollateralLoanApi(object):
         return self.list_collateral_loan_orders_with_http_info(**kwargs)  # noqa: E501
 
     def list_collateral_loan_orders_with_http_info(self, **kwargs):  # noqa: E501
-        """List Orders  # noqa: E501
+        """List Orders.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -72,10 +72,10 @@ class CollateralLoanApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int page: Page number
-        :param int limit: Maximum number of records to be returned in a single list
-        :param str collateral_currency: Collateral
-        :param str borrow_currency: Borrowed currency
+        :param int page: Page number.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param str collateral_currency: Collateral.
+        :param str borrow_currency: Borrowed currency.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -166,7 +166,7 @@ class CollateralLoanApi(object):
             collection_formats=collection_formats)
 
     def create_collateral_loan(self, create_collateral_order, **kwargs):  # noqa: E501
-        """Place order  # noqa: E501
+        """Place order.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -190,7 +190,7 @@ class CollateralLoanApi(object):
         return self.create_collateral_loan_with_http_info(create_collateral_order, **kwargs)  # noqa: E501
 
     def create_collateral_loan_with_http_info(self, create_collateral_order, **kwargs):  # noqa: E501
-        """Place order  # noqa: E501
+        """Place order.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -282,7 +282,7 @@ class CollateralLoanApi(object):
             collection_formats=collection_formats)
 
     def get_collateral_loan_order_detail(self, order_id, **kwargs):  # noqa: E501
-        """Get a single order  # noqa: E501
+        """Get a single order.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -290,7 +290,7 @@ class CollateralLoanApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int order_id: Order ID returned on successful order creation (required)
+        :param int order_id: Order ID returned on successful order creation. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -306,7 +306,7 @@ class CollateralLoanApi(object):
         return self.get_collateral_loan_order_detail_with_http_info(order_id, **kwargs)  # noqa: E501
 
     def get_collateral_loan_order_detail_with_http_info(self, order_id, **kwargs):  # noqa: E501
-        """Get a single order  # noqa: E501
+        """Get a single order.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -314,7 +314,7 @@ class CollateralLoanApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int order_id: Order ID returned on successful order creation (required)
+        :param int order_id: Order ID returned on successful order creation. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -394,7 +394,7 @@ class CollateralLoanApi(object):
             collection_formats=collection_formats)
 
     def repay_collateral_loan(self, repay_loan, **kwargs):  # noqa: E501
-        """Repayment  # noqa: E501
+        """Repayment.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -418,7 +418,7 @@ class CollateralLoanApi(object):
         return self.repay_collateral_loan_with_http_info(repay_loan, **kwargs)  # noqa: E501
 
     def repay_collateral_loan_with_http_info(self, repay_loan, **kwargs):  # noqa: E501
-        """Repayment  # noqa: E501
+        """Repayment.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -510,7 +510,7 @@ class CollateralLoanApi(object):
             collection_formats=collection_formats)
 
     def list_repay_records(self, source, **kwargs):  # noqa: E501
-        """Repayment history  # noqa: E501
+        """Repayment history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -518,13 +518,13 @@ class CollateralLoanApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str source: Operation type: repay - Regular repayment, liquidate - Liquidation (required)
-        :param str borrow_currency: Borrowed currency
-        :param str collateral_currency: Collateral
-        :param int page: Page number
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int _from: Start timestamp of the query
-        :param int to: Time range ending, default to current time
+        :param str source: Operation type: repay - Regular repayment, liquidate - Liquidation. (required)
+        :param str borrow_currency: Borrowed currency.
+        :param str collateral_currency: Collateral.
+        :param int page: Page number.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int _from: Start timestamp of the query.
+        :param int to: Time range ending, default to current time.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -540,7 +540,7 @@ class CollateralLoanApi(object):
         return self.list_repay_records_with_http_info(source, **kwargs)  # noqa: E501
 
     def list_repay_records_with_http_info(self, source, **kwargs):  # noqa: E501
-        """Repayment history  # noqa: E501
+        """Repayment history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -548,13 +548,13 @@ class CollateralLoanApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str source: Operation type: repay - Regular repayment, liquidate - Liquidation (required)
-        :param str borrow_currency: Borrowed currency
-        :param str collateral_currency: Collateral
-        :param int page: Page number
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int _from: Start timestamp of the query
-        :param int to: Time range ending, default to current time
+        :param str source: Operation type: repay - Regular repayment, liquidate - Liquidation. (required)
+        :param str borrow_currency: Borrowed currency.
+        :param str collateral_currency: Collateral.
+        :param int page: Page number.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int _from: Start timestamp of the query.
+        :param int to: Time range ending, default to current time.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -658,7 +658,7 @@ class CollateralLoanApi(object):
             collection_formats=collection_formats)
 
     def list_collateral_records(self, **kwargs):  # noqa: E501
-        """Query collateral adjustment records  # noqa: E501
+        """Query collateral adjustment records.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -666,12 +666,12 @@ class CollateralLoanApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int page: Page number
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int _from: Start timestamp of the query
-        :param int to: Time range ending, default to current time
-        :param str borrow_currency: Borrowed currency
-        :param str collateral_currency: Collateral
+        :param int page: Page number.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int _from: Start timestamp of the query.
+        :param int to: Time range ending, default to current time.
+        :param str borrow_currency: Borrowed currency.
+        :param str collateral_currency: Collateral.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -687,7 +687,7 @@ class CollateralLoanApi(object):
         return self.list_collateral_records_with_http_info(**kwargs)  # noqa: E501
 
     def list_collateral_records_with_http_info(self, **kwargs):  # noqa: E501
-        """Query collateral adjustment records  # noqa: E501
+        """Query collateral adjustment records.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -695,12 +695,12 @@ class CollateralLoanApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int page: Page number
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int _from: Start timestamp of the query
-        :param int to: Time range ending, default to current time
-        :param str borrow_currency: Borrowed currency
-        :param str collateral_currency: Collateral
+        :param int page: Page number.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int _from: Start timestamp of the query.
+        :param int to: Time range ending, default to current time.
+        :param str borrow_currency: Borrowed currency.
+        :param str collateral_currency: Collateral.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -797,7 +797,7 @@ class CollateralLoanApi(object):
             collection_formats=collection_formats)
 
     def operate_collateral(self, collateral_align, **kwargs):  # noqa: E501
-        """Increase or redeem collateral  # noqa: E501
+        """Increase or redeem collateral.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -821,7 +821,7 @@ class CollateralLoanApi(object):
         return self.operate_collateral_with_http_info(collateral_align, **kwargs)  # noqa: E501
 
     def operate_collateral_with_http_info(self, collateral_align, **kwargs):  # noqa: E501
-        """Increase or redeem collateral  # noqa: E501
+        """Increase or redeem collateral.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -909,7 +909,7 @@ class CollateralLoanApi(object):
             collection_formats=collection_formats)
 
     def get_user_total_amount(self, **kwargs):  # noqa: E501
-        """Query the total borrowing and collateral amount for the user  # noqa: E501
+        """Query the total borrowing and collateral amount for the user.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -932,7 +932,7 @@ class CollateralLoanApi(object):
         return self.get_user_total_amount_with_http_info(**kwargs)  # noqa: E501
 
     def get_user_total_amount_with_http_info(self, **kwargs):  # noqa: E501
-        """Query the total borrowing and collateral amount for the user  # noqa: E501
+        """Query the total borrowing and collateral amount for the user.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1012,7 +1012,7 @@ class CollateralLoanApi(object):
             collection_formats=collection_formats)
 
     def get_user_ltv_info(self, collateral_currency, borrow_currency, **kwargs):  # noqa: E501
-        """Query user's collateralization ratio  # noqa: E501
+        """Query user's collateralization ratio.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1020,8 +1020,8 @@ class CollateralLoanApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str collateral_currency: Collateral (required)
-        :param str borrow_currency: Borrowed currency (required)
+        :param str collateral_currency: Collateral. (required)
+        :param str borrow_currency: Borrowed currency. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1037,7 +1037,7 @@ class CollateralLoanApi(object):
         return self.get_user_ltv_info_with_http_info(collateral_currency, borrow_currency, **kwargs)  # noqa: E501
 
     def get_user_ltv_info_with_http_info(self, collateral_currency, borrow_currency, **kwargs):  # noqa: E501
-        """Query user's collateralization ratio  # noqa: E501
+        """Query user's collateralization ratio.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1045,8 +1045,8 @@ class CollateralLoanApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str collateral_currency: Collateral (required)
-        :param str borrow_currency: Borrowed currency (required)
+        :param str collateral_currency: Collateral. (required)
+        :param str borrow_currency: Borrowed currency. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1133,7 +1133,7 @@ class CollateralLoanApi(object):
             collection_formats=collection_formats)
 
     def list_collateral_currencies(self, **kwargs):  # noqa: E501
-        """Query supported borrowing and collateral currencies  # noqa: E501
+        """Query supported borrowing and collateral currencies.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1157,7 +1157,7 @@ class CollateralLoanApi(object):
         return self.list_collateral_currencies_with_http_info(**kwargs)  # noqa: E501
 
     def list_collateral_currencies_with_http_info(self, **kwargs):  # noqa: E501
-        """Query supported borrowing and collateral currencies  # noqa: E501
+        """Query supported borrowing and collateral currencies.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

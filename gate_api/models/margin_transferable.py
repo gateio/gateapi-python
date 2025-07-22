@@ -67,7 +67,7 @@ class MarginTransferable(object):
     def currency(self):
         """Gets the currency of this MarginTransferable.  # noqa: E501
 
-        Currency detail  # noqa: E501
+        Currency detail.  # noqa: E501
 
         :return: The currency of this MarginTransferable.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class MarginTransferable(object):
     def currency(self, currency):
         """Sets the currency of this MarginTransferable.
 
-        Currency detail  # noqa: E501
+        Currency detail.  # noqa: E501
 
         :param currency: The currency of this MarginTransferable.  # noqa: E501
         :type: str
@@ -90,7 +90,7 @@ class MarginTransferable(object):
     def currency_pair(self):
         """Gets the currency_pair of this MarginTransferable.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this MarginTransferable.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class MarginTransferable(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this MarginTransferable.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this MarginTransferable.  # noqa: E501
         :type: str
@@ -113,7 +113,7 @@ class MarginTransferable(object):
     def amount(self):
         """Gets the amount of this MarginTransferable.  # noqa: E501
 
-        Max transferable amount  # noqa: E501
+        Max transferable amount.  # noqa: E501
 
         :return: The amount of this MarginTransferable.  # noqa: E501
         :rtype: str
@@ -124,7 +124,7 @@ class MarginTransferable(object):
     def amount(self, amount):
         """Sets the amount of this MarginTransferable.
 
-        Max transferable amount  # noqa: E501
+        Max transferable amount.  # noqa: E501
 
         :param amount: The amount of this MarginTransferable.  # noqa: E501
         :type: str

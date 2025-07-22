@@ -82,7 +82,7 @@ class RepayRecordLeftInterest(object):
     def currency(self):
         """Gets the currency of this RepayRecordLeftInterest.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this RepayRecordLeftInterest.  # noqa: E501
         :rtype: str
@@ -93,7 +93,7 @@ class RepayRecordLeftInterest(object):
     def currency(self, currency):
         """Sets the currency of this RepayRecordLeftInterest.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this RepayRecordLeftInterest.  # noqa: E501
         :type: str
@@ -105,7 +105,7 @@ class RepayRecordLeftInterest(object):
     def index_price(self):
         """Gets the index_price of this RepayRecordLeftInterest.  # noqa: E501
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :return: The index_price of this RepayRecordLeftInterest.  # noqa: E501
         :rtype: str
@@ -116,7 +116,7 @@ class RepayRecordLeftInterest(object):
     def index_price(self, index_price):
         """Sets the index_price of this RepayRecordLeftInterest.
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :param index_price: The index_price of this RepayRecordLeftInterest.  # noqa: E501
         :type: str
@@ -128,7 +128,7 @@ class RepayRecordLeftInterest(object):
     def before_amount(self):
         """Gets the before_amount of this RepayRecordLeftInterest.  # noqa: E501
 
-        Interest amount before repayment  # noqa: E501
+        Interest amount before repayment.  # noqa: E501
 
         :return: The before_amount of this RepayRecordLeftInterest.  # noqa: E501
         :rtype: str
@@ -139,7 +139,7 @@ class RepayRecordLeftInterest(object):
     def before_amount(self, before_amount):
         """Sets the before_amount of this RepayRecordLeftInterest.
 
-        Interest amount before repayment  # noqa: E501
+        Interest amount before repayment.  # noqa: E501
 
         :param before_amount: The before_amount of this RepayRecordLeftInterest.  # noqa: E501
         :type: str
@@ -151,7 +151,7 @@ class RepayRecordLeftInterest(object):
     def before_amount_usdt(self):
         """Gets the before_amount_usdt of this RepayRecordLeftInterest.  # noqa: E501
 
-        Converted value of interest before repayment in USDT  # noqa: E501
+        Converted value of interest before repayment in USDT.  # noqa: E501
 
         :return: The before_amount_usdt of this RepayRecordLeftInterest.  # noqa: E501
         :rtype: str
@@ -162,7 +162,7 @@ class RepayRecordLeftInterest(object):
     def before_amount_usdt(self, before_amount_usdt):
         """Sets the before_amount_usdt of this RepayRecordLeftInterest.
 
-        Converted value of interest before repayment in USDT  # noqa: E501
+        Converted value of interest before repayment in USDT.  # noqa: E501
 
         :param before_amount_usdt: The before_amount_usdt of this RepayRecordLeftInterest.  # noqa: E501
         :type: str
@@ -174,7 +174,7 @@ class RepayRecordLeftInterest(object):
     def after_amount(self):
         """Gets the after_amount of this RepayRecordLeftInterest.  # noqa: E501
 
-        Interest amount after repayment  # noqa: E501
+        Interest amount after repayment.  # noqa: E501
 
         :return: The after_amount of this RepayRecordLeftInterest.  # noqa: E501
         :rtype: str
@@ -185,7 +185,7 @@ class RepayRecordLeftInterest(object):
     def after_amount(self, after_amount):
         """Sets the after_amount of this RepayRecordLeftInterest.
 
-        Interest amount after repayment  # noqa: E501
+        Interest amount after repayment.  # noqa: E501
 
         :param after_amount: The after_amount of this RepayRecordLeftInterest.  # noqa: E501
         :type: str
@@ -197,7 +197,7 @@ class RepayRecordLeftInterest(object):
     def after_amount_usdt(self):
         """Gets the after_amount_usdt of this RepayRecordLeftInterest.  # noqa: E501
 
-        Converted value of interest after repayment in USDT  # noqa: E501
+        Converted value of interest after repayment in USDT.  # noqa: E501
 
         :return: The after_amount_usdt of this RepayRecordLeftInterest.  # noqa: E501
         :rtype: str
@@ -208,7 +208,7 @@ class RepayRecordLeftInterest(object):
     def after_amount_usdt(self, after_amount_usdt):
         """Sets the after_amount_usdt of this RepayRecordLeftInterest.
 
-        Converted value of interest after repayment in USDT  # noqa: E501
+        Converted value of interest after repayment in USDT.  # noqa: E501
 
         :param after_amount_usdt: The after_amount_usdt of this RepayRecordLeftInterest.  # noqa: E501
         :type: str

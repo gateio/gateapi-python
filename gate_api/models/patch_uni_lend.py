@@ -62,7 +62,7 @@ class PatchUniLend(object):
     def currency(self):
         """Gets the currency of this PatchUniLend.  # noqa: E501
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :return: The currency of this PatchUniLend.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class PatchUniLend(object):
     def currency(self, currency):
         """Sets the currency of this PatchUniLend.
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :param currency: The currency of this PatchUniLend.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class PatchUniLend(object):
     def min_rate(self):
         """Gets the min_rate of this PatchUniLend.  # noqa: E501
 
-        Minimum interest rate  # noqa: E501
+        Minimum interest rate.  # noqa: E501
 
         :return: The min_rate of this PatchUniLend.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class PatchUniLend(object):
     def min_rate(self, min_rate):
         """Sets the min_rate of this PatchUniLend.
 
-        Minimum interest rate  # noqa: E501
+        Minimum interest rate.  # noqa: E501
 
         :param min_rate: The min_rate of this PatchUniLend.  # noqa: E501
         :type: str

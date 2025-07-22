@@ -67,7 +67,7 @@ class ProfitLossRange(object):
     def price_percentage(self):
         """Gets the price_percentage of this ProfitLossRange.  # noqa: E501
 
-        Percentage change in price  # noqa: E501
+        Percentage change in price.  # noqa: E501
 
         :return: The price_percentage of this ProfitLossRange.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class ProfitLossRange(object):
     def price_percentage(self, price_percentage):
         """Sets the price_percentage of this ProfitLossRange.
 
-        Percentage change in price  # noqa: E501
+        Percentage change in price.  # noqa: E501
 
         :param price_percentage: The price_percentage of this ProfitLossRange.  # noqa: E501
         :type: str
@@ -90,7 +90,7 @@ class ProfitLossRange(object):
     def implied_volatility_percentage(self):
         """Gets the implied_volatility_percentage of this ProfitLossRange.  # noqa: E501
 
-        Percentage change in implied volatility  # noqa: E501
+        Percentage change in implied volatility.  # noqa: E501
 
         :return: The implied_volatility_percentage of this ProfitLossRange.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class ProfitLossRange(object):
     def implied_volatility_percentage(self, implied_volatility_percentage):
         """Sets the implied_volatility_percentage of this ProfitLossRange.
 
-        Percentage change in implied volatility  # noqa: E501
+        Percentage change in implied volatility.  # noqa: E501
 
         :param implied_volatility_percentage: The implied_volatility_percentage of this ProfitLossRange.  # noqa: E501
         :type: str
@@ -113,7 +113,7 @@ class ProfitLossRange(object):
     def profit_loss(self):
         """Gets the profit_loss of this ProfitLossRange.  # noqa: E501
 
-        PNL  # noqa: E501
+        PNL.  # noqa: E501
 
         :return: The profit_loss of this ProfitLossRange.  # noqa: E501
         :rtype: str
@@ -124,7 +124,7 @@ class ProfitLossRange(object):
     def profit_loss(self, profit_loss):
         """Sets the profit_loss of this ProfitLossRange.
 
-        PNL  # noqa: E501
+        PNL.  # noqa: E501
 
         :param profit_loss: The profit_loss of this ProfitLossRange.  # noqa: E501
         :type: str

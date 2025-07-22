@@ -87,7 +87,7 @@ class FuturesLimitRiskTiers(object):
     def tier(self):
         """Gets the tier of this FuturesLimitRiskTiers.  # noqa: E501
 
-        Tier  # noqa: E501
+        Tier.  # noqa: E501
 
         :return: The tier of this FuturesLimitRiskTiers.  # noqa: E501
         :rtype: int
@@ -98,7 +98,7 @@ class FuturesLimitRiskTiers(object):
     def tier(self, tier):
         """Sets the tier of this FuturesLimitRiskTiers.
 
-        Tier  # noqa: E501
+        Tier.  # noqa: E501
 
         :param tier: The tier of this FuturesLimitRiskTiers.  # noqa: E501
         :type: int
@@ -110,7 +110,7 @@ class FuturesLimitRiskTiers(object):
     def risk_limit(self):
         """Gets the risk_limit of this FuturesLimitRiskTiers.  # noqa: E501
 
-        Position risk limit  # noqa: E501
+        Position risk limit.  # noqa: E501
 
         :return: The risk_limit of this FuturesLimitRiskTiers.  # noqa: E501
         :rtype: str
@@ -121,7 +121,7 @@ class FuturesLimitRiskTiers(object):
     def risk_limit(self, risk_limit):
         """Sets the risk_limit of this FuturesLimitRiskTiers.
 
-        Position risk limit  # noqa: E501
+        Position risk limit.  # noqa: E501
 
         :param risk_limit: The risk_limit of this FuturesLimitRiskTiers.  # noqa: E501
         :type: str
@@ -133,7 +133,7 @@ class FuturesLimitRiskTiers(object):
     def initial_rate(self):
         """Gets the initial_rate of this FuturesLimitRiskTiers.  # noqa: E501
 
-        Initial margin rate  # noqa: E501
+        Initial margin rate.  # noqa: E501
 
         :return: The initial_rate of this FuturesLimitRiskTiers.  # noqa: E501
         :rtype: str
@@ -144,7 +144,7 @@ class FuturesLimitRiskTiers(object):
     def initial_rate(self, initial_rate):
         """Sets the initial_rate of this FuturesLimitRiskTiers.
 
-        Initial margin rate  # noqa: E501
+        Initial margin rate.  # noqa: E501
 
         :param initial_rate: The initial_rate of this FuturesLimitRiskTiers.  # noqa: E501
         :type: str
@@ -156,7 +156,7 @@ class FuturesLimitRiskTiers(object):
     def maintenance_rate(self):
         """Gets the maintenance_rate of this FuturesLimitRiskTiers.  # noqa: E501
 
-        Maintenance margin rate  # noqa: E501
+        Maintenance margin rate.  # noqa: E501
 
         :return: The maintenance_rate of this FuturesLimitRiskTiers.  # noqa: E501
         :rtype: str
@@ -167,7 +167,7 @@ class FuturesLimitRiskTiers(object):
     def maintenance_rate(self, maintenance_rate):
         """Sets the maintenance_rate of this FuturesLimitRiskTiers.
 
-        Maintenance margin rate  # noqa: E501
+        Maintenance margin rate.  # noqa: E501
 
         :param maintenance_rate: The maintenance_rate of this FuturesLimitRiskTiers.  # noqa: E501
         :type: str
@@ -179,7 +179,7 @@ class FuturesLimitRiskTiers(object):
     def leverage_max(self):
         """Gets the leverage_max of this FuturesLimitRiskTiers.  # noqa: E501
 
-        Maximum leverage  # noqa: E501
+        Maximum leverage.  # noqa: E501
 
         :return: The leverage_max of this FuturesLimitRiskTiers.  # noqa: E501
         :rtype: str
@@ -190,7 +190,7 @@ class FuturesLimitRiskTiers(object):
     def leverage_max(self, leverage_max):
         """Sets the leverage_max of this FuturesLimitRiskTiers.
 
-        Maximum leverage  # noqa: E501
+        Maximum leverage.  # noqa: E501
 
         :param leverage_max: The leverage_max of this FuturesLimitRiskTiers.  # noqa: E501
         :type: str
@@ -202,7 +202,7 @@ class FuturesLimitRiskTiers(object):
     def contract(self):
         """Gets the contract of this FuturesLimitRiskTiers.  # noqa: E501
 
-        Markets, visible only during market pagination requests  # noqa: E501
+        Markets, visible only during market pagination requests.  # noqa: E501
 
         :return: The contract of this FuturesLimitRiskTiers.  # noqa: E501
         :rtype: str
@@ -213,7 +213,7 @@ class FuturesLimitRiskTiers(object):
     def contract(self, contract):
         """Sets the contract of this FuturesLimitRiskTiers.
 
-        Markets, visible only during market pagination requests  # noqa: E501
+        Markets, visible only during market pagination requests.  # noqa: E501
 
         :param contract: The contract of this FuturesLimitRiskTiers.  # noqa: E501
         :type: str
@@ -225,7 +225,7 @@ class FuturesLimitRiskTiers(object):
     def deduction(self):
         """Gets the deduction of this FuturesLimitRiskTiers.  # noqa: E501
 
-        Maintenance margin quick calculation deduction  # noqa: E501
+        Maintenance margin quick calculation deduction.  # noqa: E501
 
         :return: The deduction of this FuturesLimitRiskTiers.  # noqa: E501
         :rtype: str
@@ -236,7 +236,7 @@ class FuturesLimitRiskTiers(object):
     def deduction(self, deduction):
         """Sets the deduction of this FuturesLimitRiskTiers.
 
-        Maintenance margin quick calculation deduction  # noqa: E501
+        Maintenance margin quick calculation deduction.  # noqa: E501
 
         :param deduction: The deduction of this FuturesLimitRiskTiers.  # noqa: E501
         :type: str

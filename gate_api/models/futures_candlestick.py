@@ -87,7 +87,7 @@ class FuturesCandlestick(object):
     def t(self):
         """Gets the t of this FuturesCandlestick.  # noqa: E501
 
-        Unix timestamp in seconds  # noqa: E501
+        Unix timestamp in seconds.  # noqa: E501
 
         :return: The t of this FuturesCandlestick.  # noqa: E501
         :rtype: float
@@ -98,7 +98,7 @@ class FuturesCandlestick(object):
     def t(self, t):
         """Sets the t of this FuturesCandlestick.
 
-        Unix timestamp in seconds  # noqa: E501
+        Unix timestamp in seconds.  # noqa: E501
 
         :param t: The t of this FuturesCandlestick.  # noqa: E501
         :type: float
@@ -110,7 +110,7 @@ class FuturesCandlestick(object):
     def v(self):
         """Gets the v of this FuturesCandlestick.  # noqa: E501
 
-        size volume (contract size). Only returned if `contract` is not prefixed  # noqa: E501
+        size volume (contract size). Only returned if `contract` is not prefixed.  # noqa: E501
 
         :return: The v of this FuturesCandlestick.  # noqa: E501
         :rtype: int
@@ -121,7 +121,7 @@ class FuturesCandlestick(object):
     def v(self, v):
         """Sets the v of this FuturesCandlestick.
 
-        size volume (contract size). Only returned if `contract` is not prefixed  # noqa: E501
+        size volume (contract size). Only returned if `contract` is not prefixed.  # noqa: E501
 
         :param v: The v of this FuturesCandlestick.  # noqa: E501
         :type: int
@@ -133,7 +133,7 @@ class FuturesCandlestick(object):
     def c(self):
         """Gets the c of this FuturesCandlestick.  # noqa: E501
 
-        Close price (quote currency)  # noqa: E501
+        Close price (quote currency).  # noqa: E501
 
         :return: The c of this FuturesCandlestick.  # noqa: E501
         :rtype: str
@@ -144,7 +144,7 @@ class FuturesCandlestick(object):
     def c(self, c):
         """Sets the c of this FuturesCandlestick.
 
-        Close price (quote currency)  # noqa: E501
+        Close price (quote currency).  # noqa: E501
 
         :param c: The c of this FuturesCandlestick.  # noqa: E501
         :type: str
@@ -156,7 +156,7 @@ class FuturesCandlestick(object):
     def h(self):
         """Gets the h of this FuturesCandlestick.  # noqa: E501
 
-        Highest price (quote currency)  # noqa: E501
+        Highest price (quote currency).  # noqa: E501
 
         :return: The h of this FuturesCandlestick.  # noqa: E501
         :rtype: str
@@ -167,7 +167,7 @@ class FuturesCandlestick(object):
     def h(self, h):
         """Sets the h of this FuturesCandlestick.
 
-        Highest price (quote currency)  # noqa: E501
+        Highest price (quote currency).  # noqa: E501
 
         :param h: The h of this FuturesCandlestick.  # noqa: E501
         :type: str
@@ -179,7 +179,7 @@ class FuturesCandlestick(object):
     def l(self):
         """Gets the l of this FuturesCandlestick.  # noqa: E501
 
-        Lowest price (quote currency)  # noqa: E501
+        Lowest price (quote currency).  # noqa: E501
 
         :return: The l of this FuturesCandlestick.  # noqa: E501
         :rtype: str
@@ -190,7 +190,7 @@ class FuturesCandlestick(object):
     def l(self, l):
         """Sets the l of this FuturesCandlestick.
 
-        Lowest price (quote currency)  # noqa: E501
+        Lowest price (quote currency).  # noqa: E501
 
         :param l: The l of this FuturesCandlestick.  # noqa: E501
         :type: str
@@ -202,7 +202,7 @@ class FuturesCandlestick(object):
     def o(self):
         """Gets the o of this FuturesCandlestick.  # noqa: E501
 
-        Open price (quote currency)  # noqa: E501
+        Open price (quote currency).  # noqa: E501
 
         :return: The o of this FuturesCandlestick.  # noqa: E501
         :rtype: str
@@ -213,7 +213,7 @@ class FuturesCandlestick(object):
     def o(self, o):
         """Sets the o of this FuturesCandlestick.
 
-        Open price (quote currency)  # noqa: E501
+        Open price (quote currency).  # noqa: E501
 
         :param o: The o of this FuturesCandlestick.  # noqa: E501
         :type: str
@@ -225,7 +225,7 @@ class FuturesCandlestick(object):
     def sum(self):
         """Gets the sum of this FuturesCandlestick.  # noqa: E501
 
-        Trading volume (unit: Quote currency)  # noqa: E501
+        Trading volume (unit: Quote currency).  # noqa: E501
 
         :return: The sum of this FuturesCandlestick.  # noqa: E501
         :rtype: str
@@ -236,7 +236,7 @@ class FuturesCandlestick(object):
     def sum(self, sum):
         """Sets the sum of this FuturesCandlestick.
 
-        Trading volume (unit: Quote currency)  # noqa: E501
+        Trading volume (unit: Quote currency).  # noqa: E501
 
         :param sum: The sum of this FuturesCandlestick.  # noqa: E501
         :type: str

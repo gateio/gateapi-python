@@ -92,7 +92,7 @@ class CurrencyChain(object):
     def chain(self):
         """Gets the chain of this CurrencyChain.  # noqa: E501
 
-        Chain name  # noqa: E501
+        Chain name.  # noqa: E501
 
         :return: The chain of this CurrencyChain.  # noqa: E501
         :rtype: str
@@ -103,7 +103,7 @@ class CurrencyChain(object):
     def chain(self, chain):
         """Sets the chain of this CurrencyChain.
 
-        Chain name  # noqa: E501
+        Chain name.  # noqa: E501
 
         :param chain: The chain of this CurrencyChain.  # noqa: E501
         :type: str
@@ -115,7 +115,7 @@ class CurrencyChain(object):
     def name_cn(self):
         """Gets the name_cn of this CurrencyChain.  # noqa: E501
 
-        Chain name in Chinese  # noqa: E501
+        Chain name in Chinese.  # noqa: E501
 
         :return: The name_cn of this CurrencyChain.  # noqa: E501
         :rtype: str
@@ -126,7 +126,7 @@ class CurrencyChain(object):
     def name_cn(self, name_cn):
         """Sets the name_cn of this CurrencyChain.
 
-        Chain name in Chinese  # noqa: E501
+        Chain name in Chinese.  # noqa: E501
 
         :param name_cn: The name_cn of this CurrencyChain.  # noqa: E501
         :type: str
@@ -138,7 +138,7 @@ class CurrencyChain(object):
     def name_en(self):
         """Gets the name_en of this CurrencyChain.  # noqa: E501
 
-        Chain name in English  # noqa: E501
+        Chain name in English.  # noqa: E501
 
         :return: The name_en of this CurrencyChain.  # noqa: E501
         :rtype: str
@@ -149,7 +149,7 @@ class CurrencyChain(object):
     def name_en(self, name_en):
         """Sets the name_en of this CurrencyChain.
 
-        Chain name in English  # noqa: E501
+        Chain name in English.  # noqa: E501
 
         :param name_en: The name_en of this CurrencyChain.  # noqa: E501
         :type: str
@@ -184,7 +184,7 @@ class CurrencyChain(object):
     def is_disabled(self):
         """Gets the is_disabled of this CurrencyChain.  # noqa: E501
 
-        If it is disabled. 0 means NOT being disabled  # noqa: E501
+        If it is disabled. 0 means NOT being disabled.  # noqa: E501
 
         :return: The is_disabled of this CurrencyChain.  # noqa: E501
         :rtype: int
@@ -195,7 +195,7 @@ class CurrencyChain(object):
     def is_disabled(self, is_disabled):
         """Sets the is_disabled of this CurrencyChain.
 
-        If it is disabled. 0 means NOT being disabled  # noqa: E501
+        If it is disabled. 0 means NOT being disabled.  # noqa: E501
 
         :param is_disabled: The is_disabled of this CurrencyChain.  # noqa: E501
         :type: int
@@ -207,7 +207,7 @@ class CurrencyChain(object):
     def is_deposit_disabled(self):
         """Gets the is_deposit_disabled of this CurrencyChain.  # noqa: E501
 
-        Is deposit disabled. 0 means not  # noqa: E501
+        Is deposit disabled. 0 means not.  # noqa: E501
 
         :return: The is_deposit_disabled of this CurrencyChain.  # noqa: E501
         :rtype: int
@@ -218,7 +218,7 @@ class CurrencyChain(object):
     def is_deposit_disabled(self, is_deposit_disabled):
         """Sets the is_deposit_disabled of this CurrencyChain.
 
-        Is deposit disabled. 0 means not  # noqa: E501
+        Is deposit disabled. 0 means not.  # noqa: E501
 
         :param is_deposit_disabled: The is_deposit_disabled of this CurrencyChain.  # noqa: E501
         :type: int
@@ -230,7 +230,7 @@ class CurrencyChain(object):
     def is_withdraw_disabled(self):
         """Gets the is_withdraw_disabled of this CurrencyChain.  # noqa: E501
 
-        Is withdrawal disabled. 0 means not  # noqa: E501
+        Is withdrawal disabled. 0 means not.  # noqa: E501
 
         :return: The is_withdraw_disabled of this CurrencyChain.  # noqa: E501
         :rtype: int
@@ -241,7 +241,7 @@ class CurrencyChain(object):
     def is_withdraw_disabled(self, is_withdraw_disabled):
         """Sets the is_withdraw_disabled of this CurrencyChain.
 
-        Is withdrawal disabled. 0 means not  # noqa: E501
+        Is withdrawal disabled. 0 means not.  # noqa: E501
 
         :param is_withdraw_disabled: The is_withdraw_disabled of this CurrencyChain.  # noqa: E501
         :type: int
@@ -253,7 +253,7 @@ class CurrencyChain(object):
     def decimal(self):
         """Gets the decimal of this CurrencyChain.  # noqa: E501
 
-        Withdrawal precision  # noqa: E501
+        Withdrawal precision.  # noqa: E501
 
         :return: The decimal of this CurrencyChain.  # noqa: E501
         :rtype: str
@@ -264,7 +264,7 @@ class CurrencyChain(object):
     def decimal(self, decimal):
         """Sets the decimal of this CurrencyChain.
 
-        Withdrawal precision  # noqa: E501
+        Withdrawal precision.  # noqa: E501
 
         :param decimal: The decimal of this CurrencyChain.  # noqa: E501
         :type: str

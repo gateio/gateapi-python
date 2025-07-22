@@ -109,7 +109,7 @@ class LedgerRecord(object):
     def id(self):
         """Gets the id of this LedgerRecord.  # noqa: E501
 
-        Record ID  # noqa: E501
+        Record ID.  # noqa: E501
 
         :return: The id of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -120,7 +120,7 @@ class LedgerRecord(object):
     def id(self, id):
         """Sets the id of this LedgerRecord.
 
-        Record ID  # noqa: E501
+        Record ID.  # noqa: E501
 
         :param id: The id of this LedgerRecord.  # noqa: E501
         :type: str
@@ -132,7 +132,7 @@ class LedgerRecord(object):
     def txid(self):
         """Gets the txid of this LedgerRecord.  # noqa: E501
 
-        Hash record of the withdrawal  # noqa: E501
+        Hash record of the withdrawal.  # noqa: E501
 
         :return: The txid of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -143,7 +143,7 @@ class LedgerRecord(object):
     def txid(self, txid):
         """Sets the txid of this LedgerRecord.
 
-        Hash record of the withdrawal  # noqa: E501
+        Hash record of the withdrawal.  # noqa: E501
 
         :param txid: The txid of this LedgerRecord.  # noqa: E501
         :type: str
@@ -178,7 +178,7 @@ class LedgerRecord(object):
     def timestamp(self):
         """Gets the timestamp of this LedgerRecord.  # noqa: E501
 
-        Operation time  # noqa: E501
+        Operation time.  # noqa: E501
 
         :return: The timestamp of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -189,7 +189,7 @@ class LedgerRecord(object):
     def timestamp(self, timestamp):
         """Sets the timestamp of this LedgerRecord.
 
-        Operation time  # noqa: E501
+        Operation time.  # noqa: E501
 
         :param timestamp: The timestamp of this LedgerRecord.  # noqa: E501
         :type: str
@@ -201,7 +201,7 @@ class LedgerRecord(object):
     def amount(self):
         """Gets the amount of this LedgerRecord.  # noqa: E501
 
-        Currency amount  # noqa: E501
+        Currency amount.  # noqa: E501
 
         :return: The amount of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -212,7 +212,7 @@ class LedgerRecord(object):
     def amount(self, amount):
         """Sets the amount of this LedgerRecord.
 
-        Currency amount  # noqa: E501
+        Currency amount.  # noqa: E501
 
         :param amount: The amount of this LedgerRecord.  # noqa: E501
         :type: str
@@ -226,7 +226,7 @@ class LedgerRecord(object):
     def currency(self):
         """Gets the currency of this LedgerRecord.  # noqa: E501
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :return: The currency of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -237,7 +237,7 @@ class LedgerRecord(object):
     def currency(self, currency):
         """Sets the currency of this LedgerRecord.
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :param currency: The currency of this LedgerRecord.  # noqa: E501
         :type: str
@@ -251,7 +251,7 @@ class LedgerRecord(object):
     def address(self):
         """Gets the address of this LedgerRecord.  # noqa: E501
 
-        Withdrawal address. Required for withdrawals  # noqa: E501
+        Withdrawal address. Required for withdrawals.  # noqa: E501
 
         :return: The address of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -262,7 +262,7 @@ class LedgerRecord(object):
     def address(self, address):
         """Sets the address of this LedgerRecord.
 
-        Withdrawal address. Required for withdrawals  # noqa: E501
+        Withdrawal address. Required for withdrawals.  # noqa: E501
 
         :param address: The address of this LedgerRecord.  # noqa: E501
         :type: str
@@ -274,7 +274,7 @@ class LedgerRecord(object):
     def memo(self):
         """Gets the memo of this LedgerRecord.  # noqa: E501
 
-        Additional remarks with regards to the withdrawal  # noqa: E501
+        Additional remarks with regards to the withdrawal.  # noqa: E501
 
         :return: The memo of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -285,7 +285,7 @@ class LedgerRecord(object):
     def memo(self, memo):
         """Sets the memo of this LedgerRecord.
 
-        Additional remarks with regards to the withdrawal  # noqa: E501
+        Additional remarks with regards to the withdrawal.  # noqa: E501
 
         :param memo: The memo of this LedgerRecord.  # noqa: E501
         :type: str
@@ -366,7 +366,7 @@ class LedgerRecord(object):
     def chain(self):
         """Gets the chain of this LedgerRecord.  # noqa: E501
 
-        Name of the chain used in withdrawals  # noqa: E501
+        Name of the chain used in withdrawals.  # noqa: E501
 
         :return: The chain of this LedgerRecord.  # noqa: E501
         :rtype: str
@@ -377,7 +377,7 @@ class LedgerRecord(object):
     def chain(self, chain):
         """Sets the chain of this LedgerRecord.
 
-        Name of the chain used in withdrawals  # noqa: E501
+        Name of the chain used in withdrawals.  # noqa: E501
 
         :param chain: The chain of this LedgerRecord.  # noqa: E501
         :type: str

@@ -72,7 +72,7 @@ class BrokerCommissionSubBrokerInfo(object):
     def user_id(self):
         """Gets the user_id of this BrokerCommissionSubBrokerInfo.  # noqa: E501
 
-        The sub broker user ID  # noqa: E501
+        The sub broker user ID.  # noqa: E501
 
         :return: The user_id of this BrokerCommissionSubBrokerInfo.  # noqa: E501
         :rtype: int
@@ -83,7 +83,7 @@ class BrokerCommissionSubBrokerInfo(object):
     def user_id(self, user_id):
         """Sets the user_id of this BrokerCommissionSubBrokerInfo.
 
-        The sub broker user ID  # noqa: E501
+        The sub broker user ID.  # noqa: E501
 
         :param user_id: The user_id of this BrokerCommissionSubBrokerInfo.  # noqa: E501
         :type: int
@@ -95,7 +95,7 @@ class BrokerCommissionSubBrokerInfo(object):
     def original_commission_rate(self):
         """Gets the original_commission_rate of this BrokerCommissionSubBrokerInfo.  # noqa: E501
 
-        The sub broker original commission rate  # noqa: E501
+        The sub broker original commission rate.  # noqa: E501
 
         :return: The original_commission_rate of this BrokerCommissionSubBrokerInfo.  # noqa: E501
         :rtype: str
@@ -106,7 +106,7 @@ class BrokerCommissionSubBrokerInfo(object):
     def original_commission_rate(self, original_commission_rate):
         """Sets the original_commission_rate of this BrokerCommissionSubBrokerInfo.
 
-        The sub broker original commission rate  # noqa: E501
+        The sub broker original commission rate.  # noqa: E501
 
         :param original_commission_rate: The original_commission_rate of this BrokerCommissionSubBrokerInfo.  # noqa: E501
         :type: str
@@ -118,7 +118,7 @@ class BrokerCommissionSubBrokerInfo(object):
     def relative_commission_rate(self):
         """Gets the relative_commission_rate of this BrokerCommissionSubBrokerInfo.  # noqa: E501
 
-        The sub broker relative commission rate  # noqa: E501
+        The sub broker relative commission rate.  # noqa: E501
 
         :return: The relative_commission_rate of this BrokerCommissionSubBrokerInfo.  # noqa: E501
         :rtype: str
@@ -129,7 +129,7 @@ class BrokerCommissionSubBrokerInfo(object):
     def relative_commission_rate(self, relative_commission_rate):
         """Sets the relative_commission_rate of this BrokerCommissionSubBrokerInfo.
 
-        The sub broker relative commission rate  # noqa: E501
+        The sub broker relative commission rate.  # noqa: E501
 
         :param relative_commission_rate: The relative_commission_rate of this BrokerCommissionSubBrokerInfo.  # noqa: E501
         :type: str
@@ -141,7 +141,7 @@ class BrokerCommissionSubBrokerInfo(object):
     def commission_rate(self):
         """Gets the commission_rate of this BrokerCommissionSubBrokerInfo.  # noqa: E501
 
-        The sub broker actual commission rate  # noqa: E501
+        The sub broker actual commission rate.  # noqa: E501
 
         :return: The commission_rate of this BrokerCommissionSubBrokerInfo.  # noqa: E501
         :rtype: str
@@ -152,7 +152,7 @@ class BrokerCommissionSubBrokerInfo(object):
     def commission_rate(self, commission_rate):
         """Sets the commission_rate of this BrokerCommissionSubBrokerInfo.
 
-        The sub broker actual commission rate  # noqa: E501
+        The sub broker actual commission rate.  # noqa: E501
 
         :param commission_rate: The commission_rate of this BrokerCommissionSubBrokerInfo.  # noqa: E501
         :type: str

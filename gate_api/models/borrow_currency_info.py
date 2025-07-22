@@ -77,7 +77,7 @@ class BorrowCurrencyInfo(object):
     def currency(self):
         """Gets the currency of this BorrowCurrencyInfo.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this BorrowCurrencyInfo.  # noqa: E501
         :rtype: str
@@ -88,7 +88,7 @@ class BorrowCurrencyInfo(object):
     def currency(self, currency):
         """Sets the currency of this BorrowCurrencyInfo.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this BorrowCurrencyInfo.  # noqa: E501
         :type: str
@@ -100,7 +100,7 @@ class BorrowCurrencyInfo(object):
     def index_price(self):
         """Gets the index_price of this BorrowCurrencyInfo.  # noqa: E501
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :return: The index_price of this BorrowCurrencyInfo.  # noqa: E501
         :rtype: str
@@ -111,7 +111,7 @@ class BorrowCurrencyInfo(object):
     def index_price(self, index_price):
         """Sets the index_price of this BorrowCurrencyInfo.
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :param index_price: The index_price of this BorrowCurrencyInfo.  # noqa: E501
         :type: str
@@ -123,7 +123,7 @@ class BorrowCurrencyInfo(object):
     def left_repay_principal(self):
         """Gets the left_repay_principal of this BorrowCurrencyInfo.  # noqa: E501
 
-        outstanding principal  # noqa: E501
+        outstanding principal.  # noqa: E501
 
         :return: The left_repay_principal of this BorrowCurrencyInfo.  # noqa: E501
         :rtype: str
@@ -134,7 +134,7 @@ class BorrowCurrencyInfo(object):
     def left_repay_principal(self, left_repay_principal):
         """Sets the left_repay_principal of this BorrowCurrencyInfo.
 
-        outstanding principal  # noqa: E501
+        outstanding principal.  # noqa: E501
 
         :param left_repay_principal: The left_repay_principal of this BorrowCurrencyInfo.  # noqa: E501
         :type: str
@@ -146,7 +146,7 @@ class BorrowCurrencyInfo(object):
     def left_repay_interest(self):
         """Gets the left_repay_interest of this BorrowCurrencyInfo.  # noqa: E501
 
-        outstanding interest  # noqa: E501
+        outstanding interest.  # noqa: E501
 
         :return: The left_repay_interest of this BorrowCurrencyInfo.  # noqa: E501
         :rtype: str
@@ -157,7 +157,7 @@ class BorrowCurrencyInfo(object):
     def left_repay_interest(self, left_repay_interest):
         """Sets the left_repay_interest of this BorrowCurrencyInfo.
 
-        outstanding interest  # noqa: E501
+        outstanding interest.  # noqa: E501
 
         :param left_repay_interest: The left_repay_interest of this BorrowCurrencyInfo.  # noqa: E501
         :type: str
@@ -169,7 +169,7 @@ class BorrowCurrencyInfo(object):
     def left_repay_usdt(self):
         """Gets the left_repay_usdt of this BorrowCurrencyInfo.  # noqa: E501
 
-        Value of left total repayments amount in USDT  # noqa: E501
+        Value of left total repayments amount in USDT.  # noqa: E501
 
         :return: The left_repay_usdt of this BorrowCurrencyInfo.  # noqa: E501
         :rtype: str
@@ -180,7 +180,7 @@ class BorrowCurrencyInfo(object):
     def left_repay_usdt(self, left_repay_usdt):
         """Sets the left_repay_usdt of this BorrowCurrencyInfo.
 
-        Value of left total repayments amount in USDT  # noqa: E501
+        Value of left total repayments amount in USDT.  # noqa: E501
 
         :param left_repay_usdt: The left_repay_usdt of this BorrowCurrencyInfo.  # noqa: E501
         :type: str

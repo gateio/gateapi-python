@@ -62,7 +62,7 @@ class CollateralLoanCurrency(object):
     def loan_currency(self):
         """Gets the loan_currency of this CollateralLoanCurrency.  # noqa: E501
 
-        Borrowed currency  # noqa: E501
+        Borrowed currency.  # noqa: E501
 
         :return: The loan_currency of this CollateralLoanCurrency.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class CollateralLoanCurrency(object):
     def loan_currency(self, loan_currency):
         """Sets the loan_currency of this CollateralLoanCurrency.
 
-        Borrowed currency  # noqa: E501
+        Borrowed currency.  # noqa: E501
 
         :param loan_currency: The loan_currency of this CollateralLoanCurrency.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class CollateralLoanCurrency(object):
     def collateral_currency(self):
         """Gets the collateral_currency of this CollateralLoanCurrency.  # noqa: E501
 
-        List of supported collateral currencies  # noqa: E501
+        List of supported collateral currencies.  # noqa: E501
 
         :return: The collateral_currency of this CollateralLoanCurrency.  # noqa: E501
         :rtype: list[str]
@@ -96,7 +96,7 @@ class CollateralLoanCurrency(object):
     def collateral_currency(self, collateral_currency):
         """Sets the collateral_currency of this CollateralLoanCurrency.
 
-        List of supported collateral currencies  # noqa: E501
+        List of supported collateral currencies.  # noqa: E501
 
         :param collateral_currency: The collateral_currency of this CollateralLoanCurrency.  # noqa: E501
         :type: list[str]

@@ -137,7 +137,7 @@ class DualGetOrders(object):
     def id(self):
         """Gets the id of this DualGetOrders.  # noqa: E501
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :return: The id of this DualGetOrders.  # noqa: E501
         :rtype: int
@@ -148,7 +148,7 @@ class DualGetOrders(object):
     def id(self, id):
         """Sets the id of this DualGetOrders.
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :param id: The id of this DualGetOrders.  # noqa: E501
         :type: int
@@ -160,7 +160,7 @@ class DualGetOrders(object):
     def plan_id(self):
         """Gets the plan_id of this DualGetOrders.  # noqa: E501
 
-        Plan ID  # noqa: E501
+        Plan ID.  # noqa: E501
 
         :return: The plan_id of this DualGetOrders.  # noqa: E501
         :rtype: int
@@ -171,7 +171,7 @@ class DualGetOrders(object):
     def plan_id(self, plan_id):
         """Sets the plan_id of this DualGetOrders.
 
-        Plan ID  # noqa: E501
+        Plan ID.  # noqa: E501
 
         :param plan_id: The plan_id of this DualGetOrders.  # noqa: E501
         :type: int
@@ -183,7 +183,7 @@ class DualGetOrders(object):
     def copies(self):
         """Gets the copies of this DualGetOrders.  # noqa: E501
 
-        Copies  # noqa: E501
+        Copies.  # noqa: E501
 
         :return: The copies of this DualGetOrders.  # noqa: E501
         :rtype: str
@@ -194,7 +194,7 @@ class DualGetOrders(object):
     def copies(self, copies):
         """Sets the copies of this DualGetOrders.
 
-        Copies  # noqa: E501
+        Copies.  # noqa: E501
 
         :param copies: The copies of this DualGetOrders.  # noqa: E501
         :type: str
@@ -206,7 +206,7 @@ class DualGetOrders(object):
     def invest_amount(self):
         """Gets the invest_amount of this DualGetOrders.  # noqa: E501
 
-        Investment Amount  # noqa: E501
+        Investment Amount.  # noqa: E501
 
         :return: The invest_amount of this DualGetOrders.  # noqa: E501
         :rtype: str
@@ -217,7 +217,7 @@ class DualGetOrders(object):
     def invest_amount(self, invest_amount):
         """Sets the invest_amount of this DualGetOrders.
 
-        Investment Amount  # noqa: E501
+        Investment Amount.  # noqa: E501
 
         :param invest_amount: The invest_amount of this DualGetOrders.  # noqa: E501
         :type: str
@@ -229,7 +229,7 @@ class DualGetOrders(object):
     def settlement_amount(self):
         """Gets the settlement_amount of this DualGetOrders.  # noqa: E501
 
-        Settlement Amount  # noqa: E501
+        Settlement Amount.  # noqa: E501
 
         :return: The settlement_amount of this DualGetOrders.  # noqa: E501
         :rtype: str
@@ -240,7 +240,7 @@ class DualGetOrders(object):
     def settlement_amount(self, settlement_amount):
         """Sets the settlement_amount of this DualGetOrders.
 
-        Settlement Amount  # noqa: E501
+        Settlement Amount.  # noqa: E501
 
         :param settlement_amount: The settlement_amount of this DualGetOrders.  # noqa: E501
         :type: str
@@ -252,7 +252,7 @@ class DualGetOrders(object):
     def create_time(self):
         """Gets the create_time of this DualGetOrders.  # noqa: E501
 
-        Creation time  # noqa: E501
+        Creation time.  # noqa: E501
 
         :return: The create_time of this DualGetOrders.  # noqa: E501
         :rtype: int
@@ -263,7 +263,7 @@ class DualGetOrders(object):
     def create_time(self, create_time):
         """Sets the create_time of this DualGetOrders.
 
-        Creation time  # noqa: E501
+        Creation time.  # noqa: E501
 
         :param create_time: The create_time of this DualGetOrders.  # noqa: E501
         :type: int
@@ -275,7 +275,7 @@ class DualGetOrders(object):
     def complete_time(self):
         """Gets the complete_time of this DualGetOrders.  # noqa: E501
 
-        Completion Time  # noqa: E501
+        Completion Time.  # noqa: E501
 
         :return: The complete_time of this DualGetOrders.  # noqa: E501
         :rtype: int
@@ -286,7 +286,7 @@ class DualGetOrders(object):
     def complete_time(self, complete_time):
         """Sets the complete_time of this DualGetOrders.
 
-        Completion Time  # noqa: E501
+        Completion Time.  # noqa: E501
 
         :param complete_time: The complete_time of this DualGetOrders.  # noqa: E501
         :type: int
@@ -321,7 +321,7 @@ class DualGetOrders(object):
     def invest_currency(self):
         """Gets the invest_currency of this DualGetOrders.  # noqa: E501
 
-        Investment Currency  # noqa: E501
+        Investment Currency.  # noqa: E501
 
         :return: The invest_currency of this DualGetOrders.  # noqa: E501
         :rtype: str
@@ -332,7 +332,7 @@ class DualGetOrders(object):
     def invest_currency(self, invest_currency):
         """Sets the invest_currency of this DualGetOrders.
 
-        Investment Currency  # noqa: E501
+        Investment Currency.  # noqa: E501
 
         :param invest_currency: The invest_currency of this DualGetOrders.  # noqa: E501
         :type: str
@@ -344,7 +344,7 @@ class DualGetOrders(object):
     def exercise_currency(self):
         """Gets the exercise_currency of this DualGetOrders.  # noqa: E501
 
-        Strike Currency  # noqa: E501
+        Strike Currency.  # noqa: E501
 
         :return: The exercise_currency of this DualGetOrders.  # noqa: E501
         :rtype: str
@@ -355,7 +355,7 @@ class DualGetOrders(object):
     def exercise_currency(self, exercise_currency):
         """Sets the exercise_currency of this DualGetOrders.
 
-        Strike Currency  # noqa: E501
+        Strike Currency.  # noqa: E501
 
         :param exercise_currency: The exercise_currency of this DualGetOrders.  # noqa: E501
         :type: str
@@ -367,7 +367,7 @@ class DualGetOrders(object):
     def exercise_price(self):
         """Gets the exercise_price of this DualGetOrders.  # noqa: E501
 
-        Strike price  # noqa: E501
+        Strike price.  # noqa: E501
 
         :return: The exercise_price of this DualGetOrders.  # noqa: E501
         :rtype: str
@@ -378,7 +378,7 @@ class DualGetOrders(object):
     def exercise_price(self, exercise_price):
         """Sets the exercise_price of this DualGetOrders.
 
-        Strike price  # noqa: E501
+        Strike price.  # noqa: E501
 
         :param exercise_price: The exercise_price of this DualGetOrders.  # noqa: E501
         :type: str
@@ -390,7 +390,7 @@ class DualGetOrders(object):
     def settlement_price(self):
         """Gets the settlement_price of this DualGetOrders.  # noqa: E501
 
-        settlement price  # noqa: E501
+        settlement price.  # noqa: E501
 
         :return: The settlement_price of this DualGetOrders.  # noqa: E501
         :rtype: str
@@ -401,7 +401,7 @@ class DualGetOrders(object):
     def settlement_price(self, settlement_price):
         """Sets the settlement_price of this DualGetOrders.
 
-        settlement price  # noqa: E501
+        settlement price.  # noqa: E501
 
         :param settlement_price: The settlement_price of this DualGetOrders.  # noqa: E501
         :type: str
@@ -413,7 +413,7 @@ class DualGetOrders(object):
     def settlement_currency(self):
         """Gets the settlement_currency of this DualGetOrders.  # noqa: E501
 
-        Settle currency  # noqa: E501
+        Settle currency.  # noqa: E501
 
         :return: The settlement_currency of this DualGetOrders.  # noqa: E501
         :rtype: str
@@ -424,7 +424,7 @@ class DualGetOrders(object):
     def settlement_currency(self, settlement_currency):
         """Sets the settlement_currency of this DualGetOrders.
 
-        Settle currency  # noqa: E501
+        Settle currency.  # noqa: E501
 
         :param settlement_currency: The settlement_currency of this DualGetOrders.  # noqa: E501
         :type: str
@@ -436,7 +436,7 @@ class DualGetOrders(object):
     def apy_display(self):
         """Gets the apy_display of this DualGetOrders.  # noqa: E501
 
-        APY  # noqa: E501
+        APY.  # noqa: E501
 
         :return: The apy_display of this DualGetOrders.  # noqa: E501
         :rtype: str
@@ -447,7 +447,7 @@ class DualGetOrders(object):
     def apy_display(self, apy_display):
         """Sets the apy_display of this DualGetOrders.
 
-        APY  # noqa: E501
+        APY.  # noqa: E501
 
         :param apy_display: The apy_display of this DualGetOrders.  # noqa: E501
         :type: str
@@ -459,7 +459,7 @@ class DualGetOrders(object):
     def apy_settlement(self):
         """Gets the apy_settlement of this DualGetOrders.  # noqa: E501
 
-        Settlement APY  # noqa: E501
+        Settlement APY.  # noqa: E501
 
         :return: The apy_settlement of this DualGetOrders.  # noqa: E501
         :rtype: str
@@ -470,7 +470,7 @@ class DualGetOrders(object):
     def apy_settlement(self, apy_settlement):
         """Sets the apy_settlement of this DualGetOrders.
 
-        Settlement APY  # noqa: E501
+        Settlement APY.  # noqa: E501
 
         :param apy_settlement: The apy_settlement of this DualGetOrders.  # noqa: E501
         :type: str
@@ -482,7 +482,7 @@ class DualGetOrders(object):
     def delivery_time(self):
         """Gets the delivery_time of this DualGetOrders.  # noqa: E501
 
-        Settlement time  # noqa: E501
+        Settlement time.  # noqa: E501
 
         :return: The delivery_time of this DualGetOrders.  # noqa: E501
         :rtype: int
@@ -493,7 +493,7 @@ class DualGetOrders(object):
     def delivery_time(self, delivery_time):
         """Sets the delivery_time of this DualGetOrders.
 
-        Settlement time  # noqa: E501
+        Settlement time.  # noqa: E501
 
         :param delivery_time: The delivery_time of this DualGetOrders.  # noqa: E501
         :type: int
@@ -505,7 +505,7 @@ class DualGetOrders(object):
     def text(self):
         """Gets the text of this DualGetOrders.  # noqa: E501
 
-        Custom order information  # noqa: E501
+        Custom order information.  # noqa: E501
 
         :return: The text of this DualGetOrders.  # noqa: E501
         :rtype: str
@@ -516,7 +516,7 @@ class DualGetOrders(object):
     def text(self, text):
         """Sets the text of this DualGetOrders.
 
-        Custom order information  # noqa: E501
+        Custom order information.  # noqa: E501
 
         :param text: The text of this DualGetOrders.  # noqa: E501
         :type: str

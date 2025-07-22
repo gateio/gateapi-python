@@ -82,7 +82,7 @@ class UniInterestRecord(object):
     def status(self):
         """Gets the status of this UniInterestRecord.  # noqa: E501
 
-        Status: 0 - fail, 1 - success  # noqa: E501
+        Status: 0 - fail, 1 - success.  # noqa: E501
 
         :return: The status of this UniInterestRecord.  # noqa: E501
         :rtype: int
@@ -93,7 +93,7 @@ class UniInterestRecord(object):
     def status(self, status):
         """Sets the status of this UniInterestRecord.
 
-        Status: 0 - fail, 1 - success  # noqa: E501
+        Status: 0 - fail, 1 - success.  # noqa: E501
 
         :param status: The status of this UniInterestRecord.  # noqa: E501
         :type: int
@@ -105,7 +105,7 @@ class UniInterestRecord(object):
     def currency(self):
         """Gets the currency of this UniInterestRecord.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this UniInterestRecord.  # noqa: E501
         :rtype: str
@@ -116,7 +116,7 @@ class UniInterestRecord(object):
     def currency(self, currency):
         """Sets the currency of this UniInterestRecord.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this UniInterestRecord.  # noqa: E501
         :type: str
@@ -128,7 +128,7 @@ class UniInterestRecord(object):
     def actual_rate(self):
         """Gets the actual_rate of this UniInterestRecord.  # noqa: E501
 
-        Actual Rate  # noqa: E501
+        Actual Rate.  # noqa: E501
 
         :return: The actual_rate of this UniInterestRecord.  # noqa: E501
         :rtype: str
@@ -139,7 +139,7 @@ class UniInterestRecord(object):
     def actual_rate(self, actual_rate):
         """Sets the actual_rate of this UniInterestRecord.
 
-        Actual Rate  # noqa: E501
+        Actual Rate.  # noqa: E501
 
         :param actual_rate: The actual_rate of this UniInterestRecord.  # noqa: E501
         :type: str
@@ -151,7 +151,7 @@ class UniInterestRecord(object):
     def interest(self):
         """Gets the interest of this UniInterestRecord.  # noqa: E501
 
-        Interest  # noqa: E501
+        Interest.  # noqa: E501
 
         :return: The interest of this UniInterestRecord.  # noqa: E501
         :rtype: str
@@ -162,7 +162,7 @@ class UniInterestRecord(object):
     def interest(self, interest):
         """Sets the interest of this UniInterestRecord.
 
-        Interest  # noqa: E501
+        Interest.  # noqa: E501
 
         :param interest: The interest of this UniInterestRecord.  # noqa: E501
         :type: str
@@ -174,7 +174,7 @@ class UniInterestRecord(object):
     def interest_status(self):
         """Gets the interest_status of this UniInterestRecord.  # noqa: E501
 
-        Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment Interest reinvestment  # noqa: E501
+        Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment  # noqa: E501
 
         :return: The interest_status of this UniInterestRecord.  # noqa: E501
         :rtype: str
@@ -185,7 +185,7 @@ class UniInterestRecord(object):
     def interest_status(self, interest_status):
         """Sets the interest_status of this UniInterestRecord.
 
-        Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment Interest reinvestment  # noqa: E501
+        Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment  # noqa: E501
 
         :param interest_status: The interest_status of this UniInterestRecord.  # noqa: E501
         :type: str
@@ -197,7 +197,7 @@ class UniInterestRecord(object):
     def create_time(self):
         """Gets the create_time of this UniInterestRecord.  # noqa: E501
 
-        Created time  # noqa: E501
+        Created time.  # noqa: E501
 
         :return: The create_time of this UniInterestRecord.  # noqa: E501
         :rtype: int
@@ -208,7 +208,7 @@ class UniInterestRecord(object):
     def create_time(self, create_time):
         """Sets the create_time of this UniInterestRecord.
 
-        Created time  # noqa: E501
+        Created time.  # noqa: E501
 
         :param create_time: The create_time of this UniInterestRecord.  # noqa: E501
         :type: int

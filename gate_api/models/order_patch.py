@@ -82,7 +82,7 @@ class OrderPatch(object):
     def currency_pair(self):
         """Gets the currency_pair of this OrderPatch.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this OrderPatch.  # noqa: E501
         :rtype: str
@@ -93,7 +93,7 @@ class OrderPatch(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this OrderPatch.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this OrderPatch.  # noqa: E501
         :type: str
@@ -128,7 +128,7 @@ class OrderPatch(object):
     def amount(self):
         """Gets the amount of this OrderPatch.  # noqa: E501
 
-        Trading Quantity. Either amountor pricemust be specified  # noqa: E501
+        Trading Quantity. Either amountor pricemust be specified.  # noqa: E501
 
         :return: The amount of this OrderPatch.  # noqa: E501
         :rtype: str
@@ -139,7 +139,7 @@ class OrderPatch(object):
     def amount(self, amount):
         """Sets the amount of this OrderPatch.
 
-        Trading Quantity. Either amountor pricemust be specified  # noqa: E501
+        Trading Quantity. Either amountor pricemust be specified.  # noqa: E501
 
         :param amount: The amount of this OrderPatch.  # noqa: E501
         :type: str
@@ -151,7 +151,7 @@ class OrderPatch(object):
     def price(self):
         """Gets the price of this OrderPatch.  # noqa: E501
 
-        Trading Price. Either amountor pricemust be specified  # noqa: E501
+        Trading Price. Either amountor pricemust be specified.  # noqa: E501
 
         :return: The price of this OrderPatch.  # noqa: E501
         :rtype: str
@@ -162,7 +162,7 @@ class OrderPatch(object):
     def price(self, price):
         """Sets the price of this OrderPatch.
 
-        Trading Price. Either amountor pricemust be specified  # noqa: E501
+        Trading Price. Either amountor pricemust be specified.  # noqa: E501
 
         :param price: The price of this OrderPatch.  # noqa: E501
         :type: str
@@ -174,7 +174,7 @@ class OrderPatch(object):
     def amend_text(self):
         """Gets the amend_text of this OrderPatch.  # noqa: E501
 
-        Custom info during amending order  # noqa: E501
+        Custom info during amending order.  # noqa: E501
 
         :return: The amend_text of this OrderPatch.  # noqa: E501
         :rtype: str
@@ -185,7 +185,7 @@ class OrderPatch(object):
     def amend_text(self, amend_text):
         """Sets the amend_text of this OrderPatch.
 
-        Custom info during amending order  # noqa: E501
+        Custom info during amending order.  # noqa: E501
 
         :param amend_text: The amend_text of this OrderPatch.  # noqa: E501
         :type: str

@@ -62,7 +62,7 @@ class UserTotalAmount(object):
     def borrow_amount(self):
         """Gets the borrow_amount of this UserTotalAmount.  # noqa: E501
 
-        Total borrowing amount, calculated in USDT  # noqa: E501
+        Total borrowing amount, calculated in USDT.  # noqa: E501
 
         :return: The borrow_amount of this UserTotalAmount.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class UserTotalAmount(object):
     def borrow_amount(self, borrow_amount):
         """Sets the borrow_amount of this UserTotalAmount.
 
-        Total borrowing amount, calculated in USDT  # noqa: E501
+        Total borrowing amount, calculated in USDT.  # noqa: E501
 
         :param borrow_amount: The borrow_amount of this UserTotalAmount.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class UserTotalAmount(object):
     def collateral_amount(self):
         """Gets the collateral_amount of this UserTotalAmount.  # noqa: E501
 
-        Total collateral amount, calculated in USDT  # noqa: E501
+        Total collateral amount, calculated in USDT.  # noqa: E501
 
         :return: The collateral_amount of this UserTotalAmount.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class UserTotalAmount(object):
     def collateral_amount(self, collateral_amount):
         """Sets the collateral_amount of this UserTotalAmount.
 
-        Total collateral amount, calculated in USDT  # noqa: E501
+        Total collateral amount, calculated in USDT.  # noqa: E501
 
         :param collateral_amount: The collateral_amount of this UserTotalAmount.  # noqa: E501
         :type: str

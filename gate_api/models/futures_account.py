@@ -205,7 +205,7 @@ class FuturesAccount(object):
     def unrealised_pnl(self):
         """Gets the unrealised_pnl of this FuturesAccount.  # noqa: E501
 
-        Unrealized PNL  # noqa: E501
+        Unrealized PNL.  # noqa: E501
 
         :return: The unrealised_pnl of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -216,7 +216,7 @@ class FuturesAccount(object):
     def unrealised_pnl(self, unrealised_pnl):
         """Sets the unrealised_pnl of this FuturesAccount.
 
-        Unrealized PNL  # noqa: E501
+        Unrealized PNL.  # noqa: E501
 
         :param unrealised_pnl: The unrealised_pnl of this FuturesAccount.  # noqa: E501
         :type: str
@@ -228,7 +228,7 @@ class FuturesAccount(object):
     def position_margin(self):
         """Gets the position_margin of this FuturesAccount.  # noqa: E501
 
-        Position margin  # noqa: E501
+        Position margin.  # noqa: E501
 
         :return: The position_margin of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -239,7 +239,7 @@ class FuturesAccount(object):
     def position_margin(self, position_margin):
         """Sets the position_margin of this FuturesAccount.
 
-        Position margin  # noqa: E501
+        Position margin.  # noqa: E501
 
         :param position_margin: The position_margin of this FuturesAccount.  # noqa: E501
         :type: str
@@ -251,7 +251,7 @@ class FuturesAccount(object):
     def order_margin(self):
         """Gets the order_margin of this FuturesAccount.  # noqa: E501
 
-        Order margin of unfinished orders  # noqa: E501
+        Order margin of unfinished orders.  # noqa: E501
 
         :return: The order_margin of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -262,7 +262,7 @@ class FuturesAccount(object):
     def order_margin(self, order_margin):
         """Sets the order_margin of this FuturesAccount.
 
-        Order margin of unfinished orders  # noqa: E501
+        Order margin of unfinished orders.  # noqa: E501
 
         :param order_margin: The order_margin of this FuturesAccount.  # noqa: E501
         :type: str
@@ -274,7 +274,7 @@ class FuturesAccount(object):
     def available(self):
         """Gets the available of this FuturesAccount.  # noqa: E501
 
-        The available balance for transferring or trading(including bonus.  Bonus can't be be withdrawn. The transfer amount needs to deduct the bonus)  # noqa: E501
+        The available balance for transferring or trading(including bonus. Bonus can't be withdrawn. The transfer amount needs to deduct the bonus)  # noqa: E501
 
         :return: The available of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -285,7 +285,7 @@ class FuturesAccount(object):
     def available(self, available):
         """Sets the available of this FuturesAccount.
 
-        The available balance for transferring or trading(including bonus.  Bonus can't be be withdrawn. The transfer amount needs to deduct the bonus)  # noqa: E501
+        The available balance for transferring or trading(including bonus. Bonus can't be withdrawn. The transfer amount needs to deduct the bonus)  # noqa: E501
 
         :param available: The available of this FuturesAccount.  # noqa: E501
         :type: str
@@ -297,7 +297,7 @@ class FuturesAccount(object):
     def point(self):
         """Gets the point of this FuturesAccount.  # noqa: E501
 
-        POINT amount  # noqa: E501
+        POINT amount.  # noqa: E501
 
         :return: The point of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -308,7 +308,7 @@ class FuturesAccount(object):
     def point(self, point):
         """Sets the point of this FuturesAccount.
 
-        POINT amount  # noqa: E501
+        POINT amount.  # noqa: E501
 
         :param point: The point of this FuturesAccount.  # noqa: E501
         :type: str
@@ -320,7 +320,7 @@ class FuturesAccount(object):
     def currency(self):
         """Gets the currency of this FuturesAccount.  # noqa: E501
 
-        Settle currency  # noqa: E501
+        Settle currency.  # noqa: E501
 
         :return: The currency of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -331,7 +331,7 @@ class FuturesAccount(object):
     def currency(self, currency):
         """Sets the currency of this FuturesAccount.
 
-        Settle currency  # noqa: E501
+        Settle currency.  # noqa: E501
 
         :param currency: The currency of this FuturesAccount.  # noqa: E501
         :type: str
@@ -343,7 +343,7 @@ class FuturesAccount(object):
     def in_dual_mode(self):
         """Gets the in_dual_mode of this FuturesAccount.  # noqa: E501
 
-        Whether dual mode is enabled  # noqa: E501
+        Whether dual mode is enabled.  # noqa: E501
 
         :return: The in_dual_mode of this FuturesAccount.  # noqa: E501
         :rtype: bool
@@ -354,7 +354,7 @@ class FuturesAccount(object):
     def in_dual_mode(self, in_dual_mode):
         """Sets the in_dual_mode of this FuturesAccount.
 
-        Whether dual mode is enabled  # noqa: E501
+        Whether dual mode is enabled.  # noqa: E501
 
         :param in_dual_mode: The in_dual_mode of this FuturesAccount.  # noqa: E501
         :type: bool
@@ -366,7 +366,7 @@ class FuturesAccount(object):
     def enable_credit(self):
         """Gets the enable_credit of this FuturesAccount.  # noqa: E501
 
-        Whether portfolio margin account mode is enabled  # noqa: E501
+        Whether portfolio margin account mode is enabled.  # noqa: E501
 
         :return: The enable_credit of this FuturesAccount.  # noqa: E501
         :rtype: bool
@@ -377,7 +377,7 @@ class FuturesAccount(object):
     def enable_credit(self, enable_credit):
         """Sets the enable_credit of this FuturesAccount.
 
-        Whether portfolio margin account mode is enabled  # noqa: E501
+        Whether portfolio margin account mode is enabled.  # noqa: E501
 
         :param enable_credit: The enable_credit of this FuturesAccount.  # noqa: E501
         :type: bool
@@ -389,7 +389,7 @@ class FuturesAccount(object):
     def position_initial_margin(self):
         """Gets the position_initial_margin of this FuturesAccount.  # noqa: E501
 
-        Initial margin position, applicable to the portfolio margin account model  # noqa: E501
+        Initial margin position, applicable to the portfolio margin account model.  # noqa: E501
 
         :return: The position_initial_margin of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -400,7 +400,7 @@ class FuturesAccount(object):
     def position_initial_margin(self, position_initial_margin):
         """Sets the position_initial_margin of this FuturesAccount.
 
-        Initial margin position, applicable to the portfolio margin account model  # noqa: E501
+        Initial margin position, applicable to the portfolio margin account model.  # noqa: E501
 
         :param position_initial_margin: The position_initial_margin of this FuturesAccount.  # noqa: E501
         :type: str
@@ -435,7 +435,7 @@ class FuturesAccount(object):
     def bonus(self):
         """Gets the bonus of this FuturesAccount.  # noqa: E501
 
-        Perpetual Contract Bonus  # noqa: E501
+        Perpetual Contract Bonus.  # noqa: E501
 
         :return: The bonus of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -446,7 +446,7 @@ class FuturesAccount(object):
     def bonus(self, bonus):
         """Sets the bonus of this FuturesAccount.
 
-        Perpetual Contract Bonus  # noqa: E501
+        Perpetual Contract Bonus.  # noqa: E501
 
         :param bonus: The bonus of this FuturesAccount.  # noqa: E501
         :type: str
@@ -458,7 +458,7 @@ class FuturesAccount(object):
     def enable_evolved_classic(self):
         """Gets the enable_evolved_classic of this FuturesAccount.  # noqa: E501
 
-        Classic account margin mode, true-new mode, false-old mode  # noqa: E501
+        Classic account margin mode, true-new mode, false-old mode.  # noqa: E501
 
         :return: The enable_evolved_classic of this FuturesAccount.  # noqa: E501
         :rtype: bool
@@ -469,7 +469,7 @@ class FuturesAccount(object):
     def enable_evolved_classic(self, enable_evolved_classic):
         """Sets the enable_evolved_classic of this FuturesAccount.
 
-        Classic account margin mode, true-new mode, false-old mode  # noqa: E501
+        Classic account margin mode, true-new mode, false-old mode.  # noqa: E501
 
         :param enable_evolved_classic: The enable_evolved_classic of this FuturesAccount.  # noqa: E501
         :type: bool
@@ -596,7 +596,7 @@ class FuturesAccount(object):
     def cross_margin_balance(self):
         """Gets the cross_margin_balance of this FuturesAccount.  # noqa: E501
 
-        Full margin balance, suitable for the new classic account margin model  # noqa: E501
+        Full margin balance, suitable for the new classic account margin model.  # noqa: E501
 
         :return: The cross_margin_balance of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -607,7 +607,7 @@ class FuturesAccount(object):
     def cross_margin_balance(self, cross_margin_balance):
         """Sets the cross_margin_balance of this FuturesAccount.
 
-        Full margin balance, suitable for the new classic account margin model  # noqa: E501
+        Full margin balance, suitable for the new classic account margin model.  # noqa: E501
 
         :param cross_margin_balance: The cross_margin_balance of this FuturesAccount.  # noqa: E501
         :type: str
@@ -665,7 +665,7 @@ class FuturesAccount(object):
     def isolated_position_margin(self):
         """Gets the isolated_position_margin of this FuturesAccount.  # noqa: E501
 
-        Ware -position margin, suitable for the new classic account margin model  # noqa: E501
+        Ware -position margin, suitable for the new classic account margin model.  # noqa: E501
 
         :return: The isolated_position_margin of this FuturesAccount.  # noqa: E501
         :rtype: str
@@ -676,7 +676,7 @@ class FuturesAccount(object):
     def isolated_position_margin(self, isolated_position_margin):
         """Sets the isolated_position_margin of this FuturesAccount.
 
-        Ware -position margin, suitable for the new classic account margin model  # noqa: E501
+        Ware -position margin, suitable for the new classic account margin model.  # noqa: E501
 
         :param isolated_position_margin: The isolated_position_margin of this FuturesAccount.  # noqa: E501
         :type: str
@@ -688,7 +688,7 @@ class FuturesAccount(object):
     def enable_new_dual_mode(self):
         """Gets the enable_new_dual_mode of this FuturesAccount.  # noqa: E501
 
-        Whether to open a new two-way position mode  # noqa: E501
+        Whether to open a new two-way position mode.  # noqa: E501
 
         :return: The enable_new_dual_mode of this FuturesAccount.  # noqa: E501
         :rtype: bool
@@ -699,7 +699,7 @@ class FuturesAccount(object):
     def enable_new_dual_mode(self, enable_new_dual_mode):
         """Sets the enable_new_dual_mode of this FuturesAccount.
 
-        Whether to open a new two-way position mode  # noqa: E501
+        Whether to open a new two-way position mode.  # noqa: E501
 
         :param enable_new_dual_mode: The enable_new_dual_mode of this FuturesAccount.  # noqa: E501
         :type: bool
@@ -734,7 +734,7 @@ class FuturesAccount(object):
     def enable_tiered_mm(self):
         """Gets the enable_tiered_mm of this FuturesAccount.  # noqa: E501
 
-        Whether to enable tiered maintenance margin calculation  # noqa: E501
+        Whether to enable tiered maintenance margin calculation.  # noqa: E501
 
         :return: The enable_tiered_mm of this FuturesAccount.  # noqa: E501
         :rtype: bool
@@ -745,7 +745,7 @@ class FuturesAccount(object):
     def enable_tiered_mm(self, enable_tiered_mm):
         """Sets the enable_tiered_mm of this FuturesAccount.
 
-        Whether to enable tiered maintenance margin calculation  # noqa: E501
+        Whether to enable tiered maintenance margin calculation.  # noqa: E501
 
         :param enable_tiered_mm: The enable_tiered_mm of this FuturesAccount.  # noqa: E501
         :type: bool

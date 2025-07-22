@@ -153,7 +153,7 @@ class SpotPricePutOrder(object):
     def price(self):
         """Gets the price of this SpotPricePutOrder.  # noqa: E501
 
-        Order price  # noqa: E501
+        Order price.  # noqa: E501
 
         :return: The price of this SpotPricePutOrder.  # noqa: E501
         :rtype: str
@@ -164,7 +164,7 @@ class SpotPricePutOrder(object):
     def price(self, price):
         """Sets the price of this SpotPricePutOrder.
 
-        Order price  # noqa: E501
+        Order price.  # noqa: E501
 
         :param price: The price of this SpotPricePutOrder.  # noqa: E501
         :type: str
@@ -178,7 +178,7 @@ class SpotPricePutOrder(object):
     def amount(self):
         """Gets the amount of this SpotPricePutOrder.  # noqa: E501
 
-        When `type` is limit, it refers to base currency.  For instance, `BTC_USDT` means `BTC`  When `type` is `market`, it refers to different currency according to `side`  - `side` : `buy` means quote currency, `BTC_USDT` means `USDT` - `side` : `sell` means base currency，`BTC_USDT` means `BTC`   # noqa: E501
+        When `type` is limit, it refers to base currency. For instance, `BTC_USDT` means `BTC`  When different currency according to `side`  - `side` : `buy` means quote currency, `BTC_USDT` means `USDT` - `side` : `sell` means base currency，`BTC_USDT` means `BTC`   # noqa: E501
 
         :return: The amount of this SpotPricePutOrder.  # noqa: E501
         :rtype: str
@@ -189,7 +189,7 @@ class SpotPricePutOrder(object):
     def amount(self, amount):
         """Sets the amount of this SpotPricePutOrder.
 
-        When `type` is limit, it refers to base currency.  For instance, `BTC_USDT` means `BTC`  When `type` is `market`, it refers to different currency according to `side`  - `side` : `buy` means quote currency, `BTC_USDT` means `USDT` - `side` : `sell` means base currency，`BTC_USDT` means `BTC`   # noqa: E501
+        When `type` is limit, it refers to base currency. For instance, `BTC_USDT` means `BTC`  When different currency according to `side`  - `side` : `buy` means quote currency, `BTC_USDT` means `USDT` - `side` : `sell` means base currency，`BTC_USDT` means `BTC`   # noqa: E501
 
         :param amount: The amount of this SpotPricePutOrder.  # noqa: E501
         :type: str
@@ -263,7 +263,7 @@ class SpotPricePutOrder(object):
     def auto_borrow(self):
         """Gets the auto_borrow of this SpotPricePutOrder.  # noqa: E501
 
-        Whether to borrow coins automatically  # noqa: E501
+        Whether to borrow coins automatically.  # noqa: E501
 
         :return: The auto_borrow of this SpotPricePutOrder.  # noqa: E501
         :rtype: bool
@@ -274,7 +274,7 @@ class SpotPricePutOrder(object):
     def auto_borrow(self, auto_borrow):
         """Sets the auto_borrow of this SpotPricePutOrder.
 
-        Whether to borrow coins automatically  # noqa: E501
+        Whether to borrow coins automatically.  # noqa: E501
 
         :param auto_borrow: The auto_borrow of this SpotPricePutOrder.  # noqa: E501
         :type: bool
@@ -286,7 +286,7 @@ class SpotPricePutOrder(object):
     def auto_repay(self):
         """Gets the auto_repay of this SpotPricePutOrder.  # noqa: E501
 
-        Whether to repay the loan automatically  # noqa: E501
+        Whether to repay the loan automatically.  # noqa: E501
 
         :return: The auto_repay of this SpotPricePutOrder.  # noqa: E501
         :rtype: bool
@@ -297,7 +297,7 @@ class SpotPricePutOrder(object):
     def auto_repay(self, auto_repay):
         """Sets the auto_repay of this SpotPricePutOrder.
 
-        Whether to repay the loan automatically  # noqa: E501
+        Whether to repay the loan automatically.  # noqa: E501
 
         :param auto_repay: The auto_repay of this SpotPricePutOrder.  # noqa: E501
         :type: bool

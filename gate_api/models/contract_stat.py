@@ -117,7 +117,7 @@ class ContractStat(object):
     def time(self):
         """Gets the time of this ContractStat.  # noqa: E501
 
-        Stat timestamp  # noqa: E501
+        Stat timestamp.  # noqa: E501
 
         :return: The time of this ContractStat.  # noqa: E501
         :rtype: int
@@ -128,7 +128,7 @@ class ContractStat(object):
     def time(self, time):
         """Sets the time of this ContractStat.
 
-        Stat timestamp  # noqa: E501
+        Stat timestamp.  # noqa: E501
 
         :param time: The time of this ContractStat.  # noqa: E501
         :type: int
@@ -140,7 +140,7 @@ class ContractStat(object):
     def lsr_taker(self):
         """Gets the lsr_taker of this ContractStat.  # noqa: E501
 
-        Long/short account number ratio  # noqa: E501
+        Long/short account number ratio.  # noqa: E501
 
         :return: The lsr_taker of this ContractStat.  # noqa: E501
         :rtype: float
@@ -151,7 +151,7 @@ class ContractStat(object):
     def lsr_taker(self, lsr_taker):
         """Sets the lsr_taker of this ContractStat.
 
-        Long/short account number ratio  # noqa: E501
+        Long/short account number ratio.  # noqa: E501
 
         :param lsr_taker: The lsr_taker of this ContractStat.  # noqa: E501
         :type: float
@@ -163,7 +163,7 @@ class ContractStat(object):
     def lsr_account(self):
         """Gets the lsr_account of this ContractStat.  # noqa: E501
 
-        Long/short taker size ratio  # noqa: E501
+        Long/short taker size ratio.  # noqa: E501
 
         :return: The lsr_account of this ContractStat.  # noqa: E501
         :rtype: float
@@ -174,7 +174,7 @@ class ContractStat(object):
     def lsr_account(self, lsr_account):
         """Sets the lsr_account of this ContractStat.
 
-        Long/short taker size ratio  # noqa: E501
+        Long/short taker size ratio.  # noqa: E501
 
         :param lsr_account: The lsr_account of this ContractStat.  # noqa: E501
         :type: float
@@ -186,7 +186,7 @@ class ContractStat(object):
     def long_liq_size(self):
         """Gets the long_liq_size of this ContractStat.  # noqa: E501
 
-        Long liquidation size  # noqa: E501
+        Long liquidation size.  # noqa: E501
 
         :return: The long_liq_size of this ContractStat.  # noqa: E501
         :rtype: int
@@ -197,7 +197,7 @@ class ContractStat(object):
     def long_liq_size(self, long_liq_size):
         """Sets the long_liq_size of this ContractStat.
 
-        Long liquidation size  # noqa: E501
+        Long liquidation size.  # noqa: E501
 
         :param long_liq_size: The long_liq_size of this ContractStat.  # noqa: E501
         :type: int
@@ -209,7 +209,7 @@ class ContractStat(object):
     def long_liq_amount(self):
         """Gets the long_liq_amount of this ContractStat.  # noqa: E501
 
-        Long liquidation amount(base currency)  # noqa: E501
+        Long liquidation amount(base currency).  # noqa: E501
 
         :return: The long_liq_amount of this ContractStat.  # noqa: E501
         :rtype: float
@@ -220,7 +220,7 @@ class ContractStat(object):
     def long_liq_amount(self, long_liq_amount):
         """Sets the long_liq_amount of this ContractStat.
 
-        Long liquidation amount(base currency)  # noqa: E501
+        Long liquidation amount(base currency).  # noqa: E501
 
         :param long_liq_amount: The long_liq_amount of this ContractStat.  # noqa: E501
         :type: float
@@ -232,7 +232,7 @@ class ContractStat(object):
     def long_liq_usd(self):
         """Gets the long_liq_usd of this ContractStat.  # noqa: E501
 
-        Long liquidation volume(quote currency)  # noqa: E501
+        Long liquidation volume(quote currency).  # noqa: E501
 
         :return: The long_liq_usd of this ContractStat.  # noqa: E501
         :rtype: float
@@ -243,7 +243,7 @@ class ContractStat(object):
     def long_liq_usd(self, long_liq_usd):
         """Sets the long_liq_usd of this ContractStat.
 
-        Long liquidation volume(quote currency)  # noqa: E501
+        Long liquidation volume(quote currency).  # noqa: E501
 
         :param long_liq_usd: The long_liq_usd of this ContractStat.  # noqa: E501
         :type: float
@@ -255,7 +255,7 @@ class ContractStat(object):
     def short_liq_size(self):
         """Gets the short_liq_size of this ContractStat.  # noqa: E501
 
-        Short liquidation size  # noqa: E501
+        Short liquidation size.  # noqa: E501
 
         :return: The short_liq_size of this ContractStat.  # noqa: E501
         :rtype: int
@@ -266,7 +266,7 @@ class ContractStat(object):
     def short_liq_size(self, short_liq_size):
         """Sets the short_liq_size of this ContractStat.
 
-        Short liquidation size  # noqa: E501
+        Short liquidation size.  # noqa: E501
 
         :param short_liq_size: The short_liq_size of this ContractStat.  # noqa: E501
         :type: int
@@ -278,7 +278,7 @@ class ContractStat(object):
     def short_liq_amount(self):
         """Gets the short_liq_amount of this ContractStat.  # noqa: E501
 
-        Short liquidation amount(base currency)  # noqa: E501
+        Short liquidation amount(base currency).  # noqa: E501
 
         :return: The short_liq_amount of this ContractStat.  # noqa: E501
         :rtype: float
@@ -289,7 +289,7 @@ class ContractStat(object):
     def short_liq_amount(self, short_liq_amount):
         """Sets the short_liq_amount of this ContractStat.
 
-        Short liquidation amount(base currency)  # noqa: E501
+        Short liquidation amount(base currency).  # noqa: E501
 
         :param short_liq_amount: The short_liq_amount of this ContractStat.  # noqa: E501
         :type: float
@@ -301,7 +301,7 @@ class ContractStat(object):
     def short_liq_usd(self):
         """Gets the short_liq_usd of this ContractStat.  # noqa: E501
 
-        Short liquidation volume(quote currency)  # noqa: E501
+        Short liquidation volume(quote currency).  # noqa: E501
 
         :return: The short_liq_usd of this ContractStat.  # noqa: E501
         :rtype: float
@@ -312,7 +312,7 @@ class ContractStat(object):
     def short_liq_usd(self, short_liq_usd):
         """Sets the short_liq_usd of this ContractStat.
 
-        Short liquidation volume(quote currency)  # noqa: E501
+        Short liquidation volume(quote currency).  # noqa: E501
 
         :param short_liq_usd: The short_liq_usd of this ContractStat.  # noqa: E501
         :type: float
@@ -324,7 +324,7 @@ class ContractStat(object):
     def open_interest(self):
         """Gets the open_interest of this ContractStat.  # noqa: E501
 
-        Open interest size  # noqa: E501
+        Open interest size.  # noqa: E501
 
         :return: The open_interest of this ContractStat.  # noqa: E501
         :rtype: int
@@ -335,7 +335,7 @@ class ContractStat(object):
     def open_interest(self, open_interest):
         """Sets the open_interest of this ContractStat.
 
-        Open interest size  # noqa: E501
+        Open interest size.  # noqa: E501
 
         :param open_interest: The open_interest of this ContractStat.  # noqa: E501
         :type: int
@@ -347,7 +347,7 @@ class ContractStat(object):
     def open_interest_usd(self):
         """Gets the open_interest_usd of this ContractStat.  # noqa: E501
 
-        Open interest volume(quote currency)  # noqa: E501
+        Open interest volume(quote currency).  # noqa: E501
 
         :return: The open_interest_usd of this ContractStat.  # noqa: E501
         :rtype: float
@@ -358,7 +358,7 @@ class ContractStat(object):
     def open_interest_usd(self, open_interest_usd):
         """Sets the open_interest_usd of this ContractStat.
 
-        Open interest volume(quote currency)  # noqa: E501
+        Open interest volume(quote currency).  # noqa: E501
 
         :param open_interest_usd: The open_interest_usd of this ContractStat.  # noqa: E501
         :type: float
@@ -370,7 +370,7 @@ class ContractStat(object):
     def top_lsr_account(self):
         """Gets the top_lsr_account of this ContractStat.  # noqa: E501
 
-        Top trader long/short account ratio  # noqa: E501
+        Top trader long/short account ratio.  # noqa: E501
 
         :return: The top_lsr_account of this ContractStat.  # noqa: E501
         :rtype: float
@@ -381,7 +381,7 @@ class ContractStat(object):
     def top_lsr_account(self, top_lsr_account):
         """Sets the top_lsr_account of this ContractStat.
 
-        Top trader long/short account ratio  # noqa: E501
+        Top trader long/short account ratio.  # noqa: E501
 
         :param top_lsr_account: The top_lsr_account of this ContractStat.  # noqa: E501
         :type: float
@@ -393,7 +393,7 @@ class ContractStat(object):
     def top_lsr_size(self):
         """Gets the top_lsr_size of this ContractStat.  # noqa: E501
 
-        Top trader long/short position ratio  # noqa: E501
+        Top trader long/short position ratio.  # noqa: E501
 
         :return: The top_lsr_size of this ContractStat.  # noqa: E501
         :rtype: float
@@ -404,7 +404,7 @@ class ContractStat(object):
     def top_lsr_size(self, top_lsr_size):
         """Sets the top_lsr_size of this ContractStat.
 
-        Top trader long/short position ratio  # noqa: E501
+        Top trader long/short position ratio.  # noqa: E501
 
         :param top_lsr_size: The top_lsr_size of this ContractStat.  # noqa: E501
         :type: float

@@ -67,7 +67,7 @@ class MultiLoanRepayItem(object):
     def currency(self):
         """Gets the currency of this MultiLoanRepayItem.  # noqa: E501
 
-        Repayment currency  # noqa: E501
+        Repayment currency.  # noqa: E501
 
         :return: The currency of this MultiLoanRepayItem.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class MultiLoanRepayItem(object):
     def currency(self, currency):
         """Sets the currency of this MultiLoanRepayItem.
 
-        Repayment currency  # noqa: E501
+        Repayment currency.  # noqa: E501
 
         :param currency: The currency of this MultiLoanRepayItem.  # noqa: E501
         :type: str
@@ -90,7 +90,7 @@ class MultiLoanRepayItem(object):
     def amount(self):
         """Gets the amount of this MultiLoanRepayItem.  # noqa: E501
 
-        Size  # noqa: E501
+        Size.  # noqa: E501
 
         :return: The amount of this MultiLoanRepayItem.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class MultiLoanRepayItem(object):
     def amount(self, amount):
         """Sets the amount of this MultiLoanRepayItem.
 
-        Size  # noqa: E501
+        Size.  # noqa: E501
 
         :param amount: The amount of this MultiLoanRepayItem.  # noqa: E501
         :type: str

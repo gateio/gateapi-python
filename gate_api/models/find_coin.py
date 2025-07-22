@@ -62,7 +62,7 @@ class FindCoin(object):
     def coin(self):
         """Gets the coin of this FindCoin.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The coin of this FindCoin.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class FindCoin(object):
     def coin(self, coin):
         """Sets the coin of this FindCoin.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param coin: The coin of this FindCoin.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class FindCoin(object):
     def cointype(self):
         """Gets the cointype of this FindCoin.  # noqa: E501
 
-        Coin Type  swap-Voucher  lock-Locked  # noqa: E501
+        Coin Type swap-Voucher lock-Locked.  # noqa: E501
 
         :return: The cointype of this FindCoin.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class FindCoin(object):
     def cointype(self, cointype):
         """Sets the cointype of this FindCoin.
 
-        Coin Type  swap-Voucher  lock-Locked  # noqa: E501
+        Coin Type swap-Voucher lock-Locked.  # noqa: E501
 
         :param cointype: The cointype of this FindCoin.  # noqa: E501
         :type: str

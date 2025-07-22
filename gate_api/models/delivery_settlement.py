@@ -97,7 +97,7 @@ class DeliverySettlement(object):
     def time(self):
         """Gets the time of this DeliverySettlement.  # noqa: E501
 
-        Liquidation time  # noqa: E501
+        Liquidation time.  # noqa: E501
 
         :return: The time of this DeliverySettlement.  # noqa: E501
         :rtype: int
@@ -108,7 +108,7 @@ class DeliverySettlement(object):
     def time(self, time):
         """Sets the time of this DeliverySettlement.
 
-        Liquidation time  # noqa: E501
+        Liquidation time.  # noqa: E501
 
         :param time: The time of this DeliverySettlement.  # noqa: E501
         :type: int
@@ -120,7 +120,7 @@ class DeliverySettlement(object):
     def contract(self):
         """Gets the contract of this DeliverySettlement.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :return: The contract of this DeliverySettlement.  # noqa: E501
         :rtype: str
@@ -131,7 +131,7 @@ class DeliverySettlement(object):
     def contract(self, contract):
         """Sets the contract of this DeliverySettlement.
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :param contract: The contract of this DeliverySettlement.  # noqa: E501
         :type: str
@@ -143,7 +143,7 @@ class DeliverySettlement(object):
     def leverage(self):
         """Gets the leverage of this DeliverySettlement.  # noqa: E501
 
-        Position leverage  # noqa: E501
+        Position leverage.  # noqa: E501
 
         :return: The leverage of this DeliverySettlement.  # noqa: E501
         :rtype: str
@@ -154,7 +154,7 @@ class DeliverySettlement(object):
     def leverage(self, leverage):
         """Sets the leverage of this DeliverySettlement.
 
-        Position leverage  # noqa: E501
+        Position leverage.  # noqa: E501
 
         :param leverage: The leverage of this DeliverySettlement.  # noqa: E501
         :type: str
@@ -166,7 +166,7 @@ class DeliverySettlement(object):
     def size(self):
         """Gets the size of this DeliverySettlement.  # noqa: E501
 
-        Position size  # noqa: E501
+        Position size.  # noqa: E501
 
         :return: The size of this DeliverySettlement.  # noqa: E501
         :rtype: int
@@ -177,7 +177,7 @@ class DeliverySettlement(object):
     def size(self, size):
         """Sets the size of this DeliverySettlement.
 
-        Position size  # noqa: E501
+        Position size.  # noqa: E501
 
         :param size: The size of this DeliverySettlement.  # noqa: E501
         :type: int
@@ -189,7 +189,7 @@ class DeliverySettlement(object):
     def margin(self):
         """Gets the margin of this DeliverySettlement.  # noqa: E501
 
-        Position margin  # noqa: E501
+        Position margin.  # noqa: E501
 
         :return: The margin of this DeliverySettlement.  # noqa: E501
         :rtype: str
@@ -200,7 +200,7 @@ class DeliverySettlement(object):
     def margin(self, margin):
         """Sets the margin of this DeliverySettlement.
 
-        Position margin  # noqa: E501
+        Position margin.  # noqa: E501
 
         :param margin: The margin of this DeliverySettlement.  # noqa: E501
         :type: str
@@ -212,7 +212,7 @@ class DeliverySettlement(object):
     def entry_price(self):
         """Gets the entry_price of this DeliverySettlement.  # noqa: E501
 
-        Average entry price  # noqa: E501
+        Average entry price.  # noqa: E501
 
         :return: The entry_price of this DeliverySettlement.  # noqa: E501
         :rtype: str
@@ -223,7 +223,7 @@ class DeliverySettlement(object):
     def entry_price(self, entry_price):
         """Sets the entry_price of this DeliverySettlement.
 
-        Average entry price  # noqa: E501
+        Average entry price.  # noqa: E501
 
         :param entry_price: The entry_price of this DeliverySettlement.  # noqa: E501
         :type: str
@@ -235,7 +235,7 @@ class DeliverySettlement(object):
     def settle_price(self):
         """Gets the settle_price of this DeliverySettlement.  # noqa: E501
 
-        Settled price  # noqa: E501
+        Settled price.  # noqa: E501
 
         :return: The settle_price of this DeliverySettlement.  # noqa: E501
         :rtype: str
@@ -246,7 +246,7 @@ class DeliverySettlement(object):
     def settle_price(self, settle_price):
         """Sets the settle_price of this DeliverySettlement.
 
-        Settled price  # noqa: E501
+        Settled price.  # noqa: E501
 
         :param settle_price: The settle_price of this DeliverySettlement.  # noqa: E501
         :type: str
@@ -258,7 +258,7 @@ class DeliverySettlement(object):
     def profit(self):
         """Gets the profit of this DeliverySettlement.  # noqa: E501
 
-        Profit  # noqa: E501
+        Profit.  # noqa: E501
 
         :return: The profit of this DeliverySettlement.  # noqa: E501
         :rtype: str
@@ -269,7 +269,7 @@ class DeliverySettlement(object):
     def profit(self, profit):
         """Sets the profit of this DeliverySettlement.
 
-        Profit  # noqa: E501
+        Profit.  # noqa: E501
 
         :param profit: The profit of this DeliverySettlement.  # noqa: E501
         :type: str
@@ -281,7 +281,7 @@ class DeliverySettlement(object):
     def fee(self):
         """Gets the fee of this DeliverySettlement.  # noqa: E501
 
-        Fee deducted  # noqa: E501
+        Fee deducted.  # noqa: E501
 
         :return: The fee of this DeliverySettlement.  # noqa: E501
         :rtype: str
@@ -292,7 +292,7 @@ class DeliverySettlement(object):
     def fee(self, fee):
         """Sets the fee of this DeliverySettlement.
 
-        Fee deducted  # noqa: E501
+        Fee deducted.  # noqa: E501
 
         :param fee: The fee of this DeliverySettlement.  # noqa: E501
         :type: str

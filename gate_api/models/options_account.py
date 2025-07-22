@@ -147,7 +147,7 @@ class OptionsAccount(object):
     def user(self):
         """Gets the user of this OptionsAccount.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user of this OptionsAccount.  # noqa: E501
         :rtype: int
@@ -158,7 +158,7 @@ class OptionsAccount(object):
     def user(self, user):
         """Sets the user of this OptionsAccount.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user: The user of this OptionsAccount.  # noqa: E501
         :type: int
@@ -170,7 +170,7 @@ class OptionsAccount(object):
     def total(self):
         """Gets the total of this OptionsAccount.  # noqa: E501
 
-        Account balance  # noqa: E501
+        Account balance.  # noqa: E501
 
         :return: The total of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -181,7 +181,7 @@ class OptionsAccount(object):
     def total(self, total):
         """Sets the total of this OptionsAccount.
 
-        Account balance  # noqa: E501
+        Account balance.  # noqa: E501
 
         :param total: The total of this OptionsAccount.  # noqa: E501
         :type: str
@@ -216,7 +216,7 @@ class OptionsAccount(object):
     def equity(self):
         """Gets the equity of this OptionsAccount.  # noqa: E501
 
-        Account equity, the sum of account balance and position value  # noqa: E501
+        Account equity, the sum of account balance and position value.  # noqa: E501
 
         :return: The equity of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -227,7 +227,7 @@ class OptionsAccount(object):
     def equity(self, equity):
         """Sets the equity of this OptionsAccount.
 
-        Account equity, the sum of account balance and position value  # noqa: E501
+        Account equity, the sum of account balance and position value.  # noqa: E501
 
         :param equity: The equity of this OptionsAccount.  # noqa: E501
         :type: str
@@ -239,7 +239,7 @@ class OptionsAccount(object):
     def short_enabled(self):
         """Gets the short_enabled of this OptionsAccount.  # noqa: E501
 
-        If the account is allowed to short  # noqa: E501
+        If the account is allowed to short.  # noqa: E501
 
         :return: The short_enabled of this OptionsAccount.  # noqa: E501
         :rtype: bool
@@ -250,7 +250,7 @@ class OptionsAccount(object):
     def short_enabled(self, short_enabled):
         """Sets the short_enabled of this OptionsAccount.
 
-        If the account is allowed to short  # noqa: E501
+        If the account is allowed to short.  # noqa: E501
 
         :param short_enabled: The short_enabled of this OptionsAccount.  # noqa: E501
         :type: bool
@@ -262,7 +262,7 @@ class OptionsAccount(object):
     def mmp_enabled(self):
         """Gets the mmp_enabled of this OptionsAccount.  # noqa: E501
 
-        Whether to enable MMP  # noqa: E501
+        Whether to enable MMP.  # noqa: E501
 
         :return: The mmp_enabled of this OptionsAccount.  # noqa: E501
         :rtype: bool
@@ -273,7 +273,7 @@ class OptionsAccount(object):
     def mmp_enabled(self, mmp_enabled):
         """Sets the mmp_enabled of this OptionsAccount.
 
-        Whether to enable MMP  # noqa: E501
+        Whether to enable MMP.  # noqa: E501
 
         :param mmp_enabled: The mmp_enabled of this OptionsAccount.  # noqa: E501
         :type: bool
@@ -285,7 +285,7 @@ class OptionsAccount(object):
     def liq_triggered(self):
         """Gets the liq_triggered of this OptionsAccount.  # noqa: E501
 
-        Whether to trigger position liquidation  # noqa: E501
+        Whether to trigger position liquidation.  # noqa: E501
 
         :return: The liq_triggered of this OptionsAccount.  # noqa: E501
         :rtype: bool
@@ -296,7 +296,7 @@ class OptionsAccount(object):
     def liq_triggered(self, liq_triggered):
         """Sets the liq_triggered of this OptionsAccount.
 
-        Whether to trigger position liquidation  # noqa: E501
+        Whether to trigger position liquidation.  # noqa: E501
 
         :param liq_triggered: The liq_triggered of this OptionsAccount.  # noqa: E501
         :type: bool
@@ -337,7 +337,7 @@ class OptionsAccount(object):
     def unrealised_pnl(self):
         """Gets the unrealised_pnl of this OptionsAccount.  # noqa: E501
 
-        Unrealized PNL  # noqa: E501
+        Unrealized PNL.  # noqa: E501
 
         :return: The unrealised_pnl of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -348,7 +348,7 @@ class OptionsAccount(object):
     def unrealised_pnl(self, unrealised_pnl):
         """Sets the unrealised_pnl of this OptionsAccount.
 
-        Unrealized PNL  # noqa: E501
+        Unrealized PNL.  # noqa: E501
 
         :param unrealised_pnl: The unrealised_pnl of this OptionsAccount.  # noqa: E501
         :type: str
@@ -360,7 +360,7 @@ class OptionsAccount(object):
     def init_margin(self):
         """Gets the init_margin of this OptionsAccount.  # noqa: E501
 
-        Initial position margin  # noqa: E501
+        Initial position margin.  # noqa: E501
 
         :return: The init_margin of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -371,7 +371,7 @@ class OptionsAccount(object):
     def init_margin(self, init_margin):
         """Sets the init_margin of this OptionsAccount.
 
-        Initial position margin  # noqa: E501
+        Initial position margin.  # noqa: E501
 
         :param init_margin: The init_margin of this OptionsAccount.  # noqa: E501
         :type: str
@@ -383,7 +383,7 @@ class OptionsAccount(object):
     def maint_margin(self):
         """Gets the maint_margin of this OptionsAccount.  # noqa: E501
 
-        Position maintenance margin  # noqa: E501
+        Position maintenance margin.  # noqa: E501
 
         :return: The maint_margin of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -394,7 +394,7 @@ class OptionsAccount(object):
     def maint_margin(self, maint_margin):
         """Sets the maint_margin of this OptionsAccount.
 
-        Position maintenance margin  # noqa: E501
+        Position maintenance margin.  # noqa: E501
 
         :param maint_margin: The maint_margin of this OptionsAccount.  # noqa: E501
         :type: str
@@ -406,7 +406,7 @@ class OptionsAccount(object):
     def order_margin(self):
         """Gets the order_margin of this OptionsAccount.  # noqa: E501
 
-        Order margin of unfinished orders  # noqa: E501
+        Order margin of unfinished orders.  # noqa: E501
 
         :return: The order_margin of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -417,7 +417,7 @@ class OptionsAccount(object):
     def order_margin(self, order_margin):
         """Sets the order_margin of this OptionsAccount.
 
-        Order margin of unfinished orders  # noqa: E501
+        Order margin of unfinished orders.  # noqa: E501
 
         :param order_margin: The order_margin of this OptionsAccount.  # noqa: E501
         :type: str
@@ -429,7 +429,7 @@ class OptionsAccount(object):
     def ask_order_margin(self):
         """Gets the ask_order_margin of this OptionsAccount.  # noqa: E501
 
-        Margin for outstanding sell orders  # noqa: E501
+        Margin for outstanding sell orders.  # noqa: E501
 
         :return: The ask_order_margin of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -440,7 +440,7 @@ class OptionsAccount(object):
     def ask_order_margin(self, ask_order_margin):
         """Sets the ask_order_margin of this OptionsAccount.
 
-        Margin for outstanding sell orders  # noqa: E501
+        Margin for outstanding sell orders.  # noqa: E501
 
         :param ask_order_margin: The ask_order_margin of this OptionsAccount.  # noqa: E501
         :type: str
@@ -452,7 +452,7 @@ class OptionsAccount(object):
     def bid_order_margin(self):
         """Gets the bid_order_margin of this OptionsAccount.  # noqa: E501
 
-        Margin for outstanding buy orders  # noqa: E501
+        Margin for outstanding buy orders.  # noqa: E501
 
         :return: The bid_order_margin of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -463,7 +463,7 @@ class OptionsAccount(object):
     def bid_order_margin(self, bid_order_margin):
         """Sets the bid_order_margin of this OptionsAccount.
 
-        Margin for outstanding buy orders  # noqa: E501
+        Margin for outstanding buy orders.  # noqa: E501
 
         :param bid_order_margin: The bid_order_margin of this OptionsAccount.  # noqa: E501
         :type: str
@@ -475,7 +475,7 @@ class OptionsAccount(object):
     def available(self):
         """Gets the available of this OptionsAccount.  # noqa: E501
 
-        Available balance to transfer out or trade  # noqa: E501
+        Available balance to transfer out or trade.  # noqa: E501
 
         :return: The available of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -486,7 +486,7 @@ class OptionsAccount(object):
     def available(self, available):
         """Sets the available of this OptionsAccount.
 
-        Available balance to transfer out or trade  # noqa: E501
+        Available balance to transfer out or trade.  # noqa: E501
 
         :param available: The available of this OptionsAccount.  # noqa: E501
         :type: str
@@ -498,7 +498,7 @@ class OptionsAccount(object):
     def point(self):
         """Gets the point of this OptionsAccount.  # noqa: E501
 
-        POINT amount  # noqa: E501
+        POINT amount.  # noqa: E501
 
         :return: The point of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -509,7 +509,7 @@ class OptionsAccount(object):
     def point(self, point):
         """Sets the point of this OptionsAccount.
 
-        POINT amount  # noqa: E501
+        POINT amount.  # noqa: E501
 
         :param point: The point of this OptionsAccount.  # noqa: E501
         :type: str
@@ -521,7 +521,7 @@ class OptionsAccount(object):
     def currency(self):
         """Gets the currency of this OptionsAccount.  # noqa: E501
 
-        Settle currency  # noqa: E501
+        Settle currency.  # noqa: E501
 
         :return: The currency of this OptionsAccount.  # noqa: E501
         :rtype: str
@@ -532,7 +532,7 @@ class OptionsAccount(object):
     def currency(self, currency):
         """Sets the currency of this OptionsAccount.
 
-        Settle currency  # noqa: E501
+        Settle currency.  # noqa: E501
 
         :param currency: The currency of this OptionsAccount.  # noqa: E501
         :type: str
@@ -544,7 +544,7 @@ class OptionsAccount(object):
     def orders_limit(self):
         """Gets the orders_limit of this OptionsAccount.  # noqa: E501
 
-        Maximum number of outstanding orders  # noqa: E501
+        Maximum number of outstanding orders.  # noqa: E501
 
         :return: The orders_limit of this OptionsAccount.  # noqa: E501
         :rtype: int
@@ -555,7 +555,7 @@ class OptionsAccount(object):
     def orders_limit(self, orders_limit):
         """Sets the orders_limit of this OptionsAccount.
 
-        Maximum number of outstanding orders  # noqa: E501
+        Maximum number of outstanding orders.  # noqa: E501
 
         :param orders_limit: The orders_limit of this OptionsAccount.  # noqa: E501
         :type: int

@@ -37,7 +37,7 @@ class WithdrawalApi(object):
         self.api_client = api_client
 
     def withdraw(self, ledger_record, **kwargs):  # noqa: E501
-        """Withdraw  # noqa: E501
+        """Withdraw.  # noqa: E501
 
         Withdrawals to Gate addresses do not incur transaction fees.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -62,7 +62,7 @@ class WithdrawalApi(object):
         return self.withdraw_with_http_info(ledger_record, **kwargs)  # noqa: E501
 
     def withdraw_with_http_info(self, ledger_record, **kwargs):  # noqa: E501
-        """Withdraw  # noqa: E501
+        """Withdraw.  # noqa: E501
 
         Withdrawals to Gate addresses do not incur transaction fees.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -155,7 +155,7 @@ class WithdrawalApi(object):
             collection_formats=collection_formats)
 
     def withdraw_push_order(self, uid_push_withdrawal, **kwargs):  # noqa: E501
-        """UID transfer  # noqa: E501
+        """UID transfer.  # noqa: E501
 
         Transfers between main spot accounts are allowed; however, both parties cannot be sub-accounts  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -180,7 +180,7 @@ class WithdrawalApi(object):
         return self.withdraw_push_order_with_http_info(uid_push_withdrawal, **kwargs)  # noqa: E501
 
     def withdraw_push_order_with_http_info(self, uid_push_withdrawal, **kwargs):  # noqa: E501
-        """UID transfer  # noqa: E501
+        """UID transfer.  # noqa: E501
 
         Transfers between main spot accounts are allowed; however, both parties cannot be sub-accounts  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -273,7 +273,7 @@ class WithdrawalApi(object):
             collection_formats=collection_formats)
 
     def cancel_withdrawal(self, withdrawal_id, **kwargs):  # noqa: E501
-        """Cancel withdrawal with specified ID  # noqa: E501
+        """Cancel withdrawal with specified ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -297,7 +297,7 @@ class WithdrawalApi(object):
         return self.cancel_withdrawal_with_http_info(withdrawal_id, **kwargs)  # noqa: E501
 
     def cancel_withdrawal_with_http_info(self, withdrawal_id, **kwargs):  # noqa: E501
-        """Cancel withdrawal with specified ID  # noqa: E501
+        """Cancel withdrawal with specified ID.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

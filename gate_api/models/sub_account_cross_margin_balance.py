@@ -62,7 +62,7 @@ class SubAccountCrossMarginBalance(object):
     def uid(self):
         """Gets the uid of this SubAccountCrossMarginBalance.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The uid of this SubAccountCrossMarginBalance.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class SubAccountCrossMarginBalance(object):
     def uid(self, uid):
         """Sets the uid of this SubAccountCrossMarginBalance.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param uid: The uid of this SubAccountCrossMarginBalance.  # noqa: E501
         :type: str

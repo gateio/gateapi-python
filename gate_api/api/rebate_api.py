@@ -37,21 +37,21 @@ class RebateApi(object):
         self.api_client = api_client
 
     def agency_transaction_history(self, **kwargs):  # noqa: E501
-        """The agency obtains the transaction history of the recommended user  # noqa: E501
+        """The agency obtains the transaction history of the recommended user.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.agency_transaction_history(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Specify the currency pair, if not specified, return all currency pairs
-        :param int user_id: User ID. If not specified, all user records will be returned
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str currency_pair: Specify the currency pair, if not specified, return all currency pairs.
+        :param int user_id: User ID. If not specified, all user records will be returned.
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -67,21 +67,21 @@ class RebateApi(object):
         return self.agency_transaction_history_with_http_info(**kwargs)  # noqa: E501
 
     def agency_transaction_history_with_http_info(self, **kwargs):  # noqa: E501
-        """The agency obtains the transaction history of the recommended user  # noqa: E501
+        """The agency obtains the transaction history of the recommended user.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.agency_transaction_history_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Specify the currency pair, if not specified, return all currency pairs
-        :param int user_id: User ID. If not specified, all user records will be returned
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str currency_pair: Specify the currency pair, if not specified, return all currency pairs.
+        :param int user_id: User ID. If not specified, all user records will be returned.
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -178,21 +178,21 @@ class RebateApi(object):
             collection_formats=collection_formats)
 
     def agency_commissions_history(self, **kwargs):  # noqa: E501
-        """The agency obtains the commission history of the recommended user  # noqa: E501
+        """The agency obtains the commission history of the recommended user.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.agency_commissions_history(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Filter by currency. Return all currency records if not specified
-        :param int user_id: User ID. If not specified, all user records will be returned
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str currency: Filter by currency. Return all currency records if not specified.
+        :param int user_id: User ID. If not specified, all user records will be returned.
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -208,21 +208,21 @@ class RebateApi(object):
         return self.agency_commissions_history_with_http_info(**kwargs)  # noqa: E501
 
     def agency_commissions_history_with_http_info(self, **kwargs):  # noqa: E501
-        """The agency obtains the commission history of the recommended user  # noqa: E501
+        """The agency obtains the commission history of the recommended user.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.agency_commissions_history_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Filter by currency. Return all currency records if not specified
-        :param int user_id: User ID. If not specified, all user records will be returned
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str currency: Filter by currency. Return all currency records if not specified.
+        :param int user_id: User ID. If not specified, all user records will be returned.
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -319,21 +319,21 @@ class RebateApi(object):
             collection_formats=collection_formats)
 
     def partner_transaction_history(self, **kwargs):  # noqa: E501
-        """Partner obtains transaction records of recommended users  # noqa: E501
+        """Partner obtains transaction records of recommended users.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.partner_transaction_history(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Specify the currency pair, if not specified, return all currency pairs
-        :param int user_id: User ID. If not specified, all user records will be returned
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str currency_pair: Specify the currency pair, if not specified, return all currency pairs.
+        :param int user_id: User ID. If not specified, all user records will be returned.
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -349,21 +349,21 @@ class RebateApi(object):
         return self.partner_transaction_history_with_http_info(**kwargs)  # noqa: E501
 
     def partner_transaction_history_with_http_info(self, **kwargs):  # noqa: E501
-        """Partner obtains transaction records of recommended users  # noqa: E501
+        """Partner obtains transaction records of recommended users.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.partner_transaction_history_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Specify the currency pair, if not specified, return all currency pairs
-        :param int user_id: User ID. If not specified, all user records will be returned
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str currency_pair: Specify the currency pair, if not specified, return all currency pairs.
+        :param int user_id: User ID. If not specified, all user records will be returned.
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -460,21 +460,21 @@ class RebateApi(object):
             collection_formats=collection_formats)
 
     def partner_commissions_history(self, **kwargs):  # noqa: E501
-        """Partner obtains commission records of recommended users  # noqa: E501
+        """Partner obtains commission records of recommended users.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.partner_commissions_history(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Filter by currency. Return all currency records if not specified
-        :param int user_id: User ID. If not specified, all user records will be returned
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str currency: Filter by currency. Return all currency records if not specified.
+        :param int user_id: User ID. If not specified, all user records will be returned.
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -490,21 +490,21 @@ class RebateApi(object):
         return self.partner_commissions_history_with_http_info(**kwargs)  # noqa: E501
 
     def partner_commissions_history_with_http_info(self, **kwargs):  # noqa: E501
-        """Partner obtains commission records of recommended users  # noqa: E501
+        """Partner obtains commission records of recommended users.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.partner_commissions_history_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Filter by currency. Return all currency records if not specified
-        :param int user_id: User ID. If not specified, all user records will be returned
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str currency: Filter by currency. Return all currency records if not specified.
+        :param int user_id: User ID. If not specified, all user records will be returned.
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -601,18 +601,18 @@ class RebateApi(object):
             collection_formats=collection_formats)
 
     def partner_sub_list(self, **kwargs):  # noqa: E501
-        """Partner subordinate list  # noqa: E501
+        """Partner subordinate list.  # noqa: E501
 
-        Including sub-agents, direct customers, indirect customers  # noqa: E501
+        Including sub-agents, direct customers, indirect customers.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.partner_sub_list(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: User ID. If not specified, all user records will be returned
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param int user_id: User ID. If not specified, all user records will be returned.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -628,18 +628,18 @@ class RebateApi(object):
         return self.partner_sub_list_with_http_info(**kwargs)  # noqa: E501
 
     def partner_sub_list_with_http_info(self, **kwargs):  # noqa: E501
-        """Partner subordinate list  # noqa: E501
+        """Partner subordinate list.  # noqa: E501
 
-        Including sub-agents, direct customers, indirect customers  # noqa: E501
+        Including sub-agents, direct customers, indirect customers.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.partner_sub_list_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int user_id: User ID. If not specified, all user records will be returned
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param int user_id: User ID. If not specified, all user records will be returned.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -727,20 +727,20 @@ class RebateApi(object):
             collection_formats=collection_formats)
 
     def rebate_broker_commission_history(self, **kwargs):  # noqa: E501
-        """The broker obtains the user's commission rebate records  # noqa: E501
+        """The broker obtains the user's commission rebate records.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.rebate_broker_commission_history(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
-        :param int user_id: User ID. If not specified, all user records will be returned
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
+        :param int user_id: User ID. If not specified, all user records will be returned.
         :param int _from: The start time of the query record. If not specified, the default is to push forward 30 days from the current time.
-        :param int to: Time range ending, default to current time
+        :param int to: Time range ending, default to current time.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -756,20 +756,20 @@ class RebateApi(object):
         return self.rebate_broker_commission_history_with_http_info(**kwargs)  # noqa: E501
 
     def rebate_broker_commission_history_with_http_info(self, **kwargs):  # noqa: E501
-        """The broker obtains the user's commission rebate records  # noqa: E501
+        """The broker obtains the user's commission rebate records.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.rebate_broker_commission_history_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
-        :param int user_id: User ID. If not specified, all user records will be returned
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
+        :param int user_id: User ID. If not specified, all user records will be returned.
         :param int _from: The start time of the query record. If not specified, the default is to push forward 30 days from the current time.
-        :param int to: Time range ending, default to current time
+        :param int to: Time range ending, default to current time.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -863,20 +863,20 @@ class RebateApi(object):
             collection_formats=collection_formats)
 
     def rebate_broker_transaction_history(self, **kwargs):  # noqa: E501
-        """The broker obtains the user's trading history  # noqa: E501
+        """The broker obtains the user's trading history.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.rebate_broker_transaction_history(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
-        :param int user_id: User ID. If not specified, all user records will be returned
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
+        :param int user_id: User ID. If not specified, all user records will be returned.
         :param int _from: The start time of the query record. If not specified, the default is to push forward 30 days from the current time.
-        :param int to: Time range ending, default to current time
+        :param int to: Time range ending, default to current time.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -892,20 +892,20 @@ class RebateApi(object):
         return self.rebate_broker_transaction_history_with_http_info(**kwargs)  # noqa: E501
 
     def rebate_broker_transaction_history_with_http_info(self, **kwargs):  # noqa: E501
-        """The broker obtains the user's trading history  # noqa: E501
+        """The broker obtains the user's trading history.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.rebate_broker_transaction_history_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
-        :param int user_id: User ID. If not specified, all user records will be returned
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
+        :param int user_id: User ID. If not specified, all user records will be returned.
         :param int _from: The start time of the query record. If not specified, the default is to push forward 30 days from the current time.
-        :param int to: Time range ending, default to current time
+        :param int to: Time range ending, default to current time.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -999,7 +999,7 @@ class RebateApi(object):
             collection_formats=collection_formats)
 
     def rebate_user_info(self, **kwargs):  # noqa: E501
-        """User retrieves rebate information  # noqa: E501
+        """User retrieves rebate information.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1022,7 +1022,7 @@ class RebateApi(object):
         return self.rebate_user_info_with_http_info(**kwargs)  # noqa: E501
 
     def rebate_user_info_with_http_info(self, **kwargs):  # noqa: E501
-        """User retrieves rebate information  # noqa: E501
+        """User retrieves rebate information.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1102,16 +1102,16 @@ class RebateApi(object):
             collection_formats=collection_formats)
 
     def user_sub_relation(self, user_id_list, **kwargs):  # noqa: E501
-        """User-subordinate relationship  # noqa: E501
+        """User-subordinate relationship.  # noqa: E501
 
-        Query whether the specified user is in the system  # noqa: E501
+        Query whether the specified user is in the system.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.user_sub_relation(user_id_list, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str user_id_list: Query the user's ID list, split by,, if there are more than 100, take 100 (required)
+        :param str user_id_list: Query the user's ID list, split by,, if there are more than 100, take 100. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1127,16 +1127,16 @@ class RebateApi(object):
         return self.user_sub_relation_with_http_info(user_id_list, **kwargs)  # noqa: E501
 
     def user_sub_relation_with_http_info(self, user_id_list, **kwargs):  # noqa: E501
-        """User-subordinate relationship  # noqa: E501
+        """User-subordinate relationship.  # noqa: E501
 
-        Query whether the specified user is in the system  # noqa: E501
+        Query whether the specified user is in the system.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.user_sub_relation_with_http_info(user_id_list, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str user_id_list: Query the user's ID list, split by,, if there are more than 100, take 100 (required)
+        :param str user_id_list: Query the user's ID list, split by,, if there are more than 100, take 100. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

@@ -81,7 +81,7 @@ class SubAccountToSubAccount(object):
     def currency(self):
         """Gets the currency of this SubAccountToSubAccount.  # noqa: E501
 
-        Transfer currency name  # noqa: E501
+        Transfer currency name.  # noqa: E501
 
         :return: The currency of this SubAccountToSubAccount.  # noqa: E501
         :rtype: str
@@ -92,7 +92,7 @@ class SubAccountToSubAccount(object):
     def currency(self, currency):
         """Sets the currency of this SubAccountToSubAccount.
 
-        Transfer currency name  # noqa: E501
+        Transfer currency name.  # noqa: E501
 
         :param currency: The currency of this SubAccountToSubAccount.  # noqa: E501
         :type: str
@@ -129,7 +129,7 @@ class SubAccountToSubAccount(object):
     def sub_account_from(self):
         """Gets the sub_account_from of this SubAccountToSubAccount.  # noqa: E501
 
-        Transfer from the user id of the sub-account  # noqa: E501
+        Transfer from the user id of the sub-account.  # noqa: E501
 
         :return: The sub_account_from of this SubAccountToSubAccount.  # noqa: E501
         :rtype: str
@@ -140,7 +140,7 @@ class SubAccountToSubAccount(object):
     def sub_account_from(self, sub_account_from):
         """Sets the sub_account_from of this SubAccountToSubAccount.
 
-        Transfer from the user id of the sub-account  # noqa: E501
+        Transfer from the user id of the sub-account.  # noqa: E501
 
         :param sub_account_from: The sub_account_from of this SubAccountToSubAccount.  # noqa: E501
         :type: str
@@ -179,7 +179,7 @@ class SubAccountToSubAccount(object):
     def sub_account_to(self):
         """Gets the sub_account_to of this SubAccountToSubAccount.  # noqa: E501
 
-        Transfer to the user id of the sub-account  # noqa: E501
+        Transfer to the user id of the sub-account.  # noqa: E501
 
         :return: The sub_account_to of this SubAccountToSubAccount.  # noqa: E501
         :rtype: str
@@ -190,7 +190,7 @@ class SubAccountToSubAccount(object):
     def sub_account_to(self, sub_account_to):
         """Sets the sub_account_to of this SubAccountToSubAccount.
 
-        Transfer to the user id of the sub-account  # noqa: E501
+        Transfer to the user id of the sub-account.  # noqa: E501
 
         :param sub_account_to: The sub_account_to of this SubAccountToSubAccount.  # noqa: E501
         :type: str
@@ -229,7 +229,7 @@ class SubAccountToSubAccount(object):
     def amount(self):
         """Gets the amount of this SubAccountToSubAccount.  # noqa: E501
 
-        Transfer amount  # noqa: E501
+        Transfer amount.  # noqa: E501
 
         :return: The amount of this SubAccountToSubAccount.  # noqa: E501
         :rtype: str
@@ -240,7 +240,7 @@ class SubAccountToSubAccount(object):
     def amount(self, amount):
         """Sets the amount of this SubAccountToSubAccount.
 
-        Transfer amount  # noqa: E501
+        Transfer amount.  # noqa: E501
 
         :param amount: The amount of this SubAccountToSubAccount.  # noqa: E501
         :type: str

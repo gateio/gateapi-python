@@ -62,7 +62,7 @@ class MultiRepayResp(object):
     def order_id(self):
         """Gets the order_id of this MultiRepayResp.  # noqa: E501
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :return: The order_id of this MultiRepayResp.  # noqa: E501
         :rtype: int
@@ -73,7 +73,7 @@ class MultiRepayResp(object):
     def order_id(self, order_id):
         """Sets the order_id of this MultiRepayResp.
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :param order_id: The order_id of this MultiRepayResp.  # noqa: E501
         :type: int
@@ -85,7 +85,7 @@ class MultiRepayResp(object):
     def repaid_currencies(self):
         """Gets the repaid_currencies of this MultiRepayResp.  # noqa: E501
 
-        Repay Currency List  # noqa: E501
+        Repay Currency List.  # noqa: E501
 
         :return: The repaid_currencies of this MultiRepayResp.  # noqa: E501
         :rtype: list[RepayCurrencyRes]
@@ -96,7 +96,7 @@ class MultiRepayResp(object):
     def repaid_currencies(self, repaid_currencies):
         """Sets the repaid_currencies of this MultiRepayResp.
 
-        Repay Currency List  # noqa: E501
+        Repay Currency List.  # noqa: E501
 
         :param repaid_currencies: The repaid_currencies of this MultiRepayResp.  # noqa: E501
         :type: list[RepayCurrencyRes]

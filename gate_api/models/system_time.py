@@ -57,7 +57,7 @@ class SystemTime(object):
     def server_time(self):
         """Gets the server_time of this SystemTime.  # noqa: E501
 
-        Server current time(ms)  # noqa: E501
+        Server current time(ms).  # noqa: E501
 
         :return: The server_time of this SystemTime.  # noqa: E501
         :rtype: int
@@ -68,7 +68,7 @@ class SystemTime(object):
     def server_time(self, server_time):
         """Sets the server_time of this SystemTime.
 
-        Server current time(ms)  # noqa: E501
+        Server current time(ms).  # noqa: E501
 
         :param server_time: The server_time of this SystemTime.  # noqa: E501
         :type: int

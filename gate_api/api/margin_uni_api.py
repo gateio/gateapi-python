@@ -37,7 +37,7 @@ class MarginUniApi(object):
         self.api_client = api_client
 
     def list_uni_currency_pairs(self, **kwargs):  # noqa: E501
-        """List lending markets  # noqa: E501
+        """List lending markets.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -60,7 +60,7 @@ class MarginUniApi(object):
         return self.list_uni_currency_pairs_with_http_info(**kwargs)  # noqa: E501
 
     def list_uni_currency_pairs_with_http_info(self, **kwargs):  # noqa: E501
-        """List lending markets  # noqa: E501
+        """List lending markets.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -140,7 +140,7 @@ class MarginUniApi(object):
             collection_formats=collection_formats)
 
     def get_uni_currency_pair(self, currency_pair, **kwargs):  # noqa: E501
-        """Get detail of lending market  # noqa: E501
+        """Get detail of lending market.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -148,7 +148,7 @@ class MarginUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Currency pair (required)
+        :param str currency_pair: Currency pair. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -164,7 +164,7 @@ class MarginUniApi(object):
         return self.get_uni_currency_pair_with_http_info(currency_pair, **kwargs)  # noqa: E501
 
     def get_uni_currency_pair_with_http_info(self, currency_pair, **kwargs):  # noqa: E501
-        """Get detail of lending market  # noqa: E501
+        """Get detail of lending market.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -172,7 +172,7 @@ class MarginUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Currency pair (required)
+        :param str currency_pair: Currency pair. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -252,7 +252,7 @@ class MarginUniApi(object):
             collection_formats=collection_formats)
 
     def get_margin_uni_estimate_rate(self, currencies, **kwargs):  # noqa: E501
-        """Estimate interest Rate  # noqa: E501
+        """Estimate interest Rate.  # noqa: E501
 
         Please note that the interest rates are subject to change based on the borrowing and lending demand, and therefore, the provided rates may not be entirely accurate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -261,7 +261,7 @@ class MarginUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param list[str] currencies: An array of up to 10 specifying the currency name (required)
+        :param list[str] currencies: An array of up to 10 specifying the currency name. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -277,7 +277,7 @@ class MarginUniApi(object):
         return self.get_margin_uni_estimate_rate_with_http_info(currencies, **kwargs)  # noqa: E501
 
     def get_margin_uni_estimate_rate_with_http_info(self, currencies, **kwargs):  # noqa: E501
-        """Estimate interest Rate  # noqa: E501
+        """Estimate interest Rate.  # noqa: E501
 
         Please note that the interest rates are subject to change based on the borrowing and lending demand, and therefore, the provided rates may not be entirely accurate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -286,7 +286,7 @@ class MarginUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param list[str] currencies: An array of up to 10 specifying the currency name (required)
+        :param list[str] currencies: An array of up to 10 specifying the currency name. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -373,7 +373,7 @@ class MarginUniApi(object):
             collection_formats=collection_formats)
 
     def list_uni_loans(self, **kwargs):  # noqa: E501
-        """List loans  # noqa: E501
+        """List loans.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -381,10 +381,10 @@ class MarginUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Currency pair
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str currency_pair: Currency pair.
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -400,7 +400,7 @@ class MarginUniApi(object):
         return self.list_uni_loans_with_http_info(**kwargs)  # noqa: E501
 
     def list_uni_loans_with_http_info(self, **kwargs):  # noqa: E501
-        """List loans  # noqa: E501
+        """List loans.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -408,10 +408,10 @@ class MarginUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Currency pair
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str currency_pair: Currency pair.
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -502,7 +502,7 @@ class MarginUniApi(object):
             collection_formats=collection_formats)
 
     def create_uni_loan(self, create_uni_loan, **kwargs):  # noqa: E501
-        """Borrow or repay  # noqa: E501
+        """Borrow or repay.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -526,7 +526,7 @@ class MarginUniApi(object):
         return self.create_uni_loan_with_http_info(create_uni_loan, **kwargs)  # noqa: E501
 
     def create_uni_loan_with_http_info(self, create_uni_loan, **kwargs):  # noqa: E501
-        """Borrow or repay  # noqa: E501
+        """Borrow or repay.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -614,7 +614,7 @@ class MarginUniApi(object):
             collection_formats=collection_formats)
 
     def list_uni_loan_records(self, **kwargs):  # noqa: E501
-        """Get load records  # noqa: E501
+        """Get load records.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -622,11 +622,11 @@ class MarginUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str type: type: borrow - borrow, repay - repay
-        :param str currency: Retrieve data of the specified currency
-        :param str currency_pair: Currency pair
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str type: type: borrow - borrow, repay - repay.
+        :param str currency: Retrieve data of the specified currency.
+        :param str currency_pair: Currency pair.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -642,7 +642,7 @@ class MarginUniApi(object):
         return self.list_uni_loan_records_with_http_info(**kwargs)  # noqa: E501
 
     def list_uni_loan_records_with_http_info(self, **kwargs):  # noqa: E501
-        """Get load records  # noqa: E501
+        """Get load records.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -650,11 +650,11 @@ class MarginUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str type: type: borrow - borrow, repay - repay
-        :param str currency: Retrieve data of the specified currency
-        :param str currency_pair: Currency pair
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str type: type: borrow - borrow, repay - repay.
+        :param str currency: Retrieve data of the specified currency.
+        :param str currency_pair: Currency pair.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -748,7 +748,7 @@ class MarginUniApi(object):
             collection_formats=collection_formats)
 
     def list_uni_loan_interest_records(self, **kwargs):  # noqa: E501
-        """List interest records  # noqa: E501
+        """List interest records.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -756,10 +756,10 @@ class MarginUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Currency pair
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum number of records to be returned in a single list
+        :param str currency_pair: Currency pair.
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum number of records to be returned in a single list.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -777,7 +777,7 @@ class MarginUniApi(object):
         return self.list_uni_loan_interest_records_with_http_info(**kwargs)  # noqa: E501
 
     def list_uni_loan_interest_records_with_http_info(self, **kwargs):  # noqa: E501
-        """List interest records  # noqa: E501
+        """List interest records.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -785,10 +785,10 @@ class MarginUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency_pair: Currency pair
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum number of records to be returned in a single list
+        :param str currency_pair: Currency pair.
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum number of records to be returned in a single list.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _return_http_data_only: response data without head status code
@@ -887,7 +887,7 @@ class MarginUniApi(object):
             collection_formats=collection_formats)
 
     def get_uni_borrowable(self, currency, currency_pair, **kwargs):  # noqa: E501
-        """Get maximum borrowable  # noqa: E501
+        """Get maximum borrowable.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -895,8 +895,8 @@ class MarginUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency (required)
-        :param str currency_pair: Currency pair (required)
+        :param str currency: Retrieve data of the specified currency. (required)
+        :param str currency_pair: Currency pair. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -912,7 +912,7 @@ class MarginUniApi(object):
         return self.get_uni_borrowable_with_http_info(currency, currency_pair, **kwargs)  # noqa: E501
 
     def get_uni_borrowable_with_http_info(self, currency, currency_pair, **kwargs):  # noqa: E501
-        """Get maximum borrowable  # noqa: E501
+        """Get maximum borrowable.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -920,8 +920,8 @@ class MarginUniApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency (required)
-        :param str currency_pair: Currency pair (required)
+        :param str currency: Retrieve data of the specified currency. (required)
+        :param str currency_pair: Currency pair. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

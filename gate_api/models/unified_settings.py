@@ -95,7 +95,7 @@ class UnifiedSettings(object):
     def spot_hedge(self):
         """Gets the spot_hedge of this UnifiedSettings.  # noqa: E501
 
-        Spot hedging switch.   # noqa: E501
+        Spot hedging switch.  # noqa: E501
 
         :return: The spot_hedge of this UnifiedSettings.  # noqa: E501
         :rtype: bool
@@ -106,7 +106,7 @@ class UnifiedSettings(object):
     def spot_hedge(self, spot_hedge):
         """Sets the spot_hedge of this UnifiedSettings.
 
-        Spot hedging switch.   # noqa: E501
+        Spot hedging switch.  # noqa: E501
 
         :param spot_hedge: The spot_hedge of this UnifiedSettings.  # noqa: E501
         :type: bool

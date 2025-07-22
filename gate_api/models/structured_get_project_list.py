@@ -112,7 +112,7 @@ class StructuredGetProjectList(object):
     def id(self):
         """Gets the id of this StructuredGetProjectList.  # noqa: E501
 
-        Plan ID  # noqa: E501
+        Plan ID.  # noqa: E501
 
         :return: The id of this StructuredGetProjectList.  # noqa: E501
         :rtype: int
@@ -123,7 +123,7 @@ class StructuredGetProjectList(object):
     def id(self, id):
         """Sets the id of this StructuredGetProjectList.
 
-        Plan ID  # noqa: E501
+        Plan ID.  # noqa: E501
 
         :param id: The id of this StructuredGetProjectList.  # noqa: E501
         :type: int
@@ -158,7 +158,7 @@ class StructuredGetProjectList(object):
     def name_en(self):
         """Gets the name_en of this StructuredGetProjectList.  # noqa: E501
 
-        name  # noqa: E501
+        name.  # noqa: E501
 
         :return: The name_en of this StructuredGetProjectList.  # noqa: E501
         :rtype: str
@@ -169,7 +169,7 @@ class StructuredGetProjectList(object):
     def name_en(self, name_en):
         """Sets the name_en of this StructuredGetProjectList.
 
-        name  # noqa: E501
+        name.  # noqa: E501
 
         :param name_en: The name_en of this StructuredGetProjectList.  # noqa: E501
         :type: str
@@ -181,7 +181,7 @@ class StructuredGetProjectList(object):
     def investment_coin(self):
         """Gets the investment_coin of this StructuredGetProjectList.  # noqa: E501
 
-        Investment Currency  # noqa: E501
+        Investment Currency.  # noqa: E501
 
         :return: The investment_coin of this StructuredGetProjectList.  # noqa: E501
         :rtype: str
@@ -192,7 +192,7 @@ class StructuredGetProjectList(object):
     def investment_coin(self, investment_coin):
         """Sets the investment_coin of this StructuredGetProjectList.
 
-        Investment Currency  # noqa: E501
+        Investment Currency.  # noqa: E501
 
         :param investment_coin: The investment_coin of this StructuredGetProjectList.  # noqa: E501
         :type: str
@@ -204,7 +204,7 @@ class StructuredGetProjectList(object):
     def investment_period(self):
         """Gets the investment_period of this StructuredGetProjectList.  # noqa: E501
 
-        Investment term  # noqa: E501
+        Investment term.  # noqa: E501
 
         :return: The investment_period of this StructuredGetProjectList.  # noqa: E501
         :rtype: str
@@ -215,7 +215,7 @@ class StructuredGetProjectList(object):
     def investment_period(self, investment_period):
         """Sets the investment_period of this StructuredGetProjectList.
 
-        Investment term  # noqa: E501
+        Investment term.  # noqa: E501
 
         :param investment_period: The investment_period of this StructuredGetProjectList.  # noqa: E501
         :type: str
@@ -227,7 +227,7 @@ class StructuredGetProjectList(object):
     def min_annual_rate(self):
         """Gets the min_annual_rate of this StructuredGetProjectList.  # noqa: E501
 
-        Minimum annual rate  # noqa: E501
+        Minimum annual rate.  # noqa: E501
 
         :return: The min_annual_rate of this StructuredGetProjectList.  # noqa: E501
         :rtype: str
@@ -238,7 +238,7 @@ class StructuredGetProjectList(object):
     def min_annual_rate(self, min_annual_rate):
         """Sets the min_annual_rate of this StructuredGetProjectList.
 
-        Minimum annual rate  # noqa: E501
+        Minimum annual rate.  # noqa: E501
 
         :param min_annual_rate: The min_annual_rate of this StructuredGetProjectList.  # noqa: E501
         :type: str
@@ -250,7 +250,7 @@ class StructuredGetProjectList(object):
     def mid_annual_rate(self):
         """Gets the mid_annual_rate of this StructuredGetProjectList.  # noqa: E501
 
-        Intermediate annual rate  # noqa: E501
+        Intermediate annual rate.  # noqa: E501
 
         :return: The mid_annual_rate of this StructuredGetProjectList.  # noqa: E501
         :rtype: str
@@ -261,7 +261,7 @@ class StructuredGetProjectList(object):
     def mid_annual_rate(self, mid_annual_rate):
         """Sets the mid_annual_rate of this StructuredGetProjectList.
 
-        Intermediate annual rate  # noqa: E501
+        Intermediate annual rate.  # noqa: E501
 
         :param mid_annual_rate: The mid_annual_rate of this StructuredGetProjectList.  # noqa: E501
         :type: str
@@ -273,7 +273,7 @@ class StructuredGetProjectList(object):
     def max_annual_rate(self):
         """Gets the max_annual_rate of this StructuredGetProjectList.  # noqa: E501
 
-        Maximum annual rate  # noqa: E501
+        Maximum annual rate.  # noqa: E501
 
         :return: The max_annual_rate of this StructuredGetProjectList.  # noqa: E501
         :rtype: str
@@ -284,7 +284,7 @@ class StructuredGetProjectList(object):
     def max_annual_rate(self, max_annual_rate):
         """Sets the max_annual_rate of this StructuredGetProjectList.
 
-        Maximum annual rate  # noqa: E501
+        Maximum annual rate.  # noqa: E501
 
         :param max_annual_rate: The max_annual_rate of this StructuredGetProjectList.  # noqa: E501
         :type: str
@@ -296,7 +296,7 @@ class StructuredGetProjectList(object):
     def watch_market(self):
         """Gets the watch_market of this StructuredGetProjectList.  # noqa: E501
 
-        Watch market  # noqa: E501
+        Watch market.  # noqa: E501
 
         :return: The watch_market of this StructuredGetProjectList.  # noqa: E501
         :rtype: str
@@ -307,7 +307,7 @@ class StructuredGetProjectList(object):
     def watch_market(self, watch_market):
         """Sets the watch_market of this StructuredGetProjectList.
 
-        Watch market  # noqa: E501
+        Watch market.  # noqa: E501
 
         :param watch_market: The watch_market of this StructuredGetProjectList.  # noqa: E501
         :type: str
@@ -319,7 +319,7 @@ class StructuredGetProjectList(object):
     def start_time(self):
         """Gets the start_time of this StructuredGetProjectList.  # noqa: E501
 
-        start time  # noqa: E501
+        start time.  # noqa: E501
 
         :return: The start_time of this StructuredGetProjectList.  # noqa: E501
         :rtype: int
@@ -330,7 +330,7 @@ class StructuredGetProjectList(object):
     def start_time(self, start_time):
         """Sets the start_time of this StructuredGetProjectList.
 
-        start time  # noqa: E501
+        start time.  # noqa: E501
 
         :param start_time: The start_time of this StructuredGetProjectList.  # noqa: E501
         :type: int
@@ -342,7 +342,7 @@ class StructuredGetProjectList(object):
     def end_time(self):
         """Gets the end_time of this StructuredGetProjectList.  # noqa: E501
 
-        Finished time  # noqa: E501
+        Finished time.  # noqa: E501
 
         :return: The end_time of this StructuredGetProjectList.  # noqa: E501
         :rtype: int
@@ -353,7 +353,7 @@ class StructuredGetProjectList(object):
     def end_time(self, end_time):
         """Sets the end_time of this StructuredGetProjectList.
 
-        Finished time  # noqa: E501
+        Finished time.  # noqa: E501
 
         :param end_time: The end_time of this StructuredGetProjectList.  # noqa: E501
         :type: int

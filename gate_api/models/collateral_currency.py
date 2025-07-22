@@ -62,7 +62,7 @@ class CollateralCurrency(object):
     def currency(self):
         """Gets the currency of this CollateralCurrency.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this CollateralCurrency.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class CollateralCurrency(object):
     def currency(self, currency):
         """Sets the currency of this CollateralCurrency.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this CollateralCurrency.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class CollateralCurrency(object):
     def amount(self):
         """Gets the amount of this CollateralCurrency.  # noqa: E501
 
-        Size  # noqa: E501
+        Size.  # noqa: E501
 
         :return: The amount of this CollateralCurrency.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class CollateralCurrency(object):
     def amount(self, amount):
         """Sets the amount of this CollateralCurrency.
 
-        Size  # noqa: E501
+        Size.  # noqa: E501
 
         :param amount: The amount of this CollateralCurrency.  # noqa: E501
         :type: str

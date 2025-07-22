@@ -102,7 +102,7 @@ class FuturesAccountHistory(object):
     def dnw(self):
         """Gets the dnw of this FuturesAccountHistory.  # noqa: E501
 
-        total amount of deposit and withdraw  # noqa: E501
+        total amount of deposit and withdraw.  # noqa: E501
 
         :return: The dnw of this FuturesAccountHistory.  # noqa: E501
         :rtype: str
@@ -113,7 +113,7 @@ class FuturesAccountHistory(object):
     def dnw(self, dnw):
         """Sets the dnw of this FuturesAccountHistory.
 
-        total amount of deposit and withdraw  # noqa: E501
+        total amount of deposit and withdraw.  # noqa: E501
 
         :param dnw: The dnw of this FuturesAccountHistory.  # noqa: E501
         :type: str
@@ -125,7 +125,7 @@ class FuturesAccountHistory(object):
     def pnl(self):
         """Gets the pnl of this FuturesAccountHistory.  # noqa: E501
 
-        total amount of trading profit and loss  # noqa: E501
+        total amount of trading profit and loss.  # noqa: E501
 
         :return: The pnl of this FuturesAccountHistory.  # noqa: E501
         :rtype: str
@@ -136,7 +136,7 @@ class FuturesAccountHistory(object):
     def pnl(self, pnl):
         """Sets the pnl of this FuturesAccountHistory.
 
-        total amount of trading profit and loss  # noqa: E501
+        total amount of trading profit and loss.  # noqa: E501
 
         :param pnl: The pnl of this FuturesAccountHistory.  # noqa: E501
         :type: str
@@ -148,7 +148,7 @@ class FuturesAccountHistory(object):
     def fee(self):
         """Gets the fee of this FuturesAccountHistory.  # noqa: E501
 
-        total amount of fee  # noqa: E501
+        total amount of fee.  # noqa: E501
 
         :return: The fee of this FuturesAccountHistory.  # noqa: E501
         :rtype: str
@@ -159,7 +159,7 @@ class FuturesAccountHistory(object):
     def fee(self, fee):
         """Sets the fee of this FuturesAccountHistory.
 
-        total amount of fee  # noqa: E501
+        total amount of fee.  # noqa: E501
 
         :param fee: The fee of this FuturesAccountHistory.  # noqa: E501
         :type: str
@@ -171,7 +171,7 @@ class FuturesAccountHistory(object):
     def refr(self):
         """Gets the refr of this FuturesAccountHistory.  # noqa: E501
 
-        total amount of referrer rebates  # noqa: E501
+        total amount of referrer rebates.  # noqa: E501
 
         :return: The refr of this FuturesAccountHistory.  # noqa: E501
         :rtype: str
@@ -182,7 +182,7 @@ class FuturesAccountHistory(object):
     def refr(self, refr):
         """Sets the refr of this FuturesAccountHistory.
 
-        total amount of referrer rebates  # noqa: E501
+        total amount of referrer rebates.  # noqa: E501
 
         :param refr: The refr of this FuturesAccountHistory.  # noqa: E501
         :type: str
@@ -194,7 +194,7 @@ class FuturesAccountHistory(object):
     def fund(self):
         """Gets the fund of this FuturesAccountHistory.  # noqa: E501
 
-        total amount of funding costs  # noqa: E501
+        total amount of funding costs.  # noqa: E501
 
         :return: The fund of this FuturesAccountHistory.  # noqa: E501
         :rtype: str
@@ -205,7 +205,7 @@ class FuturesAccountHistory(object):
     def fund(self, fund):
         """Sets the fund of this FuturesAccountHistory.
 
-        total amount of funding costs  # noqa: E501
+        total amount of funding costs.  # noqa: E501
 
         :param fund: The fund of this FuturesAccountHistory.  # noqa: E501
         :type: str
@@ -217,7 +217,7 @@ class FuturesAccountHistory(object):
     def point_dnw(self):
         """Gets the point_dnw of this FuturesAccountHistory.  # noqa: E501
 
-        total amount of point deposit and withdraw  # noqa: E501
+        total amount of point deposit and withdraw.  # noqa: E501
 
         :return: The point_dnw of this FuturesAccountHistory.  # noqa: E501
         :rtype: str
@@ -228,7 +228,7 @@ class FuturesAccountHistory(object):
     def point_dnw(self, point_dnw):
         """Sets the point_dnw of this FuturesAccountHistory.
 
-        total amount of point deposit and withdraw  # noqa: E501
+        total amount of point deposit and withdraw.  # noqa: E501
 
         :param point_dnw: The point_dnw of this FuturesAccountHistory.  # noqa: E501
         :type: str
@@ -240,7 +240,7 @@ class FuturesAccountHistory(object):
     def point_fee(self):
         """Gets the point_fee of this FuturesAccountHistory.  # noqa: E501
 
-        total amount of point fee  # noqa: E501
+        total amount of point fee.  # noqa: E501
 
         :return: The point_fee of this FuturesAccountHistory.  # noqa: E501
         :rtype: str
@@ -251,7 +251,7 @@ class FuturesAccountHistory(object):
     def point_fee(self, point_fee):
         """Sets the point_fee of this FuturesAccountHistory.
 
-        total amount of point fee  # noqa: E501
+        total amount of point fee.  # noqa: E501
 
         :param point_fee: The point_fee of this FuturesAccountHistory.  # noqa: E501
         :type: str
@@ -263,7 +263,7 @@ class FuturesAccountHistory(object):
     def point_refr(self):
         """Gets the point_refr of this FuturesAccountHistory.  # noqa: E501
 
-        total amount of referrer rebates of point fee  # noqa: E501
+        total amount of referrer rebates of point fee.  # noqa: E501
 
         :return: The point_refr of this FuturesAccountHistory.  # noqa: E501
         :rtype: str
@@ -274,7 +274,7 @@ class FuturesAccountHistory(object):
     def point_refr(self, point_refr):
         """Sets the point_refr of this FuturesAccountHistory.
 
-        total amount of referrer rebates of point fee  # noqa: E501
+        total amount of referrer rebates of point fee.  # noqa: E501
 
         :param point_refr: The point_refr of this FuturesAccountHistory.  # noqa: E501
         :type: str
@@ -286,7 +286,7 @@ class FuturesAccountHistory(object):
     def bonus_dnw(self):
         """Gets the bonus_dnw of this FuturesAccountHistory.  # noqa: E501
 
-        total amount of perpetual contract bonus transfer  # noqa: E501
+        total amount of perpetual contract bonus transfer.  # noqa: E501
 
         :return: The bonus_dnw of this FuturesAccountHistory.  # noqa: E501
         :rtype: str
@@ -297,7 +297,7 @@ class FuturesAccountHistory(object):
     def bonus_dnw(self, bonus_dnw):
         """Sets the bonus_dnw of this FuturesAccountHistory.
 
-        total amount of perpetual contract bonus transfer  # noqa: E501
+        total amount of perpetual contract bonus transfer.  # noqa: E501
 
         :param bonus_dnw: The bonus_dnw of this FuturesAccountHistory.  # noqa: E501
         :type: str
@@ -309,7 +309,7 @@ class FuturesAccountHistory(object):
     def bonus_offset(self):
         """Gets the bonus_offset of this FuturesAccountHistory.  # noqa: E501
 
-        total amount of perpetual contract bonus deduction  # noqa: E501
+        total amount of perpetual contract bonus deduction.  # noqa: E501
 
         :return: The bonus_offset of this FuturesAccountHistory.  # noqa: E501
         :rtype: str
@@ -320,7 +320,7 @@ class FuturesAccountHistory(object):
     def bonus_offset(self, bonus_offset):
         """Sets the bonus_offset of this FuturesAccountHistory.
 
-        total amount of perpetual contract bonus deduction  # noqa: E501
+        total amount of perpetual contract bonus deduction.  # noqa: E501
 
         :param bonus_offset: The bonus_offset of this FuturesAccountHistory.  # noqa: E501
         :type: str

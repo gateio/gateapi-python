@@ -216,7 +216,7 @@ class Position(object):
     def user(self):
         """Gets the user of this Position.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user of this Position.  # noqa: E501
         :rtype: int
@@ -227,7 +227,7 @@ class Position(object):
     def user(self, user):
         """Sets the user of this Position.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user: The user of this Position.  # noqa: E501
         :type: int
@@ -239,7 +239,7 @@ class Position(object):
     def contract(self):
         """Gets the contract of this Position.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :return: The contract of this Position.  # noqa: E501
         :rtype: str
@@ -250,7 +250,7 @@ class Position(object):
     def contract(self, contract):
         """Sets the contract of this Position.
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :param contract: The contract of this Position.  # noqa: E501
         :type: str
@@ -262,7 +262,7 @@ class Position(object):
     def size(self):
         """Gets the size of this Position.  # noqa: E501
 
-        Position size  # noqa: E501
+        Position size.  # noqa: E501
 
         :return: The size of this Position.  # noqa: E501
         :rtype: int
@@ -273,7 +273,7 @@ class Position(object):
     def size(self, size):
         """Sets the size of this Position.
 
-        Position size  # noqa: E501
+        Position size.  # noqa: E501
 
         :param size: The size of this Position.  # noqa: E501
         :type: int
@@ -308,7 +308,7 @@ class Position(object):
     def risk_limit(self):
         """Gets the risk_limit of this Position.  # noqa: E501
 
-        Position risk limit  # noqa: E501
+        Position risk limit.  # noqa: E501
 
         :return: The risk_limit of this Position.  # noqa: E501
         :rtype: str
@@ -319,7 +319,7 @@ class Position(object):
     def risk_limit(self, risk_limit):
         """Sets the risk_limit of this Position.
 
-        Position risk limit  # noqa: E501
+        Position risk limit.  # noqa: E501
 
         :param risk_limit: The risk_limit of this Position.  # noqa: E501
         :type: str
@@ -331,7 +331,7 @@ class Position(object):
     def leverage_max(self):
         """Gets the leverage_max of this Position.  # noqa: E501
 
-        Maximum leverage under current risk limit  # noqa: E501
+        Maximum leverage under current risk limit.  # noqa: E501
 
         :return: The leverage_max of this Position.  # noqa: E501
         :rtype: str
@@ -342,7 +342,7 @@ class Position(object):
     def leverage_max(self, leverage_max):
         """Sets the leverage_max of this Position.
 
-        Maximum leverage under current risk limit  # noqa: E501
+        Maximum leverage under current risk limit.  # noqa: E501
 
         :param leverage_max: The leverage_max of this Position.  # noqa: E501
         :type: str
@@ -354,7 +354,7 @@ class Position(object):
     def maintenance_rate(self):
         """Gets the maintenance_rate of this Position.  # noqa: E501
 
-        Maintenance rate under current risk limit  # noqa: E501
+        Maintenance rate under current risk limit.  # noqa: E501
 
         :return: The maintenance_rate of this Position.  # noqa: E501
         :rtype: str
@@ -365,7 +365,7 @@ class Position(object):
     def maintenance_rate(self, maintenance_rate):
         """Sets the maintenance_rate of this Position.
 
-        Maintenance rate under current risk limit  # noqa: E501
+        Maintenance rate under current risk limit.  # noqa: E501
 
         :param maintenance_rate: The maintenance_rate of this Position.  # noqa: E501
         :type: str
@@ -377,7 +377,7 @@ class Position(object):
     def value(self):
         """Gets the value of this Position.  # noqa: E501
 
-        Position value calculated in settlement currency  # noqa: E501
+        Position value calculated in settlement currency.  # noqa: E501
 
         :return: The value of this Position.  # noqa: E501
         :rtype: str
@@ -388,7 +388,7 @@ class Position(object):
     def value(self, value):
         """Sets the value of this Position.
 
-        Position value calculated in settlement currency  # noqa: E501
+        Position value calculated in settlement currency.  # noqa: E501
 
         :param value: The value of this Position.  # noqa: E501
         :type: str
@@ -400,7 +400,7 @@ class Position(object):
     def margin(self):
         """Gets the margin of this Position.  # noqa: E501
 
-        Position margin  # noqa: E501
+        Position margin.  # noqa: E501
 
         :return: The margin of this Position.  # noqa: E501
         :rtype: str
@@ -411,7 +411,7 @@ class Position(object):
     def margin(self, margin):
         """Sets the margin of this Position.
 
-        Position margin  # noqa: E501
+        Position margin.  # noqa: E501
 
         :param margin: The margin of this Position.  # noqa: E501
         :type: str
@@ -423,7 +423,7 @@ class Position(object):
     def entry_price(self):
         """Gets the entry_price of this Position.  # noqa: E501
 
-        Entry price  # noqa: E501
+        Entry price.  # noqa: E501
 
         :return: The entry_price of this Position.  # noqa: E501
         :rtype: str
@@ -434,7 +434,7 @@ class Position(object):
     def entry_price(self, entry_price):
         """Sets the entry_price of this Position.
 
-        Entry price  # noqa: E501
+        Entry price.  # noqa: E501
 
         :param entry_price: The entry_price of this Position.  # noqa: E501
         :type: str
@@ -446,7 +446,7 @@ class Position(object):
     def liq_price(self):
         """Gets the liq_price of this Position.  # noqa: E501
 
-        Liquidation price  # noqa: E501
+        Liquidation price.  # noqa: E501
 
         :return: The liq_price of this Position.  # noqa: E501
         :rtype: str
@@ -457,7 +457,7 @@ class Position(object):
     def liq_price(self, liq_price):
         """Sets the liq_price of this Position.
 
-        Liquidation price  # noqa: E501
+        Liquidation price.  # noqa: E501
 
         :param liq_price: The liq_price of this Position.  # noqa: E501
         :type: str
@@ -469,7 +469,7 @@ class Position(object):
     def mark_price(self):
         """Gets the mark_price of this Position.  # noqa: E501
 
-        Current mark price  # noqa: E501
+        Current mark price.  # noqa: E501
 
         :return: The mark_price of this Position.  # noqa: E501
         :rtype: str
@@ -480,7 +480,7 @@ class Position(object):
     def mark_price(self, mark_price):
         """Sets the mark_price of this Position.
 
-        Current mark price  # noqa: E501
+        Current mark price.  # noqa: E501
 
         :param mark_price: The mark_price of this Position.  # noqa: E501
         :type: str
@@ -538,7 +538,7 @@ class Position(object):
     def unrealised_pnl(self):
         """Gets the unrealised_pnl of this Position.  # noqa: E501
 
-        Unrealized PNL  # noqa: E501
+        Unrealized PNL.  # noqa: E501
 
         :return: The unrealised_pnl of this Position.  # noqa: E501
         :rtype: str
@@ -549,7 +549,7 @@ class Position(object):
     def unrealised_pnl(self, unrealised_pnl):
         """Sets the unrealised_pnl of this Position.
 
-        Unrealized PNL  # noqa: E501
+        Unrealized PNL.  # noqa: E501
 
         :param unrealised_pnl: The unrealised_pnl of this Position.  # noqa: E501
         :type: str
@@ -561,7 +561,7 @@ class Position(object):
     def realised_pnl(self):
         """Gets the realised_pnl of this Position.  # noqa: E501
 
-        Realized PNL  # noqa: E501
+        Realized PNL.  # noqa: E501
 
         :return: The realised_pnl of this Position.  # noqa: E501
         :rtype: str
@@ -572,7 +572,7 @@ class Position(object):
     def realised_pnl(self, realised_pnl):
         """Sets the realised_pnl of this Position.
 
-        Realized PNL  # noqa: E501
+        Realized PNL.  # noqa: E501
 
         :param realised_pnl: The realised_pnl of this Position.  # noqa: E501
         :type: str
@@ -584,7 +584,7 @@ class Position(object):
     def pnl_pnl(self):
         """Gets the pnl_pnl of this Position.  # noqa: E501
 
-        Realized PNL - Position P/L  # noqa: E501
+        Realized PNL - Position P/L.  # noqa: E501
 
         :return: The pnl_pnl of this Position.  # noqa: E501
         :rtype: str
@@ -595,7 +595,7 @@ class Position(object):
     def pnl_pnl(self, pnl_pnl):
         """Sets the pnl_pnl of this Position.
 
-        Realized PNL - Position P/L  # noqa: E501
+        Realized PNL - Position P/L.  # noqa: E501
 
         :param pnl_pnl: The pnl_pnl of this Position.  # noqa: E501
         :type: str
@@ -607,7 +607,7 @@ class Position(object):
     def pnl_fund(self):
         """Gets the pnl_fund of this Position.  # noqa: E501
 
-        Realized PNL -  Funding Fees  # noqa: E501
+        Realized PNL - Funding Fees.  # noqa: E501
 
         :return: The pnl_fund of this Position.  # noqa: E501
         :rtype: str
@@ -618,7 +618,7 @@ class Position(object):
     def pnl_fund(self, pnl_fund):
         """Sets the pnl_fund of this Position.
 
-        Realized PNL -  Funding Fees  # noqa: E501
+        Realized PNL - Funding Fees.  # noqa: E501
 
         :param pnl_fund: The pnl_fund of this Position.  # noqa: E501
         :type: str
@@ -630,7 +630,7 @@ class Position(object):
     def pnl_fee(self):
         """Gets the pnl_fee of this Position.  # noqa: E501
 
-        Realized PNL - Transaction Fees  # noqa: E501
+        Realized PNL - Transaction Fees.  # noqa: E501
 
         :return: The pnl_fee of this Position.  # noqa: E501
         :rtype: str
@@ -641,7 +641,7 @@ class Position(object):
     def pnl_fee(self, pnl_fee):
         """Sets the pnl_fee of this Position.
 
-        Realized PNL - Transaction Fees  # noqa: E501
+        Realized PNL - Transaction Fees.  # noqa: E501
 
         :param pnl_fee: The pnl_fee of this Position.  # noqa: E501
         :type: str
@@ -653,7 +653,7 @@ class Position(object):
     def history_pnl(self):
         """Gets the history_pnl of this Position.  # noqa: E501
 
-        History realized PNL  # noqa: E501
+        History realized PNL.  # noqa: E501
 
         :return: The history_pnl of this Position.  # noqa: E501
         :rtype: str
@@ -664,7 +664,7 @@ class Position(object):
     def history_pnl(self, history_pnl):
         """Sets the history_pnl of this Position.
 
-        History realized PNL  # noqa: E501
+        History realized PNL.  # noqa: E501
 
         :param history_pnl: The history_pnl of this Position.  # noqa: E501
         :type: str
@@ -676,7 +676,7 @@ class Position(object):
     def last_close_pnl(self):
         """Gets the last_close_pnl of this Position.  # noqa: E501
 
-        PNL of last position close  # noqa: E501
+        PNL of last position close.  # noqa: E501
 
         :return: The last_close_pnl of this Position.  # noqa: E501
         :rtype: str
@@ -687,7 +687,7 @@ class Position(object):
     def last_close_pnl(self, last_close_pnl):
         """Sets the last_close_pnl of this Position.
 
-        PNL of last position close  # noqa: E501
+        PNL of last position close.  # noqa: E501
 
         :param last_close_pnl: The last_close_pnl of this Position.  # noqa: E501
         :type: str
@@ -699,7 +699,7 @@ class Position(object):
     def realised_point(self):
         """Gets the realised_point of this Position.  # noqa: E501
 
-        Realized POINT PNL  # noqa: E501
+        Realized POINT PNL.  # noqa: E501
 
         :return: The realised_point of this Position.  # noqa: E501
         :rtype: str
@@ -710,7 +710,7 @@ class Position(object):
     def realised_point(self, realised_point):
         """Sets the realised_point of this Position.
 
-        Realized POINT PNL  # noqa: E501
+        Realized POINT PNL.  # noqa: E501
 
         :param realised_point: The realised_point of this Position.  # noqa: E501
         :type: str
@@ -722,7 +722,7 @@ class Position(object):
     def history_point(self):
         """Gets the history_point of this Position.  # noqa: E501
 
-        History realized POINT PNL  # noqa: E501
+        History realized POINT PNL.  # noqa: E501
 
         :return: The history_point of this Position.  # noqa: E501
         :rtype: str
@@ -733,7 +733,7 @@ class Position(object):
     def history_point(self, history_point):
         """Sets the history_point of this Position.
 
-        History realized POINT PNL  # noqa: E501
+        History realized POINT PNL.  # noqa: E501
 
         :param history_point: The history_point of this Position.  # noqa: E501
         :type: str
@@ -768,7 +768,7 @@ class Position(object):
     def pending_orders(self):
         """Gets the pending_orders of this Position.  # noqa: E501
 
-        Current open orders  # noqa: E501
+        Current open orders.  # noqa: E501
 
         :return: The pending_orders of this Position.  # noqa: E501
         :rtype: int
@@ -779,7 +779,7 @@ class Position(object):
     def pending_orders(self, pending_orders):
         """Sets the pending_orders of this Position.
 
-        Current open orders  # noqa: E501
+        Current open orders.  # noqa: E501
 
         :param pending_orders: The pending_orders of this Position.  # noqa: E501
         :type: int
@@ -812,7 +812,7 @@ class Position(object):
     def mode(self):
         """Gets the mode of this Position.  # noqa: E501
 
-        Position mode, including:  - `single`: dual mode is not enabled- `dual_long`: long position in dual mode- `dual_short`: short position in dual mode  # noqa: E501
+        Position mode, including:  - `single`: dual mode is not enabled- `dual_long`: long position in dual mode- `dual_short`: mode  # noqa: E501
 
         :return: The mode of this Position.  # noqa: E501
         :rtype: str
@@ -823,7 +823,7 @@ class Position(object):
     def mode(self, mode):
         """Sets the mode of this Position.
 
-        Position mode, including:  - `single`: dual mode is not enabled- `dual_long`: long position in dual mode- `dual_short`: short position in dual mode  # noqa: E501
+        Position mode, including:  - `single`: dual mode is not enabled- `dual_long`: long position in dual mode- `dual_short`: mode  # noqa: E501
 
         :param mode: The mode of this Position.  # noqa: E501
         :type: str
@@ -841,7 +841,7 @@ class Position(object):
     def cross_leverage_limit(self):
         """Gets the cross_leverage_limit of this Position.  # noqa: E501
 
-        Cross margin leverage(valid only when `leverage` is 0)  # noqa: E501
+        Cross margin leverage(valid only when `leverage` is 0).  # noqa: E501
 
         :return: The cross_leverage_limit of this Position.  # noqa: E501
         :rtype: str
@@ -852,7 +852,7 @@ class Position(object):
     def cross_leverage_limit(self, cross_leverage_limit):
         """Sets the cross_leverage_limit of this Position.
 
-        Cross margin leverage(valid only when `leverage` is 0)  # noqa: E501
+        Cross margin leverage(valid only when `leverage` is 0).  # noqa: E501
 
         :param cross_leverage_limit: The cross_leverage_limit of this Position.  # noqa: E501
         :type: str
@@ -864,7 +864,7 @@ class Position(object):
     def update_time(self):
         """Gets the update_time of this Position.  # noqa: E501
 
-        Last update time  # noqa: E501
+        Last update time.  # noqa: E501
 
         :return: The update_time of this Position.  # noqa: E501
         :rtype: int
@@ -875,7 +875,7 @@ class Position(object):
     def update_time(self, update_time):
         """Sets the update_time of this Position.
 
-        Last update time  # noqa: E501
+        Last update time.  # noqa: E501
 
         :param update_time: The update_time of this Position.  # noqa: E501
         :type: int
@@ -910,7 +910,7 @@ class Position(object):
     def open_time(self):
         """Gets the open_time of this Position.  # noqa: E501
 
-        First Open Time  # noqa: E501
+        First Open Time.  # noqa: E501
 
         :return: The open_time of this Position.  # noqa: E501
         :rtype: int
@@ -921,7 +921,7 @@ class Position(object):
     def open_time(self, open_time):
         """Sets the open_time of this Position.
 
-        First Open Time  # noqa: E501
+        First Open Time.  # noqa: E501
 
         :param open_time: The open_time of this Position.  # noqa: E501
         :type: int
@@ -933,7 +933,7 @@ class Position(object):
     def risk_limit_table(self):
         """Gets the risk_limit_table of this Position.  # noqa: E501
 
-        Risk limit table ID  # noqa: E501
+        Risk limit table ID.  # noqa: E501
 
         :return: The risk_limit_table of this Position.  # noqa: E501
         :rtype: str
@@ -944,7 +944,7 @@ class Position(object):
     def risk_limit_table(self, risk_limit_table):
         """Sets the risk_limit_table of this Position.
 
-        Risk limit table ID  # noqa: E501
+        Risk limit table ID.  # noqa: E501
 
         :param risk_limit_table: The risk_limit_table of this Position.  # noqa: E501
         :type: str
@@ -956,7 +956,7 @@ class Position(object):
     def average_maintenance_rate(self):
         """Gets the average_maintenance_rate of this Position.  # noqa: E501
 
-        Average maintenance margin rate  # noqa: E501
+        Average maintenance margin rate.  # noqa: E501
 
         :return: The average_maintenance_rate of this Position.  # noqa: E501
         :rtype: str
@@ -967,7 +967,7 @@ class Position(object):
     def average_maintenance_rate(self, average_maintenance_rate):
         """Sets the average_maintenance_rate of this Position.
 
-        Average maintenance margin rate  # noqa: E501
+        Average maintenance margin rate.  # noqa: E501
 
         :param average_maintenance_rate: The average_maintenance_rate of this Position.  # noqa: E501
         :type: str

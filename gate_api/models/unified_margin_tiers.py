@@ -62,7 +62,7 @@ class UnifiedMarginTiers(object):
     def currency(self):
         """Gets the currency of this UnifiedMarginTiers.  # noqa: E501
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :return: The currency of this UnifiedMarginTiers.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class UnifiedMarginTiers(object):
     def currency(self, currency):
         """Sets the currency of this UnifiedMarginTiers.
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :param currency: The currency of this UnifiedMarginTiers.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class UnifiedMarginTiers(object):
     def margin_tiers(self):
         """Gets the margin_tiers of this UnifiedMarginTiers.  # noqa: E501
 
-        Margin tiers  # noqa: E501
+        Margin tiers.  # noqa: E501
 
         :return: The margin_tiers of this UnifiedMarginTiers.  # noqa: E501
         :rtype: list[MarginTiers]
@@ -96,7 +96,7 @@ class UnifiedMarginTiers(object):
     def margin_tiers(self, margin_tiers):
         """Sets the margin_tiers of this UnifiedMarginTiers.
 
-        Margin tiers  # noqa: E501
+        Margin tiers.  # noqa: E501
 
         :param margin_tiers: The margin_tiers of this UnifiedMarginTiers.  # noqa: E501
         :type: list[MarginTiers]

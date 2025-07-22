@@ -62,7 +62,7 @@ class TransferablesResult(object):
     def currency(self):
         """Gets the currency of this TransferablesResult.  # noqa: E501
 
-        Currency detail  # noqa: E501
+        Currency detail.  # noqa: E501
 
         :return: The currency of this TransferablesResult.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class TransferablesResult(object):
     def currency(self, currency):
         """Sets the currency of this TransferablesResult.
 
-        Currency detail  # noqa: E501
+        Currency detail.  # noqa: E501
 
         :param currency: The currency of this TransferablesResult.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class TransferablesResult(object):
     def amount(self):
         """Gets the amount of this TransferablesResult.  # noqa: E501
 
-        The maximum amount that can be transferred out  # noqa: E501
+        The maximum amount that can be transferred out.  # noqa: E501
 
         :return: The amount of this TransferablesResult.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class TransferablesResult(object):
     def amount(self, amount):
         """Sets the amount of this TransferablesResult.
 
-        The maximum amount that can be transferred out  # noqa: E501
+        The maximum amount that can be transferred out.  # noqa: E501
 
         :param amount: The amount of this TransferablesResult.  # noqa: E501
         :type: str

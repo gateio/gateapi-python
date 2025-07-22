@@ -57,7 +57,7 @@ class TriggerTime(object):
     def trigger_time(self):
         """Gets the trigger_time of this TriggerTime.  # noqa: E501
 
-        Timestamp of the end of the countdown, in milliseconds  # noqa: E501
+        Timestamp of the end of the countdown, in milliseconds.  # noqa: E501
 
         :return: The trigger_time of this TriggerTime.  # noqa: E501
         :rtype: int
@@ -68,7 +68,7 @@ class TriggerTime(object):
     def trigger_time(self, trigger_time):
         """Sets the trigger_time of this TriggerTime.
 
-        Timestamp of the end of the countdown, in milliseconds  # noqa: E501
+        Timestamp of the end of the countdown, in milliseconds.  # noqa: E501
 
         :param trigger_time: The trigger_time of this TriggerTime.  # noqa: E501
         :type: int

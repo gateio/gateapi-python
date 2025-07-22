@@ -58,8 +58,7 @@ class FuturesOrder(object):
         'auto_size': 'str',
         'stp_id': 'int',
         'stp_act': 'str',
-        'amend_text': 'str',
-        'biz_info': 'str'
+        'amend_text': 'str'
     }
 
     attribute_map = {
@@ -88,12 +87,11 @@ class FuturesOrder(object):
         'auto_size': 'auto_size',
         'stp_id': 'stp_id',
         'stp_act': 'stp_act',
-        'amend_text': 'amend_text',
-        'biz_info': 'biz_info'
+        'amend_text': 'amend_text'
     }
 
-    def __init__(self, id=None, user=None, create_time=None, finish_time=None, finish_as=None, status=None, contract=None, size=None, iceberg=None, price=None, close=False, is_close=None, reduce_only=False, is_reduce_only=None, is_liq=None, tif='gtc', left=None, fill_price=None, text=None, tkfr=None, mkfr=None, refu=None, auto_size=None, stp_id=None, stp_act=None, amend_text=None, biz_info=None, local_vars_configuration=None):  # noqa: E501
-        # type: (int, int, float, float, str, str, str, int, int, str, bool, bool, bool, bool, bool, str, int, str, str, str, str, int, str, int, str, str, str, Configuration) -> None
+    def __init__(self, id=None, user=None, create_time=None, finish_time=None, finish_as=None, status=None, contract=None, size=None, iceberg=None, price=None, close=False, is_close=None, reduce_only=False, is_reduce_only=None, is_liq=None, tif='gtc', left=None, fill_price=None, text=None, tkfr=None, mkfr=None, refu=None, auto_size=None, stp_id=None, stp_act=None, amend_text=None, local_vars_configuration=None):  # noqa: E501
+        # type: (int, int, float, float, str, str, str, int, int, str, bool, bool, bool, bool, bool, str, int, str, str, str, str, int, str, int, str, str, Configuration) -> None
         """FuturesOrder - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -125,7 +123,6 @@ class FuturesOrder(object):
         self._stp_id = None
         self._stp_act = None
         self._amend_text = None
-        self._biz_info = None
         self.discriminator = None
 
         if id is not None:
@@ -178,14 +175,12 @@ class FuturesOrder(object):
             self.stp_act = stp_act
         if amend_text is not None:
             self.amend_text = amend_text
-        if biz_info is not None:
-            self.biz_info = biz_info
 
     @property
     def id(self):
         """Gets the id of this FuturesOrder.  # noqa: E501
 
-        Futures order ID  # noqa: E501
+        Futures order ID.  # noqa: E501
 
         :return: The id of this FuturesOrder.  # noqa: E501
         :rtype: int
@@ -196,7 +191,7 @@ class FuturesOrder(object):
     def id(self, id):
         """Sets the id of this FuturesOrder.
 
-        Futures order ID  # noqa: E501
+        Futures order ID.  # noqa: E501
 
         :param id: The id of this FuturesOrder.  # noqa: E501
         :type: int
@@ -208,7 +203,7 @@ class FuturesOrder(object):
     def user(self):
         """Gets the user of this FuturesOrder.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user of this FuturesOrder.  # noqa: E501
         :rtype: int
@@ -219,7 +214,7 @@ class FuturesOrder(object):
     def user(self, user):
         """Sets the user of this FuturesOrder.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user: The user of this FuturesOrder.  # noqa: E501
         :type: int
@@ -231,7 +226,7 @@ class FuturesOrder(object):
     def create_time(self):
         """Gets the create_time of this FuturesOrder.  # noqa: E501
 
-        Creation time of order  # noqa: E501
+        Creation time of order.  # noqa: E501
 
         :return: The create_time of this FuturesOrder.  # noqa: E501
         :rtype: float
@@ -242,7 +237,7 @@ class FuturesOrder(object):
     def create_time(self, create_time):
         """Sets the create_time of this FuturesOrder.
 
-        Creation time of order  # noqa: E501
+        Creation time of order.  # noqa: E501
 
         :param create_time: The create_time of this FuturesOrder.  # noqa: E501
         :type: float
@@ -254,7 +249,7 @@ class FuturesOrder(object):
     def finish_time(self):
         """Gets the finish_time of this FuturesOrder.  # noqa: E501
 
-        Order finished time. Not returned if order is open  # noqa: E501
+        Order finished time. Not returned if order is open.  # noqa: E501
 
         :return: The finish_time of this FuturesOrder.  # noqa: E501
         :rtype: float
@@ -265,7 +260,7 @@ class FuturesOrder(object):
     def finish_time(self, finish_time):
         """Sets the finish_time of this FuturesOrder.
 
-        Order finished time. Not returned if order is open  # noqa: E501
+        Order finished time. Not returned if order is open.  # noqa: E501
 
         :param finish_time: The finish_time of this FuturesOrder.  # noqa: E501
         :type: float
@@ -277,7 +272,7 @@ class FuturesOrder(object):
     def finish_as(self):
         """Gets the finish_as of this FuturesOrder.  # noqa: E501
 
-        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close - position_closed: canceled because the position was closed - reduce_out: only reduce positions by excluding hard-to-fill orders - stp: cancelled because self trade prevention   # noqa: E501
+        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - increasing position while `reduce-only` set- position_closed: cancelled because of position close - position_closed: canceled because the position was closed - reduce_out: only reduce positions by excluding hard-to-fill orders - stp: cancelled because self trade prevention   # noqa: E501
 
         :return: The finish_as of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -288,7 +283,7 @@ class FuturesOrder(object):
     def finish_as(self, finish_as):
         """Sets the finish_as of this FuturesOrder.
 
-        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - reduce_only: cancelled because of increasing position while `reduce-only` set- position_closed: cancelled because of position close - position_closed: canceled because the position was closed - reduce_out: only reduce positions by excluding hard-to-fill orders - stp: cancelled because self trade prevention   # noqa: E501
+        How the order was finished.  - filled: all filled - cancelled: manually cancelled - liquidated: cancelled because of liquidation - ioc: time in force is `IOC`, finish immediately - auto_deleveraged: finished by ADL - increasing position while `reduce-only` set- position_closed: cancelled because of position close - position_closed: canceled because the position was closed - reduce_out: only reduce positions by excluding hard-to-fill orders - stp: cancelled because self trade prevention   # noqa: E501
 
         :param finish_as: The finish_as of this FuturesOrder.  # noqa: E501
         :type: str
@@ -335,7 +330,7 @@ class FuturesOrder(object):
     def contract(self):
         """Gets the contract of this FuturesOrder.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :return: The contract of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -346,7 +341,7 @@ class FuturesOrder(object):
     def contract(self, contract):
         """Sets the contract of this FuturesOrder.
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :param contract: The contract of this FuturesOrder.  # noqa: E501
         :type: str
@@ -408,7 +403,7 @@ class FuturesOrder(object):
     def price(self):
         """Gets the price of this FuturesOrder.  # noqa: E501
 
-        Order price. 0 for market order with `tif` set as `ioc`  # noqa: E501
+        Order price. 0 for market order with `tif` set as `ioc`.  # noqa: E501
 
         :return: The price of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -419,7 +414,7 @@ class FuturesOrder(object):
     def price(self, price):
         """Sets the price of this FuturesOrder.
 
-        Order price. 0 for market order with `tif` set as `ioc`  # noqa: E501
+        Order price. 0 for market order with `tif` set as `ioc`.  # noqa: E501
 
         :param price: The price of this FuturesOrder.  # noqa: E501
         :type: str
@@ -431,7 +426,7 @@ class FuturesOrder(object):
     def close(self):
         """Gets the close of this FuturesOrder.  # noqa: E501
 
-        Set as `true` to close the position, with `size` set to 0  # noqa: E501
+        Set as `true` to close the position, with `size` set to 0.  # noqa: E501
 
         :return: The close of this FuturesOrder.  # noqa: E501
         :rtype: bool
@@ -442,7 +437,7 @@ class FuturesOrder(object):
     def close(self, close):
         """Sets the close of this FuturesOrder.
 
-        Set as `true` to close the position, with `size` set to 0  # noqa: E501
+        Set as `true` to close the position, with `size` set to 0.  # noqa: E501
 
         :param close: The close of this FuturesOrder.  # noqa: E501
         :type: bool
@@ -454,7 +449,7 @@ class FuturesOrder(object):
     def is_close(self):
         """Gets the is_close of this FuturesOrder.  # noqa: E501
 
-        Is the order to close position  # noqa: E501
+        Is the order to close position.  # noqa: E501
 
         :return: The is_close of this FuturesOrder.  # noqa: E501
         :rtype: bool
@@ -465,7 +460,7 @@ class FuturesOrder(object):
     def is_close(self, is_close):
         """Sets the is_close of this FuturesOrder.
 
-        Is the order to close position  # noqa: E501
+        Is the order to close position.  # noqa: E501
 
         :param is_close: The is_close of this FuturesOrder.  # noqa: E501
         :type: bool
@@ -477,7 +472,7 @@ class FuturesOrder(object):
     def reduce_only(self):
         """Gets the reduce_only of this FuturesOrder.  # noqa: E501
 
-        Set as `true` to be reduce-only order  # noqa: E501
+        Set as `true` to be reduce-only order.  # noqa: E501
 
         :return: The reduce_only of this FuturesOrder.  # noqa: E501
         :rtype: bool
@@ -488,7 +483,7 @@ class FuturesOrder(object):
     def reduce_only(self, reduce_only):
         """Sets the reduce_only of this FuturesOrder.
 
-        Set as `true` to be reduce-only order  # noqa: E501
+        Set as `true` to be reduce-only order.  # noqa: E501
 
         :param reduce_only: The reduce_only of this FuturesOrder.  # noqa: E501
         :type: bool
@@ -500,7 +495,7 @@ class FuturesOrder(object):
     def is_reduce_only(self):
         """Gets the is_reduce_only of this FuturesOrder.  # noqa: E501
 
-        Is the order reduce-only  # noqa: E501
+        Is the order reduce-only.  # noqa: E501
 
         :return: The is_reduce_only of this FuturesOrder.  # noqa: E501
         :rtype: bool
@@ -511,7 +506,7 @@ class FuturesOrder(object):
     def is_reduce_only(self, is_reduce_only):
         """Sets the is_reduce_only of this FuturesOrder.
 
-        Is the order reduce-only  # noqa: E501
+        Is the order reduce-only.  # noqa: E501
 
         :param is_reduce_only: The is_reduce_only of this FuturesOrder.  # noqa: E501
         :type: bool
@@ -523,7 +518,7 @@ class FuturesOrder(object):
     def is_liq(self):
         """Gets the is_liq of this FuturesOrder.  # noqa: E501
 
-        Is the order for liquidation  # noqa: E501
+        Is the order for liquidation.  # noqa: E501
 
         :return: The is_liq of this FuturesOrder.  # noqa: E501
         :rtype: bool
@@ -534,7 +529,7 @@ class FuturesOrder(object):
     def is_liq(self, is_liq):
         """Sets the is_liq of this FuturesOrder.
 
-        Is the order for liquidation  # noqa: E501
+        Is the order for liquidation.  # noqa: E501
 
         :param is_liq: The is_liq of this FuturesOrder.  # noqa: E501
         :type: bool
@@ -575,7 +570,7 @@ class FuturesOrder(object):
     def left(self):
         """Gets the left of this FuturesOrder.  # noqa: E501
 
-        Size left to be traded  # noqa: E501
+        Size left to be traded.  # noqa: E501
 
         :return: The left of this FuturesOrder.  # noqa: E501
         :rtype: int
@@ -586,7 +581,7 @@ class FuturesOrder(object):
     def left(self, left):
         """Sets the left of this FuturesOrder.
 
-        Size left to be traded  # noqa: E501
+        Size left to be traded.  # noqa: E501
 
         :param left: The left of this FuturesOrder.  # noqa: E501
         :type: int
@@ -598,7 +593,7 @@ class FuturesOrder(object):
     def fill_price(self):
         """Gets the fill_price of this FuturesOrder.  # noqa: E501
 
-        Fill price of the order  # noqa: E501
+        Fill price of the order.  # noqa: E501
 
         :return: The fill_price of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -609,7 +604,7 @@ class FuturesOrder(object):
     def fill_price(self, fill_price):
         """Sets the fill_price of this FuturesOrder.
 
-        Fill price of the order  # noqa: E501
+        Fill price of the order.  # noqa: E501
 
         :param fill_price: The fill_price of this FuturesOrder.  # noqa: E501
         :type: str
@@ -621,7 +616,7 @@ class FuturesOrder(object):
     def text(self):
         """Gets the text of this FuturesOrder.  # noqa: E501
 
-        Order custom information, users can use this field to set a custom ID, and the user-defined field must meet the following conditions:  1. Must start with `t-` 2. If `t-` is not calculated, the length cannot exceed 28 bytes 3. The input content can only contain numbers, letters, underscores (_), midscores (-) or dots (.)  In addition to user-defined information, the following are internal reserved fields that identifies the source of the order:  - web: web page - api: API call - app: mobile terminal - auto_deleveraging: Automatic position reduction - liquidation: Liquidation under the classic account’s old liquidation mode - liq-xxx: a. Liquidation under the classic account’s new liquidation mode (isolated, cross margin one-way mode, non-hedging part of cross margin hedge mode) b. Liquidation under isolated margin in unified account single currency margin mode  - hedge-liq-xxx: Liquidation under the new liquidation mode of the classic account hedge mode, the cross margin hedged part undergoes liquidation, meaning both long and short positions are liquidated simultaneously. - pm_liquidate: Unified account multi-currency margin mode liquidation - comb_margin_liquidate: Unified account portfolio margin mode liquidation - scm_liquidate: Unified account single currency margin mode liquidation - insurance: insurance  # noqa: E501
+        Order custom information, users can use this field to set a custom ID, and the user-defined field must meet the following conditions:  1. Must start with `t-` 2. If `t-` is not calculated, the length cannot exceed 28 bytes 3. The input content can only contain numbers, letters, underscores (_), midscores (-) or dots (.)  In addition to user-defined information, the following are internal reserved fields that identifies the source of the order:  - web: web page - api: API call - app: mobile terminal - auto_deleveraging: Automatic position reduction - liquidation: Liquidation under the classic account’s old liquidation mode - liq-x: new liquidation mode (isolated, cross margin one-way mode, non-hedging part of cross margin hedge mode) b. Liquidation under isolated margin in unified account single currency margin mode  - hedge-liq-x: Liquidation under the new liquidation mode of the classic account hedge mode, the cross margin hedged part undergoes liquidation, meaning both long and short positions are liquidated simultaneously. - pm_liquidate: Unified account multi-currency margin mode liquidation - comb_margin_liquidate: Unified account portfolio margin mode liquidation - scm_liquidate: Unified account single currency margin mode liquidation - insurance: insurance  # noqa: E501
 
         :return: The text of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -632,7 +627,7 @@ class FuturesOrder(object):
     def text(self, text):
         """Sets the text of this FuturesOrder.
 
-        Order custom information, users can use this field to set a custom ID, and the user-defined field must meet the following conditions:  1. Must start with `t-` 2. If `t-` is not calculated, the length cannot exceed 28 bytes 3. The input content can only contain numbers, letters, underscores (_), midscores (-) or dots (.)  In addition to user-defined information, the following are internal reserved fields that identifies the source of the order:  - web: web page - api: API call - app: mobile terminal - auto_deleveraging: Automatic position reduction - liquidation: Liquidation under the classic account’s old liquidation mode - liq-xxx: a. Liquidation under the classic account’s new liquidation mode (isolated, cross margin one-way mode, non-hedging part of cross margin hedge mode) b. Liquidation under isolated margin in unified account single currency margin mode  - hedge-liq-xxx: Liquidation under the new liquidation mode of the classic account hedge mode, the cross margin hedged part undergoes liquidation, meaning both long and short positions are liquidated simultaneously. - pm_liquidate: Unified account multi-currency margin mode liquidation - comb_margin_liquidate: Unified account portfolio margin mode liquidation - scm_liquidate: Unified account single currency margin mode liquidation - insurance: insurance  # noqa: E501
+        Order custom information, users can use this field to set a custom ID, and the user-defined field must meet the following conditions:  1. Must start with `t-` 2. If `t-` is not calculated, the length cannot exceed 28 bytes 3. The input content can only contain numbers, letters, underscores (_), midscores (-) or dots (.)  In addition to user-defined information, the following are internal reserved fields that identifies the source of the order:  - web: web page - api: API call - app: mobile terminal - auto_deleveraging: Automatic position reduction - liquidation: Liquidation under the classic account’s old liquidation mode - liq-x: new liquidation mode (isolated, cross margin one-way mode, non-hedging part of cross margin hedge mode) b. Liquidation under isolated margin in unified account single currency margin mode  - hedge-liq-x: Liquidation under the new liquidation mode of the classic account hedge mode, the cross margin hedged part undergoes liquidation, meaning both long and short positions are liquidated simultaneously. - pm_liquidate: Unified account multi-currency margin mode liquidation - comb_margin_liquidate: Unified account portfolio margin mode liquidation - scm_liquidate: Unified account single currency margin mode liquidation - insurance: insurance  # noqa: E501
 
         :param text: The text of this FuturesOrder.  # noqa: E501
         :type: str
@@ -644,7 +639,7 @@ class FuturesOrder(object):
     def tkfr(self):
         """Gets the tkfr of this FuturesOrder.  # noqa: E501
 
-        Taker fee  # noqa: E501
+        Taker fee.  # noqa: E501
 
         :return: The tkfr of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -655,7 +650,7 @@ class FuturesOrder(object):
     def tkfr(self, tkfr):
         """Sets the tkfr of this FuturesOrder.
 
-        Taker fee  # noqa: E501
+        Taker fee.  # noqa: E501
 
         :param tkfr: The tkfr of this FuturesOrder.  # noqa: E501
         :type: str
@@ -667,7 +662,7 @@ class FuturesOrder(object):
     def mkfr(self):
         """Gets the mkfr of this FuturesOrder.  # noqa: E501
 
-        Maker fee  # noqa: E501
+        Maker fee.  # noqa: E501
 
         :return: The mkfr of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -678,7 +673,7 @@ class FuturesOrder(object):
     def mkfr(self, mkfr):
         """Sets the mkfr of this FuturesOrder.
 
-        Maker fee  # noqa: E501
+        Maker fee.  # noqa: E501
 
         :param mkfr: The mkfr of this FuturesOrder.  # noqa: E501
         :type: str
@@ -690,7 +685,7 @@ class FuturesOrder(object):
     def refu(self):
         """Gets the refu of this FuturesOrder.  # noqa: E501
 
-        Reference user ID  # noqa: E501
+        Reference user ID.  # noqa: E501
 
         :return: The refu of this FuturesOrder.  # noqa: E501
         :rtype: int
@@ -701,7 +696,7 @@ class FuturesOrder(object):
     def refu(self, refu):
         """Sets the refu of this FuturesOrder.
 
-        Reference user ID  # noqa: E501
+        Reference user ID.  # noqa: E501
 
         :param refu: The refu of this FuturesOrder.  # noqa: E501
         :type: int
@@ -765,7 +760,7 @@ class FuturesOrder(object):
     def stp_act(self):
         """Gets the stp_act of this FuturesOrder.  # noqa: E501
 
-        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, Cancel old orders and keep new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
+        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
 
         :return: The stp_act of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -776,7 +771,7 @@ class FuturesOrder(object):
     def stp_act(self, stp_act):
         """Sets the stp_act of this FuturesOrder.
 
-        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, Cancel old orders and keep new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
+        Self-Trading Prevention Action. Users can use this field to set self-trade prevetion strategies  1. After users join the `STP Group`, he can pass `stp_act` to limit the user's self-trade prevetion strategy. If `stp_act` is not passed, the default is `cn` strategy。 2. When the user does not join the `STP group`, an error will be returned when passing the `stp_act` parameter。 3. If the user did not use 'stp_act' when placing the order, 'stp_act' will return '-'  - cn: Cancel newest, Cancel new orders and keep old ones - co: Cancel oldest, new ones - cb: Cancel both, Both old and new orders will be cancelled  # noqa: E501
 
         :param stp_act: The stp_act of this FuturesOrder.  # noqa: E501
         :type: str
@@ -794,7 +789,7 @@ class FuturesOrder(object):
     def amend_text(self):
         """Gets the amend_text of this FuturesOrder.  # noqa: E501
 
-        The custom data that the user remarked when amending the order  # noqa: E501
+        The custom data that the user remarked when amending the order.  # noqa: E501
 
         :return: The amend_text of this FuturesOrder.  # noqa: E501
         :rtype: str
@@ -805,36 +800,13 @@ class FuturesOrder(object):
     def amend_text(self, amend_text):
         """Sets the amend_text of this FuturesOrder.
 
-        The custom data that the user remarked when amending the order  # noqa: E501
+        The custom data that the user remarked when amending the order.  # noqa: E501
 
         :param amend_text: The amend_text of this FuturesOrder.  # noqa: E501
         :type: str
         """
 
         self._amend_text = amend_text
-
-    @property
-    def biz_info(self):
-        """Gets the biz_info of this FuturesOrder.  # noqa: E501
-
-        Additional information  # noqa: E501
-
-        :return: The biz_info of this FuturesOrder.  # noqa: E501
-        :rtype: str
-        """
-        return self._biz_info
-
-    @biz_info.setter
-    def biz_info(self, biz_info):
-        """Sets the biz_info of this FuturesOrder.
-
-        Additional information  # noqa: E501
-
-        :param biz_info: The biz_info of this FuturesOrder.  # noqa: E501
-        :type: str
-        """
-
-        self._biz_info = biz_info
 
     def to_dict(self):
         """Returns the model properties as a dict"""

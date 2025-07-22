@@ -57,7 +57,7 @@ class UidPushWithdrawalResp(object):
     def id(self):
         """Gets the id of this UidPushWithdrawalResp.  # noqa: E501
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :return: The id of this UidPushWithdrawalResp.  # noqa: E501
         :rtype: int
@@ -68,7 +68,7 @@ class UidPushWithdrawalResp(object):
     def id(self, id):
         """Sets the id of this UidPushWithdrawalResp.
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :param id: The id of this UidPushWithdrawalResp.  # noqa: E501
         :type: int

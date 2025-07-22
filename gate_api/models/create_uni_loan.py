@@ -73,7 +73,7 @@ class CreateUniLoan(object):
     def currency(self):
         """Gets the currency of this CreateUniLoan.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this CreateUniLoan.  # noqa: E501
         :rtype: str
@@ -84,7 +84,7 @@ class CreateUniLoan(object):
     def currency(self, currency):
         """Sets the currency of this CreateUniLoan.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this CreateUniLoan.  # noqa: E501
         :type: str
@@ -98,7 +98,7 @@ class CreateUniLoan(object):
     def type(self):
         """Gets the type of this CreateUniLoan.  # noqa: E501
 
-        type: borrow - borrow, repay - repay  # noqa: E501
+        type: borrow - borrow, repay - repay.  # noqa: E501
 
         :return: The type of this CreateUniLoan.  # noqa: E501
         :rtype: str
@@ -109,7 +109,7 @@ class CreateUniLoan(object):
     def type(self, type):
         """Sets the type of this CreateUniLoan.
 
-        type: borrow - borrow, repay - repay  # noqa: E501
+        type: borrow - borrow, repay - repay.  # noqa: E501
 
         :param type: The type of this CreateUniLoan.  # noqa: E501
         :type: str
@@ -129,7 +129,7 @@ class CreateUniLoan(object):
     def amount(self):
         """Gets the amount of this CreateUniLoan.  # noqa: E501
 
-        The amount of lending or repaying  # noqa: E501
+        The amount of lending or repaying.  # noqa: E501
 
         :return: The amount of this CreateUniLoan.  # noqa: E501
         :rtype: str
@@ -140,7 +140,7 @@ class CreateUniLoan(object):
     def amount(self, amount):
         """Sets the amount of this CreateUniLoan.
 
-        The amount of lending or repaying  # noqa: E501
+        The amount of lending or repaying.  # noqa: E501
 
         :param amount: The amount of this CreateUniLoan.  # noqa: E501
         :type: str
@@ -154,7 +154,7 @@ class CreateUniLoan(object):
     def repaid_all(self):
         """Gets the repaid_all of this CreateUniLoan.  # noqa: E501
 
-        Full repayment.  Repay operation only.  If the value is `true`, the amount will be ignored and the loan will be repaid in full.  # noqa: E501
+        Full repayment. Repay operation only. If the value is `true`, the amount will be ignored and repaid in full.  # noqa: E501
 
         :return: The repaid_all of this CreateUniLoan.  # noqa: E501
         :rtype: bool
@@ -165,7 +165,7 @@ class CreateUniLoan(object):
     def repaid_all(self, repaid_all):
         """Sets the repaid_all of this CreateUniLoan.
 
-        Full repayment.  Repay operation only.  If the value is `true`, the amount will be ignored and the loan will be repaid in full.  # noqa: E501
+        Full repayment. Repay operation only. If the value is `true`, the amount will be ignored and repaid in full.  # noqa: E501
 
         :param repaid_all: The repaid_all of this CreateUniLoan.  # noqa: E501
         :type: bool
@@ -177,7 +177,7 @@ class CreateUniLoan(object):
     def currency_pair(self):
         """Gets the currency_pair of this CreateUniLoan.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this CreateUniLoan.  # noqa: E501
         :rtype: str
@@ -188,7 +188,7 @@ class CreateUniLoan(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this CreateUniLoan.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this CreateUniLoan.  # noqa: E501
         :type: str

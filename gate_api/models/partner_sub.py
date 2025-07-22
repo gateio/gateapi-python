@@ -67,7 +67,7 @@ class PartnerSub(object):
     def user_id(self):
         """Gets the user_id of this PartnerSub.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user_id of this PartnerSub.  # noqa: E501
         :rtype: int
@@ -78,7 +78,7 @@ class PartnerSub(object):
     def user_id(self, user_id):
         """Sets the user_id of this PartnerSub.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user_id: The user_id of this PartnerSub.  # noqa: E501
         :type: int
@@ -90,7 +90,7 @@ class PartnerSub(object):
     def user_join_time(self):
         """Gets the user_join_time of this PartnerSub.  # noqa: E501
 
-        The time when the user joined the system, in seconds Unix timestamp  # noqa: E501
+        The time when the user joined the system, in seconds Unix timestamp.  # noqa: E501
 
         :return: The user_join_time of this PartnerSub.  # noqa: E501
         :rtype: int
@@ -101,7 +101,7 @@ class PartnerSub(object):
     def user_join_time(self, user_join_time):
         """Sets the user_join_time of this PartnerSub.
 
-        The time when the user joined the system, in seconds Unix timestamp  # noqa: E501
+        The time when the user joined the system, in seconds Unix timestamp.  # noqa: E501
 
         :param user_join_time: The user_join_time of this PartnerSub.  # noqa: E501
         :type: int
@@ -113,7 +113,7 @@ class PartnerSub(object):
     def type(self):
         """Gets the type of this PartnerSub.  # noqa: E501
 
-        Type (1-Sub-agent 2-Indirect Customer 3-Direct Customer)  # noqa: E501
+        Type (1-Sub-agent 2-Indirect Customer 3-Direct Customer).  # noqa: E501
 
         :return: The type of this PartnerSub.  # noqa: E501
         :rtype: int
@@ -124,7 +124,7 @@ class PartnerSub(object):
     def type(self, type):
         """Sets the type of this PartnerSub.
 
-        Type (1-Sub-agent 2-Indirect Customer 3-Direct Customer)  # noqa: E501
+        Type (1-Sub-agent 2-Indirect Customer 3-Direct Customer).  # noqa: E501
 
         :param type: The type of this PartnerSub.  # noqa: E501
         :type: int

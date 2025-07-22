@@ -83,7 +83,7 @@ class InlineResponse2001(object):
     def est_rate(self):
         """Gets the est_rate of this InlineResponse2001.  # noqa: E501
 
-        Unconverted percentage  # noqa: E501
+        Unconverted percentage.  # noqa: E501
 
         :return: The est_rate of this InlineResponse2001.  # noqa: E501
         :rtype: str
@@ -94,7 +94,7 @@ class InlineResponse2001(object):
     def est_rate(self, est_rate):
         """Sets the est_rate of this InlineResponse2001.
 
-        Unconverted percentage  # noqa: E501
+        Unconverted percentage.  # noqa: E501
 
         :param est_rate: The est_rate of this InlineResponse2001.  # noqa: E501
         :type: str

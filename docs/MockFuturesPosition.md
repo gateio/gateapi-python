@@ -1,6 +1,6 @@
 # MockFuturesPosition
 
-Futures positions
+Futures positions.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

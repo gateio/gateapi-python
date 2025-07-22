@@ -67,7 +67,7 @@ class AgencyTransactionHistory(object):
     def currency_pair(self):
         """Gets the currency_pair of this AgencyTransactionHistory.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this AgencyTransactionHistory.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class AgencyTransactionHistory(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this AgencyTransactionHistory.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this AgencyTransactionHistory.  # noqa: E501
         :type: str
@@ -90,7 +90,7 @@ class AgencyTransactionHistory(object):
     def total(self):
         """Gets the total of this AgencyTransactionHistory.  # noqa: E501
 
-        Total  # noqa: E501
+        Total.  # noqa: E501
 
         :return: The total of this AgencyTransactionHistory.  # noqa: E501
         :rtype: int
@@ -101,7 +101,7 @@ class AgencyTransactionHistory(object):
     def total(self, total):
         """Sets the total of this AgencyTransactionHistory.
 
-        Total  # noqa: E501
+        Total.  # noqa: E501
 
         :param total: The total of this AgencyTransactionHistory.  # noqa: E501
         :type: int
@@ -113,7 +113,7 @@ class AgencyTransactionHistory(object):
     def list(self):
         """Gets the list of this AgencyTransactionHistory.  # noqa: E501
 
-        List of transaction history  # noqa: E501
+        List of transaction history.  # noqa: E501
 
         :return: The list of this AgencyTransactionHistory.  # noqa: E501
         :rtype: list[AgencyTransaction]
@@ -124,7 +124,7 @@ class AgencyTransactionHistory(object):
     def list(self, list):
         """Sets the list of this AgencyTransactionHistory.
 
-        List of transaction history  # noqa: E501
+        List of transaction history.  # noqa: E501
 
         :param list: The list of this AgencyTransactionHistory.  # noqa: E501
         :type: list[AgencyTransaction]

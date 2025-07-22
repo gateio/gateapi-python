@@ -62,7 +62,7 @@ class SubAccountBalance(object):
     def uid(self):
         """Gets the uid of this SubAccountBalance.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The uid of this SubAccountBalance.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class SubAccountBalance(object):
     def uid(self, uid):
         """Sets the uid of this SubAccountBalance.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param uid: The uid of this SubAccountBalance.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class SubAccountBalance(object):
     def available(self):
         """Gets the available of this SubAccountBalance.  # noqa: E501
 
-        Available balances of currencies  # noqa: E501
+        Available balances of currencies.  # noqa: E501
 
         :return: The available of this SubAccountBalance.  # noqa: E501
         :rtype: dict(str, str)
@@ -96,7 +96,7 @@ class SubAccountBalance(object):
     def available(self, available):
         """Sets the available of this SubAccountBalance.
 
-        Available balances of currencies  # noqa: E501
+        Available balances of currencies.  # noqa: E501
 
         :param available: The available of this SubAccountBalance.  # noqa: E501
         :type: dict(str, str)

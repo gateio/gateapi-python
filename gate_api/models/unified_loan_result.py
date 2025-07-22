@@ -57,7 +57,7 @@ class UnifiedLoanResult(object):
     def tran_id(self):
         """Gets the tran_id of this UnifiedLoanResult.  # noqa: E501
 
-        Transaction id  # noqa: E501
+        Transaction id.  # noqa: E501
 
         :return: The tran_id of this UnifiedLoanResult.  # noqa: E501
         :rtype: int
@@ -68,7 +68,7 @@ class UnifiedLoanResult(object):
     def tran_id(self, tran_id):
         """Sets the tran_id of this UnifiedLoanResult.
 
-        Transaction id  # noqa: E501
+        Transaction id.  # noqa: E501
 
         :param tran_id: The tran_id of this UnifiedLoanResult.  # noqa: E501
         :type: int

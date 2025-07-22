@@ -67,7 +67,7 @@ class UnifiedRiskUnits(object):
     def user_id(self):
         """Gets the user_id of this UnifiedRiskUnits.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user_id of this UnifiedRiskUnits.  # noqa: E501
         :rtype: int
@@ -78,7 +78,7 @@ class UnifiedRiskUnits(object):
     def user_id(self, user_id):
         """Sets the user_id of this UnifiedRiskUnits.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user_id: The user_id of this UnifiedRiskUnits.  # noqa: E501
         :type: int
@@ -113,7 +113,7 @@ class UnifiedRiskUnits(object):
     def risk_units(self):
         """Gets the risk_units of this UnifiedRiskUnits.  # noqa: E501
 
-        Risk unit  # noqa: E501
+        Risk unit.  # noqa: E501
 
         :return: The risk_units of this UnifiedRiskUnits.  # noqa: E501
         :rtype: list[RiskUnits]
@@ -124,7 +124,7 @@ class UnifiedRiskUnits(object):
     def risk_units(self, risk_units):
         """Sets the risk_units of this UnifiedRiskUnits.
 
-        Risk unit  # noqa: E501
+        Risk unit.  # noqa: E501
 
         :param risk_units: The risk_units of this UnifiedRiskUnits.  # noqa: E501
         :type: list[RiskUnits]

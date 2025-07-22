@@ -98,7 +98,7 @@ class FuturesOrderBook(object):
     def current(self):
         """Gets the current of this FuturesOrderBook.  # noqa: E501
 
-        Response data generation timestamp  # noqa: E501
+        Response data generation timestamp.  # noqa: E501
 
         :return: The current of this FuturesOrderBook.  # noqa: E501
         :rtype: float
@@ -109,7 +109,7 @@ class FuturesOrderBook(object):
     def current(self, current):
         """Sets the current of this FuturesOrderBook.
 
-        Response data generation timestamp  # noqa: E501
+        Response data generation timestamp.  # noqa: E501
 
         :param current: The current of this FuturesOrderBook.  # noqa: E501
         :type: float
@@ -121,7 +121,7 @@ class FuturesOrderBook(object):
     def update(self):
         """Gets the update of this FuturesOrderBook.  # noqa: E501
 
-        Order book changed timestamp  # noqa: E501
+        Order book changed timestamp.  # noqa: E501
 
         :return: The update of this FuturesOrderBook.  # noqa: E501
         :rtype: float
@@ -132,7 +132,7 @@ class FuturesOrderBook(object):
     def update(self, update):
         """Sets the update of this FuturesOrderBook.
 
-        Order book changed timestamp  # noqa: E501
+        Order book changed timestamp.  # noqa: E501
 
         :param update: The update of this FuturesOrderBook.  # noqa: E501
         :type: float
@@ -144,7 +144,7 @@ class FuturesOrderBook(object):
     def asks(self):
         """Gets the asks of this FuturesOrderBook.  # noqa: E501
 
-        Asks order depth  # noqa: E501
+        Asks order depth.  # noqa: E501
 
         :return: The asks of this FuturesOrderBook.  # noqa: E501
         :rtype: list[FuturesOrderBookItem]
@@ -155,7 +155,7 @@ class FuturesOrderBook(object):
     def asks(self, asks):
         """Sets the asks of this FuturesOrderBook.
 
-        Asks order depth  # noqa: E501
+        Asks order depth.  # noqa: E501
 
         :param asks: The asks of this FuturesOrderBook.  # noqa: E501
         :type: list[FuturesOrderBookItem]
@@ -169,7 +169,7 @@ class FuturesOrderBook(object):
     def bids(self):
         """Gets the bids of this FuturesOrderBook.  # noqa: E501
 
-        Bids order depth  # noqa: E501
+        Bids order depth.  # noqa: E501
 
         :return: The bids of this FuturesOrderBook.  # noqa: E501
         :rtype: list[FuturesOrderBookItem]
@@ -180,7 +180,7 @@ class FuturesOrderBook(object):
     def bids(self, bids):
         """Sets the bids of this FuturesOrderBook.
 
-        Bids order depth  # noqa: E501
+        Bids order depth.  # noqa: E501
 
         :param bids: The bids of this FuturesOrderBook.  # noqa: E501
         :type: list[FuturesOrderBookItem]

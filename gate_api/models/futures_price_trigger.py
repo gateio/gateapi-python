@@ -106,7 +106,7 @@ class FuturesPriceTrigger(object):
     def price_type(self):
         """Gets the price_type of this FuturesPriceTrigger.  # noqa: E501
 
-        Price type. 0 - latest deal price, 1 - mark price, 2 - index price  # noqa: E501
+        Price type. 0 - latest deal price, 1 - mark price, 2 - index price.  # noqa: E501
 
         :return: The price_type of this FuturesPriceTrigger.  # noqa: E501
         :rtype: int
@@ -117,7 +117,7 @@ class FuturesPriceTrigger(object):
     def price_type(self, price_type):
         """Sets the price_type of this FuturesPriceTrigger.
 
-        Price type. 0 - latest deal price, 1 - mark price, 2 - index price  # noqa: E501
+        Price type. 0 - latest deal price, 1 - mark price, 2 - index price.  # noqa: E501
 
         :param price_type: The price_type of this FuturesPriceTrigger.  # noqa: E501
         :type: int
@@ -135,7 +135,7 @@ class FuturesPriceTrigger(object):
     def price(self):
         """Gets the price of this FuturesPriceTrigger.  # noqa: E501
 
-        Value of price on price triggered, or price gap on price gap triggered  # noqa: E501
+        Value of price on price triggered, or price gap on price gap triggered.  # noqa: E501
 
         :return: The price of this FuturesPriceTrigger.  # noqa: E501
         :rtype: str
@@ -146,7 +146,7 @@ class FuturesPriceTrigger(object):
     def price(self, price):
         """Sets the price of this FuturesPriceTrigger.
 
-        Value of price on price triggered, or price gap on price gap triggered  # noqa: E501
+        Value of price on price triggered, or price gap on price gap triggered.  # noqa: E501
 
         :param price: The price of this FuturesPriceTrigger.  # noqa: E501
         :type: str
@@ -158,7 +158,7 @@ class FuturesPriceTrigger(object):
     def rule(self):
         """Gets the rule of this FuturesPriceTrigger.  # noqa: E501
 
-        Price Condition Type  - 1: Indicates that the price calculated based on `strategy_type` and `price_type` is greater than or equal to `Trigger.Price` Trigger, while Trigger.Price must > last_price - 2: Indicates that the price calculated based on `strategy_type` and `price_type` is less than or equal to `Trigger.Price` Trigger, and Trigger.Price must < last_price  # noqa: E501
+        Price Condition Type  - 1: Indicates that the price calculated based on `strategy_type` and `price_type` is greater than or equal to `Trigger.Price` Trigger, while Trigger.Price must > last_price - based on `strategy_type` and `price_type` is less than or equal to `Trigger.Price` Trigger, and Trigger.Price must < last_price  # noqa: E501
 
         :return: The rule of this FuturesPriceTrigger.  # noqa: E501
         :rtype: int
@@ -169,7 +169,7 @@ class FuturesPriceTrigger(object):
     def rule(self, rule):
         """Sets the rule of this FuturesPriceTrigger.
 
-        Price Condition Type  - 1: Indicates that the price calculated based on `strategy_type` and `price_type` is greater than or equal to `Trigger.Price` Trigger, while Trigger.Price must > last_price - 2: Indicates that the price calculated based on `strategy_type` and `price_type` is less than or equal to `Trigger.Price` Trigger, and Trigger.Price must < last_price  # noqa: E501
+        Price Condition Type  - 1: Indicates that the price calculated based on `strategy_type` and `price_type` is greater than or equal to `Trigger.Price` Trigger, while Trigger.Price must > last_price - based on `strategy_type` and `price_type` is less than or equal to `Trigger.Price` Trigger, and Trigger.Price must < last_price  # noqa: E501
 
         :param rule: The rule of this FuturesPriceTrigger.  # noqa: E501
         :type: int

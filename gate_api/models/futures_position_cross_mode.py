@@ -60,7 +60,7 @@ class FuturesPositionCrossMode(object):
     def mode(self):
         """Gets the mode of this FuturesPositionCrossMode.  # noqa: E501
 
-        Full position-by-position model, ISOLATED-by-position, CROSS-full position  # noqa: E501
+        Full position-by-position model, ISOLATED-by-position, CROSS-full position.  # noqa: E501
 
         :return: The mode of this FuturesPositionCrossMode.  # noqa: E501
         :rtype: str
@@ -71,7 +71,7 @@ class FuturesPositionCrossMode(object):
     def mode(self, mode):
         """Sets the mode of this FuturesPositionCrossMode.
 
-        Full position-by-position model, ISOLATED-by-position, CROSS-full position  # noqa: E501
+        Full position-by-position model, ISOLATED-by-position, CROSS-full position.  # noqa: E501
 
         :param mode: The mode of this FuturesPositionCrossMode.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class FuturesPositionCrossMode(object):
     def contract(self):
         """Gets the contract of this FuturesPositionCrossMode.  # noqa: E501
 
-        Contract Market  # noqa: E501
+        Contract Market.  # noqa: E501
 
         :return: The contract of this FuturesPositionCrossMode.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class FuturesPositionCrossMode(object):
     def contract(self, contract):
         """Sets the contract of this FuturesPositionCrossMode.
 
-        Contract Market  # noqa: E501
+        Contract Market.  # noqa: E501
 
         :param contract: The contract of this FuturesPositionCrossMode.  # noqa: E501
         :type: str

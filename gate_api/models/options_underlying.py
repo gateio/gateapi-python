@@ -62,7 +62,7 @@ class OptionsUnderlying(object):
     def name(self):
         """Gets the name of this OptionsUnderlying.  # noqa: E501
 
-        Underlying name  # noqa: E501
+        Underlying name.  # noqa: E501
 
         :return: The name of this OptionsUnderlying.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class OptionsUnderlying(object):
     def name(self, name):
         """Sets the name of this OptionsUnderlying.
 
-        Underlying name  # noqa: E501
+        Underlying name.  # noqa: E501
 
         :param name: The name of this OptionsUnderlying.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class OptionsUnderlying(object):
     def index_price(self):
         """Gets the index_price of this OptionsUnderlying.  # noqa: E501
 
-        Spot index price (quote currency)  # noqa: E501
+        Spot index price (quote currency).  # noqa: E501
 
         :return: The index_price of this OptionsUnderlying.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class OptionsUnderlying(object):
     def index_price(self, index_price):
         """Sets the index_price of this OptionsUnderlying.
 
-        Spot index price (quote currency)  # noqa: E501
+        Spot index price (quote currency).  # noqa: E501
 
         :param index_price: The index_price of this OptionsUnderlying.  # noqa: E501
         :type: str

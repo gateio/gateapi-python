@@ -82,7 +82,7 @@ class RepayRecordRepaidCurrency(object):
     def currency(self):
         """Gets the currency of this RepayRecordRepaidCurrency.  # noqa: E501
 
-        Repayment currency  # noqa: E501
+        Repayment currency.  # noqa: E501
 
         :return: The currency of this RepayRecordRepaidCurrency.  # noqa: E501
         :rtype: str
@@ -93,7 +93,7 @@ class RepayRecordRepaidCurrency(object):
     def currency(self, currency):
         """Sets the currency of this RepayRecordRepaidCurrency.
 
-        Repayment currency  # noqa: E501
+        Repayment currency.  # noqa: E501
 
         :param currency: The currency of this RepayRecordRepaidCurrency.  # noqa: E501
         :type: str
@@ -105,7 +105,7 @@ class RepayRecordRepaidCurrency(object):
     def index_price(self):
         """Gets the index_price of this RepayRecordRepaidCurrency.  # noqa: E501
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :return: The index_price of this RepayRecordRepaidCurrency.  # noqa: E501
         :rtype: str
@@ -116,7 +116,7 @@ class RepayRecordRepaidCurrency(object):
     def index_price(self, index_price):
         """Sets the index_price of this RepayRecordRepaidCurrency.
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :param index_price: The index_price of this RepayRecordRepaidCurrency.  # noqa: E501
         :type: str
@@ -128,7 +128,7 @@ class RepayRecordRepaidCurrency(object):
     def repaid_amount(self):
         """Gets the repaid_amount of this RepayRecordRepaidCurrency.  # noqa: E501
 
-        Repayment amount  # noqa: E501
+        Repayment amount.  # noqa: E501
 
         :return: The repaid_amount of this RepayRecordRepaidCurrency.  # noqa: E501
         :rtype: str
@@ -139,7 +139,7 @@ class RepayRecordRepaidCurrency(object):
     def repaid_amount(self, repaid_amount):
         """Sets the repaid_amount of this RepayRecordRepaidCurrency.
 
-        Repayment amount  # noqa: E501
+        Repayment amount.  # noqa: E501
 
         :param repaid_amount: The repaid_amount of this RepayRecordRepaidCurrency.  # noqa: E501
         :type: str
@@ -151,7 +151,7 @@ class RepayRecordRepaidCurrency(object):
     def repaid_principal(self):
         """Gets the repaid_principal of this RepayRecordRepaidCurrency.  # noqa: E501
 
-        Principal  # noqa: E501
+        Principal.  # noqa: E501
 
         :return: The repaid_principal of this RepayRecordRepaidCurrency.  # noqa: E501
         :rtype: str
@@ -162,7 +162,7 @@ class RepayRecordRepaidCurrency(object):
     def repaid_principal(self, repaid_principal):
         """Sets the repaid_principal of this RepayRecordRepaidCurrency.
 
-        Principal  # noqa: E501
+        Principal.  # noqa: E501
 
         :param repaid_principal: The repaid_principal of this RepayRecordRepaidCurrency.  # noqa: E501
         :type: str
@@ -174,7 +174,7 @@ class RepayRecordRepaidCurrency(object):
     def repaid_interest(self):
         """Gets the repaid_interest of this RepayRecordRepaidCurrency.  # noqa: E501
 
-        Interest  # noqa: E501
+        Interest.  # noqa: E501
 
         :return: The repaid_interest of this RepayRecordRepaidCurrency.  # noqa: E501
         :rtype: str
@@ -185,7 +185,7 @@ class RepayRecordRepaidCurrency(object):
     def repaid_interest(self, repaid_interest):
         """Sets the repaid_interest of this RepayRecordRepaidCurrency.
 
-        Interest  # noqa: E501
+        Interest.  # noqa: E501
 
         :param repaid_interest: The repaid_interest of this RepayRecordRepaidCurrency.  # noqa: E501
         :type: str
@@ -197,7 +197,7 @@ class RepayRecordRepaidCurrency(object):
     def repaid_amount_usdt(self):
         """Gets the repaid_amount_usdt of this RepayRecordRepaidCurrency.  # noqa: E501
 
-        Value of the repayment amount in USDT  # noqa: E501
+        Value of the repayment amount in USDT.  # noqa: E501
 
         :return: The repaid_amount_usdt of this RepayRecordRepaidCurrency.  # noqa: E501
         :rtype: str
@@ -208,7 +208,7 @@ class RepayRecordRepaidCurrency(object):
     def repaid_amount_usdt(self, repaid_amount_usdt):
         """Sets the repaid_amount_usdt of this RepayRecordRepaidCurrency.
 
-        Value of the repayment amount in USDT  # noqa: E501
+        Value of the repayment amount in USDT.  # noqa: E501
 
         :param repaid_amount_usdt: The repaid_amount_usdt of this RepayRecordRepaidCurrency.  # noqa: E501
         :type: str

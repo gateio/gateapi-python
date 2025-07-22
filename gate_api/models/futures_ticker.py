@@ -157,7 +157,7 @@ class FuturesTicker(object):
     def contract(self):
         """Gets the contract of this FuturesTicker.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :return: The contract of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -168,7 +168,7 @@ class FuturesTicker(object):
     def contract(self, contract):
         """Sets the contract of this FuturesTicker.
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :param contract: The contract of this FuturesTicker.  # noqa: E501
         :type: str
@@ -180,7 +180,7 @@ class FuturesTicker(object):
     def last(self):
         """Gets the last of this FuturesTicker.  # noqa: E501
 
-        Last trading price  # noqa: E501
+        Last trading price.  # noqa: E501
 
         :return: The last of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -191,7 +191,7 @@ class FuturesTicker(object):
     def last(self, last):
         """Sets the last of this FuturesTicker.
 
-        Last trading price  # noqa: E501
+        Last trading price.  # noqa: E501
 
         :param last: The last of this FuturesTicker.  # noqa: E501
         :type: str
@@ -226,7 +226,7 @@ class FuturesTicker(object):
     def total_size(self):
         """Gets the total_size of this FuturesTicker.  # noqa: E501
 
-        Contract total size  # noqa: E501
+        Contract total size.  # noqa: E501
 
         :return: The total_size of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -237,7 +237,7 @@ class FuturesTicker(object):
     def total_size(self, total_size):
         """Sets the total_size of this FuturesTicker.
 
-        Contract total size  # noqa: E501
+        Contract total size.  # noqa: E501
 
         :param total_size: The total_size of this FuturesTicker.  # noqa: E501
         :type: str
@@ -249,7 +249,7 @@ class FuturesTicker(object):
     def low_24h(self):
         """Gets the low_24h of this FuturesTicker.  # noqa: E501
 
-        Lowest trading price in recent 24h  # noqa: E501
+        Lowest trading price in recent 24h.  # noqa: E501
 
         :return: The low_24h of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -260,7 +260,7 @@ class FuturesTicker(object):
     def low_24h(self, low_24h):
         """Sets the low_24h of this FuturesTicker.
 
-        Lowest trading price in recent 24h  # noqa: E501
+        Lowest trading price in recent 24h.  # noqa: E501
 
         :param low_24h: The low_24h of this FuturesTicker.  # noqa: E501
         :type: str
@@ -272,7 +272,7 @@ class FuturesTicker(object):
     def high_24h(self):
         """Gets the high_24h of this FuturesTicker.  # noqa: E501
 
-        Highest trading price in recent 24h  # noqa: E501
+        Highest trading price in recent 24h.  # noqa: E501
 
         :return: The high_24h of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -283,7 +283,7 @@ class FuturesTicker(object):
     def high_24h(self, high_24h):
         """Sets the high_24h of this FuturesTicker.
 
-        Highest trading price in recent 24h  # noqa: E501
+        Highest trading price in recent 24h.  # noqa: E501
 
         :param high_24h: The high_24h of this FuturesTicker.  # noqa: E501
         :type: str
@@ -295,7 +295,7 @@ class FuturesTicker(object):
     def volume_24h(self):
         """Gets the volume_24h of this FuturesTicker.  # noqa: E501
 
-        Trade size in recent 24h  # noqa: E501
+        Trade size in recent 24h.  # noqa: E501
 
         :return: The volume_24h of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -306,7 +306,7 @@ class FuturesTicker(object):
     def volume_24h(self, volume_24h):
         """Sets the volume_24h of this FuturesTicker.
 
-        Trade size in recent 24h  # noqa: E501
+        Trade size in recent 24h.  # noqa: E501
 
         :param volume_24h: The volume_24h of this FuturesTicker.  # noqa: E501
         :type: str
@@ -364,7 +364,7 @@ class FuturesTicker(object):
     def volume_24h_base(self):
         """Gets the volume_24h_base of this FuturesTicker.  # noqa: E501
 
-        Trade volume in recent 24h, in base currency  # noqa: E501
+        Trade volume in recent 24h, in base currency.  # noqa: E501
 
         :return: The volume_24h_base of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -375,7 +375,7 @@ class FuturesTicker(object):
     def volume_24h_base(self, volume_24h_base):
         """Sets the volume_24h_base of this FuturesTicker.
 
-        Trade volume in recent 24h, in base currency  # noqa: E501
+        Trade volume in recent 24h, in base currency.  # noqa: E501
 
         :param volume_24h_base: The volume_24h_base of this FuturesTicker.  # noqa: E501
         :type: str
@@ -387,7 +387,7 @@ class FuturesTicker(object):
     def volume_24h_quote(self):
         """Gets the volume_24h_quote of this FuturesTicker.  # noqa: E501
 
-        Trade volume in recent 24h, in quote currency  # noqa: E501
+        Trade volume in recent 24h, in quote currency.  # noqa: E501
 
         :return: The volume_24h_quote of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -398,7 +398,7 @@ class FuturesTicker(object):
     def volume_24h_quote(self, volume_24h_quote):
         """Sets the volume_24h_quote of this FuturesTicker.
 
-        Trade volume in recent 24h, in quote currency  # noqa: E501
+        Trade volume in recent 24h, in quote currency.  # noqa: E501
 
         :param volume_24h_quote: The volume_24h_quote of this FuturesTicker.  # noqa: E501
         :type: str
@@ -410,7 +410,7 @@ class FuturesTicker(object):
     def volume_24h_settle(self):
         """Gets the volume_24h_settle of this FuturesTicker.  # noqa: E501
 
-        Trade volume in recent 24h, in settle currency  # noqa: E501
+        Trade volume in recent 24h, in settle currency.  # noqa: E501
 
         :return: The volume_24h_settle of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -421,7 +421,7 @@ class FuturesTicker(object):
     def volume_24h_settle(self, volume_24h_settle):
         """Sets the volume_24h_settle of this FuturesTicker.
 
-        Trade volume in recent 24h, in settle currency  # noqa: E501
+        Trade volume in recent 24h, in settle currency.  # noqa: E501
 
         :param volume_24h_settle: The volume_24h_settle of this FuturesTicker.  # noqa: E501
         :type: str
@@ -433,7 +433,7 @@ class FuturesTicker(object):
     def mark_price(self):
         """Gets the mark_price of this FuturesTicker.  # noqa: E501
 
-        Recent mark price  # noqa: E501
+        Recent mark price.  # noqa: E501
 
         :return: The mark_price of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -444,7 +444,7 @@ class FuturesTicker(object):
     def mark_price(self, mark_price):
         """Sets the mark_price of this FuturesTicker.
 
-        Recent mark price  # noqa: E501
+        Recent mark price.  # noqa: E501
 
         :param mark_price: The mark_price of this FuturesTicker.  # noqa: E501
         :type: str
@@ -456,7 +456,7 @@ class FuturesTicker(object):
     def funding_rate(self):
         """Gets the funding_rate of this FuturesTicker.  # noqa: E501
 
-        Funding rate  # noqa: E501
+        Funding rate.  # noqa: E501
 
         :return: The funding_rate of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -467,7 +467,7 @@ class FuturesTicker(object):
     def funding_rate(self, funding_rate):
         """Sets the funding_rate of this FuturesTicker.
 
-        Funding rate  # noqa: E501
+        Funding rate.  # noqa: E501
 
         :param funding_rate: The funding_rate of this FuturesTicker.  # noqa: E501
         :type: str
@@ -479,7 +479,7 @@ class FuturesTicker(object):
     def funding_rate_indicative(self):
         """Gets the funding_rate_indicative of this FuturesTicker.  # noqa: E501
 
-        Indicative Funding rate in next period. (deprecated. use `funding_rate`)  # noqa: E501
+        Indicative Funding rate in next period. (deprecated. use `funding_rate`).  # noqa: E501
 
         :return: The funding_rate_indicative of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -490,7 +490,7 @@ class FuturesTicker(object):
     def funding_rate_indicative(self, funding_rate_indicative):
         """Sets the funding_rate_indicative of this FuturesTicker.
 
-        Indicative Funding rate in next period. (deprecated. use `funding_rate`)  # noqa: E501
+        Indicative Funding rate in next period. (deprecated. use `funding_rate`).  # noqa: E501
 
         :param funding_rate_indicative: The funding_rate_indicative of this FuturesTicker.  # noqa: E501
         :type: str
@@ -502,7 +502,7 @@ class FuturesTicker(object):
     def index_price(self):
         """Gets the index_price of this FuturesTicker.  # noqa: E501
 
-        Index price  # noqa: E501
+        Index price.  # noqa: E501
 
         :return: The index_price of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -513,7 +513,7 @@ class FuturesTicker(object):
     def index_price(self, index_price):
         """Sets the index_price of this FuturesTicker.
 
-        Index price  # noqa: E501
+        Index price.  # noqa: E501
 
         :param index_price: The index_price of this FuturesTicker.  # noqa: E501
         :type: str
@@ -548,7 +548,7 @@ class FuturesTicker(object):
     def lowest_ask(self):
         """Gets the lowest_ask of this FuturesTicker.  # noqa: E501
 
-        Recent lowest ask  # noqa: E501
+        Recent lowest ask.  # noqa: E501
 
         :return: The lowest_ask of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -559,7 +559,7 @@ class FuturesTicker(object):
     def lowest_ask(self, lowest_ask):
         """Sets the lowest_ask of this FuturesTicker.
 
-        Recent lowest ask  # noqa: E501
+        Recent lowest ask.  # noqa: E501
 
         :param lowest_ask: The lowest_ask of this FuturesTicker.  # noqa: E501
         :type: str
@@ -571,7 +571,7 @@ class FuturesTicker(object):
     def lowest_size(self):
         """Gets the lowest_size of this FuturesTicker.  # noqa: E501
 
-        The latest seller's lowest price order quantity  # noqa: E501
+        The latest seller's lowest price order quantity.  # noqa: E501
 
         :return: The lowest_size of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -582,7 +582,7 @@ class FuturesTicker(object):
     def lowest_size(self, lowest_size):
         """Sets the lowest_size of this FuturesTicker.
 
-        The latest seller's lowest price order quantity  # noqa: E501
+        The latest seller's lowest price order quantity.  # noqa: E501
 
         :param lowest_size: The lowest_size of this FuturesTicker.  # noqa: E501
         :type: str
@@ -594,7 +594,7 @@ class FuturesTicker(object):
     def highest_bid(self):
         """Gets the highest_bid of this FuturesTicker.  # noqa: E501
 
-        Recent highest bid  # noqa: E501
+        Recent highest bid.  # noqa: E501
 
         :return: The highest_bid of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -605,7 +605,7 @@ class FuturesTicker(object):
     def highest_bid(self, highest_bid):
         """Sets the highest_bid of this FuturesTicker.
 
-        Recent highest bid  # noqa: E501
+        Recent highest bid.  # noqa: E501
 
         :param highest_bid: The highest_bid of this FuturesTicker.  # noqa: E501
         :type: str
@@ -617,7 +617,7 @@ class FuturesTicker(object):
     def highest_size(self):
         """Gets the highest_size of this FuturesTicker.  # noqa: E501
 
-        The latest buyer's highest price order volume  # noqa: E501
+        The latest buyer's highest price order volume.  # noqa: E501
 
         :return: The highest_size of this FuturesTicker.  # noqa: E501
         :rtype: str
@@ -628,7 +628,7 @@ class FuturesTicker(object):
     def highest_size(self, highest_size):
         """Sets the highest_size of this FuturesTicker.
 
-        The latest buyer's highest price order volume  # noqa: E501
+        The latest buyer's highest price order volume.  # noqa: E501
 
         :param highest_size: The highest_size of this FuturesTicker.  # noqa: E501
         :type: str

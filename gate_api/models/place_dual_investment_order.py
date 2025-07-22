@@ -65,7 +65,7 @@ class PlaceDualInvestmentOrder(object):
     def plan_id(self):
         """Gets the plan_id of this PlaceDualInvestmentOrder.  # noqa: E501
 
-        Plan ID  # noqa: E501
+        Plan ID.  # noqa: E501
 
         :return: The plan_id of this PlaceDualInvestmentOrder.  # noqa: E501
         :rtype: str
@@ -76,7 +76,7 @@ class PlaceDualInvestmentOrder(object):
     def plan_id(self, plan_id):
         """Sets the plan_id of this PlaceDualInvestmentOrder.
 
-        Plan ID  # noqa: E501
+        Plan ID.  # noqa: E501
 
         :param plan_id: The plan_id of this PlaceDualInvestmentOrder.  # noqa: E501
         :type: str
@@ -90,7 +90,7 @@ class PlaceDualInvestmentOrder(object):
     def amount(self):
         """Gets the amount of this PlaceDualInvestmentOrder.  # noqa: E501
 
-        Subscription amount, mutually exclusive with the copies field  # noqa: E501
+        Subscription amount, mutually exclusive with the copies field.  # noqa: E501
 
         :return: The amount of this PlaceDualInvestmentOrder.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class PlaceDualInvestmentOrder(object):
     def amount(self, amount):
         """Sets the amount of this PlaceDualInvestmentOrder.
 
-        Subscription amount, mutually exclusive with the copies field  # noqa: E501
+        Subscription amount, mutually exclusive with the copies field.  # noqa: E501
 
         :param amount: The amount of this PlaceDualInvestmentOrder.  # noqa: E501
         :type: str

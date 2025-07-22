@@ -92,7 +92,7 @@ class SpotAccountBook(object):
     def id(self):
         """Gets the id of this SpotAccountBook.  # noqa: E501
 
-        Balance change record ID  # noqa: E501
+        Balance change record ID.  # noqa: E501
 
         :return: The id of this SpotAccountBook.  # noqa: E501
         :rtype: str
@@ -103,7 +103,7 @@ class SpotAccountBook(object):
     def id(self, id):
         """Sets the id of this SpotAccountBook.
 
-        Balance change record ID  # noqa: E501
+        Balance change record ID.  # noqa: E501
 
         :param id: The id of this SpotAccountBook.  # noqa: E501
         :type: str
@@ -115,7 +115,7 @@ class SpotAccountBook(object):
     def time(self):
         """Gets the time of this SpotAccountBook.  # noqa: E501
 
-        The timestamp of the change (in milliseconds)  # noqa: E501
+        The timestamp of the change (in milliseconds).  # noqa: E501
 
         :return: The time of this SpotAccountBook.  # noqa: E501
         :rtype: int
@@ -126,7 +126,7 @@ class SpotAccountBook(object):
     def time(self, time):
         """Sets the time of this SpotAccountBook.
 
-        The timestamp of the change (in milliseconds)  # noqa: E501
+        The timestamp of the change (in milliseconds).  # noqa: E501
 
         :param time: The time of this SpotAccountBook.  # noqa: E501
         :type: int
@@ -138,7 +138,7 @@ class SpotAccountBook(object):
     def currency(self):
         """Gets the currency of this SpotAccountBook.  # noqa: E501
 
-        Currency changed  # noqa: E501
+        Currency changed.  # noqa: E501
 
         :return: The currency of this SpotAccountBook.  # noqa: E501
         :rtype: str
@@ -149,7 +149,7 @@ class SpotAccountBook(object):
     def currency(self, currency):
         """Sets the currency of this SpotAccountBook.
 
-        Currency changed  # noqa: E501
+        Currency changed.  # noqa: E501
 
         :param currency: The currency of this SpotAccountBook.  # noqa: E501
         :type: str
@@ -161,7 +161,7 @@ class SpotAccountBook(object):
     def change(self):
         """Gets the change of this SpotAccountBook.  # noqa: E501
 
-        Amount changed. Positive value means transferring in, while negative out  # noqa: E501
+        Amount changed. Positive value means transferring in, while negative out.  # noqa: E501
 
         :return: The change of this SpotAccountBook.  # noqa: E501
         :rtype: str
@@ -172,7 +172,7 @@ class SpotAccountBook(object):
     def change(self, change):
         """Sets the change of this SpotAccountBook.
 
-        Amount changed. Positive value means transferring in, while negative out  # noqa: E501
+        Amount changed. Positive value means transferring in, while negative out.  # noqa: E501
 
         :param change: The change of this SpotAccountBook.  # noqa: E501
         :type: str
@@ -184,7 +184,7 @@ class SpotAccountBook(object):
     def balance(self):
         """Gets the balance of this SpotAccountBook.  # noqa: E501
 
-        Balance after change  # noqa: E501
+        Balance after change.  # noqa: E501
 
         :return: The balance of this SpotAccountBook.  # noqa: E501
         :rtype: str
@@ -195,7 +195,7 @@ class SpotAccountBook(object):
     def balance(self, balance):
         """Sets the balance of this SpotAccountBook.
 
-        Balance after change  # noqa: E501
+        Balance after change.  # noqa: E501
 
         :param balance: The balance of this SpotAccountBook.  # noqa: E501
         :type: str
@@ -207,7 +207,7 @@ class SpotAccountBook(object):
     def type(self):
         """Gets the type of this SpotAccountBook.  # noqa: E501
 
-        Account book type.  Please refer to [account book type](#accountbook-type) for more detail  # noqa: E501
+        Account book type. Please refer to [account book type](#accountbook-type) for more detail  # noqa: E501
 
         :return: The type of this SpotAccountBook.  # noqa: E501
         :rtype: str
@@ -218,7 +218,7 @@ class SpotAccountBook(object):
     def type(self, type):
         """Sets the type of this SpotAccountBook.
 
-        Account book type.  Please refer to [account book type](#accountbook-type) for more detail  # noqa: E501
+        Account book type. Please refer to [account book type](#accountbook-type) for more detail  # noqa: E501
 
         :param type: The type of this SpotAccountBook.  # noqa: E501
         :type: str
@@ -230,7 +230,7 @@ class SpotAccountBook(object):
     def code(self):
         """Gets the code of this SpotAccountBook.  # noqa: E501
 
-        Account change code, see [Asset Record Code] (Asset Record Code)  # noqa: E501
+        Account change code, see [Asset Record Code] (Asset Record Code).  # noqa: E501
 
         :return: The code of this SpotAccountBook.  # noqa: E501
         :rtype: str
@@ -241,7 +241,7 @@ class SpotAccountBook(object):
     def code(self, code):
         """Sets the code of this SpotAccountBook.
 
-        Account change code, see [Asset Record Code] (Asset Record Code)  # noqa: E501
+        Account change code, see [Asset Record Code] (Asset Record Code).  # noqa: E501
 
         :param code: The code of this SpotAccountBook.  # noqa: E501
         :type: str
@@ -253,7 +253,7 @@ class SpotAccountBook(object):
     def text(self):
         """Gets the text of this SpotAccountBook.  # noqa: E501
 
-        Additional information  # noqa: E501
+        Additional information.  # noqa: E501
 
         :return: The text of this SpotAccountBook.  # noqa: E501
         :rtype: str
@@ -264,7 +264,7 @@ class SpotAccountBook(object):
     def text(self, text):
         """Sets the text of this SpotAccountBook.
 
-        Additional information  # noqa: E501
+        Additional information.  # noqa: E501
 
         :param text: The text of this SpotAccountBook.  # noqa: E501
         :type: str

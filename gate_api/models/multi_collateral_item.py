@@ -67,7 +67,7 @@ class MultiCollateralItem(object):
     def currency(self):
         """Gets the currency of this MultiCollateralItem.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this MultiCollateralItem.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class MultiCollateralItem(object):
     def currency(self, currency):
         """Sets the currency of this MultiCollateralItem.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this MultiCollateralItem.  # noqa: E501
         :type: str
@@ -90,7 +90,7 @@ class MultiCollateralItem(object):
     def index_price(self):
         """Gets the index_price of this MultiCollateralItem.  # noqa: E501
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :return: The index_price of this MultiCollateralItem.  # noqa: E501
         :rtype: str
@@ -101,7 +101,7 @@ class MultiCollateralItem(object):
     def index_price(self, index_price):
         """Sets the index_price of this MultiCollateralItem.
 
-        Currency Index Price  # noqa: E501
+        Currency Index Price.  # noqa: E501
 
         :param index_price: The index_price of this MultiCollateralItem.  # noqa: E501
         :type: str
@@ -113,7 +113,7 @@ class MultiCollateralItem(object):
     def discount(self):
         """Gets the discount of this MultiCollateralItem.  # noqa: E501
 
-        Discount  # noqa: E501
+        Discount.  # noqa: E501
 
         :return: The discount of this MultiCollateralItem.  # noqa: E501
         :rtype: str
@@ -124,7 +124,7 @@ class MultiCollateralItem(object):
     def discount(self, discount):
         """Sets the discount of this MultiCollateralItem.
 
-        Discount  # noqa: E501
+        Discount.  # noqa: E501
 
         :param discount: The discount of this MultiCollateralItem.  # noqa: E501
         :type: str

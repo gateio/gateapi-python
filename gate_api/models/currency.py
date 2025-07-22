@@ -102,7 +102,7 @@ class Currency(object):
     def currency(self):
         """Gets the currency of this Currency.  # noqa: E501
 
-        Currency symbol  # noqa: E501
+        Currency symbol.  # noqa: E501
 
         :return: The currency of this Currency.  # noqa: E501
         :rtype: str
@@ -113,7 +113,7 @@ class Currency(object):
     def currency(self, currency):
         """Sets the currency of this Currency.
 
-        Currency symbol  # noqa: E501
+        Currency symbol.  # noqa: E501
 
         :param currency: The currency of this Currency.  # noqa: E501
         :type: str
@@ -125,7 +125,7 @@ class Currency(object):
     def name(self):
         """Gets the name of this Currency.  # noqa: E501
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :return: The name of this Currency.  # noqa: E501
         :rtype: str
@@ -136,7 +136,7 @@ class Currency(object):
     def name(self, name):
         """Sets the name of this Currency.
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :param name: The name of this Currency.  # noqa: E501
         :type: str
@@ -148,7 +148,7 @@ class Currency(object):
     def delisted(self):
         """Gets the delisted of this Currency.  # noqa: E501
 
-        Whether currency is de-listed  # noqa: E501
+        Whether currency is de-listed.  # noqa: E501
 
         :return: The delisted of this Currency.  # noqa: E501
         :rtype: bool
@@ -159,7 +159,7 @@ class Currency(object):
     def delisted(self, delisted):
         """Sets the delisted of this Currency.
 
-        Whether currency is de-listed  # noqa: E501
+        Whether currency is de-listed.  # noqa: E501
 
         :param delisted: The delisted of this Currency.  # noqa: E501
         :type: bool
@@ -171,7 +171,7 @@ class Currency(object):
     def withdraw_disabled(self):
         """Gets the withdraw_disabled of this Currency.  # noqa: E501
 
-        Whether currency's withdrawal is disabled (deprecated)  # noqa: E501
+        Whether currency's withdrawal is disabled (deprecated).  # noqa: E501
 
         :return: The withdraw_disabled of this Currency.  # noqa: E501
         :rtype: bool
@@ -182,7 +182,7 @@ class Currency(object):
     def withdraw_disabled(self, withdraw_disabled):
         """Sets the withdraw_disabled of this Currency.
 
-        Whether currency's withdrawal is disabled (deprecated)  # noqa: E501
+        Whether currency's withdrawal is disabled (deprecated).  # noqa: E501
 
         :param withdraw_disabled: The withdraw_disabled of this Currency.  # noqa: E501
         :type: bool
@@ -194,7 +194,7 @@ class Currency(object):
     def withdraw_delayed(self):
         """Gets the withdraw_delayed of this Currency.  # noqa: E501
 
-        Whether currency's withdrawal is delayed (deprecated)  # noqa: E501
+        Whether currency's withdrawal is delayed (deprecated).  # noqa: E501
 
         :return: The withdraw_delayed of this Currency.  # noqa: E501
         :rtype: bool
@@ -205,7 +205,7 @@ class Currency(object):
     def withdraw_delayed(self, withdraw_delayed):
         """Sets the withdraw_delayed of this Currency.
 
-        Whether currency's withdrawal is delayed (deprecated)  # noqa: E501
+        Whether currency's withdrawal is delayed (deprecated).  # noqa: E501
 
         :param withdraw_delayed: The withdraw_delayed of this Currency.  # noqa: E501
         :type: bool
@@ -217,7 +217,7 @@ class Currency(object):
     def deposit_disabled(self):
         """Gets the deposit_disabled of this Currency.  # noqa: E501
 
-        Whether currency's deposit is disabled (deprecated)  # noqa: E501
+        Whether currency's deposit is disabled (deprecated).  # noqa: E501
 
         :return: The deposit_disabled of this Currency.  # noqa: E501
         :rtype: bool
@@ -228,7 +228,7 @@ class Currency(object):
     def deposit_disabled(self, deposit_disabled):
         """Sets the deposit_disabled of this Currency.
 
-        Whether currency's deposit is disabled (deprecated)  # noqa: E501
+        Whether currency's deposit is disabled (deprecated).  # noqa: E501
 
         :param deposit_disabled: The deposit_disabled of this Currency.  # noqa: E501
         :type: bool
@@ -240,7 +240,7 @@ class Currency(object):
     def trade_disabled(self):
         """Gets the trade_disabled of this Currency.  # noqa: E501
 
-        Whether currency's trading is disabled  # noqa: E501
+        Whether currency's trading is disabled.  # noqa: E501
 
         :return: The trade_disabled of this Currency.  # noqa: E501
         :rtype: bool
@@ -251,7 +251,7 @@ class Currency(object):
     def trade_disabled(self, trade_disabled):
         """Sets the trade_disabled of this Currency.
 
-        Whether currency's trading is disabled  # noqa: E501
+        Whether currency's trading is disabled.  # noqa: E501
 
         :param trade_disabled: The trade_disabled of this Currency.  # noqa: E501
         :type: bool
@@ -286,7 +286,7 @@ class Currency(object):
     def chain(self):
         """Gets the chain of this Currency.  # noqa: E501
 
-        The main chain corresponding to the coin  # noqa: E501
+        The main chain corresponding to the coin.  # noqa: E501
 
         :return: The chain of this Currency.  # noqa: E501
         :rtype: str
@@ -297,7 +297,7 @@ class Currency(object):
     def chain(self, chain):
         """Sets the chain of this Currency.
 
-        The main chain corresponding to the coin  # noqa: E501
+        The main chain corresponding to the coin.  # noqa: E501
 
         :param chain: The chain of this Currency.  # noqa: E501
         :type: str
@@ -309,7 +309,7 @@ class Currency(object):
     def chains(self):
         """Gets the chains of this Currency.  # noqa: E501
 
-        All links corresponding to coins  # noqa: E501
+        All links corresponding to coins.  # noqa: E501
 
         :return: The chains of this Currency.  # noqa: E501
         :rtype: list[SpotCurrencyChain]
@@ -320,7 +320,7 @@ class Currency(object):
     def chains(self, chains):
         """Sets the chains of this Currency.
 
-        All links corresponding to coins  # noqa: E501
+        All links corresponding to coins.  # noqa: E501
 
         :param chains: The chains of this Currency.  # noqa: E501
         :type: list[SpotCurrencyChain]

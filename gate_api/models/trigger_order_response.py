@@ -57,7 +57,7 @@ class TriggerOrderResponse(object):
     def id(self):
         """Gets the id of this TriggerOrderResponse.  # noqa: E501
 
-        Auto order ID  # noqa: E501
+        Auto order ID.  # noqa: E501
 
         :return: The id of this TriggerOrderResponse.  # noqa: E501
         :rtype: int
@@ -68,7 +68,7 @@ class TriggerOrderResponse(object):
     def id(self, id):
         """Sets the id of this TriggerOrderResponse.
 
-        Auto order ID  # noqa: E501
+        Auto order ID.  # noqa: E501
 
         :param id: The id of this TriggerOrderResponse.  # noqa: E501
         :type: int

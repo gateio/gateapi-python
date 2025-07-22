@@ -156,7 +156,7 @@ class FuturesPriceTriggeredOrder(object):
     def id(self):
         """Gets the id of this FuturesPriceTriggeredOrder.  # noqa: E501
 
-        Auto order ID  # noqa: E501
+        Auto order ID.  # noqa: E501
 
         :return: The id of this FuturesPriceTriggeredOrder.  # noqa: E501
         :rtype: int
@@ -167,7 +167,7 @@ class FuturesPriceTriggeredOrder(object):
     def id(self, id):
         """Sets the id of this FuturesPriceTriggeredOrder.
 
-        Auto order ID  # noqa: E501
+        Auto order ID.  # noqa: E501
 
         :param id: The id of this FuturesPriceTriggeredOrder.  # noqa: E501
         :type: int
@@ -179,7 +179,7 @@ class FuturesPriceTriggeredOrder(object):
     def user(self):
         """Gets the user of this FuturesPriceTriggeredOrder.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user of this FuturesPriceTriggeredOrder.  # noqa: E501
         :rtype: int
@@ -190,7 +190,7 @@ class FuturesPriceTriggeredOrder(object):
     def user(self, user):
         """Sets the user of this FuturesPriceTriggeredOrder.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user: The user of this FuturesPriceTriggeredOrder.  # noqa: E501
         :type: int
@@ -202,7 +202,7 @@ class FuturesPriceTriggeredOrder(object):
     def create_time(self):
         """Gets the create_time of this FuturesPriceTriggeredOrder.  # noqa: E501
 
-        Creation time  # noqa: E501
+        Creation time.  # noqa: E501
 
         :return: The create_time of this FuturesPriceTriggeredOrder.  # noqa: E501
         :rtype: float
@@ -213,7 +213,7 @@ class FuturesPriceTriggeredOrder(object):
     def create_time(self, create_time):
         """Sets the create_time of this FuturesPriceTriggeredOrder.
 
-        Creation time  # noqa: E501
+        Creation time.  # noqa: E501
 
         :param create_time: The create_time of this FuturesPriceTriggeredOrder.  # noqa: E501
         :type: float
@@ -225,7 +225,7 @@ class FuturesPriceTriggeredOrder(object):
     def finish_time(self):
         """Gets the finish_time of this FuturesPriceTriggeredOrder.  # noqa: E501
 
-        Finished time  # noqa: E501
+        Finished time.  # noqa: E501
 
         :return: The finish_time of this FuturesPriceTriggeredOrder.  # noqa: E501
         :rtype: float
@@ -236,7 +236,7 @@ class FuturesPriceTriggeredOrder(object):
     def finish_time(self, finish_time):
         """Sets the finish_time of this FuturesPriceTriggeredOrder.
 
-        Finished time  # noqa: E501
+        Finished time.  # noqa: E501
 
         :param finish_time: The finish_time of this FuturesPriceTriggeredOrder.  # noqa: E501
         :type: float
@@ -248,7 +248,7 @@ class FuturesPriceTriggeredOrder(object):
     def trade_id(self):
         """Gets the trade_id of this FuturesPriceTriggeredOrder.  # noqa: E501
 
-        ID of the newly created order on condition triggered  # noqa: E501
+        ID of the newly created order on condition triggered.  # noqa: E501
 
         :return: The trade_id of this FuturesPriceTriggeredOrder.  # noqa: E501
         :rtype: int
@@ -259,7 +259,7 @@ class FuturesPriceTriggeredOrder(object):
     def trade_id(self, trade_id):
         """Sets the trade_id of this FuturesPriceTriggeredOrder.
 
-        ID of the newly created order on condition triggered  # noqa: E501
+        ID of the newly created order on condition triggered.  # noqa: E501
 
         :param trade_id: The trade_id of this FuturesPriceTriggeredOrder.  # noqa: E501
         :type: int
@@ -271,7 +271,7 @@ class FuturesPriceTriggeredOrder(object):
     def status(self):
         """Gets the status of this FuturesPriceTriggeredOrder.  # noqa: E501
 
-        Auto order status  - `open`: order is active - `finished`: order is finished - `inactive`: order is not active, only for close-long-order or close-short-order - `invalid`: order is invalid, only for close-long-order or close-short-order  # noqa: E501
+        Auto order status  - `open`: order is active - `finished`: order is finished - `inactive`: order is not active, only for close-long-order or close-short-order - `invalid`: order is close-short-order  # noqa: E501
 
         :return: The status of this FuturesPriceTriggeredOrder.  # noqa: E501
         :rtype: str
@@ -282,7 +282,7 @@ class FuturesPriceTriggeredOrder(object):
     def status(self, status):
         """Sets the status of this FuturesPriceTriggeredOrder.
 
-        Auto order status  - `open`: order is active - `finished`: order is finished - `inactive`: order is not active, only for close-long-order or close-short-order - `invalid`: order is invalid, only for close-long-order or close-short-order  # noqa: E501
+        Auto order status  - `open`: order is active - `finished`: order is finished - `inactive`: order is not active, only for close-long-order or close-short-order - `invalid`: order is close-short-order  # noqa: E501
 
         :param status: The status of this FuturesPriceTriggeredOrder.  # noqa: E501
         :type: str
@@ -300,7 +300,7 @@ class FuturesPriceTriggeredOrder(object):
     def finish_as(self):
         """Gets the finish_as of this FuturesPriceTriggeredOrder.  # noqa: E501
 
-        How order is finished  # noqa: E501
+        How order is finished.  # noqa: E501
 
         :return: The finish_as of this FuturesPriceTriggeredOrder.  # noqa: E501
         :rtype: str
@@ -311,7 +311,7 @@ class FuturesPriceTriggeredOrder(object):
     def finish_as(self, finish_as):
         """Sets the finish_as of this FuturesPriceTriggeredOrder.
 
-        How order is finished  # noqa: E501
+        How order is finished.  # noqa: E501
 
         :param finish_as: The finish_as of this FuturesPriceTriggeredOrder.  # noqa: E501
         :type: str
@@ -329,7 +329,7 @@ class FuturesPriceTriggeredOrder(object):
     def reason(self):
         """Gets the reason of this FuturesPriceTriggeredOrder.  # noqa: E501
 
-        Additional remarks on how the order was finished  # noqa: E501
+        Additional remarks on how the order was finished.  # noqa: E501
 
         :return: The reason of this FuturesPriceTriggeredOrder.  # noqa: E501
         :rtype: str
@@ -340,7 +340,7 @@ class FuturesPriceTriggeredOrder(object):
     def reason(self, reason):
         """Sets the reason of this FuturesPriceTriggeredOrder.
 
-        Additional remarks on how the order was finished  # noqa: E501
+        Additional remarks on how the order was finished.  # noqa: E501
 
         :param reason: The reason of this FuturesPriceTriggeredOrder.  # noqa: E501
         :type: str
@@ -352,7 +352,7 @@ class FuturesPriceTriggeredOrder(object):
     def order_type(self):
         """Gets the order_type of this FuturesPriceTriggeredOrder.  # noqa: E501
 
-        Types of stop-profit and stop-loss, including:  - `close-long-order`: Entrusting order stop profit and stop loss, flat long position - `close-short-order`: Entrusted order stop profit and stop loss, short position  - `close-long-position`: Position stop-profit stop loss, used to close long positions - `close-short-position`: Position stop-profit stop loss, used to close all short positions - `plan-close-long-position`: Position plan take profit and stop loss, used to close long positions in all or part of long positions - `plan-close-short-position`: Position plan stop-profit and stop loss, used to close all short positions or partially close short positions  The two types of entrusted order stop-profit and stop-loss are read-only and cannot be passed in through requests  # noqa: E501
+        Types of stop-profit and stop-loss, including:  - `close-long-order`: Entrusting order stop profit and stop loss, flat long position - `close-short-order`: loss, short position  - `close-long-position`: Position stop-profit stop loss, used to close long positions - `close-short-position`: Position stop-profit stop loss, used to close all short positions - `plan-close-long-position`: Position plan take profit and stop loss, used to close long positions in all or part of long positions - `plan-close-short-position`: Position plan stop-profit and stop loss, used to close all short positions or partially close short positions  The two types of entrusted order stop-profit and stop-loss are read-only and cannot be passed in through requests  # noqa: E501
 
         :return: The order_type of this FuturesPriceTriggeredOrder.  # noqa: E501
         :rtype: str
@@ -363,7 +363,7 @@ class FuturesPriceTriggeredOrder(object):
     def order_type(self, order_type):
         """Sets the order_type of this FuturesPriceTriggeredOrder.
 
-        Types of stop-profit and stop-loss, including:  - `close-long-order`: Entrusting order stop profit and stop loss, flat long position - `close-short-order`: Entrusted order stop profit and stop loss, short position  - `close-long-position`: Position stop-profit stop loss, used to close long positions - `close-short-position`: Position stop-profit stop loss, used to close all short positions - `plan-close-long-position`: Position plan take profit and stop loss, used to close long positions in all or part of long positions - `plan-close-short-position`: Position plan stop-profit and stop loss, used to close all short positions or partially close short positions  The two types of entrusted order stop-profit and stop-loss are read-only and cannot be passed in through requests  # noqa: E501
+        Types of stop-profit and stop-loss, including:  - `close-long-order`: Entrusting order stop profit and stop loss, flat long position - `close-short-order`: loss, short position  - `close-long-position`: Position stop-profit stop loss, used to close long positions - `close-short-position`: Position stop-profit stop loss, used to close all short positions - `plan-close-long-position`: Position plan take profit and stop loss, used to close long positions in all or part of long positions - `plan-close-short-position`: Position plan stop-profit and stop loss, used to close all short positions or partially close short positions  The two types of entrusted order stop-profit and stop-loss are read-only and cannot be passed in through requests  # noqa: E501
 
         :param order_type: The order_type of this FuturesPriceTriggeredOrder.  # noqa: E501
         :type: str

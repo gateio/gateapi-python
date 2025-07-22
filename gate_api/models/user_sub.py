@@ -72,7 +72,7 @@ class UserSub(object):
     def uid(self):
         """Gets the uid of this UserSub.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The uid of this UserSub.  # noqa: E501
         :rtype: int
@@ -83,7 +83,7 @@ class UserSub(object):
     def uid(self, uid):
         """Sets the uid of this UserSub.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param uid: The uid of this UserSub.  # noqa: E501
         :type: int
@@ -118,7 +118,7 @@ class UserSub(object):
     def type(self):
         """Gets the type of this UserSub.  # noqa: E501
 
-        Type (0-not in the system 1-direct subordinate agent 2-indirect subordinate agent 3-direct direct customer 4-indirect direct customer 5-ordinary user)  # noqa: E501
+        Type (0-not in the system 1-direct subordinate agent 2-indirect subordinate agent 3-direct customer 4-indirect direct customer 5-ordinary user)  # noqa: E501
 
         :return: The type of this UserSub.  # noqa: E501
         :rtype: int
@@ -129,7 +129,7 @@ class UserSub(object):
     def type(self, type):
         """Sets the type of this UserSub.
 
-        Type (0-not in the system 1-direct subordinate agent 2-indirect subordinate agent 3-direct direct customer 4-indirect direct customer 5-ordinary user)  # noqa: E501
+        Type (0-not in the system 1-direct subordinate agent 2-indirect subordinate agent 3-direct customer 4-indirect direct customer 5-ordinary user)  # noqa: E501
 
         :param type: The type of this UserSub.  # noqa: E501
         :type: int
@@ -141,7 +141,7 @@ class UserSub(object):
     def ref_uid(self):
         """Gets the ref_uid of this UserSub.  # noqa: E501
 
-        Inviter user ID  # noqa: E501
+        Inviter user ID.  # noqa: E501
 
         :return: The ref_uid of this UserSub.  # noqa: E501
         :rtype: int
@@ -152,7 +152,7 @@ class UserSub(object):
     def ref_uid(self, ref_uid):
         """Sets the ref_uid of this UserSub.
 
-        Inviter user ID  # noqa: E501
+        Inviter user ID.  # noqa: E501
 
         :param ref_uid: The ref_uid of this UserSub.  # noqa: E501
         :type: int

@@ -82,7 +82,7 @@ class OptionsMMP(object):
     def underlying(self):
         """Gets the underlying of this OptionsMMP.  # noqa: E501
 
-        Underlying  # noqa: E501
+        Underlying.  # noqa: E501
 
         :return: The underlying of this OptionsMMP.  # noqa: E501
         :rtype: str
@@ -93,7 +93,7 @@ class OptionsMMP(object):
     def underlying(self, underlying):
         """Sets the underlying of this OptionsMMP.
 
-        Underlying  # noqa: E501
+        Underlying.  # noqa: E501
 
         :param underlying: The underlying of this OptionsMMP.  # noqa: E501
         :type: str
@@ -107,7 +107,7 @@ class OptionsMMP(object):
     def window(self):
         """Gets the window of this OptionsMMP.  # noqa: E501
 
-        Time window (milliseconds), between 1-5000, 0 means disabling MMP  # noqa: E501
+        Time window (milliseconds), between 1-5000, 0 means disabling MMP.  # noqa: E501
 
         :return: The window of this OptionsMMP.  # noqa: E501
         :rtype: int
@@ -118,7 +118,7 @@ class OptionsMMP(object):
     def window(self, window):
         """Sets the window of this OptionsMMP.
 
-        Time window (milliseconds), between 1-5000, 0 means disabling MMP  # noqa: E501
+        Time window (milliseconds), between 1-5000, 0 means disabling MMP.  # noqa: E501
 
         :param window: The window of this OptionsMMP.  # noqa: E501
         :type: int
@@ -157,7 +157,7 @@ class OptionsMMP(object):
     def qty_limit(self):
         """Gets the qty_limit of this OptionsMMP.  # noqa: E501
 
-        Trading volume upper limit (positive number, up to 2 decimal places)  # noqa: E501
+        Trading volume upper limit (positive number, up to 2 decimal places).  # noqa: E501
 
         :return: The qty_limit of this OptionsMMP.  # noqa: E501
         :rtype: str
@@ -168,7 +168,7 @@ class OptionsMMP(object):
     def qty_limit(self, qty_limit):
         """Sets the qty_limit of this OptionsMMP.
 
-        Trading volume upper limit (positive number, up to 2 decimal places)  # noqa: E501
+        Trading volume upper limit (positive number, up to 2 decimal places).  # noqa: E501
 
         :param qty_limit: The qty_limit of this OptionsMMP.  # noqa: E501
         :type: str
@@ -182,7 +182,7 @@ class OptionsMMP(object):
     def delta_limit(self):
         """Gets the delta_limit of this OptionsMMP.  # noqa: E501
 
-        Upper limit of net delta value (positive number, up to 2 decimal places)  # noqa: E501
+        Upper limit of net delta value (positive number, up to 2 decimal places).  # noqa: E501
 
         :return: The delta_limit of this OptionsMMP.  # noqa: E501
         :rtype: str
@@ -193,7 +193,7 @@ class OptionsMMP(object):
     def delta_limit(self, delta_limit):
         """Sets the delta_limit of this OptionsMMP.
 
-        Upper limit of net delta value (positive number, up to 2 decimal places)  # noqa: E501
+        Upper limit of net delta value (positive number, up to 2 decimal places).  # noqa: E501
 
         :param delta_limit: The delta_limit of this OptionsMMP.  # noqa: E501
         :type: str
@@ -207,7 +207,7 @@ class OptionsMMP(object):
     def trigger_time_ms(self):
         """Gets the trigger_time_ms of this OptionsMMP.  # noqa: E501
 
-        Trigger freeze time (milliseconds), 0 means no freeze is triggered  # noqa: E501
+        Trigger freeze time (milliseconds), 0 means no freeze is triggered.  # noqa: E501
 
         :return: The trigger_time_ms of this OptionsMMP.  # noqa: E501
         :rtype: int
@@ -218,7 +218,7 @@ class OptionsMMP(object):
     def trigger_time_ms(self, trigger_time_ms):
         """Sets the trigger_time_ms of this OptionsMMP.
 
-        Trigger freeze time (milliseconds), 0 means no freeze is triggered  # noqa: E501
+        Trigger freeze time (milliseconds), 0 means no freeze is triggered.  # noqa: E501
 
         :param trigger_time_ms: The trigger_time_ms of this OptionsMMP.  # noqa: E501
         :type: int

@@ -82,7 +82,7 @@ class OptionsPositionClose(object):
     def time(self):
         """Gets the time of this OptionsPositionClose.  # noqa: E501
 
-        Position close time  # noqa: E501
+        Position close time.  # noqa: E501
 
         :return: The time of this OptionsPositionClose.  # noqa: E501
         :rtype: float
@@ -93,7 +93,7 @@ class OptionsPositionClose(object):
     def time(self, time):
         """Sets the time of this OptionsPositionClose.
 
-        Position close time  # noqa: E501
+        Position close time.  # noqa: E501
 
         :param time: The time of this OptionsPositionClose.  # noqa: E501
         :type: float
@@ -105,7 +105,7 @@ class OptionsPositionClose(object):
     def contract(self):
         """Gets the contract of this OptionsPositionClose.  # noqa: E501
 
-        Options contract name  # noqa: E501
+        Options contract name.  # noqa: E501
 
         :return: The contract of this OptionsPositionClose.  # noqa: E501
         :rtype: str
@@ -116,7 +116,7 @@ class OptionsPositionClose(object):
     def contract(self, contract):
         """Sets the contract of this OptionsPositionClose.
 
-        Options contract name  # noqa: E501
+        Options contract name.  # noqa: E501
 
         :param contract: The contract of this OptionsPositionClose.  # noqa: E501
         :type: str
@@ -128,7 +128,7 @@ class OptionsPositionClose(object):
     def side(self):
         """Gets the side of this OptionsPositionClose.  # noqa: E501
 
-        Position side, long or short  # noqa: E501
+        Position side, long or short.  # noqa: E501
 
         :return: The side of this OptionsPositionClose.  # noqa: E501
         :rtype: str
@@ -139,7 +139,7 @@ class OptionsPositionClose(object):
     def side(self, side):
         """Sets the side of this OptionsPositionClose.
 
-        Position side, long or short  # noqa: E501
+        Position side, long or short.  # noqa: E501
 
         :param side: The side of this OptionsPositionClose.  # noqa: E501
         :type: str
@@ -157,7 +157,7 @@ class OptionsPositionClose(object):
     def pnl(self):
         """Gets the pnl of this OptionsPositionClose.  # noqa: E501
 
-        PNL  # noqa: E501
+        PNL.  # noqa: E501
 
         :return: The pnl of this OptionsPositionClose.  # noqa: E501
         :rtype: str
@@ -168,7 +168,7 @@ class OptionsPositionClose(object):
     def pnl(self, pnl):
         """Sets the pnl of this OptionsPositionClose.
 
-        PNL  # noqa: E501
+        PNL.  # noqa: E501
 
         :param pnl: The pnl of this OptionsPositionClose.  # noqa: E501
         :type: str
@@ -180,7 +180,7 @@ class OptionsPositionClose(object):
     def text(self):
         """Gets the text of this OptionsPositionClose.  # noqa: E501
 
-        Text of close order  # noqa: E501
+        Text of close order.  # noqa: E501
 
         :return: The text of this OptionsPositionClose.  # noqa: E501
         :rtype: str
@@ -191,7 +191,7 @@ class OptionsPositionClose(object):
     def text(self, text):
         """Sets the text of this OptionsPositionClose.
 
-        Text of close order  # noqa: E501
+        Text of close order.  # noqa: E501
 
         :param text: The text of this OptionsPositionClose.  # noqa: E501
         :type: str
@@ -203,7 +203,7 @@ class OptionsPositionClose(object):
     def settle_size(self):
         """Gets the settle_size of this OptionsPositionClose.  # noqa: E501
 
-        settlement size  # noqa: E501
+        settlement size.  # noqa: E501
 
         :return: The settle_size of this OptionsPositionClose.  # noqa: E501
         :rtype: str
@@ -214,7 +214,7 @@ class OptionsPositionClose(object):
     def settle_size(self, settle_size):
         """Sets the settle_size of this OptionsPositionClose.
 
-        settlement size  # noqa: E501
+        settlement size.  # noqa: E501
 
         :param settle_size: The settle_size of this OptionsPositionClose.  # noqa: E501
         :type: str

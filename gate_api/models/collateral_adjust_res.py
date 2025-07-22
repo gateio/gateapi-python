@@ -62,7 +62,7 @@ class CollateralAdjustRes(object):
     def order_id(self):
         """Gets the order_id of this CollateralAdjustRes.  # noqa: E501
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :return: The order_id of this CollateralAdjustRes.  # noqa: E501
         :rtype: int
@@ -73,7 +73,7 @@ class CollateralAdjustRes(object):
     def order_id(self, order_id):
         """Sets the order_id of this CollateralAdjustRes.
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :param order_id: The order_id of this CollateralAdjustRes.  # noqa: E501
         :type: int
@@ -85,7 +85,7 @@ class CollateralAdjustRes(object):
     def collateral_currencies(self):
         """Gets the collateral_currencies of this CollateralAdjustRes.  # noqa: E501
 
-        Collateral Currency Information  # noqa: E501
+        Collateral Currency Information.  # noqa: E501
 
         :return: The collateral_currencies of this CollateralAdjustRes.  # noqa: E501
         :rtype: list[CollateralCurrencyRes]
@@ -96,7 +96,7 @@ class CollateralAdjustRes(object):
     def collateral_currencies(self, collateral_currencies):
         """Sets the collateral_currencies of this CollateralAdjustRes.
 
-        Collateral Currency Information  # noqa: E501
+        Collateral Currency Information.  # noqa: E501
 
         :param collateral_currencies: The collateral_currencies of this CollateralAdjustRes.  # noqa: E501
         :type: list[CollateralCurrencyRes]

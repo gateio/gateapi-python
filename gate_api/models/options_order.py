@@ -175,7 +175,7 @@ class OptionsOrder(object):
     def id(self):
         """Gets the id of this OptionsOrder.  # noqa: E501
 
-        Options order ID  # noqa: E501
+        Options order ID.  # noqa: E501
 
         :return: The id of this OptionsOrder.  # noqa: E501
         :rtype: int
@@ -186,7 +186,7 @@ class OptionsOrder(object):
     def id(self, id):
         """Sets the id of this OptionsOrder.
 
-        Options order ID  # noqa: E501
+        Options order ID.  # noqa: E501
 
         :param id: The id of this OptionsOrder.  # noqa: E501
         :type: int
@@ -198,7 +198,7 @@ class OptionsOrder(object):
     def user(self):
         """Gets the user of this OptionsOrder.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user of this OptionsOrder.  # noqa: E501
         :rtype: int
@@ -209,7 +209,7 @@ class OptionsOrder(object):
     def user(self, user):
         """Sets the user of this OptionsOrder.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user: The user of this OptionsOrder.  # noqa: E501
         :type: int
@@ -221,7 +221,7 @@ class OptionsOrder(object):
     def create_time(self):
         """Gets the create_time of this OptionsOrder.  # noqa: E501
 
-        Creation time of order  # noqa: E501
+        Creation time of order.  # noqa: E501
 
         :return: The create_time of this OptionsOrder.  # noqa: E501
         :rtype: float
@@ -232,7 +232,7 @@ class OptionsOrder(object):
     def create_time(self, create_time):
         """Sets the create_time of this OptionsOrder.
 
-        Creation time of order  # noqa: E501
+        Creation time of order.  # noqa: E501
 
         :param create_time: The create_time of this OptionsOrder.  # noqa: E501
         :type: float
@@ -244,7 +244,7 @@ class OptionsOrder(object):
     def finish_time(self):
         """Gets the finish_time of this OptionsOrder.  # noqa: E501
 
-        Order finished time. Not returned if order is open  # noqa: E501
+        Order finished time. Not returned if order is open.  # noqa: E501
 
         :return: The finish_time of this OptionsOrder.  # noqa: E501
         :rtype: float
@@ -255,7 +255,7 @@ class OptionsOrder(object):
     def finish_time(self, finish_time):
         """Sets the finish_time of this OptionsOrder.
 
-        Order finished time. Not returned if order is open  # noqa: E501
+        Order finished time. Not returned if order is open.  # noqa: E501
 
         :param finish_time: The finish_time of this OptionsOrder.  # noqa: E501
         :type: float
@@ -267,7 +267,7 @@ class OptionsOrder(object):
     def finish_as(self):
         """Gets the finish_as of this OptionsOrder.  # noqa: E501
 
-        Ending method, including:  - filled: fully completed - canceled: user canceled - liquidated: forced liquidation cancellation - ioc: Not fully filled immediately because tif is set to ioc - auto_deleveraged: automatic deleveraging cancel - reduce_only: Increased position is cancelled, because reduce_only is set or the position is closed - position_closed: Because the position was closed, the pending order was canceled - reduce_out: Only reduce the excluded pending orders that are not easy to be filled - mmp_cancelled: MMP canceled  # noqa: E501
+        Ending method, including:  - filled: fully completed - canceled: user canceled - liquidated: forced liquidation cancellation - ioc: Not fully filled immediately because tif is set to ioc - auto_deleveraged: automatic deleveraging cancel - reduce_only: Increased position is cancelled, or the position is closed - position_closed: Because the position was closed, the pending order was canceled - reduce_out: Only reduce the excluded pending orders that are not easy to be filled - mmp_cancelled: MMP canceled  # noqa: E501
 
         :return: The finish_as of this OptionsOrder.  # noqa: E501
         :rtype: str
@@ -278,7 +278,7 @@ class OptionsOrder(object):
     def finish_as(self, finish_as):
         """Sets the finish_as of this OptionsOrder.
 
-        Ending method, including:  - filled: fully completed - canceled: user canceled - liquidated: forced liquidation cancellation - ioc: Not fully filled immediately because tif is set to ioc - auto_deleveraged: automatic deleveraging cancel - reduce_only: Increased position is cancelled, because reduce_only is set or the position is closed - position_closed: Because the position was closed, the pending order was canceled - reduce_out: Only reduce the excluded pending orders that are not easy to be filled - mmp_cancelled: MMP canceled  # noqa: E501
+        Ending method, including:  - filled: fully completed - canceled: user canceled - liquidated: forced liquidation cancellation - ioc: Not fully filled immediately because tif is set to ioc - auto_deleveraged: automatic deleveraging cancel - reduce_only: Increased position is cancelled, or the position is closed - position_closed: Because the position was closed, the pending order was canceled - reduce_out: Only reduce the excluded pending orders that are not easy to be filled - mmp_cancelled: MMP canceled  # noqa: E501
 
         :param finish_as: The finish_as of this OptionsOrder.  # noqa: E501
         :type: str
@@ -325,7 +325,7 @@ class OptionsOrder(object):
     def contract(self):
         """Gets the contract of this OptionsOrder.  # noqa: E501
 
-        Contract name  # noqa: E501
+        Contract name.  # noqa: E501
 
         :return: The contract of this OptionsOrder.  # noqa: E501
         :rtype: str
@@ -336,7 +336,7 @@ class OptionsOrder(object):
     def contract(self, contract):
         """Sets the contract of this OptionsOrder.
 
-        Contract name  # noqa: E501
+        Contract name.  # noqa: E501
 
         :param contract: The contract of this OptionsOrder.  # noqa: E501
         :type: str
@@ -398,7 +398,7 @@ class OptionsOrder(object):
     def price(self):
         """Gets the price of this OptionsOrder.  # noqa: E501
 
-        Order price. 0 for market order with `tif` set as `ioc` (USDT)  # noqa: E501
+        Order price. 0 for market order with `tif` set as `ioc` (USDT).  # noqa: E501
 
         :return: The price of this OptionsOrder.  # noqa: E501
         :rtype: str
@@ -409,7 +409,7 @@ class OptionsOrder(object):
     def price(self, price):
         """Sets the price of this OptionsOrder.
 
-        Order price. 0 for market order with `tif` set as `ioc` (USDT)  # noqa: E501
+        Order price. 0 for market order with `tif` set as `ioc` (USDT).  # noqa: E501
 
         :param price: The price of this OptionsOrder.  # noqa: E501
         :type: str
@@ -421,7 +421,7 @@ class OptionsOrder(object):
     def close(self):
         """Gets the close of this OptionsOrder.  # noqa: E501
 
-        Set as `true` to close the position, with `size` set to 0  # noqa: E501
+        Set as `true` to close the position, with `size` set to 0.  # noqa: E501
 
         :return: The close of this OptionsOrder.  # noqa: E501
         :rtype: bool
@@ -432,7 +432,7 @@ class OptionsOrder(object):
     def close(self, close):
         """Sets the close of this OptionsOrder.
 
-        Set as `true` to close the position, with `size` set to 0  # noqa: E501
+        Set as `true` to close the position, with `size` set to 0.  # noqa: E501
 
         :param close: The close of this OptionsOrder.  # noqa: E501
         :type: bool
@@ -444,7 +444,7 @@ class OptionsOrder(object):
     def is_close(self):
         """Gets the is_close of this OptionsOrder.  # noqa: E501
 
-        Is the order to close position  # noqa: E501
+        Is the order to close position.  # noqa: E501
 
         :return: The is_close of this OptionsOrder.  # noqa: E501
         :rtype: bool
@@ -455,7 +455,7 @@ class OptionsOrder(object):
     def is_close(self, is_close):
         """Sets the is_close of this OptionsOrder.
 
-        Is the order to close position  # noqa: E501
+        Is the order to close position.  # noqa: E501
 
         :param is_close: The is_close of this OptionsOrder.  # noqa: E501
         :type: bool
@@ -467,7 +467,7 @@ class OptionsOrder(object):
     def reduce_only(self):
         """Gets the reduce_only of this OptionsOrder.  # noqa: E501
 
-        Set as `true` to be reduce-only order  # noqa: E501
+        Set as `true` to be reduce-only order.  # noqa: E501
 
         :return: The reduce_only of this OptionsOrder.  # noqa: E501
         :rtype: bool
@@ -478,7 +478,7 @@ class OptionsOrder(object):
     def reduce_only(self, reduce_only):
         """Sets the reduce_only of this OptionsOrder.
 
-        Set as `true` to be reduce-only order  # noqa: E501
+        Set as `true` to be reduce-only order.  # noqa: E501
 
         :param reduce_only: The reduce_only of this OptionsOrder.  # noqa: E501
         :type: bool
@@ -490,7 +490,7 @@ class OptionsOrder(object):
     def is_reduce_only(self):
         """Gets the is_reduce_only of this OptionsOrder.  # noqa: E501
 
-        Is the order reduce-only  # noqa: E501
+        Is the order reduce-only.  # noqa: E501
 
         :return: The is_reduce_only of this OptionsOrder.  # noqa: E501
         :rtype: bool
@@ -501,7 +501,7 @@ class OptionsOrder(object):
     def is_reduce_only(self, is_reduce_only):
         """Sets the is_reduce_only of this OptionsOrder.
 
-        Is the order reduce-only  # noqa: E501
+        Is the order reduce-only.  # noqa: E501
 
         :param is_reduce_only: The is_reduce_only of this OptionsOrder.  # noqa: E501
         :type: bool
@@ -513,7 +513,7 @@ class OptionsOrder(object):
     def is_liq(self):
         """Gets the is_liq of this OptionsOrder.  # noqa: E501
 
-        Is the order for liquidation  # noqa: E501
+        Is the order for liquidation.  # noqa: E501
 
         :return: The is_liq of this OptionsOrder.  # noqa: E501
         :rtype: bool
@@ -524,7 +524,7 @@ class OptionsOrder(object):
     def is_liq(self, is_liq):
         """Sets the is_liq of this OptionsOrder.
 
-        Is the order for liquidation  # noqa: E501
+        Is the order for liquidation.  # noqa: E501
 
         :param is_liq: The is_liq of this OptionsOrder.  # noqa: E501
         :type: bool
@@ -536,7 +536,7 @@ class OptionsOrder(object):
     def mmp(self):
         """Gets the mmp of this OptionsOrder.  # noqa: E501
 
-        When set to true, delegate to MMP  # noqa: E501
+        When set to true, delegate to MMP.  # noqa: E501
 
         :return: The mmp of this OptionsOrder.  # noqa: E501
         :rtype: bool
@@ -547,7 +547,7 @@ class OptionsOrder(object):
     def mmp(self, mmp):
         """Sets the mmp of this OptionsOrder.
 
-        When set to true, delegate to MMP  # noqa: E501
+        When set to true, delegate to MMP.  # noqa: E501
 
         :param mmp: The mmp of this OptionsOrder.  # noqa: E501
         :type: bool
@@ -611,7 +611,7 @@ class OptionsOrder(object):
     def left(self):
         """Gets the left of this OptionsOrder.  # noqa: E501
 
-        Size left to be traded  # noqa: E501
+        Size left to be traded.  # noqa: E501
 
         :return: The left of this OptionsOrder.  # noqa: E501
         :rtype: int
@@ -622,7 +622,7 @@ class OptionsOrder(object):
     def left(self, left):
         """Sets the left of this OptionsOrder.
 
-        Size left to be traded  # noqa: E501
+        Size left to be traded.  # noqa: E501
 
         :param left: The left of this OptionsOrder.  # noqa: E501
         :type: int
@@ -634,7 +634,7 @@ class OptionsOrder(object):
     def fill_price(self):
         """Gets the fill_price of this OptionsOrder.  # noqa: E501
 
-        Fill price of the order  # noqa: E501
+        Fill price of the order.  # noqa: E501
 
         :return: The fill_price of this OptionsOrder.  # noqa: E501
         :rtype: str
@@ -645,7 +645,7 @@ class OptionsOrder(object):
     def fill_price(self, fill_price):
         """Sets the fill_price of this OptionsOrder.
 
-        Fill price of the order  # noqa: E501
+        Fill price of the order.  # noqa: E501
 
         :param fill_price: The fill_price of this OptionsOrder.  # noqa: E501
         :type: str
@@ -680,7 +680,7 @@ class OptionsOrder(object):
     def tkfr(self):
         """Gets the tkfr of this OptionsOrder.  # noqa: E501
 
-        Taker fee  # noqa: E501
+        Taker fee.  # noqa: E501
 
         :return: The tkfr of this OptionsOrder.  # noqa: E501
         :rtype: str
@@ -691,7 +691,7 @@ class OptionsOrder(object):
     def tkfr(self, tkfr):
         """Sets the tkfr of this OptionsOrder.
 
-        Taker fee  # noqa: E501
+        Taker fee.  # noqa: E501
 
         :param tkfr: The tkfr of this OptionsOrder.  # noqa: E501
         :type: str
@@ -703,7 +703,7 @@ class OptionsOrder(object):
     def mkfr(self):
         """Gets the mkfr of this OptionsOrder.  # noqa: E501
 
-        Maker fee  # noqa: E501
+        Maker fee.  # noqa: E501
 
         :return: The mkfr of this OptionsOrder.  # noqa: E501
         :rtype: str
@@ -714,7 +714,7 @@ class OptionsOrder(object):
     def mkfr(self, mkfr):
         """Sets the mkfr of this OptionsOrder.
 
-        Maker fee  # noqa: E501
+        Maker fee.  # noqa: E501
 
         :param mkfr: The mkfr of this OptionsOrder.  # noqa: E501
         :type: str
@@ -726,7 +726,7 @@ class OptionsOrder(object):
     def refu(self):
         """Gets the refu of this OptionsOrder.  # noqa: E501
 
-        Reference user ID  # noqa: E501
+        Reference user ID.  # noqa: E501
 
         :return: The refu of this OptionsOrder.  # noqa: E501
         :rtype: int
@@ -737,7 +737,7 @@ class OptionsOrder(object):
     def refu(self, refu):
         """Sets the refu of this OptionsOrder.
 
-        Reference user ID  # noqa: E501
+        Reference user ID.  # noqa: E501
 
         :param refu: The refu of this OptionsOrder.  # noqa: E501
         :type: int
@@ -749,7 +749,7 @@ class OptionsOrder(object):
     def refr(self):
         """Gets the refr of this OptionsOrder.  # noqa: E501
 
-        Referrer rebate  # noqa: E501
+        Referrer rebate.  # noqa: E501
 
         :return: The refr of this OptionsOrder.  # noqa: E501
         :rtype: str
@@ -760,7 +760,7 @@ class OptionsOrder(object):
     def refr(self, refr):
         """Sets the refr of this OptionsOrder.
 
-        Referrer rebate  # noqa: E501
+        Referrer rebate.  # noqa: E501
 
         :param refr: The refr of this OptionsOrder.  # noqa: E501
         :type: str

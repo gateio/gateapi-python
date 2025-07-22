@@ -77,7 +77,7 @@ class CollateralCurrencyRes(object):
     def succeeded(self):
         """Gets the succeeded of this CollateralCurrencyRes.  # noqa: E501
 
-        Update success status  # noqa: E501
+        Update success status.  # noqa: E501
 
         :return: The succeeded of this CollateralCurrencyRes.  # noqa: E501
         :rtype: bool
@@ -88,7 +88,7 @@ class CollateralCurrencyRes(object):
     def succeeded(self, succeeded):
         """Sets the succeeded of this CollateralCurrencyRes.
 
-        Update success status  # noqa: E501
+        Update success status.  # noqa: E501
 
         :param succeeded: The succeeded of this CollateralCurrencyRes.  # noqa: E501
         :type: bool
@@ -146,7 +146,7 @@ class CollateralCurrencyRes(object):
     def currency(self):
         """Gets the currency of this CollateralCurrencyRes.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this CollateralCurrencyRes.  # noqa: E501
         :rtype: str
@@ -157,7 +157,7 @@ class CollateralCurrencyRes(object):
     def currency(self, currency):
         """Sets the currency of this CollateralCurrencyRes.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this CollateralCurrencyRes.  # noqa: E501
         :type: str

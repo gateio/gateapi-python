@@ -4,13 +4,13 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_account_detail**](AccountApi.md#get_account_detail) | **GET** /account/detail | Get account detail
-[**get_account_rate_limit**](AccountApi.md#get_account_rate_limit) | **GET** /account/rate_limit | Get user transaction rate limit information
-[**list_stp_groups**](AccountApi.md#list_stp_groups) | **GET** /account/stp_groups | List STP Groups
-[**create_stp_group**](AccountApi.md#create_stp_group) | **POST** /account/stp_groups | Create STP Group
-[**list_stp_groups_users**](AccountApi.md#list_stp_groups_users) | **GET** /account/stp_groups/{stp_id}/users | List users of the STP group
-[**add_stp_group_users**](AccountApi.md#add_stp_group_users) | **POST** /account/stp_groups/{stp_id}/users | Add users to the STP group
-[**delete_stp_group_users**](AccountApi.md#delete_stp_group_users) | **DELETE** /account/stp_groups/{stp_id}/users | Delete the user in the STP group
+[**get_account_detail**](AccountApi.md#get_account_detail) | **GET** /account/detail | Get account detail.
+[**get_account_rate_limit**](AccountApi.md#get_account_rate_limit) | **GET** /account/rate_limit | Get user transaction rate limit information.
+[**list_stp_groups**](AccountApi.md#list_stp_groups) | **GET** /account/stp_groups | List STP Groups.
+[**create_stp_group**](AccountApi.md#create_stp_group) | **POST** /account/stp_groups | Create STP Group.
+[**list_stp_groups_users**](AccountApi.md#list_stp_groups_users) | **GET** /account/stp_groups/{stp_id}/users | List users of the STP group.
+[**add_stp_group_users**](AccountApi.md#add_stp_group_users) | **POST** /account/stp_groups/{stp_id}/users | Add users to the STP group.
+[**delete_stp_group_users**](AccountApi.md#delete_stp_group_users) | **DELETE** /account/stp_groups/{stp_id}/users | Delete the user in the STP group.
 [**get_debit_fee**](AccountApi.md#get_debit_fee) | **GET** /account/debit_fee | Query GT deduction configuration.
 [**set_debit_fee**](AccountApi.md#set_debit_fee) | **POST** /account/debit_fee | Set GT deduction.
 
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 # **get_account_detail**
 > AccountDetail get_account_detail()
 
-Get account detail
+Get account detail.
 
 ### Example
 
@@ -46,7 +46,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.AccountApi(api_client)
 
 try:
-    # Get account detail
+    # Get account detail.
     api_response = api_instance.get_account_detail()
     print(api_response)
 except GateApiException as ex:
@@ -74,14 +74,14 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful |  -  |
+**200** | Successful. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_account_rate_limit**
 > list[AccountRateLimit] get_account_rate_limit()
 
-Get user transaction rate limit information
+Get user transaction rate limit information.
 
 ### Example
 
@@ -109,7 +109,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.AccountApi(api_client)
 
 try:
-    # Get user transaction rate limit information
+    # Get user transaction rate limit information.
     api_response = api_instance.get_account_rate_limit()
     print(api_response)
 except GateApiException as ex:
@@ -137,16 +137,16 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful |  -  |
+**200** | Successful. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_stp_groups**
 > list[StpGroup] list_stp_groups(name=name)
 
-List STP Groups
+List STP Groups.
 
-Retrieve the list of STP groups created by the main account user only
+Retrieve the list of STP groups created by the main account user only.
 
 ### Example
 
@@ -172,10 +172,10 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.AccountApi(api_client)
-name = 'group' # str | Perform a fuzzy search based on the name (optional)
+name = 'group' # str | Perform a fuzzy search based on the name. (optional)
 
 try:
-    # List STP Groups
+    # List STP Groups.
     api_response = api_instance.list_stp_groups(name=name)
     print(api_response)
 except GateApiException as ex:
@@ -188,7 +188,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| Perform a fuzzy search based on the name | [optional] 
+ **name** | **str**| Perform a fuzzy search based on the name. | [optional] 
 
 ### Return type
 
@@ -206,16 +206,16 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved |  -  |
+**200** | List retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_stp_group**
 > StpGroup create_stp_group(stp_group)
 
-Create STP Group
+Create STP Group.
 
-Only the main account is allowed to create a new STP user group
+Only the main account is allowed to create a new STP user group.
 
 ### Example
 
@@ -244,7 +244,7 @@ api_instance = gate_api.AccountApi(api_client)
 stp_group = gate_api.StpGroup() # StpGroup | 
 
 try:
-    # Create STP Group
+    # Create STP Group.
     api_response = api_instance.create_stp_group(stp_group)
     print(api_response)
 except GateApiException as ex:
@@ -282,9 +282,9 @@ Name | Type | Description  | Notes
 # **list_stp_groups_users**
 > list[StpGroupUser] list_stp_groups_users(stp_id)
 
-List users of the STP group
+List users of the STP group.
 
-Only the main account that created this STP group can query the account 
+Only the main account that created this STP group can query the account.
 
 ### Example
 
@@ -310,10 +310,10 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.AccountApi(api_client)
-stp_id = 1 # int | STP Group ID
+stp_id = 1 # int | STP Group ID.
 
 try:
-    # List users of the STP group
+    # List users of the STP group.
     api_response = api_instance.list_stp_groups_users(stp_id)
     print(api_response)
 except GateApiException as ex:
@@ -326,7 +326,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stp_id** | **int**| STP Group ID | 
+ **stp_id** | **int**| STP Group ID. | 
 
 ### Return type
 
@@ -344,16 +344,16 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved |  -  |
+**200** | List retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_stp_group_users**
 > list[StpGroupUser] add_stp_group_users(stp_id, request_body)
 
-Add users to the STP group
+Add users to the STP group.
 
-- Only the master account that created the STP user group is allowed to add users to the STP user group.- Only accounts under the main account are allowed to be added. Cross-account is not permitted
+- Only the master account that created the STP user group is allowed to add users group.- Only accounts under the main account are allowed to be added. Cross-account is not permitted
 
 ### Example
 
@@ -379,11 +379,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.AccountApi(api_client)
-stp_id = 1 # int | STP Group ID
-request_body = [[1,2,3]] # list[int] | User ID
+stp_id = 1 # int | STP Group ID.
+request_body = [[1,2,3]] # list[int] | User ID.
 
 try:
-    # Add users to the STP group
+    # Add users to the STP group.
     api_response = api_instance.add_stp_group_users(stp_id, request_body)
     print(api_response)
 except GateApiException as ex:
@@ -396,8 +396,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stp_id** | **int**| STP Group ID | 
- **request_body** | [**list[int]**](int.md)| User ID | 
+ **stp_id** | **int**| STP Group ID. | 
+ **request_body** | [**list[int]**](int.md)| User ID. | 
 
 ### Return type
 
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 # **delete_stp_group_users**
 > list[StpGroupUser] delete_stp_group_users(stp_id, user_id)
 
-Delete the user in the STP group
+Delete the user in the STP group.
 
 - Only the main account that created this STP group is allowed to delete users from the STP user group - Deletion is limited to accounts under the current main account; cross-account deletion is not permitted
 
@@ -450,11 +450,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.AccountApi(api_client)
-stp_id = 1 # int | STP Group ID
-user_id = 1 # int | STP user ID, multiple can be separated by commas
+stp_id = 1 # int | STP Group ID.
+user_id = 1 # int | STP user ID, multiple can be separated by commas.
 
 try:
-    # Delete the user in the STP group
+    # Delete the user in the STP group.
     api_response = api_instance.delete_stp_group_users(stp_id, user_id)
     print(api_response)
 except GateApiException as ex:
@@ -467,8 +467,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stp_id** | **int**| STP Group ID | 
- **user_id** | **int**| STP user ID, multiple can be separated by commas | 
+ **stp_id** | **int**| STP Group ID. | 
+ **user_id** | **int**| STP user ID, multiple can be separated by commas. | 
 
 ### Return type
 
@@ -486,7 +486,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Success. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -551,7 +551,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Success. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -619,7 +619,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Success. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

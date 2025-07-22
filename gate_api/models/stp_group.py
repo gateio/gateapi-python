@@ -71,7 +71,7 @@ class StpGroup(object):
     def id(self):
         """Gets the id of this StpGroup.  # noqa: E501
 
-        STP Group ID  # noqa: E501
+        STP Group ID.  # noqa: E501
 
         :return: The id of this StpGroup.  # noqa: E501
         :rtype: int
@@ -82,7 +82,7 @@ class StpGroup(object):
     def id(self, id):
         """Sets the id of this StpGroup.
 
-        STP Group ID  # noqa: E501
+        STP Group ID.  # noqa: E501
 
         :param id: The id of this StpGroup.  # noqa: E501
         :type: int
@@ -94,7 +94,7 @@ class StpGroup(object):
     def name(self):
         """Gets the name of this StpGroup.  # noqa: E501
 
-        STP Group name  # noqa: E501
+        STP Group name.  # noqa: E501
 
         :return: The name of this StpGroup.  # noqa: E501
         :rtype: str
@@ -105,7 +105,7 @@ class StpGroup(object):
     def name(self, name):
         """Sets the name of this StpGroup.
 
-        STP Group name  # noqa: E501
+        STP Group name.  # noqa: E501
 
         :param name: The name of this StpGroup.  # noqa: E501
         :type: str
@@ -119,7 +119,7 @@ class StpGroup(object):
     def creator_id(self):
         """Gets the creator_id of this StpGroup.  # noqa: E501
 
-        Creator ID  # noqa: E501
+        Creator ID.  # noqa: E501
 
         :return: The creator_id of this StpGroup.  # noqa: E501
         :rtype: int
@@ -130,7 +130,7 @@ class StpGroup(object):
     def creator_id(self, creator_id):
         """Sets the creator_id of this StpGroup.
 
-        Creator ID  # noqa: E501
+        Creator ID.  # noqa: E501
 
         :param creator_id: The creator_id of this StpGroup.  # noqa: E501
         :type: int
@@ -142,7 +142,7 @@ class StpGroup(object):
     def create_time(self):
         """Gets the create_time of this StpGroup.  # noqa: E501
 
-        Creation time  # noqa: E501
+        Creation time.  # noqa: E501
 
         :return: The create_time of this StpGroup.  # noqa: E501
         :rtype: int
@@ -153,7 +153,7 @@ class StpGroup(object):
     def create_time(self, create_time):
         """Sets the create_time of this StpGroup.
 
-        Creation time  # noqa: E501
+        Creation time.  # noqa: E501
 
         :param create_time: The create_time of this StpGroup.  # noqa: E501
         :type: int

@@ -57,7 +57,7 @@ class UserSubRelation(object):
     def list(self):
         """Gets the list of this UserSubRelation.  # noqa: E501
 
-        Subordinate relationship list  # noqa: E501
+        Subordinate relationship list.  # noqa: E501
 
         :return: The list of this UserSubRelation.  # noqa: E501
         :rtype: list[UserSub]
@@ -68,7 +68,7 @@ class UserSubRelation(object):
     def list(self, list):
         """Sets the list of this UserSubRelation.
 
-        Subordinate relationship list  # noqa: E501
+        Subordinate relationship list.  # noqa: E501
 
         :param list: The list of this UserSubRelation.  # noqa: E501
         :type: list[UserSub]

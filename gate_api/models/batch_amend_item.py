@@ -110,7 +110,7 @@ class BatchAmendItem(object):
     def currency_pair(self):
         """Gets the currency_pair of this BatchAmendItem.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this BatchAmendItem.  # noqa: E501
         :rtype: str
@@ -121,7 +121,7 @@ class BatchAmendItem(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this BatchAmendItem.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this BatchAmendItem.  # noqa: E501
         :type: str
@@ -204,7 +204,7 @@ class BatchAmendItem(object):
     def amend_text(self):
         """Gets the amend_text of this BatchAmendItem.  # noqa: E501
 
-        Custom info during amending order  # noqa: E501
+        Custom info during amending order.  # noqa: E501
 
         :return: The amend_text of this BatchAmendItem.  # noqa: E501
         :rtype: str
@@ -215,7 +215,7 @@ class BatchAmendItem(object):
     def amend_text(self, amend_text):
         """Sets the amend_text of this BatchAmendItem.
 
-        Custom info during amending order  # noqa: E501
+        Custom info during amending order.  # noqa: E501
 
         :param amend_text: The amend_text of this BatchAmendItem.  # noqa: E501
         :type: str

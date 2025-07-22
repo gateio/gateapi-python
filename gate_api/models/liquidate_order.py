@@ -97,7 +97,7 @@ class LiquidateOrder(object):
     def currency_pair(self):
         """Gets the currency_pair of this LiquidateOrder.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this LiquidateOrder.  # noqa: E501
         :rtype: str
@@ -108,7 +108,7 @@ class LiquidateOrder(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this LiquidateOrder.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this LiquidateOrder.  # noqa: E501
         :type: str
@@ -122,7 +122,7 @@ class LiquidateOrder(object):
     def amount(self):
         """Gets the amount of this LiquidateOrder.  # noqa: E501
 
-        Trade amount  # noqa: E501
+        Trade amount.  # noqa: E501
 
         :return: The amount of this LiquidateOrder.  # noqa: E501
         :rtype: str
@@ -133,7 +133,7 @@ class LiquidateOrder(object):
     def amount(self, amount):
         """Sets the amount of this LiquidateOrder.
 
-        Trade amount  # noqa: E501
+        Trade amount.  # noqa: E501
 
         :param amount: The amount of this LiquidateOrder.  # noqa: E501
         :type: str
@@ -147,7 +147,7 @@ class LiquidateOrder(object):
     def price(self):
         """Gets the price of this LiquidateOrder.  # noqa: E501
 
-        Order price  # noqa: E501
+        Order price.  # noqa: E501
 
         :return: The price of this LiquidateOrder.  # noqa: E501
         :rtype: str
@@ -158,7 +158,7 @@ class LiquidateOrder(object):
     def price(self, price):
         """Sets the price of this LiquidateOrder.
 
-        Order price  # noqa: E501
+        Order price.  # noqa: E501
 
         :param price: The price of this LiquidateOrder.  # noqa: E501
         :type: str

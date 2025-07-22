@@ -62,7 +62,7 @@ class UnifiedBorrowable(object):
     def currency(self):
         """Gets the currency of this UnifiedBorrowable.  # noqa: E501
 
-        Currency detail  # noqa: E501
+        Currency detail.  # noqa: E501
 
         :return: The currency of this UnifiedBorrowable.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class UnifiedBorrowable(object):
     def currency(self, currency):
         """Sets the currency of this UnifiedBorrowable.
 
-        Currency detail  # noqa: E501
+        Currency detail.  # noqa: E501
 
         :param currency: The currency of this UnifiedBorrowable.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class UnifiedBorrowable(object):
     def amount(self):
         """Gets the amount of this UnifiedBorrowable.  # noqa: E501
 
-        Max borrowable amount  # noqa: E501
+        Max borrowable amount.  # noqa: E501
 
         :return: The amount of this UnifiedBorrowable.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class UnifiedBorrowable(object):
     def amount(self, amount):
         """Sets the amount of this UnifiedBorrowable.
 
-        Max borrowable amount  # noqa: E501
+        Max borrowable amount.  # noqa: E501
 
         :param amount: The amount of this UnifiedBorrowable.  # noqa: E501
         :type: str

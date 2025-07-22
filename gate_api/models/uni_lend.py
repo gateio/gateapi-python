@@ -102,7 +102,7 @@ class UniLend(object):
     def currency(self):
         """Gets the currency of this UniLend.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this UniLend.  # noqa: E501
         :rtype: str
@@ -113,7 +113,7 @@ class UniLend(object):
     def currency(self, currency):
         """Sets the currency of this UniLend.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this UniLend.  # noqa: E501
         :type: str
@@ -125,7 +125,7 @@ class UniLend(object):
     def current_amount(self):
         """Gets the current_amount of this UniLend.  # noqa: E501
 
-        Current amount  # noqa: E501
+        Current amount.  # noqa: E501
 
         :return: The current_amount of this UniLend.  # noqa: E501
         :rtype: str
@@ -136,7 +136,7 @@ class UniLend(object):
     def current_amount(self, current_amount):
         """Sets the current_amount of this UniLend.
 
-        Current amount  # noqa: E501
+        Current amount.  # noqa: E501
 
         :param current_amount: The current_amount of this UniLend.  # noqa: E501
         :type: str
@@ -148,7 +148,7 @@ class UniLend(object):
     def amount(self):
         """Gets the amount of this UniLend.  # noqa: E501
 
-        Total amount  # noqa: E501
+        Total amount.  # noqa: E501
 
         :return: The amount of this UniLend.  # noqa: E501
         :rtype: str
@@ -159,7 +159,7 @@ class UniLend(object):
     def amount(self, amount):
         """Sets the amount of this UniLend.
 
-        Total amount  # noqa: E501
+        Total amount.  # noqa: E501
 
         :param amount: The amount of this UniLend.  # noqa: E501
         :type: str
@@ -171,7 +171,7 @@ class UniLend(object):
     def lent_amount(self):
         """Gets the lent_amount of this UniLend.  # noqa: E501
 
-        Lent amount  # noqa: E501
+        Lent amount.  # noqa: E501
 
         :return: The lent_amount of this UniLend.  # noqa: E501
         :rtype: str
@@ -182,7 +182,7 @@ class UniLend(object):
     def lent_amount(self, lent_amount):
         """Sets the lent_amount of this UniLend.
 
-        Lent amount  # noqa: E501
+        Lent amount.  # noqa: E501
 
         :param lent_amount: The lent_amount of this UniLend.  # noqa: E501
         :type: str
@@ -194,7 +194,7 @@ class UniLend(object):
     def frozen_amount(self):
         """Gets the frozen_amount of this UniLend.  # noqa: E501
 
-        Frozen amount  # noqa: E501
+        Frozen amount.  # noqa: E501
 
         :return: The frozen_amount of this UniLend.  # noqa: E501
         :rtype: str
@@ -205,7 +205,7 @@ class UniLend(object):
     def frozen_amount(self, frozen_amount):
         """Sets the frozen_amount of this UniLend.
 
-        Frozen amount  # noqa: E501
+        Frozen amount.  # noqa: E501
 
         :param frozen_amount: The frozen_amount of this UniLend.  # noqa: E501
         :type: str
@@ -217,7 +217,7 @@ class UniLend(object):
     def min_rate(self):
         """Gets the min_rate of this UniLend.  # noqa: E501
 
-        Minimum interest rate  # noqa: E501
+        Minimum interest rate.  # noqa: E501
 
         :return: The min_rate of this UniLend.  # noqa: E501
         :rtype: str
@@ -228,7 +228,7 @@ class UniLend(object):
     def min_rate(self, min_rate):
         """Sets the min_rate of this UniLend.
 
-        Minimum interest rate  # noqa: E501
+        Minimum interest rate.  # noqa: E501
 
         :param min_rate: The min_rate of this UniLend.  # noqa: E501
         :type: str
@@ -240,7 +240,7 @@ class UniLend(object):
     def interest_status(self):
         """Gets the interest_status of this UniLend.  # noqa: E501
 
-        Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment Interest reinvestment  # noqa: E501
+        Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment  # noqa: E501
 
         :return: The interest_status of this UniLend.  # noqa: E501
         :rtype: str
@@ -251,7 +251,7 @@ class UniLend(object):
     def interest_status(self, interest_status):
         """Sets the interest_status of this UniLend.
 
-        Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment Interest reinvestment  # noqa: E501
+        Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment  # noqa: E501
 
         :param interest_status: The interest_status of this UniLend.  # noqa: E501
         :type: str
@@ -263,7 +263,7 @@ class UniLend(object):
     def reinvest_left_amount(self):
         """Gets the reinvest_left_amount of this UniLend.  # noqa: E501
 
-        Amount not reinvested  # noqa: E501
+        Amount not reinvested.  # noqa: E501
 
         :return: The reinvest_left_amount of this UniLend.  # noqa: E501
         :rtype: str
@@ -274,7 +274,7 @@ class UniLend(object):
     def reinvest_left_amount(self, reinvest_left_amount):
         """Sets the reinvest_left_amount of this UniLend.
 
-        Amount not reinvested  # noqa: E501
+        Amount not reinvested.  # noqa: E501
 
         :param reinvest_left_amount: The reinvest_left_amount of this UniLend.  # noqa: E501
         :type: str
@@ -286,7 +286,7 @@ class UniLend(object):
     def create_time(self):
         """Gets the create_time of this UniLend.  # noqa: E501
 
-        Created time of the lending order  # noqa: E501
+        Created time of the lending order.  # noqa: E501
 
         :return: The create_time of this UniLend.  # noqa: E501
         :rtype: int
@@ -297,7 +297,7 @@ class UniLend(object):
     def create_time(self, create_time):
         """Sets the create_time of this UniLend.
 
-        Created time of the lending order  # noqa: E501
+        Created time of the lending order.  # noqa: E501
 
         :param create_time: The create_time of this UniLend.  # noqa: E501
         :type: int
@@ -309,7 +309,7 @@ class UniLend(object):
     def update_time(self):
         """Gets the update_time of this UniLend.  # noqa: E501
 
-        Upated time of the lending order  # noqa: E501
+        Upated time of the lending order.  # noqa: E501
 
         :return: The update_time of this UniLend.  # noqa: E501
         :rtype: int
@@ -320,7 +320,7 @@ class UniLend(object):
     def update_time(self, update_time):
         """Sets the update_time of this UniLend.
 
-        Upated time of the lending order  # noqa: E501
+        Upated time of the lending order.  # noqa: E501
 
         :param update_time: The update_time of this UniLend.  # noqa: E501
         :type: int

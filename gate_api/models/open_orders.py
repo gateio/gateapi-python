@@ -67,7 +67,7 @@ class OpenOrders(object):
     def currency_pair(self):
         """Gets the currency_pair of this OpenOrders.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this OpenOrders.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class OpenOrders(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this OpenOrders.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this OpenOrders.  # noqa: E501
         :type: str

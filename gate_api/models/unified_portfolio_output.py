@@ -95,7 +95,7 @@ class UnifiedPortfolioOutput(object):
     def initial_margin_total(self):
         """Gets the initial_margin_total of this UnifiedPortfolioOutput.  # noqa: E501
 
-        Total initial margin, calculated as the maximum of the following three combinations: position,  position + positive delta orders, position + negative delta orders.  # noqa: E501
+        Total initial margin, calculated as the maximum of the following three combinations: position,  position + positive delta orders, orders.  # noqa: E501
 
         :return: The initial_margin_total of this UnifiedPortfolioOutput.  # noqa: E501
         :rtype: str
@@ -106,7 +106,7 @@ class UnifiedPortfolioOutput(object):
     def initial_margin_total(self, initial_margin_total):
         """Sets the initial_margin_total of this UnifiedPortfolioOutput.
 
-        Total initial margin, calculated as the maximum of the following three combinations: position,  position + positive delta orders, position + negative delta orders.  # noqa: E501
+        Total initial margin, calculated as the maximum of the following three combinations: position,  position + positive delta orders, orders.  # noqa: E501
 
         :param initial_margin_total: The initial_margin_total of this UnifiedPortfolioOutput.  # noqa: E501
         :type: str
@@ -118,7 +118,7 @@ class UnifiedPortfolioOutput(object):
     def calculate_time(self):
         """Gets the calculate_time of this UnifiedPortfolioOutput.  # noqa: E501
 
-        Calculate time  # noqa: E501
+        Calculate time.  # noqa: E501
 
         :return: The calculate_time of this UnifiedPortfolioOutput.  # noqa: E501
         :rtype: int
@@ -129,7 +129,7 @@ class UnifiedPortfolioOutput(object):
     def calculate_time(self, calculate_time):
         """Sets the calculate_time of this UnifiedPortfolioOutput.
 
-        Calculate time  # noqa: E501
+        Calculate time.  # noqa: E501
 
         :param calculate_time: The calculate_time of this UnifiedPortfolioOutput.  # noqa: E501
         :type: int
@@ -141,7 +141,7 @@ class UnifiedPortfolioOutput(object):
     def risk_unit(self):
         """Gets the risk_unit of this UnifiedPortfolioOutput.  # noqa: E501
 
-        Risk unit  # noqa: E501
+        Risk unit.  # noqa: E501
 
         :return: The risk_unit of this UnifiedPortfolioOutput.  # noqa: E501
         :rtype: list[MockRiskUnit]
@@ -152,7 +152,7 @@ class UnifiedPortfolioOutput(object):
     def risk_unit(self, risk_unit):
         """Sets the risk_unit of this UnifiedPortfolioOutput.
 
-        Risk unit  # noqa: E501
+        Risk unit.  # noqa: E501
 
         :param risk_unit: The risk_unit of this UnifiedPortfolioOutput.  # noqa: E501
         :type: list[MockRiskUnit]

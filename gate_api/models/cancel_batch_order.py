@@ -70,7 +70,7 @@ class CancelBatchOrder(object):
     def currency_pair(self):
         """Gets the currency_pair of this CancelBatchOrder.  # noqa: E501
 
-        Order currency pair  # noqa: E501
+        Order currency pair.  # noqa: E501
 
         :return: The currency_pair of this CancelBatchOrder.  # noqa: E501
         :rtype: str
@@ -81,7 +81,7 @@ class CancelBatchOrder(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this CancelBatchOrder.
 
-        Order currency pair  # noqa: E501
+        Order currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this CancelBatchOrder.  # noqa: E501
         :type: str

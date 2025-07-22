@@ -62,7 +62,7 @@ class RepayResp(object):
     def repaid_principal(self):
         """Gets the repaid_principal of this RepayResp.  # noqa: E501
 
-        Principal  # noqa: E501
+        Principal.  # noqa: E501
 
         :return: The repaid_principal of this RepayResp.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class RepayResp(object):
     def repaid_principal(self, repaid_principal):
         """Sets the repaid_principal of this RepayResp.
 
-        Principal  # noqa: E501
+        Principal.  # noqa: E501
 
         :param repaid_principal: The repaid_principal of this RepayResp.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class RepayResp(object):
     def repaid_interest(self):
         """Gets the repaid_interest of this RepayResp.  # noqa: E501
 
-        Interest  # noqa: E501
+        Interest.  # noqa: E501
 
         :return: The repaid_interest of this RepayResp.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class RepayResp(object):
     def repaid_interest(self, repaid_interest):
         """Sets the repaid_interest of this RepayResp.
 
-        Interest  # noqa: E501
+        Interest.  # noqa: E501
 
         :param repaid_interest: The repaid_interest of this RepayResp.  # noqa: E501
         :type: str

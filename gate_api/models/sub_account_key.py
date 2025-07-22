@@ -102,7 +102,7 @@ class SubAccountKey(object):
     def user_id(self):
         """Gets the user_id of this SubAccountKey.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user_id of this SubAccountKey.  # noqa: E501
         :rtype: int
@@ -113,7 +113,7 @@ class SubAccountKey(object):
     def user_id(self, user_id):
         """Sets the user_id of this SubAccountKey.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user_id: The user_id of this SubAccountKey.  # noqa: E501
         :type: int
@@ -125,7 +125,7 @@ class SubAccountKey(object):
     def mode(self):
         """Gets the mode of this SubAccountKey.  # noqa: E501
 
-        Mode: 1 - classic 2 - portfolio account  # noqa: E501
+        Mode: 1 - classic 2 - portfolio account.  # noqa: E501
 
         :return: The mode of this SubAccountKey.  # noqa: E501
         :rtype: int
@@ -136,7 +136,7 @@ class SubAccountKey(object):
     def mode(self, mode):
         """Sets the mode of this SubAccountKey.
 
-        Mode: 1 - classic 2 - portfolio account  # noqa: E501
+        Mode: 1 - classic 2 - portfolio account.  # noqa: E501
 
         :param mode: The mode of this SubAccountKey.  # noqa: E501
         :type: int
@@ -148,7 +148,7 @@ class SubAccountKey(object):
     def name(self):
         """Gets the name of this SubAccountKey.  # noqa: E501
 
-        API key name  # noqa: E501
+        API key name.  # noqa: E501
 
         :return: The name of this SubAccountKey.  # noqa: E501
         :rtype: str
@@ -159,7 +159,7 @@ class SubAccountKey(object):
     def name(self, name):
         """Sets the name of this SubAccountKey.
 
-        API key name  # noqa: E501
+        API key name.  # noqa: E501
 
         :param name: The name of this SubAccountKey.  # noqa: E501
         :type: str
@@ -192,7 +192,7 @@ class SubAccountKey(object):
     def ip_whitelist(self):
         """Gets the ip_whitelist of this SubAccountKey.  # noqa: E501
 
-        ip white list (list will be removed if no value is passed)  # noqa: E501
+        ip white list (list will be removed if no value is passed).  # noqa: E501
 
         :return: The ip_whitelist of this SubAccountKey.  # noqa: E501
         :rtype: list[str]
@@ -203,7 +203,7 @@ class SubAccountKey(object):
     def ip_whitelist(self, ip_whitelist):
         """Sets the ip_whitelist of this SubAccountKey.
 
-        ip white list (list will be removed if no value is passed)  # noqa: E501
+        ip white list (list will be removed if no value is passed).  # noqa: E501
 
         :param ip_whitelist: The ip_whitelist of this SubAccountKey.  # noqa: E501
         :type: list[str]
@@ -215,7 +215,7 @@ class SubAccountKey(object):
     def key(self):
         """Gets the key of this SubAccountKey.  # noqa: E501
 
-        API Key  # noqa: E501
+        API Key.  # noqa: E501
 
         :return: The key of this SubAccountKey.  # noqa: E501
         :rtype: str
@@ -226,7 +226,7 @@ class SubAccountKey(object):
     def key(self, key):
         """Sets the key of this SubAccountKey.
 
-        API Key  # noqa: E501
+        API Key.  # noqa: E501
 
         :param key: The key of this SubAccountKey.  # noqa: E501
         :type: str
@@ -238,7 +238,7 @@ class SubAccountKey(object):
     def state(self):
         """Gets the state of this SubAccountKey.  # noqa: E501
 
-        State 1 - normal 2 - locked 3 - frozen  # noqa: E501
+        State 1 - normal 2 - locked 3 - frozen.  # noqa: E501
 
         :return: The state of this SubAccountKey.  # noqa: E501
         :rtype: int
@@ -249,7 +249,7 @@ class SubAccountKey(object):
     def state(self, state):
         """Sets the state of this SubAccountKey.
 
-        State 1 - normal 2 - locked 3 - frozen  # noqa: E501
+        State 1 - normal 2 - locked 3 - frozen.  # noqa: E501
 
         :param state: The state of this SubAccountKey.  # noqa: E501
         :type: int
@@ -261,7 +261,7 @@ class SubAccountKey(object):
     def created_at(self):
         """Gets the created_at of this SubAccountKey.  # noqa: E501
 
-        Creation time  # noqa: E501
+        Creation time.  # noqa: E501
 
         :return: The created_at of this SubAccountKey.  # noqa: E501
         :rtype: int
@@ -272,7 +272,7 @@ class SubAccountKey(object):
     def created_at(self, created_at):
         """Sets the created_at of this SubAccountKey.
 
-        Creation time  # noqa: E501
+        Creation time.  # noqa: E501
 
         :param created_at: The created_at of this SubAccountKey.  # noqa: E501
         :type: int
@@ -284,7 +284,7 @@ class SubAccountKey(object):
     def updated_at(self):
         """Gets the updated_at of this SubAccountKey.  # noqa: E501
 
-        Last update time  # noqa: E501
+        Last update time.  # noqa: E501
 
         :return: The updated_at of this SubAccountKey.  # noqa: E501
         :rtype: int
@@ -295,7 +295,7 @@ class SubAccountKey(object):
     def updated_at(self, updated_at):
         """Sets the updated_at of this SubAccountKey.
 
-        Last update time  # noqa: E501
+        Last update time.  # noqa: E501
 
         :param updated_at: The updated_at of this SubAccountKey.  # noqa: E501
         :type: int
@@ -307,7 +307,7 @@ class SubAccountKey(object):
     def last_access(self):
         """Gets the last_access of this SubAccountKey.  # noqa: E501
 
-        Last access time  # noqa: E501
+        Last access time.  # noqa: E501
 
         :return: The last_access of this SubAccountKey.  # noqa: E501
         :rtype: int
@@ -318,7 +318,7 @@ class SubAccountKey(object):
     def last_access(self, last_access):
         """Sets the last_access of this SubAccountKey.
 
-        Last access time  # noqa: E501
+        Last access time.  # noqa: E501
 
         :param last_access: The last_access of this SubAccountKey.  # noqa: E501
         :type: int

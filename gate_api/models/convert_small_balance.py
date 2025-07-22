@@ -62,7 +62,7 @@ class ConvertSmallBalance(object):
     def currency(self):
         """Gets the currency of this ConvertSmallBalance.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this ConvertSmallBalance.  # noqa: E501
         :rtype: list[str]
@@ -73,7 +73,7 @@ class ConvertSmallBalance(object):
     def currency(self, currency):
         """Sets the currency of this ConvertSmallBalance.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this ConvertSmallBalance.  # noqa: E501
         :type: list[str]
@@ -85,7 +85,7 @@ class ConvertSmallBalance(object):
     def is_all(self):
         """Gets the is_all of this ConvertSmallBalance.  # noqa: E501
 
-        Whether to exchange all  # noqa: E501
+        Whether to exchange all.  # noqa: E501
 
         :return: The is_all of this ConvertSmallBalance.  # noqa: E501
         :rtype: bool
@@ -96,7 +96,7 @@ class ConvertSmallBalance(object):
     def is_all(self, is_all):
         """Sets the is_all of this ConvertSmallBalance.
 
-        Whether to exchange all  # noqa: E501
+        Whether to exchange all.  # noqa: E501
 
         :param is_all: The is_all of this ConvertSmallBalance.  # noqa: E501
         :type: bool

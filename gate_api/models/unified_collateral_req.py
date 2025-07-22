@@ -67,7 +67,7 @@ class UnifiedCollateralReq(object):
     def collateral_type(self):
         """Gets the collateral_type of this UnifiedCollateralReq.  # noqa: E501
 
-        User-set collateral mode0(all)-All currencies used as collateral, 1(custom)-Custom currencies used as collateral; when collateral_type is 0(all), the enable_list and disable_list parameters are invalid  # noqa: E501
+        User-set collateral mode0(all)-All currencies used as collateral, collateral; when collateral_type is 0(all), the enable_list and disable_list parameters are invalid  # noqa: E501
 
         :return: The collateral_type of this UnifiedCollateralReq.  # noqa: E501
         :rtype: int
@@ -78,7 +78,7 @@ class UnifiedCollateralReq(object):
     def collateral_type(self, collateral_type):
         """Sets the collateral_type of this UnifiedCollateralReq.
 
-        User-set collateral mode0(all)-All currencies used as collateral, 1(custom)-Custom currencies used as collateral; when collateral_type is 0(all), the enable_list and disable_list parameters are invalid  # noqa: E501
+        User-set collateral mode0(all)-All currencies used as collateral, collateral; when collateral_type is 0(all), the enable_list and disable_list parameters are invalid  # noqa: E501
 
         :param collateral_type: The collateral_type of this UnifiedCollateralReq.  # noqa: E501
         :type: int
@@ -119,7 +119,7 @@ class UnifiedCollateralReq(object):
     def disable_list(self):
         """Gets the disable_list of this UnifiedCollateralReq.  # noqa: E501
 
-        Cancellation list, indicating the logic of cancellation  # noqa: E501
+        Cancellation list, indicating the logic of cancellation.  # noqa: E501
 
         :return: The disable_list of this UnifiedCollateralReq.  # noqa: E501
         :rtype: list[str]
@@ -130,7 +130,7 @@ class UnifiedCollateralReq(object):
     def disable_list(self, disable_list):
         """Sets the disable_list of this UnifiedCollateralReq.
 
-        Cancellation list, indicating the logic of cancellation  # noqa: E501
+        Cancellation list, indicating the logic of cancellation.  # noqa: E501
 
         :param disable_list: The disable_list of this UnifiedCollateralReq.  # noqa: E501
         :type: list[str]

@@ -72,7 +72,7 @@ class UnifiedHistoryLoanRate(object):
     def currency(self):
         """Gets the currency of this UnifiedHistoryLoanRate.  # noqa: E501
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :return: The currency of this UnifiedHistoryLoanRate.  # noqa: E501
         :rtype: str
@@ -83,7 +83,7 @@ class UnifiedHistoryLoanRate(object):
     def currency(self, currency):
         """Sets the currency of this UnifiedHistoryLoanRate.
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :param currency: The currency of this UnifiedHistoryLoanRate.  # noqa: E501
         :type: str
@@ -95,7 +95,7 @@ class UnifiedHistoryLoanRate(object):
     def tier(self):
         """Gets the tier of this UnifiedHistoryLoanRate.  # noqa: E501
 
-        The VIP level of the floating rate required  # noqa: E501
+        The VIP level of the floating rate required.  # noqa: E501
 
         :return: The tier of this UnifiedHistoryLoanRate.  # noqa: E501
         :rtype: str
@@ -106,7 +106,7 @@ class UnifiedHistoryLoanRate(object):
     def tier(self, tier):
         """Sets the tier of this UnifiedHistoryLoanRate.
 
-        The VIP level of the floating rate required  # noqa: E501
+        The VIP level of the floating rate required.  # noqa: E501
 
         :param tier: The tier of this UnifiedHistoryLoanRate.  # noqa: E501
         :type: str
@@ -118,7 +118,7 @@ class UnifiedHistoryLoanRate(object):
     def tier_up_rate(self):
         """Gets the tier_up_rate of this UnifiedHistoryLoanRate.  # noqa: E501
 
-        VIP level corresponding floating rate  # noqa: E501
+        VIP level corresponding floating rate.  # noqa: E501
 
         :return: The tier_up_rate of this UnifiedHistoryLoanRate.  # noqa: E501
         :rtype: str
@@ -129,7 +129,7 @@ class UnifiedHistoryLoanRate(object):
     def tier_up_rate(self, tier_up_rate):
         """Sets the tier_up_rate of this UnifiedHistoryLoanRate.
 
-        VIP level corresponding floating rate  # noqa: E501
+        VIP level corresponding floating rate.  # noqa: E501
 
         :param tier_up_rate: The tier_up_rate of this UnifiedHistoryLoanRate.  # noqa: E501
         :type: str

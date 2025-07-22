@@ -87,7 +87,7 @@ class MultiCollateralRecord(object):
     def order_id(self):
         """Gets the order_id of this MultiCollateralRecord.  # noqa: E501
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :return: The order_id of this MultiCollateralRecord.  # noqa: E501
         :rtype: int
@@ -98,7 +98,7 @@ class MultiCollateralRecord(object):
     def order_id(self, order_id):
         """Sets the order_id of this MultiCollateralRecord.
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :param order_id: The order_id of this MultiCollateralRecord.  # noqa: E501
         :type: int
@@ -110,7 +110,7 @@ class MultiCollateralRecord(object):
     def record_id(self):
         """Gets the record_id of this MultiCollateralRecord.  # noqa: E501
 
-        Collateral record ID  # noqa: E501
+        Collateral record ID.  # noqa: E501
 
         :return: The record_id of this MultiCollateralRecord.  # noqa: E501
         :rtype: int
@@ -121,7 +121,7 @@ class MultiCollateralRecord(object):
     def record_id(self, record_id):
         """Sets the record_id of this MultiCollateralRecord.
 
-        Collateral record ID  # noqa: E501
+        Collateral record ID.  # noqa: E501
 
         :param record_id: The record_id of this MultiCollateralRecord.  # noqa: E501
         :type: int
@@ -133,7 +133,7 @@ class MultiCollateralRecord(object):
     def before_ltv(self):
         """Gets the before_ltv of this MultiCollateralRecord.  # noqa: E501
 
-        The collateral ratio before adjustment  # noqa: E501
+        The collateral ratio before adjustment.  # noqa: E501
 
         :return: The before_ltv of this MultiCollateralRecord.  # noqa: E501
         :rtype: str
@@ -144,7 +144,7 @@ class MultiCollateralRecord(object):
     def before_ltv(self, before_ltv):
         """Sets the before_ltv of this MultiCollateralRecord.
 
-        The collateral ratio before adjustment  # noqa: E501
+        The collateral ratio before adjustment.  # noqa: E501
 
         :param before_ltv: The before_ltv of this MultiCollateralRecord.  # noqa: E501
         :type: str
@@ -156,7 +156,7 @@ class MultiCollateralRecord(object):
     def after_ltv(self):
         """Gets the after_ltv of this MultiCollateralRecord.  # noqa: E501
 
-        The collateral ratio before adjustment  # noqa: E501
+        The collateral ratio before adjustment.  # noqa: E501
 
         :return: The after_ltv of this MultiCollateralRecord.  # noqa: E501
         :rtype: str
@@ -167,7 +167,7 @@ class MultiCollateralRecord(object):
     def after_ltv(self, after_ltv):
         """Sets the after_ltv of this MultiCollateralRecord.
 
-        The collateral ratio before adjustment  # noqa: E501
+        The collateral ratio before adjustment.  # noqa: E501
 
         :param after_ltv: The after_ltv of this MultiCollateralRecord.  # noqa: E501
         :type: str
@@ -202,7 +202,7 @@ class MultiCollateralRecord(object):
     def borrow_currencies(self):
         """Gets the borrow_currencies of this MultiCollateralRecord.  # noqa: E501
 
-        Borrowing Currency List  # noqa: E501
+        Borrowing Currency List.  # noqa: E501
 
         :return: The borrow_currencies of this MultiCollateralRecord.  # noqa: E501
         :rtype: list[MultiCollateralRecordCurrency]
@@ -213,7 +213,7 @@ class MultiCollateralRecord(object):
     def borrow_currencies(self, borrow_currencies):
         """Sets the borrow_currencies of this MultiCollateralRecord.
 
-        Borrowing Currency List  # noqa: E501
+        Borrowing Currency List.  # noqa: E501
 
         :param borrow_currencies: The borrow_currencies of this MultiCollateralRecord.  # noqa: E501
         :type: list[MultiCollateralRecordCurrency]
@@ -225,7 +225,7 @@ class MultiCollateralRecord(object):
     def collateral_currencies(self):
         """Gets the collateral_currencies of this MultiCollateralRecord.  # noqa: E501
 
-        Collateral Currency List  # noqa: E501
+        Collateral Currency List.  # noqa: E501
 
         :return: The collateral_currencies of this MultiCollateralRecord.  # noqa: E501
         :rtype: list[MultiCollateralRecordCurrency]
@@ -236,7 +236,7 @@ class MultiCollateralRecord(object):
     def collateral_currencies(self, collateral_currencies):
         """Sets the collateral_currencies of this MultiCollateralRecord.
 
-        Collateral Currency List  # noqa: E501
+        Collateral Currency List.  # noqa: E501
 
         :param collateral_currencies: The collateral_currencies of this MultiCollateralRecord.  # noqa: E501
         :type: list[MultiCollateralRecordCurrency]

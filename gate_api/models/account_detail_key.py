@@ -57,7 +57,7 @@ class AccountDetailKey(object):
     def mode(self):
         """Gets the mode of this AccountDetailKey.  # noqa: E501
 
-        mode: 1 - classic account 2 - portfolio margin account  # noqa: E501
+        mode: 1 - classic account 2 - portfolio margin account.  # noqa: E501
 
         :return: The mode of this AccountDetailKey.  # noqa: E501
         :rtype: int
@@ -68,7 +68,7 @@ class AccountDetailKey(object):
     def mode(self, mode):
         """Sets the mode of this AccountDetailKey.
 
-        mode: 1 - classic account 2 - portfolio margin account  # noqa: E501
+        mode: 1 - classic account 2 - portfolio margin account.  # noqa: E501
 
         :param mode: The mode of this AccountDetailKey.  # noqa: E501
         :type: int

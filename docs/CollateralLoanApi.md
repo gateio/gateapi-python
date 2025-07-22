@@ -4,22 +4,22 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_collateral_loan_orders**](CollateralLoanApi.md#list_collateral_loan_orders) | **GET** /loan/collateral/orders | List Orders
-[**create_collateral_loan**](CollateralLoanApi.md#create_collateral_loan) | **POST** /loan/collateral/orders | Place order
-[**get_collateral_loan_order_detail**](CollateralLoanApi.md#get_collateral_loan_order_detail) | **GET** /loan/collateral/orders/{order_id} | Get a single order
-[**repay_collateral_loan**](CollateralLoanApi.md#repay_collateral_loan) | **POST** /loan/collateral/repay | Repayment
-[**list_repay_records**](CollateralLoanApi.md#list_repay_records) | **GET** /loan/collateral/repay_records | Repayment history
-[**list_collateral_records**](CollateralLoanApi.md#list_collateral_records) | **GET** /loan/collateral/collaterals | Query collateral adjustment records
-[**operate_collateral**](CollateralLoanApi.md#operate_collateral) | **POST** /loan/collateral/collaterals | Increase or redeem collateral
-[**get_user_total_amount**](CollateralLoanApi.md#get_user_total_amount) | **GET** /loan/collateral/total_amount | Query the total borrowing and collateral amount for the user
-[**get_user_ltv_info**](CollateralLoanApi.md#get_user_ltv_info) | **GET** /loan/collateral/ltv | Query user&#39;s collateralization ratio
-[**list_collateral_currencies**](CollateralLoanApi.md#list_collateral_currencies) | **GET** /loan/collateral/currencies | Query supported borrowing and collateral currencies
+[**list_collateral_loan_orders**](CollateralLoanApi.md#list_collateral_loan_orders) | **GET** /loan/collateral/orders | List Orders.
+[**create_collateral_loan**](CollateralLoanApi.md#create_collateral_loan) | **POST** /loan/collateral/orders | Place order.
+[**get_collateral_loan_order_detail**](CollateralLoanApi.md#get_collateral_loan_order_detail) | **GET** /loan/collateral/orders/{order_id} | Get a single order.
+[**repay_collateral_loan**](CollateralLoanApi.md#repay_collateral_loan) | **POST** /loan/collateral/repay | Repayment.
+[**list_repay_records**](CollateralLoanApi.md#list_repay_records) | **GET** /loan/collateral/repay_records | Repayment history.
+[**list_collateral_records**](CollateralLoanApi.md#list_collateral_records) | **GET** /loan/collateral/collaterals | Query collateral adjustment records.
+[**operate_collateral**](CollateralLoanApi.md#operate_collateral) | **POST** /loan/collateral/collaterals | Increase or redeem collateral.
+[**get_user_total_amount**](CollateralLoanApi.md#get_user_total_amount) | **GET** /loan/collateral/total_amount | Query the total borrowing and collateral amount for the user.
+[**get_user_ltv_info**](CollateralLoanApi.md#get_user_ltv_info) | **GET** /loan/collateral/ltv | Query user&#39;s collateralization ratio.
+[**list_collateral_currencies**](CollateralLoanApi.md#list_collateral_currencies) | **GET** /loan/collateral/currencies | Query supported borrowing and collateral currencies.
 
 
 # **list_collateral_loan_orders**
 > list[CollateralOrder] list_collateral_loan_orders(page=page, limit=limit, collateral_currency=collateral_currency, borrow_currency=borrow_currency)
 
-List Orders
+List Orders.
 
 ### Example
 
@@ -45,13 +45,13 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.CollateralLoanApi(api_client)
-page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
-collateral_currency = 'BTC' # str | Collateral (optional)
-borrow_currency = 'USDT' # str | Borrowed currency (optional)
+page = 1 # int | Page number. (optional) (default to 1)
+limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
+collateral_currency = 'BTC' # str | Collateral. (optional)
+borrow_currency = 'USDT' # str | Borrowed currency. (optional)
 
 try:
-    # List Orders
+    # List Orders.
     api_response = api_instance.list_collateral_loan_orders(page=page, limit=limit, collateral_currency=collateral_currency, borrow_currency=borrow_currency)
     print(api_response)
 except GateApiException as ex:
@@ -64,10 +64,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
- **collateral_currency** | **str**| Collateral | [optional] 
- **borrow_currency** | **str**| Borrowed currency | [optional] 
+ **page** | **int**| Page number. | [optional] [default to 1]
+ **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
+ **collateral_currency** | **str**| Collateral. | [optional] 
+ **borrow_currency** | **str**| Borrowed currency. | [optional] 
 
 ### Return type
 
@@ -85,14 +85,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved |  -  |
+**200** | List retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_collateral_loan**
 > OrderResp create_collateral_loan(create_collateral_order)
 
-Place order
+Place order.
 
 ### Example
 
@@ -121,7 +121,7 @@ api_instance = gate_api.CollateralLoanApi(api_client)
 create_collateral_order = gate_api.CreateCollateralOrder() # CreateCollateralOrder | 
 
 try:
-    # Place order
+    # Place order.
     api_response = api_instance.create_collateral_loan(create_collateral_order)
     print(api_response)
 except GateApiException as ex:
@@ -152,14 +152,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Success. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_collateral_loan_order_detail**
 > CollateralOrder get_collateral_loan_order_detail(order_id)
 
-Get a single order
+Get a single order.
 
 ### Example
 
@@ -185,10 +185,10 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.CollateralLoanApi(api_client)
-order_id = 100001 # int | Order ID returned on successful order creation
+order_id = 100001 # int | Order ID returned on successful order creation.
 
 try:
-    # Get a single order
+    # Get a single order.
     api_response = api_instance.get_collateral_loan_order_detail(order_id)
     print(api_response)
 except GateApiException as ex:
@@ -201,7 +201,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **int**| Order ID returned on successful order creation | 
+ **order_id** | **int**| Order ID returned on successful order creation. | 
 
 ### Return type
 
@@ -219,14 +219,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
+**200** | Success. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **repay_collateral_loan**
 > RepayResp repay_collateral_loan(repay_loan)
 
-Repayment
+Repayment.
 
 ### Example
 
@@ -255,7 +255,7 @@ api_instance = gate_api.CollateralLoanApi(api_client)
 repay_loan = gate_api.RepayLoan() # RepayLoan | 
 
 try:
-    # Repayment
+    # Repayment.
     api_response = api_instance.repay_collateral_loan(repay_loan)
     print(api_response)
 except GateApiException as ex:
@@ -286,14 +286,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Operated successfully |  -  |
+**200** | Operated successfully. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_repay_records**
 > list[RepayRecord] list_repay_records(source, borrow_currency=borrow_currency, collateral_currency=collateral_currency, page=page, limit=limit, _from=_from, to=to)
 
-Repayment history
+Repayment history.
 
 ### Example
 
@@ -319,16 +319,16 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.CollateralLoanApi(api_client)
-source = 'repay' # str | Operation type: repay - Regular repayment, liquidate - Liquidation
-borrow_currency = 'USDT' # str | Borrowed currency (optional)
-collateral_currency = 'BTC' # str | Collateral (optional)
-page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
-_from = 1609459200 # int | Start timestamp of the query (optional)
-to = 1609459200 # int | Time range ending, default to current time (optional)
+source = 'repay' # str | Operation type: repay - Regular repayment, liquidate - Liquidation.
+borrow_currency = 'USDT' # str | Borrowed currency. (optional)
+collateral_currency = 'BTC' # str | Collateral. (optional)
+page = 1 # int | Page number. (optional) (default to 1)
+limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
+_from = 1609459200 # int | Start timestamp of the query. (optional)
+to = 1609459200 # int | Time range ending, default to current time. (optional)
 
 try:
-    # Repayment history
+    # Repayment history.
     api_response = api_instance.list_repay_records(source, borrow_currency=borrow_currency, collateral_currency=collateral_currency, page=page, limit=limit, _from=_from, to=to)
     print(api_response)
 except GateApiException as ex:
@@ -341,13 +341,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **source** | **str**| Operation type: repay - Regular repayment, liquidate - Liquidation | 
- **borrow_currency** | **str**| Borrowed currency | [optional] 
- **collateral_currency** | **str**| Collateral | [optional] 
- **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
- **_from** | **int**| Start timestamp of the query | [optional] 
- **to** | **int**| Time range ending, default to current time | [optional] 
+ **source** | **str**| Operation type: repay - Regular repayment, liquidate - Liquidation. | 
+ **borrow_currency** | **str**| Borrowed currency. | [optional] 
+ **collateral_currency** | **str**| Collateral. | [optional] 
+ **page** | **int**| Page number. | [optional] [default to 1]
+ **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
+ **_from** | **int**| Start timestamp of the query. | [optional] 
+ **to** | **int**| Time range ending, default to current time. | [optional] 
 
 ### Return type
 
@@ -365,14 +365,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Successfully retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_collateral_records**
 > list[CollateralRecord] list_collateral_records(page=page, limit=limit, _from=_from, to=to, borrow_currency=borrow_currency, collateral_currency=collateral_currency)
 
-Query collateral adjustment records
+Query collateral adjustment records.
 
 ### Example
 
@@ -398,15 +398,15 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.CollateralLoanApi(api_client)
-page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
-_from = 1609459200 # int | Start timestamp of the query (optional)
-to = 1609459200 # int | Time range ending, default to current time (optional)
-borrow_currency = 'USDT' # str | Borrowed currency (optional)
-collateral_currency = 'BTC' # str | Collateral (optional)
+page = 1 # int | Page number. (optional) (default to 1)
+limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
+_from = 1609459200 # int | Start timestamp of the query. (optional)
+to = 1609459200 # int | Time range ending, default to current time. (optional)
+borrow_currency = 'USDT' # str | Borrowed currency. (optional)
+collateral_currency = 'BTC' # str | Collateral. (optional)
 
 try:
-    # Query collateral adjustment records
+    # Query collateral adjustment records.
     api_response = api_instance.list_collateral_records(page=page, limit=limit, _from=_from, to=to, borrow_currency=borrow_currency, collateral_currency=collateral_currency)
     print(api_response)
 except GateApiException as ex:
@@ -419,12 +419,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
- **_from** | **int**| Start timestamp of the query | [optional] 
- **to** | **int**| Time range ending, default to current time | [optional] 
- **borrow_currency** | **str**| Borrowed currency | [optional] 
- **collateral_currency** | **str**| Collateral | [optional] 
+ **page** | **int**| Page number. | [optional] [default to 1]
+ **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
+ **_from** | **int**| Start timestamp of the query. | [optional] 
+ **to** | **int**| Time range ending, default to current time. | [optional] 
+ **borrow_currency** | **str**| Borrowed currency. | [optional] 
+ **collateral_currency** | **str**| Collateral. | [optional] 
 
 ### Return type
 
@@ -442,14 +442,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Successfully retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **operate_collateral**
 > operate_collateral(collateral_align)
 
-Increase or redeem collateral
+Increase or redeem collateral.
 
 ### Example
 
@@ -478,7 +478,7 @@ api_instance = gate_api.CollateralLoanApi(api_client)
 collateral_align = gate_api.CollateralAlign() # CollateralAlign | 
 
 try:
-    # Increase or redeem collateral
+    # Increase or redeem collateral.
     api_instance.operate_collateral(collateral_align)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -508,14 +508,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Operated successfully |  -  |
+**204** | Operated successfully. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_total_amount**
 > UserTotalAmount get_user_total_amount()
 
-Query the total borrowing and collateral amount for the user
+Query the total borrowing and collateral amount for the user.
 
 ### Example
 
@@ -543,7 +543,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.CollateralLoanApi(api_client)
 
 try:
-    # Query the total borrowing and collateral amount for the user
+    # Query the total borrowing and collateral amount for the user.
     api_response = api_instance.get_user_total_amount()
     print(api_response)
 except GateApiException as ex:
@@ -571,14 +571,14 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Successfully retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_ltv_info**
 > UserLtvInfo get_user_ltv_info(collateral_currency, borrow_currency)
 
-Query user's collateralization ratio
+Query user's collateralization ratio.
 
 ### Example
 
@@ -604,11 +604,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.CollateralLoanApi(api_client)
-collateral_currency = 'BTC' # str | Collateral
-borrow_currency = 'USDT' # str | Borrowed currency
+collateral_currency = 'BTC' # str | Collateral.
+borrow_currency = 'USDT' # str | Borrowed currency.
 
 try:
-    # Query user's collateralization ratio
+    # Query user's collateralization ratio.
     api_response = api_instance.get_user_ltv_info(collateral_currency, borrow_currency)
     print(api_response)
 except GateApiException as ex:
@@ -621,8 +621,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collateral_currency** | **str**| Collateral | 
- **borrow_currency** | **str**| Borrowed currency | 
+ **collateral_currency** | **str**| Collateral. | 
+ **borrow_currency** | **str**| Borrowed currency. | 
 
 ### Return type
 
@@ -640,14 +640,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Successfully retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_collateral_currencies**
 > list[CollateralLoanCurrency] list_collateral_currencies(loan_currency=loan_currency)
 
-Query supported borrowing and collateral currencies
+Query supported borrowing and collateral currencies.
 
 ### Example
 
@@ -667,7 +667,7 @@ api_instance = gate_api.CollateralLoanApi(api_client)
 loan_currency = 'BTC' # str | The parameter loan_currency is used to specify the borrowing currency. If loan_currency is not provided, the API will return all supported borrowing currencies. (optional)
 
 try:
-    # Query supported borrowing and collateral currencies
+    # Query supported borrowing and collateral currencies.
     api_response = api_instance.list_collateral_currencies(loan_currency=loan_currency)
     print(api_response)
 except GateApiException as ex:
@@ -698,7 +698,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Successfully retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

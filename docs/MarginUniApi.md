@@ -4,20 +4,20 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_uni_currency_pairs**](MarginUniApi.md#list_uni_currency_pairs) | **GET** /margin/uni/currency_pairs | List lending markets
-[**get_uni_currency_pair**](MarginUniApi.md#get_uni_currency_pair) | **GET** /margin/uni/currency_pairs/{currency_pair} | Get detail of lending market
-[**get_margin_uni_estimate_rate**](MarginUniApi.md#get_margin_uni_estimate_rate) | **GET** /margin/uni/estimate_rate | Estimate interest Rate
-[**list_uni_loans**](MarginUniApi.md#list_uni_loans) | **GET** /margin/uni/loans | List loans
-[**create_uni_loan**](MarginUniApi.md#create_uni_loan) | **POST** /margin/uni/loans | Borrow or repay
-[**list_uni_loan_records**](MarginUniApi.md#list_uni_loan_records) | **GET** /margin/uni/loan_records | Get load records
-[**list_uni_loan_interest_records**](MarginUniApi.md#list_uni_loan_interest_records) | **GET** /margin/uni/interest_records | List interest records
-[**get_uni_borrowable**](MarginUniApi.md#get_uni_borrowable) | **GET** /margin/uni/borrowable | Get maximum borrowable
+[**list_uni_currency_pairs**](MarginUniApi.md#list_uni_currency_pairs) | **GET** /margin/uni/currency_pairs | List lending markets.
+[**get_uni_currency_pair**](MarginUniApi.md#get_uni_currency_pair) | **GET** /margin/uni/currency_pairs/{currency_pair} | Get detail of lending market.
+[**get_margin_uni_estimate_rate**](MarginUniApi.md#get_margin_uni_estimate_rate) | **GET** /margin/uni/estimate_rate | Estimate interest Rate.
+[**list_uni_loans**](MarginUniApi.md#list_uni_loans) | **GET** /margin/uni/loans | List loans.
+[**create_uni_loan**](MarginUniApi.md#create_uni_loan) | **POST** /margin/uni/loans | Borrow or repay.
+[**list_uni_loan_records**](MarginUniApi.md#list_uni_loan_records) | **GET** /margin/uni/loan_records | Get load records.
+[**list_uni_loan_interest_records**](MarginUniApi.md#list_uni_loan_interest_records) | **GET** /margin/uni/interest_records | List interest records.
+[**get_uni_borrowable**](MarginUniApi.md#get_uni_borrowable) | **GET** /margin/uni/borrowable | Get maximum borrowable.
 
 
 # **list_uni_currency_pairs**
 > list[UniCurrencyPair] list_uni_currency_pairs()
 
-List lending markets
+List lending markets.
 
 ### Example
 
@@ -36,7 +36,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.MarginUniApi(api_client)
 
 try:
-    # List lending markets
+    # List lending markets.
     api_response = api_instance.list_uni_currency_pairs()
     print(api_response)
 except GateApiException as ex:
@@ -64,14 +64,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Successfully retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_uni_currency_pair**
 > UniCurrencyPair get_uni_currency_pair(currency_pair)
 
-Get detail of lending market
+Get detail of lending market.
 
 ### Example
 
@@ -88,10 +88,10 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginUniApi(api_client)
-currency_pair = 'AE_USDT' # str | Currency pair
+currency_pair = 'AE_USDT' # str | Currency pair.
 
 try:
-    # Get detail of lending market
+    # Get detail of lending market.
     api_response = api_instance.get_uni_currency_pair(currency_pair)
     print(api_response)
 except GateApiException as ex:
@@ -104,7 +104,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency_pair** | **str**| Currency pair | 
+ **currency_pair** | **str**| Currency pair. | 
 
 ### Return type
 
@@ -122,14 +122,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Successfully retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_margin_uni_estimate_rate**
 > dict(str, str) get_margin_uni_estimate_rate(currencies)
 
-Estimate interest Rate
+Estimate interest Rate.
 
 Please note that the interest rates are subject to change based on the borrowing and lending demand, and therefore, the provided rates may not be entirely accurate.
 
@@ -157,10 +157,10 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginUniApi(api_client)
-currencies = ['[\"BTC\",\"GT\"]'] # list[str] | An array of up to 10 specifying the currency name
+currencies = ['[\"BTC\",\"GT\"]'] # list[str] | An array of up to 10 specifying the currency name.
 
 try:
-    # Estimate interest Rate
+    # Estimate interest Rate.
     api_response = api_instance.get_margin_uni_estimate_rate(currencies)
     print(api_response)
 except GateApiException as ex:
@@ -173,7 +173,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currencies** | [**list[str]**](str.md)| An array of up to 10 specifying the currency name | 
+ **currencies** | [**list[str]**](str.md)| An array of up to 10 specifying the currency name. | 
 
 ### Return type
 
@@ -191,14 +191,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Successfully retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_uni_loans**
 > list[UniLoan] list_uni_loans(currency_pair=currency_pair, currency=currency, page=page, limit=limit)
 
-List loans
+List loans.
 
 ### Example
 
@@ -224,13 +224,13 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginUniApi(api_client)
-currency_pair = 'BTC_USDT' # str | Currency pair (optional)
-currency = 'BTC' # str | Retrieve data of the specified currency (optional)
-page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum response items.  Default: 100, minimum: 1, Maximum: 100 (optional) (default to 100)
+currency_pair = 'BTC_USDT' # str | Currency pair. (optional)
+currency = 'BTC' # str | Retrieve data of the specified currency. (optional)
+page = 1 # int | Page number. (optional) (default to 1)
+limit = 100 # int | Maximum response items. Default: 100, minimum: 1, Maximum: 100. (optional) (default to 100)
 
 try:
-    # List loans
+    # List loans.
     api_response = api_instance.list_uni_loans(currency_pair=currency_pair, currency=currency, page=page, limit=limit)
     print(api_response)
 except GateApiException as ex:
@@ -243,10 +243,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency_pair** | **str**| Currency pair | [optional] 
- **currency** | **str**| Retrieve data of the specified currency | [optional] 
- **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum response items.  Default: 100, minimum: 1, Maximum: 100 | [optional] [default to 100]
+ **currency_pair** | **str**| Currency pair. | [optional] 
+ **currency** | **str**| Retrieve data of the specified currency. | [optional] 
+ **page** | **int**| Page number. | [optional] [default to 1]
+ **limit** | **int**| Maximum response items. Default: 100, minimum: 1, Maximum: 100. | [optional] [default to 100]
 
 ### Return type
 
@@ -264,14 +264,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Successfully retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_uni_loan**
 > create_uni_loan(create_uni_loan)
 
-Borrow or repay
+Borrow or repay.
 
 ### Example
 
@@ -300,7 +300,7 @@ api_instance = gate_api.MarginUniApi(api_client)
 create_uni_loan = gate_api.CreateUniLoan() # CreateUniLoan | 
 
 try:
-    # Borrow or repay
+    # Borrow or repay.
     api_instance.create_uni_loan(create_uni_loan)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -330,14 +330,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Operated successfully |  -  |
+**204** | Operated successfully. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_uni_loan_records**
 > list[UniLoanRecord] list_uni_loan_records(type=type, currency=currency, currency_pair=currency_pair, page=page, limit=limit)
 
-Get load records
+Get load records.
 
 ### Example
 
@@ -363,14 +363,14 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginUniApi(api_client)
-type = 'type_example' # str | type: borrow - borrow, repay - repay (optional)
-currency = 'BTC' # str | Retrieve data of the specified currency (optional)
-currency_pair = 'BTC_USDT' # str | Currency pair (optional)
-page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum response items.  Default: 100, minimum: 1, Maximum: 100 (optional) (default to 100)
+type = 'type_example' # str | type: borrow - borrow, repay - repay. (optional)
+currency = 'BTC' # str | Retrieve data of the specified currency. (optional)
+currency_pair = 'BTC_USDT' # str | Currency pair. (optional)
+page = 1 # int | Page number. (optional) (default to 1)
+limit = 100 # int | Maximum response items. Default: 100, minimum: 1, Maximum: 100. (optional) (default to 100)
 
 try:
-    # Get load records
+    # Get load records.
     api_response = api_instance.list_uni_loan_records(type=type, currency=currency, currency_pair=currency_pair, page=page, limit=limit)
     print(api_response)
 except GateApiException as ex:
@@ -383,11 +383,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **str**| type: borrow - borrow, repay - repay | [optional] 
- **currency** | **str**| Retrieve data of the specified currency | [optional] 
- **currency_pair** | **str**| Currency pair | [optional] 
- **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum response items.  Default: 100, minimum: 1, Maximum: 100 | [optional] [default to 100]
+ **type** | **str**| type: borrow - borrow, repay - repay. | [optional] 
+ **currency** | **str**| Retrieve data of the specified currency. | [optional] 
+ **currency_pair** | **str**| Currency pair. | [optional] 
+ **page** | **int**| Page number. | [optional] [default to 1]
+ **limit** | **int**| Maximum response items. Default: 100, minimum: 1, Maximum: 100. | [optional] [default to 100]
 
 ### Return type
 
@@ -405,14 +405,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Successfully retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_uni_loan_interest_records**
 > list[UniLoanInterestRecord] list_uni_loan_interest_records(currency_pair=currency_pair, currency=currency, page=page, limit=limit, _from=_from, to=to)
 
-List interest records
+List interest records.
 
 ### Example
 
@@ -438,15 +438,15 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginUniApi(api_client)
-currency_pair = 'BTC_USDT' # str | Currency pair (optional)
-currency = 'BTC' # str | Retrieve data of the specified currency (optional)
-page = 1 # int | Page number (optional) (default to 1)
-limit = 100 # int | Maximum number of records to be returned in a single list (optional) (default to 100)
+currency_pair = 'BTC_USDT' # str | Currency pair. (optional)
+currency = 'BTC' # str | Retrieve data of the specified currency. (optional)
+page = 1 # int | Page number. (optional) (default to 1)
+limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
 _from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
 to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 
 try:
-    # List interest records
+    # List interest records.
     api_response = api_instance.list_uni_loan_interest_records(currency_pair=currency_pair, currency=currency, page=page, limit=limit, _from=_from, to=to)
     print(api_response)
 except GateApiException as ex:
@@ -459,10 +459,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency_pair** | **str**| Currency pair | [optional] 
- **currency** | **str**| Retrieve data of the specified currency | [optional] 
- **page** | **int**| Page number | [optional] [default to 1]
- **limit** | **int**| Maximum number of records to be returned in a single list | [optional] [default to 100]
+ **currency_pair** | **str**| Currency pair. | [optional] 
+ **currency** | **str**| Retrieve data of the specified currency. | [optional] 
+ **page** | **int**| Page number. | [optional] [default to 1]
+ **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
  **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
 
@@ -482,14 +482,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Successfully retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_uni_borrowable**
 > MaxUniBorrowable get_uni_borrowable(currency, currency_pair)
 
-Get maximum borrowable
+Get maximum borrowable.
 
 ### Example
 
@@ -515,11 +515,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.MarginUniApi(api_client)
-currency = 'BTC' # str | Retrieve data of the specified currency
-currency_pair = 'BTC_USDT' # str | Currency pair
+currency = 'BTC' # str | Retrieve data of the specified currency.
+currency_pair = 'BTC_USDT' # str | Currency pair.
 
 try:
-    # Get maximum borrowable
+    # Get maximum borrowable.
     api_response = api_instance.get_uni_borrowable(currency, currency_pair)
     print(api_response)
 except GateApiException as ex:
@@ -532,8 +532,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **currency** | **str**| Retrieve data of the specified currency | 
- **currency_pair** | **str**| Currency pair | 
+ **currency** | **str**| Retrieve data of the specified currency. | 
+ **currency_pair** | **str**| Currency pair. | 
 
 ### Return type
 
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved |  -  |
+**200** | Successfully retrieved. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

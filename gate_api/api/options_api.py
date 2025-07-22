@@ -37,7 +37,7 @@ class OptionsApi(object):
         self.api_client = api_client
 
     def list_options_underlyings(self, **kwargs):  # noqa: E501
-        """List all underlyings  # noqa: E501
+        """List all underlyings.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -60,7 +60,7 @@ class OptionsApi(object):
         return self.list_options_underlyings_with_http_info(**kwargs)  # noqa: E501
 
     def list_options_underlyings_with_http_info(self, **kwargs):  # noqa: E501
-        """List all underlyings  # noqa: E501
+        """List all underlyings.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -140,7 +140,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_expirations(self, underlying, **kwargs):  # noqa: E501
-        """List all expiration times  # noqa: E501
+        """List all expiration times.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -148,7 +148,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -164,7 +164,7 @@ class OptionsApi(object):
         return self.list_options_expirations_with_http_info(underlying, **kwargs)  # noqa: E501
 
     def list_options_expirations_with_http_info(self, underlying, **kwargs):  # noqa: E501
-        """List all expiration times  # noqa: E501
+        """List all expiration times.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -172,7 +172,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -252,7 +252,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_contracts(self, underlying, **kwargs):  # noqa: E501
-        """List all the contracts with specified underlying and expiration time  # noqa: E501
+        """List all the contracts with specified underlying and expiration time.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -260,8 +260,8 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
-        :param int expiration: Unix timestamp of the expiration time
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
+        :param int expiration: Unix timestamp of the expiration time.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -277,7 +277,7 @@ class OptionsApi(object):
         return self.list_options_contracts_with_http_info(underlying, **kwargs)  # noqa: E501
 
     def list_options_contracts_with_http_info(self, underlying, **kwargs):  # noqa: E501
-        """List all the contracts with specified underlying and expiration time  # noqa: E501
+        """List all the contracts with specified underlying and expiration time.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -285,8 +285,8 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
-        :param int expiration: Unix timestamp of the expiration time
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
+        :param int expiration: Unix timestamp of the expiration time.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -369,7 +369,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def get_options_contract(self, contract, **kwargs):  # noqa: E501
-        """Query specified contract detail  # noqa: E501
+        """Query specified contract detail.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -393,7 +393,7 @@ class OptionsApi(object):
         return self.get_options_contract_with_http_info(contract, **kwargs)  # noqa: E501
 
     def get_options_contract_with_http_info(self, contract, **kwargs):  # noqa: E501
-        """Query specified contract detail  # noqa: E501
+        """Query specified contract detail.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -481,7 +481,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_settlements(self, underlying, **kwargs):  # noqa: E501
-        """List settlement history  # noqa: E501
+        """List settlement history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -489,9 +489,9 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -509,7 +509,7 @@ class OptionsApi(object):
         return self.list_options_settlements_with_http_info(underlying, **kwargs)  # noqa: E501
 
     def list_options_settlements_with_http_info(self, underlying, **kwargs):  # noqa: E501
-        """List settlement history  # noqa: E501
+        """List settlement history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -517,9 +517,9 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _return_http_data_only: response data without head status code
@@ -619,7 +619,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def get_options_settlement(self, contract, underlying, at, **kwargs):  # noqa: E501
-        """Get specified contract's settlement  # noqa: E501
+        """Get specified contract's settlement.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -628,7 +628,7 @@ class OptionsApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str contract: (required)
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
         :param int at: (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -645,7 +645,7 @@ class OptionsApi(object):
         return self.get_options_settlement_with_http_info(contract, underlying, at, **kwargs)  # noqa: E501
 
     def get_options_settlement_with_http_info(self, contract, underlying, at, **kwargs):  # noqa: E501
-        """Get specified contract's settlement  # noqa: E501
+        """Get specified contract's settlement.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -654,7 +654,7 @@ class OptionsApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str contract: (required)
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
         :param int at: (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -749,7 +749,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_my_options_settlements(self, underlying, **kwargs):  # noqa: E501
-        """List my options settlements  # noqa: E501
+        """List my options settlements.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -757,10 +757,10 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
-        :param str contract: Options contract name
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
+        :param str contract: Options contract name.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -778,7 +778,7 @@ class OptionsApi(object):
         return self.list_my_options_settlements_with_http_info(underlying, **kwargs)  # noqa: E501
 
     def list_my_options_settlements_with_http_info(self, underlying, **kwargs):  # noqa: E501
-        """List my options settlements  # noqa: E501
+        """List my options settlements.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -786,10 +786,10 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
-        :param str contract: Options contract name
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
+        :param str contract: Options contract name.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _return_http_data_only: response data without head status code
@@ -892,18 +892,18 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_order_book(self, contract, **kwargs):  # noqa: E501
-        """Options order book  # noqa: E501
+        """Options order book.  # noqa: E501
 
-        Bids will be sorted by price from high to low, while asks sorted reversely  # noqa: E501
+        Bids will be sorted by price from high to low, while asks sorted reversely.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_options_order_book(contract, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Options contract name (required)
-        :param str interval: Order depth. 0 means no aggregation is applied. default to 0
-        :param int limit: Maximum number of order depth data in asks or bids
+        :param str contract: Options contract name. (required)
+        :param str interval: Order depth. 0 means no aggregation is applied. default to 0.
+        :param int limit: Maximum number of order depth data in asks or bids.
         :param bool with_id: Whether to return depth update ID. This ID increments by 1 each time.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -920,18 +920,18 @@ class OptionsApi(object):
         return self.list_options_order_book_with_http_info(contract, **kwargs)  # noqa: E501
 
     def list_options_order_book_with_http_info(self, contract, **kwargs):  # noqa: E501
-        """Options order book  # noqa: E501
+        """Options order book.  # noqa: E501
 
-        Bids will be sorted by price from high to low, while asks sorted reversely  # noqa: E501
+        Bids will be sorted by price from high to low, while asks sorted reversely.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_options_order_book_with_http_info(contract, async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Options contract name (required)
-        :param str interval: Order depth. 0 means no aggregation is applied. default to 0
-        :param int limit: Maximum number of order depth data in asks or bids
+        :param str contract: Options contract name. (required)
+        :param str interval: Order depth. 0 means no aggregation is applied. default to 0.
+        :param int limit: Maximum number of order depth data in asks or bids.
         :param bool with_id: Whether to return depth update ID. This ID increments by 1 each time.
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -1025,7 +1025,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_tickers(self, underlying, **kwargs):  # noqa: E501
-        """List tickers of options contracts  # noqa: E501
+        """List tickers of options contracts.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1033,7 +1033,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1049,7 +1049,7 @@ class OptionsApi(object):
         return self.list_options_tickers_with_http_info(underlying, **kwargs)  # noqa: E501
 
     def list_options_tickers_with_http_info(self, underlying, **kwargs):  # noqa: E501
-        """List tickers of options contracts  # noqa: E501
+        """List tickers of options contracts.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1057,7 +1057,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1137,7 +1137,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_underlying_tickers(self, underlying, **kwargs):  # noqa: E501
-        """Get underlying ticker  # noqa: E501
+        """Get underlying ticker.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1145,7 +1145,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1161,7 +1161,7 @@ class OptionsApi(object):
         return self.list_options_underlying_tickers_with_http_info(underlying, **kwargs)  # noqa: E501
 
     def list_options_underlying_tickers_with_http_info(self, underlying, **kwargs):  # noqa: E501
-        """Get underlying ticker  # noqa: E501
+        """Get underlying ticker.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1169,7 +1169,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (required)
+        :param str underlying: Underlying. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1249,7 +1249,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_candlesticks(self, contract, **kwargs):  # noqa: E501
-        """Get options candlesticks  # noqa: E501
+        """Get options candlesticks.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1257,11 +1257,11 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Options contract name (required)
-        :param int limit: Maximum number of records to be returned in a single list
+        :param str contract: Options contract name. (required)
+        :param int limit: Maximum number of records to be returned in a single list.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
-        :param str interval: Interval time between data points
+        :param str interval: Interval time between data points.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1277,7 +1277,7 @@ class OptionsApi(object):
         return self.list_options_candlesticks_with_http_info(contract, **kwargs)  # noqa: E501
 
     def list_options_candlesticks_with_http_info(self, contract, **kwargs):  # noqa: E501
-        """Get options candlesticks  # noqa: E501
+        """Get options candlesticks.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1285,11 +1285,11 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Options contract name (required)
-        :param int limit: Maximum number of records to be returned in a single list
+        :param str contract: Options contract name. (required)
+        :param int limit: Maximum number of records to be returned in a single list.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
-        :param str interval: Interval time between data points
+        :param str interval: Interval time between data points.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1385,7 +1385,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_underlying_candlesticks(self, underlying, **kwargs):  # noqa: E501
-        """Mark price candlesticks of an underlying  # noqa: E501
+        """Mark price candlesticks of an underlying.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1393,11 +1393,11 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
-        :param int limit: Maximum number of records to be returned in a single list
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
+        :param int limit: Maximum number of records to be returned in a single list.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
-        :param str interval: Interval time between data points
+        :param str interval: Interval time between data points.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1413,7 +1413,7 @@ class OptionsApi(object):
         return self.list_options_underlying_candlesticks_with_http_info(underlying, **kwargs)  # noqa: E501
 
     def list_options_underlying_candlesticks_with_http_info(self, underlying, **kwargs):  # noqa: E501
-        """Mark price candlesticks of an underlying  # noqa: E501
+        """Mark price candlesticks of an underlying.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1421,11 +1421,11 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
-        :param int limit: Maximum number of records to be returned in a single list
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
+        :param int limit: Maximum number of records to be returned in a single list.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
-        :param str interval: Interval time between data points
+        :param str interval: Interval time between data points.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1521,7 +1521,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_trades(self, **kwargs):  # noqa: E501
-        """Options trade history  # noqa: E501
+        """Options trade history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1529,10 +1529,10 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Options contract name
-        :param str type: `C` is call, while `P` is put
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str contract: Options contract name.
+        :param str type: `C` is call, while `P` is put.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1550,7 +1550,7 @@ class OptionsApi(object):
         return self.list_options_trades_with_http_info(**kwargs)  # noqa: E501
 
     def list_options_trades_with_http_info(self, **kwargs):  # noqa: E501
-        """Options trade history  # noqa: E501
+        """Options trade history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1558,10 +1558,10 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Options contract name
-        :param str type: `C` is call, while `P` is put
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str contract: Options contract name.
+        :param str type: `C` is call, while `P` is put.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _return_http_data_only: response data without head status code
@@ -1660,7 +1660,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_account(self, **kwargs):  # noqa: E501
-        """List options account  # noqa: E501
+        """List options account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1683,7 +1683,7 @@ class OptionsApi(object):
         return self.list_options_account_with_http_info(**kwargs)  # noqa: E501
 
     def list_options_account_with_http_info(self, **kwargs):  # noqa: E501
-        """List options account  # noqa: E501
+        """List options account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1763,7 +1763,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_account_book(self, **kwargs):  # noqa: E501
-        """List account changing history  # noqa: E501
+        """List account changing history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1771,8 +1771,8 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param str type: Changing Type: - dnw: Deposit & Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - set: settlement PNL 
@@ -1791,7 +1791,7 @@ class OptionsApi(object):
         return self.list_options_account_book_with_http_info(**kwargs)  # noqa: E501
 
     def list_options_account_book_with_http_info(self, **kwargs):  # noqa: E501
-        """List account changing history  # noqa: E501
+        """List account changing history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1799,8 +1799,8 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param str type: Changing Type: - dnw: Deposit & Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - set: settlement PNL 
@@ -1897,7 +1897,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_positions(self, **kwargs):  # noqa: E501
-        """List user's positions of specified underlying  # noqa: E501
+        """List user's positions of specified underlying.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1905,7 +1905,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying
+        :param str underlying: Underlying.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1921,7 +1921,7 @@ class OptionsApi(object):
         return self.list_options_positions_with_http_info(**kwargs)  # noqa: E501
 
     def list_options_positions_with_http_info(self, **kwargs):  # noqa: E501
-        """List user's positions of specified underlying  # noqa: E501
+        """List user's positions of specified underlying.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1929,7 +1929,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying
+        :param str underlying: Underlying.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2005,7 +2005,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def get_options_position(self, contract, **kwargs):  # noqa: E501
-        """Get specified contract position  # noqa: E501
+        """Get specified contract position.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2029,7 +2029,7 @@ class OptionsApi(object):
         return self.get_options_position_with_http_info(contract, **kwargs)  # noqa: E501
 
     def get_options_position_with_http_info(self, contract, **kwargs):  # noqa: E501
-        """Get specified contract position  # noqa: E501
+        """Get specified contract position.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2117,7 +2117,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_position_close(self, underlying, **kwargs):  # noqa: E501
-        """List user's liquidation history of specified underlying  # noqa: E501
+        """List user's liquidation history of specified underlying.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2125,8 +2125,8 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
-        :param str contract: Options contract name
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
+        :param str contract: Options contract name.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2142,7 +2142,7 @@ class OptionsApi(object):
         return self.list_options_position_close_with_http_info(underlying, **kwargs)  # noqa: E501
 
     def list_options_position_close_with_http_info(self, underlying, **kwargs):  # noqa: E501
-        """List user's liquidation history of specified underlying  # noqa: E501
+        """List user's liquidation history of specified underlying.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2150,8 +2150,8 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
-        :param str contract: Options contract name
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
+        :param str contract: Options contract name.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2234,7 +2234,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_options_orders(self, status, **kwargs):  # noqa: E501
-        """List options orders  # noqa: E501
+        """List options orders.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2242,11 +2242,11 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str status: Only list the orders with this status (required)
-        :param str contract: Options contract name
-        :param str underlying: Underlying
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str status: Only list the orders with this status. (required)
+        :param str contract: Options contract name.
+        :param str underlying: Underlying.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2264,7 +2264,7 @@ class OptionsApi(object):
         return self.list_options_orders_with_http_info(status, **kwargs)  # noqa: E501
 
     def list_options_orders_with_http_info(self, status, **kwargs):  # noqa: E501
-        """List options orders  # noqa: E501
+        """List options orders.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2272,11 +2272,11 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str status: Only list the orders with this status (required)
-        :param str contract: Options contract name
-        :param str underlying: Underlying
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str status: Only list the orders with this status. (required)
+        :param str contract: Options contract name.
+        :param str underlying: Underlying.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _return_http_data_only: response data without head status code
@@ -2382,7 +2382,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def create_options_order(self, options_order, **kwargs):  # noqa: E501
-        """Create an options order  # noqa: E501
+        """Create an options order.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2406,7 +2406,7 @@ class OptionsApi(object):
         return self.create_options_order_with_http_info(options_order, **kwargs)  # noqa: E501
 
     def create_options_order_with_http_info(self, options_order, **kwargs):  # noqa: E501
-        """Create an options order  # noqa: E501
+        """Create an options order.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2498,7 +2498,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def cancel_options_orders(self, **kwargs):  # noqa: E501
-        """Cancel all `open` orders matched  # noqa: E501
+        """Cancel all `open` orders matched.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2506,9 +2506,9 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Options contract name
-        :param str underlying: Underlying
-        :param str side: All bids or asks. Both included if not specified
+        :param str contract: Options contract name.
+        :param str underlying: Underlying.
+        :param str side: All bids or asks. Both included if not specified.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2524,7 +2524,7 @@ class OptionsApi(object):
         return self.cancel_options_orders_with_http_info(**kwargs)  # noqa: E501
 
     def cancel_options_orders_with_http_info(self, **kwargs):  # noqa: E501
-        """Cancel all `open` orders matched  # noqa: E501
+        """Cancel all `open` orders matched.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2532,9 +2532,9 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str contract: Options contract name
-        :param str underlying: Underlying
-        :param str side: All bids or asks. Both included if not specified
+        :param str contract: Options contract name.
+        :param str underlying: Underlying.
+        :param str side: All bids or asks. Both included if not specified.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2616,7 +2616,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def get_options_order(self, order_id, **kwargs):  # noqa: E501
-        """Get a single order  # noqa: E501
+        """Get a single order.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2624,7 +2624,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int order_id: Order ID returned on successful order creation (required)
+        :param int order_id: Order ID returned on successful order creation. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2640,7 +2640,7 @@ class OptionsApi(object):
         return self.get_options_order_with_http_info(order_id, **kwargs)  # noqa: E501
 
     def get_options_order_with_http_info(self, order_id, **kwargs):  # noqa: E501
-        """Get a single order  # noqa: E501
+        """Get a single order.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2648,7 +2648,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int order_id: Order ID returned on successful order creation (required)
+        :param int order_id: Order ID returned on successful order creation. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2728,7 +2728,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def cancel_options_order(self, order_id, **kwargs):  # noqa: E501
-        """Cancel a single order  # noqa: E501
+        """Cancel a single order.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2736,7 +2736,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int order_id: Order ID returned on successful order creation (required)
+        :param int order_id: Order ID returned on successful order creation. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2752,7 +2752,7 @@ class OptionsApi(object):
         return self.cancel_options_order_with_http_info(order_id, **kwargs)  # noqa: E501
 
     def cancel_options_order_with_http_info(self, order_id, **kwargs):  # noqa: E501
-        """Cancel a single order  # noqa: E501
+        """Cancel a single order.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2760,7 +2760,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int order_id: Order ID returned on successful order creation (required)
+        :param int order_id: Order ID returned on successful order creation. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2840,9 +2840,9 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def countdown_cancel_all_options(self, countdown_cancel_all_options_task, **kwargs):  # noqa: E501
-        """Countdown cancel orders  # noqa: E501
+        """Countdown cancel orders.  # noqa: E501
 
-        Option order heartbeat detection, when the `timeout` time set by the user is reached, if the existing countdown is not canceled or a new countdown is set, the related `option pending order` will be automatically canceled.  This interface can be called repeatedly to set a new countdown or cancel the countdown.  Usage example: Repeat this interface at intervals of 30 seconds, with each countdown `timeout` set to 30 (seconds).  If this interface is not called again within 30 seconds, all pending orders on the `underlying` `contract` you specified will be automatically cancelled. If `underlying` `contract` is not specified, all pending orders of the user will be automatically cancelled  If `timeout` is set to 0 within 30 seconds, the countdown timer will expire and the automatic order cancellation function will be cancelled.  # noqa: E501
+        Option order heartbeat detection, when the `timeout` time set by the user is reached, if the existing countdown is not canceled or a new countdown is set, the related `option pending order` will be automatically canceled.  This interface can be called repeatedly to set a new countdown or cancel the countdown.  Usage example: Repeat this interface at intervals of 30 seconds, with each countdown `timeout` set to 30 (seconds).  If this interface is not called again within 30 seconds, all pending orders on the `underlying` `contract` you specified will be automatically cancelled. If `underlying` `contract` is not specified, user will be automatically cancelled  If `timeout` is set to 0 within 30 seconds, the countdown timer will expire and the automatic order cancellation function will be cancelled.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.countdown_cancel_all_options(countdown_cancel_all_options_task, async_req=True)
@@ -2865,9 +2865,9 @@ class OptionsApi(object):
         return self.countdown_cancel_all_options_with_http_info(countdown_cancel_all_options_task, **kwargs)  # noqa: E501
 
     def countdown_cancel_all_options_with_http_info(self, countdown_cancel_all_options_task, **kwargs):  # noqa: E501
-        """Countdown cancel orders  # noqa: E501
+        """Countdown cancel orders.  # noqa: E501
 
-        Option order heartbeat detection, when the `timeout` time set by the user is reached, if the existing countdown is not canceled or a new countdown is set, the related `option pending order` will be automatically canceled.  This interface can be called repeatedly to set a new countdown or cancel the countdown.  Usage example: Repeat this interface at intervals of 30 seconds, with each countdown `timeout` set to 30 (seconds).  If this interface is not called again within 30 seconds, all pending orders on the `underlying` `contract` you specified will be automatically cancelled. If `underlying` `contract` is not specified, all pending orders of the user will be automatically cancelled  If `timeout` is set to 0 within 30 seconds, the countdown timer will expire and the automatic order cancellation function will be cancelled.  # noqa: E501
+        Option order heartbeat detection, when the `timeout` time set by the user is reached, if the existing countdown is not canceled or a new countdown is set, the related `option pending order` will be automatically canceled.  This interface can be called repeatedly to set a new countdown or cancel the countdown.  Usage example: Repeat this interface at intervals of 30 seconds, with each countdown `timeout` set to 30 (seconds).  If this interface is not called again within 30 seconds, all pending orders on the `underlying` `contract` you specified will be automatically cancelled. If `underlying` `contract` is not specified, user will be automatically cancelled  If `timeout` is set to 0 within 30 seconds, the countdown timer will expire and the automatic order cancellation function will be cancelled.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.countdown_cancel_all_options_with_http_info(countdown_cancel_all_options_task, async_req=True)
@@ -2958,7 +2958,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def list_my_options_trades(self, underlying, **kwargs):  # noqa: E501
-        """List personal trading history  # noqa: E501
+        """List personal trading history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2966,10 +2966,10 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
-        :param str contract: Options contract name
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
+        :param str contract: Options contract name.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2987,7 +2987,7 @@ class OptionsApi(object):
         return self.list_my_options_trades_with_http_info(underlying, **kwargs)  # noqa: E501
 
     def list_my_options_trades_with_http_info(self, underlying, **kwargs):  # noqa: E501
-        """List personal trading history  # noqa: E501
+        """List personal trading history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2995,10 +2995,10 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying (Obtained by listing underlying endpoint) (required)
-        :param str contract: Options contract name
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param str underlying: Underlying (Obtained by listing underlying endpoint). (required)
+        :param str contract: Options contract name.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
         :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param _return_http_data_only: response data without head status code
@@ -3101,7 +3101,7 @@ class OptionsApi(object):
             collection_formats=collection_formats)
 
     def get_options_mmp(self, **kwargs):  # noqa: E501
-        """MMP Query  # noqa: E501
+        """MMP Query.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -3109,7 +3109,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying
+        :param str underlying: Underlying.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -3125,7 +3125,7 @@ class OptionsApi(object):
         return self.get_options_mmp_with_http_info(**kwargs)  # noqa: E501
 
     def get_options_mmp_with_http_info(self, **kwargs):  # noqa: E501
-        """MMP Query  # noqa: E501
+        """MMP Query.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -3133,7 +3133,7 @@ class OptionsApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str underlying: Underlying
+        :param str underlying: Underlying.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

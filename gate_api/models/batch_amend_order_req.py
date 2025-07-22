@@ -77,7 +77,7 @@ class BatchAmendOrderReq(object):
     def order_id(self):
         """Gets the order_id of this BatchAmendOrderReq.  # noqa: E501
 
-        Order id, order_id and text must contain at least one  # noqa: E501
+        Order id, order_id and text must contain at least one.  # noqa: E501
 
         :return: The order_id of this BatchAmendOrderReq.  # noqa: E501
         :rtype: int
@@ -88,7 +88,7 @@ class BatchAmendOrderReq(object):
     def order_id(self, order_id):
         """Sets the order_id of this BatchAmendOrderReq.
 
-        Order id, order_id and text must contain at least one  # noqa: E501
+        Order id, order_id and text must contain at least one.  # noqa: E501
 
         :param order_id: The order_id of this BatchAmendOrderReq.  # noqa: E501
         :type: int
@@ -100,7 +100,7 @@ class BatchAmendOrderReq(object):
     def text(self):
         """Gets the text of this BatchAmendOrderReq.  # noqa: E501
 
-        User-defined order text, at least one of order_id and text must be passed  # noqa: E501
+        User-defined order text, at least one of order_id and text must be passed.  # noqa: E501
 
         :return: The text of this BatchAmendOrderReq.  # noqa: E501
         :rtype: str
@@ -111,7 +111,7 @@ class BatchAmendOrderReq(object):
     def text(self, text):
         """Sets the text of this BatchAmendOrderReq.
 
-        User-defined order text, at least one of order_id and text must be passed  # noqa: E501
+        User-defined order text, at least one of order_id and text must be passed.  # noqa: E501
 
         :param text: The text of this BatchAmendOrderReq.  # noqa: E501
         :type: str
@@ -123,7 +123,7 @@ class BatchAmendOrderReq(object):
     def size(self):
         """Gets the size of this BatchAmendOrderReq.  # noqa: E501
 
-        The new order size, including the executed order size. - If it is less than or equal to the executed quantity, the order will be cancelled. - The new order direction must be consistent with the original one. - The size of the closing order cannot be modified. - For orders that only reduce positions, if the size is increased, other orders that only reduce positions may be kicked out. - If the price is not modified, reducing the size will not affect the depth of the queue, and increasing the size will place it at the end of the current price.  # noqa: E501
+        The new order size, including the executed order size. - If it is less than or equal to the executed quantity, the order will be cancelled. - The new order direction must be consistent with the original one. - The size of the closing order cannot be modified. - For orders that only reduce positions, if the size is increased, positions may be kicked out. - If the price is not modified, reducing the size will not affect the depth of the queue, and increasing the size will place it at the end of the current price.  # noqa: E501
 
         :return: The size of this BatchAmendOrderReq.  # noqa: E501
         :rtype: int
@@ -134,7 +134,7 @@ class BatchAmendOrderReq(object):
     def size(self, size):
         """Sets the size of this BatchAmendOrderReq.
 
-        The new order size, including the executed order size. - If it is less than or equal to the executed quantity, the order will be cancelled. - The new order direction must be consistent with the original one. - The size of the closing order cannot be modified. - For orders that only reduce positions, if the size is increased, other orders that only reduce positions may be kicked out. - If the price is not modified, reducing the size will not affect the depth of the queue, and increasing the size will place it at the end of the current price.  # noqa: E501
+        The new order size, including the executed order size. - If it is less than or equal to the executed quantity, the order will be cancelled. - The new order direction must be consistent with the original one. - The size of the closing order cannot be modified. - For orders that only reduce positions, if the size is increased, positions may be kicked out. - If the price is not modified, reducing the size will not affect the depth of the queue, and increasing the size will place it at the end of the current price.  # noqa: E501
 
         :param size: The size of this BatchAmendOrderReq.  # noqa: E501
         :type: int
@@ -169,7 +169,7 @@ class BatchAmendOrderReq(object):
     def amend_text(self):
         """Gets the amend_text of this BatchAmendOrderReq.  # noqa: E501
 
-        Custom info during amending order  # noqa: E501
+        Custom info during amending order.  # noqa: E501
 
         :return: The amend_text of this BatchAmendOrderReq.  # noqa: E501
         :rtype: str
@@ -180,7 +180,7 @@ class BatchAmendOrderReq(object):
     def amend_text(self, amend_text):
         """Sets the amend_text of this BatchAmendOrderReq.
 
-        Custom info during amending order  # noqa: E501
+        Custom info during amending order.  # noqa: E501
 
         :param amend_text: The amend_text of this BatchAmendOrderReq.  # noqa: E501
         :type: str

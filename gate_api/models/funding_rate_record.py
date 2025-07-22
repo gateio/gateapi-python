@@ -62,7 +62,7 @@ class FundingRateRecord(object):
     def t(self):
         """Gets the t of this FundingRateRecord.  # noqa: E501
 
-        Unix timestamp in seconds  # noqa: E501
+        Unix timestamp in seconds.  # noqa: E501
 
         :return: The t of this FundingRateRecord.  # noqa: E501
         :rtype: int
@@ -73,7 +73,7 @@ class FundingRateRecord(object):
     def t(self, t):
         """Sets the t of this FundingRateRecord.
 
-        Unix timestamp in seconds  # noqa: E501
+        Unix timestamp in seconds.  # noqa: E501
 
         :param t: The t of this FundingRateRecord.  # noqa: E501
         :type: int
@@ -85,7 +85,7 @@ class FundingRateRecord(object):
     def r(self):
         """Gets the r of this FundingRateRecord.  # noqa: E501
 
-        Funding rate  # noqa: E501
+        Funding rate.  # noqa: E501
 
         :return: The r of this FundingRateRecord.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class FundingRateRecord(object):
     def r(self, r):
         """Sets the r of this FundingRateRecord.
 
-        Funding rate  # noqa: E501
+        Funding rate.  # noqa: E501
 
         :param r: The r of this FundingRateRecord.  # noqa: E501
         :type: str

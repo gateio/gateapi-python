@@ -77,7 +77,7 @@ class OptionsAccountBook(object):
     def time(self):
         """Gets the time of this OptionsAccountBook.  # noqa: E501
 
-        Change time  # noqa: E501
+        Change time.  # noqa: E501
 
         :return: The time of this OptionsAccountBook.  # noqa: E501
         :rtype: float
@@ -88,7 +88,7 @@ class OptionsAccountBook(object):
     def time(self, time):
         """Sets the time of this OptionsAccountBook.
 
-        Change time  # noqa: E501
+        Change time.  # noqa: E501
 
         :param time: The time of this OptionsAccountBook.  # noqa: E501
         :type: float
@@ -100,7 +100,7 @@ class OptionsAccountBook(object):
     def change(self):
         """Gets the change of this OptionsAccountBook.  # noqa: E501
 
-        Amount changed (USDT)  # noqa: E501
+        Amount changed (USDT).  # noqa: E501
 
         :return: The change of this OptionsAccountBook.  # noqa: E501
         :rtype: str
@@ -111,7 +111,7 @@ class OptionsAccountBook(object):
     def change(self, change):
         """Sets the change of this OptionsAccountBook.
 
-        Amount changed (USDT)  # noqa: E501
+        Amount changed (USDT).  # noqa: E501
 
         :param change: The change of this OptionsAccountBook.  # noqa: E501
         :type: str
@@ -123,7 +123,7 @@ class OptionsAccountBook(object):
     def balance(self):
         """Gets the balance of this OptionsAccountBook.  # noqa: E501
 
-        Account total balance after change (USDT)  # noqa: E501
+        Account total balance after change (USDT).  # noqa: E501
 
         :return: The balance of this OptionsAccountBook.  # noqa: E501
         :rtype: str
@@ -134,7 +134,7 @@ class OptionsAccountBook(object):
     def balance(self, balance):
         """Sets the balance of this OptionsAccountBook.
 
-        Account total balance after change (USDT)  # noqa: E501
+        Account total balance after change (USDT).  # noqa: E501
 
         :param balance: The balance of this OptionsAccountBook.  # noqa: E501
         :type: str
@@ -146,7 +146,7 @@ class OptionsAccountBook(object):
     def type(self):
         """Gets the type of this OptionsAccountBook.  # noqa: E501
 
-        Changing Type: - dnw: Deposit & Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate  # noqa: E501
+        Changing Type: - dnw: Deposit & Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - point_dnw: point_fee: POINT Trading fee - point_refr: POINT Referrer rebate  # noqa: E501
 
         :return: The type of this OptionsAccountBook.  # noqa: E501
         :rtype: str
@@ -157,7 +157,7 @@ class OptionsAccountBook(object):
     def type(self, type):
         """Sets the type of this OptionsAccountBook.
 
-        Changing Type: - dnw: Deposit & Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - point_dnw: POINT Deposit & Withdraw - point_fee: POINT Trading fee - point_refr: POINT Referrer rebate  # noqa: E501
+        Changing Type: - dnw: Deposit & Withdraw - prem: Trading premium - fee: Trading fee - refr: Referrer rebate - point_dnw: point_fee: POINT Trading fee - point_refr: POINT Referrer rebate  # noqa: E501
 
         :param type: The type of this OptionsAccountBook.  # noqa: E501
         :type: str
@@ -169,7 +169,7 @@ class OptionsAccountBook(object):
     def text(self):
         """Gets the text of this OptionsAccountBook.  # noqa: E501
 
-        custom text  # noqa: E501
+        custom text.  # noqa: E501
 
         :return: The text of this OptionsAccountBook.  # noqa: E501
         :rtype: str
@@ -180,7 +180,7 @@ class OptionsAccountBook(object):
     def text(self, text):
         """Sets the text of this OptionsAccountBook.
 
-        custom text  # noqa: E501
+        custom text.  # noqa: E501
 
         :param text: The text of this OptionsAccountBook.  # noqa: E501
         :type: str

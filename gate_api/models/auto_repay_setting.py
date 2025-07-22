@@ -57,7 +57,7 @@ class AutoRepaySetting(object):
     def status(self):
         """Gets the status of this AutoRepaySetting.  # noqa: E501
 
-        Auto repayment status. `on` - enabled, `off` - disabled  # noqa: E501
+        Auto repayment status. `on` - enabled, `off` - disabled.  # noqa: E501
 
         :return: The status of this AutoRepaySetting.  # noqa: E501
         :rtype: str
@@ -68,7 +68,7 @@ class AutoRepaySetting(object):
     def status(self, status):
         """Sets the status of this AutoRepaySetting.
 
-        Auto repayment status. `on` - enabled, `off` - disabled  # noqa: E501
+        Auto repayment status. `on` - enabled, `off` - disabled.  # noqa: E501
 
         :param status: The status of this AutoRepaySetting.  # noqa: E501
         :type: str

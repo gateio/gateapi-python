@@ -152,7 +152,7 @@ class UnifiedAccount(object):
     def user_id(self):
         """Gets the user_id of this UnifiedAccount.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user_id of this UnifiedAccount.  # noqa: E501
         :rtype: int
@@ -163,7 +163,7 @@ class UnifiedAccount(object):
     def user_id(self, user_id):
         """Sets the user_id of this UnifiedAccount.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user_id: The user_id of this UnifiedAccount.  # noqa: E501
         :type: int
@@ -175,7 +175,7 @@ class UnifiedAccount(object):
     def refresh_time(self):
         """Gets the refresh_time of this UnifiedAccount.  # noqa: E501
 
-        Time of the most recent refresh  # noqa: E501
+        Time of the most recent refresh.  # noqa: E501
 
         :return: The refresh_time of this UnifiedAccount.  # noqa: E501
         :rtype: int
@@ -186,7 +186,7 @@ class UnifiedAccount(object):
     def refresh_time(self, refresh_time):
         """Sets the refresh_time of this UnifiedAccount.
 
-        Time of the most recent refresh  # noqa: E501
+        Time of the most recent refresh.  # noqa: E501
 
         :param refresh_time: The refresh_time of this UnifiedAccount.  # noqa: E501
         :type: int
@@ -242,7 +242,7 @@ class UnifiedAccount(object):
     def total(self):
         """Gets the total of this UnifiedAccount.  # noqa: E501
 
-        Total account assets converted to USD, i.e. the sum of `(available + freeze) * price`  in all currencies (deprecated, to be deprecated, replaced by unified_account_total)  # noqa: E501
+        Total account assets converted to USD, i.e. the sum of `(available + freeze) * price` in all currencies (deprecated, to be deprecated, replaced by unified_account_total)  # noqa: E501
 
         :return: The total of this UnifiedAccount.  # noqa: E501
         :rtype: str
@@ -253,7 +253,7 @@ class UnifiedAccount(object):
     def total(self, total):
         """Sets the total of this UnifiedAccount.
 
-        Total account assets converted to USD, i.e. the sum of `(available + freeze) * price`  in all currencies (deprecated, to be deprecated, replaced by unified_account_total)  # noqa: E501
+        Total account assets converted to USD, i.e. the sum of `(available + freeze) * price` in all currencies (deprecated, to be deprecated, replaced by unified_account_total)  # noqa: E501
 
         :param total: The total of this UnifiedAccount.  # noqa: E501
         :type: str
@@ -495,7 +495,7 @@ class UnifiedAccount(object):
     def leverage(self):
         """Gets the leverage of this UnifiedAccount.  # noqa: E501
 
-        Actual leverage, valid in cross-currency margin/combined margin mode  # noqa: E501
+        Actual leverage, valid in cross-currency margin/combined margin mode.  # noqa: E501
 
         :return: The leverage of this UnifiedAccount.  # noqa: E501
         :rtype: str
@@ -506,7 +506,7 @@ class UnifiedAccount(object):
     def leverage(self, leverage):
         """Sets the leverage of this UnifiedAccount.
 
-        Actual leverage, valid in cross-currency margin/combined margin mode  # noqa: E501
+        Actual leverage, valid in cross-currency margin/combined margin mode.  # noqa: E501
 
         :param leverage: The leverage of this UnifiedAccount.  # noqa: E501
         :type: str
@@ -564,7 +564,7 @@ class UnifiedAccount(object):
     def use_funding(self):
         """Gets the use_funding of this UnifiedAccount.  # noqa: E501
 
-        Whether to use funds as margin  # noqa: E501
+        Whether to use funds as margin.  # noqa: E501
 
         :return: The use_funding of this UnifiedAccount.  # noqa: E501
         :rtype: bool
@@ -575,7 +575,7 @@ class UnifiedAccount(object):
     def use_funding(self, use_funding):
         """Sets the use_funding of this UnifiedAccount.
 
-        Whether to use funds as margin  # noqa: E501
+        Whether to use funds as margin.  # noqa: E501
 
         :param use_funding: The use_funding of this UnifiedAccount.  # noqa: E501
         :type: bool
@@ -587,7 +587,7 @@ class UnifiedAccount(object):
     def is_all_collateral(self):
         """Gets the is_all_collateral of this UnifiedAccount.  # noqa: E501
 
-        Whether all currencies are used as margin, true - All currencies are used as margin, false - No  # noqa: E501
+        Whether all currencies are used as margin, true - false - No  # noqa: E501
 
         :return: The is_all_collateral of this UnifiedAccount.  # noqa: E501
         :rtype: bool
@@ -598,7 +598,7 @@ class UnifiedAccount(object):
     def is_all_collateral(self, is_all_collateral):
         """Sets the is_all_collateral of this UnifiedAccount.
 
-        Whether all currencies are used as margin, true - All currencies are used as margin, false - No  # noqa: E501
+        Whether all currencies are used as margin, true - false - No  # noqa: E501
 
         :param is_all_collateral: The is_all_collateral of this UnifiedAccount.  # noqa: E501
         :type: bool

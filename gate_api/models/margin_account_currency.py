@@ -77,7 +77,7 @@ class MarginAccountCurrency(object):
     def currency(self):
         """Gets the currency of this MarginAccountCurrency.  # noqa: E501
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :return: The currency of this MarginAccountCurrency.  # noqa: E501
         :rtype: str
@@ -88,7 +88,7 @@ class MarginAccountCurrency(object):
     def currency(self, currency):
         """Sets the currency of this MarginAccountCurrency.
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :param currency: The currency of this MarginAccountCurrency.  # noqa: E501
         :type: str
@@ -123,7 +123,7 @@ class MarginAccountCurrency(object):
     def locked(self):
         """Gets the locked of this MarginAccountCurrency.  # noqa: E501
 
-        Locked amount, used in margin trading  # noqa: E501
+        Locked amount, used in margin trading.  # noqa: E501
 
         :return: The locked of this MarginAccountCurrency.  # noqa: E501
         :rtype: str
@@ -134,7 +134,7 @@ class MarginAccountCurrency(object):
     def locked(self, locked):
         """Sets the locked of this MarginAccountCurrency.
 
-        Locked amount, used in margin trading  # noqa: E501
+        Locked amount, used in margin trading.  # noqa: E501
 
         :param locked: The locked of this MarginAccountCurrency.  # noqa: E501
         :type: str
@@ -146,7 +146,7 @@ class MarginAccountCurrency(object):
     def borrowed(self):
         """Gets the borrowed of this MarginAccountCurrency.  # noqa: E501
 
-        Borrowed amount  # noqa: E501
+        Borrowed amount.  # noqa: E501
 
         :return: The borrowed of this MarginAccountCurrency.  # noqa: E501
         :rtype: str
@@ -157,7 +157,7 @@ class MarginAccountCurrency(object):
     def borrowed(self, borrowed):
         """Sets the borrowed of this MarginAccountCurrency.
 
-        Borrowed amount  # noqa: E501
+        Borrowed amount.  # noqa: E501
 
         :param borrowed: The borrowed of this MarginAccountCurrency.  # noqa: E501
         :type: str
@@ -169,7 +169,7 @@ class MarginAccountCurrency(object):
     def interest(self):
         """Gets the interest of this MarginAccountCurrency.  # noqa: E501
 
-        Unpaid interests  # noqa: E501
+        Unpaid interests.  # noqa: E501
 
         :return: The interest of this MarginAccountCurrency.  # noqa: E501
         :rtype: str
@@ -180,7 +180,7 @@ class MarginAccountCurrency(object):
     def interest(self, interest):
         """Sets the interest of this MarginAccountCurrency.
 
-        Unpaid interests  # noqa: E501
+        Unpaid interests.  # noqa: E501
 
         :param interest: The interest of this MarginAccountCurrency.  # noqa: E501
         :type: str

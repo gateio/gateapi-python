@@ -1,6 +1,6 @@
 # MockOptionsPosition
 
-Options positions
+Options positions.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

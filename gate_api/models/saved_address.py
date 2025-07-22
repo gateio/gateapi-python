@@ -82,7 +82,7 @@ class SavedAddress(object):
     def currency(self):
         """Gets the currency of this SavedAddress.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this SavedAddress.  # noqa: E501
         :rtype: str
@@ -93,7 +93,7 @@ class SavedAddress(object):
     def currency(self, currency):
         """Sets the currency of this SavedAddress.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this SavedAddress.  # noqa: E501
         :type: str
@@ -105,7 +105,7 @@ class SavedAddress(object):
     def chain(self):
         """Gets the chain of this SavedAddress.  # noqa: E501
 
-        Chain name  # noqa: E501
+        Chain name.  # noqa: E501
 
         :return: The chain of this SavedAddress.  # noqa: E501
         :rtype: str
@@ -116,7 +116,7 @@ class SavedAddress(object):
     def chain(self, chain):
         """Sets the chain of this SavedAddress.
 
-        Chain name  # noqa: E501
+        Chain name.  # noqa: E501
 
         :param chain: The chain of this SavedAddress.  # noqa: E501
         :type: str
@@ -128,7 +128,7 @@ class SavedAddress(object):
     def address(self):
         """Gets the address of this SavedAddress.  # noqa: E501
 
-        Address  # noqa: E501
+        Address.  # noqa: E501
 
         :return: The address of this SavedAddress.  # noqa: E501
         :rtype: str
@@ -139,7 +139,7 @@ class SavedAddress(object):
     def address(self, address):
         """Sets the address of this SavedAddress.
 
-        Address  # noqa: E501
+        Address.  # noqa: E501
 
         :param address: The address of this SavedAddress.  # noqa: E501
         :type: str
@@ -151,7 +151,7 @@ class SavedAddress(object):
     def name(self):
         """Gets the name of this SavedAddress.  # noqa: E501
 
-        Name  # noqa: E501
+        Name.  # noqa: E501
 
         :return: The name of this SavedAddress.  # noqa: E501
         :rtype: str
@@ -162,7 +162,7 @@ class SavedAddress(object):
     def name(self, name):
         """Sets the name of this SavedAddress.
 
-        Name  # noqa: E501
+        Name.  # noqa: E501
 
         :param name: The name of this SavedAddress.  # noqa: E501
         :type: str
@@ -174,7 +174,7 @@ class SavedAddress(object):
     def tag(self):
         """Gets the tag of this SavedAddress.  # noqa: E501
 
-        Tag  # noqa: E501
+        Tag.  # noqa: E501
 
         :return: The tag of this SavedAddress.  # noqa: E501
         :rtype: str
@@ -185,7 +185,7 @@ class SavedAddress(object):
     def tag(self, tag):
         """Sets the tag of this SavedAddress.
 
-        Tag  # noqa: E501
+        Tag.  # noqa: E501
 
         :param tag: The tag of this SavedAddress.  # noqa: E501
         :type: str
@@ -197,7 +197,7 @@ class SavedAddress(object):
     def verified(self):
         """Gets the verified of this SavedAddress.  # noqa: E501
 
-        Whether to pass the verification 0-unverified, 1-verified  # noqa: E501
+        Whether to pass the verification 0-unverified, 1-verified.  # noqa: E501
 
         :return: The verified of this SavedAddress.  # noqa: E501
         :rtype: str
@@ -208,7 +208,7 @@ class SavedAddress(object):
     def verified(self, verified):
         """Sets the verified of this SavedAddress.
 
-        Whether to pass the verification 0-unverified, 1-verified  # noqa: E501
+        Whether to pass the verification 0-unverified, 1-verified.  # noqa: E501
 
         :param verified: The verified of this SavedAddress.  # noqa: E501
         :type: str

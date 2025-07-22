@@ -77,7 +77,7 @@ class FuturesPremiumIndex(object):
     def t(self):
         """Gets the t of this FuturesPremiumIndex.  # noqa: E501
 
-        Unix timestamp in seconds  # noqa: E501
+        Unix timestamp in seconds.  # noqa: E501
 
         :return: The t of this FuturesPremiumIndex.  # noqa: E501
         :rtype: float
@@ -88,7 +88,7 @@ class FuturesPremiumIndex(object):
     def t(self, t):
         """Sets the t of this FuturesPremiumIndex.
 
-        Unix timestamp in seconds  # noqa: E501
+        Unix timestamp in seconds.  # noqa: E501
 
         :param t: The t of this FuturesPremiumIndex.  # noqa: E501
         :type: float
@@ -100,7 +100,7 @@ class FuturesPremiumIndex(object):
     def c(self):
         """Gets the c of this FuturesPremiumIndex.  # noqa: E501
 
-        Close price  # noqa: E501
+        Close price.  # noqa: E501
 
         :return: The c of this FuturesPremiumIndex.  # noqa: E501
         :rtype: str
@@ -111,7 +111,7 @@ class FuturesPremiumIndex(object):
     def c(self, c):
         """Sets the c of this FuturesPremiumIndex.
 
-        Close price  # noqa: E501
+        Close price.  # noqa: E501
 
         :param c: The c of this FuturesPremiumIndex.  # noqa: E501
         :type: str
@@ -123,7 +123,7 @@ class FuturesPremiumIndex(object):
     def h(self):
         """Gets the h of this FuturesPremiumIndex.  # noqa: E501
 
-        Highest price  # noqa: E501
+        Highest price.  # noqa: E501
 
         :return: The h of this FuturesPremiumIndex.  # noqa: E501
         :rtype: str
@@ -134,7 +134,7 @@ class FuturesPremiumIndex(object):
     def h(self, h):
         """Sets the h of this FuturesPremiumIndex.
 
-        Highest price  # noqa: E501
+        Highest price.  # noqa: E501
 
         :param h: The h of this FuturesPremiumIndex.  # noqa: E501
         :type: str
@@ -146,7 +146,7 @@ class FuturesPremiumIndex(object):
     def l(self):
         """Gets the l of this FuturesPremiumIndex.  # noqa: E501
 
-        Lowest price`  # noqa: E501
+        Lowest price`.  # noqa: E501
 
         :return: The l of this FuturesPremiumIndex.  # noqa: E501
         :rtype: str
@@ -157,7 +157,7 @@ class FuturesPremiumIndex(object):
     def l(self, l):
         """Sets the l of this FuturesPremiumIndex.
 
-        Lowest price`  # noqa: E501
+        Lowest price`.  # noqa: E501
 
         :param l: The l of this FuturesPremiumIndex.  # noqa: E501
         :type: str
@@ -169,7 +169,7 @@ class FuturesPremiumIndex(object):
     def o(self):
         """Gets the o of this FuturesPremiumIndex.  # noqa: E501
 
-        Open price  # noqa: E501
+        Open price.  # noqa: E501
 
         :return: The o of this FuturesPremiumIndex.  # noqa: E501
         :rtype: str
@@ -180,7 +180,7 @@ class FuturesPremiumIndex(object):
     def o(self, o):
         """Sets the o of this FuturesPremiumIndex.
 
-        Open price  # noqa: E501
+        Open price.  # noqa: E501
 
         :param o: The o of this FuturesPremiumIndex.  # noqa: E501
         :type: str

@@ -60,7 +60,7 @@ class UnifiedLeverageSetting(object):
     def currency(self):
         """Gets the currency of this UnifiedLeverageSetting.  # noqa: E501
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :return: The currency of this UnifiedLeverageSetting.  # noqa: E501
         :rtype: str
@@ -71,7 +71,7 @@ class UnifiedLeverageSetting(object):
     def currency(self, currency):
         """Sets the currency of this UnifiedLeverageSetting.
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :param currency: The currency of this UnifiedLeverageSetting.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class UnifiedLeverageSetting(object):
     def leverage(self):
         """Gets the leverage of this UnifiedLeverageSetting.  # noqa: E501
 
-        multiple  # noqa: E501
+        multiple.  # noqa: E501
 
         :return: The leverage of this UnifiedLeverageSetting.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class UnifiedLeverageSetting(object):
     def leverage(self, leverage):
         """Sets the leverage of this UnifiedLeverageSetting.
 
-        multiple  # noqa: E501
+        multiple.  # noqa: E501
 
         :param leverage: The leverage of this UnifiedLeverageSetting.  # noqa: E501
         :type: str

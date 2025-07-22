@@ -82,7 +82,7 @@ class AgencyCommission(object):
     def commission_time(self):
         """Gets the commission_time of this AgencyCommission.  # noqa: E501
 
-        Commission Time. (unix timestamp)  # noqa: E501
+        Commission Time. (unix timestamp).  # noqa: E501
 
         :return: The commission_time of this AgencyCommission.  # noqa: E501
         :rtype: int
@@ -93,7 +93,7 @@ class AgencyCommission(object):
     def commission_time(self, commission_time):
         """Sets the commission_time of this AgencyCommission.
 
-        Commission Time. (unix timestamp)  # noqa: E501
+        Commission Time. (unix timestamp).  # noqa: E501
 
         :param commission_time: The commission_time of this AgencyCommission.  # noqa: E501
         :type: int
@@ -105,7 +105,7 @@ class AgencyCommission(object):
     def user_id(self):
         """Gets the user_id of this AgencyCommission.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user_id of this AgencyCommission.  # noqa: E501
         :rtype: int
@@ -116,7 +116,7 @@ class AgencyCommission(object):
     def user_id(self, user_id):
         """Sets the user_id of this AgencyCommission.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user_id: The user_id of this AgencyCommission.  # noqa: E501
         :type: int
@@ -128,7 +128,7 @@ class AgencyCommission(object):
     def group_name(self):
         """Gets the group_name of this AgencyCommission.  # noqa: E501
 
-        Group name  # noqa: E501
+        Group name.  # noqa: E501
 
         :return: The group_name of this AgencyCommission.  # noqa: E501
         :rtype: str
@@ -139,7 +139,7 @@ class AgencyCommission(object):
     def group_name(self, group_name):
         """Sets the group_name of this AgencyCommission.
 
-        Group name  # noqa: E501
+        Group name.  # noqa: E501
 
         :param group_name: The group_name of this AgencyCommission.  # noqa: E501
         :type: str
@@ -151,7 +151,7 @@ class AgencyCommission(object):
     def commission_amount(self):
         """Gets the commission_amount of this AgencyCommission.  # noqa: E501
 
-        Commission Amount  # noqa: E501
+        Commission Amount.  # noqa: E501
 
         :return: The commission_amount of this AgencyCommission.  # noqa: E501
         :rtype: str
@@ -162,7 +162,7 @@ class AgencyCommission(object):
     def commission_amount(self, commission_amount):
         """Sets the commission_amount of this AgencyCommission.
 
-        Commission Amount  # noqa: E501
+        Commission Amount.  # noqa: E501
 
         :param commission_amount: The commission_amount of this AgencyCommission.  # noqa: E501
         :type: str
@@ -174,7 +174,7 @@ class AgencyCommission(object):
     def commission_asset(self):
         """Gets the commission_asset of this AgencyCommission.  # noqa: E501
 
-        Commission Asset  # noqa: E501
+        Commission Asset.  # noqa: E501
 
         :return: The commission_asset of this AgencyCommission.  # noqa: E501
         :rtype: str
@@ -185,7 +185,7 @@ class AgencyCommission(object):
     def commission_asset(self, commission_asset):
         """Sets the commission_asset of this AgencyCommission.
 
-        Commission Asset  # noqa: E501
+        Commission Asset.  # noqa: E501
 
         :param commission_asset: The commission_asset of this AgencyCommission.  # noqa: E501
         :type: str
@@ -197,7 +197,7 @@ class AgencyCommission(object):
     def source(self):
         """Gets the source of this AgencyCommission.  # noqa: E501
 
-        Source.  SPOT - SPOT Rebate, FUTURES - Futures Rebate  # noqa: E501
+        Source. SPOT - SPOT Rebate, FUTURES - Futures Rebate.  # noqa: E501
 
         :return: The source of this AgencyCommission.  # noqa: E501
         :rtype: str
@@ -208,7 +208,7 @@ class AgencyCommission(object):
     def source(self, source):
         """Sets the source of this AgencyCommission.
 
-        Source.  SPOT - SPOT Rebate, FUTURES - Futures Rebate  # noqa: E501
+        Source. SPOT - SPOT Rebate, FUTURES - Futures Rebate.  # noqa: E501
 
         :param source: The source of this AgencyCommission.  # noqa: E501
         :type: str

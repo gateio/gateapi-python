@@ -82,7 +82,7 @@ class UniLoan(object):
     def currency(self):
         """Gets the currency of this UniLoan.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this UniLoan.  # noqa: E501
         :rtype: str
@@ -93,7 +93,7 @@ class UniLoan(object):
     def currency(self, currency):
         """Sets the currency of this UniLoan.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this UniLoan.  # noqa: E501
         :type: str
@@ -105,7 +105,7 @@ class UniLoan(object):
     def currency_pair(self):
         """Gets the currency_pair of this UniLoan.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this UniLoan.  # noqa: E501
         :rtype: str
@@ -116,7 +116,7 @@ class UniLoan(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this UniLoan.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this UniLoan.  # noqa: E501
         :type: str
@@ -128,7 +128,7 @@ class UniLoan(object):
     def amount(self):
         """Gets the amount of this UniLoan.  # noqa: E501
 
-        amount  # noqa: E501
+        amount.  # noqa: E501
 
         :return: The amount of this UniLoan.  # noqa: E501
         :rtype: str
@@ -139,7 +139,7 @@ class UniLoan(object):
     def amount(self, amount):
         """Sets the amount of this UniLoan.
 
-        amount  # noqa: E501
+        amount.  # noqa: E501
 
         :param amount: The amount of this UniLoan.  # noqa: E501
         :type: str
@@ -151,7 +151,7 @@ class UniLoan(object):
     def type(self):
         """Gets the type of this UniLoan.  # noqa: E501
 
-        Loan type, platform - platform, margin - margin  # noqa: E501
+        Loan type, platform - platform, margin - margin.  # noqa: E501
 
         :return: The type of this UniLoan.  # noqa: E501
         :rtype: str
@@ -162,7 +162,7 @@ class UniLoan(object):
     def type(self, type):
         """Sets the type of this UniLoan.
 
-        Loan type, platform - platform, margin - margin  # noqa: E501
+        Loan type, platform - platform, margin - margin.  # noqa: E501
 
         :param type: The type of this UniLoan.  # noqa: E501
         :type: str
@@ -174,7 +174,7 @@ class UniLoan(object):
     def create_time(self):
         """Gets the create_time of this UniLoan.  # noqa: E501
 
-        Created time  # noqa: E501
+        Created time.  # noqa: E501
 
         :return: The create_time of this UniLoan.  # noqa: E501
         :rtype: int
@@ -185,7 +185,7 @@ class UniLoan(object):
     def create_time(self, create_time):
         """Sets the create_time of this UniLoan.
 
-        Created time  # noqa: E501
+        Created time.  # noqa: E501
 
         :param create_time: The create_time of this UniLoan.  # noqa: E501
         :type: int
@@ -197,7 +197,7 @@ class UniLoan(object):
     def update_time(self):
         """Gets the update_time of this UniLoan.  # noqa: E501
 
-        Updated time  # noqa: E501
+        Updated time.  # noqa: E501
 
         :return: The update_time of this UniLoan.  # noqa: E501
         :rtype: int
@@ -208,7 +208,7 @@ class UniLoan(object):
     def update_time(self, update_time):
         """Sets the update_time of this UniLoan.
 
-        Updated time  # noqa: E501
+        Updated time.  # noqa: E501
 
         :param update_time: The update_time of this UniLoan.  # noqa: E501
         :type: int

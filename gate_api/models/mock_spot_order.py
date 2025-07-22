@@ -73,7 +73,7 @@ class MockSpotOrder(object):
     def currency_pairs(self):
         """Gets the currency_pairs of this MockSpotOrder.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pairs of this MockSpotOrder.  # noqa: E501
         :rtype: str
@@ -84,7 +84,7 @@ class MockSpotOrder(object):
     def currency_pairs(self, currency_pairs):
         """Sets the currency_pairs of this MockSpotOrder.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pairs: The currency_pairs of this MockSpotOrder.  # noqa: E501
         :type: str
@@ -98,7 +98,7 @@ class MockSpotOrder(object):
     def order_price(self):
         """Gets the order_price of this MockSpotOrder.  # noqa: E501
 
-        Price  # noqa: E501
+        Price.  # noqa: E501
 
         :return: The order_price of this MockSpotOrder.  # noqa: E501
         :rtype: str
@@ -109,7 +109,7 @@ class MockSpotOrder(object):
     def order_price(self, order_price):
         """Sets the order_price of this MockSpotOrder.
 
-        Price  # noqa: E501
+        Price.  # noqa: E501
 
         :param order_price: The order_price of this MockSpotOrder.  # noqa: E501
         :type: str

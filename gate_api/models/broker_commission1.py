@@ -42,7 +42,8 @@ class BrokerCommission1(object):
         'rebate_fee': 'str',
         'source': 'str',
         'currency_pair': 'str',
-        'sub_broker_info': 'BrokerCommissionSubBrokerInfo'
+        'sub_broker_info': 'BrokerCommissionSubBrokerInfo',
+        'alpha_contract_addr': 'str'
     }
 
     attribute_map = {
@@ -55,11 +56,12 @@ class BrokerCommission1(object):
         'rebate_fee': 'rebate_fee',
         'source': 'source',
         'currency_pair': 'currency_pair',
-        'sub_broker_info': 'sub_broker_info'
+        'sub_broker_info': 'sub_broker_info',
+        'alpha_contract_addr': 'alpha_contract_addr'
     }
 
-    def __init__(self, commission_time=None, user_id=None, group_name=None, amount=None, fee=None, fee_asset=None, rebate_fee=None, source=None, currency_pair=None, sub_broker_info=None, local_vars_configuration=None):  # noqa: E501
-        # type: (int, int, str, str, str, str, str, str, str, BrokerCommissionSubBrokerInfo, Configuration) -> None
+    def __init__(self, commission_time=None, user_id=None, group_name=None, amount=None, fee=None, fee_asset=None, rebate_fee=None, source=None, currency_pair=None, sub_broker_info=None, alpha_contract_addr=None, local_vars_configuration=None):  # noqa: E501
+        # type: (int, int, str, str, str, str, str, str, str, BrokerCommissionSubBrokerInfo, str, Configuration) -> None
         """BrokerCommission1 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class BrokerCommission1(object):
         self._source = None
         self._currency_pair = None
         self._sub_broker_info = None
+        self._alpha_contract_addr = None
         self.discriminator = None
 
         if commission_time is not None:
@@ -97,12 +100,14 @@ class BrokerCommission1(object):
             self.currency_pair = currency_pair
         if sub_broker_info is not None:
             self.sub_broker_info = sub_broker_info
+        if alpha_contract_addr is not None:
+            self.alpha_contract_addr = alpha_contract_addr
 
     @property
     def commission_time(self):
         """Gets the commission_time of this BrokerCommission1.  # noqa: E501
 
-        Commission Time. (unix timestamp)  # noqa: E501
+        Commission Time. (unix timestamp).  # noqa: E501
 
         :return: The commission_time of this BrokerCommission1.  # noqa: E501
         :rtype: int
@@ -113,7 +118,7 @@ class BrokerCommission1(object):
     def commission_time(self, commission_time):
         """Sets the commission_time of this BrokerCommission1.
 
-        Commission Time. (unix timestamp)  # noqa: E501
+        Commission Time. (unix timestamp).  # noqa: E501
 
         :param commission_time: The commission_time of this BrokerCommission1.  # noqa: E501
         :type: int
@@ -125,7 +130,7 @@ class BrokerCommission1(object):
     def user_id(self):
         """Gets the user_id of this BrokerCommission1.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user_id of this BrokerCommission1.  # noqa: E501
         :rtype: int
@@ -136,7 +141,7 @@ class BrokerCommission1(object):
     def user_id(self, user_id):
         """Sets the user_id of this BrokerCommission1.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user_id: The user_id of this BrokerCommission1.  # noqa: E501
         :type: int
@@ -148,7 +153,7 @@ class BrokerCommission1(object):
     def group_name(self):
         """Gets the group_name of this BrokerCommission1.  # noqa: E501
 
-        Group name  # noqa: E501
+        Group name.  # noqa: E501
 
         :return: The group_name of this BrokerCommission1.  # noqa: E501
         :rtype: str
@@ -159,7 +164,7 @@ class BrokerCommission1(object):
     def group_name(self, group_name):
         """Sets the group_name of this BrokerCommission1.
 
-        Group name  # noqa: E501
+        Group name.  # noqa: E501
 
         :param group_name: The group_name of this BrokerCommission1.  # noqa: E501
         :type: str
@@ -171,7 +176,7 @@ class BrokerCommission1(object):
     def amount(self):
         """Gets the amount of this BrokerCommission1.  # noqa: E501
 
-        The amount of commission rebates  # noqa: E501
+        The amount of commission rebates.  # noqa: E501
 
         :return: The amount of this BrokerCommission1.  # noqa: E501
         :rtype: str
@@ -182,7 +187,7 @@ class BrokerCommission1(object):
     def amount(self, amount):
         """Sets the amount of this BrokerCommission1.
 
-        The amount of commission rebates  # noqa: E501
+        The amount of commission rebates.  # noqa: E501
 
         :param amount: The amount of this BrokerCommission1.  # noqa: E501
         :type: str
@@ -194,7 +199,7 @@ class BrokerCommission1(object):
     def fee(self):
         """Gets the fee of this BrokerCommission1.  # noqa: E501
 
-        Fee  # noqa: E501
+        Fee.  # noqa: E501
 
         :return: The fee of this BrokerCommission1.  # noqa: E501
         :rtype: str
@@ -205,7 +210,7 @@ class BrokerCommission1(object):
     def fee(self, fee):
         """Sets the fee of this BrokerCommission1.
 
-        Fee  # noqa: E501
+        Fee.  # noqa: E501
 
         :param fee: The fee of this BrokerCommission1.  # noqa: E501
         :type: str
@@ -217,7 +222,7 @@ class BrokerCommission1(object):
     def fee_asset(self):
         """Gets the fee_asset of this BrokerCommission1.  # noqa: E501
 
-        Fee currency  # noqa: E501
+        Fee currency.  # noqa: E501
 
         :return: The fee_asset of this BrokerCommission1.  # noqa: E501
         :rtype: str
@@ -228,7 +233,7 @@ class BrokerCommission1(object):
     def fee_asset(self, fee_asset):
         """Sets the fee_asset of this BrokerCommission1.
 
-        Fee currency  # noqa: E501
+        Fee currency.  # noqa: E501
 
         :param fee_asset: The fee_asset of this BrokerCommission1.  # noqa: E501
         :type: str
@@ -240,7 +245,7 @@ class BrokerCommission1(object):
     def rebate_fee(self):
         """Gets the rebate_fee of this BrokerCommission1.  # noqa: E501
 
-        The income from rebates, converted to USDT  # noqa: E501
+        The income from rebates, converted to USDT.  # noqa: E501
 
         :return: The rebate_fee of this BrokerCommission1.  # noqa: E501
         :rtype: str
@@ -251,7 +256,7 @@ class BrokerCommission1(object):
     def rebate_fee(self, rebate_fee):
         """Sets the rebate_fee of this BrokerCommission1.
 
-        The income from rebates, converted to USDT  # noqa: E501
+        The income from rebates, converted to USDT.  # noqa: E501
 
         :param rebate_fee: The rebate_fee of this BrokerCommission1.  # noqa: E501
         :type: str
@@ -263,7 +268,7 @@ class BrokerCommission1(object):
     def source(self):
         """Gets the source of this BrokerCommission1.  # noqa: E501
 
-        Rebate Type: Spot、Futures、Options  # noqa: E501
+        Rebate Type: Spot、Futures、Options.、Alpha  # noqa: E501
 
         :return: The source of this BrokerCommission1.  # noqa: E501
         :rtype: str
@@ -274,7 +279,7 @@ class BrokerCommission1(object):
     def source(self, source):
         """Sets the source of this BrokerCommission1.
 
-        Rebate Type: Spot、Futures、Options  # noqa: E501
+        Rebate Type: Spot、Futures、Options.、Alpha  # noqa: E501
 
         :param source: The source of this BrokerCommission1.  # noqa: E501
         :type: str
@@ -286,7 +291,7 @@ class BrokerCommission1(object):
     def currency_pair(self):
         """Gets the currency_pair of this BrokerCommission1.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this BrokerCommission1.  # noqa: E501
         :rtype: str
@@ -297,7 +302,7 @@ class BrokerCommission1(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this BrokerCommission1.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this BrokerCommission1.  # noqa: E501
         :type: str
@@ -325,6 +330,29 @@ class BrokerCommission1(object):
         """
 
         self._sub_broker_info = sub_broker_info
+
+    @property
+    def alpha_contract_addr(self):
+        """Gets the alpha_contract_addr of this BrokerCommission1.  # noqa: E501
+
+        Alpha token address  # noqa: E501
+
+        :return: The alpha_contract_addr of this BrokerCommission1.  # noqa: E501
+        :rtype: str
+        """
+        return self._alpha_contract_addr
+
+    @alpha_contract_addr.setter
+    def alpha_contract_addr(self, alpha_contract_addr):
+        """Sets the alpha_contract_addr of this BrokerCommission1.
+
+        Alpha token address  # noqa: E501
+
+        :param alpha_contract_addr: The alpha_contract_addr of this BrokerCommission1.  # noqa: E501
+        :type: str
+        """
+
+        self._alpha_contract_addr = alpha_contract_addr
 
     def to_dict(self):
         """Returns the model properties as a dict"""

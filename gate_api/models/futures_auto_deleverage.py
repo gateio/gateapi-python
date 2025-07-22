@@ -102,7 +102,7 @@ class FuturesAutoDeleverage(object):
     def time(self):
         """Gets the time of this FuturesAutoDeleverage.  # noqa: E501
 
-        Automatic deleveraging time  # noqa: E501
+        Automatic deleveraging time.  # noqa: E501
 
         :return: The time of this FuturesAutoDeleverage.  # noqa: E501
         :rtype: int
@@ -113,7 +113,7 @@ class FuturesAutoDeleverage(object):
     def time(self, time):
         """Sets the time of this FuturesAutoDeleverage.
 
-        Automatic deleveraging time  # noqa: E501
+        Automatic deleveraging time.  # noqa: E501
 
         :param time: The time of this FuturesAutoDeleverage.  # noqa: E501
         :type: int
@@ -125,7 +125,7 @@ class FuturesAutoDeleverage(object):
     def user(self):
         """Gets the user of this FuturesAutoDeleverage.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user of this FuturesAutoDeleverage.  # noqa: E501
         :rtype: int
@@ -136,7 +136,7 @@ class FuturesAutoDeleverage(object):
     def user(self, user):
         """Sets the user of this FuturesAutoDeleverage.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user: The user of this FuturesAutoDeleverage.  # noqa: E501
         :type: int
@@ -148,7 +148,7 @@ class FuturesAutoDeleverage(object):
     def order_id(self):
         """Gets the order_id of this FuturesAutoDeleverage.  # noqa: E501
 
-        Order ID. Order IDs before 2023-02-20 are null  # noqa: E501
+        Order ID. Order IDs before 2023-02-20 are null.  # noqa: E501
 
         :return: The order_id of this FuturesAutoDeleverage.  # noqa: E501
         :rtype: int
@@ -159,7 +159,7 @@ class FuturesAutoDeleverage(object):
     def order_id(self, order_id):
         """Sets the order_id of this FuturesAutoDeleverage.
 
-        Order ID. Order IDs before 2023-02-20 are null  # noqa: E501
+        Order ID. Order IDs before 2023-02-20 are null.  # noqa: E501
 
         :param order_id: The order_id of this FuturesAutoDeleverage.  # noqa: E501
         :type: int
@@ -171,7 +171,7 @@ class FuturesAutoDeleverage(object):
     def contract(self):
         """Gets the contract of this FuturesAutoDeleverage.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :return: The contract of this FuturesAutoDeleverage.  # noqa: E501
         :rtype: str
@@ -182,7 +182,7 @@ class FuturesAutoDeleverage(object):
     def contract(self, contract):
         """Sets the contract of this FuturesAutoDeleverage.
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :param contract: The contract of this FuturesAutoDeleverage.  # noqa: E501
         :type: str
@@ -194,7 +194,7 @@ class FuturesAutoDeleverage(object):
     def leverage(self):
         """Gets the leverage of this FuturesAutoDeleverage.  # noqa: E501
 
-        Position leverage  # noqa: E501
+        Position leverage.  # noqa: E501
 
         :return: The leverage of this FuturesAutoDeleverage.  # noqa: E501
         :rtype: str
@@ -205,7 +205,7 @@ class FuturesAutoDeleverage(object):
     def leverage(self, leverage):
         """Sets the leverage of this FuturesAutoDeleverage.
 
-        Position leverage  # noqa: E501
+        Position leverage.  # noqa: E501
 
         :param leverage: The leverage of this FuturesAutoDeleverage.  # noqa: E501
         :type: str
@@ -217,7 +217,7 @@ class FuturesAutoDeleverage(object):
     def cross_leverage_limit(self):
         """Gets the cross_leverage_limit of this FuturesAutoDeleverage.  # noqa: E501
 
-        Cross margin leverage(valid only when `leverage` is 0)  # noqa: E501
+        Cross margin leverage(valid only when `leverage` is 0).  # noqa: E501
 
         :return: The cross_leverage_limit of this FuturesAutoDeleverage.  # noqa: E501
         :rtype: str
@@ -228,7 +228,7 @@ class FuturesAutoDeleverage(object):
     def cross_leverage_limit(self, cross_leverage_limit):
         """Sets the cross_leverage_limit of this FuturesAutoDeleverage.
 
-        Cross margin leverage(valid only when `leverage` is 0)  # noqa: E501
+        Cross margin leverage(valid only when `leverage` is 0).  # noqa: E501
 
         :param cross_leverage_limit: The cross_leverage_limit of this FuturesAutoDeleverage.  # noqa: E501
         :type: str
@@ -240,7 +240,7 @@ class FuturesAutoDeleverage(object):
     def entry_price(self):
         """Gets the entry_price of this FuturesAutoDeleverage.  # noqa: E501
 
-        Average entry price  # noqa: E501
+        Average entry price.  # noqa: E501
 
         :return: The entry_price of this FuturesAutoDeleverage.  # noqa: E501
         :rtype: str
@@ -251,7 +251,7 @@ class FuturesAutoDeleverage(object):
     def entry_price(self, entry_price):
         """Sets the entry_price of this FuturesAutoDeleverage.
 
-        Average entry price  # noqa: E501
+        Average entry price.  # noqa: E501
 
         :param entry_price: The entry_price of this FuturesAutoDeleverage.  # noqa: E501
         :type: str
@@ -263,7 +263,7 @@ class FuturesAutoDeleverage(object):
     def fill_price(self):
         """Gets the fill_price of this FuturesAutoDeleverage.  # noqa: E501
 
-        Average fill price  # noqa: E501
+        Average fill price.  # noqa: E501
 
         :return: The fill_price of this FuturesAutoDeleverage.  # noqa: E501
         :rtype: str
@@ -274,7 +274,7 @@ class FuturesAutoDeleverage(object):
     def fill_price(self, fill_price):
         """Sets the fill_price of this FuturesAutoDeleverage.
 
-        Average fill price  # noqa: E501
+        Average fill price.  # noqa: E501
 
         :param fill_price: The fill_price of this FuturesAutoDeleverage.  # noqa: E501
         :type: str
@@ -286,7 +286,7 @@ class FuturesAutoDeleverage(object):
     def trade_size(self):
         """Gets the trade_size of this FuturesAutoDeleverage.  # noqa: E501
 
-        Trading size  # noqa: E501
+        Trading size.  # noqa: E501
 
         :return: The trade_size of this FuturesAutoDeleverage.  # noqa: E501
         :rtype: int
@@ -297,7 +297,7 @@ class FuturesAutoDeleverage(object):
     def trade_size(self, trade_size):
         """Sets the trade_size of this FuturesAutoDeleverage.
 
-        Trading size  # noqa: E501
+        Trading size.  # noqa: E501
 
         :param trade_size: The trade_size of this FuturesAutoDeleverage.  # noqa: E501
         :type: int
@@ -309,7 +309,7 @@ class FuturesAutoDeleverage(object):
     def position_size(self):
         """Gets the position_size of this FuturesAutoDeleverage.  # noqa: E501
 
-        Positions after auto-deleveraging  # noqa: E501
+        Positions after auto-deleveraging.  # noqa: E501
 
         :return: The position_size of this FuturesAutoDeleverage.  # noqa: E501
         :rtype: int
@@ -320,7 +320,7 @@ class FuturesAutoDeleverage(object):
     def position_size(self, position_size):
         """Sets the position_size of this FuturesAutoDeleverage.
 
-        Positions after auto-deleveraging  # noqa: E501
+        Positions after auto-deleveraging.  # noqa: E501
 
         :param position_size: The position_size of this FuturesAutoDeleverage.  # noqa: E501
         :type: int

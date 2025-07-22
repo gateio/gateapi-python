@@ -62,7 +62,7 @@ class StructuredBuy(object):
     def pid(self):
         """Gets the pid of this StructuredBuy.  # noqa: E501
 
-        Plan ID  # noqa: E501
+        Plan ID.  # noqa: E501
 
         :return: The pid of this StructuredBuy.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class StructuredBuy(object):
     def pid(self, pid):
         """Sets the pid of this StructuredBuy.
 
-        Plan ID  # noqa: E501
+        Plan ID.  # noqa: E501
 
         :param pid: The pid of this StructuredBuy.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class StructuredBuy(object):
     def amount(self):
         """Gets the amount of this StructuredBuy.  # noqa: E501
 
-        Purchase Amount  # noqa: E501
+        Purchase Amount.  # noqa: E501
 
         :return: The amount of this StructuredBuy.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class StructuredBuy(object):
     def amount(self, amount):
         """Sets the amount of this StructuredBuy.
 
-        Purchase Amount  # noqa: E501
+        Purchase Amount.  # noqa: E501
 
         :param amount: The amount of this StructuredBuy.  # noqa: E501
         :type: str

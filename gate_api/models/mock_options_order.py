@@ -89,7 +89,7 @@ class MockOptionsOrder(object):
     def size(self):
         """Gets the size of this MockOptionsOrder.  # noqa: E501
 
-        Initial order quantity, not involved in actual calculation  # noqa: E501
+        Initial order quantity, not involved in actual calculation.  # noqa: E501
 
         :return: The size of this MockOptionsOrder.  # noqa: E501
         :rtype: str
@@ -100,7 +100,7 @@ class MockOptionsOrder(object):
     def size(self, size):
         """Sets the size of this MockOptionsOrder.
 
-        Initial order quantity, not involved in actual calculation  # noqa: E501
+        Initial order quantity, not involved in actual calculation.  # noqa: E501
 
         :param size: The size of this MockOptionsOrder.  # noqa: E501
         :type: str
@@ -114,7 +114,7 @@ class MockOptionsOrder(object):
     def left(self):
         """Gets the left of this MockOptionsOrder.  # noqa: E501
 
-        Unfilled contract quantity, involved in actual calculation  # noqa: E501
+        Unfilled contract quantity, involved in actual calculation.  # noqa: E501
 
         :return: The left of this MockOptionsOrder.  # noqa: E501
         :rtype: str
@@ -125,7 +125,7 @@ class MockOptionsOrder(object):
     def left(self, left):
         """Sets the left of this MockOptionsOrder.
 
-        Unfilled contract quantity, involved in actual calculation  # noqa: E501
+        Unfilled contract quantity, involved in actual calculation.  # noqa: E501
 
         :param left: The left of this MockOptionsOrder.  # noqa: E501
         :type: str

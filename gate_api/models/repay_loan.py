@@ -64,7 +64,7 @@ class RepayLoan(object):
     def order_id(self):
         """Gets the order_id of this RepayLoan.  # noqa: E501
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :return: The order_id of this RepayLoan.  # noqa: E501
         :rtype: int
@@ -75,7 +75,7 @@ class RepayLoan(object):
     def order_id(self, order_id):
         """Sets the order_id of this RepayLoan.
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :param order_id: The order_id of this RepayLoan.  # noqa: E501
         :type: int
@@ -89,7 +89,7 @@ class RepayLoan(object):
     def repay_amount(self):
         """Gets the repay_amount of this RepayLoan.  # noqa: E501
 
-        Repayment amount, it is mandatory when making partial repayments  # noqa: E501
+        Repayment amount, it is mandatory when making partial repayments.  # noqa: E501
 
         :return: The repay_amount of this RepayLoan.  # noqa: E501
         :rtype: str
@@ -100,7 +100,7 @@ class RepayLoan(object):
     def repay_amount(self, repay_amount):
         """Sets the repay_amount of this RepayLoan.
 
-        Repayment amount, it is mandatory when making partial repayments  # noqa: E501
+        Repayment amount, it is mandatory when making partial repayments.  # noqa: E501
 
         :param repay_amount: The repay_amount of this RepayLoan.  # noqa: E501
         :type: str
@@ -114,7 +114,7 @@ class RepayLoan(object):
     def repaid_all(self):
         """Gets the repaid_all of this RepayLoan.  # noqa: E501
 
-        Repayment method, set to `true` for full repayment, and `false` for partial repayment; When set to false for partial repayment, the repay_amount parameter cannot be greater than the remaining amount to be repaid by the user.   # noqa: E501
+        Repayment method, set to `true` for full repayment, and `false` for partial repayment; When partial repayment, the repay_amount parameter cannot be greater than the remaining amount to be repaid by the user.   # noqa: E501
 
         :return: The repaid_all of this RepayLoan.  # noqa: E501
         :rtype: bool
@@ -125,7 +125,7 @@ class RepayLoan(object):
     def repaid_all(self, repaid_all):
         """Sets the repaid_all of this RepayLoan.
 
-        Repayment method, set to `true` for full repayment, and `false` for partial repayment; When set to false for partial repayment, the repay_amount parameter cannot be greater than the remaining amount to be repaid by the user.   # noqa: E501
+        Repayment method, set to `true` for full repayment, and `false` for partial repayment; When partial repayment, the repay_amount parameter cannot be greater than the remaining amount to be repaid by the user.   # noqa: E501
 
         :param repaid_all: The repaid_all of this RepayLoan.  # noqa: E501
         :type: bool

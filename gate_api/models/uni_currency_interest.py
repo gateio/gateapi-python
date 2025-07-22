@@ -62,7 +62,7 @@ class UniCurrencyInterest(object):
     def currency(self):
         """Gets the currency of this UniCurrencyInterest.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this UniCurrencyInterest.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class UniCurrencyInterest(object):
     def currency(self, currency):
         """Sets the currency of this UniCurrencyInterest.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this UniCurrencyInterest.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class UniCurrencyInterest(object):
     def interest_status(self):
         """Gets the interest_status of this UniCurrencyInterest.  # noqa: E501
 
-        Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment Interest reinvestment  # noqa: E501
+        Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment  # noqa: E501
 
         :return: The interest_status of this UniCurrencyInterest.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class UniCurrencyInterest(object):
     def interest_status(self, interest_status):
         """Sets the interest_status of this UniCurrencyInterest.
 
-        Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment Interest reinvestment  # noqa: E501
+        Interest status: interest_dividend - Normal dividend, interest_reinvest - Interest reinvestment  # noqa: E501
 
         :param interest_status: The interest_status of this UniCurrencyInterest.  # noqa: E501
         :type: str

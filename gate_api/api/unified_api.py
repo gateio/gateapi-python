@@ -37,7 +37,7 @@ class UnifiedApi(object):
         self.api_client = api_client
 
     def list_unified_accounts(self, **kwargs):  # noqa: E501
-        """Get unified account information  # noqa: E501
+        """Get unified account information.  # noqa: E501
 
         The assets of each currency in the account will be adjusted according to their liquidity, defined by corresponding adjustment coefficients, and then uniformly converted to USD to calculate the total asset value and position value of the account.  You can refer to the [Formula](#portfolio-account) in the documentation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -46,8 +46,8 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
-        :param str sub_uid: Sub account user ID
+        :param str currency: Retrieve data of the specified currency.
+        :param str sub_uid: Sub account user ID.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -63,7 +63,7 @@ class UnifiedApi(object):
         return self.list_unified_accounts_with_http_info(**kwargs)  # noqa: E501
 
     def list_unified_accounts_with_http_info(self, **kwargs):  # noqa: E501
-        """Get unified account information  # noqa: E501
+        """Get unified account information.  # noqa: E501
 
         The assets of each currency in the account will be adjusted according to their liquidity, defined by corresponding adjustment coefficients, and then uniformly converted to USD to calculate the total asset value and position value of the account.  You can refer to the [Formula](#portfolio-account) in the documentation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -72,8 +72,8 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
-        :param str sub_uid: Sub account user ID
+        :param str currency: Retrieve data of the specified currency.
+        :param str sub_uid: Sub account user ID.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -152,7 +152,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def get_unified_borrowable(self, currency, **kwargs):  # noqa: E501
-        """Query about the maximum borrowing for the unified account  # noqa: E501
+        """Query about the maximum borrowing for the unified account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -160,7 +160,7 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency (required)
+        :param str currency: Retrieve data of the specified currency. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -176,7 +176,7 @@ class UnifiedApi(object):
         return self.get_unified_borrowable_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_unified_borrowable_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """Query about the maximum borrowing for the unified account  # noqa: E501
+        """Query about the maximum borrowing for the unified account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -184,7 +184,7 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency (required)
+        :param str currency: Retrieve data of the specified currency. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -264,7 +264,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def get_unified_transferable(self, currency, **kwargs):  # noqa: E501
-        """Query about the maximum transferable for the unified account  # noqa: E501
+        """Query about the maximum transferable for the unified account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -272,7 +272,7 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency (required)
+        :param str currency: Retrieve data of the specified currency. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -288,7 +288,7 @@ class UnifiedApi(object):
         return self.get_unified_transferable_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_unified_transferable_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """Query about the maximum transferable for the unified account  # noqa: E501
+        """Query about the maximum transferable for the unified account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -296,7 +296,7 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency (required)
+        :param str currency: Retrieve data of the specified currency. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -488,7 +488,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def get_unified_borrowable_list(self, currencies, **kwargs):  # noqa: E501
-        """Batch query unified account can be borrowed up to a maximum  # noqa: E501
+        """Batch query unified account can be borrowed up to a maximum.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -512,7 +512,7 @@ class UnifiedApi(object):
         return self.get_unified_borrowable_list_with_http_info(currencies, **kwargs)  # noqa: E501
 
     def get_unified_borrowable_list_with_http_info(self, currencies, **kwargs):  # noqa: E501
-        """Batch query unified account can be borrowed up to a maximum  # noqa: E501
+        """Batch query unified account can be borrowed up to a maximum.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -607,7 +607,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def list_unified_loans(self, **kwargs):  # noqa: E501
-        """List loans  # noqa: E501
+        """List loans.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -615,10 +615,10 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
-        :param str type: Loan type, platform - platform, margin - margin
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
+        :param str type: Loan type, platform - platform, margin - margin.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -634,7 +634,7 @@ class UnifiedApi(object):
         return self.list_unified_loans_with_http_info(**kwargs)  # noqa: E501
 
     def list_unified_loans_with_http_info(self, **kwargs):  # noqa: E501
-        """List loans  # noqa: E501
+        """List loans.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -642,10 +642,10 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
-        :param str type: Loan type, platform - platform, margin - margin
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
+        :param str type: Loan type, platform - platform, margin - margin.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -736,9 +736,9 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def create_unified_loan(self, unified_loan, **kwargs):  # noqa: E501
-        """Borrow or repay  # noqa: E501
+        """Borrow or repay.  # noqa: E501
 
-        When borrowing, it is essential to ensure that the borrowed amount is not below the minimum borrowing threshold for the specific cryptocurrency and does not exceed the maximum borrowing limit set by the platform and the user.  The interest on the loan will be automatically deducted from the account at regular intervals. It is the user's responsibility to manage the repayment of the borrowed amount.  For repayment, the option to repay the entire borrowed amount is available by setting the parameter `repaid_all=true`  # noqa: E501
+        When borrowing, it is essential to ensure that the borrowed amount is not below the minimum borrowing threshold for the specific cryptocurrency and does not exceed the maximum borrowing limit set by the platform and the user.  The interest on the loan will be automatically deducted from the account at regular intervals. It is the user's responsibility to manage the repayment of the borrowed amount.  For repayment, the option to repay the available by setting the parameter `repaid_all=true`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_unified_loan(unified_loan, async_req=True)
@@ -761,9 +761,9 @@ class UnifiedApi(object):
         return self.create_unified_loan_with_http_info(unified_loan, **kwargs)  # noqa: E501
 
     def create_unified_loan_with_http_info(self, unified_loan, **kwargs):  # noqa: E501
-        """Borrow or repay  # noqa: E501
+        """Borrow or repay.  # noqa: E501
 
-        When borrowing, it is essential to ensure that the borrowed amount is not below the minimum borrowing threshold for the specific cryptocurrency and does not exceed the maximum borrowing limit set by the platform and the user.  The interest on the loan will be automatically deducted from the account at regular intervals. It is the user's responsibility to manage the repayment of the borrowed amount.  For repayment, the option to repay the entire borrowed amount is available by setting the parameter `repaid_all=true`  # noqa: E501
+        When borrowing, it is essential to ensure that the borrowed amount is not below the minimum borrowing threshold for the specific cryptocurrency and does not exceed the maximum borrowing limit set by the platform and the user.  The interest on the loan will be automatically deducted from the account at regular intervals. It is the user's responsibility to manage the repayment of the borrowed amount.  For repayment, the option to repay the available by setting the parameter `repaid_all=true`  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_unified_loan_with_http_info(unified_loan, async_req=True)
@@ -854,7 +854,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def list_unified_loan_records(self, **kwargs):  # noqa: E501
-        """Get load records  # noqa: E501
+        """Get load records.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -862,10 +862,10 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str type: The types of lending records, borrow - indicates the action of borrowing funds, repay - indicates the action of repaying the borrowed funds
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str type: The types of lending records, borrow - indicates the action of borrowing funds, repaying the borrowed funds
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -881,7 +881,7 @@ class UnifiedApi(object):
         return self.list_unified_loan_records_with_http_info(**kwargs)  # noqa: E501
 
     def list_unified_loan_records_with_http_info(self, **kwargs):  # noqa: E501
-        """Get load records  # noqa: E501
+        """Get load records.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -889,10 +889,10 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str type: The types of lending records, borrow - indicates the action of borrowing funds, repay - indicates the action of repaying the borrowed funds
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str type: The types of lending records, borrow - indicates the action of borrowing funds, repaying the borrowed funds
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -983,7 +983,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def list_unified_loan_interest_records(self, **kwargs):  # noqa: E501
-        """List interest records  # noqa: E501
+        """List interest records.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -991,11 +991,11 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
-        :param int _from: Start timestamp of the query
-        :param int to: Time range ending, default to current time
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
+        :param int _from: Start timestamp of the query.
+        :param int to: Time range ending, default to current time.
         :param str type: Loan type, platform loan - platform, leverage loan - margin, if not passed, defaults to margin
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -1012,7 +1012,7 @@ class UnifiedApi(object):
         return self.list_unified_loan_interest_records_with_http_info(**kwargs)  # noqa: E501
 
     def list_unified_loan_interest_records_with_http_info(self, **kwargs):  # noqa: E501
-        """List interest records  # noqa: E501
+        """List interest records.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1020,11 +1020,11 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
-        :param int _from: Start timestamp of the query
-        :param int to: Time range ending, default to current time
+        :param str currency: Retrieve data of the specified currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
+        :param int _from: Start timestamp of the query.
+        :param int to: Time range ending, default to current time.
         :param str type: Loan type, platform loan - platform, leverage loan - margin, if not passed, defaults to margin
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -1122,9 +1122,9 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def get_unified_risk_units(self, **kwargs):  # noqa: E501
-        """Get user risk unit details  # noqa: E501
+        """Get user risk unit details.  # noqa: E501
 
-        Retrieve user risk unit details, only valid in portfolio margin mode  # noqa: E501
+        Retrieve user risk unit details, only valid in portfolio margin mode.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_unified_risk_units(async_req=True)
@@ -1146,9 +1146,9 @@ class UnifiedApi(object):
         return self.get_unified_risk_units_with_http_info(**kwargs)  # noqa: E501
 
     def get_unified_risk_units_with_http_info(self, **kwargs):  # noqa: E501
-        """Get user risk unit details  # noqa: E501
+        """Get user risk unit details.  # noqa: E501
 
-        Retrieve user risk unit details, only valid in portfolio margin mode  # noqa: E501
+        Retrieve user risk unit details, only valid in portfolio margin mode.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_unified_risk_units_with_http_info(async_req=True)
@@ -1227,7 +1227,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def get_unified_mode(self, **kwargs):  # noqa: E501
-        """Query mode of the unified account  # noqa: E501
+        """Query mode of the unified account.  # noqa: E501
 
         Unified account mode: - `classic`: Classic account mode - `multi_currency`: Cross-currency margin mode - `portfolio`: Portfolio margin mode - `single_currency`: Single-currency margin mode  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1251,7 +1251,7 @@ class UnifiedApi(object):
         return self.get_unified_mode_with_http_info(**kwargs)  # noqa: E501
 
     def get_unified_mode_with_http_info(self, **kwargs):  # noqa: E501
-        """Query mode of the unified account  # noqa: E501
+        """Query mode of the unified account.  # noqa: E501
 
         Unified account mode: - `classic`: Classic account mode - `multi_currency`: Cross-currency margin mode - `portfolio`: Portfolio margin mode - `single_currency`: Single-currency margin mode  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1332,9 +1332,9 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def set_unified_mode(self, unified_mode_set, **kwargs):  # noqa: E501
-        """Set mode of the unified account  # noqa: E501
+        """Set mode of the unified account.  # noqa: E501
 
-        Each account mode switch only requires passing the corresponding account mode parameter, and also supports turning on or off the configuration switches under the corresponding account mode during the switch. - When enabling the classic account mode, mode=classic ```     PUT /unified/unified_mode     {       \"mode\": \"classic\"     } ``` - When enabling the cross-currency margin mode, mode=multi_currency ```     PUT /unified/unified_mode     {       \"mode\": \"multi_currency\",       \"settings\": {          \"usdt_futures\": true       }     } ``` - When enabling the portfolio margin mode, mode=portfolio ```     PUT /unified/unified_mode     {       \"mode\": \"portfolio\",       \"settings\": {          \"spot_hedge\": true       }     } ``` - When enabling the single-currency margin mode, mode=single_currency ```     PUT /unified/unified_mode     {       \"mode\": \"single_currency\"     } ```  # noqa: E501
+        Each account mode switch only requires passing the corresponding account mode parameter, and also supports turning on or off the configuration switches under the corresponding account mode during the switch. - When enabling the classic account mode, mode=classic ```  PUT /unified/unified_mode  {  \"mode\": \"classic\"  } ``` - When enabling the cross-currency margin \"multi_currency\",  \"settings\": {  \"usdt_futures\": true  }  } ``` - When enabling the portfolio margin mode, mode=portfolio ```  PUT /unified/unified_mode  {  \"mode\": \"portfolio\",  \"settings\": {  \"spot_hedge\": true  }  } ``` - When enabling the single-currency margin mode, mode=single_currency ```  PUT /unified/unified_mode  {  \"mode\": \"single_currency\"  } ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.set_unified_mode(unified_mode_set, async_req=True)
@@ -1357,9 +1357,9 @@ class UnifiedApi(object):
         return self.set_unified_mode_with_http_info(unified_mode_set, **kwargs)  # noqa: E501
 
     def set_unified_mode_with_http_info(self, unified_mode_set, **kwargs):  # noqa: E501
-        """Set mode of the unified account  # noqa: E501
+        """Set mode of the unified account.  # noqa: E501
 
-        Each account mode switch only requires passing the corresponding account mode parameter, and also supports turning on or off the configuration switches under the corresponding account mode during the switch. - When enabling the classic account mode, mode=classic ```     PUT /unified/unified_mode     {       \"mode\": \"classic\"     } ``` - When enabling the cross-currency margin mode, mode=multi_currency ```     PUT /unified/unified_mode     {       \"mode\": \"multi_currency\",       \"settings\": {          \"usdt_futures\": true       }     } ``` - When enabling the portfolio margin mode, mode=portfolio ```     PUT /unified/unified_mode     {       \"mode\": \"portfolio\",       \"settings\": {          \"spot_hedge\": true       }     } ``` - When enabling the single-currency margin mode, mode=single_currency ```     PUT /unified/unified_mode     {       \"mode\": \"single_currency\"     } ```  # noqa: E501
+        Each account mode switch only requires passing the corresponding account mode parameter, and also supports turning on or off the configuration switches under the corresponding account mode during the switch. - When enabling the classic account mode, mode=classic ```  PUT /unified/unified_mode  {  \"mode\": \"classic\"  } ``` - When enabling the cross-currency margin \"multi_currency\",  \"settings\": {  \"usdt_futures\": true  }  } ``` - When enabling the portfolio margin mode, mode=portfolio ```  PUT /unified/unified_mode  {  \"mode\": \"portfolio\",  \"settings\": {  \"spot_hedge\": true  }  } ``` - When enabling the single-currency margin mode, mode=single_currency ```  PUT /unified/unified_mode  {  \"mode\": \"single_currency\"  } ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.set_unified_mode_with_http_info(unified_mode_set, async_req=True)
@@ -1446,7 +1446,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def get_unified_estimate_rate(self, currencies, **kwargs):  # noqa: E501
-        """Get unified estimate rate  # noqa: E501
+        """Get unified estimate rate.  # noqa: E501
 
         Due to fluctuations in lending depth, hourly interest rates may vary, and thus, I cannot provide exact rates. When a currency is not supported, the interest rate returned will be an empty string.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1471,7 +1471,7 @@ class UnifiedApi(object):
         return self.get_unified_estimate_rate_with_http_info(currencies, **kwargs)  # noqa: E501
 
     def get_unified_estimate_rate_with_http_info(self, currencies, **kwargs):  # noqa: E501
-        """Get unified estimate rate  # noqa: E501
+        """Get unified estimate rate.  # noqa: E501
 
         Due to fluctuations in lending depth, hourly interest rates may vary, and thus, I cannot provide exact rates. When a currency is not supported, the interest rate returned will be an empty string.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1567,7 +1567,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def list_currency_discount_tiers(self, **kwargs):  # noqa: E501
-        """List currency discount tiers  # noqa: E501
+        """List currency discount tiers.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1590,7 +1590,7 @@ class UnifiedApi(object):
         return self.list_currency_discount_tiers_with_http_info(**kwargs)  # noqa: E501
 
     def list_currency_discount_tiers_with_http_info(self, **kwargs):  # noqa: E501
-        """List currency discount tiers  # noqa: E501
+        """List currency discount tiers.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1670,7 +1670,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def list_loan_margin_tiers(self, **kwargs):  # noqa: E501
-        """List loan margin tiers  # noqa: E501
+        """List loan margin tiers.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1693,7 +1693,7 @@ class UnifiedApi(object):
         return self.list_loan_margin_tiers_with_http_info(**kwargs)  # noqa: E501
 
     def list_loan_margin_tiers_with_http_info(self, **kwargs):  # noqa: E501
-        """List loan margin tiers  # noqa: E501
+        """List loan margin tiers.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1773,9 +1773,9 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def calculate_portfolio_margin(self, unified_portfolio_input, **kwargs):  # noqa: E501
-        """Portfolio margin calculator  # noqa: E501
+        """Portfolio margin calculator.  # noqa: E501
 
-        Portfolio Margin Calculator When inputting a simulated position portfolio, each position includes the position name and quantity held, supporting markets within the range of BTC and ETH perpetual contracts, options, and spot markets. When inputting simulated orders, each order includes the market identifier, order price, and order quantity,  supporting markets within the range of BTC and ETH perpetual contracts, options, and spot markets. Market orders are not included.  # noqa: E501
+        Portfolio Margin Calculator When inputting a simulated position portfolio, each position includes the position name and quantity held, supporting markets within the range of BTC and ETH perpetual contracts, options, and spot markets. When inputting simulated orders, each order includes the market identifier, order price, and order of BTC and ETH perpetual contracts, options, and spot markets. Market orders are not included.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.calculate_portfolio_margin(unified_portfolio_input, async_req=True)
@@ -1798,9 +1798,9 @@ class UnifiedApi(object):
         return self.calculate_portfolio_margin_with_http_info(unified_portfolio_input, **kwargs)  # noqa: E501
 
     def calculate_portfolio_margin_with_http_info(self, unified_portfolio_input, **kwargs):  # noqa: E501
-        """Portfolio margin calculator  # noqa: E501
+        """Portfolio margin calculator.  # noqa: E501
 
-        Portfolio Margin Calculator When inputting a simulated position portfolio, each position includes the position name and quantity held, supporting markets within the range of BTC and ETH perpetual contracts, options, and spot markets. When inputting simulated orders, each order includes the market identifier, order price, and order quantity,  supporting markets within the range of BTC and ETH perpetual contracts, options, and spot markets. Market orders are not included.  # noqa: E501
+        Portfolio Margin Calculator When inputting a simulated position portfolio, each position includes the position name and quantity held, supporting markets within the range of BTC and ETH perpetual contracts, options, and spot markets. When inputting simulated orders, each order includes the market identifier, order price, and order of BTC and ETH perpetual contracts, options, and spot markets. Market orders are not included.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.calculate_portfolio_margin_with_http_info(unified_portfolio_input, async_req=True)
@@ -1891,7 +1891,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def get_user_leverage_currency_config(self, currency, **kwargs):  # noqa: E501
-        """Minimum currency leverage that can be set  # noqa: E501
+        """Minimum currency leverage that can be set.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1899,7 +1899,7 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency (required)
+        :param str currency: Currency. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1915,7 +1915,7 @@ class UnifiedApi(object):
         return self.get_user_leverage_currency_config_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_user_leverage_currency_config_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """Minimum currency leverage that can be set  # noqa: E501
+        """Minimum currency leverage that can be set.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1923,7 +1923,7 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency (required)
+        :param str currency: Currency. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2003,7 +2003,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def get_user_leverage_currency_setting(self, **kwargs):  # noqa: E501
-        """Get the leverage multiple of the user currency  # noqa: E501
+        """Get the leverage multiple of the user currency.  # noqa: E501
 
         Get the user's currency leverage. If currency is not passed, query all currencies.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2012,7 +2012,7 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency
+        :param str currency: Currency.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2028,7 +2028,7 @@ class UnifiedApi(object):
         return self.get_user_leverage_currency_setting_with_http_info(**kwargs)  # noqa: E501
 
     def get_user_leverage_currency_setting_with_http_info(self, **kwargs):  # noqa: E501
-        """Get the leverage multiple of the user currency  # noqa: E501
+        """Get the leverage multiple of the user currency.  # noqa: E501
 
         Get the user's currency leverage. If currency is not passed, query all currencies.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2037,7 +2037,7 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency
+        :param str currency: Currency.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2113,7 +2113,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def set_user_leverage_currency_setting(self, unified_leverage_setting, **kwargs):  # noqa: E501
-        """Set the loan currency leverage  # noqa: E501
+        """Set the loan currency leverage.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2137,7 +2137,7 @@ class UnifiedApi(object):
         return self.set_user_leverage_currency_setting_with_http_info(unified_leverage_setting, **kwargs)  # noqa: E501
 
     def set_user_leverage_currency_setting_with_http_info(self, unified_leverage_setting, **kwargs):  # noqa: E501
-        """Set the loan currency leverage  # noqa: E501
+        """Set the loan currency leverage.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2225,7 +2225,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def list_unified_currencies(self, **kwargs):  # noqa: E501
-        """List of loan currencies supported by unified account  # noqa: E501
+        """List of loan currencies supported by unified account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2233,7 +2233,7 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency
+        :param str currency: Currency.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2249,7 +2249,7 @@ class UnifiedApi(object):
         return self.list_unified_currencies_with_http_info(**kwargs)  # noqa: E501
 
     def list_unified_currencies_with_http_info(self, **kwargs):  # noqa: E501
-        """List of loan currencies supported by unified account  # noqa: E501
+        """List of loan currencies supported by unified account.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2257,7 +2257,7 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency
+        :param str currency: Currency.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2333,7 +2333,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def get_history_loan_rate(self, currency, **kwargs):  # noqa: E501
-        """get historical lending rates  # noqa: E501
+        """get historical lending rates.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2341,10 +2341,10 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency (required)
-        :param str tier: The VIP level of the floating rate that needs to be queried
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str currency: Currency. (required)
+        :param str tier: The VIP level of the floating rate that needs to be queried.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2360,7 +2360,7 @@ class UnifiedApi(object):
         return self.get_history_loan_rate_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_history_loan_rate_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """get historical lending rates  # noqa: E501
+        """get historical lending rates.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2368,10 +2368,10 @@ class UnifiedApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency (required)
-        :param str tier: The VIP level of the floating rate that needs to be queried
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str currency: Currency. (required)
+        :param str tier: The VIP level of the floating rate that needs to be queried.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2466,7 +2466,7 @@ class UnifiedApi(object):
             collection_formats=collection_formats)
 
     def set_unified_collateral(self, unified_collateral_req, **kwargs):  # noqa: E501
-        """Set Collateral Currency  # noqa: E501
+        """Set Collateral Currency.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2490,7 +2490,7 @@ class UnifiedApi(object):
         return self.set_unified_collateral_with_http_info(unified_collateral_req, **kwargs)  # noqa: E501
 
     def set_unified_collateral_with_http_info(self, unified_collateral_req, **kwargs):  # noqa: E501
-        """Set Collateral Currency  # noqa: E501
+        """Set Collateral Currency.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

@@ -100,7 +100,7 @@ class CrossMarginLoan(object):
     def id(self):
         """Gets the id of this CrossMarginLoan.  # noqa: E501
 
-        Loan record ID  # noqa: E501
+        Loan record ID.  # noqa: E501
 
         :return: The id of this CrossMarginLoan.  # noqa: E501
         :rtype: str
@@ -111,7 +111,7 @@ class CrossMarginLoan(object):
     def id(self, id):
         """Sets the id of this CrossMarginLoan.
 
-        Loan record ID  # noqa: E501
+        Loan record ID.  # noqa: E501
 
         :param id: The id of this CrossMarginLoan.  # noqa: E501
         :type: str
@@ -123,7 +123,7 @@ class CrossMarginLoan(object):
     def create_time(self):
         """Gets the create_time of this CrossMarginLoan.  # noqa: E501
 
-        Creation timestamp, in milliseconds  # noqa: E501
+        Creation timestamp, in milliseconds.  # noqa: E501
 
         :return: The create_time of this CrossMarginLoan.  # noqa: E501
         :rtype: int
@@ -134,7 +134,7 @@ class CrossMarginLoan(object):
     def create_time(self, create_time):
         """Sets the create_time of this CrossMarginLoan.
 
-        Creation timestamp, in milliseconds  # noqa: E501
+        Creation timestamp, in milliseconds.  # noqa: E501
 
         :param create_time: The create_time of this CrossMarginLoan.  # noqa: E501
         :type: int
@@ -146,7 +146,7 @@ class CrossMarginLoan(object):
     def update_time(self):
         """Gets the update_time of this CrossMarginLoan.  # noqa: E501
 
-        Update timestamp, in milliseconds  # noqa: E501
+        Update timestamp, in milliseconds.  # noqa: E501
 
         :return: The update_time of this CrossMarginLoan.  # noqa: E501
         :rtype: int
@@ -157,7 +157,7 @@ class CrossMarginLoan(object):
     def update_time(self, update_time):
         """Sets the update_time of this CrossMarginLoan.
 
-        Update timestamp, in milliseconds  # noqa: E501
+        Update timestamp, in milliseconds.  # noqa: E501
 
         :param update_time: The update_time of this CrossMarginLoan.  # noqa: E501
         :type: int
@@ -169,7 +169,7 @@ class CrossMarginLoan(object):
     def currency(self):
         """Gets the currency of this CrossMarginLoan.  # noqa: E501
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :return: The currency of this CrossMarginLoan.  # noqa: E501
         :rtype: str
@@ -180,7 +180,7 @@ class CrossMarginLoan(object):
     def currency(self, currency):
         """Sets the currency of this CrossMarginLoan.
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :param currency: The currency of this CrossMarginLoan.  # noqa: E501
         :type: str
@@ -194,7 +194,7 @@ class CrossMarginLoan(object):
     def amount(self):
         """Gets the amount of this CrossMarginLoan.  # noqa: E501
 
-        Borrowed amount  # noqa: E501
+        Borrowed amount.  # noqa: E501
 
         :return: The amount of this CrossMarginLoan.  # noqa: E501
         :rtype: str
@@ -205,7 +205,7 @@ class CrossMarginLoan(object):
     def amount(self, amount):
         """Sets the amount of this CrossMarginLoan.
 
-        Borrowed amount  # noqa: E501
+        Borrowed amount.  # noqa: E501
 
         :param amount: The amount of this CrossMarginLoan.  # noqa: E501
         :type: str
@@ -219,7 +219,7 @@ class CrossMarginLoan(object):
     def text(self):
         """Gets the text of this CrossMarginLoan.  # noqa: E501
 
-        User defined custom ID  # noqa: E501
+        User defined custom ID.  # noqa: E501
 
         :return: The text of this CrossMarginLoan.  # noqa: E501
         :rtype: str
@@ -230,7 +230,7 @@ class CrossMarginLoan(object):
     def text(self, text):
         """Sets the text of this CrossMarginLoan.
 
-        User defined custom ID  # noqa: E501
+        User defined custom ID.  # noqa: E501
 
         :param text: The text of this CrossMarginLoan.  # noqa: E501
         :type: str
@@ -271,7 +271,7 @@ class CrossMarginLoan(object):
     def repaid(self):
         """Gets the repaid of this CrossMarginLoan.  # noqa: E501
 
-        Repaid amount  # noqa: E501
+        Repaid amount.  # noqa: E501
 
         :return: The repaid of this CrossMarginLoan.  # noqa: E501
         :rtype: str
@@ -282,7 +282,7 @@ class CrossMarginLoan(object):
     def repaid(self, repaid):
         """Sets the repaid of this CrossMarginLoan.
 
-        Repaid amount  # noqa: E501
+        Repaid amount.  # noqa: E501
 
         :param repaid: The repaid of this CrossMarginLoan.  # noqa: E501
         :type: str
@@ -294,7 +294,7 @@ class CrossMarginLoan(object):
     def repaid_interest(self):
         """Gets the repaid_interest of this CrossMarginLoan.  # noqa: E501
 
-        Repaid interest  # noqa: E501
+        Repaid interest.  # noqa: E501
 
         :return: The repaid_interest of this CrossMarginLoan.  # noqa: E501
         :rtype: str
@@ -305,7 +305,7 @@ class CrossMarginLoan(object):
     def repaid_interest(self, repaid_interest):
         """Sets the repaid_interest of this CrossMarginLoan.
 
-        Repaid interest  # noqa: E501
+        Repaid interest.  # noqa: E501
 
         :param repaid_interest: The repaid_interest of this CrossMarginLoan.  # noqa: E501
         :type: str
@@ -317,7 +317,7 @@ class CrossMarginLoan(object):
     def unpaid_interest(self):
         """Gets the unpaid_interest of this CrossMarginLoan.  # noqa: E501
 
-        Outstanding interest yet to be paid  # noqa: E501
+        Outstanding interest yet to be paid.  # noqa: E501
 
         :return: The unpaid_interest of this CrossMarginLoan.  # noqa: E501
         :rtype: str
@@ -328,7 +328,7 @@ class CrossMarginLoan(object):
     def unpaid_interest(self, unpaid_interest):
         """Sets the unpaid_interest of this CrossMarginLoan.
 
-        Outstanding interest yet to be paid  # noqa: E501
+        Outstanding interest yet to be paid.  # noqa: E501
 
         :param unpaid_interest: The unpaid_interest of this CrossMarginLoan.  # noqa: E501
         :type: str

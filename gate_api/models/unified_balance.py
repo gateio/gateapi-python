@@ -290,7 +290,7 @@ class UnifiedBalance(object):
     def total_freeze(self):
         """Gets the total_freeze of this UnifiedBalance.  # noqa: E501
 
-        Total occupancy (discarded, to be offline field)  # noqa: E501
+        Total occupancy (discarded, to be offline field).  # noqa: E501
 
         :return: The total_freeze of this UnifiedBalance.  # noqa: E501
         :rtype: str
@@ -301,7 +301,7 @@ class UnifiedBalance(object):
     def total_freeze(self, total_freeze):
         """Sets the total_freeze of this UnifiedBalance.
 
-        Total occupancy (discarded, to be offline field)  # noqa: E501
+        Total occupancy (discarded, to be offline field).  # noqa: E501
 
         :param total_freeze: The total_freeze of this UnifiedBalance.  # noqa: E501
         :type: str
@@ -359,7 +359,7 @@ class UnifiedBalance(object):
     def funding(self):
         """Gets the funding of this UnifiedBalance.  # noqa: E501
 
-        Uniloan financial management amount, effective when Uniloan financial management is turned on as a unified account margin switch  # noqa: E501
+        Uniloan financial management amount, effective when turned on as a unified account margin switch  # noqa: E501
 
         :return: The funding of this UnifiedBalance.  # noqa: E501
         :rtype: str
@@ -370,7 +370,7 @@ class UnifiedBalance(object):
     def funding(self, funding):
         """Sets the funding of this UnifiedBalance.
 
-        Uniloan financial management amount, effective when Uniloan financial management is turned on as a unified account margin switch  # noqa: E501
+        Uniloan financial management amount, effective when turned on as a unified account margin switch  # noqa: E501
 
         :param funding: The funding of this UnifiedBalance.  # noqa: E501
         :type: str
@@ -382,7 +382,7 @@ class UnifiedBalance(object):
     def funding_version(self):
         """Gets the funding_version of this UnifiedBalance.  # noqa: E501
 
-        Funding version  # noqa: E501
+        Funding version.  # noqa: E501
 
         :return: The funding_version of this UnifiedBalance.  # noqa: E501
         :rtype: str
@@ -393,7 +393,7 @@ class UnifiedBalance(object):
     def funding_version(self, funding_version):
         """Sets the funding_version of this UnifiedBalance.
 
-        Funding version  # noqa: E501
+        Funding version.  # noqa: E501
 
         :param funding_version: The funding_version of this UnifiedBalance.  # noqa: E501
         :type: str
@@ -589,7 +589,7 @@ class UnifiedBalance(object):
     def enabled_collateral(self):
         """Gets the enabled_collateral of this UnifiedBalance.  # noqa: E501
 
-        Currency enabled as margin: true - Enabled, false - Disabled  # noqa: E501
+        Currency enabled as margin: true - Enabled, false - Disabled.  # noqa: E501
 
         :return: The enabled_collateral of this UnifiedBalance.  # noqa: E501
         :rtype: bool
@@ -600,7 +600,7 @@ class UnifiedBalance(object):
     def enabled_collateral(self, enabled_collateral):
         """Sets the enabled_collateral of this UnifiedBalance.
 
-        Currency enabled as margin: true - Enabled, false - Disabled  # noqa: E501
+        Currency enabled as margin: true - Enabled, false - Disabled.  # noqa: E501
 
         :param enabled_collateral: The enabled_collateral of this UnifiedBalance.  # noqa: E501
         :type: bool

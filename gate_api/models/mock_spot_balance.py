@@ -60,7 +60,7 @@ class MockSpotBalance(object):
     def currency(self):
         """Gets the currency of this MockSpotBalance.  # noqa: E501
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :return: The currency of this MockSpotBalance.  # noqa: E501
         :rtype: str
@@ -71,7 +71,7 @@ class MockSpotBalance(object):
     def currency(self, currency):
         """Sets the currency of this MockSpotBalance.
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :param currency: The currency of this MockSpotBalance.  # noqa: E501
         :type: str

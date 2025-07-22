@@ -117,7 +117,7 @@ class PositionClose(object):
     def time(self):
         """Gets the time of this PositionClose.  # noqa: E501
 
-        Position close time  # noqa: E501
+        Position close time.  # noqa: E501
 
         :return: The time of this PositionClose.  # noqa: E501
         :rtype: float
@@ -128,7 +128,7 @@ class PositionClose(object):
     def time(self, time):
         """Sets the time of this PositionClose.
 
-        Position close time  # noqa: E501
+        Position close time.  # noqa: E501
 
         :param time: The time of this PositionClose.  # noqa: E501
         :type: float
@@ -140,7 +140,7 @@ class PositionClose(object):
     def contract(self):
         """Gets the contract of this PositionClose.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :return: The contract of this PositionClose.  # noqa: E501
         :rtype: str
@@ -151,7 +151,7 @@ class PositionClose(object):
     def contract(self, contract):
         """Sets the contract of this PositionClose.
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :param contract: The contract of this PositionClose.  # noqa: E501
         :type: str
@@ -163,7 +163,7 @@ class PositionClose(object):
     def side(self):
         """Gets the side of this PositionClose.  # noqa: E501
 
-        Position side, long or short  # noqa: E501
+        Position side, long or short.  # noqa: E501
 
         :return: The side of this PositionClose.  # noqa: E501
         :rtype: str
@@ -174,7 +174,7 @@ class PositionClose(object):
     def side(self, side):
         """Sets the side of this PositionClose.
 
-        Position side, long or short  # noqa: E501
+        Position side, long or short.  # noqa: E501
 
         :param side: The side of this PositionClose.  # noqa: E501
         :type: str
@@ -192,7 +192,7 @@ class PositionClose(object):
     def pnl(self):
         """Gets the pnl of this PositionClose.  # noqa: E501
 
-        PNL  # noqa: E501
+        PNL.  # noqa: E501
 
         :return: The pnl of this PositionClose.  # noqa: E501
         :rtype: str
@@ -203,7 +203,7 @@ class PositionClose(object):
     def pnl(self, pnl):
         """Sets the pnl of this PositionClose.
 
-        PNL  # noqa: E501
+        PNL.  # noqa: E501
 
         :param pnl: The pnl of this PositionClose.  # noqa: E501
         :type: str
@@ -215,7 +215,7 @@ class PositionClose(object):
     def pnl_pnl(self):
         """Gets the pnl_pnl of this PositionClose.  # noqa: E501
 
-        PNL - Position P/L  # noqa: E501
+        PNL - Position P/L.  # noqa: E501
 
         :return: The pnl_pnl of this PositionClose.  # noqa: E501
         :rtype: str
@@ -226,7 +226,7 @@ class PositionClose(object):
     def pnl_pnl(self, pnl_pnl):
         """Sets the pnl_pnl of this PositionClose.
 
-        PNL - Position P/L  # noqa: E501
+        PNL - Position P/L.  # noqa: E501
 
         :param pnl_pnl: The pnl_pnl of this PositionClose.  # noqa: E501
         :type: str
@@ -238,7 +238,7 @@ class PositionClose(object):
     def pnl_fund(self):
         """Gets the pnl_fund of this PositionClose.  # noqa: E501
 
-        PNL - Funding Fees  # noqa: E501
+        PNL - Funding Fees.  # noqa: E501
 
         :return: The pnl_fund of this PositionClose.  # noqa: E501
         :rtype: str
@@ -249,7 +249,7 @@ class PositionClose(object):
     def pnl_fund(self, pnl_fund):
         """Sets the pnl_fund of this PositionClose.
 
-        PNL - Funding Fees  # noqa: E501
+        PNL - Funding Fees.  # noqa: E501
 
         :param pnl_fund: The pnl_fund of this PositionClose.  # noqa: E501
         :type: str
@@ -261,7 +261,7 @@ class PositionClose(object):
     def pnl_fee(self):
         """Gets the pnl_fee of this PositionClose.  # noqa: E501
 
-        PNL - Transaction Fees  # noqa: E501
+        PNL - Transaction Fees.  # noqa: E501
 
         :return: The pnl_fee of this PositionClose.  # noqa: E501
         :rtype: str
@@ -272,7 +272,7 @@ class PositionClose(object):
     def pnl_fee(self, pnl_fee):
         """Sets the pnl_fee of this PositionClose.
 
-        PNL - Transaction Fees  # noqa: E501
+        PNL - Transaction Fees.  # noqa: E501
 
         :param pnl_fee: The pnl_fee of this PositionClose.  # noqa: E501
         :type: str
@@ -284,7 +284,7 @@ class PositionClose(object):
     def text(self):
         """Gets the text of this PositionClose.  # noqa: E501
 
-        Text of close order  # noqa: E501
+        Text of close order.  # noqa: E501
 
         :return: The text of this PositionClose.  # noqa: E501
         :rtype: str
@@ -295,7 +295,7 @@ class PositionClose(object):
     def text(self, text):
         """Sets the text of this PositionClose.
 
-        Text of close order  # noqa: E501
+        Text of close order.  # noqa: E501
 
         :param text: The text of this PositionClose.  # noqa: E501
         :type: str
@@ -307,7 +307,7 @@ class PositionClose(object):
     def max_size(self):
         """Gets the max_size of this PositionClose.  # noqa: E501
 
-        Max Trade Size  # noqa: E501
+        Max Trade Size.  # noqa: E501
 
         :return: The max_size of this PositionClose.  # noqa: E501
         :rtype: str
@@ -318,7 +318,7 @@ class PositionClose(object):
     def max_size(self, max_size):
         """Sets the max_size of this PositionClose.
 
-        Max Trade Size  # noqa: E501
+        Max Trade Size.  # noqa: E501
 
         :param max_size: The max_size of this PositionClose.  # noqa: E501
         :type: str
@@ -330,7 +330,7 @@ class PositionClose(object):
     def accum_size(self):
         """Gets the accum_size of this PositionClose.  # noqa: E501
 
-        Cumulative closed position volume  # noqa: E501
+        Cumulative closed position volume.  # noqa: E501
 
         :return: The accum_size of this PositionClose.  # noqa: E501
         :rtype: str
@@ -341,7 +341,7 @@ class PositionClose(object):
     def accum_size(self, accum_size):
         """Sets the accum_size of this PositionClose.
 
-        Cumulative closed position volume  # noqa: E501
+        Cumulative closed position volume.  # noqa: E501
 
         :param accum_size: The accum_size of this PositionClose.  # noqa: E501
         :type: str
@@ -353,7 +353,7 @@ class PositionClose(object):
     def first_open_time(self):
         """Gets the first_open_time of this PositionClose.  # noqa: E501
 
-        First Open Time  # noqa: E501
+        First Open Time.  # noqa: E501
 
         :return: The first_open_time of this PositionClose.  # noqa: E501
         :rtype: int
@@ -364,7 +364,7 @@ class PositionClose(object):
     def first_open_time(self, first_open_time):
         """Sets the first_open_time of this PositionClose.
 
-        First Open Time  # noqa: E501
+        First Open Time.  # noqa: E501
 
         :param first_open_time: The first_open_time of this PositionClose.  # noqa: E501
         :type: int
@@ -376,7 +376,7 @@ class PositionClose(object):
     def long_price(self):
         """Gets the long_price of this PositionClose.  # noqa: E501
 
-        When 'side' is 'long,' it indicates the opening average price; when 'side' is 'short,' it indicates the closing average price.  # noqa: E501
+        When 'side' is 'long,' it indicates the opening average price; when closing average price.  # noqa: E501
 
         :return: The long_price of this PositionClose.  # noqa: E501
         :rtype: str
@@ -387,7 +387,7 @@ class PositionClose(object):
     def long_price(self, long_price):
         """Sets the long_price of this PositionClose.
 
-        When 'side' is 'long,' it indicates the opening average price; when 'side' is 'short,' it indicates the closing average price.  # noqa: E501
+        When 'side' is 'long,' it indicates the opening average price; when closing average price.  # noqa: E501
 
         :param long_price: The long_price of this PositionClose.  # noqa: E501
         :type: str
@@ -399,7 +399,7 @@ class PositionClose(object):
     def short_price(self):
         """Gets the short_price of this PositionClose.  # noqa: E501
 
-        When 'side' is 'long,' it indicates the opening average price; when 'side' is 'short,' it indicates the closing average price  # noqa: E501
+        When 'side' is 'long,' it indicates the opening average price; when closing average price  # noqa: E501
 
         :return: The short_price of this PositionClose.  # noqa: E501
         :rtype: str
@@ -410,7 +410,7 @@ class PositionClose(object):
     def short_price(self, short_price):
         """Sets the short_price of this PositionClose.
 
-        When 'side' is 'long,' it indicates the opening average price; when 'side' is 'short,' it indicates the closing average price  # noqa: E501
+        When 'side' is 'long,' it indicates the opening average price; when closing average price  # noqa: E501
 
         :param short_price: The short_price of this PositionClose.  # noqa: E501
         :type: str

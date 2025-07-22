@@ -72,7 +72,7 @@ class UniCurrencyPair(object):
     def currency_pair(self):
         """Gets the currency_pair of this UniCurrencyPair.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this UniCurrencyPair.  # noqa: E501
         :rtype: str
@@ -83,7 +83,7 @@ class UniCurrencyPair(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this UniCurrencyPair.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this UniCurrencyPair.  # noqa: E501
         :type: str
@@ -95,7 +95,7 @@ class UniCurrencyPair(object):
     def base_min_borrow_amount(self):
         """Gets the base_min_borrow_amount of this UniCurrencyPair.  # noqa: E501
 
-        Minimum borrow amount of base currency  # noqa: E501
+        Minimum borrow amount of base currency.  # noqa: E501
 
         :return: The base_min_borrow_amount of this UniCurrencyPair.  # noqa: E501
         :rtype: str
@@ -106,7 +106,7 @@ class UniCurrencyPair(object):
     def base_min_borrow_amount(self, base_min_borrow_amount):
         """Sets the base_min_borrow_amount of this UniCurrencyPair.
 
-        Minimum borrow amount of base currency  # noqa: E501
+        Minimum borrow amount of base currency.  # noqa: E501
 
         :param base_min_borrow_amount: The base_min_borrow_amount of this UniCurrencyPair.  # noqa: E501
         :type: str
@@ -118,7 +118,7 @@ class UniCurrencyPair(object):
     def quote_min_borrow_amount(self):
         """Gets the quote_min_borrow_amount of this UniCurrencyPair.  # noqa: E501
 
-        Minimum borrow amount of quote currency  # noqa: E501
+        Minimum borrow amount of quote currency.  # noqa: E501
 
         :return: The quote_min_borrow_amount of this UniCurrencyPair.  # noqa: E501
         :rtype: str
@@ -129,7 +129,7 @@ class UniCurrencyPair(object):
     def quote_min_borrow_amount(self, quote_min_borrow_amount):
         """Sets the quote_min_borrow_amount of this UniCurrencyPair.
 
-        Minimum borrow amount of quote currency  # noqa: E501
+        Minimum borrow amount of quote currency.  # noqa: E501
 
         :param quote_min_borrow_amount: The quote_min_borrow_amount of this UniCurrencyPair.  # noqa: E501
         :type: str
@@ -141,7 +141,7 @@ class UniCurrencyPair(object):
     def leverage(self):
         """Gets the leverage of this UniCurrencyPair.  # noqa: E501
 
-        Position leverage  # noqa: E501
+        Position leverage.  # noqa: E501
 
         :return: The leverage of this UniCurrencyPair.  # noqa: E501
         :rtype: str
@@ -152,7 +152,7 @@ class UniCurrencyPair(object):
     def leverage(self, leverage):
         """Sets the leverage of this UniCurrencyPair.
 
-        Position leverage  # noqa: E501
+        Position leverage.  # noqa: E501
 
         :param leverage: The leverage of this UniCurrencyPair.  # noqa: E501
         :type: str

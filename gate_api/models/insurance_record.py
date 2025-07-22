@@ -62,7 +62,7 @@ class InsuranceRecord(object):
     def t(self):
         """Gets the t of this InsuranceRecord.  # noqa: E501
 
-        Unix timestamp in seconds  # noqa: E501
+        Unix timestamp in seconds.  # noqa: E501
 
         :return: The t of this InsuranceRecord.  # noqa: E501
         :rtype: int
@@ -73,7 +73,7 @@ class InsuranceRecord(object):
     def t(self, t):
         """Sets the t of this InsuranceRecord.
 
-        Unix timestamp in seconds  # noqa: E501
+        Unix timestamp in seconds.  # noqa: E501
 
         :param t: The t of this InsuranceRecord.  # noqa: E501
         :type: int
@@ -85,7 +85,7 @@ class InsuranceRecord(object):
     def b(self):
         """Gets the b of this InsuranceRecord.  # noqa: E501
 
-        Insurance balance  # noqa: E501
+        Insurance balance.  # noqa: E501
 
         :return: The b of this InsuranceRecord.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class InsuranceRecord(object):
     def b(self, b):
         """Sets the b of this InsuranceRecord.
 
-        Insurance balance  # noqa: E501
+        Insurance balance.  # noqa: E501
 
         :param b: The b of this InsuranceRecord.  # noqa: E501
         :type: str

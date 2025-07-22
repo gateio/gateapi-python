@@ -62,7 +62,7 @@ class IndexConstituent(object):
     def exchange(self):
         """Gets the exchange of this IndexConstituent.  # noqa: E501
 
-        Exchange  # noqa: E501
+        Exchange.  # noqa: E501
 
         :return: The exchange of this IndexConstituent.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class IndexConstituent(object):
     def exchange(self, exchange):
         """Sets the exchange of this IndexConstituent.
 
-        Exchange  # noqa: E501
+        Exchange.  # noqa: E501
 
         :param exchange: The exchange of this IndexConstituent.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class IndexConstituent(object):
     def symbols(self):
         """Gets the symbols of this IndexConstituent.  # noqa: E501
 
-        Symbol list  # noqa: E501
+        Symbol list.  # noqa: E501
 
         :return: The symbols of this IndexConstituent.  # noqa: E501
         :rtype: list[str]
@@ -96,7 +96,7 @@ class IndexConstituent(object):
     def symbols(self, symbols):
         """Sets the symbols of this IndexConstituent.
 
-        Symbol list  # noqa: E501
+        Symbol list.  # noqa: E501
 
         :param symbols: The symbols of this IndexConstituent.  # noqa: E501
         :type: list[str]

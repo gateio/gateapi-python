@@ -100,7 +100,7 @@ class FuturesInitialOrder(object):
     def contract(self):
         """Gets the contract of this FuturesInitialOrder.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :return: The contract of this FuturesInitialOrder.  # noqa: E501
         :rtype: str
@@ -111,7 +111,7 @@ class FuturesInitialOrder(object):
     def contract(self, contract):
         """Sets the contract of this FuturesInitialOrder.
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :param contract: The contract of this FuturesInitialOrder.  # noqa: E501
         :type: str
@@ -148,7 +148,7 @@ class FuturesInitialOrder(object):
     def price(self):
         """Gets the price of this FuturesInitialOrder.  # noqa: E501
 
-        Order price. Set to 0 to use market price  # noqa: E501
+        Order price. Set to 0 to use market price.  # noqa: E501
 
         :return: The price of this FuturesInitialOrder.  # noqa: E501
         :rtype: str
@@ -159,7 +159,7 @@ class FuturesInitialOrder(object):
     def price(self, price):
         """Sets the price of this FuturesInitialOrder.
 
-        Order price. Set to 0 to use market price  # noqa: E501
+        Order price. Set to 0 to use market price.  # noqa: E501
 
         :param price: The price of this FuturesInitialOrder.  # noqa: E501
         :type: str
@@ -196,7 +196,7 @@ class FuturesInitialOrder(object):
     def tif(self):
         """Gets the tif of this FuturesInitialOrder.  # noqa: E501
 
-        Time in force strategy, default is gtc, market order currently only supports ioc mode Market order currently only supports ioc mode  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled  # noqa: E501
+        Time in force strategy, default is gtc, market order currently only supports ioc mode mode  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled  # noqa: E501
 
         :return: The tif of this FuturesInitialOrder.  # noqa: E501
         :rtype: str
@@ -207,7 +207,7 @@ class FuturesInitialOrder(object):
     def tif(self, tif):
         """Sets the tif of this FuturesInitialOrder.
 
-        Time in force strategy, default is gtc, market order currently only supports ioc mode Market order currently only supports ioc mode  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled  # noqa: E501
+        Time in force strategy, default is gtc, market order currently only supports ioc mode mode  - gtc: GoodTillCancelled - ioc: ImmediateOrCancelled  # noqa: E501
 
         :param tif: The tif of this FuturesInitialOrder.  # noqa: E501
         :type: str
@@ -294,7 +294,7 @@ class FuturesInitialOrder(object):
     def is_reduce_only(self):
         """Gets the is_reduce_only of this FuturesInitialOrder.  # noqa: E501
 
-        Is the order reduce-only  # noqa: E501
+        Is the order reduce-only.  # noqa: E501
 
         :return: The is_reduce_only of this FuturesInitialOrder.  # noqa: E501
         :rtype: bool
@@ -305,7 +305,7 @@ class FuturesInitialOrder(object):
     def is_reduce_only(self, is_reduce_only):
         """Sets the is_reduce_only of this FuturesInitialOrder.
 
-        Is the order reduce-only  # noqa: E501
+        Is the order reduce-only.  # noqa: E501
 
         :param is_reduce_only: The is_reduce_only of this FuturesInitialOrder.  # noqa: E501
         :type: bool
@@ -317,7 +317,7 @@ class FuturesInitialOrder(object):
     def is_close(self):
         """Gets the is_close of this FuturesInitialOrder.  # noqa: E501
 
-        Is the order to close position  # noqa: E501
+        Is the order to close position.  # noqa: E501
 
         :return: The is_close of this FuturesInitialOrder.  # noqa: E501
         :rtype: bool
@@ -328,7 +328,7 @@ class FuturesInitialOrder(object):
     def is_close(self, is_close):
         """Sets the is_close of this FuturesInitialOrder.
 
-        Is the order to close position  # noqa: E501
+        Is the order to close position.  # noqa: E501
 
         :param is_close: The is_close of this FuturesInitialOrder.  # noqa: E501
         :type: bool

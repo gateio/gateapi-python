@@ -37,7 +37,7 @@ class WalletApi(object):
         self.api_client = api_client
 
     def list_currency_chains(self, currency, **kwargs):  # noqa: E501
-        """List chains supported for specified currency  # noqa: E501
+        """List chains supported for specified currency.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -45,7 +45,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency name (required)
+        :param str currency: Currency name. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -61,7 +61,7 @@ class WalletApi(object):
         return self.list_currency_chains_with_http_info(currency, **kwargs)  # noqa: E501
 
     def list_currency_chains_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """List chains supported for specified currency  # noqa: E501
+        """List chains supported for specified currency.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -69,7 +69,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency name (required)
+        :param str currency: Currency name. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -149,7 +149,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def get_deposit_address(self, currency, **kwargs):  # noqa: E501
-        """Generate currency deposit address  # noqa: E501
+        """Generate currency deposit address.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -157,7 +157,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency name (required)
+        :param str currency: Currency name. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -173,7 +173,7 @@ class WalletApi(object):
         return self.get_deposit_address_with_http_info(currency, **kwargs)  # noqa: E501
 
     def get_deposit_address_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """Generate currency deposit address  # noqa: E501
+        """Generate currency deposit address.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -181,7 +181,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency name (required)
+        :param str currency: Currency name. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -261,23 +261,23 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def list_withdrawals(self, **kwargs):  # noqa: E501
-        """Retrieve withdrawal records  # noqa: E501
+        """Retrieve withdrawal records.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_withdrawals(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Filter by currency. Return all currency records if not specified
+        :param str currency: Filter by currency. Return all currency records if not specified.
         :param str withdraw_id: The withdrawal record id starts with w, such as: w1879219868. When withdraw_id is not empty, the value querys this withdrawal record and no longer querys according to time
         :param str asset_class: The currency type of withdrawal record is empty by default. It supports users to query the withdrawal records in the main and innovation areas on demand. Value range: SPOT, PILOT  SPOT: Main Zone  PILOT: Innovation Zone
         :param str withdraw_order_id: User-defined order number when withdrawing. Default is empty. When not empty, the specified user-defined order number record will be queried
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -293,23 +293,23 @@ class WalletApi(object):
         return self.list_withdrawals_with_http_info(**kwargs)  # noqa: E501
 
     def list_withdrawals_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve withdrawal records  # noqa: E501
+        """Retrieve withdrawal records.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_withdrawals_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Filter by currency. Return all currency records if not specified
+        :param str currency: Filter by currency. Return all currency records if not specified.
         :param str withdraw_id: The withdrawal record id starts with w, such as: w1879219868. When withdraw_id is not empty, the value querys this withdrawal record and no longer querys according to time
         :param str asset_class: The currency type of withdrawal record is empty by default. It supports users to query the withdrawal records in the main and innovation areas on demand. Value range: SPOT, PILOT  SPOT: Main Zone  PILOT: Innovation Zone
         :param str withdraw_order_id: User-defined order number when withdrawing. Default is empty. When not empty, the specified user-defined order number record will be queried
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -412,20 +412,20 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def list_deposits(self, **kwargs):  # noqa: E501
-        """Retrieve deposit records  # noqa: E501
+        """Retrieve deposit records.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_deposits(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Filter by currency. Return all currency records if not specified
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
+        :param str currency: Filter by currency. Return all currency records if not specified.
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
         :param int limit: The maximum number of entries returned in the list is limited to 500 transactions.
-        :param int offset: List offset, starting from 0
+        :param int offset: List offset, starting from 0.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -441,20 +441,20 @@ class WalletApi(object):
         return self.list_deposits_with_http_info(**kwargs)  # noqa: E501
 
     def list_deposits_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve deposit records  # noqa: E501
+        """Retrieve deposit records.  # noqa: E501
 
-        Record time range cannot exceed 30 days  # noqa: E501
+        Record time range cannot exceed 30 days.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_deposits_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Filter by currency. Return all currency records if not specified
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
+        :param str currency: Filter by currency. Return all currency records if not specified.
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
         :param int limit: The maximum number of entries returned in the list is limited to 500 transactions.
-        :param int offset: List offset, starting from 0
+        :param int offset: List offset, starting from 0.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -548,9 +548,9 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def transfer(self, transfer, **kwargs):  # noqa: E501
-        """Transfer between trading accounts  # noqa: E501
+        """Transfer between trading accounts.  # noqa: E501
 
-        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 3. spot - delivery 4. spot - options  # noqa: E501
+        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 3. options  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.transfer(transfer, async_req=True)
@@ -573,9 +573,9 @@ class WalletApi(object):
         return self.transfer_with_http_info(transfer, **kwargs)  # noqa: E501
 
     def transfer_with_http_info(self, transfer, **kwargs):  # noqa: E501
-        """Transfer between trading accounts  # noqa: E501
+        """Transfer between trading accounts.  # noqa: E501
 
-        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 3. spot - delivery 4. spot - options  # noqa: E501
+        Transfer between different accounts. Currently support transfers between the following:  1. spot - margin 2. spot - futures(perpetual) 3. options  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.transfer_with_http_info(transfer, async_req=True)
@@ -666,7 +666,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def list_sub_account_transfers(self, **kwargs):  # noqa: E501
-        """Retrieve transfer records between main and sub accounts  # noqa: E501
+        """Retrieve transfer records between main and sub accounts.  # noqa: E501
 
         Record time range cannot exceed 30 days  > Note: only records after 20-04-10can be retrieved  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -676,10 +676,10 @@ class WalletApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -695,7 +695,7 @@ class WalletApi(object):
         return self.list_sub_account_transfers_with_http_info(**kwargs)  # noqa: E501
 
     def list_sub_account_transfers_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve transfer records between main and sub accounts  # noqa: E501
+        """Retrieve transfer records between main and sub accounts.  # noqa: E501
 
         Record time range cannot exceed 30 days  > Note: only records after 20-04-10can be retrieved  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -705,10 +705,10 @@ class WalletApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
-        :param int _from: Time range beginning, default to 7 days before current time
-        :param int to: Time range ending, default to current time
-        :param int limit: Maximum number of records to be returned in a single list
-        :param int offset: List offset, starting from 0
+        :param int _from: Time range beginning, default to 7 days before current time.
+        :param int to: Time range ending, default to current time.
+        :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -802,7 +802,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def transfer_with_sub_account(self, sub_account_transfer, **kwargs):  # noqa: E501
-        """Transfer between main and sub accounts  # noqa: E501
+        """Transfer between main and sub accounts.  # noqa: E501
 
         Support transferring with sub user's spot or futures account. Note that only main user's spot account is used no matter which sub user's account is operated.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -827,7 +827,7 @@ class WalletApi(object):
         return self.transfer_with_sub_account_with_http_info(sub_account_transfer, **kwargs)  # noqa: E501
 
     def transfer_with_sub_account_with_http_info(self, sub_account_transfer, **kwargs):  # noqa: E501
-        """Transfer between main and sub accounts  # noqa: E501
+        """Transfer between main and sub accounts.  # noqa: E501
 
         Support transferring with sub user's spot or futures account. Note that only main user's spot account is used no matter which sub user's account is operated.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -920,9 +920,9 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def sub_account_to_sub_account(self, sub_account_to_sub_account, **kwargs):  # noqa: E501
-        """Sub-account transfers to sub-account  # noqa: E501
+        """Sub-account transfers to sub-account.  # noqa: E501
 
-        It is possible to perform balance transfers between two sub-accounts under the same main account. You can use either the API Key of the main account or the API Key of the sub-account to initiate the transfer.  # noqa: E501
+        It is possible to perform balance transfers between two sub-accounts under the same main account. You can use either the API Key of the main account sub-account to initiate the transfer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.sub_account_to_sub_account(sub_account_to_sub_account, async_req=True)
@@ -945,9 +945,9 @@ class WalletApi(object):
         return self.sub_account_to_sub_account_with_http_info(sub_account_to_sub_account, **kwargs)  # noqa: E501
 
     def sub_account_to_sub_account_with_http_info(self, sub_account_to_sub_account, **kwargs):  # noqa: E501
-        """Sub-account transfers to sub-account  # noqa: E501
+        """Sub-account transfers to sub-account.  # noqa: E501
 
-        It is possible to perform balance transfers between two sub-accounts under the same main account. You can use either the API Key of the main account or the API Key of the sub-account to initiate the transfer.  # noqa: E501
+        It is possible to perform balance transfers between two sub-accounts under the same main account. You can use either the API Key of the main account sub-account to initiate the transfer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.sub_account_to_sub_account_with_http_info(sub_account_to_sub_account, async_req=True)
@@ -1038,7 +1038,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def get_transfer_order_status(self, **kwargs):  # noqa: E501
-        """Transfer status query  # noqa: E501
+        """Transfer status query.  # noqa: E501
 
         Support querying transfer status based on user-defined client_order_id or tx_id returned by the transfer interface  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1064,7 +1064,7 @@ class WalletApi(object):
         return self.get_transfer_order_status_with_http_info(**kwargs)  # noqa: E501
 
     def get_transfer_order_status_with_http_info(self, **kwargs):  # noqa: E501
-        """Transfer status query  # noqa: E501
+        """Transfer status query.  # noqa: E501
 
         Support querying transfer status based on user-defined client_order_id or tx_id returned by the transfer interface  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1153,7 +1153,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def list_withdraw_status(self, **kwargs):  # noqa: E501
-        """Retrieve withdrawal status  # noqa: E501
+        """Retrieve withdrawal status.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1161,7 +1161,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
+        :param str currency: Retrieve data of the specified currency.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1177,7 +1177,7 @@ class WalletApi(object):
         return self.list_withdraw_status_with_http_info(**kwargs)  # noqa: E501
 
     def list_withdraw_status_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve withdrawal status  # noqa: E501
+        """Retrieve withdrawal status.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1185,7 +1185,7 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Retrieve data of the specified currency
+        :param str currency: Retrieve data of the specified currency.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1261,7 +1261,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def list_sub_account_balances(self, **kwargs):  # noqa: E501
-        """Retrieve sub account balances  # noqa: E501
+        """Retrieve sub account balances.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1285,7 +1285,7 @@ class WalletApi(object):
         return self.list_sub_account_balances_with_http_info(**kwargs)  # noqa: E501
 
     def list_sub_account_balances_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve sub account balances  # noqa: E501
+        """Retrieve sub account balances.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1369,7 +1369,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def list_sub_account_margin_balances(self, **kwargs):  # noqa: E501
-        """Query sub accounts' margin balances  # noqa: E501
+        """Query sub accounts' margin balances.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1393,7 +1393,7 @@ class WalletApi(object):
         return self.list_sub_account_margin_balances_with_http_info(**kwargs)  # noqa: E501
 
     def list_sub_account_margin_balances_with_http_info(self, **kwargs):  # noqa: E501
-        """Query sub accounts' margin balances  # noqa: E501
+        """Query sub accounts' margin balances.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1477,7 +1477,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def list_sub_account_futures_balances(self, **kwargs):  # noqa: E501
-        """Query sub accounts' futures account balances  # noqa: E501
+        """Query sub accounts' futures account balances.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1486,7 +1486,7 @@ class WalletApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
-        :param str settle: Query only balances of specified settle currency
+        :param str settle: Query only balances of specified settle currency.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1502,7 +1502,7 @@ class WalletApi(object):
         return self.list_sub_account_futures_balances_with_http_info(**kwargs)  # noqa: E501
 
     def list_sub_account_futures_balances_with_http_info(self, **kwargs):  # noqa: E501
-        """Query sub accounts' futures account balances  # noqa: E501
+        """Query sub accounts' futures account balances.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1511,7 +1511,7 @@ class WalletApi(object):
 
         :param bool async_req: execute request asynchronously
         :param str sub_uid: User ID of sub-account, you can query multiple records separated by `,`. If not specified, it will return the records of all sub accounts
-        :param str settle: Query only balances of specified settle currency
+        :param str settle: Query only balances of specified settle currency.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1590,7 +1590,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def list_sub_account_cross_margin_balances(self, **kwargs):  # noqa: E501
-        """Query subaccount's cross_margin account info  # noqa: E501
+        """Query subaccount's cross_margin account info.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1614,7 +1614,7 @@ class WalletApi(object):
         return self.list_sub_account_cross_margin_balances_with_http_info(**kwargs)  # noqa: E501
 
     def list_sub_account_cross_margin_balances_with_http_info(self, **kwargs):  # noqa: E501
-        """Query subaccount's cross_margin account info  # noqa: E501
+        """Query subaccount's cross_margin account info.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1698,7 +1698,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def list_saved_address(self, currency, **kwargs):  # noqa: E501
-        """Query saved address  # noqa: E501
+        """Query saved address.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1706,10 +1706,10 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency (required)
-        :param str chain: Chain name
-        :param str limit: Maximum number returned, 100 at most
-        :param int page: Page number
+        :param str currency: Currency. (required)
+        :param str chain: Chain name.
+        :param str limit: Maximum number returned, 100 at most.
+        :param int page: Page number.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1725,7 +1725,7 @@ class WalletApi(object):
         return self.list_saved_address_with_http_info(currency, **kwargs)  # noqa: E501
 
     def list_saved_address_with_http_info(self, currency, **kwargs):  # noqa: E501
-        """Query saved address  # noqa: E501
+        """Query saved address.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1733,10 +1733,10 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency (required)
-        :param str chain: Chain name
-        :param str limit: Maximum number returned, 100 at most
-        :param int page: Page number
+        :param str currency: Currency. (required)
+        :param str chain: Chain name.
+        :param str limit: Maximum number returned, 100 at most.
+        :param int page: Page number.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1827,7 +1827,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def get_trade_fee(self, **kwargs):  # noqa: E501
-        """Retrieve personal trading fee  # noqa: E501
+        """Retrieve personal trading fee.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1852,7 +1852,7 @@ class WalletApi(object):
         return self.get_trade_fee_with_http_info(**kwargs)  # noqa: E501
 
     def get_trade_fee_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve personal trading fee  # noqa: E501
+        """Retrieve personal trading fee.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1940,9 +1940,9 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def get_total_balance(self, **kwargs):  # noqa: E501
-        """Retrieve user's total balances  # noqa: E501
+        """Retrieve user's total balances.  # noqa: E501
 
-        This endpoint returns an approximate sum of exchanged amount from all currencies to input currency for each account.The exchange rate and account balance could have been cached for at most 1 minute. It is not recommended to use its result for any trading calculation.  For trading calculation, use the corresponding account query endpoint for each account type. For example:   - `GET /spot/accounts` to query spot account balance - `GET /margin/accounts` to query margin account balance - `GET /futures/{settle}/accounts` to query futures account balance  # noqa: E501
+        This endpoint returns an approximate sum of exchanged amount from all currencies to input currency for each account.The exchange rate and account balance could have been cached for at most 1 minute. It is not recommended to use its result for any trading calculation.  For trading calculation, use the corresponding account query endpoint for each account type. For example:   - `GET /spot/accounts` to query spot account balance - `GET /margin/accounts` /futures/{settle}/accounts` to query futures account balance  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_total_balance(async_req=True)
@@ -1965,9 +1965,9 @@ class WalletApi(object):
         return self.get_total_balance_with_http_info(**kwargs)  # noqa: E501
 
     def get_total_balance_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve user's total balances  # noqa: E501
+        """Retrieve user's total balances.  # noqa: E501
 
-        This endpoint returns an approximate sum of exchanged amount from all currencies to input currency for each account.The exchange rate and account balance could have been cached for at most 1 minute. It is not recommended to use its result for any trading calculation.  For trading calculation, use the corresponding account query endpoint for each account type. For example:   - `GET /spot/accounts` to query spot account balance - `GET /margin/accounts` to query margin account balance - `GET /futures/{settle}/accounts` to query futures account balance  # noqa: E501
+        This endpoint returns an approximate sum of exchanged amount from all currencies to input currency for each account.The exchange rate and account balance could have been cached for at most 1 minute. It is not recommended to use its result for any trading calculation.  For trading calculation, use the corresponding account query endpoint for each account type. For example:   - `GET /spot/accounts` to query spot account balance - `GET /margin/accounts` /futures/{settle}/accounts` to query futures account balance  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_total_balance_with_http_info(async_req=True)
@@ -2050,7 +2050,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def list_small_balance(self, **kwargs):  # noqa: E501
-        """List small balance  # noqa: E501
+        """List small balance.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2073,7 +2073,7 @@ class WalletApi(object):
         return self.list_small_balance_with_http_info(**kwargs)  # noqa: E501
 
     def list_small_balance_with_http_info(self, **kwargs):  # noqa: E501
-        """List small balance  # noqa: E501
+        """List small balance.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2153,7 +2153,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def convert_small_balance(self, convert_small_balance, **kwargs):  # noqa: E501
-        """Convert small balance  # noqa: E501
+        """Convert small balance.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2177,7 +2177,7 @@ class WalletApi(object):
         return self.convert_small_balance_with_http_info(convert_small_balance, **kwargs)  # noqa: E501
 
     def convert_small_balance_with_http_info(self, convert_small_balance, **kwargs):  # noqa: E501
-        """Convert small balance  # noqa: E501
+        """Convert small balance.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2265,7 +2265,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def list_small_balance_history(self, **kwargs):  # noqa: E501
-        """List small balance history  # noqa: E501
+        """List small balance history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2273,9 +2273,9 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str currency: Currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -2291,7 +2291,7 @@ class WalletApi(object):
         return self.list_small_balance_history_with_http_info(**kwargs)  # noqa: E501
 
     def list_small_balance_history_with_http_info(self, **kwargs):  # noqa: E501
-        """List small balance history  # noqa: E501
+        """List small balance history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2299,9 +2299,9 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param str currency: Currency
-        :param int page: Page number
-        :param int limit: Maximum response items.  Default: 100, minimum: 1, Maximum: 100
+        :param str currency: Currency.
+        :param int page: Page number.
+        :param int limit: Maximum response items. Default: 100, minimum: 1, Maximum: 100.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -2389,7 +2389,7 @@ class WalletApi(object):
             collection_formats=collection_formats)
 
     def list_push_orders(self, **kwargs):  # noqa: E501
-        """Retrieve the UID transfer history  # noqa: E501
+        """Retrieve the UID transfer history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2397,11 +2397,11 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int id: Order ID
+        :param int id: Order ID.
         :param int _from: The start time of the query record. If not specified, it defaults to 7 days forward from the current time, in seconds Unix timestamp
         :param int to: The end time of the query record. If not specified, the default is the current time, which is a Unix timestamp in seconds.
-        :param int limit: The maximum number of items returned in the list, the default value is 100
-        :param int offset: List offset, starting from 0
+        :param int limit: The maximum number of items returned in the list, the default value is 100.
+        :param int offset: List offset, starting from 0.
         :param str transaction_type: The list returns the order type `withdraw`, `deposit`, the default is `withdraw`.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -2418,7 +2418,7 @@ class WalletApi(object):
         return self.list_push_orders_with_http_info(**kwargs)  # noqa: E501
 
     def list_push_orders_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve the UID transfer history  # noqa: E501
+        """Retrieve the UID transfer history.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2426,11 +2426,11 @@ class WalletApi(object):
         >>> result = thread.get()
 
         :param bool async_req: execute request asynchronously
-        :param int id: Order ID
+        :param int id: Order ID.
         :param int _from: The start time of the query record. If not specified, it defaults to 7 days forward from the current time, in seconds Unix timestamp
         :param int to: The end time of the query record. If not specified, the default is the current time, which is a Unix timestamp in seconds.
-        :param int limit: The maximum number of items returned in the list, the default value is 100
-        :param int offset: List offset, starting from 0
+        :param int limit: The maximum number of items returned in the list, the default value is 100.
+        :param int offset: List offset, starting from 0.
         :param str transaction_type: The list returns the order type `withdraw`, `deposit`, the default is `withdraw`.
         :param _return_http_data_only: response data without head status code
                                        and headers

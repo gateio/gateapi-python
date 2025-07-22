@@ -34,70 +34,100 @@ class SwapCoinStruct(object):
     """
     openapi_types = {
         'id': 'int',
+        'pid': 'int',
         'uid': 'int',
         'coin': 'str',
         'type': 'int',
+        'subtype': 'str',
         'amount': 'str',
         'exchange_rate': 'str',
-        'pid': 'int',
+        'exchange_amount': 'str',
+        'update_stamp': 'int',
+        'create_stamp': 'int',
         'status': 'int',
-        'create_stamp': 'int'
+        'protocol_type': 'int',
+        'client_order_id': 'str',
+        'source': 'str'
     }
 
     attribute_map = {
         'id': 'id',
+        'pid': 'pid',
         'uid': 'uid',
         'coin': 'coin',
         'type': 'type',
+        'subtype': 'subtype',
         'amount': 'amount',
         'exchange_rate': 'exchange_rate',
-        'pid': 'pid',
+        'exchange_amount': 'exchange_amount',
+        'update_stamp': 'updateStamp',
+        'create_stamp': 'createStamp',
         'status': 'status',
-        'create_stamp': 'createStamp'
+        'protocol_type': 'protocol_type',
+        'client_order_id': 'client_order_id',
+        'source': 'source'
     }
 
-    def __init__(self, id=None, uid=None, coin=None, type=None, amount=None, exchange_rate=None, pid=None, status=None, create_stamp=None, local_vars_configuration=None):  # noqa: E501
-        # type: (int, int, str, int, str, str, int, int, int, Configuration) -> None
+    def __init__(self, id=None, pid=None, uid=None, coin=None, type=None, subtype=None, amount=None, exchange_rate=None, exchange_amount=None, update_stamp=None, create_stamp=None, status=None, protocol_type=None, client_order_id=None, source=None, local_vars_configuration=None):  # noqa: E501
+        # type: (int, int, int, str, int, str, str, str, str, int, int, int, int, str, str, Configuration) -> None
         """SwapCoinStruct - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._id = None
+        self._pid = None
         self._uid = None
         self._coin = None
         self._type = None
+        self._subtype = None
         self._amount = None
         self._exchange_rate = None
-        self._pid = None
-        self._status = None
+        self._exchange_amount = None
+        self._update_stamp = None
         self._create_stamp = None
+        self._status = None
+        self._protocol_type = None
+        self._client_order_id = None
+        self._source = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
+        if pid is not None:
+            self.pid = pid
         if uid is not None:
             self.uid = uid
         if coin is not None:
             self.coin = coin
         if type is not None:
             self.type = type
+        if subtype is not None:
+            self.subtype = subtype
         if amount is not None:
             self.amount = amount
         if exchange_rate is not None:
             self.exchange_rate = exchange_rate
-        if pid is not None:
-            self.pid = pid
-        if status is not None:
-            self.status = status
+        if exchange_amount is not None:
+            self.exchange_amount = exchange_amount
+        if update_stamp is not None:
+            self.update_stamp = update_stamp
         if create_stamp is not None:
             self.create_stamp = create_stamp
+        if status is not None:
+            self.status = status
+        if protocol_type is not None:
+            self.protocol_type = protocol_type
+        if client_order_id is not None:
+            self.client_order_id = client_order_id
+        if source is not None:
+            self.source = source
 
     @property
     def id(self):
         """Gets the id of this SwapCoinStruct.  # noqa: E501
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :return: The id of this SwapCoinStruct.  # noqa: E501
         :rtype: int
@@ -108,7 +138,7 @@ class SwapCoinStruct(object):
     def id(self, id):
         """Sets the id of this SwapCoinStruct.
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :param id: The id of this SwapCoinStruct.  # noqa: E501
         :type: int
@@ -117,10 +147,33 @@ class SwapCoinStruct(object):
         self._id = id
 
     @property
+    def pid(self):
+        """Gets the pid of this SwapCoinStruct.  # noqa: E501
+
+        Plan ID.  # noqa: E501
+
+        :return: The pid of this SwapCoinStruct.  # noqa: E501
+        :rtype: int
+        """
+        return self._pid
+
+    @pid.setter
+    def pid(self, pid):
+        """Sets the pid of this SwapCoinStruct.
+
+        Plan ID.  # noqa: E501
+
+        :param pid: The pid of this SwapCoinStruct.  # noqa: E501
+        :type: int
+        """
+
+        self._pid = pid
+
+    @property
     def uid(self):
         """Gets the uid of this SwapCoinStruct.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The uid of this SwapCoinStruct.  # noqa: E501
         :rtype: int
@@ -131,7 +184,7 @@ class SwapCoinStruct(object):
     def uid(self, uid):
         """Sets the uid of this SwapCoinStruct.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param uid: The uid of this SwapCoinStruct.  # noqa: E501
         :type: int
@@ -143,7 +196,7 @@ class SwapCoinStruct(object):
     def coin(self):
         """Gets the coin of this SwapCoinStruct.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The coin of this SwapCoinStruct.  # noqa: E501
         :rtype: str
@@ -154,7 +207,7 @@ class SwapCoinStruct(object):
     def coin(self, coin):
         """Sets the coin of this SwapCoinStruct.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param coin: The coin of this SwapCoinStruct.  # noqa: E501
         :type: str
@@ -166,7 +219,7 @@ class SwapCoinStruct(object):
     def type(self):
         """Gets the type of this SwapCoinStruct.  # noqa: E501
 
-        Type: 0-Lock, 1-Certificate  # noqa: E501
+        类型 0-质押 1-赎回  # noqa: E501
 
         :return: The type of this SwapCoinStruct.  # noqa: E501
         :rtype: int
@@ -177,7 +230,7 @@ class SwapCoinStruct(object):
     def type(self, type):
         """Sets the type of this SwapCoinStruct.
 
-        Type: 0-Lock, 1-Certificate  # noqa: E501
+        类型 0-质押 1-赎回  # noqa: E501
 
         :param type: The type of this SwapCoinStruct.  # noqa: E501
         :type: int
@@ -186,10 +239,33 @@ class SwapCoinStruct(object):
         self._type = type
 
     @property
+    def subtype(self):
+        """Gets the subtype of this SwapCoinStruct.  # noqa: E501
+
+        子类型  # noqa: E501
+
+        :return: The subtype of this SwapCoinStruct.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtype
+
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this SwapCoinStruct.
+
+        子类型  # noqa: E501
+
+        :param subtype: The subtype of this SwapCoinStruct.  # noqa: E501
+        :type: str
+        """
+
+        self._subtype = subtype
+
+    @property
     def amount(self):
         """Gets the amount of this SwapCoinStruct.  # noqa: E501
 
-        Amount  # noqa: E501
+        Amount.  # noqa: E501
 
         :return: The amount of this SwapCoinStruct.  # noqa: E501
         :rtype: str
@@ -200,7 +276,7 @@ class SwapCoinStruct(object):
     def amount(self, amount):
         """Sets the amount of this SwapCoinStruct.
 
-        Amount  # noqa: E501
+        Amount.  # noqa: E501
 
         :param amount: The amount of this SwapCoinStruct.  # noqa: E501
         :type: str
@@ -212,7 +288,7 @@ class SwapCoinStruct(object):
     def exchange_rate(self):
         """Gets the exchange_rate of this SwapCoinStruct.  # noqa: E501
 
-        Exchange Ratio  # noqa: E501
+        Exchange Ratio.  # noqa: E501
 
         :return: The exchange_rate of this SwapCoinStruct.  # noqa: E501
         :rtype: str
@@ -223,7 +299,7 @@ class SwapCoinStruct(object):
     def exchange_rate(self, exchange_rate):
         """Sets the exchange_rate of this SwapCoinStruct.
 
-        Exchange Ratio  # noqa: E501
+        Exchange Ratio.  # noqa: E501
 
         :param exchange_rate: The exchange_rate of this SwapCoinStruct.  # noqa: E501
         :type: str
@@ -232,56 +308,56 @@ class SwapCoinStruct(object):
         self._exchange_rate = exchange_rate
 
     @property
-    def pid(self):
-        """Gets the pid of this SwapCoinStruct.  # noqa: E501
+    def exchange_amount(self):
+        """Gets the exchange_amount of this SwapCoinStruct.  # noqa: E501
 
-        Plan ID  # noqa: E501
+        兑换金额  # noqa: E501
 
-        :return: The pid of this SwapCoinStruct.  # noqa: E501
-        :rtype: int
+        :return: The exchange_amount of this SwapCoinStruct.  # noqa: E501
+        :rtype: str
         """
-        return self._pid
+        return self._exchange_amount
 
-    @pid.setter
-    def pid(self, pid):
-        """Sets the pid of this SwapCoinStruct.
+    @exchange_amount.setter
+    def exchange_amount(self, exchange_amount):
+        """Sets the exchange_amount of this SwapCoinStruct.
 
-        Plan ID  # noqa: E501
+        兑换金额  # noqa: E501
 
-        :param pid: The pid of this SwapCoinStruct.  # noqa: E501
-        :type: int
+        :param exchange_amount: The exchange_amount of this SwapCoinStruct.  # noqa: E501
+        :type: str
         """
 
-        self._pid = pid
+        self._exchange_amount = exchange_amount
 
     @property
-    def status(self):
-        """Gets the status of this SwapCoinStruct.  # noqa: E501
+    def update_stamp(self):
+        """Gets the update_stamp of this SwapCoinStruct.  # noqa: E501
 
-        status 1-success  # noqa: E501
+        更新时间戳  # noqa: E501
 
-        :return: The status of this SwapCoinStruct.  # noqa: E501
+        :return: The update_stamp of this SwapCoinStruct.  # noqa: E501
         :rtype: int
         """
-        return self._status
+        return self._update_stamp
 
-    @status.setter
-    def status(self, status):
-        """Sets the status of this SwapCoinStruct.
+    @update_stamp.setter
+    def update_stamp(self, update_stamp):
+        """Sets the update_stamp of this SwapCoinStruct.
 
-        status 1-success  # noqa: E501
+        更新时间戳  # noqa: E501
 
-        :param status: The status of this SwapCoinStruct.  # noqa: E501
+        :param update_stamp: The update_stamp of this SwapCoinStruct.  # noqa: E501
         :type: int
         """
 
-        self._status = status
+        self._update_stamp = update_stamp
 
     @property
     def create_stamp(self):
         """Gets the create_stamp of this SwapCoinStruct.  # noqa: E501
 
-        Transaction timestamp  # noqa: E501
+        Transaction timestamp.  # noqa: E501
 
         :return: The create_stamp of this SwapCoinStruct.  # noqa: E501
         :rtype: int
@@ -292,13 +368,105 @@ class SwapCoinStruct(object):
     def create_stamp(self, create_stamp):
         """Sets the create_stamp of this SwapCoinStruct.
 
-        Transaction timestamp  # noqa: E501
+        Transaction timestamp.  # noqa: E501
 
         :param create_stamp: The create_stamp of this SwapCoinStruct.  # noqa: E501
         :type: int
         """
 
         self._create_stamp = create_stamp
+
+    @property
+    def status(self):
+        """Gets the status of this SwapCoinStruct.  # noqa: E501
+
+        status 1-success.  # noqa: E501
+
+        :return: The status of this SwapCoinStruct.  # noqa: E501
+        :rtype: int
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this SwapCoinStruct.
+
+        status 1-success.  # noqa: E501
+
+        :param status: The status of this SwapCoinStruct.  # noqa: E501
+        :type: int
+        """
+
+        self._status = status
+
+    @property
+    def protocol_type(self):
+        """Gets the protocol_type of this SwapCoinStruct.  # noqa: E501
+
+        DEFI协议类型  # noqa: E501
+
+        :return: The protocol_type of this SwapCoinStruct.  # noqa: E501
+        :rtype: int
+        """
+        return self._protocol_type
+
+    @protocol_type.setter
+    def protocol_type(self, protocol_type):
+        """Sets the protocol_type of this SwapCoinStruct.
+
+        DEFI协议类型  # noqa: E501
+
+        :param protocol_type: The protocol_type of this SwapCoinStruct.  # noqa: E501
+        :type: int
+        """
+
+        self._protocol_type = protocol_type
+
+    @property
+    def client_order_id(self):
+        """Gets the client_order_id of this SwapCoinStruct.  # noqa: E501
+
+        参考ID  # noqa: E501
+
+        :return: The client_order_id of this SwapCoinStruct.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_order_id
+
+    @client_order_id.setter
+    def client_order_id(self, client_order_id):
+        """Sets the client_order_id of this SwapCoinStruct.
+
+        参考ID  # noqa: E501
+
+        :param client_order_id: The client_order_id of this SwapCoinStruct.  # noqa: E501
+        :type: str
+        """
+
+        self._client_order_id = client_order_id
+
+    @property
+    def source(self):
+        """Gets the source of this SwapCoinStruct.  # noqa: E501
+
+        Order source.  # noqa: E501
+
+        :return: The source of this SwapCoinStruct.  # noqa: E501
+        :rtype: str
+        """
+        return self._source
+
+    @source.setter
+    def source(self, source):
+        """Sets the source of this SwapCoinStruct.
+
+        Order source.  # noqa: E501
+
+        :param source: The source of this SwapCoinStruct.  # noqa: E501
+        :type: str
+        """
+
+        self._source = source
 
     def to_dict(self):
         """Returns the model properties as a dict"""

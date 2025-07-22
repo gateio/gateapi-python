@@ -87,7 +87,7 @@ class CancelOrderResult(object):
     def currency_pair(self):
         """Gets the currency_pair of this CancelOrderResult.  # noqa: E501
 
-        Order currency pair  # noqa: E501
+        Order currency pair.  # noqa: E501
 
         :return: The currency_pair of this CancelOrderResult.  # noqa: E501
         :rtype: str
@@ -98,7 +98,7 @@ class CancelOrderResult(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this CancelOrderResult.
 
-        Order currency pair  # noqa: E501
+        Order currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this CancelOrderResult.  # noqa: E501
         :type: str
@@ -110,7 +110,7 @@ class CancelOrderResult(object):
     def id(self):
         """Gets the id of this CancelOrderResult.  # noqa: E501
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :return: The id of this CancelOrderResult.  # noqa: E501
         :rtype: str
@@ -121,7 +121,7 @@ class CancelOrderResult(object):
     def id(self, id):
         """Sets the id of this CancelOrderResult.
 
-        Order ID  # noqa: E501
+        Order ID.  # noqa: E501
 
         :param id: The id of this CancelOrderResult.  # noqa: E501
         :type: str
@@ -133,7 +133,7 @@ class CancelOrderResult(object):
     def text(self):
         """Gets the text of this CancelOrderResult.  # noqa: E501
 
-        Custom order information  # noqa: E501
+        Custom order information.  # noqa: E501
 
         :return: The text of this CancelOrderResult.  # noqa: E501
         :rtype: str
@@ -144,7 +144,7 @@ class CancelOrderResult(object):
     def text(self, text):
         """Sets the text of this CancelOrderResult.
 
-        Custom order information  # noqa: E501
+        Custom order information.  # noqa: E501
 
         :param text: The text of this CancelOrderResult.  # noqa: E501
         :type: str
@@ -156,7 +156,7 @@ class CancelOrderResult(object):
     def succeeded(self):
         """Gets the succeeded of this CancelOrderResult.  # noqa: E501
 
-        Whether cancellation succeeded  # noqa: E501
+        Whether cancellation succeeded.  # noqa: E501
 
         :return: The succeeded of this CancelOrderResult.  # noqa: E501
         :rtype: bool
@@ -167,7 +167,7 @@ class CancelOrderResult(object):
     def succeeded(self, succeeded):
         """Sets the succeeded of this CancelOrderResult.
 
-        Whether cancellation succeeded  # noqa: E501
+        Whether cancellation succeeded.  # noqa: E501
 
         :param succeeded: The succeeded of this CancelOrderResult.  # noqa: E501
         :type: bool
@@ -179,7 +179,7 @@ class CancelOrderResult(object):
     def label(self):
         """Gets the label of this CancelOrderResult.  # noqa: E501
 
-        Error label when failed to cancel the order; emtpy if succeeded  # noqa: E501
+        Error label when failed to cancel the order; emtpy if succeeded.  # noqa: E501
 
         :return: The label of this CancelOrderResult.  # noqa: E501
         :rtype: str
@@ -190,7 +190,7 @@ class CancelOrderResult(object):
     def label(self, label):
         """Sets the label of this CancelOrderResult.
 
-        Error label when failed to cancel the order; emtpy if succeeded  # noqa: E501
+        Error label when failed to cancel the order; emtpy if succeeded.  # noqa: E501
 
         :param label: The label of this CancelOrderResult.  # noqa: E501
         :type: str
@@ -202,7 +202,7 @@ class CancelOrderResult(object):
     def message(self):
         """Gets the message of this CancelOrderResult.  # noqa: E501
 
-        Error message when failed to cancel the order; empty if succeeded  # noqa: E501
+        Error message when failed to cancel the order; empty if succeeded.  # noqa: E501
 
         :return: The message of this CancelOrderResult.  # noqa: E501
         :rtype: str
@@ -213,7 +213,7 @@ class CancelOrderResult(object):
     def message(self, message):
         """Sets the message of this CancelOrderResult.
 
-        Error message when failed to cancel the order; empty if succeeded  # noqa: E501
+        Error message when failed to cancel the order; empty if succeeded.  # noqa: E501
 
         :param message: The message of this CancelOrderResult.  # noqa: E501
         :type: str
@@ -225,7 +225,7 @@ class CancelOrderResult(object):
     def account(self):
         """Gets the account of this CancelOrderResult.  # noqa: E501
 
-        Default is empty (deprecated)  # noqa: E501
+        Default is empty (deprecated).  # noqa: E501
 
         :return: The account of this CancelOrderResult.  # noqa: E501
         :rtype: str
@@ -236,7 +236,7 @@ class CancelOrderResult(object):
     def account(self, account):
         """Sets the account of this CancelOrderResult.
 
-        Default is empty (deprecated)  # noqa: E501
+        Default is empty (deprecated).  # noqa: E501
 
         :param account: The account of this CancelOrderResult.  # noqa: E501
         :type: str

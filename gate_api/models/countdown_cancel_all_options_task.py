@@ -91,7 +91,7 @@ class CountdownCancelAllOptionsTask(object):
     def contract(self):
         """Gets the contract of this CountdownCancelAllOptionsTask.  # noqa: E501
 
-        Options contract name  # noqa: E501
+        Options contract name.  # noqa: E501
 
         :return: The contract of this CountdownCancelAllOptionsTask.  # noqa: E501
         :rtype: str
@@ -102,7 +102,7 @@ class CountdownCancelAllOptionsTask(object):
     def contract(self, contract):
         """Sets the contract of this CountdownCancelAllOptionsTask.
 
-        Options contract name  # noqa: E501
+        Options contract name.  # noqa: E501
 
         :param contract: The contract of this CountdownCancelAllOptionsTask.  # noqa: E501
         :type: str
@@ -114,7 +114,7 @@ class CountdownCancelAllOptionsTask(object):
     def underlying(self):
         """Gets the underlying of this CountdownCancelAllOptionsTask.  # noqa: E501
 
-        Underlying  # noqa: E501
+        Underlying.  # noqa: E501
 
         :return: The underlying of this CountdownCancelAllOptionsTask.  # noqa: E501
         :rtype: str
@@ -125,7 +125,7 @@ class CountdownCancelAllOptionsTask(object):
     def underlying(self, underlying):
         """Sets the underlying of this CountdownCancelAllOptionsTask.
 
-        Underlying  # noqa: E501
+        Underlying.  # noqa: E501
 
         :param underlying: The underlying of this CountdownCancelAllOptionsTask.  # noqa: E501
         :type: str

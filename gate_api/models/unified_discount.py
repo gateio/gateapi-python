@@ -62,7 +62,7 @@ class UnifiedDiscount(object):
     def currency(self):
         """Gets the currency of this UnifiedDiscount.  # noqa: E501
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :return: The currency of this UnifiedDiscount.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class UnifiedDiscount(object):
     def currency(self, currency):
         """Sets the currency of this UnifiedDiscount.
 
-        Currency name  # noqa: E501
+        Currency name.  # noqa: E501
 
         :param currency: The currency of this UnifiedDiscount.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class UnifiedDiscount(object):
     def discount_tiers(self):
         """Gets the discount_tiers of this UnifiedDiscount.  # noqa: E501
 
-        Tiered discount  # noqa: E501
+        Tiered discount.  # noqa: E501
 
         :return: The discount_tiers of this UnifiedDiscount.  # noqa: E501
         :rtype: list[UnifiedDiscountTiers]
@@ -96,7 +96,7 @@ class UnifiedDiscount(object):
     def discount_tiers(self, discount_tiers):
         """Sets the discount_tiers of this UnifiedDiscount.
 
-        Tiered discount  # noqa: E501
+        Tiered discount.  # noqa: E501
 
         :param discount_tiers: The discount_tiers of this UnifiedDiscount.  # noqa: E501
         :type: list[UnifiedDiscountTiers]

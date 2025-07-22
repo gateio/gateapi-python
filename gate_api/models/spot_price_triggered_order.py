@@ -145,7 +145,7 @@ class SpotPriceTriggeredOrder(object):
     def id(self):
         """Gets the id of this SpotPriceTriggeredOrder.  # noqa: E501
 
-        Auto order ID  # noqa: E501
+        Auto order ID.  # noqa: E501
 
         :return: The id of this SpotPriceTriggeredOrder.  # noqa: E501
         :rtype: int
@@ -156,7 +156,7 @@ class SpotPriceTriggeredOrder(object):
     def id(self, id):
         """Sets the id of this SpotPriceTriggeredOrder.
 
-        Auto order ID  # noqa: E501
+        Auto order ID.  # noqa: E501
 
         :param id: The id of this SpotPriceTriggeredOrder.  # noqa: E501
         :type: int
@@ -168,7 +168,7 @@ class SpotPriceTriggeredOrder(object):
     def user(self):
         """Gets the user of this SpotPriceTriggeredOrder.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user of this SpotPriceTriggeredOrder.  # noqa: E501
         :rtype: int
@@ -179,7 +179,7 @@ class SpotPriceTriggeredOrder(object):
     def user(self, user):
         """Sets the user of this SpotPriceTriggeredOrder.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user: The user of this SpotPriceTriggeredOrder.  # noqa: E501
         :type: int
@@ -191,7 +191,7 @@ class SpotPriceTriggeredOrder(object):
     def market(self):
         """Gets the market of this SpotPriceTriggeredOrder.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The market of this SpotPriceTriggeredOrder.  # noqa: E501
         :rtype: str
@@ -202,7 +202,7 @@ class SpotPriceTriggeredOrder(object):
     def market(self, market):
         """Sets the market of this SpotPriceTriggeredOrder.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param market: The market of this SpotPriceTriggeredOrder.  # noqa: E501
         :type: str
@@ -216,7 +216,7 @@ class SpotPriceTriggeredOrder(object):
     def ctime(self):
         """Gets the ctime of this SpotPriceTriggeredOrder.  # noqa: E501
 
-        Creation time  # noqa: E501
+        Creation time.  # noqa: E501
 
         :return: The ctime of this SpotPriceTriggeredOrder.  # noqa: E501
         :rtype: int
@@ -227,7 +227,7 @@ class SpotPriceTriggeredOrder(object):
     def ctime(self, ctime):
         """Sets the ctime of this SpotPriceTriggeredOrder.
 
-        Creation time  # noqa: E501
+        Creation time.  # noqa: E501
 
         :param ctime: The ctime of this SpotPriceTriggeredOrder.  # noqa: E501
         :type: int
@@ -239,7 +239,7 @@ class SpotPriceTriggeredOrder(object):
     def ftime(self):
         """Gets the ftime of this SpotPriceTriggeredOrder.  # noqa: E501
 
-        Finished time  # noqa: E501
+        Finished time.  # noqa: E501
 
         :return: The ftime of this SpotPriceTriggeredOrder.  # noqa: E501
         :rtype: int
@@ -250,7 +250,7 @@ class SpotPriceTriggeredOrder(object):
     def ftime(self, ftime):
         """Sets the ftime of this SpotPriceTriggeredOrder.
 
-        Finished time  # noqa: E501
+        Finished time.  # noqa: E501
 
         :param ftime: The ftime of this SpotPriceTriggeredOrder.  # noqa: E501
         :type: int
@@ -262,7 +262,7 @@ class SpotPriceTriggeredOrder(object):
     def fired_order_id(self):
         """Gets the fired_order_id of this SpotPriceTriggeredOrder.  # noqa: E501
 
-        ID of the newly created order on condition triggered  # noqa: E501
+        ID of the newly created order on condition triggered.  # noqa: E501
 
         :return: The fired_order_id of this SpotPriceTriggeredOrder.  # noqa: E501
         :rtype: int
@@ -273,7 +273,7 @@ class SpotPriceTriggeredOrder(object):
     def fired_order_id(self, fired_order_id):
         """Sets the fired_order_id of this SpotPriceTriggeredOrder.
 
-        ID of the newly created order on condition triggered  # noqa: E501
+        ID of the newly created order on condition triggered.  # noqa: E501
 
         :param fired_order_id: The fired_order_id of this SpotPriceTriggeredOrder.  # noqa: E501
         :type: int
@@ -308,7 +308,7 @@ class SpotPriceTriggeredOrder(object):
     def reason(self):
         """Gets the reason of this SpotPriceTriggeredOrder.  # noqa: E501
 
-        Additional remarks on how the order was finished  # noqa: E501
+        Additional remarks on how the order was finished.  # noqa: E501
 
         :return: The reason of this SpotPriceTriggeredOrder.  # noqa: E501
         :rtype: str
@@ -319,7 +319,7 @@ class SpotPriceTriggeredOrder(object):
     def reason(self, reason):
         """Sets the reason of this SpotPriceTriggeredOrder.
 
-        Additional remarks on how the order was finished  # noqa: E501
+        Additional remarks on how the order was finished.  # noqa: E501
 
         :param reason: The reason of this SpotPriceTriggeredOrder.  # noqa: E501
         :type: str

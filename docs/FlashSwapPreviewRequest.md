@@ -1,6 +1,6 @@
 # FlashSwapPreviewRequest
 
-Parameters of flash swap order creation
+Parameters of flash swap order creation.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

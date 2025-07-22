@@ -67,7 +67,7 @@ class StpGroupUser(object):
     def user_id(self):
         """Gets the user_id of this StpGroupUser.  # noqa: E501
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :return: The user_id of this StpGroupUser.  # noqa: E501
         :rtype: int
@@ -78,7 +78,7 @@ class StpGroupUser(object):
     def user_id(self, user_id):
         """Sets the user_id of this StpGroupUser.
 
-        User ID  # noqa: E501
+        User ID.  # noqa: E501
 
         :param user_id: The user_id of this StpGroupUser.  # noqa: E501
         :type: int
@@ -90,7 +90,7 @@ class StpGroupUser(object):
     def stp_id(self):
         """Gets the stp_id of this StpGroupUser.  # noqa: E501
 
-        STP Group ID  # noqa: E501
+        STP Group ID.  # noqa: E501
 
         :return: The stp_id of this StpGroupUser.  # noqa: E501
         :rtype: int
@@ -101,7 +101,7 @@ class StpGroupUser(object):
     def stp_id(self, stp_id):
         """Sets the stp_id of this StpGroupUser.
 
-        STP Group ID  # noqa: E501
+        STP Group ID.  # noqa: E501
 
         :param stp_id: The stp_id of this StpGroupUser.  # noqa: E501
         :type: int
@@ -113,7 +113,7 @@ class StpGroupUser(object):
     def create_time(self):
         """Gets the create_time of this StpGroupUser.  # noqa: E501
 
-        Creation time  # noqa: E501
+        Creation time.  # noqa: E501
 
         :return: The create_time of this StpGroupUser.  # noqa: E501
         :rtype: int
@@ -124,7 +124,7 @@ class StpGroupUser(object):
     def create_time(self, create_time):
         """Sets the create_time of this StpGroupUser.
 
-        Creation time  # noqa: E501
+        Creation time.  # noqa: E501
 
         :param create_time: The create_time of this StpGroupUser.  # noqa: E501
         :type: int

@@ -87,7 +87,7 @@ class FuturesTrade(object):
     def id(self):
         """Gets the id of this FuturesTrade.  # noqa: E501
 
-        Trade ID  # noqa: E501
+        Trade ID.  # noqa: E501
 
         :return: The id of this FuturesTrade.  # noqa: E501
         :rtype: int
@@ -98,7 +98,7 @@ class FuturesTrade(object):
     def id(self, id):
         """Sets the id of this FuturesTrade.
 
-        Trade ID  # noqa: E501
+        Trade ID.  # noqa: E501
 
         :param id: The id of this FuturesTrade.  # noqa: E501
         :type: int
@@ -110,7 +110,7 @@ class FuturesTrade(object):
     def create_time(self):
         """Gets the create_time of this FuturesTrade.  # noqa: E501
 
-        Trading time  # noqa: E501
+        Trading time.  # noqa: E501
 
         :return: The create_time of this FuturesTrade.  # noqa: E501
         :rtype: float
@@ -121,7 +121,7 @@ class FuturesTrade(object):
     def create_time(self, create_time):
         """Sets the create_time of this FuturesTrade.
 
-        Trading time  # noqa: E501
+        Trading time.  # noqa: E501
 
         :param create_time: The create_time of this FuturesTrade.  # noqa: E501
         :type: float
@@ -156,7 +156,7 @@ class FuturesTrade(object):
     def contract(self):
         """Gets the contract of this FuturesTrade.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :return: The contract of this FuturesTrade.  # noqa: E501
         :rtype: str
@@ -167,7 +167,7 @@ class FuturesTrade(object):
     def contract(self, contract):
         """Sets the contract of this FuturesTrade.
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :param contract: The contract of this FuturesTrade.  # noqa: E501
         :type: str
@@ -179,7 +179,7 @@ class FuturesTrade(object):
     def size(self):
         """Gets the size of this FuturesTrade.  # noqa: E501
 
-        Trading size  # noqa: E501
+        Trading size.  # noqa: E501
 
         :return: The size of this FuturesTrade.  # noqa: E501
         :rtype: int
@@ -190,7 +190,7 @@ class FuturesTrade(object):
     def size(self, size):
         """Sets the size of this FuturesTrade.
 
-        Trading size  # noqa: E501
+        Trading size.  # noqa: E501
 
         :param size: The size of this FuturesTrade.  # noqa: E501
         :type: int
@@ -202,7 +202,7 @@ class FuturesTrade(object):
     def price(self):
         """Gets the price of this FuturesTrade.  # noqa: E501
 
-        Trading price (quote currency)  # noqa: E501
+        Trading price (quote currency).  # noqa: E501
 
         :return: The price of this FuturesTrade.  # noqa: E501
         :rtype: str
@@ -213,7 +213,7 @@ class FuturesTrade(object):
     def price(self, price):
         """Sets the price of this FuturesTrade.
 
-        Trading price (quote currency)  # noqa: E501
+        Trading price (quote currency).  # noqa: E501
 
         :param price: The price of this FuturesTrade.  # noqa: E501
         :type: str
@@ -225,7 +225,7 @@ class FuturesTrade(object):
     def is_internal(self):
         """Gets the is_internal of this FuturesTrade.  # noqa: E501
 
-        Whether internal trade. Internal trade refers to the takeover of liquidation orders by the insurance fund and ADL users. Since it is not a normal matching on the market depth, the transaction price may deviate, and it will not be recorded in the K-line. If it is not an internal trade, this field will not be returned.  # noqa: E501
+        Whether internal trade. Internal trade refers to the takeover of liquidation orders by the insurance fund and ADL users. Since it is not a normal matching on the market depth, the transaction price may deviate, and it will not be recorded in the K-line. an internal trade, this field will not be returned.  # noqa: E501
 
         :return: The is_internal of this FuturesTrade.  # noqa: E501
         :rtype: bool
@@ -236,7 +236,7 @@ class FuturesTrade(object):
     def is_internal(self, is_internal):
         """Sets the is_internal of this FuturesTrade.
 
-        Whether internal trade. Internal trade refers to the takeover of liquidation orders by the insurance fund and ADL users. Since it is not a normal matching on the market depth, the transaction price may deviate, and it will not be recorded in the K-line. If it is not an internal trade, this field will not be returned.  # noqa: E501
+        Whether internal trade. Internal trade refers to the takeover of liquidation orders by the insurance fund and ADL users. Since it is not a normal matching on the market depth, the transaction price may deviate, and it will not be recorded in the K-line. an internal trade, this field will not be returned.  # noqa: E501
 
         :param is_internal: The is_internal of this FuturesTrade.  # noqa: E501
         :type: bool

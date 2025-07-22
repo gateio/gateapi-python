@@ -86,7 +86,7 @@ class CountdownCancelAllFuturesTask(object):
     def contract(self):
         """Gets the contract of this CountdownCancelAllFuturesTask.  # noqa: E501
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :return: The contract of this CountdownCancelAllFuturesTask.  # noqa: E501
         :rtype: str
@@ -97,7 +97,7 @@ class CountdownCancelAllFuturesTask(object):
     def contract(self, contract):
         """Sets the contract of this CountdownCancelAllFuturesTask.
 
-        Futures contract  # noqa: E501
+        Futures contract.  # noqa: E501
 
         :param contract: The contract of this CountdownCancelAllFuturesTask.  # noqa: E501
         :type: str

@@ -86,7 +86,7 @@ class CountdownCancelAllSpotTask(object):
     def currency_pair(self):
         """Gets the currency_pair of this CountdownCancelAllSpotTask.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this CountdownCancelAllSpotTask.  # noqa: E501
         :rtype: str
@@ -97,7 +97,7 @@ class CountdownCancelAllSpotTask(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this CountdownCancelAllSpotTask.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this CountdownCancelAllSpotTask.  # noqa: E501
         :type: str

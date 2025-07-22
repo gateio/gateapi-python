@@ -61,7 +61,7 @@ class MarginMarketLeverage(object):
     def currency_pair(self):
         """Gets the currency_pair of this MarginMarketLeverage.  # noqa: E501
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :return: The currency_pair of this MarginMarketLeverage.  # noqa: E501
         :rtype: str
@@ -72,7 +72,7 @@ class MarginMarketLeverage(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this MarginMarketLeverage.
 
-        Currency pair  # noqa: E501
+        Currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this MarginMarketLeverage.  # noqa: E501
         :type: str
@@ -84,7 +84,7 @@ class MarginMarketLeverage(object):
     def leverage(self):
         """Gets the leverage of this MarginMarketLeverage.  # noqa: E501
 
-        Position leverage  # noqa: E501
+        Position leverage.  # noqa: E501
 
         :return: The leverage of this MarginMarketLeverage.  # noqa: E501
         :rtype: str
@@ -95,7 +95,7 @@ class MarginMarketLeverage(object):
     def leverage(self, leverage):
         """Sets the leverage of this MarginMarketLeverage.
 
-        Position leverage  # noqa: E501
+        Position leverage.  # noqa: E501
 
         :param leverage: The leverage of this MarginMarketLeverage.  # noqa: E501
         :type: str

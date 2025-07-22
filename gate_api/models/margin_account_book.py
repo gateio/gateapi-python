@@ -92,7 +92,7 @@ class MarginAccountBook(object):
     def id(self):
         """Gets the id of this MarginAccountBook.  # noqa: E501
 
-        Balance change record ID  # noqa: E501
+        Balance change record ID.  # noqa: E501
 
         :return: The id of this MarginAccountBook.  # noqa: E501
         :rtype: str
@@ -103,7 +103,7 @@ class MarginAccountBook(object):
     def id(self, id):
         """Sets the id of this MarginAccountBook.
 
-        Balance change record ID  # noqa: E501
+        Balance change record ID.  # noqa: E501
 
         :param id: The id of this MarginAccountBook.  # noqa: E501
         :type: str
@@ -115,7 +115,7 @@ class MarginAccountBook(object):
     def time(self):
         """Gets the time of this MarginAccountBook.  # noqa: E501
 
-        Balance changed timestamp  # noqa: E501
+        Balance changed timestamp.  # noqa: E501
 
         :return: The time of this MarginAccountBook.  # noqa: E501
         :rtype: str
@@ -126,7 +126,7 @@ class MarginAccountBook(object):
     def time(self, time):
         """Sets the time of this MarginAccountBook.
 
-        Balance changed timestamp  # noqa: E501
+        Balance changed timestamp.  # noqa: E501
 
         :param time: The time of this MarginAccountBook.  # noqa: E501
         :type: str
@@ -138,7 +138,7 @@ class MarginAccountBook(object):
     def time_ms(self):
         """Gets the time_ms of this MarginAccountBook.  # noqa: E501
 
-        The timestamp of the change (in milliseconds)  # noqa: E501
+        The timestamp of the change (in milliseconds).  # noqa: E501
 
         :return: The time_ms of this MarginAccountBook.  # noqa: E501
         :rtype: int
@@ -149,7 +149,7 @@ class MarginAccountBook(object):
     def time_ms(self, time_ms):
         """Sets the time_ms of this MarginAccountBook.
 
-        The timestamp of the change (in milliseconds)  # noqa: E501
+        The timestamp of the change (in milliseconds).  # noqa: E501
 
         :param time_ms: The time_ms of this MarginAccountBook.  # noqa: E501
         :type: int
@@ -161,7 +161,7 @@ class MarginAccountBook(object):
     def currency(self):
         """Gets the currency of this MarginAccountBook.  # noqa: E501
 
-        Currency changed  # noqa: E501
+        Currency changed.  # noqa: E501
 
         :return: The currency of this MarginAccountBook.  # noqa: E501
         :rtype: str
@@ -172,7 +172,7 @@ class MarginAccountBook(object):
     def currency(self, currency):
         """Sets the currency of this MarginAccountBook.
 
-        Currency changed  # noqa: E501
+        Currency changed.  # noqa: E501
 
         :param currency: The currency of this MarginAccountBook.  # noqa: E501
         :type: str
@@ -184,7 +184,7 @@ class MarginAccountBook(object):
     def currency_pair(self):
         """Gets the currency_pair of this MarginAccountBook.  # noqa: E501
 
-        Account currency pair  # noqa: E501
+        Account currency pair.  # noqa: E501
 
         :return: The currency_pair of this MarginAccountBook.  # noqa: E501
         :rtype: str
@@ -195,7 +195,7 @@ class MarginAccountBook(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this MarginAccountBook.
 
-        Account currency pair  # noqa: E501
+        Account currency pair.  # noqa: E501
 
         :param currency_pair: The currency_pair of this MarginAccountBook.  # noqa: E501
         :type: str
@@ -207,7 +207,7 @@ class MarginAccountBook(object):
     def change(self):
         """Gets the change of this MarginAccountBook.  # noqa: E501
 
-        Amount changed. Positive value means transferring in, while negative out  # noqa: E501
+        Amount changed. Positive value means transferring in, while negative out.  # noqa: E501
 
         :return: The change of this MarginAccountBook.  # noqa: E501
         :rtype: str
@@ -218,7 +218,7 @@ class MarginAccountBook(object):
     def change(self, change):
         """Sets the change of this MarginAccountBook.
 
-        Amount changed. Positive value means transferring in, while negative out  # noqa: E501
+        Amount changed. Positive value means transferring in, while negative out.  # noqa: E501
 
         :param change: The change of this MarginAccountBook.  # noqa: E501
         :type: str
@@ -230,7 +230,7 @@ class MarginAccountBook(object):
     def balance(self):
         """Gets the balance of this MarginAccountBook.  # noqa: E501
 
-        Balance after change  # noqa: E501
+        Balance after change.  # noqa: E501
 
         :return: The balance of this MarginAccountBook.  # noqa: E501
         :rtype: str
@@ -241,7 +241,7 @@ class MarginAccountBook(object):
     def balance(self, balance):
         """Sets the balance of this MarginAccountBook.
 
-        Balance after change  # noqa: E501
+        Balance after change.  # noqa: E501
 
         :param balance: The balance of this MarginAccountBook.  # noqa: E501
         :type: str
@@ -253,7 +253,7 @@ class MarginAccountBook(object):
     def type(self):
         """Gets the type of this MarginAccountBook.  # noqa: E501
 
-        Account book type.  Please refer to [account book type](#accountbook-type) for more detail  # noqa: E501
+        Account book type. Please refer to [account book type](#accountbook-type) for more detail  # noqa: E501
 
         :return: The type of this MarginAccountBook.  # noqa: E501
         :rtype: str
@@ -264,7 +264,7 @@ class MarginAccountBook(object):
     def type(self, type):
         """Sets the type of this MarginAccountBook.
 
-        Account book type.  Please refer to [account book type](#accountbook-type) for more detail  # noqa: E501
+        Account book type. Please refer to [account book type](#accountbook-type) for more detail  # noqa: E501
 
         :param type: The type of this MarginAccountBook.  # noqa: E501
         :type: str

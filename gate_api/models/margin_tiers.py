@@ -77,7 +77,7 @@ class MarginTiers(object):
     def tier(self):
         """Gets the tier of this MarginTiers.  # noqa: E501
 
-        Tier  # noqa: E501
+        Tier.  # noqa: E501
 
         :return: The tier of this MarginTiers.  # noqa: E501
         :rtype: str
@@ -88,7 +88,7 @@ class MarginTiers(object):
     def tier(self, tier):
         """Sets the tier of this MarginTiers.
 
-        Tier  # noqa: E501
+        Tier.  # noqa: E501
 
         :param tier: The tier of this MarginTiers.  # noqa: E501
         :type: str
@@ -100,7 +100,7 @@ class MarginTiers(object):
     def margin_rate(self):
         """Gets the margin_rate of this MarginTiers.  # noqa: E501
 
-        Discount  # noqa: E501
+        Discount.  # noqa: E501
 
         :return: The margin_rate of this MarginTiers.  # noqa: E501
         :rtype: str
@@ -111,7 +111,7 @@ class MarginTiers(object):
     def margin_rate(self, margin_rate):
         """Sets the margin_rate of this MarginTiers.
 
-        Discount  # noqa: E501
+        Discount.  # noqa: E501
 
         :param margin_rate: The margin_rate of this MarginTiers.  # noqa: E501
         :type: str
@@ -123,7 +123,7 @@ class MarginTiers(object):
     def lower_limit(self):
         """Gets the lower_limit of this MarginTiers.  # noqa: E501
 
-        Lower limit  # noqa: E501
+        Lower limit.  # noqa: E501
 
         :return: The lower_limit of this MarginTiers.  # noqa: E501
         :rtype: str
@@ -134,7 +134,7 @@ class MarginTiers(object):
     def lower_limit(self, lower_limit):
         """Sets the lower_limit of this MarginTiers.
 
-        Lower limit  # noqa: E501
+        Lower limit.  # noqa: E501
 
         :param lower_limit: The lower_limit of this MarginTiers.  # noqa: E501
         :type: str
@@ -146,7 +146,7 @@ class MarginTiers(object):
     def upper_limit(self):
         """Gets the upper_limit of this MarginTiers.  # noqa: E501
 
-        Upper limit, \"\" indicates greater than (the last tier)  # noqa: E501
+        Upper limit, \"\" indicates greater than (the last tier).  # noqa: E501
 
         :return: The upper_limit of this MarginTiers.  # noqa: E501
         :rtype: str
@@ -157,7 +157,7 @@ class MarginTiers(object):
     def upper_limit(self, upper_limit):
         """Sets the upper_limit of this MarginTiers.
 
-        Upper limit, \"\" indicates greater than (the last tier)  # noqa: E501
+        Upper limit, \"\" indicates greater than (the last tier).  # noqa: E501
 
         :param upper_limit: The upper_limit of this MarginTiers.  # noqa: E501
         :type: str
@@ -169,7 +169,7 @@ class MarginTiers(object):
     def leverage(self):
         """Gets the leverage of this MarginTiers.  # noqa: E501
 
-        Position leverage  # noqa: E501
+        Position leverage.  # noqa: E501
 
         :return: The leverage of this MarginTiers.  # noqa: E501
         :rtype: str
@@ -180,7 +180,7 @@ class MarginTiers(object):
     def leverage(self, leverage):
         """Sets the leverage of this MarginTiers.
 
-        Position leverage  # noqa: E501
+        Position leverage.  # noqa: E501
 
         :param leverage: The leverage of this MarginTiers.  # noqa: E501
         :type: str

@@ -62,7 +62,7 @@ class UniLendInterest(object):
     def currency(self):
         """Gets the currency of this UniLendInterest.  # noqa: E501
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :return: The currency of this UniLendInterest.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class UniLendInterest(object):
     def currency(self, currency):
         """Sets the currency of this UniLendInterest.
 
-        Currency  # noqa: E501
+        Currency.  # noqa: E501
 
         :param currency: The currency of this UniLendInterest.  # noqa: E501
         :type: str
@@ -85,7 +85,7 @@ class UniLendInterest(object):
     def interest(self):
         """Gets the interest of this UniLendInterest.  # noqa: E501
 
-        Interest  # noqa: E501
+        Interest.  # noqa: E501
 
         :return: The interest of this UniLendInterest.  # noqa: E501
         :rtype: str
@@ -96,7 +96,7 @@ class UniLendInterest(object):
     def interest(self, interest):
         """Sets the interest of this UniLendInterest.
 
-        Interest  # noqa: E501
+        Interest.  # noqa: E501
 
         :param interest: The interest of this UniLendInterest.  # noqa: E501
         :type: str

@@ -67,7 +67,7 @@ class OptionsUnderlyingTicker(object):
     def trade_put(self):
         """Gets the trade_put of this OptionsUnderlyingTicker.  # noqa: E501
 
-        Total put options trades amount in last 24h  # noqa: E501
+        Total put options trades amount in last 24h.  # noqa: E501
 
         :return: The trade_put of this OptionsUnderlyingTicker.  # noqa: E501
         :rtype: int
@@ -78,7 +78,7 @@ class OptionsUnderlyingTicker(object):
     def trade_put(self, trade_put):
         """Sets the trade_put of this OptionsUnderlyingTicker.
 
-        Total put options trades amount in last 24h  # noqa: E501
+        Total put options trades amount in last 24h.  # noqa: E501
 
         :param trade_put: The trade_put of this OptionsUnderlyingTicker.  # noqa: E501
         :type: int
@@ -90,7 +90,7 @@ class OptionsUnderlyingTicker(object):
     def trade_call(self):
         """Gets the trade_call of this OptionsUnderlyingTicker.  # noqa: E501
 
-        Total call options trades amount in last 24h  # noqa: E501
+        Total call options trades amount in last 24h.  # noqa: E501
 
         :return: The trade_call of this OptionsUnderlyingTicker.  # noqa: E501
         :rtype: int
@@ -101,7 +101,7 @@ class OptionsUnderlyingTicker(object):
     def trade_call(self, trade_call):
         """Sets the trade_call of this OptionsUnderlyingTicker.
 
-        Total call options trades amount in last 24h  # noqa: E501
+        Total call options trades amount in last 24h.  # noqa: E501
 
         :param trade_call: The trade_call of this OptionsUnderlyingTicker.  # noqa: E501
         :type: int
@@ -113,7 +113,7 @@ class OptionsUnderlyingTicker(object):
     def index_price(self):
         """Gets the index_price of this OptionsUnderlyingTicker.  # noqa: E501
 
-        Index price (quote currency)  # noqa: E501
+        Index price (quote currency).  # noqa: E501
 
         :return: The index_price of this OptionsUnderlyingTicker.  # noqa: E501
         :rtype: str
@@ -124,7 +124,7 @@ class OptionsUnderlyingTicker(object):
     def index_price(self, index_price):
         """Sets the index_price of this OptionsUnderlyingTicker.
 
-        Index price (quote currency)  # noqa: E501
+        Index price (quote currency).  # noqa: E501
 
         :param index_price: The index_price of this OptionsUnderlyingTicker.  # noqa: E501
         :type: str

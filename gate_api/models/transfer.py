@@ -103,7 +103,7 @@ class Transfer(object):
     def _from(self):
         """Gets the _from of this Transfer.  # noqa: E501
 
-        Account to transfer from  # noqa: E501
+        Account to transfer from.  # noqa: E501
 
         :return: The _from of this Transfer.  # noqa: E501
         :rtype: str
@@ -114,7 +114,7 @@ class Transfer(object):
     def _from(self, _from):
         """Sets the _from of this Transfer.
 
-        Account to transfer from  # noqa: E501
+        Account to transfer from.  # noqa: E501
 
         :param _from: The _from of this Transfer.  # noqa: E501
         :type: str
@@ -134,7 +134,7 @@ class Transfer(object):
     def to(self):
         """Gets the to of this Transfer.  # noqa: E501
 
-        Account to transfer to  # noqa: E501
+        Account to transfer to.  # noqa: E501
 
         :return: The to of this Transfer.  # noqa: E501
         :rtype: str
@@ -145,7 +145,7 @@ class Transfer(object):
     def to(self, to):
         """Sets the to of this Transfer.
 
-        Account to transfer to  # noqa: E501
+        Account to transfer to.  # noqa: E501
 
         :param to: The to of this Transfer.  # noqa: E501
         :type: str
@@ -165,7 +165,7 @@ class Transfer(object):
     def amount(self):
         """Gets the amount of this Transfer.  # noqa: E501
 
-        Transfer amount  # noqa: E501
+        Transfer amount.  # noqa: E501
 
         :return: The amount of this Transfer.  # noqa: E501
         :rtype: str
@@ -176,7 +176,7 @@ class Transfer(object):
     def amount(self, amount):
         """Sets the amount of this Transfer.
 
-        Transfer amount  # noqa: E501
+        Transfer amount.  # noqa: E501
 
         :param amount: The amount of this Transfer.  # noqa: E501
         :type: str
@@ -190,7 +190,7 @@ class Transfer(object):
     def currency_pair(self):
         """Gets the currency_pair of this Transfer.  # noqa: E501
 
-        Margin currency pair. Required if transfer from or to margin account  # noqa: E501
+        Margin currency pair. Required if transfer from or to margin account.  # noqa: E501
 
         :return: The currency_pair of this Transfer.  # noqa: E501
         :rtype: str
@@ -201,7 +201,7 @@ class Transfer(object):
     def currency_pair(self, currency_pair):
         """Sets the currency_pair of this Transfer.
 
-        Margin currency pair. Required if transfer from or to margin account  # noqa: E501
+        Margin currency pair. Required if transfer from or to margin account.  # noqa: E501
 
         :param currency_pair: The currency_pair of this Transfer.  # noqa: E501
         :type: str
