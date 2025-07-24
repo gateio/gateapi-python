@@ -2687,6 +2687,131 @@ class FuturesApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def update_dual_comp_position_cross_mode(self, settle, inline_object, **kwargs):  # noqa: E501
+        """双仓模式下切换全逐仓模式  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_dual_comp_position_cross_mode(settle, inline_object, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str settle: Settle currency. (required)
+        :param InlineObject inline_object: (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: list[gate_api.Position]
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.update_dual_comp_position_cross_mode_with_http_info(settle, inline_object, **kwargs)  # noqa: E501
+
+    def update_dual_comp_position_cross_mode_with_http_info(self, settle, inline_object, **kwargs):  # noqa: E501
+        """双仓模式下切换全逐仓模式  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_dual_comp_position_cross_mode_with_http_info(settle, inline_object, async_req=True)
+        >>> result = thread.get()
+
+        :param bool async_req: execute request asynchronously
+        :param str settle: Settle currency. (required)
+        :param InlineObject inline_object: (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :rtype: tuple(list[gate_api.Position], status_code(int), headers(HTTPHeaderDict))
+        :return: If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'settle',
+            'inline_object'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for k, v in six.iteritems(local_var_params['kwargs']):
+            if k not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_dual_comp_position_cross_mode" % k
+                )
+            local_var_params[k] = v
+        del local_var_params['kwargs']
+        # verify the required parameter 'settle' is set
+        if self.api_client.client_side_validation and ('settle' not in local_var_params or  # noqa: E501
+                                                        local_var_params['settle'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `settle` when calling `update_dual_comp_position_cross_mode`")  # noqa: E501
+        # verify the required parameter 'inline_object' is set
+        if self.api_client.client_side_validation and ('inline_object' not in local_var_params or  # noqa: E501
+                                                        local_var_params['inline_object'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `inline_object` when calling `update_dual_comp_position_cross_mode`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'settle' in local_var_params:
+            path_params['settle'] = local_var_params['settle']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'inline_object' in local_var_params:
+            body_params = local_var_params['inline_object']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiv4']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/futures/{settle}/dual_comp/positions/cross_mode', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[Position]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def update_position_risk_limit(self, settle, contract, risk_limit, **kwargs):  # noqa: E501
         """Update position risk limit.  # noqa: E501
 
@@ -5000,6 +5125,9 @@ class FuturesApi(object):
         :param str settle: Settle currency. (required)
         :param str contract: Futures contract, return related data only if specified.
         :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
+        :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
+        :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param int at: Specify a liquidation timestamp.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -5027,6 +5155,9 @@ class FuturesApi(object):
         :param str settle: Settle currency. (required)
         :param str contract: Futures contract, return related data only if specified.
         :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
+        :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
+        :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param int at: Specify a liquidation timestamp.
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -5048,6 +5179,9 @@ class FuturesApi(object):
             'settle',
             'contract',
             'limit',
+            'offset',
+            '_from',
+            'to',
             'at'
         ]
         all_params.extend(
@@ -5076,6 +5210,8 @@ class FuturesApi(object):
             raise ApiValueError("Invalid value for parameter `limit` when calling `list_liquidates`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `list_liquidates`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_liquidates`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -5087,6 +5223,12 @@ class FuturesApi(object):
             query_params.append(('contract', local_var_params['contract']))  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
+            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
+        if '_from' in local_var_params and local_var_params['_from'] is not None:  # noqa: E501
+            query_params.append(('from', local_var_params['_from']))  # noqa: E501
+        if 'to' in local_var_params and local_var_params['to'] is not None:  # noqa: E501
+            query_params.append(('to', local_var_params['to']))  # noqa: E501
         if 'at' in local_var_params and local_var_params['at'] is not None:  # noqa: E501
             query_params.append(('at', local_var_params['at']))  # noqa: E501
 
@@ -5131,6 +5273,9 @@ class FuturesApi(object):
         :param str settle: Settle currency. (required)
         :param str contract: Futures contract, return related data only if specified.
         :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
+        :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
+        :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param int at: Specify an auto-deleveraging timestamp.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -5158,6 +5303,9 @@ class FuturesApi(object):
         :param str settle: Settle currency. (required)
         :param str contract: Futures contract, return related data only if specified.
         :param int limit: Maximum number of records to be returned in a single list.
+        :param int offset: List offset, starting from 0.
+        :param int _from: Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit)
+        :param int to: Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp
         :param int at: Specify an auto-deleveraging timestamp.
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -5179,6 +5327,9 @@ class FuturesApi(object):
             'settle',
             'contract',
             'limit',
+            'offset',
+            '_from',
+            'to',
             'at'
         ]
         all_params.extend(
@@ -5207,6 +5358,8 @@ class FuturesApi(object):
             raise ApiValueError("Invalid value for parameter `limit` when calling `list_auto_deleverages`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `list_auto_deleverages`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'offset' in local_var_params and local_var_params['offset'] < 0:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `offset` when calling `list_auto_deleverages`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -5218,6 +5371,12 @@ class FuturesApi(object):
             query_params.append(('contract', local_var_params['contract']))  # noqa: E501
         if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
             query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
+            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
+        if '_from' in local_var_params and local_var_params['_from'] is not None:  # noqa: E501
+            query_params.append(('from', local_var_params['_from']))  # noqa: E501
+        if 'to' in local_var_params and local_var_params['to'] is not None:  # noqa: E501
+            query_params.append(('to', local_var_params['to']))  # noqa: E501
         if 'at' in local_var_params and local_var_params['at'] is not None:  # noqa: E501
             query_params.append(('at', local_var_params['at']))  # noqa: E501
 

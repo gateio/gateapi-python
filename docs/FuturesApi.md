@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**update_position_margin**](FuturesApi.md#update_position_margin) | **POST** /futures/{settle}/positions/{contract}/margin | Update position margin.
 [**update_position_leverage**](FuturesApi.md#update_position_leverage) | **POST** /futures/{settle}/positions/{contract}/leverage | Update position leverage.
 [**update_position_cross_mode**](FuturesApi.md#update_position_cross_mode) | **POST** /futures/{settle}/positions/cross_mode | Switch to the full position-by-store mode.
+[**update_dual_comp_position_cross_mode**](FuturesApi.md#update_dual_comp_position_cross_mode) | **POST** /futures/{settle}/dual_comp/positions/cross_mode | 双仓模式下切换全逐仓模式
 [**update_position_risk_limit**](FuturesApi.md#update_position_risk_limit) | **POST** /futures/{settle}/positions/{contract}/risk_limit | Update position risk limit.
 [**set_dual_mode**](FuturesApi.md#set_dual_mode) | **POST** /futures/{settle}/dual_mode | Enable or disable dual mode.
 [**get_dual_mode_position**](FuturesApi.md#get_dual_mode_position) | **GET** /futures/{settle}/dual_comp/positions/{contract} | Retrieve position detail in dual mode.
@@ -1404,6 +1405,75 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_dual_comp_position_cross_mode**
+> list[Position] update_dual_comp_position_cross_mode(settle, inline_object)
+
+双仓模式下切换全逐仓模式
+
+### Example
+
+* Api Key Authentication (apiv4):
+```python
+from __future__ import print_function
+import gate_api
+from gate_api.exceptions import ApiException, GateApiException
+# Defining the host is optional and defaults to https://api.gateio.ws/api/v4
+# See configuration.py for a list of all supported configuration parameters.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure APIv4 key authorization
+configuration = gate_api.Configuration(
+    host = "https://api.gateio.ws/api/v4",
+    key = "YOU_API_KEY",
+    secret = "YOUR_API_SECRET"
+)
+
+api_client = gate_api.ApiClient(configuration)
+# Create an instance of the API class
+api_instance = gate_api.FuturesApi(api_client)
+settle = 'usdt' # str | Settle currency.
+inline_object = gate_api.InlineObject() # InlineObject | 
+
+try:
+    # 双仓模式下切换全逐仓模式
+    api_response = api_instance.update_dual_comp_position_cross_mode(settle, inline_object)
+    print(api_response)
+except GateApiException as ex:
+    print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
+except ApiException as e:
+    print("Exception when calling FuturesApi->update_dual_comp_position_cross_mode: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **settle** | **str**| Settle currency. | 
+ **inline_object** | [**InlineObject**](InlineObject.md)|  | 
+
+### Return type
+
+[**list[Position]**](Position.md)
+
+### Authorization
+
+[apiv4](../README.md#apiv4)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully retrieved. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_position_risk_limit**
 > Position update_position_risk_limit(settle, contract, risk_limit)
 
@@ -2664,7 +2734,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_liquidates**
-> list[FuturesLiquidate] list_liquidates(settle, contract=contract, limit=limit, at=at)
+> list[FuturesLiquidate] list_liquidates(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, at=at)
 
 List liquidation history.
 
@@ -2695,11 +2765,14 @@ api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency.
 contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
+_from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
+to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 at = 0 # int | Specify a liquidation timestamp. (optional) (default to 0)
 
 try:
     # List liquidation history.
-    api_response = api_instance.list_liquidates(settle, contract=contract, limit=limit, at=at)
+    api_response = api_instance.list_liquidates(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, at=at)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -2714,6 +2787,9 @@ Name | Type | Description  | Notes
  **settle** | **str**| Settle currency. | 
  **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
+ **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
  **at** | **int**| Specify a liquidation timestamp. | [optional] [default to 0]
 
 ### Return type
@@ -2737,7 +2813,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_auto_deleverages**
-> list[FuturesAutoDeleverage] list_auto_deleverages(settle, contract=contract, limit=limit, at=at)
+> list[FuturesAutoDeleverage] list_auto_deleverages(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, at=at)
 
 List Auto-Deleveraging History.
 
@@ -2768,11 +2844,14 @@ api_instance = gate_api.FuturesApi(api_client)
 settle = 'usdt' # str | Settle currency.
 contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
 limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
+_from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
+to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 at = 0 # int | Specify an auto-deleveraging timestamp. (optional) (default to 0)
 
 try:
     # List Auto-Deleveraging History.
-    api_response = api_instance.list_auto_deleverages(settle, contract=contract, limit=limit, at=at)
+    api_response = api_instance.list_auto_deleverages(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, at=at)
     print(api_response)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -2787,6 +2866,9 @@ Name | Type | Description  | Notes
  **settle** | **str**| Settle currency. | 
  **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
  **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
+ **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
+ **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
  **at** | **int**| Specify an auto-deleveraging timestamp. | [optional] [default to 0]
 
 ### Return type

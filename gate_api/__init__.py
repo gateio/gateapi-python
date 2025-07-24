@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "6.102.6"
+__version__ = "6.103.0"
 
 # import apis into sdk package
 from gate_api.api.earn_uni_api import EarnUniApi
@@ -138,6 +138,7 @@ from gate_api.models.futures_risk_limit_tier import FuturesRiskLimitTier
 from gate_api.models.futures_ticker import FuturesTicker
 from gate_api.models.futures_trade import FuturesTrade
 from gate_api.models.index_constituent import IndexConstituent
+from gate_api.models.inline_object import InlineObject
 from gate_api.models.inline_response200 import InlineResponse200
 from gate_api.models.inline_response2001 import InlineResponse2001
 from gate_api.models.insurance_record import InsuranceRecord

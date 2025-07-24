@@ -108,6 +108,7 @@ from gate_api.models.futures_risk_limit_tier import FuturesRiskLimitTier
 from gate_api.models.futures_ticker import FuturesTicker
 from gate_api.models.futures_trade import FuturesTrade
 from gate_api.models.index_constituent import IndexConstituent
+from gate_api.models.inline_object import InlineObject
 from gate_api.models.inline_response200 import InlineResponse200
 from gate_api.models.inline_response2001 import InlineResponse2001
 from gate_api.models.insurance_record import InsuranceRecord
