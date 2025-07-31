@@ -4,23 +4,23 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_sub_accounts**](SubAccountApi.md#list_sub_accounts) | **GET** /sub_accounts | List sub-accounts.
-[**create_sub_accounts**](SubAccountApi.md#create_sub_accounts) | **POST** /sub_accounts | Create a new sub-account.
-[**get_sub_account**](SubAccountApi.md#get_sub_account) | **GET** /sub_accounts/{user_id} | Get the sub-account.
-[**list_sub_account_keys**](SubAccountApi.md#list_sub_account_keys) | **GET** /sub_accounts/{user_id}/keys | List all API Key of the sub-account.
-[**create_sub_account_keys**](SubAccountApi.md#create_sub_account_keys) | **POST** /sub_accounts/{user_id}/keys | Create API Key of the sub-account.
-[**get_sub_account_key**](SubAccountApi.md#get_sub_account_key) | **GET** /sub_accounts/{user_id}/keys/{key} | Get the API Key of the sub-account.
-[**update_sub_account_keys**](SubAccountApi.md#update_sub_account_keys) | **PUT** /sub_accounts/{user_id}/keys/{key} | Update API key of the sub-account.
-[**delete_sub_account_keys**](SubAccountApi.md#delete_sub_account_keys) | **DELETE** /sub_accounts/{user_id}/keys/{key} | Delete API key of the sub-account.
-[**lock_sub_account**](SubAccountApi.md#lock_sub_account) | **POST** /sub_accounts/{user_id}/lock | Lock the sub-account.
-[**unlock_sub_account**](SubAccountApi.md#unlock_sub_account) | **POST** /sub_accounts/{user_id}/unlock | Unlock the sub-account.
-[**list_unified_mode**](SubAccountApi.md#list_unified_mode) | **GET** /sub_accounts/unified_mode | Get sub-account mode.
+[**list_sub_accounts**](SubAccountApi.md#list_sub_accounts) | **GET** /sub_accounts | List sub-accounts
+[**create_sub_accounts**](SubAccountApi.md#create_sub_accounts) | **POST** /sub_accounts | Create a new sub-account
+[**get_sub_account**](SubAccountApi.md#get_sub_account) | **GET** /sub_accounts/{user_id} | Get sub-account
+[**list_sub_account_keys**](SubAccountApi.md#list_sub_account_keys) | **GET** /sub_accounts/{user_id}/keys | List all API key pairs of the sub-account
+[**create_sub_account_keys**](SubAccountApi.md#create_sub_account_keys) | **POST** /sub_accounts/{user_id}/keys | Create new sub-account API key pair
+[**get_sub_account_key**](SubAccountApi.md#get_sub_account_key) | **GET** /sub_accounts/{user_id}/keys/{key} | Get specific API key pair of the sub-account
+[**update_sub_account_keys**](SubAccountApi.md#update_sub_account_keys) | **PUT** /sub_accounts/{user_id}/keys/{key} | Update sub-account API key pair
+[**delete_sub_account_keys**](SubAccountApi.md#delete_sub_account_keys) | **DELETE** /sub_accounts/{user_id}/keys/{key} | Delete sub-account API key pair
+[**lock_sub_account**](SubAccountApi.md#lock_sub_account) | **POST** /sub_accounts/{user_id}/lock | Lock sub-account
+[**unlock_sub_account**](SubAccountApi.md#unlock_sub_account) | **POST** /sub_accounts/{user_id}/unlock | Unlock sub-account
+[**list_unified_mode**](SubAccountApi.md#list_unified_mode) | **GET** /sub_accounts/unified_mode | Get sub-account mode
 
 
 # **list_sub_accounts**
 > list[SubAccount] list_sub_accounts(type=type)
 
-List sub-accounts.
+List sub-accounts
 
 ### Example
 
@@ -46,10 +46,10 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SubAccountApi(api_client)
-type = '0' # str | `0` to list all types of sub-accounts (currently supporting cross margin accounts and sub-accounts).  `1` to list sub-accounts only. If no parameter is passed, only sub-accounts will be listed by default. (optional)
+type = '0' # str | Enter `0` to list all types of sub-accounts (currently supporting cross-margin sub-accounts and regular sub-accounts). Enter `1` to query regular sub-accounts only. If no parameter is passed, only regular sub-accounts will be queried by default. (optional)
 
 try:
-    # List sub-accounts.
+    # List sub-accounts
     api_response = api_instance.list_sub_accounts(type=type)
     print(api_response)
 except GateApiException as ex:
@@ -62,7 +62,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **str**| &#x60;0&#x60; to list all types of sub-accounts (currently supporting cross margin accounts and sub-accounts).  &#x60;1&#x60; to list sub-accounts only. If no parameter is passed, only sub-accounts will be listed by default. | [optional] 
+ **type** | **str**| Enter &#x60;0&#x60; to list all types of sub-accounts (currently supporting cross-margin sub-accounts and regular sub-accounts). Enter &#x60;1&#x60; to query regular sub-accounts only. If no parameter is passed, only regular sub-accounts will be queried by default. | [optional] 
 
 ### Return type
 
@@ -80,14 +80,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  -  |
+**200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_sub_accounts**
 > SubAccount create_sub_accounts(sub_account)
 
-Create a new sub-account.
+Create a new sub-account
 
 ### Example
 
@@ -116,7 +116,7 @@ api_instance = gate_api.SubAccountApi(api_client)
 sub_account = gate_api.SubAccount() # SubAccount | 
 
 try:
-    # Create a new sub-account.
+    # Create a new sub-account
     api_response = api_instance.create_sub_accounts(sub_account)
     print(api_response)
 except GateApiException as ex:
@@ -147,14 +147,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created Successfully. |  -  |
+**201** | Created successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sub_account**
 > SubAccount get_sub_account(user_id)
 
-Get the sub-account.
+Get sub-account
 
 ### Example
 
@@ -180,10 +180,10 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SubAccountApi(api_client)
-user_id = 56 # int | Sub-account user id.
+user_id = 56 # int | Sub-account user ID
 
 try:
-    # Get the sub-account.
+    # Get sub-account
     api_response = api_instance.get_sub_account(user_id)
     print(api_response)
 except GateApiException as ex:
@@ -196,7 +196,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| Sub-account user id. | 
+ **user_id** | **int**| Sub-account user ID | 
 
 ### Return type
 
@@ -214,14 +214,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful. |  -  |
+**200** | Successfully retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_sub_account_keys**
 > list[SubAccountKey] list_sub_account_keys(user_id)
 
-List all API Key of the sub-account.
+List all API key pairs of the sub-account
 
 ### Example
 
@@ -247,10 +247,10 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SubAccountApi(api_client)
-user_id = 56 # int | Sub-account user id.
+user_id = 56 # int | Sub-account user ID
 
 try:
-    # List all API Key of the sub-account.
+    # List all API key pairs of the sub-account
     api_response = api_instance.list_sub_account_keys(user_id)
     print(api_response)
 except GateApiException as ex:
@@ -263,7 +263,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| Sub-account user id. | 
+ **user_id** | **int**| Sub-account user ID | 
 
 ### Return type
 
@@ -281,14 +281,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  -  |
+**200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_sub_account_keys**
 > SubAccountKey create_sub_account_keys(user_id, sub_account_key)
 
-Create API Key of the sub-account.
+Create new sub-account API key pair
 
 ### Example
 
@@ -314,11 +314,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SubAccountApi(api_client)
-user_id = 56 # int | Sub-account user id.
+user_id = 56 # int | Sub-account user ID
 sub_account_key = gate_api.SubAccountKey() # SubAccountKey | 
 
 try:
-    # Create API Key of the sub-account.
+    # Create new sub-account API key pair
     api_response = api_instance.create_sub_account_keys(user_id, sub_account_key)
     print(api_response)
 except GateApiException as ex:
@@ -331,7 +331,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| Sub-account user id. | 
+ **user_id** | **int**| Sub-account user ID | 
  **sub_account_key** | [**SubAccountKey**](SubAccountKey.md)|  | 
 
 ### Return type
@@ -350,14 +350,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Created Successfully. |  -  |
+**200** | Created successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sub_account_key**
 > SubAccountKey get_sub_account_key(user_id, key)
 
-Get the API Key of the sub-account.
+Get specific API key pair of the sub-account
 
 ### Example
 
@@ -383,11 +383,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SubAccountApi(api_client)
-user_id = 56 # int | Sub-account user id.
-key = 'key_example' # str | The API Key of the sub-account.
+user_id = 56 # int | Sub-account user ID
+key = 'key_example' # str | Sub-account API key
 
 try:
-    # Get the API Key of the sub-account.
+    # Get specific API key pair of the sub-account
     api_response = api_instance.get_sub_account_key(user_id, key)
     print(api_response)
 except GateApiException as ex:
@@ -400,8 +400,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| Sub-account user id. | 
- **key** | **str**| The API Key of the sub-account. | 
+ **user_id** | **int**| Sub-account user ID | 
+ **key** | **str**| Sub-account API key | 
 
 ### Return type
 
@@ -419,14 +419,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful. |  -  |
+**200** | Successfully retrieved |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_sub_account_keys**
 > update_sub_account_keys(user_id, key, sub_account_key)
 
-Update API key of the sub-account.
+Update sub-account API key pair
 
 ### Example
 
@@ -452,12 +452,12 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SubAccountApi(api_client)
-user_id = 56 # int | Sub-account user id.
-key = 'key_example' # str | The API Key of the sub-account.
+user_id = 56 # int | Sub-account user ID
+key = 'key_example' # str | Sub-account API key
 sub_account_key = gate_api.SubAccountKey() # SubAccountKey | 
 
 try:
-    # Update API key of the sub-account.
+    # Update sub-account API key pair
     api_instance.update_sub_account_keys(user_id, key, sub_account_key)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -469,8 +469,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| Sub-account user id. | 
- **key** | **str**| The API Key of the sub-account. | 
+ **user_id** | **int**| Sub-account user ID | 
+ **key** | **str**| Sub-account API key | 
  **sub_account_key** | [**SubAccountKey**](SubAccountKey.md)|  | 
 
 ### Return type
@@ -489,14 +489,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Updated. |  -  |
+**204** | Updated successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_sub_account_keys**
 > delete_sub_account_keys(user_id, key)
 
-Delete API key of the sub-account.
+Delete sub-account API key pair
 
 ### Example
 
@@ -522,11 +522,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SubAccountApi(api_client)
-user_id = 56 # int | Sub-account user id.
-key = 'key_example' # str | The API Key of the sub-account.
+user_id = 56 # int | Sub-account user ID
+key = 'key_example' # str | Sub-account API key
 
 try:
-    # Delete API key of the sub-account.
+    # Delete sub-account API key pair
     api_instance.delete_sub_account_keys(user_id, key)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -538,8 +538,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| Sub-account user id. | 
- **key** | **str**| The API Key of the sub-account. | 
+ **user_id** | **int**| Sub-account user ID | 
+ **key** | **str**| Sub-account API key | 
 
 ### Return type
 
@@ -557,14 +557,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Delete successfully. |  -  |
+**204** | Deleted successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **lock_sub_account**
 > lock_sub_account(user_id)
 
-Lock the sub-account.
+Lock sub-account
 
 ### Example
 
@@ -590,10 +590,10 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SubAccountApi(api_client)
-user_id = 56 # int | The user id of the sub-account.
+user_id = 56 # int | Sub-account user ID
 
 try:
-    # Lock the sub-account.
+    # Lock sub-account
     api_instance.lock_sub_account(user_id)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -605,7 +605,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| The user id of the sub-account. | 
+ **user_id** | **int**| Sub-account user ID | 
 
 ### Return type
 
@@ -623,14 +623,14 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Lock successfully. |  -  |
+**204** | Locked successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unlock_sub_account**
 > unlock_sub_account(user_id)
 
-Unlock the sub-account.
+Unlock sub-account
 
 ### Example
 
@@ -656,10 +656,10 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.SubAccountApi(api_client)
-user_id = 56 # int | The user id of the sub-account.
+user_id = 56 # int | Sub-account user ID
 
 try:
-    # Unlock the sub-account.
+    # Unlock sub-account
     api_instance.unlock_sub_account(user_id)
 except GateApiException as ex:
     print("Gate api exception, label: %s, message: %s\n" % (ex.label, ex.message))
@@ -671,7 +671,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **int**| The user id of the sub-account. | 
+ **user_id** | **int**| Sub-account user ID | 
 
 ### Return type
 
@@ -689,16 +689,16 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Unlock successfully. |  -  |
+**204** | Unlocked successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_unified_mode**
 > list[SubUserMode] list_unified_mode()
 
-Get sub-account mode.
+Get sub-account mode
 
-Unified account mode： - `classic`: Classic account mode - `multi_currency`: Multi-currency margin mode - `portfolio`: Portfolio margin mode
+Unified account mode: - `classic`: Classic account mode - `multi_currency`: Multi-currency margin mode - `portfolio`: Portfolio margin mode
 
 ### Example
 
@@ -726,7 +726,7 @@ api_client = gate_api.ApiClient(configuration)
 api_instance = gate_api.SubAccountApi(api_client)
 
 try:
-    # Get sub-account mode.
+    # Get sub-account mode
     api_response = api_instance.list_unified_mode()
     print(api_response)
 except GateApiException as ex:
@@ -754,7 +754,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

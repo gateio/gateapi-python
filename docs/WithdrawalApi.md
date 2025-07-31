@@ -4,17 +4,17 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**withdraw**](WithdrawalApi.md#withdraw) | **POST** /withdrawals | Withdraw.
-[**withdraw_push_order**](WithdrawalApi.md#withdraw_push_order) | **POST** /withdrawals/push | UID transfer.
-[**cancel_withdrawal**](WithdrawalApi.md#cancel_withdrawal) | **DELETE** /withdrawals/{withdrawal_id} | Cancel withdrawal with specified ID.
+[**withdraw**](WithdrawalApi.md#withdraw) | **POST** /withdrawals | Withdraw
+[**withdraw_push_order**](WithdrawalApi.md#withdraw_push_order) | **POST** /withdrawals/push | UID transfer
+[**cancel_withdrawal**](WithdrawalApi.md#cancel_withdrawal) | **DELETE** /withdrawals/{withdrawal_id} | Cancel withdrawal with specified ID
 
 
 # **withdraw**
 > LedgerRecord withdraw(ledger_record)
 
-Withdraw.
+Withdraw
 
-Withdrawals to Gate addresses do not incur transaction fees.
+If the recipient's on-chain address is also Gate, no transaction fee will be charged
 
 ### Example
 
@@ -43,7 +43,7 @@ api_instance = gate_api.WithdrawalApi(api_client)
 ledger_record = gate_api.LedgerRecord() # LedgerRecord | 
 
 try:
-    # Withdraw.
+    # Withdraw
     api_response = api_instance.withdraw(ledger_record)
     print(api_response)
 except GateApiException as ex:
@@ -74,16 +74,16 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Withdraw request is accepted. Refer to withdrawal records for status. |  -  |
+**200** | Withdrawal request accepted. Check withdrawal record status for processing result |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **withdraw_push_order**
 > UidPushWithdrawalResp withdraw_push_order(uid_push_withdrawal)
 
-UID transfer.
+UID transfer
 
-Transfers between main spot accounts are allowed; however, both parties cannot be sub-accounts
+Transfers between main spot accounts. Both parties cannot be sub-accounts
 
 ### Example
 
@@ -112,7 +112,7 @@ api_instance = gate_api.WithdrawalApi(api_client)
 uid_push_withdrawal = gate_api.UidPushWithdrawal() # UidPushWithdrawal | 
 
 try:
-    # UID transfer.
+    # UID transfer
     api_response = api_instance.withdraw_push_order(uid_push_withdrawal)
     print(api_response)
 except GateApiException as ex:
@@ -143,14 +143,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The request has been accepted. Check the withdrawal record status for the processing result. |  -  |
+**200** | Request accepted. Check withdrawal record status for processing result |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_withdrawal**
 > LedgerRecord cancel_withdrawal(withdrawal_id)
 
-Cancel withdrawal with specified ID.
+Cancel withdrawal with specified ID
 
 ### Example
 
@@ -179,7 +179,7 @@ api_instance = gate_api.WithdrawalApi(api_client)
 withdrawal_id = '210496' # str | 
 
 try:
-    # Cancel withdrawal with specified ID.
+    # Cancel withdrawal with specified ID
     api_response = api_instance.cancel_withdrawal(withdrawal_id)
     print(api_response)
 except GateApiException as ex:
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**202** | Cancellation accepted. Refer to record status for the cancellation result. |  -  |
+**202** | Cancellation request accepted. Check record status for cancellation result |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

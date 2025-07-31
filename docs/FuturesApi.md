@@ -4,62 +4,62 @@ All URIs are relative to *https://api.gateio.ws/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_futures_contracts**](FuturesApi.md#list_futures_contracts) | **GET** /futures/{settle}/contracts | List all futures contracts.
-[**get_futures_contract**](FuturesApi.md#get_futures_contract) | **GET** /futures/{settle}/contracts/{contract} | Get a single contract.
-[**list_futures_order_book**](FuturesApi.md#list_futures_order_book) | **GET** /futures/{settle}/order_book | Futures order book.
-[**list_futures_trades**](FuturesApi.md#list_futures_trades) | **GET** /futures/{settle}/trades | Futures trading history.
-[**list_futures_candlesticks**](FuturesApi.md#list_futures_candlesticks) | **GET** /futures/{settle}/candlesticks | Get futures candlesticks.
-[**list_futures_premium_index**](FuturesApi.md#list_futures_premium_index) | **GET** /futures/{settle}/premium_index | Premium Index K-Line.
-[**list_futures_tickers**](FuturesApi.md#list_futures_tickers) | **GET** /futures/{settle}/tickers | List futures tickers.
-[**list_futures_funding_rate_history**](FuturesApi.md#list_futures_funding_rate_history) | **GET** /futures/{settle}/funding_rate | Funding rate history.
-[**list_futures_insurance_ledger**](FuturesApi.md#list_futures_insurance_ledger) | **GET** /futures/{settle}/insurance | Futures insurance balance history.
-[**list_contract_stats**](FuturesApi.md#list_contract_stats) | **GET** /futures/{settle}/contract_stats | Futures stats.
-[**get_index_constituents**](FuturesApi.md#get_index_constituents) | **GET** /futures/{settle}/index_constituents/{index} | Get index constituents.
-[**list_liquidated_orders**](FuturesApi.md#list_liquidated_orders) | **GET** /futures/{settle}/liq_orders | Retrieve liquidation history.
-[**list_futures_risk_limit_tiers**](FuturesApi.md#list_futures_risk_limit_tiers) | **GET** /futures/{settle}/risk_limit_tiers | List risk limit tiers.
-[**list_futures_accounts**](FuturesApi.md#list_futures_accounts) | **GET** /futures/{settle}/accounts | Query futures account.
-[**list_futures_account_book**](FuturesApi.md#list_futures_account_book) | **GET** /futures/{settle}/account_book | Query account book.
-[**list_positions**](FuturesApi.md#list_positions) | **GET** /futures/{settle}/positions | List all positions of a user.
-[**get_position**](FuturesApi.md#get_position) | **GET** /futures/{settle}/positions/{contract} | Get single position.
-[**update_position_margin**](FuturesApi.md#update_position_margin) | **POST** /futures/{settle}/positions/{contract}/margin | Update position margin.
-[**update_position_leverage**](FuturesApi.md#update_position_leverage) | **POST** /futures/{settle}/positions/{contract}/leverage | Update position leverage.
-[**update_position_cross_mode**](FuturesApi.md#update_position_cross_mode) | **POST** /futures/{settle}/positions/cross_mode | Switch to the full position-by-store mode.
-[**update_dual_comp_position_cross_mode**](FuturesApi.md#update_dual_comp_position_cross_mode) | **POST** /futures/{settle}/dual_comp/positions/cross_mode | 双仓模式下切换全逐仓模式
-[**update_position_risk_limit**](FuturesApi.md#update_position_risk_limit) | **POST** /futures/{settle}/positions/{contract}/risk_limit | Update position risk limit.
-[**set_dual_mode**](FuturesApi.md#set_dual_mode) | **POST** /futures/{settle}/dual_mode | Enable or disable dual mode.
-[**get_dual_mode_position**](FuturesApi.md#get_dual_mode_position) | **GET** /futures/{settle}/dual_comp/positions/{contract} | Retrieve position detail in dual mode.
-[**update_dual_mode_position_margin**](FuturesApi.md#update_dual_mode_position_margin) | **POST** /futures/{settle}/dual_comp/positions/{contract}/margin | Update position margin in dual mode.
-[**update_dual_mode_position_leverage**](FuturesApi.md#update_dual_mode_position_leverage) | **POST** /futures/{settle}/dual_comp/positions/{contract}/leverage | Update position leverage in dual mode.
-[**update_dual_mode_position_risk_limit**](FuturesApi.md#update_dual_mode_position_risk_limit) | **POST** /futures/{settle}/dual_comp/positions/{contract}/risk_limit | Update position risk limit in dual mode.
-[**list_futures_orders**](FuturesApi.md#list_futures_orders) | **GET** /futures/{settle}/orders | List futures orders.
-[**create_futures_order**](FuturesApi.md#create_futures_order) | **POST** /futures/{settle}/orders | Create a futures order.
-[**cancel_futures_orders**](FuturesApi.md#cancel_futures_orders) | **DELETE** /futures/{settle}/orders | Cancel all &#x60;open&#x60; orders matched.
-[**get_orders_with_time_range**](FuturesApi.md#get_orders_with_time_range) | **GET** /futures/{settle}/orders_timerange | List Futures Orders By Time Range.
-[**create_batch_futures_order**](FuturesApi.md#create_batch_futures_order) | **POST** /futures/{settle}/batch_orders | Create a batch of futures orders.
-[**get_futures_order**](FuturesApi.md#get_futures_order) | **GET** /futures/{settle}/orders/{order_id} | Get a single order.
-[**amend_futures_order**](FuturesApi.md#amend_futures_order) | **PUT** /futures/{settle}/orders/{order_id} | Amend an order.
-[**cancel_futures_order**](FuturesApi.md#cancel_futures_order) | **DELETE** /futures/{settle}/orders/{order_id} | Cancel a single order.
-[**get_my_trades**](FuturesApi.md#get_my_trades) | **GET** /futures/{settle}/my_trades | List personal trading history.
-[**get_my_trades_with_time_range**](FuturesApi.md#get_my_trades_with_time_range) | **GET** /futures/{settle}/my_trades_timerange | List personal trading history by time range.
-[**list_position_close**](FuturesApi.md#list_position_close) | **GET** /futures/{settle}/position_close | List position close history.
-[**list_liquidates**](FuturesApi.md#list_liquidates) | **GET** /futures/{settle}/liquidates | List liquidation history.
-[**list_auto_deleverages**](FuturesApi.md#list_auto_deleverages) | **GET** /futures/{settle}/auto_deleverages | List Auto-Deleveraging History.
-[**countdown_cancel_all_futures**](FuturesApi.md#countdown_cancel_all_futures) | **POST** /futures/{settle}/countdown_cancel_all | Countdown cancel orders.
-[**get_futures_fee**](FuturesApi.md#get_futures_fee) | **GET** /futures/{settle}/fee | Query user trading fee rates.
-[**cancel_batch_future_orders**](FuturesApi.md#cancel_batch_future_orders) | **POST** /futures/{settle}/batch_cancel_orders | Cancel a batch of orders with an ID list.
-[**amend_batch_future_orders**](FuturesApi.md#amend_batch_future_orders) | **POST** /futures/{settle}/batch_amend_orders | Batch modify orders with specified IDs.
-[**get_futures_risk_limit_table**](FuturesApi.md#get_futures_risk_limit_table) | **GET** /futures/{settle}/risk_limit_table | Query risk limit table by table_id.
-[**list_price_triggered_orders**](FuturesApi.md#list_price_triggered_orders) | **GET** /futures/{settle}/price_orders | List All Price-triggered Orders.
-[**create_price_triggered_order**](FuturesApi.md#create_price_triggered_order) | **POST** /futures/{settle}/price_orders | Create a price-triggered order.
-[**cancel_price_triggered_order_list**](FuturesApi.md#cancel_price_triggered_order_list) | **DELETE** /futures/{settle}/price_orders | Cancel All Price-triggered Orders.
-[**get_price_triggered_order**](FuturesApi.md#get_price_triggered_order) | **GET** /futures/{settle}/price_orders/{order_id} | Get a price-triggered order.
-[**cancel_price_triggered_order**](FuturesApi.md#cancel_price_triggered_order) | **DELETE** /futures/{settle}/price_orders/{order_id} | cancel a price-triggered order.
+[**list_futures_contracts**](FuturesApi.md#list_futures_contracts) | **GET** /futures/{settle}/contracts | Query all futures contracts
+[**get_futures_contract**](FuturesApi.md#get_futures_contract) | **GET** /futures/{settle}/contracts/{contract} | Query single contract information
+[**list_futures_order_book**](FuturesApi.md#list_futures_order_book) | **GET** /futures/{settle}/order_book | Query futures market depth information
+[**list_futures_trades**](FuturesApi.md#list_futures_trades) | **GET** /futures/{settle}/trades | Futures market transaction records
+[**list_futures_candlesticks**](FuturesApi.md#list_futures_candlesticks) | **GET** /futures/{settle}/candlesticks | Futures market K-line chart
+[**list_futures_premium_index**](FuturesApi.md#list_futures_premium_index) | **GET** /futures/{settle}/premium_index | Premium Index K-line chart
+[**list_futures_tickers**](FuturesApi.md#list_futures_tickers) | **GET** /futures/{settle}/tickers | Get all futures trading statistics
+[**list_futures_funding_rate_history**](FuturesApi.md#list_futures_funding_rate_history) | **GET** /futures/{settle}/funding_rate | Futures market historical funding rate
+[**list_futures_insurance_ledger**](FuturesApi.md#list_futures_insurance_ledger) | **GET** /futures/{settle}/insurance | Futures market insurance fund history
+[**list_contract_stats**](FuturesApi.md#list_contract_stats) | **GET** /futures/{settle}/contract_stats | Futures statistics
+[**get_index_constituents**](FuturesApi.md#get_index_constituents) | **GET** /futures/{settle}/index_constituents/{index} | Query index constituents
+[**list_liquidated_orders**](FuturesApi.md#list_liquidated_orders) | **GET** /futures/{settle}/liq_orders | Query liquidation order history
+[**list_futures_risk_limit_tiers**](FuturesApi.md#list_futures_risk_limit_tiers) | **GET** /futures/{settle}/risk_limit_tiers | Query risk limit tiers
+[**list_futures_accounts**](FuturesApi.md#list_futures_accounts) | **GET** /futures/{settle}/accounts | Get futures account
+[**list_futures_account_book**](FuturesApi.md#list_futures_account_book) | **GET** /futures/{settle}/account_book | Query futures account change history
+[**list_positions**](FuturesApi.md#list_positions) | **GET** /futures/{settle}/positions | Get user position list
+[**get_position**](FuturesApi.md#get_position) | **GET** /futures/{settle}/positions/{contract} | Get single position information
+[**update_position_margin**](FuturesApi.md#update_position_margin) | **POST** /futures/{settle}/positions/{contract}/margin | Update position margin
+[**update_position_leverage**](FuturesApi.md#update_position_leverage) | **POST** /futures/{settle}/positions/{contract}/leverage | Update position leverage
+[**update_position_cross_mode**](FuturesApi.md#update_position_cross_mode) | **POST** /futures/{settle}/positions/cross_mode | Switch Position Margin Mode
+[**update_dual_comp_position_cross_mode**](FuturesApi.md#update_dual_comp_position_cross_mode) | **POST** /futures/{settle}/dual_comp/positions/cross_mode | Switch Between Cross and Isolated Margin Modes Under Hedge Mode
+[**update_position_risk_limit**](FuturesApi.md#update_position_risk_limit) | **POST** /futures/{settle}/positions/{contract}/risk_limit | Update position risk limit
+[**set_dual_mode**](FuturesApi.md#set_dual_mode) | **POST** /futures/{settle}/dual_mode | Set position mode
+[**get_dual_mode_position**](FuturesApi.md#get_dual_mode_position) | **GET** /futures/{settle}/dual_comp/positions/{contract} | Get position information in dual mode
+[**update_dual_mode_position_margin**](FuturesApi.md#update_dual_mode_position_margin) | **POST** /futures/{settle}/dual_comp/positions/{contract}/margin | Update position margin in dual mode
+[**update_dual_mode_position_leverage**](FuturesApi.md#update_dual_mode_position_leverage) | **POST** /futures/{settle}/dual_comp/positions/{contract}/leverage | Update position leverage in dual mode
+[**update_dual_mode_position_risk_limit**](FuturesApi.md#update_dual_mode_position_risk_limit) | **POST** /futures/{settle}/dual_comp/positions/{contract}/risk_limit | Update position risk limit in dual mode
+[**list_futures_orders**](FuturesApi.md#list_futures_orders) | **GET** /futures/{settle}/orders | Query futures order list
+[**create_futures_order**](FuturesApi.md#create_futures_order) | **POST** /futures/{settle}/orders | Place futures order
+[**cancel_futures_orders**](FuturesApi.md#cancel_futures_orders) | **DELETE** /futures/{settle}/orders | Cancel all orders with &#39;open&#39; status
+[**get_orders_with_time_range**](FuturesApi.md#get_orders_with_time_range) | **GET** /futures/{settle}/orders_timerange | Query futures order list by time range
+[**create_batch_futures_order**](FuturesApi.md#create_batch_futures_order) | **POST** /futures/{settle}/batch_orders | Place batch futures orders
+[**get_futures_order**](FuturesApi.md#get_futures_order) | **GET** /futures/{settle}/orders/{order_id} | Query single order details
+[**amend_futures_order**](FuturesApi.md#amend_futures_order) | **PUT** /futures/{settle}/orders/{order_id} | Amend single order
+[**cancel_futures_order**](FuturesApi.md#cancel_futures_order) | **DELETE** /futures/{settle}/orders/{order_id} | Cancel single order
+[**get_my_trades**](FuturesApi.md#get_my_trades) | **GET** /futures/{settle}/my_trades | Query personal trading records
+[**get_my_trades_with_time_range**](FuturesApi.md#get_my_trades_with_time_range) | **GET** /futures/{settle}/my_trades_timerange | Query personal trading records by time range
+[**list_position_close**](FuturesApi.md#list_position_close) | **GET** /futures/{settle}/position_close | Query position close history
+[**list_liquidates**](FuturesApi.md#list_liquidates) | **GET** /futures/{settle}/liquidates | Query liquidation history
+[**list_auto_deleverages**](FuturesApi.md#list_auto_deleverages) | **GET** /futures/{settle}/auto_deleverages | Query ADL auto-deleveraging order information
+[**countdown_cancel_all_futures**](FuturesApi.md#countdown_cancel_all_futures) | **POST** /futures/{settle}/countdown_cancel_all | Countdown cancel orders
+[**get_futures_fee**](FuturesApi.md#get_futures_fee) | **GET** /futures/{settle}/fee | Query futures market trading fee rates
+[**cancel_batch_future_orders**](FuturesApi.md#cancel_batch_future_orders) | **POST** /futures/{settle}/batch_cancel_orders | Cancel batch orders by specified ID list
+[**amend_batch_future_orders**](FuturesApi.md#amend_batch_future_orders) | **POST** /futures/{settle}/batch_amend_orders | Batch modify orders by specified IDs
+[**get_futures_risk_limit_table**](FuturesApi.md#get_futures_risk_limit_table) | **GET** /futures/{settle}/risk_limit_table | Query risk limit table by table_id
+[**list_price_triggered_orders**](FuturesApi.md#list_price_triggered_orders) | **GET** /futures/{settle}/price_orders | Query auto order list
+[**create_price_triggered_order**](FuturesApi.md#create_price_triggered_order) | **POST** /futures/{settle}/price_orders | Create price-triggered order
+[**cancel_price_triggered_order_list**](FuturesApi.md#cancel_price_triggered_order_list) | **DELETE** /futures/{settle}/price_orders | Cancel all auto orders
+[**get_price_triggered_order**](FuturesApi.md#get_price_triggered_order) | **GET** /futures/{settle}/price_orders/{order_id} | Query single auto order details
+[**cancel_price_triggered_order**](FuturesApi.md#cancel_price_triggered_order) | **DELETE** /futures/{settle}/price_orders/{order_id} | Cancel single auto order
 
 
 # **list_futures_contracts**
 > list[Contract] list_futures_contracts(settle, limit=limit, offset=offset)
 
-List all futures contracts.
+Query all futures contracts
 
 ### Example
 
@@ -76,12 +76,12 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
+settle = 'usdt' # str | Settle currency
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
-    # List all futures contracts.
+    # Query all futures contracts
     api_response = api_instance.list_futures_contracts(settle, limit=limit, offset=offset)
     print(api_response)
 except GateApiException as ex:
@@ -94,9 +94,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
+ **settle** | **str**| Settle currency | 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
 
@@ -114,14 +114,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  -  |
+**200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_futures_contract**
 > Contract get_futures_contract(settle, contract)
 
-Get a single contract.
+Query single contract information
 
 ### Example
 
@@ -138,11 +138,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
 
 try:
-    # Get a single contract.
+    # Query single contract information
     api_response = api_instance.get_futures_contract(settle, contract)
     print(api_response)
 except GateApiException as ex:
@@ -155,8 +155,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
 
 ### Return type
 
@@ -174,16 +174,16 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Contract information. |  -  |
+**200** | Contract information |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_order_book**
 > FuturesOrderBook list_futures_order_book(settle, contract, interval=interval, limit=limit, with_id=with_id)
 
-Futures order book.
+Query futures market depth information
 
-Bids will be sorted by price from high to low, while asks sorted reversely.
+Bids will be sorted by price from high to low, while asks sorted reversely
 
 ### Example
 
@@ -200,14 +200,14 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
-interval = '0' # str | Order depth. 0 means no aggregation is applied. default to 0. (optional) (default to '0')
-limit = 10 # int | Maximum number of order depth data in asks or bids. (optional) (default to 10)
-with_id = False # bool | Whether to return depth update ID. This ID increments by 1 each time. (optional) (default to False)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
+interval = '0' # str | Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified (optional) (default to '0')
+limit = 10 # int | Number of depth levels (optional) (default to 10)
+with_id = False # bool | Whether to return depth update ID. This ID increments by 1 each time depth changes (optional) (default to False)
 
 try:
-    # Futures order book.
+    # Query futures market depth information
     api_response = api_instance.list_futures_order_book(settle, contract, interval=interval, limit=limit, with_id=with_id)
     print(api_response)
 except GateApiException as ex:
@@ -220,11 +220,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
- **interval** | **str**| Order depth. 0 means no aggregation is applied. default to 0. | [optional] [default to &#39;0&#39;]
- **limit** | **int**| Maximum number of order depth data in asks or bids. | [optional] [default to 10]
- **with_id** | **bool**| Whether to return depth update ID. This ID increments by 1 each time. | [optional] [default to False]
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
+ **interval** | **str**| Price precision for depth aggregation, 0 means no aggregation, defaults to 0 if not specified | [optional] [default to &#39;0&#39;]
+ **limit** | **int**| Number of depth levels | [optional] [default to 10]
+ **with_id** | **bool**| Whether to return depth update ID. This ID increments by 1 each time depth changes | [optional] [default to False]
 
 ### Return type
 
@@ -242,14 +242,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Depth query successful. |  -  |
+**200** | Depth query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_trades**
 > list[FuturesTrade] list_futures_trades(settle, contract, limit=limit, offset=offset, last_id=last_id, _from=_from, to=to)
 
-Futures trading history.
+Futures market transaction records
 
 ### Example
 
@@ -266,16 +266,16 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 last_id = '12345' # str | Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. Use `from` and `to` instead to limit time range (optional)
 _from = 1546905600 # int | Specify starting time in Unix seconds. If not specified, `to` and `limit` will be used to limit response items. If items between `from` and `to` are more than `limit`, only `limit` number will be returned.  (optional)
 to = 1546935600 # int | Specify end time in Unix seconds, default to current time. (optional)
 
 try:
-    # Futures trading history.
+    # Futures market transaction records
     api_response = api_instance.list_futures_trades(settle, contract, limit=limit, offset=offset, last_id=last_id, _from=_from, to=to)
     print(api_response)
 except GateApiException as ex:
@@ -288,10 +288,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **last_id** | **str**| Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. Use &#x60;from&#x60; and &#x60;to&#x60; instead to limit time range | [optional] 
  **_from** | **int**| Specify starting time in Unix seconds. If not specified, &#x60;to&#x60; and &#x60;limit&#x60; will be used to limit response items. If items between &#x60;from&#x60; and &#x60;to&#x60; are more than &#x60;limit&#x60;, only &#x60;limit&#x60; number will be returned.  | [optional] 
  **to** | **int**| Specify end time in Unix seconds, default to current time. | [optional] 
@@ -312,14 +312,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  -  |
+**200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_candlesticks**
 > list[FuturesCandlestick] list_futures_candlesticks(settle, contract, _from=_from, to=to, limit=limit, interval=interval)
 
-Get futures candlesticks.
+Futures market K-line chart
 
 Return specified contract candlesticks. If prefix `contract` with `mark_`, the contract's mark price candlesticks are returned; if prefix with `index_`, index price candlesticks will be returned.  Maximum of 2000 points are returned in one query. Be sure not to exceed the limit when specifying `from`, `to` and `interval`
 
@@ -338,15 +338,15 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
 _from = 1546905600 # int | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
-to = 1546935600 # int | Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision specified (optional)
-limit = 100 # int | Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
-interval = '5m' # str | Interval time between data points. Note that `1w` means natual week(Mon-Sun), while `7d` means every 7d since unix 0. 1 natual month, not 30 days (optional) (default to '5m')
+to = 1546935600 # int | Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)
+limit = 100 # int | Maximum number of recent data points to return. `limit` conflicts with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
+interval = '5m' # str | Interval time between data points. Note that `1w` means natural week(Mon-Sun), while `7d` means every 7d since unix 0. 30d represents a natural month, not 30 days (optional) (default to '5m')
 
 try:
-    # Get futures candlesticks.
+    # Futures market K-line chart
     api_response = api_instance.list_futures_candlesticks(settle, contract, _from=_from, to=to, limit=limit, interval=interval)
     print(api_response)
 except GateApiException as ex:
@@ -359,12 +359,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
  **_from** | **int**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
- **to** | **int**| Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision specified | [optional] 
- **limit** | **int**| Maximum recent data points to return. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
- **interval** | **str**| Interval time between data points. Note that &#x60;1w&#x60; means natual week(Mon-Sun), while &#x60;7d&#x60; means every 7d since unix 0. 1 natual month, not 30 days | [optional] [default to &#39;5m&#39;]
+ **to** | **int**| Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision | [optional] 
+ **limit** | **int**| Maximum number of recent data points to return. &#x60;limit&#x60; conflicts with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
+ **interval** | **str**| Interval time between data points. Note that &#x60;1w&#x60; means natural week(Mon-Sun), while &#x60;7d&#x60; means every 7d since unix 0. 30d represents a natural month, not 30 days | [optional] [default to &#39;5m&#39;]
 
 ### Return type
 
@@ -382,14 +382,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_premium_index**
 > list[FuturesPremiumIndex] list_futures_premium_index(settle, contract, _from=_from, to=to, limit=limit, interval=interval)
 
-Premium Index K-Line.
+Premium Index K-line chart
 
 Maximum of 1000 points can be returned in a query. Be sure not to exceed the limit when specifying from, to and interval
 
@@ -408,15 +408,15 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
 _from = 1546905600 # int | Start time of candlesticks, formatted in Unix timestamp in seconds. Default to`to - 100 * interval` if not specified (optional)
-to = 1546935600 # int | Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision specified (optional)
-limit = 100 # int | Maximum recent data points to return. `limit` is conflicted with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
-interval = '5m' # str | Interval time between data points. (optional) (default to '5m')
+to = 1546935600 # int | Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision (optional)
+limit = 100 # int | Maximum number of recent data points to return. `limit` conflicts with `from` and `to`. If either `from` or `to` is specified, request will be rejected. (optional) (default to 100)
+interval = '5m' # str | Time interval between data points (optional) (default to '5m')
 
 try:
-    # Premium Index K-Line.
+    # Premium Index K-line chart
     api_response = api_instance.list_futures_premium_index(settle, contract, _from=_from, to=to, limit=limit, interval=interval)
     print(api_response)
 except GateApiException as ex:
@@ -429,12 +429,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
  **_from** | **int**| Start time of candlesticks, formatted in Unix timestamp in seconds. Default to&#x60;to - 100 * interval&#x60; if not specified | [optional] 
- **to** | **int**| Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision specified | [optional] 
- **limit** | **int**| Maximum recent data points to return. &#x60;limit&#x60; is conflicted with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
- **interval** | **str**| Interval time between data points. | [optional] [default to &#39;5m&#39;]
+ **to** | **int**| Specify the end time of the K-line chart, defaults to current time if not specified, note that the time format is Unix timestamp with second precision | [optional] 
+ **limit** | **int**| Maximum number of recent data points to return. &#x60;limit&#x60; conflicts with &#x60;from&#x60; and &#x60;to&#x60;. If either &#x60;from&#x60; or &#x60;to&#x60; is specified, request will be rejected. | [optional] [default to 100]
+ **interval** | **str**| Time interval between data points | [optional] [default to &#39;5m&#39;]
 
 ### Return type
 
@@ -452,14 +452,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_tickers**
 > list[FuturesTicker] list_futures_tickers(settle, contract=contract)
 
-List futures tickers.
+Get all futures trading statistics
 
 ### Example
 
@@ -476,11 +476,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 
 try:
-    # List futures tickers.
+    # Get all futures trading statistics
     api_response = api_instance.list_futures_tickers(settle, contract=contract)
     print(api_response)
 except GateApiException as ex:
@@ -493,8 +493,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
 
 ### Return type
 
@@ -512,14 +512,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_funding_rate_history**
 > list[FundingRateRecord] list_futures_funding_rate_history(settle, contract, limit=limit, _from=_from, to=to)
 
-Funding rate history.
+Futures market historical funding rate
 
 ### Example
 
@@ -536,14 +536,14 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
 _from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
 to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 
 try:
-    # Funding rate history.
+    # Futures market historical funding rate
     api_response = api_instance.list_futures_funding_rate_history(settle, contract, limit=limit, _from=_from, to=to)
     print(api_response)
 except GateApiException as ex:
@@ -556,9 +556,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
  **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
 
@@ -578,14 +578,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | History retrieved. |  -  |
+**200** | History query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_insurance_ledger**
 > list[InsuranceRecord] list_futures_insurance_ledger(settle, limit=limit)
 
-Futures insurance balance history.
+Futures market insurance fund history
 
 ### Example
 
@@ -602,11 +602,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
+settle = 'usdt' # str | Settle currency
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
 
 try:
-    # Futures insurance balance history.
+    # Futures market insurance fund history
     api_response = api_instance.list_futures_insurance_ledger(settle, limit=limit)
     print(api_response)
 except GateApiException as ex:
@@ -619,8 +619,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
+ **settle** | **str**| Settle currency | 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
 
 ### Return type
 
@@ -638,14 +638,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_contract_stats**
 > list[ContractStat] list_contract_stats(settle, contract, _from=_from, interval=interval, limit=limit)
 
-Futures stats.
+Futures statistics
 
 ### Example
 
@@ -662,14 +662,14 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
-_from = 1604561000 # int | Start timestamp. (optional)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
+_from = 1604561000 # int | Start timestamp (optional)
 interval = '5m' # str |  (optional) (default to '5m')
 limit = 30 # int |  (optional) (default to 30)
 
 try:
-    # Futures stats.
+    # Futures statistics
     api_response = api_instance.list_contract_stats(settle, contract, _from=_from, interval=interval, limit=limit)
     print(api_response)
 except GateApiException as ex:
@@ -682,9 +682,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
- **_from** | **int**| Start timestamp. | [optional] 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
+ **_from** | **int**| Start timestamp | [optional] 
  **interval** | **str**|  | [optional] [default to &#39;5m&#39;]
  **limit** | **int**|  | [optional] [default to 30]
 
@@ -704,14 +704,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  -  |
+**200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_index_constituents**
 > FuturesIndexConstituents get_index_constituents(settle, index)
 
-Get index constituents.
+Query index constituents
 
 ### Example
 
@@ -728,11 +728,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-index = 'BTC_USDT' # str | Index name.
+settle = 'usdt' # str | Settle currency
+index = 'BTC_USDT' # str | Index name
 
 try:
-    # Get index constituents.
+    # Query index constituents
     api_response = api_instance.get_index_constituents(settle, index)
     print(api_response)
 except GateApiException as ex:
@@ -745,8 +745,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **index** | **str**| Index name. | 
+ **settle** | **str**| Settle currency | 
+ **index** | **str**| Index name | 
 
 ### Return type
 
@@ -764,16 +764,16 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_liquidated_orders**
 > list[FuturesLiqOrder] list_liquidated_orders(settle, contract=contract, _from=_from, to=to, limit=limit)
 
-Retrieve liquidation history.
+Query liquidation order history
 
-The time interval between from and to is maximum 3600. Some private fields are not returned by public interfaces, refer to field descriptions for interfaces, refer to field descriptions for details
+The time interval between from and to is maximum 3600. Some private fields are not returned by public interfaces, refer to field descriptions for detailsThe time interval between from and to is maximum 3600. Some private fields are not returned by public interfaces, refer to field descriptions for interfaces, refer to field descriptions for details
 
 ### Example
 
@@ -790,14 +790,14 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 _from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
 to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
 
 try:
-    # Retrieve liquidation history.
+    # Query liquidation order history
     api_response = api_instance.list_liquidated_orders(settle, contract=contract, _from=_from, to=to, limit=limit)
     print(api_response)
 except GateApiException as ex:
@@ -810,11 +810,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
  **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
 
 ### Return type
 
@@ -832,14 +832,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  -  |
+**200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_risk_limit_tiers**
 > list[FuturesLimitRiskTiers] list_futures_risk_limit_tiers(settle, contract=contract, limit=limit, offset=offset)
 
-List risk limit tiers.
+Query risk limit tiers
 
 When the 'contract' parameter is not passed, the default is to query the risk limits for the top 100 markets.'Limit' and 'offset' correspond to pagination queries at the market level, not to the length of the returned array. This only takes effect empty.
 
@@ -858,13 +858,13 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
-    # List risk limit tiers.
+    # Query risk limit tiers
     api_response = api_instance.list_futures_risk_limit_tiers(settle, contract=contract, limit=limit, offset=offset)
     print(api_response)
 except GateApiException as ex:
@@ -877,10 +877,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
 
@@ -898,14 +898,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_accounts**
 > FuturesAccount list_futures_accounts(settle)
 
-Query futures account.
+Get futures account
 
 ### Example
 
@@ -931,10 +931,10 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
+settle = 'usdt' # str | Settle currency
 
 try:
-    # Query futures account.
+    # Get futures account
     api_response = api_instance.list_futures_accounts(settle)
     print(api_response)
 except GateApiException as ex:
@@ -947,7 +947,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
+ **settle** | **str**| Settle currency | 
 
 ### Return type
 
@@ -965,16 +965,16 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_account_book**
 > list[FuturesAccountBook] list_futures_account_book(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, type=type)
 
-Query account book.
+Query futures account change history
 
-If the contract field is passed, only records containing this field after 2023-10-30 can be filtered。 2023-10-30 can be filtered.
+If the contract field is passed, only records containing this field after 2023-10-30 can be filtered.
 
 ### Example
 
@@ -1000,16 +1000,16 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 _from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
 to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
 type = 'dnw' # str | Changing Type：  - dnw: Deposit & Withdraw - pnl: Profit & Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: point_fee: POINT Trading fee - point_refr: POINT Referrer rebate - bonus_offset: bouns deduction (optional)
 
 try:
-    # Query account book.
+    # Query futures account change history
     api_response = api_instance.list_futures_account_book(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, type=type)
     print(api_response)
 except GateApiException as ex:
@@ -1022,10 +1022,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
  **type** | **str**| Changing Type：  - dnw: Deposit &amp; Withdraw - pnl: Profit &amp; Loss by reducing position - fee: Trading fee - refr: Referrer rebate - fund: Funding - point_dnw: point_fee: POINT Trading fee - point_refr: POINT Referrer rebate - bonus_offset: bouns deduction | [optional] 
@@ -1046,14 +1046,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  -  |
+**200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_positions**
 > list[Position] list_positions(settle, holding=holding, limit=limit, offset=offset)
 
-List all positions of a user.
+Get user position list
 
 ### Example
 
@@ -1079,13 +1079,13 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-holding = true # bool | Return only real positions - true, return all - false. (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
+settle = 'usdt' # str | Settle currency
+holding = true # bool | Return only real positions - true, return all - false (optional)
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
-    # List all positions of a user.
+    # Get user position list
     api_response = api_instance.list_positions(settle, holding=holding, limit=limit, offset=offset)
     print(api_response)
 except GateApiException as ex:
@@ -1098,10 +1098,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **holding** | **bool**| Return only real positions - true, return all - false. | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
+ **settle** | **str**| Settle currency | 
+ **holding** | **bool**| Return only real positions - true, return all - false | [optional] 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
 
@@ -1119,14 +1119,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  -  |
+**200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_position**
 > Position get_position(settle, contract)
 
-Get single position.
+Get single position information
 
 ### Example
 
@@ -1152,11 +1152,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
 
 try:
-    # Get single position.
+    # Get single position information
     api_response = api_instance.get_position(settle, contract)
     print(api_response)
 except GateApiException as ex:
@@ -1169,8 +1169,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
 
 ### Return type
 
@@ -1188,14 +1188,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Position information. |  -  |
+**200** | Position information |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_position_margin**
 > Position update_position_margin(settle, contract, change)
 
-Update position margin.
+Update position margin
 
 ### Example
 
@@ -1221,12 +1221,12 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
-change = '0.01' # str | Margin change amount, positive number increases, negative number.
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
+change = '0.01' # str | Margin change amount, positive number increases, negative number decreases
 
 try:
-    # Update position margin.
+    # Update position margin
     api_response = api_instance.update_position_margin(settle, contract, change)
     print(api_response)
 except GateApiException as ex:
@@ -1239,9 +1239,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
- **change** | **str**| Margin change amount, positive number increases, negative number. | 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
+ **change** | **str**| Margin change amount, positive number increases, negative number decreases | 
 
 ### Return type
 
@@ -1259,14 +1259,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Position information. |  -  |
+**200** | Position information |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_position_leverage**
 > Position update_position_leverage(settle, contract, leverage, cross_leverage_limit=cross_leverage_limit)
 
-Update position leverage.
+Update position leverage
 
 ### Example
 
@@ -1292,13 +1292,13 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
-leverage = '10' # str | New position leverage.
-cross_leverage_limit = '10' # str | Cross margin leverage(valid only when `leverage` is 0). (optional)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
+leverage = '10' # str | New position leverage
+cross_leverage_limit = '10' # str | Cross margin leverage (valid only when `leverage` is 0) (optional)
 
 try:
-    # Update position leverage.
+    # Update position leverage
     api_response = api_instance.update_position_leverage(settle, contract, leverage, cross_leverage_limit=cross_leverage_limit)
     print(api_response)
 except GateApiException as ex:
@@ -1311,10 +1311,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
- **leverage** | **str**| New position leverage. | 
- **cross_leverage_limit** | **str**| Cross margin leverage(valid only when &#x60;leverage&#x60; is 0). | [optional] 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
+ **leverage** | **str**| New position leverage | 
+ **cross_leverage_limit** | **str**| Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) | [optional] 
 
 ### Return type
 
@@ -1332,14 +1332,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Position information. |  -  |
+**200** | Position information |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_position_cross_mode**
 > Position update_position_cross_mode(settle, futures_position_cross_mode)
 
-Switch to the full position-by-store mode.
+Switch Position Margin Mode
 
 ### Example
 
@@ -1365,11 +1365,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
+settle = 'usdt' # str | Settle currency
 futures_position_cross_mode = gate_api.FuturesPositionCrossMode() # FuturesPositionCrossMode | 
 
 try:
-    # Switch to the full position-by-store mode.
+    # Switch Position Margin Mode
     api_response = api_instance.update_position_cross_mode(settle, futures_position_cross_mode)
     print(api_response)
 except GateApiException as ex:
@@ -1382,7 +1382,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
+ **settle** | **str**| Settle currency | 
  **futures_position_cross_mode** | [**FuturesPositionCrossMode**](FuturesPositionCrossMode.md)|  | 
 
 ### Return type
@@ -1401,14 +1401,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Position information. |  -  |
+**200** | Position information |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_dual_comp_position_cross_mode**
 > list[Position] update_dual_comp_position_cross_mode(settle, inline_object)
 
-双仓模式下切换全逐仓模式
+Switch Between Cross and Isolated Margin Modes Under Hedge Mode
 
 ### Example
 
@@ -1434,11 +1434,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
+settle = 'usdt' # str | Settle currency
 inline_object = gate_api.InlineObject() # InlineObject | 
 
 try:
-    # 双仓模式下切换全逐仓模式
+    # Switch Between Cross and Isolated Margin Modes Under Hedge Mode
     api_response = api_instance.update_dual_comp_position_cross_mode(settle, inline_object)
     print(api_response)
 except GateApiException as ex:
@@ -1451,7 +1451,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
+ **settle** | **str**| Settle currency | 
  **inline_object** | [**InlineObject**](InlineObject.md)|  | 
 
 ### Return type
@@ -1470,14 +1470,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_position_risk_limit**
 > Position update_position_risk_limit(settle, contract, risk_limit)
 
-Update position risk limit.
+Update position risk limit
 
 ### Example
 
@@ -1503,12 +1503,12 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
-risk_limit = '1000000' # str | New Risk Limit Value.
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
+risk_limit = '1000000' # str | New risk limit value
 
 try:
-    # Update position risk limit.
+    # Update position risk limit
     api_response = api_instance.update_position_risk_limit(settle, contract, risk_limit)
     print(api_response)
 except GateApiException as ex:
@@ -1521,9 +1521,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
- **risk_limit** | **str**| New Risk Limit Value. | 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
+ **risk_limit** | **str**| New risk limit value | 
 
 ### Return type
 
@@ -1541,16 +1541,16 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Position information. |  -  |
+**200** | Position information |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_dual_mode**
 > FuturesAccount set_dual_mode(settle, dual_mode)
 
-Enable or disable dual mode.
+Set position mode
 
-The prerequisite for changing mode is that all positions have no holdings.
+The prerequisite for changing mode is that all positions have no holdings and no pending orders
 
 ### Example
 
@@ -1576,11 +1576,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-dual_mode = true # bool | Whether to enable dual mode.
+settle = 'usdt' # str | Settle currency
+dual_mode = true # bool | Whether to enable dual mode
 
 try:
-    # Enable or disable dual mode.
+    # Set position mode
     api_response = api_instance.set_dual_mode(settle, dual_mode)
     print(api_response)
 except GateApiException as ex:
@@ -1593,8 +1593,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **dual_mode** | **bool**| Whether to enable dual mode. | 
+ **settle** | **str**| Settle currency | 
+ **dual_mode** | **bool**| Whether to enable dual mode | 
 
 ### Return type
 
@@ -1612,14 +1612,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Updated. |  -  |
+**200** | Updated successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_dual_mode_position**
 > list[Position] get_dual_mode_position(settle, contract)
 
-Retrieve position detail in dual mode.
+Get position information in dual mode
 
 ### Example
 
@@ -1645,11 +1645,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
 
 try:
-    # Retrieve position detail in dual mode.
+    # Get position information in dual mode
     api_response = api_instance.get_dual_mode_position(settle, contract)
     print(api_response)
 except GateApiException as ex:
@@ -1662,8 +1662,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
 
 ### Return type
 
@@ -1681,14 +1681,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_dual_mode_position_margin**
 > list[Position] update_dual_mode_position_margin(settle, contract, change, dual_side)
 
-Update position margin in dual mode.
+Update position margin in dual mode
 
 ### Example
 
@@ -1714,13 +1714,13 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
-change = '0.01' # str | Margin change amount, positive number increases, negative number.
-dual_side = 'dual_long' # str | Long or short position.
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
+change = '0.01' # str | Margin change amount, positive number increases, negative number decreases
+dual_side = 'dual_long' # str | Long or short position
 
 try:
-    # Update position margin in dual mode.
+    # Update position margin in dual mode
     api_response = api_instance.update_dual_mode_position_margin(settle, contract, change, dual_side)
     print(api_response)
 except GateApiException as ex:
@@ -1733,10 +1733,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
- **change** | **str**| Margin change amount, positive number increases, negative number. | 
- **dual_side** | **str**| Long or short position. | 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
+ **change** | **str**| Margin change amount, positive number increases, negative number decreases | 
+ **dual_side** | **str**| Long or short position | 
 
 ### Return type
 
@@ -1754,14 +1754,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_dual_mode_position_leverage**
 > list[Position] update_dual_mode_position_leverage(settle, contract, leverage, cross_leverage_limit=cross_leverage_limit)
 
-Update position leverage in dual mode.
+Update position leverage in dual mode
 
 ### Example
 
@@ -1787,13 +1787,13 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
-leverage = '10' # str | New position leverage.
-cross_leverage_limit = '10' # str | Cross margin leverage(valid only when `leverage` is 0). (optional)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
+leverage = '10' # str | New position leverage
+cross_leverage_limit = '10' # str | Cross margin leverage (valid only when `leverage` is 0) (optional)
 
 try:
-    # Update position leverage in dual mode.
+    # Update position leverage in dual mode
     api_response = api_instance.update_dual_mode_position_leverage(settle, contract, leverage, cross_leverage_limit=cross_leverage_limit)
     print(api_response)
 except GateApiException as ex:
@@ -1806,10 +1806,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
- **leverage** | **str**| New position leverage. | 
- **cross_leverage_limit** | **str**| Cross margin leverage(valid only when &#x60;leverage&#x60; is 0). | [optional] 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
+ **leverage** | **str**| New position leverage | 
+ **cross_leverage_limit** | **str**| Cross margin leverage (valid only when &#x60;leverage&#x60; is 0) | [optional] 
 
 ### Return type
 
@@ -1827,14 +1827,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_dual_mode_position_risk_limit**
 > list[Position] update_dual_mode_position_risk_limit(settle, contract, risk_limit)
 
-Update position risk limit in dual mode.
+Update position risk limit in dual mode
 
 ### Example
 
@@ -1860,12 +1860,12 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
-risk_limit = '1000000' # str | New Risk Limit Value.
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
+risk_limit = '1000000' # str | New risk limit value
 
 try:
-    # Update position risk limit in dual mode.
+    # Update position risk limit in dual mode
     api_response = api_instance.update_dual_mode_position_risk_limit(settle, contract, risk_limit)
     print(api_response)
 except GateApiException as ex:
@@ -1878,9 +1878,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
- **risk_limit** | **str**| New Risk Limit Value. | 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
+ **risk_limit** | **str**| New risk limit value | 
 
 ### Return type
 
@@ -1898,14 +1898,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_futures_orders**
 > list[FuturesOrder] list_futures_orders(settle, status, contract=contract, limit=limit, offset=offset, last_id=last_id)
 
-List futures orders.
+Query futures order list
 
 - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use `GET /futures/{settle}/orders_timerange`.
 
@@ -1933,15 +1933,15 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-status = 'open' # str | Only list the orders with this status.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
-last_id = '12345' # str | Specify the currency name to query in batches, and support up to 100 pass parameters at a time. (optional)
+settle = 'usdt' # str | Settle currency
+status = 'open' # str | Query order list based on status
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
+last_id = '12345' # str | Specify the currency name to query in batches, and support up to 100 pass parameters at a time (optional)
 
 try:
-    # List futures orders.
+    # Query futures order list
     api_response = api_instance.list_futures_orders(settle, status, contract=contract, limit=limit, offset=offset, last_id=last_id)
     print(api_response)
 except GateApiException as ex:
@@ -1954,12 +1954,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **status** | **str**| Only list the orders with this status. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
- **last_id** | **str**| Specify the currency name to query in batches, and support up to 100 pass parameters at a time. | [optional] 
+ **settle** | **str**| Settle currency | 
+ **status** | **str**| Query order list based on status | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
+ **last_id** | **str**| Specify the currency name to query in batches, and support up to 100 pass parameters at a time | [optional] 
 
 ### Return type
 
@@ -1977,14 +1977,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  * X-Pagination-Limit - Request limit specified. <br>  * X-Pagination-Offset - Request offset specified. <br>  |
+**200** | List retrieved successfully |  * X-Pagination-Limit - Limit specified for pagination <br>  * X-Pagination-Offset - Offset specified for pagination <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_futures_order**
 > FuturesOrder create_futures_order(settle, futures_order, x_gate_exptime=x_gate_exptime)
 
-Create a futures order.
+Place futures order
 
 - When placing an order, the number of contracts is specified `size`, not the number of coins. The number of coins corresponding to each contract is returned in the contract details interface `quanto_multiplier` - 0 The order that was completed cannot be obtained after 10 minutes of withdrawal, and the order will be mentioned that the order does not exist - Setting `reduce_only` to `true` can prevent the position from being penetrated when reducing the position - In single-position mode, if you need to close the position, you need to set `size` to 0 and `close` to `true` - In dual warehouse mode,   - Reduce position: reduce_only=true, size is a positive number that indicates short position, negative number that indicates long position  - Add number that indicates adding long positions, and negative numbers indicate adding short positions  - Close position: size=0, set the direction of closing position according to auto_size, and set `reduce_only` to true  at the same time - reduce_only: Make sure to only perform position reduction operations to prevent increased positions - Set `stp_act` to determine the use of a strategy that restricts user transactions. For detailed usage, refer to the body parameter `stp_act`
 
@@ -2012,12 +2012,12 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
+settle = 'usdt' # str | Settle currency
 futures_order = gate_api.FuturesOrder() # FuturesOrder | 
 x_gate_exptime = '1689560679123' # str | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
-    # Create a futures order.
+    # Place futures order
     api_response = api_instance.create_futures_order(settle, futures_order, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
@@ -2030,7 +2030,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
+ **settle** | **str**| Settle currency | 
  **futures_order** | [**FuturesOrder**](FuturesOrder.md)|  | 
  **x_gate_exptime** | **str**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
@@ -2050,16 +2050,16 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Order details. |  -  |
+**201** | Order details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_futures_orders**
 > list[FuturesOrder] cancel_futures_orders(settle, contract, x_gate_exptime=x_gate_exptime, side=side)
 
-Cancel all `open` orders matched.
+Cancel all orders with 'open' status
 
-Zero-filled order cannot be retrieved 10 minutes after order cancellation.
+Zero-fill orders cannot be retrieved 10 minutes after order cancellation
 
 ### Example
 
@@ -2085,13 +2085,13 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract.
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract
 x_gate_exptime = '1689560679123' # str | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 side = 'ask' # str | Specify all buy orders or all sell orders, both are included if not specified. Set to bid, set to ask to cancel all sell ordersspecified. Set to bid, set to ask to cancel all sell ordersspecified. Set to bid, set to ask to cancel all sell orders (optional)
 
 try:
-    # Cancel all `open` orders matched.
+    # Cancel all orders with 'open' status
     api_response = api_instance.cancel_futures_orders(settle, contract, x_gate_exptime=x_gate_exptime, side=side)
     print(api_response)
 except GateApiException as ex:
@@ -2104,8 +2104,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract. | 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract | 
  **x_gate_exptime** | **str**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
  **side** | **str**| Specify all buy orders or all sell orders, both are included if not specified. Set to bid, set to ask to cancel all sell ordersspecified. Set to bid, set to ask to cancel all sell ordersspecified. Set to bid, set to ask to cancel all sell orders | [optional] 
 
@@ -2125,14 +2125,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | All orders matched cancelled. |  -  |
+**200** | Batch cancellation successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_orders_with_time_range**
 > list[FuturesOrder] get_orders_with_time_range(settle, contract=contract, _from=_from, to=to, limit=limit, offset=offset)
 
-List Futures Orders By Time Range.
+Query futures order list by time range
 
 ### Example
 
@@ -2158,15 +2158,15 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 _from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
 to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
-    # List Futures Orders By Time Range.
+    # Query futures order list by time range
     api_response = api_instance.get_orders_with_time_range(settle, contract=contract, _from=_from, to=to, limit=limit, offset=offset)
     print(api_response)
 except GateApiException as ex:
@@ -2179,12 +2179,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
  **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
 
@@ -2202,14 +2202,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  * X-Pagination-Limit - Request limit specified. <br>  * X-Pagination-Offset - Request offset specified. <br>  |
+**200** | List retrieved successfully |  * X-Pagination-Limit - Limit specified for pagination <br>  * X-Pagination-Offset - Offset specified for pagination <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_batch_futures_order**
 > list[BatchFuturesOrder] create_batch_futures_order(settle, futures_order, x_gate_exptime=x_gate_exptime)
 
-Create a batch of futures orders.
+Place batch futures orders
 
 - Up to 10 orders per request - If any of the order's parameters are missing or in the wrong format, all of them will not be executed, and a http status 400 error will be returned directly - If the parameters are checked and passed, all are executed. Even if there is a business logic error in the middle (such as insufficient funds), it will not affect other execution orders - The returned result is in array format, and the order corresponds to the orders in the request body - In the returned result, the `succeeded` field of type bool indicates whether the execution was successful or not - If the execution is successful, the normal order content is included; if the execution fails, the `label` field is included to indicate the cause of the error - In the rate limiting, each order is counted individually
 
@@ -2237,12 +2237,12 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
+settle = 'usdt' # str | Settle currency
 futures_order = [gate_api.FuturesOrder()] # list[FuturesOrder] | 
 x_gate_exptime = '1689560679123' # str | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
-    # Create a batch of futures orders.
+    # Place batch futures orders
     api_response = api_instance.create_batch_futures_order(settle, futures_order, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
@@ -2255,7 +2255,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
+ **settle** | **str**| Settle currency | 
  **futures_order** | [**list[FuturesOrder]**](FuturesOrder.md)|  | 
  **x_gate_exptime** | **str**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
@@ -2275,14 +2275,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Request is completed. |  -  |
+**200** | Request execution completed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_futures_order**
 > FuturesOrder get_futures_order(settle, order_id)
 
-Get a single order.
+Query single order details
 
 - Zero-fill order cannot be retrieved for 10 minutes after cancellation - Historical orders, by default, only data within the past 6 months is supported.  
 
@@ -2310,11 +2310,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
+settle = 'usdt' # str | Settle currency
 order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook. finished, it can be checked within 60 seconds after the end of the order. After that, only order ID is accepted.
 
 try:
-    # Get a single order.
+    # Query single order details
     api_response = api_instance.get_futures_order(settle, order_id)
     print(api_response)
 except GateApiException as ex:
@@ -2327,7 +2327,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
+ **settle** | **str**| Settle currency | 
  **order_id** | **str**| Order ID returned, or user custom ID(i.e., &#x60;text&#x60; field). Operations based on custom ID can only be checked when the order is in orderbook. finished, it can be checked within 60 seconds after the end of the order. After that, only order ID is accepted. | 
 
 ### Return type
@@ -2346,14 +2346,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Order details. |  -  |
+**200** | Order details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amend_futures_order**
 > FuturesOrder amend_futures_order(settle, order_id, futures_order_amendment, x_gate_exptime=x_gate_exptime)
 
-Amend an order.
+Amend single order
 
 ### Example
 
@@ -2379,13 +2379,13 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
+settle = 'usdt' # str | Settle currency
 order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook. finished, it can be checked within 60 seconds after the end of the order. After that, only order ID is accepted.
 futures_order_amendment = gate_api.FuturesOrderAmendment() # FuturesOrderAmendment | 
 x_gate_exptime = '1689560679123' # str | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
-    # Amend an order.
+    # Amend single order
     api_response = api_instance.amend_futures_order(settle, order_id, futures_order_amendment, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
@@ -2398,7 +2398,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
+ **settle** | **str**| Settle currency | 
  **order_id** | **str**| Order ID returned, or user custom ID(i.e., &#x60;text&#x60; field). Operations based on custom ID can only be checked when the order is in orderbook. finished, it can be checked within 60 seconds after the end of the order. After that, only order ID is accepted. | 
  **futures_order_amendment** | [**FuturesOrderAmendment**](FuturesOrderAmendment.md)|  | 
  **x_gate_exptime** | **str**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
@@ -2419,14 +2419,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Order details. |  -  |
+**200** | Order details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_futures_order**
 > FuturesOrder cancel_futures_order(settle, order_id, x_gate_exptime=x_gate_exptime)
 
-Cancel a single order.
+Cancel single order
 
 ### Example
 
@@ -2452,12 +2452,12 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
+settle = 'usdt' # str | Settle currency
 order_id = '12345' # str | Order ID returned, or user custom ID(i.e., `text` field). Operations based on custom ID can only be checked when the order is in orderbook. finished, it can be checked within 60 seconds after the end of the order. After that, only order ID is accepted.
 x_gate_exptime = '1689560679123' # str | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
-    # Cancel a single order.
+    # Cancel single order
     api_response = api_instance.cancel_futures_order(settle, order_id, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
@@ -2470,7 +2470,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
+ **settle** | **str**| Settle currency | 
  **order_id** | **str**| Order ID returned, or user custom ID(i.e., &#x60;text&#x60; field). Operations based on custom ID can only be checked when the order is in orderbook. finished, it can be checked within 60 seconds after the end of the order. After that, only order ID is accepted. | 
  **x_gate_exptime** | **str**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
@@ -2490,14 +2490,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Order details. |  -  |
+**200** | Order details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_my_trades**
 > list[MyFuturesTrade] get_my_trades(settle, contract=contract, order=order, limit=limit, offset=offset, last_id=last_id)
 
-List personal trading history.
+Query personal trading records
 
 By default, only data within the past 6 months is supported.  If you need to query data for a longer period, please use `GET /futures/{settle}/my_trades_timerange`.
 
@@ -2525,15 +2525,15 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
-order = 12345 # int | Futures order ID, return related data only if specified. (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
+order = 12345 # int | Futures order ID, return related data only if specified (optional)
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 last_id = '12345' # str | Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. If you need to iterate through and retrieve more records, we recommend using 'GET /futures/{settle}/my_trades_timerange'. (optional)
 
 try:
-    # List personal trading history.
+    # Query personal trading records
     api_response = api_instance.get_my_trades(settle, contract=contract, order=order, limit=limit, offset=offset, last_id=last_id)
     print(api_response)
 except GateApiException as ex:
@@ -2546,11 +2546,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
- **order** | **int**| Futures order ID, return related data only if specified. | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **order** | **int**| Futures order ID, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **last_id** | **str**| Specify the starting point for this list based on a previously retrieved id  This parameter is deprecated. If you need to iterate through and retrieve more records, we recommend using &#39;GET /futures/{settle}/my_trades_timerange&#39;. | [optional] 
 
 ### Return type
@@ -2569,14 +2569,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  * X-Pagination-Limit - Request limit specified. <br>  * X-Pagination-Offset - Request offset specified. <br>  |
+**200** | List retrieved successfully |  * X-Pagination-Limit - Limit specified for pagination <br>  * X-Pagination-Offset - Offset specified for pagination <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_my_trades_with_time_range**
 > list[MyFuturesTradeTimeRange] get_my_trades_with_time_range(settle, contract=contract, _from=_from, to=to, limit=limit, offset=offset, role=role)
 
-List personal trading history by time range.
+Query personal trading records by time range
 
 ### Example
 
@@ -2602,16 +2602,16 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 _from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
 to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
-role = 'maker' # str | Query role, maker or taker. (optional)
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
+role = 'maker' # str | Query role, maker or taker (optional)
 
 try:
-    # List personal trading history by time range.
+    # Query personal trading records by time range
     api_response = api_instance.get_my_trades_with_time_range(settle, contract=contract, _from=_from, to=to, limit=limit, offset=offset, role=role)
     print(api_response)
 except GateApiException as ex:
@@ -2624,13 +2624,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
  **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
- **role** | **str**| Query role, maker or taker. | [optional] 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
+ **role** | **str**| Query role, maker or taker | [optional] 
 
 ### Return type
 
@@ -2648,14 +2648,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  * X-Pagination-Limit - Request limit specified. <br>  * X-Pagination-Offset - Request offset specified. <br>  |
+**200** | List retrieved successfully |  * X-Pagination-Limit - Limit specified for pagination <br>  * X-Pagination-Offset - Offset specified for pagination <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_position_close**
 > list[PositionClose] list_position_close(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, side=side, pnl=pnl)
 
-List position close history.
+Query position close history
 
 ### Example
 
@@ -2681,17 +2681,17 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 _from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
 to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
-side = 'short' # str | Query side. long or shot. (optional)
-pnl = 'profit' # str | Query profit or loss. (optional)
+side = 'short' # str | Query side. long or shot (optional)
+pnl = 'profit' # str | Query profit or loss (optional)
 
 try:
-    # List position close history.
+    # Query position close history
     api_response = api_instance.list_position_close(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, side=side, pnl=pnl)
     print(api_response)
 except GateApiException as ex:
@@ -2704,14 +2704,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
- **side** | **str**| Query side. long or shot. | [optional] 
- **pnl** | **str**| Query profit or loss. | [optional] 
+ **side** | **str**| Query side. long or shot | [optional] 
+ **pnl** | **str**| Query profit or loss | [optional] 
 
 ### Return type
 
@@ -2729,14 +2729,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  -  |
+**200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_liquidates**
 > list[FuturesLiquidate] list_liquidates(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, at=at)
 
-List liquidation history.
+Query liquidation history
 
 ### Example
 
@@ -2762,16 +2762,16 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 _from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
 to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
-at = 0 # int | Specify a liquidation timestamp. (optional) (default to 0)
+at = 0 # int | Specify liquidation timestamp (optional) (default to 0)
 
 try:
-    # List liquidation history.
+    # Query liquidation history
     api_response = api_instance.list_liquidates(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, at=at)
     print(api_response)
 except GateApiException as ex:
@@ -2784,13 +2784,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
- **at** | **int**| Specify a liquidation timestamp. | [optional] [default to 0]
+ **at** | **int**| Specify liquidation timestamp | [optional] [default to 0]
 
 ### Return type
 
@@ -2808,14 +2808,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  -  |
+**200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_auto_deleverages**
 > list[FuturesAutoDeleverage] list_auto_deleverages(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, at=at)
 
-List Auto-Deleveraging History.
+Query ADL auto-deleveraging order information
 
 ### Example
 
@@ -2841,16 +2841,16 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 _from = 1547706332 # int | Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) (optional)
 to = 1547706332 # int | Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp (optional)
-at = 0 # int | Specify an auto-deleveraging timestamp. (optional) (default to 0)
+at = 0 # int | Specify auto-deleveraging timestamp (optional) (default to 0)
 
 try:
-    # List Auto-Deleveraging History.
+    # Query ADL auto-deleveraging order information
     api_response = api_instance.list_auto_deleverages(settle, contract=contract, limit=limit, offset=offset, _from=_from, to=to, at=at)
     print(api_response)
 except GateApiException as ex:
@@ -2863,13 +2863,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
  **_from** | **int**| Start timestamp  Specify start time, time format is Unix timestamp. If not specified, it defaults to (the data start time of the time range actually returned by to and limit) | [optional] 
  **to** | **int**| Termination Timestamp  Specify the end time. If not specified, it defaults to the current time, and the time format is a Unix timestamp | [optional] 
- **at** | **int**| Specify an auto-deleveraging timestamp. | [optional] [default to 0]
+ **at** | **int**| Specify auto-deleveraging timestamp | [optional] [default to 0]
 
 ### Return type
 
@@ -2887,14 +2887,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  -  |
+**200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **countdown_cancel_all_futures**
 > TriggerTime countdown_cancel_all_futures(settle, countdown_cancel_all_futures_task)
 
-Countdown cancel orders.
+Countdown cancel orders
 
 Heartbeat detection for contract orders: When the user-set `timeout` time is reached, if neither the existing countdown is canceled nor a new countdown is set, the relevant contract orders will be automatically canceled. This API can be called repeatedly to or cancel the countdown. Usage example: Repeatedly call this API at 30-second intervals, setting the `timeout` to 30 (seconds) each time. If this API is not called again within 30 seconds, all open orders on your specified `market` will be automatically canceled. If the `timeout` is set to 0 within 30 seconds, the countdown timer will terminate, and the automatic order cancellation function will be disabled.
 
@@ -2922,11 +2922,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
+settle = 'usdt' # str | Settle currency
 countdown_cancel_all_futures_task = gate_api.CountdownCancelAllFuturesTask() # CountdownCancelAllFuturesTask | 
 
 try:
-    # Countdown cancel orders.
+    # Countdown cancel orders
     api_response = api_instance.countdown_cancel_all_futures(settle, countdown_cancel_all_futures_task)
     print(api_response)
 except GateApiException as ex:
@@ -2939,7 +2939,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
+ **settle** | **str**| Settle currency | 
  **countdown_cancel_all_futures_task** | [**CountdownCancelAllFuturesTask**](CountdownCancelAllFuturesTask.md)|  | 
 
 ### Return type
@@ -2958,14 +2958,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Set countdown successfully. |  -  |
+**200** | Countdown set successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_futures_fee**
 > dict(str, FuturesFee) get_futures_fee(settle, contract=contract)
 
-Query user trading fee rates.
+Query futures market trading fee rates
 
 ### Example
 
@@ -2991,11 +2991,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 
 try:
-    # Query user trading fee rates.
+    # Query futures market trading fee rates
     api_response = api_instance.get_futures_fee(settle, contract=contract)
     print(api_response)
 except GateApiException as ex:
@@ -3008,8 +3008,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
 
 ### Return type
 
@@ -3027,16 +3027,16 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_batch_future_orders**
 > list[FutureCancelOrderResult] cancel_batch_future_orders(settle, request_body, x_gate_exptime=x_gate_exptime)
 
-Cancel a batch of orders with an ID list.
+Cancel batch orders by specified ID list
 
-Multiple different order IDs can be specified. A maximum of 20 records.
+Multiple different order IDs can be specified, maximum 20 records per request
 
 ### Example
 
@@ -3062,12 +3062,12 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
+settle = 'usdt' # str | Settle currency
 request_body = ['request_body_example'] # list[str] | 
 x_gate_exptime = '1689560679123' # str | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
-    # Cancel a batch of orders with an ID list.
+    # Cancel batch orders by specified ID list
     api_response = api_instance.cancel_batch_future_orders(settle, request_body, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
@@ -3080,7 +3080,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
+ **settle** | **str**| Settle currency | 
  **request_body** | [**list[str]**](str.md)|  | 
  **x_gate_exptime** | **str**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
@@ -3100,16 +3100,16 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Order cancellation operation completed. |  -  |
+**200** | Order cancellation operation completed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **amend_batch_future_orders**
 > list[BatchFuturesOrder] amend_batch_future_orders(settle, batch_amend_order_req, x_gate_exptime=x_gate_exptime)
 
-Batch modify orders with specified IDs.
+Batch modify orders by specified IDs
 
-Multiple different order IDs can be specified. A maximum of 10 orders can.
+Multiple different order IDs can be specified, maximum 10 orders per request
 
 ### Example
 
@@ -3135,12 +3135,12 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
+settle = 'usdt' # str | Settle currency
 batch_amend_order_req = [gate_api.BatchAmendOrderReq()] # list[BatchAmendOrderReq] | 
 x_gate_exptime = '1689560679123' # str | Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected (optional)
 
 try:
-    # Batch modify orders with specified IDs.
+    # Batch modify orders by specified IDs
     api_response = api_instance.amend_batch_future_orders(settle, batch_amend_order_req, x_gate_exptime=x_gate_exptime)
     print(api_response)
 except GateApiException as ex:
@@ -3153,7 +3153,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
+ **settle** | **str**| Settle currency | 
  **batch_amend_order_req** | [**list[BatchAmendOrderReq]**](BatchAmendOrderReq.md)|  | 
  **x_gate_exptime** | **str**| Specify the expiration time (milliseconds); if the GATE receives the request time greater than the expiration time, the request will be rejected | [optional] 
 
@@ -3173,16 +3173,16 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Request is completed. |  -  |
+**200** | Request execution completed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_futures_risk_limit_table**
 > list[FuturesRiskLimitTier] get_futures_risk_limit_table(settle, table_id)
 
-Query risk limit table by table_id.
+Query risk limit table by table_id
 
-Just pass table_id.
+Just pass table_id
 
 ### Example
 
@@ -3199,11 +3199,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-table_id = 'CYBER_USDT_20241122' # str | Risk limit table ID.
+settle = 'usdt' # str | Settle currency
+table_id = 'CYBER_USDT_20241122' # str | Risk limit table ID
 
 try:
-    # Query risk limit table by table_id.
+    # Query risk limit table by table_id
     api_response = api_instance.get_futures_risk_limit_table(settle, table_id)
     print(api_response)
 except GateApiException as ex:
@@ -3216,8 +3216,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **table_id** | **str**| Risk limit table ID. | 
+ **settle** | **str**| Settle currency | 
+ **table_id** | **str**| Risk limit table ID | 
 
 ### Return type
 
@@ -3235,14 +3235,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successfully retrieved. |  -  |
+**200** | Query successful |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_price_triggered_orders**
 > list[FuturesPriceTriggeredOrder] list_price_triggered_orders(settle, status, contract=contract, limit=limit, offset=offset)
 
-List All Price-triggered Orders.
+Query auto order list
 
 ### Example
 
@@ -3268,14 +3268,14 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-status = 'status_example' # str | Only list the orders with this status.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
-limit = 100 # int | Maximum number of records to be returned in a single list. (optional) (default to 100)
-offset = 0 # int | List offset, starting from 0. (optional) (default to 0)
+settle = 'usdt' # str | Settle currency
+status = 'status_example' # str | Query order list based on status
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
+limit = 100 # int | Maximum number of records returned in a single list (optional) (default to 100)
+offset = 0 # int | List offset, starting from 0 (optional) (default to 0)
 
 try:
-    # List All Price-triggered Orders.
+    # Query auto order list
     api_response = api_instance.list_price_triggered_orders(settle, status, contract=contract, limit=limit, offset=offset)
     print(api_response)
 except GateApiException as ex:
@@ -3288,11 +3288,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **status** | **str**| Only list the orders with this status. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
- **limit** | **int**| Maximum number of records to be returned in a single list. | [optional] [default to 100]
- **offset** | **int**| List offset, starting from 0. | [optional] [default to 0]
+ **settle** | **str**| Settle currency | 
+ **status** | **str**| Query order list based on status | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
+ **limit** | **int**| Maximum number of records returned in a single list | [optional] [default to 100]
+ **offset** | **int**| List offset, starting from 0 | [optional] [default to 0]
 
 ### Return type
 
@@ -3310,14 +3310,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List retrieved. |  -  |
+**200** | List retrieved successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_price_triggered_order**
 > TriggerOrderResponse create_price_triggered_order(settle, futures_price_triggered_order)
 
-Create a price-triggered order.
+Create price-triggered order
 
 ### Example
 
@@ -3343,11 +3343,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
+settle = 'usdt' # str | Settle currency
 futures_price_triggered_order = gate_api.FuturesPriceTriggeredOrder() # FuturesPriceTriggeredOrder | 
 
 try:
-    # Create a price-triggered order.
+    # Create price-triggered order
     api_response = api_instance.create_price_triggered_order(settle, futures_price_triggered_order)
     print(api_response)
 except GateApiException as ex:
@@ -3360,7 +3360,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
+ **settle** | **str**| Settle currency | 
  **futures_price_triggered_order** | [**FuturesPriceTriggeredOrder**](FuturesPriceTriggeredOrder.md)|  | 
 
 ### Return type
@@ -3379,14 +3379,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Order created. |  -  |
+**201** | Order created successfully |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_price_triggered_order_list**
 > list[FuturesPriceTriggeredOrder] cancel_price_triggered_order_list(settle, contract=contract)
 
-Cancel All Price-triggered Orders.
+Cancel all auto orders
 
 ### Example
 
@@ -3412,11 +3412,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-contract = 'BTC_USDT' # str | Futures contract, return related data only if specified. (optional)
+settle = 'usdt' # str | Settle currency
+contract = 'BTC_USDT' # str | Futures contract, return related data only if specified (optional)
 
 try:
-    # Cancel All Price-triggered Orders.
+    # Cancel all auto orders
     api_response = api_instance.cancel_price_triggered_order_list(settle, contract=contract)
     print(api_response)
 except GateApiException as ex:
@@ -3429,8 +3429,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **contract** | **str**| Futures contract, return related data only if specified. | [optional] 
+ **settle** | **str**| Settle currency | 
+ **contract** | **str**| Futures contract, return related data only if specified | [optional] 
 
 ### Return type
 
@@ -3448,14 +3448,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Batch cancellation request accepted. Query order status by listing orders. |  -  |
+**200** | Batch cancellation request accepted and processed, success determined by order list |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_price_triggered_order**
 > FuturesPriceTriggeredOrder get_price_triggered_order(settle, order_id)
 
-Get a price-triggered order.
+Query single auto order details
 
 ### Example
 
@@ -3481,11 +3481,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-order_id = 'order_id_example' # str | Retrieve the data of the order with the specified ID.
+settle = 'usdt' # str | Settle currency
+order_id = 'order_id_example' # str | ID returned when order is successfully created
 
 try:
-    # Get a price-triggered order.
+    # Query single auto order details
     api_response = api_instance.get_price_triggered_order(settle, order_id)
     print(api_response)
 except GateApiException as ex:
@@ -3498,8 +3498,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **order_id** | **str**| Retrieve the data of the order with the specified ID. | 
+ **settle** | **str**| Settle currency | 
+ **order_id** | **str**| ID returned when order is successfully created | 
 
 ### Return type
 
@@ -3517,14 +3517,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Auto order detail. |  -  |
+**200** | Auto order details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cancel_price_triggered_order**
 > FuturesPriceTriggeredOrder cancel_price_triggered_order(settle, order_id)
 
-cancel a price-triggered order.
+Cancel single auto order
 
 ### Example
 
@@ -3550,11 +3550,11 @@ configuration = gate_api.Configuration(
 api_client = gate_api.ApiClient(configuration)
 # Create an instance of the API class
 api_instance = gate_api.FuturesApi(api_client)
-settle = 'usdt' # str | Settle currency.
-order_id = 'order_id_example' # str | Retrieve the data of the order with the specified ID.
+settle = 'usdt' # str | Settle currency
+order_id = 'order_id_example' # str | ID returned when order is successfully created
 
 try:
-    # cancel a price-triggered order.
+    # Cancel single auto order
     api_response = api_instance.cancel_price_triggered_order(settle, order_id)
     print(api_response)
 except GateApiException as ex:
@@ -3567,8 +3567,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **settle** | **str**| Settle currency. | 
- **order_id** | **str**| Retrieve the data of the order with the specified ID. | 
+ **settle** | **str**| Settle currency | 
+ **order_id** | **str**| ID returned when order is successfully created | 
 
 ### Return type
 
@@ -3586,7 +3586,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Auto order detail. |  -  |
+**200** | Auto order details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

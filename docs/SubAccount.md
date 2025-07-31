@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**remark** | **str** | custom text. | [optional] 
-**login_name** | **str** | Sub-account login name: Only letters, numbers and underscores are supported, and cannot contain other illegal characters | 
-**password** | **str** | The sub-account&#39;s password. (Default: the same as main account&#39;s password). | [optional] 
+**remark** | **str** | Remark | [optional] 
+**login_name** | **str** | 子账户登陆名：仅支持字母、数字、下划线，不可包含其他非法字符。 | 
+**password** | **str** | The sub-account&#39;s password. (Default: the same as main account&#39;s password) | [optional] 
 **email** | **str** | The sub-account&#39;s email address. (Default: the same as main account&#39;s email address) | [optional] 
-**state** | **int** | State: 1-normal, 2-locked\&quot;. | [optional] [readonly] 
-**type** | **int** | \&quot;Sub-account type: 1 - sub-account, 3 - cross margin account. | [optional] [readonly] 
-**user_id** | **int** | The user id of the sub-account. | [optional] [readonly] 
-**create_time** | **int** | Created time. | [optional] [readonly] 
+**state** | **int** | Sub-account status: 1-normal, 2-locked | [optional] [readonly] 
+**type** | **int** | Sub-account type: 1-Regular sub-account, 3-Cross margin sub-account | [optional] [readonly] 
+**user_id** | **int** | Sub-account user ID | [optional] [readonly] 
+**create_time** | **int** | Created time | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
