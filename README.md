@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This repository has been archived and is no longer maintained. The project has moved to **[gate/gateapi-python](https://github.com/gate/gateapi-python)**. Please use the new repository for updates, issues, and pull requests.
+
 # gate-api
 Welcome to Gate API
 APIv4 provides operations related to spot, margin, and contract trading, including public interfaces for querying market data and authenticated private interfaces for implementing API-based automated trading.
